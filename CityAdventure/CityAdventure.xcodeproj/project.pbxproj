@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97123B1BFBF35870DFFAFEE4 /* Pods_CityAdventure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */; };
 		CEF716342064CB1900B457E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF716332064CB1900B457E9 /* AppDelegate.swift */; };
 		CEF716362064CB1900B457E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF716352064CB1900B457E9 /* ViewController.swift */; };
 		CEF716392064CB1900B457E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF716372064CB1900B457E9 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF716302064CB1900B457E9 /* CityAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF716332064CB1900B457E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF716352064CB1900B457E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +28,8 @@
 		CEF7163F2064CB1900B457E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF716462064D2BF00B457E9 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		CEF716482064DB3200B457E9 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		D40B980CF8BAA933F34BAA16 /* Pods-CityAdventure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CityAdventure.release.xcconfig"; path = "Pods/Target Support Files/Pods-CityAdventure/Pods-CityAdventure.release.xcconfig"; sourceTree = "<group>"; };
+		FCB38DB016D227E1969074B7 /* Pods-CityAdventure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CityAdventure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CityAdventure/Pods-CityAdventure.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97123B1BFBF35870DFFAFEE4 /* Pods_CityAdventure.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5BB78BA01C450FB54BE89CD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C85A1D423DEC09FAFF113EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCB38DB016D227E1969074B7 /* Pods-CityAdventure.debug.xcconfig */,
+				D40B980CF8BAA933F34BAA16 /* Pods-CityAdventure.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CEF716272064CB1900B457E9 = {
 			isa = PBXGroup;
 			children = (
 				CEF716322064CB1900B457E9 /* CityAdventure */,
 				CEF716312064CB1900B457E9 /* Products */,
+				9C85A1D423DEC09FAFF113EF /* Pods */,
+				5BB78BA01C450FB54BE89CD8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,9 +109,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEF716422064CB1900B457E9 /* Build configuration list for PBXNativeTarget "CityAdventure" */;
 			buildPhases = (
+				869CE5D3EE5214EEB81F177B /* [CP] Check Pods Manifest.lock */,
 				CEF7162C2064CB1900B457E9 /* Sources */,
 				CEF7162D2064CB1900B457E9 /* Frameworks */,
 				CEF7162E2064CB1900B457E9 /* Resources */,
+				95480FDDCCEE3CE6A56363C9 /* [CP] Embed Pods Frameworks */,
+				5F6CFE9D4F7F921E7D3317DD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -145,6 +172,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F6CFE9D4F7F921E7D3317DD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CityAdventure/Pods-CityAdventure-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		869CE5D3EE5214EEB81F177B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		95480FDDCCEE3CE6A56363C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CityAdventure/Pods-CityAdventure-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEF7162C2064CB1900B457E9 /* Sources */ = {
@@ -288,6 +363,7 @@
 		};
 		CEF716432064CB1900B457E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCB38DB016D227E1969074B7 /* Pods-CityAdventure.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +379,7 @@
 		};
 		CEF716442064CB1900B457E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D40B980CF8BAA933F34BAA16 /* Pods-CityAdventure.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
