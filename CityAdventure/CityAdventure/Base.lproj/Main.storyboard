@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dQy-rd-MxM">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hZj-2G-qrC">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,20 +17,20 @@
             <objects>
                 <viewController id="dQy-rd-MxM" customClass="LaunchScreenViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k0r-W2-rbb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_backgrounImage" translatesAutoresizingMaskIntoConstraints="NO" id="bcy-KK-EAP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen_backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="bcy-KK-EAP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubu_domain" translatesAutoresizingMaskIntoConstraints="NO" id="0Dn-jd-VLX">
-                                <rect key="frame" x="100" y="742" width="175" height="15"/>
+                                <rect key="frame" x="100" y="631" width="175" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="KTA-eL-oNn"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VERSION. 17.09.14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Otc-v7-QhF">
-                                <rect key="frame" x="143" y="765" width="89" height="8"/>
+                                <rect key="frame" x="143" y="654" width="89" height="8"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="8" id="5C2-O9-hUo"/>
                                 </constraints>
@@ -39,13 +39,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubu_LogoImage" translatesAutoresizingMaskIntoConstraints="NO" id="UWJ-DS-Fwz">
-                                <rect key="frame" x="82" y="153" width="211" height="100"/>
+                                <rect key="frame" x="82" y="117" width="211" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="uYl-XP-ToN"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading.gif" translatesAutoresizingMaskIntoConstraints="NO" id="MYF-ZJ-L0i">
-                                <rect key="frame" x="123.66666666666669" y="277" width="128" height="128"/>
+                                <rect key="frame" x="123.5" y="265" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="1tX-U2-H18"/>
                                     <constraint firstAttribute="width" constant="128" id="vPZ-Nw-Z75"/>
@@ -66,24 +66,44 @@
                             <constraint firstItem="0Dn-jd-VLX" firstAttribute="leading" secondItem="k0r-W2-rbb" secondAttribute="leading" constant="100" id="ND1-Kk-LpP"/>
                             <constraint firstItem="Otc-v7-QhF" firstAttribute="top" secondItem="0Dn-jd-VLX" secondAttribute="bottom" constant="8" id="PjW-vd-48J"/>
                             <constraint firstAttribute="trailing" secondItem="0Dn-jd-VLX" secondAttribute="trailing" constant="100" id="WLB-ad-Mb2"/>
-                            <constraint firstItem="MYF-ZJ-L0i" firstAttribute="top" secondItem="UWJ-DS-Fwz" secondAttribute="bottom" constant="24" id="eea-EM-B80"/>
+                            <constraint firstItem="MYF-ZJ-L0i" firstAttribute="top" secondItem="UWJ-DS-Fwz" secondAttribute="bottom" constant="48" id="eea-EM-B80"/>
                             <constraint firstAttribute="bottom" secondItem="bcy-KK-EAP" secondAttribute="bottom" id="w5e-LW-ave"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iMN-be-nVV"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wo2-ms-oFe"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="loadGifImage" destination="MYF-ZJ-L0i" id="tc4-kc-8gi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfC-KC-nJ2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-95" y="83"/>
+            <point key="canvasLocation" x="244" y="82.3088455772114"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7rV-qr-G49">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hZj-2G-qrC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qel-0s-2zm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dQy-rd-MxM" kind="relationship" relationship="rootViewController" id="8vY-FZ-sdk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qB8-Ti-7mW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-466" y="76"/>
         </scene>
     </scenes>
     <resources>
         <image name="bubu_LogoImage" width="389" height="194"/>
         <image name="bubu_domain" width="323" height="31"/>
+        <image name="launchscreen_backgroundImage" width="720" height="1280"/>
         <image name="loading.gif" width="550" height="500"/>
-        <image name="splash_backgrounImage" width="720" height="1280"/>
     </resources>
 </document>
