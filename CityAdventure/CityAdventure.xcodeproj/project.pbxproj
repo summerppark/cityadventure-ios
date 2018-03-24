@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		97123B1BFBF35870DFFAFEE4 /* Pods_CityAdventure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */; };
+		CE24D7812066899600B21EF3 /* GodoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE24D78020667D2600B21EF3 /* GodoB.ttf */; };
+		CE24D7822066899600B21EF3 /* GodoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE24D77F20667D2500B21EF3 /* GodoM.ttf */; };
 		CEF716342064CB1900B457E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF716332064CB1900B457E9 /* AppDelegate.swift */; };
 		CEF716362064CB1900B457E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF716352064CB1900B457E9 /* ViewController.swift */; };
 		CEF716392064CB1900B457E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF716372064CB1900B457E9 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE24D77F20667D2500B21EF3 /* GodoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GodoM.ttf; sourceTree = "<group>"; };
+		CE24D78020667D2600B21EF3 /* GodoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GodoB.ttf; sourceTree = "<group>"; };
 		CEF716302064CB1900B457E9 /* CityAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF716332064CB1900B457E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF716352064CB1900B457E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +67,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CE24D77E20667D1300B21EF3 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CE24D78020667D2600B21EF3 /* GodoB.ttf */,
+				CE24D77F20667D2500B21EF3 /* GodoM.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		CEF716272064CB1900B457E9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 		CEF716452064D12200B457E9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CE24D77E20667D1300B21EF3 /* Fonts */,
 				CEF7163A2064CB1900B457E9 /* Assets.xcassets */,
 				CEF716462064D2BF00B457E9 /* loading.gif */,
 			);
@@ -167,6 +181,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE24D7812066899600B21EF3 /* GodoB.ttf in Resources */,
+				CE24D7822066899600B21EF3 /* GodoM.ttf in Resources */,
 				CEF7163E2064CB1900B457E9 /* LaunchScreen.storyboard in Resources */,
 				CEF716472064D2BF00B457E9 /* loading.gif in Resources */,
 				CEF7163B2064CB1900B457E9 /* Assets.xcassets in Resources */,
