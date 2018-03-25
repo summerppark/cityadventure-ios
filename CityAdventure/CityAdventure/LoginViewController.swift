@@ -33,10 +33,16 @@ class LoginViewController: UIViewController {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         initView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     // view set
@@ -46,9 +52,18 @@ class LoginViewController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
     }
     
-    // selector
+    // selector tap gesture and keyboard hide
     @objc func keyboardHide() {
         self.view.endEditing(true)
+    }
+}
+
+//MARK:- @IBAction
+extension LoginViewController {
+    @IBAction func tappedSignUp(sender: UIButton) {
+        if let signUpVC = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController {
+            self.navigationController?.pushViewController(signUpVC, animated: true)
+        }
     }
 }
 
