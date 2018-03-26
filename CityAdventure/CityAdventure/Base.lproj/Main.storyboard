@@ -304,7 +304,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1M9-WP-GGp">
                                 <rect key="frame" x="24" y="132" width="272" height="77"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">
+                                <string key="text">
 제 1 장 총 칙  
 
 제1조 [목적] 
@@ -541,7 +541,7 @@
 
 부칙 
 1. 본 약관은 2017년 2월 1일부터 시행됩니다.
-</mutableString>
+</string>
                                 <color key="textColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -609,7 +609,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bg-lF-5gv">
                                 <rect key="frame" x="24" y="270" width="272" height="77"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">
+                                <string key="text">
 개인정보 취급방침
 
  제1조(의의)
@@ -713,7 +713,7 @@
 현  개인정보취급방침의 내용 추가, 삭제 및 수정 등의 변경이 있을 시에는 시행일의 7일 전부터 홈페이지의 공지사항을 통하여 고지할 것 입니다.
  -공고일자:2017년 2월 1일
  -시행일자:2017년 2월 1일
-</mutableString>
+</string>
                                 <color key="textColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -747,7 +747,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDF-OV-Sfr">
                                 <rect key="frame" x="24" y="408" width="272" height="77"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">
+                                <string key="text">
 제 1 장 총  칙
 
 제 1 조  (목적)
@@ -958,7 +958,7 @@
 ①이름:
 ② 소속 :  ㈜비유비유
 ③ 연락처 :  02-304-3352
-</mutableString>
+</string>
                                 <color key="textColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.51372549019607838" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1044,8 +1044,10 @@
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="allAgreementButton" destination="Vdk-g2-Kzh" id="sb7-SL-CbT"/>
                         <outlet property="firstCheckIcon" destination="WQR-wQ-R7N" id="6hc-Al-5ke"/>
                         <outlet property="firstTextView" destination="1M9-WP-GGp" id="v9j-ZL-h9q"/>
+                        <outlet property="goToNextButton" destination="5Yt-Yp-6x3" id="Fva-0d-3Q3"/>
                         <outlet property="headerToolbar" destination="I6h-d5-V3u" id="s1T-Rq-VsK"/>
                         <outlet property="headerToolbarHeight" destination="On6-iP-LDB" id="hev-Jg-1ky"/>
                         <outlet property="secondCheckIcon" destination="CkE-aU-uNB" id="xhH-Sv-ahQ"/>

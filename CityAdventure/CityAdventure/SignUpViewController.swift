@@ -15,19 +15,20 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
                              NSAttributedStringKey.foregroundColor : UIColor.textView_gray_Color
     ]
     
-    
-    
     @IBOutlet weak var headerToolbar: UIView!
     @IBOutlet weak var headerToolbarHeight: NSLayoutConstraint!
     
+    // button 3개 상태 체크하기위한 토클값
+    var toggleBooleans: [Bool] = [false, false, false]
+    
+    
+    
+    @IBOutlet weak var allAgreementButton: UIButton!
+    @IBOutlet weak var goToNextButton: UIButton!
+    
+    
     
     @IBOutlet var textViewHeights: [NSLayoutConstraint]!
-    
-    
-    
-    
-    
-    
     
     @IBOutlet weak var firstTextView: UITextView! {
         didSet {
@@ -53,19 +54,24 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    
+    // 첫번째 체크 아이콘
     @IBOutlet weak var firstCheckIcon: UIButton! {
         didSet {
+            firstCheckIcon.tag = 0
             firstCheckIcon.addTarget(self, action: #selector(tappedCheck), for: .touchUpInside)
         }
     }
+    // 두번째 체크 아이콘
     @IBOutlet weak var secondCheckIcon: UIButton! {
         didSet {
+            secondCheckIcon.tag = 1
             secondCheckIcon.addTarget(self, action: #selector(tappedCheck), for: .touchUpInside)
         }
     }
+    // 세번째 체크 아이콘
     @IBOutlet weak var thirdCheckIcon: UIButton! {
         didSet {
+            thirdCheckIcon.tag = 2
             thirdCheckIcon.addTarget(self, action: #selector(tappedCheck), for: .touchUpInside)
         }
     }
@@ -78,18 +84,10 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        self.title = "회원 가입"
-        initNavigation()
         layoutCheck()
         // edge gesture set
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        
-        
-        
-        firstCheckIcon.setImage(UIImage(named:"auto_login_ok"), for: .selected)
-        
-        
         
     }
     
@@ -97,18 +95,7 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidAppear(_ animated: Bool) {
     }
     
-    func initNavigation() {
-       
-         //navigation bar background, tintcolor
-        self.navigationController?.navigationBar.barTintColor = UIColor.top_Brown_Color
-        self.navigationController?.navigationBar.tintColor = .white
-
-       // NavigationBar Title Style Set Font,Color
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSAttributedStringKey.font : UIFont(name: "GodoM", size: 16.0),
-            NSAttributedStringKey.foregroundColor : UIColor.white
-        ]
-    }
+    
     
     // iPhone X 상단 바 높이 조정
     func layoutCheck() {
@@ -125,6 +112,7 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
+    // 뒤로가기 버튼 눌렀을 때
     @IBAction func tappedBackbutton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -132,9 +120,19 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
     // tapped leftBarButton
     @objc func tappedCheck(sender: UIButton) {
         if sender.currentImage == UIImage(named: "noncheck") {
+            toggleBooleans[sender.tag] = true
             sender.setImage(UIImage(named:"auto_login_ok"), for: .normal)
         } else {
             sender.setImage(UIImage(named:"noncheck"), for: .normal)
+            toggleBooleans[sender.tag] = false
         }
+        
+        
+        if toggleBooleans[0] && toggleBooleans[1] && toggleBooleans[2] {
+            allAgreementButton.setImage(UIImage(named:"btn_allCheck_agreementOn"), for: .normal)
+        } else {
+            allAgreementButton.setImage(UIImage(named:"btn_allCheck_agreement"), for: .normal)
+        }
+        
     }
 }

@@ -23,6 +23,15 @@ target 'CityAdventure' do
     pod 'SwiftGifOrigin', '~> 1.6.1'
 
 
+
+    # Rx
+    pod 'RxSwift', '~> 4.0'
+    pod 'RxCocoa', '~> 4.0'
+
+
+
+
+
   # Pods for CityAdventure
 
 end
