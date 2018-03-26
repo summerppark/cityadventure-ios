@@ -12,6 +12,12 @@ import UIKit
 class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
     
     
+    @IBOutlet weak var headerToolbar: UIView!
+    
+    @IBOutlet weak var headerToolbarHeight: NSLayoutConstraint!
+    
+    
+    
     @IBOutlet weak var firstTextView: UITextView! {
         didSet {
             let attributedString = [ NSAttributedStringKey.font : UIFont(name: "GodoM", size: 12.0),
@@ -24,12 +30,12 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     
-    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBar.isHidden = false
+//        self.navigationController?.navigationBar.isHidden = false
     }
     
     override func viewDidLoad() {
@@ -58,12 +64,8 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func layoutCheck() {
         if Constants.DeviceType.IS_IPHONE_X {
-            topConstraint.constant = 100
-        } else {
-            topConstraint.constant = 80
+            headerToolbarHeight.constant = 88
         }
-        
-//        self.view.layoutIfNeeded()
     }
     
     @IBAction func tappedBackbutton(_ sender: Any) {
