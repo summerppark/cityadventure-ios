@@ -36,7 +36,11 @@ class SignUpViewSeccondController: UIViewController {
     // 두번째 입력 부분 - 이메일 재입력
     @IBOutlet weak var retryEmailTextField: UITextField!
     @IBOutlet weak var retryEmailTextFieldStatus: UILabel!
-    @IBOutlet weak var retryEmailBorder: UIImageView!
+    @IBOutlet weak var retryEmailBorder: UIImageView! {
+        didSet {
+            retryEmailBorder.image?.withRenderingMode(.alwaysTemplate)
+        }
+    }
     
     @IBOutlet weak var retryEmailDeleteButton: UIButton!
     
@@ -44,27 +48,80 @@ class SignUpViewSeccondController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordDeleteButton: UIButton!
     @IBOutlet weak var passwordTextFieldStatus: UILabel!
-    @IBOutlet weak var passwordBorder: UIImageView!
+    @IBOutlet weak var passwordBorder: UIImageView! {
+        didSet {
+            passwordBorder.image?.withRenderingMode(.alwaysTemplate)
+        }
+    }
     
     // 4번재 입력 부분 - 비밀번호 재입력
     @IBOutlet weak var retryPasswordTextField: UITextField!
     @IBOutlet weak var retryPasswordTextFieldStatus: UILabel!
     @IBOutlet weak var retryPasswordDeleteButton: UIButton!
-    @IBOutlet weak var retryPasswordBorder: UIImageView!
+    @IBOutlet weak var retryPasswordBorder: UIImageView! {
+        didSet {
+            retryPasswordBorder.image?.withRenderingMode(.alwaysTemplate)
+        }
+    }
     
+    // 다음으로 버튼
+    @IBOutlet weak var nextButton: UIButton!
     
+    // 텍스트필드 배열
+    var textFields: [UITextField] = []
     
     // ViewModel
     var signUpViewModel = SignUpViewModel()
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 텍스트필드 배열
+        textFields = [emailTextField, retryEmailTextField, passwordTextField, retryPasswordTextField]
+       
         layoutCheck()
         viewModelBinding()
         
     }
     
     func viewModelBinding() {
+        _ = emailTextField.rx.text.map { $0 ?? "" }.bind(to: signUpViewModel.email)
+        _ = retryEmailTextField.rx.text.map { $0 ?? "" }.bind(to: signUpViewModel.retryEmail)
+        _ = passwordTextField.rx.text.map { $0 ?? "" }.bind(to: signUpViewModel.password)
+        _ = retryPasswordTextField.rx.text.map { $0 ?? "" }.bind(to: signUpViewModel.retryPassword)
+        
+        
+       
+        // valid 상태에 따라서 다음으로 버튼셋팅을 변경시켜 준다.
+        _ = signUpViewModel.isAllValid.subscribe(onNext: { [weak self] (isvalid) in
+            let image = isvalid ? UIImage(named: "btn_next_On") : UIImage(named: "btn_next")
+            self?.nextButton.isEnabled = isvalid
+            self?.nextButton.setImage(image, for: .normal)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        
+        // 이메일 재입력 체크
+        _ = signUpViewModel.isValidRetryEmail.subscribe(onNext: { [weak self] (isvalid) in
+            self?.retryEmailTextFieldStatus.text = isvalid ? "일치" : "불일치"
+            self?.retryEmailTextFieldStatus.textColor = isvalid ? UIColor.status_ok_Color : UIColor.status_no_Color
+            self?.retryEmailBorder.isHidden = isvalid
+            
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        
+        // 비밀번호 체크
+        _ = signUpViewModel.isValidPassword.subscribe(onNext: { [weak self] (isvalid) in
+            self?.passwordTextFieldStatus.text = isvalid ? "안전" : "불가"
+            self?.passwordTextFieldStatus.textColor = isvalid ? UIColor.status_ok_Color : UIColor.status_no_Color
+            self?.passwordBorder.isHidden = isvalid
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        
+        // 비밀번호 재입력 체크
+        _ = signUpViewModel.isValidRetryPassword.subscribe(onNext: { [weak self](isvalid) in
+            
+            self?.retryPasswordTextFieldStatus.text = isvalid ? "일치" : "불일치"
+            self?.retryPasswordTextFieldStatus.textColor = isvalid ? UIColor.status_ok_Color : UIColor.status_no_Color
+            self?.retryPasswordBorder.isHidden = isvalid
+            
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
     }
     
@@ -88,4 +145,13 @@ class SignUpViewSeccondController: UIViewController {
     
         }
     }
+    
+    
+    
+    
+    @IBAction func tappedDeleteButton(_ sender: UIButton) {
+        print(sender.tag)
+    }
+    
+    
 }

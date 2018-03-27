@@ -11,6 +11,10 @@ import UIKit
 extension UIColor {
     static let top_Brown_Color = UIColor().colorFromHex("#59493f")
     static let textView_gray_Color = UIColor().colorFromHex("#858583")
+    static let status_ok_Color = UIColor().colorFromHex("#15b2d4")
+    static let status_no_Color = UIColor().colorFromHex("#f90404")
+    
+    
     func colorFromHex(_ hex: String) -> UIColor {
         var hexString = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         

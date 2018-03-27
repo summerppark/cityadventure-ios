@@ -1170,6 +1170,9 @@
                                             <constraint firstAttribute="height" constant="20" id="vFC-KB-jGh"/>
                                         </constraints>
                                         <state key="normal" image="btn_email_delete"/>
+                                        <connections>
+                                            <action selector="tappedDeleteButton:" destination="fyu-wJ-reb" eventType="touchUpInside" id="ok9-1i-HKG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1199,16 +1202,19 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signup_email_bg" translatesAutoresizingMaskIntoConstraints="NO" id="qXg-Mj-ccj">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_isInvalid_border" translatesAutoresizingMaskIntoConstraints="NO" id="Rvv-fp-D6E">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_isInvalid_border" translatesAutoresizingMaskIntoConstraints="NO" id="Rvv-fp-D6E">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="50"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-Te-VG2">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-Te-VG2">
                                         <rect key="frame" x="185" y="15" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="c1n-E2-Axz"/>
                                             <constraint firstAttribute="height" constant="20" id="g6H-bT-J4N"/>
                                         </constraints>
                                         <state key="normal" image="btn_email_delete"/>
+                                        <connections>
+                                            <action selector="tappedDeleteButton:" destination="fyu-wJ-reb" eventType="touchUpInside" id="D9Z-3u-tBf"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_email_icon" translatesAutoresizingMaskIntoConstraints="NO" id="4uG-nj-4qz">
                                         <rect key="frame" x="12" y="16" width="16" height="18"/>
@@ -1262,8 +1268,8 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signup_email_bg" translatesAutoresizingMaskIntoConstraints="NO" id="RSi-ED-kaZ">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_isInvalid_border" translatesAutoresizingMaskIntoConstraints="NO" id="3q4-Vr-Y88">
-                                        <rect key="frame" x="-1" y="-1" width="263" height="52"/>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_isInvalid_border" translatesAutoresizingMaskIntoConstraints="NO" id="3q4-Vr-Y88">
+                                        <rect key="frame" x="0.0" y="0.0" width="260" height="50"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_password_icon" translatesAutoresizingMaskIntoConstraints="NO" id="Oq6-zx-V2a">
                                         <rect key="frame" x="12" y="13" width="16" height="24"/>
@@ -1278,13 +1284,16 @@
                                         <color key="textColor" red="0.078434817492961884" green="0.69818341732025146" blue="0.83165973424911499" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fit-RH-zPE">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fit-RH-zPE">
                                         <rect key="frame" x="196.33333333333331" y="15" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="GgV-Tm-P0p"/>
                                             <constraint firstAttribute="height" constant="20" id="pua-OB-HPb"/>
                                         </constraints>
                                         <state key="normal" image="btn_email_delete"/>
+                                        <connections>
+                                            <action selector="tappedDeleteButton:" destination="fyu-wJ-reb" eventType="touchUpInside" id="4bl-LY-tTl"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력(8자이상, 영문/숫자혼합)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhB-Uo-o6r">
                                         <rect key="frame" x="44" y="15" width="144.33333333333334" height="20"/>
@@ -1303,17 +1312,17 @@
                                     <constraint firstItem="Oq6-zx-V2a" firstAttribute="leading" secondItem="ROd-iB-0H1" secondAttribute="leading" constant="12" id="Ayi-mI-0B4"/>
                                     <constraint firstItem="RSi-ED-kaZ" firstAttribute="leading" secondItem="ROd-iB-0H1" secondAttribute="leading" id="Bnv-qX-7RB"/>
                                     <constraint firstItem="Fit-RH-zPE" firstAttribute="centerY" secondItem="ROd-iB-0H1" secondAttribute="centerY" id="Fhe-E0-47w"/>
-                                    <constraint firstItem="3q4-Vr-Y88" firstAttribute="leading" secondItem="ROd-iB-0H1" secondAttribute="leading" constant="-1" id="MYV-2Q-2je"/>
+                                    <constraint firstItem="3q4-Vr-Y88" firstAttribute="leading" secondItem="ROd-iB-0H1" secondAttribute="leading" id="MYV-2Q-2je"/>
                                     <constraint firstItem="Oq6-zx-V2a" firstAttribute="centerY" secondItem="ROd-iB-0H1" secondAttribute="centerY" id="NnV-HL-5AK"/>
                                     <constraint firstItem="Snm-S9-2mu" firstAttribute="centerY" secondItem="RSi-ED-kaZ" secondAttribute="centerY" id="TK8-mp-x03"/>
                                     <constraint firstItem="Snm-S9-2mu" firstAttribute="leading" secondItem="Fit-RH-zPE" secondAttribute="trailing" constant="8" id="YFD-oe-s6r"/>
-                                    <constraint firstAttribute="trailing" secondItem="3q4-Vr-Y88" secondAttribute="trailing" constant="-2" id="bbR-E8-m0w"/>
+                                    <constraint firstAttribute="trailing" secondItem="3q4-Vr-Y88" secondAttribute="trailing" id="bbR-E8-m0w"/>
                                     <constraint firstAttribute="trailing" secondItem="Snm-S9-2mu" secondAttribute="trailing" constant="12" id="cFf-gI-Z6q"/>
                                     <constraint firstAttribute="height" constant="50" id="fax-pP-7wv"/>
                                     <constraint firstItem="FhB-Uo-o6r" firstAttribute="leading" secondItem="Oq6-zx-V2a" secondAttribute="trailing" constant="16" id="jEe-ad-oaL"/>
                                     <constraint firstItem="RSi-ED-kaZ" firstAttribute="top" secondItem="ROd-iB-0H1" secondAttribute="top" id="nkz-j9-qjp"/>
-                                    <constraint firstItem="3q4-Vr-Y88" firstAttribute="top" secondItem="ROd-iB-0H1" secondAttribute="top" constant="-1" id="oU0-6m-SOo"/>
-                                    <constraint firstAttribute="bottom" secondItem="3q4-Vr-Y88" secondAttribute="bottom" constant="-1" id="sqQ-uJ-bso"/>
+                                    <constraint firstItem="3q4-Vr-Y88" firstAttribute="top" secondItem="ROd-iB-0H1" secondAttribute="top" id="oU0-6m-SOo"/>
+                                    <constraint firstAttribute="bottom" secondItem="3q4-Vr-Y88" secondAttribute="bottom" id="sqQ-uJ-bso"/>
                                     <constraint firstAttribute="trailing" secondItem="RSi-ED-kaZ" secondAttribute="trailing" id="yK2-wb-g4b"/>
                                     <constraint firstAttribute="bottom" secondItem="RSi-ED-kaZ" secondAttribute="bottom" id="yQw-Fn-zw6"/>
                                 </constraints>
@@ -1324,7 +1333,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signup_email_bg" translatesAutoresizingMaskIntoConstraints="NO" id="jnU-3W-f3K">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="50"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_isInvalid_border" translatesAutoresizingMaskIntoConstraints="NO" id="aHg-RV-sDf">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_isInvalid_border" translatesAutoresizingMaskIntoConstraints="NO" id="aHg-RV-sDf">
                                         <rect key="frame" x="-1" y="-1" width="263" height="52"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불일치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfr-q4-zgD">
@@ -1333,13 +1342,16 @@
                                         <color key="textColor" red="0.97634261850000004" green="0.14278486369999999" blue="0.0044555929489999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99I-Cj-Gl9">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99I-Cj-Gl9">
                                         <rect key="frame" x="185" y="15" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="Onx-rY-WGP"/>
                                             <constraint firstAttribute="height" constant="20" id="W1Z-Jb-ZpC"/>
                                         </constraints>
                                         <state key="normal" image="btn_email_delete"/>
+                                        <connections>
+                                            <action selector="tappedDeleteButton:" destination="fyu-wJ-reb" eventType="touchUpInside" id="wOJ-QT-0P2"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_password_icon" translatesAutoresizingMaskIntoConstraints="NO" id="veP-jj-oGh">
                                         <rect key="frame" x="12" y="13" width="16" height="24"/>
@@ -1422,6 +1434,7 @@
                             <constraint firstItem="oQT-T7-uDR" firstAttribute="trailing" secondItem="G6S-QM-lqd" secondAttribute="trailing" id="y7k-oF-Mk9"/>
                             <constraint firstItem="K0f-HX-JK7" firstAttribute="leading" secondItem="ytO-rQ-Qe8" secondAttribute="leading" id="yRl-kg-dML"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="cj5-ku-64S"/>
                     </view>
                     <connections>
                         <outlet property="duplicatedCheckButton" destination="28H-HN-6Dt" id="6pq-eb-6iw"/>
@@ -1430,6 +1443,7 @@
                         <outlet property="headerViewHeight" destination="hyV-n6-qXA" id="Pjg-2u-kD3"/>
                         <outlet property="loginLabelHeight" destination="dU5-RS-mq3" id="sJD-f0-UvT"/>
                         <outlet property="login_bg_height" destination="3iU-sV-uGF" id="mtT-cd-tvx"/>
+                        <outlet property="nextButton" destination="Jr9-mx-yve" id="GSW-T6-EfP"/>
                         <outlet property="passwordBorder" destination="3q4-Vr-Y88" id="hbo-4e-Pl1"/>
                         <outlet property="passwordDeleteButton" destination="Fit-RH-zPE" id="dpQ-Ff-bCz"/>
                         <outlet property="passwordTextField" destination="FhB-Uo-o6r" id="doO-rc-ZV7"/>

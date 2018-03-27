@@ -14,8 +14,7 @@ struct SignUpViewModel {
     var retryEmail = Variable<String>("")
     var password = Variable<String>("")
     var retryPassword = Variable<String>("")
-    
-    
+
     // 이메일 일치하는지 체크
     var isValidRetryEmail: Observable<Bool> {
         return Observable.combineLatest(email.asObservable(), retryEmail.asObservable()) {
@@ -45,10 +44,12 @@ struct SignUpViewModel {
     
     // 모든 항목이 올바른지
     var isAllValid: Observable<Bool> {
-        return Observable.combineLatest(email.asObservable(), retryEmail.asObservable(), password.asObservable(), retryPassword.asObservable()) {
+        return Observable.combineLatest(email.asObservable(),
+                                        retryEmail.asObservable(),
+                                        password.asObservable(),
+                                        retryPassword.asObservable()) {
             (email, retryEmail, password, rePassword) in
-            
-            (email == retryEmail) && (password == rePassword) && (!password.isEmpty) && (!rePassword.isEmptry)
+                                            email.validEmailAddress && email == retryEmail && password == rePassword && password.isPasswordValid() && rePassword.isPasswordValid()
         }
     }
 

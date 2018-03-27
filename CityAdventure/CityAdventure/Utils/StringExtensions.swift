@@ -30,7 +30,7 @@ extension String {
     
     func isPasswordValid() -> Bool{
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-zA-Z]+)(?=.*[!@#$%^*+=-]|.*[0-9]+).{8,16}$")
-        return passwordTest.evaluate(with: self)
+        return passwordTest.evaluate(with: self) && !self.isEmpty
     }
     
     
