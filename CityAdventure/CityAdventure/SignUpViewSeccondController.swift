@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SignUpViewSeccondController: UIViewController {
 
@@ -51,9 +53,18 @@ class SignUpViewSeccondController: UIViewController {
     @IBOutlet weak var retryPasswordBorder: UIImageView!
     
     
+    
+    // ViewModel
+    var signUpViewModel = SignUpViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
+        viewModelBinding()
+        
+    }
+    
+    func viewModelBinding() {
         
     }
     
@@ -72,13 +83,9 @@ class SignUpViewSeccondController: UIViewController {
             login_bg_height.constant = 380
             loginLabelHeight.constant = 8
             profileLabelHeight.constant = 8
-            
             topconst1.constant = 18
             topconst3.constant = 18
-            
-            
+    
         }
     }
-    
-    
 }

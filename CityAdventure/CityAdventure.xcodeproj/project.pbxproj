@@ -17,6 +17,7 @@
 		CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */; };
 		CEE3B3C2206A221700156387 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C1206A221700156387 /* SignUpViewModel.swift */; };
 		CEE3B3C4206A22A900156387 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C3206A22A900156387 /* Account.swift */; };
+		CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C6206A2C9600156387 /* StringExtensions.swift */; };
 		CEF716342064CB1900B457E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF716332064CB1900B457E9 /* AppDelegate.swift */; };
 		CEF716362064CB1900B457E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF716352064CB1900B457E9 /* ViewController.swift */; };
 		CEF716392064CB1900B457E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF716372064CB1900B457E9 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSeccondController.swift; sourceTree = "<group>"; };
 		CEE3B3C1206A221700156387 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		CEE3B3C3206A22A900156387 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		CEE3B3C6206A2C9600156387 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CEF716302064CB1900B457E9 /* CityAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF716332064CB1900B457E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEF716352064CB1900B457E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				CE24D7842067AECA00B21EF3 /* ColorExtensions.swift */,
+				CEE3B3C6206A2C9600156387 /* StringExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -102,6 +105,14 @@
 				CE24D7892067EECB00B21EF3 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		CEE3B3C5206A2A6A00156387 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEE3B3C3206A22A900156387 /* Account.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CEF716272064CB1900B457E9 = {
@@ -125,6 +136,7 @@
 		CEF716322064CB1900B457E9 /* CityAdventure */ = {
 			isa = PBXGroup;
 			children = (
+				CEE3B3C5206A2A6A00156387 /* Models */,
 				CE24D7882067EEB800B21EF3 /* Constants */,
 				CE24D7832067AE0600B21EF3 /* Utils */,
 				CEF716452064D12200B457E9 /* Assets */,
@@ -138,7 +150,6 @@
 				CE24D7862067B03B00B21EF3 /* SignUpViewController.swift */,
 				CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */,
 				CEE3B3C1206A221700156387 /* SignUpViewModel.swift */,
-				CEE3B3C3206A22A900156387 /* Account.swift */,
 			);
 			path = CityAdventure;
 			sourceTree = "<group>";
@@ -285,6 +296,7 @@
 				CE24D7852067AECA00B21EF3 /* ColorExtensions.swift in Sources */,
 				CEE3B3C2206A221700156387 /* SignUpViewModel.swift in Sources */,
 				CEE3B3C4206A22A900156387 /* Account.swift in Sources */,
+				CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */,
 				CEF716362064CB1900B457E9 /* ViewController.swift in Sources */,
 				CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */,
 				CEF716492064DB3200B457E9 /* LaunchScreenViewController.swift in Sources */,
