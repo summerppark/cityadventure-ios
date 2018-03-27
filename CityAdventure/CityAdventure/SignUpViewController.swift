@@ -18,12 +18,12 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var headerToolbar: UIView!
     @IBOutlet weak var headerToolbarHeight: NSLayoutConstraint!
     
-    // button 3개 상태 체크하기위한 토클값
+    // button 3개 상태 체크하기위한 토글값
     var toggleBooleans: [Bool] = [false, false, false]
     
-    
-    
+    // 모든 약관 동의 버튼
     @IBOutlet weak var allAgreementButton: UIButton!
+    // 다음으로 버튼
     @IBOutlet weak var goToNextButton: UIButton!
     
     
@@ -109,7 +109,6 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
                 height.constant = 160
             })
         }
-        
     }
     
     // 뒤로가기 버튼 눌렀을 때
@@ -117,7 +116,7 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
         self.navigationController?.popViewController(animated: true)
     }
     
-    // tapped leftBarButton
+    // 각 항목 체크 버튼 눌렀을 때
     @objc func tappedCheck(sender: UIButton) {
         if sender.currentImage == UIImage(named: "noncheck") {
             toggleBooleans[sender.tag] = true
@@ -127,12 +126,48 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
             toggleBooleans[sender.tag] = false
         }
         
-        
-        if toggleBooleans[0] && toggleBooleans[1] && toggleBooleans[2] {
-            allAgreementButton.setImage(UIImage(named:"btn_allCheck_agreementOn"), for: .normal)
-        } else {
-            allAgreementButton.setImage(UIImage(named:"btn_allCheck_agreement"), for: .normal)
-        }
-        
+        // 체크 상태 체크
+        checkStatus()
     }
+    
+    func checkStatus() {
+        if toggleBooleans[0] && toggleBooleans[1] && toggleBooleans[2] {
+            // 모든 항목 동의 했을 때 , 다음으로 넘어갈 수 있음
+            allAgreementButton.setImage(UIImage(named:"btn_allCheck_agreementOn"), for: .normal)
+            goToNextButton.setImage(UIImage(named: "btn_go_nextOn"), for: .normal)
+            goToNextButton.isEnabled = true
+        } else {
+            // 모든 항목 동의하지 않았을 때, 다음으로 넘어갈 수 없음
+            allAgreementButton.setImage(UIImage(named:"btn_allCheck_agreement"), for: .normal)
+            goToNextButton.setImage(UIImage(named: "btn_go_next2"), for: .normal)
+            goToNextButton.isEnabled = false
+        }
+    }
+    
+    //모든 약관 동의 버튼 눌렀을 때
+    @IBAction func allCheck(_ sender: Any) {
+        if toggleBooleans[0] && toggleBooleans[1] && toggleBooleans[2] {
+            for index in 0...toggleBooleans.count - 1 {
+                toggleBooleans[index] = false
+            }
+            
+            firstCheckIcon.setImage(UIImage(named:"noncheck"), for: .normal)
+            secondCheckIcon.setImage(UIImage(named:"noncheck"), for: .normal)
+            thirdCheckIcon.setImage(UIImage(named:"noncheck"), for: .normal)
+            
+            checkStatus()
+        } else {
+            for index in 0...toggleBooleans.count - 1 {
+                toggleBooleans[index] = true
+            }
+            
+            firstCheckIcon.setImage(UIImage(named:"auto_login_ok"), for: .normal)
+            secondCheckIcon.setImage(UIImage(named:"auto_login_ok"), for: .normal)
+            thirdCheckIcon.setImage(UIImage(named:"auto_login_ok"), for: .normal)
+            
+            checkStatus()
+        }
+    }
+    
+    
 }

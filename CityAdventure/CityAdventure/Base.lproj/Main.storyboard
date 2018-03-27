@@ -964,14 +964,17 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdk-g2-Kzh">
-                                <rect key="frame" x="13" y="510" width="294" height="48"/>
+                                <rect key="frame" x="13" y="442" width="294" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="IoB-OC-J2P"/>
                                 </constraints>
                                 <state key="normal" image="btn_allCheck_agreement"/>
+                                <connections>
+                                    <action selector="allCheck:" destination="mSs-hC-JPU" eventType="touchUpInside" id="lGJ-6t-7nA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yt-Yp-6x3">
-                                <rect key="frame" x="13" y="568" width="294" height="48"/>
+                                <rect key="frame" x="13" y="500" width="294" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="aD8-FJ-k68"/>
                                 </constraints>
@@ -1011,8 +1014,8 @@
                             <constraint firstItem="IeO-B9-QFg" firstAttribute="leading" secondItem="Jdu-bz-RPs" secondAttribute="leading" id="Xzi-Ir-N8h"/>
                             <constraint firstItem="WQR-wQ-R7N" firstAttribute="centerY" secondItem="IeO-B9-QFg" secondAttribute="centerY" id="YLC-dt-NbG"/>
                             <constraint firstItem="IeO-B9-QFg" firstAttribute="trailing" secondItem="yvv-c8-980" secondAttribute="trailing" constant="14" id="ZEP-CA-AZL"/>
-                            <constraint firstItem="Vdk-g2-Kzh" firstAttribute="top" secondItem="MaH-uP-tlB" secondAttribute="bottom" constant="20" id="Zu8-J2-AbW"/>
                             <constraint firstItem="Ikz-CF-7Lo" firstAttribute="bottom" secondItem="0bg-lF-5gv" secondAttribute="bottom" constant="5" id="cYv-gj-M21"/>
+                            <constraint firstAttribute="bottom" secondItem="5Yt-Yp-6x3" secondAttribute="bottom" constant="20" id="e16-E2-FdD"/>
                             <constraint firstItem="MaH-uP-tlB" firstAttribute="leading" secondItem="hZL-sb-iom" secondAttribute="leading" constant="13" id="eUB-yW-V7s"/>
                             <constraint firstItem="5Yt-Yp-6x3" firstAttribute="leading" secondItem="hZL-sb-iom" secondAttribute="leading" constant="13" id="ef4-MO-utF"/>
                             <constraint firstItem="IeO-B9-QFg" firstAttribute="top" secondItem="Jdu-bz-RPs" secondAttribute="top" id="f01-1a-BNh"/>
@@ -1061,7 +1064,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ia-Zt-b8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1471.875" y="901.05633802816908"/>
+            <point key="canvasLocation" x="1618" y="74"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7rV-qr-G49">
