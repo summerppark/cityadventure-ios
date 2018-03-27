@@ -169,5 +169,11 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    // 다음으로 버튼 눌렀을 때
+    @IBAction func goToNext(_ sender: Any) {
+        if let signup_SecondVC = storyboard?.instantiateViewController(withIdentifier: "SignUpViewSeccondController") {
+            self.navigationController?.pushViewController(signup_SecondVC, animated: true)
+        }
+    }
     
 }
