@@ -16,6 +16,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireObjectMapper (~> 5.0)
   - Kingfisher (~> 4.0)
+  - ObjectMapper (~> 3.1)
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
   - SnapKit (~> 4.0.0)
@@ -33,6 +34,6 @@ SPEC CHECKSUMS:
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: c574708405e4ebf0eae00e98bfb066bbf1b4c9a4
+PODFILE CHECKSUM: ddbfbcc6b60a2c782e954b080efa7ebddafd7af1
 
 COCOAPODS: 1.2.1
