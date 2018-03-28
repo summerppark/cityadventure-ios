@@ -139,7 +139,9 @@ class SignUpViewSeccondController: UIViewController {
     // 다음 화면으로 이동
     @objc func goToNext() {
         //다음 화면으로 이동할 시에 이메일과 비밀번호를 저장해둔다.
-        
+        if let nextVC = storyboard?.instantiateViewController(withIdentifier: "SignupViewThirdController") as? SignupViewThirdController {
+            self.navigationController?.pushViewController(nextVC, animated: true)
+        }
         
         
     }
@@ -223,7 +225,8 @@ extension SignUpViewSeccondController: UITextFieldDelegate {
             self.nextButton.setImage(image, for: .normal)
         } else {
             let image = UIImage(named: "btn_next")
-            self.nextButton.isEnabled = false
+            // 임시로 열어둠 
+            self.nextButton.isEnabled = true
             self.nextButton.setImage(image, for: .normal)
         }
     }

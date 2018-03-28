@@ -14,6 +14,7 @@ extension UIColor {
     static let status_ok_Color = UIColor().colorFromHex("#15b2d4")
     static let status_no_Color = UIColor().colorFromHex("#f90404")
     static let placeHolderColor = UIColor().colorFromHex("#b4b3b3")
+    static let buttonTitleColor = UIColor().colorFromHex("#B4B3B3")
     
     
     func colorFromHex(_ hex: String) -> UIColor {
