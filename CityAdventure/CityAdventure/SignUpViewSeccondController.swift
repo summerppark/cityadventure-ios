@@ -29,100 +29,73 @@ class SignUpViewSeccondController: UIViewController {
     @IBOutlet weak var topconst3: NSLayoutConstraint!
     
     // 첫번째 입력 부분 - 이메일 입력
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField! {
+        didSet {
+            emailTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
+        }
+    }
     @IBOutlet weak var emailDeleteButton: UIButton!
     @IBOutlet weak var duplicatedCheckButton: UIButton!
     
     // 두번째 입력 부분 - 이메일 재입력
-    @IBOutlet weak var retryEmailTextField: UITextField!
-    @IBOutlet weak var retryEmailTextFieldStatus: UILabel!
-    @IBOutlet weak var retryEmailBorder: UIImageView! {
+    @IBOutlet weak var retryEmailTextField: UITextField! {
         didSet {
-            retryEmailBorder.image?.withRenderingMode(.alwaysTemplate)
+            retryEmailTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
         }
     }
+    
+    @IBOutlet weak var retryEmailTextFieldStatus: UILabel!
+    @IBOutlet weak var retryEmailBorder: UIImageView!
     
     @IBOutlet weak var retryEmailDeleteButton: UIButton!
     
     // 3번째 입력 부분 - 비밀번호 입력
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var passwordDeleteButton: UIButton!
-    @IBOutlet weak var passwordTextFieldStatus: UILabel!
-    @IBOutlet weak var passwordBorder: UIImageView! {
+    @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
-            passwordBorder.image?.withRenderingMode(.alwaysTemplate)
+            passwordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
         }
     }
     
+    @IBOutlet weak var passwordDeleteButton: UIButton!
+    @IBOutlet weak var passwordTextFieldStatus: UILabel!
+    @IBOutlet weak var passwordBorder: UIImageView!
+    
     // 4번재 입력 부분 - 비밀번호 재입력
-    @IBOutlet weak var retryPasswordTextField: UITextField!
-    @IBOutlet weak var retryPasswordTextFieldStatus: UILabel!
-    @IBOutlet weak var retryPasswordDeleteButton: UIButton!
-    @IBOutlet weak var retryPasswordBorder: UIImageView! {
+    @IBOutlet weak var retryPasswordTextField: UITextField! {
         didSet {
-            retryPasswordBorder.image?.withRenderingMode(.alwaysTemplate)
+            retryPasswordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
         }
     }
+    
+    @IBOutlet weak var retryPasswordTextFieldStatus: UILabel!
+    @IBOutlet weak var retryPasswordDeleteButton: UIButton!
+    @IBOutlet weak var retryPasswordBorder: UIImageView!
     
     // 다음으로 버튼
     @IBOutlet weak var nextButton: UIButton!
     
     // 텍스트필드 배열
     var textFields: [UITextField] = []
-    
-    // ViewModel
-    var signUpViewModel = SignUpViewModel()
-    let disposeBag = DisposeBag()
-    
+    var deleteButtons: [UIButton] = []
+    var statuslabels: [UILabel] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // 텍스트필드 배열
+        
         textFields = [emailTextField, retryEmailTextField, passwordTextField, retryPasswordTextField]
+        
+        deleteButtons = [emailDeleteButton, retryEmailDeleteButton, passwordDeleteButton, retryPasswordDeleteButton]
+        
+        statuslabels = [retryEmailTextFieldStatus, passwordTextFieldStatus, retryPasswordTextFieldStatus]
        
+        textFields.forEach { (tf) in
+            tf.delegate = self
+        }
+        
+        
         layoutCheck()
-        viewModelBinding()
-        
-    }
-    
-    func viewModelBinding() {
-        _ = emailTextField.rx.text.map { $0 ?? "" }.bind(to: signUpViewModel.email)
-        _ = retryEmailTextField.rx.text.map { $0 ?? "" }.bind(to: signUpViewModel.retryEmail)
-        _ = passwordTextField.rx.text.map { $0 ?? "" }.bind(to: signUpViewModel.password)
-        _ = retryPasswordTextField.rx.text.map { $0 ?? "" }.bind(to: signUpViewModel.retryPassword)
-        
-        
-       
-        // valid 상태에 따라서 다음으로 버튼셋팅을 변경시켜 준다.
-        _ = signUpViewModel.isAllValid.subscribe(onNext: { [weak self] (isvalid) in
-            let image = isvalid ? UIImage(named: "btn_next_On") : UIImage(named: "btn_next")
-            self?.nextButton.isEnabled = isvalid
-            self?.nextButton.setImage(image, for: .normal)
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-        
-        // 이메일 재입력 체크
-        _ = signUpViewModel.isValidRetryEmail.subscribe(onNext: { [weak self] (isvalid) in
-            self?.retryEmailTextFieldStatus.text = isvalid ? "일치" : "불일치"
-            self?.retryEmailTextFieldStatus.textColor = isvalid ? UIColor.status_ok_Color : UIColor.status_no_Color
-            self?.retryEmailBorder.isHidden = isvalid
-            
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-        
-        // 비밀번호 체크
-        _ = signUpViewModel.isValidPassword.subscribe(onNext: { [weak self] (isvalid) in
-            self?.passwordTextFieldStatus.text = isvalid ? "안전" : "불가"
-            self?.passwordTextFieldStatus.textColor = isvalid ? UIColor.status_ok_Color : UIColor.status_no_Color
-            self?.passwordBorder.isHidden = isvalid
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-        
-        // 비밀번호 재입력 체크
-        _ = signUpViewModel.isValidRetryPassword.subscribe(onNext: { [weak self](isvalid) in
-            
-            self?.retryPasswordTextFieldStatus.text = isvalid ? "일치" : "불일치"
-            self?.retryPasswordTextFieldStatus.textColor = isvalid ? UIColor.status_ok_Color : UIColor.status_no_Color
-            self?.retryPasswordBorder.isHidden = isvalid
-            
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
-        
+
     }
     
     func layoutCheck() {
@@ -152,6 +125,87 @@ class SignUpViewSeccondController: UIViewController {
     @IBAction func tappedDeleteButton(_ sender: UIButton) {
         print(sender.tag)
     }
+}
+
+
+extension SignUpViewSeccondController: UITextFieldDelegate {
     
     
+    // 입력값에 따른 상태 체크
+    @objc func textFieldDidChange(sender: UITextField) {
+        deleteButtons[sender.tag].isHidden = false
+        // 이메일 + 이메일 재입력
+        if sender.tag == 1 || (sender.tag == 0 && !(retryEmailTextField.text?.isEmpty)!) {
+            if emailTextField.text == retryEmailTextField.text {
+                retryEmailTextFieldStatus.isHidden = false
+                retryEmailTextFieldStatus.textColor = UIColor.status_ok_Color
+                retryEmailTextFieldStatus.text = "일치"
+                retryEmailBorder.isHidden = true
+            } else {
+                retryEmailTextFieldStatus.textColor = UIColor.status_no_Color
+                retryEmailTextFieldStatus.text = "블일치"
+                retryEmailTextFieldStatus.isHidden = false
+                retryEmailBorder.isHidden = false
+            }
+        } else if sender.tag == 2 {
+            if (passwordTextField.text?.isPasswordValid())! {
+                passwordTextFieldStatus.isHidden = false
+                passwordTextFieldStatus.textColor = UIColor.status_ok_Color
+                passwordTextFieldStatus.text = "안전"
+                
+                passwordBorder.isHidden = true
+            } else {
+                passwordTextFieldStatus.isHidden = false
+                passwordTextFieldStatus.textColor = UIColor.status_no_Color
+                passwordTextFieldStatus.text = "불가"
+                passwordBorder.isHidden = false
+            }
+        } else if sender.tag == 3 {
+            if (retryPasswordTextField.text?.isPasswordValid())! && retryPasswordTextField.text == passwordTextField.text {
+                retryPasswordTextFieldStatus.isHidden = false
+                retryPasswordTextFieldStatus.textColor = UIColor.status_ok_Color
+                retryPasswordTextFieldStatus.text = "일치"
+                retryPasswordBorder.isHidden = true
+            } else {
+                retryPasswordTextFieldStatus.isHidden = false
+                retryPasswordTextFieldStatus.textColor = UIColor.status_no_Color
+                retryPasswordTextFieldStatus.text = "불일치"
+                retryPasswordBorder.isHidden = false
+            }
+        }
+        
+        if retryPasswordTextFieldStatus.text == "일치" && passwordTextFieldStatus.text == "안전" && retryEmailTextFieldStatus.text == "일치" {
+            let image = UIImage(named: "btn_next_On")
+            self.nextButton.isEnabled = true
+            self.nextButton.setImage(image, for: .normal)
+        } else {
+            let image = UIImage(named: "btn_next")
+            self.nextButton.isEnabled = false
+            self.nextButton.setImage(image, for: .normal)
+        }
+    }
+        
+    
+    // textField 에디팅 될 때
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if !(textField.text?.isEmpty)! {
+            deleteButtons[textField.tag].isHidden = false
+        }
+        return true
+    }
+    
+    // 입력되어있는 비밀번호를 수정할 때
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.tag == 2 {
+            retryPasswordTextFieldStatus.isHidden = true
+            retryPasswordTextField.text = ""
+        }
+        return true
+    }
+    
+    // textField 리자인 될 때
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        deleteButtons[textField.tag].isHidden = true
+        return true
+    }
 }

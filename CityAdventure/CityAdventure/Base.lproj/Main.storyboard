@@ -1163,7 +1163,7 @@
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCf-N7-OhU">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCf-N7-OhU">
                                         <rect key="frame" x="174" y="15.666666666666657" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="N2G-Rf-owz"/>
@@ -1205,7 +1205,7 @@
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_isInvalid_border" translatesAutoresizingMaskIntoConstraints="NO" id="Rvv-fp-D6E">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="50"/>
                                     </imageView>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-Te-VG2">
+                                    <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-Te-VG2">
                                         <rect key="frame" x="185" y="15" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="c1n-E2-Axz"/>
@@ -1223,13 +1223,13 @@
                                             <constraint firstAttribute="width" constant="16" id="hDT-9c-o1U"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불일치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ry-0T-eEO">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불일치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ry-0T-eEO">
                                         <rect key="frame" x="213" y="18" width="35" height="15"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                         <color key="textColor" red="0.97634261846542358" green="0.14278486371040344" blue="0.0044555929489433765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일 재입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="koX-bA-VLT">
+                                    <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일 재입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="koX-bA-VLT">
                                         <rect key="frame" x="44" y="15.333333333333343" width="133" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1278,13 +1278,13 @@
                                             <constraint firstAttribute="width" constant="16" id="sDv-Up-6HG"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snm-S9-2mu">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안전" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Snm-S9-2mu">
                                         <rect key="frame" x="224.33333333333331" y="18" width="23.666666666666657" height="15"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                         <color key="textColor" red="0.078434817492961884" green="0.69818341732025146" blue="0.83165973424911499" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fit-RH-zPE">
+                                    <button hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fit-RH-zPE">
                                         <rect key="frame" x="196.33333333333331" y="15" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="GgV-Tm-P0p"/>
@@ -1295,7 +1295,7 @@
                                             <action selector="tappedDeleteButton:" destination="fyu-wJ-reb" eventType="touchUpInside" id="4bl-LY-tTl"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력(8자이상, 영문/숫자혼합)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhB-Uo-o6r">
+                                    <textField opaque="NO" tag="2" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력(8자이상, 영문/숫자혼합)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FhB-Uo-o6r">
                                         <rect key="frame" x="44" y="15" width="144.33333333333334" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="1Ti-n1-nwc"/>
@@ -1336,13 +1336,13 @@
                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email_isInvalid_border" translatesAutoresizingMaskIntoConstraints="NO" id="aHg-RV-sDf">
                                         <rect key="frame" x="-1" y="-1" width="263" height="52"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불일치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfr-q4-zgD">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불일치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfr-q4-zgD">
                                         <rect key="frame" x="213" y="17.666666666666686" width="35" height="15"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                         <color key="textColor" red="0.97634261850000004" green="0.14278486369999999" blue="0.0044555929489999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99I-Cj-Gl9">
+                                    <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99I-Cj-Gl9">
                                         <rect key="frame" x="185" y="15" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="Onx-rY-WGP"/>
@@ -1360,7 +1360,7 @@
                                             <constraint firstAttribute="height" constant="24" id="Syd-PO-mqn"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 재입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xke-qo-A7r">
+                                    <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 재입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xke-qo-A7r">
                                         <rect key="frame" x="44" y="18" width="133" height="15"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
