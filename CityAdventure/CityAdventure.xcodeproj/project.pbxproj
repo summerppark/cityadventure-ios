@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		97123B1BFBF35870DFFAFEE4 /* Pods_CityAdventure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */; };
+		CE1DA223206B5B48000C36B2 /* SignUpViewSecondPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */; };
+		CE1DA225206B5E49000C36B2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA224206B5E49000C36B2 /* APIManager.swift */; };
+		CE1DA227206B5EDD000C36B2 /* EmailChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA226206B5EDD000C36B2 /* EmailChecker.swift */; };
+		CE1DA229206B62B1000C36B2 /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA228206B62B1000C36B2 /* APIUrls.swift */; };
+		CE1DA22B206B67AB000C36B2 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA22A206B67AB000C36B2 /* AlertViewController.swift */; };
 		CE24D7852067AECA00B21EF3 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24D7842067AECA00B21EF3 /* ColorExtensions.swift */; };
 		CE24D7872067B03B00B21EF3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24D7862067B03B00B21EF3 /* SignUpViewController.swift */; };
 		CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24D7892067EECB00B21EF3 /* Constants.swift */; };
@@ -28,6 +33,11 @@
 
 /* Begin PBXFileReference section */
 		44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSecondPresenter.swift; sourceTree = "<group>"; };
+		CE1DA224206B5E49000C36B2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		CE1DA226206B5EDD000C36B2 /* EmailChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailChecker.swift; sourceTree = "<group>"; };
+		CE1DA228206B62B1000C36B2 /* APIUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
+		CE1DA22A206B67AB000C36B2 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		CE24D7842067AECA00B21EF3 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		CE24D7862067B03B00B21EF3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CE24D7892067EECB00B21EF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -109,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE3B3C3206A22A900156387 /* Account.swift */,
+				CE1DA226206B5EDD000C36B2 /* EmailChecker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,6 +127,7 @@
 		CEF716272064CB1900B457E9 = {
 			isa = PBXGroup;
 			children = (
+				CE1DA22A206B67AB000C36B2 /* AlertViewController.swift */,
 				CEF716322064CB1900B457E9 /* CityAdventure */,
 				CEF716312064CB1900B457E9 /* Products */,
 				9C85A1D423DEC09FAFF113EF /* Pods */,
@@ -147,6 +159,9 @@
 				CEF7164A2064F40700B457E9 /* LoginViewController.swift */,
 				CE24D7862067B03B00B21EF3 /* SignUpViewController.swift */,
 				CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */,
+				CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */,
+				CE1DA224206B5E49000C36B2 /* APIManager.swift */,
+				CE1DA228206B62B1000C36B2 /* APIUrls.swift */,
 			);
 			path = CityAdventure;
 			sourceTree = "<group>";
@@ -287,15 +302,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1DA227206B5EDD000C36B2 /* EmailChecker.swift in Sources */,
+				CE1DA225206B5E49000C36B2 /* APIManager.swift in Sources */,
 				CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */,
 				CE24D7872067B03B00B21EF3 /* SignUpViewController.swift in Sources */,
+				CE1DA229206B62B1000C36B2 /* APIUrls.swift in Sources */,
 				CEF7164B2064F40800B457E9 /* LoginViewController.swift in Sources */,
 				CE24D7852067AECA00B21EF3 /* ColorExtensions.swift in Sources */,
 				CEE3B3C4206A22A900156387 /* Account.swift in Sources */,
 				CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */,
 				CEF716362064CB1900B457E9 /* ViewController.swift in Sources */,
 				CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */,
+				CE1DA223206B5B48000C36B2 /* SignUpViewSecondPresenter.swift in Sources */,
 				CEF716492064DB3200B457E9 /* LaunchScreenViewController.swift in Sources */,
+				CE1DA22B206B67AB000C36B2 /* AlertViewController.swift in Sources */,
 				CEF716342064CB1900B457E9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

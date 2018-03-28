@@ -15,6 +15,8 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
                              NSAttributedStringKey.foregroundColor : UIColor.textView_gray_Color
     ]
     
+    
+    
     @IBOutlet weak var headerToolbar: UIView!
     @IBOutlet weak var headerToolbarHeight: NSLayoutConstraint!
     
