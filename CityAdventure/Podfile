@@ -21,13 +21,7 @@ target 'CityAdventure' do
 
     # GIF
     pod 'SwiftGifOrigin', '~> 1.6.1'
-
-
-
-    # Rx
-    pod 'RxSwift', '~> 4.0'
-    pod 'RxCocoa', '~> 4.0'
-
+  
 
     # Modeling 
     pod 'ObjectMapper', '~> 3.1'
