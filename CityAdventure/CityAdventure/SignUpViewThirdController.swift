@@ -10,14 +10,13 @@ import UIKit
 
 class SignupViewThirdController: UIViewController {
     
-    var selectCityViewController: SelectCityViewController?
-    
-    
     // 헤더뷰
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
-    
-    
+    let nextOn = UIImage(named: "btn_next_On")
+    let nextOff = UIImage(named: "btn_next")
+
+    var toggles: [Bool] = [false, false, false, false, false]
     
     // 이름 텍스트필드
     @IBOutlet weak var nameTextField: UITextField! {
@@ -77,6 +76,7 @@ class SignupViewThirdController: UIViewController {
         }
     }
     
+    @IBOutlet weak var nextButton: UIButton!
     
     
     // City 입력 컨스트레인트
@@ -106,22 +106,27 @@ class SignupViewThirdController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        
-        
         layoutCheck()
         createDatePicker()
+        addGesture()
     }
     
+    func addGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closePressed))
+        self.view.addGestureRecognizer(tapGesture)
+    }
     
     // 성별 누를때 마다
     @objc func genderSelect(sender: UIButton) {
+        toggles[1] = true
         if sender.tag == 0 {
             makeAttributedString(toggle: true)
         } else {
             makeAttributedString(toggle: false)
         }
     }
+    
+    
     
     // X 버튼 눌렀을 때
     @objc func deleteName() {
@@ -141,7 +146,6 @@ class SignupViewThirdController: UIViewController {
             bornTopConstraint.constant = 28
             livedCityTopConstraint.constant = 18
             labelTopConstraint.constant = 12
-            
         }
     }
     
@@ -195,11 +199,13 @@ class SignupViewThirdController: UIViewController {
     
     // 선택
     @objc func donePressed() {
+        toggles[2] = true
         // 데이트 형식 셋팅
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy년 M월 dd일"
         // 선택 값 넣어주기.
         birthdayTextField.text = dateFormatter.string(from: picker.date)
+        checkStatus()
         self.view.endEditing(true)
     }
     
@@ -225,6 +231,16 @@ class SignupViewThirdController: UIViewController {
             self.present(selectCityVC, animated: false, completion: nil)
         }
     }
+    
+    func checkStatus() {
+        if toggles[0] && toggles[1] && toggles[2] && toggles[3] && toggles[4] {
+            nextButton.setImage(nextOn, for: .normal)
+            nextButton.isEnabled = true
+        } else {
+            nextButton.setImage(nextOff, for: .normal)
+            nextButton.isEnabled = false
+        }
+    }
 }
 
 
@@ -245,6 +261,8 @@ extension SignupViewThirdController: UITextFieldDelegate {
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.tag == 0 {
+            toggles[0] = !(textField.text == "")
+            checkStatus()
             deleteButton.isHidden = true
         }
         return true
@@ -266,15 +284,15 @@ extension SignupViewThirdController: SelectCityProtocol {
     func selectedCity(name: String, tag: Int) {
         print(name,tag)
         if tag == 0 {
+            toggles[3] = true
             bornCityButton.setTitleColor(.black, for: .normal)
             bornCityButton.setTitle(name, for: .normal)
+            checkStatus()
         } else {
+            toggles[4] = true
             currentLiveCityButton.setTitleColor(.black, for: .normal)
             currentLiveCityButton.setTitle(name, for: .normal)
+            checkStatus()
         }
     }
-    
-    
-    
-    
 }

@@ -85,7 +85,10 @@ class SignUpViewSeccondController: UIViewController {
     // 텍스트필드 배열
     var textFields: [UITextField] = []
     var deleteButtons: [UIButton] = []
-
+    var isValidEmail: Bool = false
+    
+    
+    
     //Presenter
     var presenter: SignUpViewSecondPresenter!
     
@@ -148,6 +151,7 @@ class SignUpViewSeccondController: UIViewController {
     
     // 배경 눌렀을 때 키보드 내려감
     @objc func tappedBackgroundView() {
+        statusCheck()
         self.view.endEditing(true)
     }
     
@@ -218,14 +222,17 @@ extension SignUpViewSeccondController: UITextFieldDelegate {
                 retryPasswordBorder.isHidden = false
             }
         }
-        
-        if retryPasswordTextFieldStatus.text == "일치" && passwordTextFieldStatus.text == "안전" && retryEmailTextFieldStatus.text == "일치" {
+        statusCheck()
+    }
+
+    func statusCheck() {
+        if retryPasswordTextFieldStatus.text == "일치" && passwordTextFieldStatus.text == "안전" && retryEmailTextFieldStatus.text == "일치" && isValidEmail && passwordTextField.text != "" && retryPasswordTextField.text != "" {
             let image = UIImage(named: "btn_next_On")
             self.nextButton.isEnabled = true
             self.nextButton.setImage(image, for: .normal)
         } else {
             let image = UIImage(named: "btn_next")
-            // 임시로 열어둠 
+            // 임시로 열어둠
             self.nextButton.isEnabled = true
             self.nextButton.setImage(image, for: .normal)
         }
@@ -245,6 +252,7 @@ extension SignUpViewSeccondController: UITextFieldDelegate {
         if textField.tag == 2 {
             retryPasswordTextFieldStatus.isHidden = true
             retryPasswordTextField.text = ""
+            statusCheck()
         }
         return true
     }
@@ -262,9 +270,7 @@ extension SignUpViewSeccondController: UITextFieldDelegate {
         }
         
         // 입력상태가 모두 올바르면 다음으로 넘어감
-        if retryEmailTextFieldStatus.text == "일치" && passwordTextFieldStatus.text == "안전" && retryPasswordTextFieldStatus.text == "일치" {
-            
-        }
+        statusCheck()
         
         return true
     }
@@ -289,7 +295,9 @@ extension SignUpViewSeccondController: SignUpViewSecondPresenterProtocol {
                     self?.emailTextField.text = ""
                     self?.duplicatedCheckButton.setImage(UIImage(named:"btn_duplicated_icon_before"), for: .normal)
                 } else {
+                    self?.isValidEmail = true
                     self?.duplicatedCheckButton.setImage(UIImage(named:"btn_duplicated_icon_after"), for: .normal)
+                    self?.statusCheck()
                 }
             }
         }

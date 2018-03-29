@@ -17,6 +17,8 @@ class SelectCityViewController: UIViewController {
     
     var delegate: SelectCityProtocol?
     var tag: Int = 0
+    
+    // 검색 텍스트필드
     @IBOutlet weak var searchTextField: UITextField! {
         didSet {
             searchTextField.delegate = self
@@ -24,17 +26,19 @@ class SelectCityViewController: UIViewController {
         }
     }
     
-    
+    // 검색결과 테이블 뷰
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.rowHeight = UITableViewAutomaticDimension
         }
     }
     
-    
+    // 제목 레이블 설정
     var titleString: String?
     
+    //검색 + 결과 담고있는 뷰
     @IBOutlet weak var cityView: UIView! {
         didSet {
             cityView.layer.borderWidth = 5.0
@@ -42,7 +46,7 @@ class SelectCityViewController: UIViewController {
         }
     }
     
-    
+    // 제목
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.text = titleString
@@ -53,7 +57,7 @@ class SelectCityViewController: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     
     
-    
+    // 높이
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     
@@ -62,11 +66,13 @@ class SelectCityViewController: UIViewController {
         
         closeButtonLayout()
         layoutCheck()
-       
+        
+        // 태어난 곳인지 사는 곳인지
         tag = titleString?.first == "태" ? 0 : 1
         
     }
     
+    // X버튼 레이아웃
     func closeButtonLayout() {
         closeButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(bgImageView.snp.trailing).offset(-4)
@@ -75,7 +81,7 @@ class SelectCityViewController: UIViewController {
         }
     }
     
-    
+    // 디바이스 별 레이아웃 체크
     func layoutCheck() {
         if Constants.DeviceType.IS_IPHONE_6P || Constants.DeviceType.IS_IPHONE_X {
             heightConstraint.constant = 400
@@ -87,7 +93,7 @@ class SelectCityViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
-    
+    //MARK:- 검색부분
     @IBAction func tappedSearchButton(_ sender: Any) {
         // 검색 시작
         print("검색",searchTextField.text ?? "")
@@ -127,5 +133,4 @@ extension SelectCityViewController: UITableViewDataSource, UITableViewDelegate {
         delegate?.selectedCity(name: "강원도 강릉", tag: tag)
         self.dismiss(animated: false)
     }
-    
 }

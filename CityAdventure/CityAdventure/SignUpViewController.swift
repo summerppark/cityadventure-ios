@@ -84,8 +84,8 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
     let okCheck = UIImage(named:"auto_login_ok")
     let allAgreement = UIImage(named:"btn_allCheck_agreement")
     let allAgreementOn = UIImage(named:"btn_allCheck_agreementOn")
-    let goToNextOn = UIImage(named: "btn_go_nextOn")
-    let goToNext = UIImage(named: "btn_go_next2")
+    let goToNextOn = UIImage(named: "btn_next_On")
+    let goToNext = UIImage(named: "btn_next")
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
