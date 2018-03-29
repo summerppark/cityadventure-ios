@@ -79,6 +79,14 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     
+    // 이미지
+    let noncheck = UIImage(named:"noncheck")
+    let okCheck = UIImage(named:"auto_login_ok")
+    let allAgreement = UIImage(named:"btn_allCheck_agreement")
+    let allAgreementOn = UIImage(named:"btn_allCheck_agreementOn")
+    let goToNextOn = UIImage(named: "btn_go_nextOn")
+    let goToNext = UIImage(named: "btn_go_next2")
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
@@ -120,11 +128,11 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // 각 항목 체크 버튼 눌렀을 때
     @objc func tappedCheck(sender: UIButton) {
-        if sender.currentImage == UIImage(named: "noncheck") {
+        if sender.currentImage == noncheck {
             toggleBooleans[sender.tag] = true
-            sender.setImage(UIImage(named:"auto_login_ok"), for: .normal)
+            sender.setImage(okCheck, for: .normal)
         } else {
-            sender.setImage(UIImage(named:"noncheck"), for: .normal)
+            sender.setImage(noncheck, for: .normal)
             toggleBooleans[sender.tag] = false
         }
         
@@ -135,13 +143,13 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
     func checkStatus() {
         if toggleBooleans[0] && toggleBooleans[1] && toggleBooleans[2] {
             // 모든 항목 동의 했을 때 , 다음으로 넘어갈 수 있음
-            allAgreementButton.setImage(UIImage(named:"btn_allCheck_agreementOn"), for: .normal)
-            goToNextButton.setImage(UIImage(named: "btn_go_nextOn"), for: .normal)
+            allAgreementButton.setImage(allAgreementOn, for: .normal)
+            goToNextButton.setImage(goToNextOn, for: .normal)
             goToNextButton.isEnabled = true
         } else {
             // 모든 항목 동의하지 않았을 때, 다음으로 넘어갈 수 없음
-            allAgreementButton.setImage(UIImage(named:"btn_allCheck_agreement"), for: .normal)
-            goToNextButton.setImage(UIImage(named: "btn_go_next2"), for: .normal)
+            allAgreementButton.setImage(allAgreement, for: .normal)
+            goToNextButton.setImage(goToNext, for: .normal)
             goToNextButton.isEnabled = false
         }
     }
@@ -153,9 +161,9 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
                 toggleBooleans[index] = false
             }
             
-            firstCheckIcon.setImage(UIImage(named:"noncheck"), for: .normal)
-            secondCheckIcon.setImage(UIImage(named:"noncheck"), for: .normal)
-            thirdCheckIcon.setImage(UIImage(named:"noncheck"), for: .normal)
+            firstCheckIcon.setImage(noncheck, for: .normal)
+            secondCheckIcon.setImage(noncheck, for: .normal)
+            thirdCheckIcon.setImage(noncheck, for: .normal)
             
             checkStatus()
         } else {
@@ -163,9 +171,9 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
                 toggleBooleans[index] = true
             }
             
-            firstCheckIcon.setImage(UIImage(named:"auto_login_ok"), for: .normal)
-            secondCheckIcon.setImage(UIImage(named:"auto_login_ok"), for: .normal)
-            thirdCheckIcon.setImage(UIImage(named:"auto_login_ok"), for: .normal)
+            firstCheckIcon.setImage(okCheck, for: .normal)
+            secondCheckIcon.setImage(okCheck, for: .normal)
+            thirdCheckIcon.setImage(okCheck, for: .normal)
             
             checkStatus()
         }
