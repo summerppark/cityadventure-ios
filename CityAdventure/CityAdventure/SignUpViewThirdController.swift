@@ -20,6 +20,7 @@ class SignupViewThirdController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField! {
         didSet {
             nameTextField.delegate = self
+            nameTextField.attributedPlaceholder = NSAttributedString(string: nameTextField.placeholder!, attributes: (attributedString as Any as! [NSAttributedStringKey : Any]))
         }
     }
     
@@ -40,9 +41,20 @@ class SignupViewThirdController: UIViewController {
     }
     
     // 생일 텍스트 필드 -> 데이트피커
-    @IBOutlet weak var birthdayTextField: UITextField!
+    @IBOutlet weak var birthdayTextField: UITextField! {
+        didSet {
+            birthdayTextField.attributedPlaceholder = NSAttributedString(string: birthdayTextField.placeholder!, attributes: (attributedString as Any as! [NSAttributedStringKey : Any]))
+        }
+    }
     
+    // 데이트피커
+    let picker: UIDatePicker = {
+        let dp = UIDatePicker()
+        dp.backgroundColor = UIColor.lightBrownBgColor
+        return dp
+    }()
     
+    // 삭제버튼
     @IBOutlet weak var deleteButton: UIButton! {
         didSet {
             deleteButton.addTarget(self, action: #selector(deleteName), for: .touchUpInside)
@@ -50,10 +62,30 @@ class SignupViewThirdController: UIViewController {
     }
     
     
+    @IBOutlet weak var bornCityButton: UIButton! {
+        didSet {
+            bornCityButton.addTarget(self, action: #selector(selectCity), for: .touchUpInside)
+        }
+    }
+    
+    @IBOutlet weak var currentLiveCityButton: UIButton! {
+        didSet {
+            currentLiveCityButton.addTarget(self, action: #selector(selectCity), for: .touchUpInside)
+        }
+    }
+    
+    
+    
     // City 입력 컨스트레인트
     @IBOutlet weak var cityTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var cityHeight: NSLayoutConstraint!
     @IBOutlet weak var cityLabelTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bornTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var livedCityTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var labelTopConstraint: NSLayoutConstraint!
+    
+    
+    
     
     
     let checkOn = UIImage(named: "btn_checkOn_gender")
@@ -70,6 +102,7 @@ class SignupViewThirdController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
+        createDatePicker()
     }
     
     
@@ -96,8 +129,12 @@ class SignupViewThirdController: UIViewController {
             cityTopConstraint.constant = 42
             cityHeight.constant = 260
             cityLabelTopConstraint.constant = 12
+            // 밑에 도시부분
+            bornTopConstraint.constant = 28
+            livedCityTopConstraint.constant = 18
+            labelTopConstraint.constant = 12
+            
         }
-        
     }
     
     
@@ -108,9 +145,77 @@ class SignupViewThirdController: UIViewController {
         femaleCheckImage.image = !toggle ? checkOn : checkOff
         let type = toggle ? checkedAttributedString : attributedString
         let type2 = toggle ? attributedString : checkedAttributedString
-        maleButton.setAttributedTitle(NSAttributedString(string: (maleButton.titleLabel?.text)!, attributes: type), for: .normal)
-        femaleButton.setAttributedTitle(NSAttributedString(string: (femaleButton.titleLabel?.text)!, attributes: type2), for: .normal)
-     
+        maleButton.setAttributedTitle(NSAttributedString(string: (maleButton.titleLabel?.text)!, attributes: type as Any as? [NSAttributedStringKey : Any]), for: .normal)
+        femaleButton.setAttributedTitle(NSAttributedString(string: (femaleButton.titleLabel?.text)!, attributes: (type2 as Any as? [NSAttributedStringKey : Any])), for: .normal)
+    }
+    
+    // 뒤로가기
+    @IBAction func tappedBackButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    // 데이트피커 생성
+    func createDatePicker() {
+        //Toolbar
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        toolBar.isTranslucent = false
+        toolBar.barTintColor = UIColor.top_Brown_Color
+        
+        let term = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let setting = UIBarButtonItem(title: "선택", style: .plain, target: self, action: #selector(donePressed))
+        
+        
+        let checkedAttributedString = [ NSAttributedStringKey.font : UIFont(name: "GodoM", size: 18.0),
+                                        NSAttributedStringKey.foregroundColor : UIColor.white
+        ]
+        
+        
+       // 설정 글씨 스타일 변경
+        setting.setTitleTextAttributes(checkedAttributedString as Any as? [NSAttributedStringKey : Any], for: .normal)
+        //닫기 글씨 스타일 변경
+        let close = UIBarButtonItem(title: "닫기", style: .plain, target: self, action: #selector(closePressed))
+        
+        close.setTitleTextAttributes(checkedAttributedString as Any as? [NSAttributedStringKey : Any], for: .normal)
+        toolBar.setItems([term,close,term,setting,term], animated: false)
+        
+        birthdayTextField.inputAccessoryView = toolBar
+        birthdayTextField.inputView = picker
+        
+        picker.datePickerMode = .date
+    }
+    
+    // 선택
+    @objc func donePressed() {
+        // 데이트 형식 셋팅
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy년 M월 dd일"
+        // 선택 값 넣어주기.
+        birthdayTextField.text = dateFormatter.string(from: picker.date)
+        self.view.endEditing(true)
+    }
+    
+    // 닫기
+    @objc func closePressed() {
+        self.view.endEditing(true)
+    }
+    
+    // 도시 선택하기
+    @objc func selectCity(sender: UIButton) {
+        var str = ""
+        if sender.tag == 0 {
+            str = "태어난 고향을 입력하세요!"
+        } else {
+            str = "살고 있는 도시를 입력하세요!"
+        }
+        
+        if let selectCityVC = storyboard?.instantiateViewController(withIdentifier: "SelectCityViewController") as? SelectCityViewController {
+            selectCityVC.titleString = str
+               selectCityVC.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            selectCityVC.modalPresentationStyle = .overFullScreen
+            
+            self.present(selectCityVC, animated: false, completion: nil)
+        }
     }
 }
 
@@ -120,6 +225,14 @@ extension SignupViewThirdController: UITextFieldDelegate {
         if textField.tag == 0 {
             deleteButton.isHidden = false
         }
+    }
+    
+    // 키보드 내리기
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            textField.resignFirstResponder()
+        }
+        return true
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {

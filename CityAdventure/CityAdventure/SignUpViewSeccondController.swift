@@ -283,7 +283,7 @@ extension SignUpViewSeccondController: SignUpViewSecondPresenterProtocol {
         if let alert = storyboard?.instantiateViewController(withIdentifier: "AlertviewController") as? AlertviewController {
             alert.alertString = text
             alert.modalPresentationStyle = .overFullScreen
-            alert.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+            alert.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
             self.present(alert, animated: false) { [weak self] in
                 if text.first == "이" || text.first == "잘" {
                     self?.emailTextField.text = ""
