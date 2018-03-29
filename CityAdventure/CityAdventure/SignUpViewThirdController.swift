@@ -10,6 +10,9 @@ import UIKit
 
 class SignupViewThirdController: UIViewController {
     
+    var selectCityViewController: SelectCityViewController?
+    
+    
     // 헤더뷰
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
@@ -99,8 +102,13 @@ class SignupViewThirdController: UIViewController {
                                      NSAttributedStringKey.foregroundColor : UIColor.buttonTitleColor
     ]
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        
+        
         layoutCheck()
         createDatePicker()
     }
@@ -213,7 +221,7 @@ class SignupViewThirdController: UIViewController {
             selectCityVC.titleString = str
                selectCityVC.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
             selectCityVC.modalPresentationStyle = .overFullScreen
-            
+            selectCityVC.delegate = self
             self.present(selectCityVC, animated: false, completion: nil)
         }
     }
@@ -250,4 +258,23 @@ extension SignupViewThirdController: UITextFieldDelegate {
         }
         return true
     }
+}
+
+
+
+extension SignupViewThirdController: SelectCityProtocol {
+    func selectedCity(name: String, tag: Int) {
+        print(name,tag)
+        if tag == 0 {
+            bornCityButton.setTitleColor(.black, for: .normal)
+            bornCityButton.setTitle(name, for: .normal)
+        } else {
+            currentLiveCityButton.setTitleColor(.black, for: .normal)
+            currentLiveCityButton.setTitle(name, for: .normal)
+        }
+    }
+    
+    
+    
+    
 }

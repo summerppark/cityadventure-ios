@@ -351,7 +351,84 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vbA-dr-Qja">
                                 <rect key="frame" x="38" y="177" width="299" height="244"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="도시 이름을 입력하세요." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Kbc-Mk-akd">
+                                        <rect key="frame" x="24" y="5" width="211" height="52"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="52" id="LWQ-56-6Wt"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQe-rF-0B7">
+                                        <rect key="frame" x="0.0" y="57" width="299" height="1"/>
+                                        <color key="backgroundColor" red="0.86353904008865356" green="0.8635593056678772" blue="0.8635483980178833" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="FGV-eI-8pJ"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uD-uo-2FZ">
+                                        <rect key="frame" x="251" y="19.5" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="1Da-GZ-Q6L"/>
+                                            <constraint firstAttribute="width" constant="24" id="qfc-Re-A3g"/>
+                                        </constraints>
+                                        <state key="normal" image="img_search_icon"/>
+                                        <connections>
+                                            <action selector="tappedSearchButton:" destination="xie-1g-ENV" eventType="touchUpInside" id="UMA-gk-Ebc"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DAr-h0-4S2">
+                                        <rect key="frame" x="0.0" y="58" width="299" height="186"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCityTableViewCell" rowHeight="40" id="HEb-67-PL6" customClass="SearchCityTableViewCell" customModule="CityAdventure" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="299" height="40"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HEb-67-PL6" id="97X-xc-K2q">
+                                                    <rect key="frame" x="0.0" y="0.0" width="299" height="39.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강원도 강릉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xj2-3Z-JYt">
+                                                            <rect key="frame" x="24" y="11" width="77.5" height="18.5"/>
+                                                            <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="Xj2-3Z-JYt" firstAttribute="centerY" secondItem="97X-xc-K2q" secondAttribute="centerY" id="98D-Pg-IJg"/>
+                                                        <constraint firstItem="Xj2-3Z-JYt" firstAttribute="leading" secondItem="97X-xc-K2q" secondAttribute="leading" constant="24" id="qre-XG-kKM"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="cityLabel" destination="Xj2-3Z-JYt" id="OMp-Mi-e4c"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="xie-1g-ENV" id="Mn3-OR-gUk"/>
+                                            <outlet property="delegate" destination="xie-1g-ENV" id="l3y-we-CnA"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2uD-uo-2FZ" secondAttribute="trailing" constant="24" id="1oN-U9-EVe"/>
+                                    <constraint firstAttribute="bottom" secondItem="DAr-h0-4S2" secondAttribute="bottom" id="E1h-fh-imN"/>
+                                    <constraint firstItem="Kbc-Mk-akd" firstAttribute="top" secondItem="vbA-dr-Qja" secondAttribute="top" constant="5" id="GS2-V8-NKL"/>
+                                    <constraint firstItem="Kbc-Mk-akd" firstAttribute="leading" secondItem="vbA-dr-Qja" secondAttribute="leading" constant="24" id="TnD-gG-dO5"/>
+                                    <constraint firstItem="DAr-h0-4S2" firstAttribute="top" secondItem="JQe-rF-0B7" secondAttribute="bottom" id="bxP-E1-cTg"/>
+                                    <constraint firstItem="JQe-rF-0B7" firstAttribute="leading" secondItem="vbA-dr-Qja" secondAttribute="leading" id="jWK-Ra-Elf"/>
+                                    <constraint firstAttribute="trailing" secondItem="JQe-rF-0B7" secondAttribute="trailing" id="qif-cZ-JsW"/>
+                                    <constraint firstItem="2uD-uo-2FZ" firstAttribute="centerY" secondItem="Kbc-Mk-akd" secondAttribute="centerY" id="rHq-LM-RPX"/>
+                                    <constraint firstItem="2uD-uo-2FZ" firstAttribute="leading" secondItem="Kbc-Mk-akd" secondAttribute="trailing" constant="16" id="wNC-87-Ro0"/>
+                                    <constraint firstItem="JQe-rF-0B7" firstAttribute="top" secondItem="Kbc-Mk-akd" secondAttribute="bottom" id="xdX-9t-fHc"/>
+                                    <constraint firstAttribute="trailing" secondItem="DAr-h0-4S2" secondAttribute="trailing" id="xxq-hb-VOR"/>
+                                    <constraint firstItem="DAr-h0-4S2" firstAttribute="leading" secondItem="vbA-dr-Qja" secondAttribute="leading" id="zAb-sI-Uld"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -374,10 +451,21 @@
                         <outlet property="cityView" destination="vbA-dr-Qja" id="vDt-48-1NM"/>
                         <outlet property="closeButton" destination="BUT-Zy-SpN" id="fyf-n2-CY7"/>
                         <outlet property="heightConstraint" destination="s5R-31-orb" id="UAr-v8-keh"/>
+                        <outlet property="searchDisplayController" destination="fyc-9l-vjR" id="PMk-FN-BKu"/>
+                        <outlet property="searchTextField" destination="Kbc-Mk-akd" id="lkB-MK-bXo"/>
+                        <outlet property="tableView" destination="DAr-h0-4S2" id="DPk-lW-29s"/>
                         <outlet property="titleLabel" destination="EUO-PD-1hN" id="AIo-ZO-bfI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCJ-4b-m3C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="fyc-9l-vjR">
+                    <connections>
+                        <outlet property="delegate" destination="xie-1g-ENV" id="dwi-QI-cJp"/>
+                        <outlet property="searchContentsController" destination="xie-1g-ENV" id="8wl-46-8Ww"/>
+                        <outlet property="searchResultsDataSource" destination="xie-1g-ENV" id="6jc-Bq-Oz6"/>
+                        <outlet property="searchResultsDelegate" destination="xie-1g-ENV" id="GCH-Dk-zVm"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="3692" y="72.413793103448285"/>
         </scene>
@@ -2029,6 +2117,7 @@
         <image name="img_alert_bg" width="851" height="502"/>
         <image name="img_border_bottom" width="653" height="9"/>
         <image name="img_profileSignup_bg" width="914" height="679"/>
+        <image name="img_search_icon" width="73" height="75"/>
         <image name="img_selectCity_alertbg" width="950" height="995"/>
         <image name="img_setCity_bg" width="914" height="651"/>
         <image name="kakao_login" width="1159" height="173"/>

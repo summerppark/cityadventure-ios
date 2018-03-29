@@ -9,7 +9,29 @@
 import UIKit
 import SnapKit
 
+protocol SelectCityProtocol: class {
+    func selectedCity(name: String, tag: Int)
+}
+
 class SelectCityViewController: UIViewController {
+    
+    var delegate: SelectCityProtocol?
+    var tag: Int = 0
+    @IBOutlet weak var searchTextField: UITextField! {
+        didSet {
+            searchTextField.delegate = self
+            searchTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
+        }
+    }
+    
+    
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.delegate = self
+            tableView.dataSource = self
+        }
+    }
+    
     
     var titleString: String?
     
@@ -40,6 +62,8 @@ class SelectCityViewController: UIViewController {
         
         closeButtonLayout()
         layoutCheck()
+       
+        tag = titleString?.first == "태" ? 0 : 1
         
     }
     
@@ -62,4 +86,46 @@ class SelectCityViewController: UIViewController {
     @IBAction func closeSelectCity(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
     }
+    
+    
+    @IBAction func tappedSearchButton(_ sender: Any) {
+        // 검색 시작
+        print("검색",searchTextField.text ?? "")
+    }
+    
+}
+
+
+
+extension SelectCityViewController: UITextFieldDelegate
+{
+    // 서치 텍스트필드 값이 변경될때마다 호출, 검색을 시도
+    
+    @objc func textFieldDidChange(sender: UITextField) {
+            print(sender.text ?? "" )
+    }
+}
+
+
+
+extension SelectCityViewController: UITableViewDataSource, UITableViewDelegate {
+    // 몇개리스트를 보여줄것인가.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    // 테이블 뷰 데이터를 뿌려줌
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchCityTableViewCell", for: indexPath) as! SearchCityTableViewCell
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 셀 탭했을 때
+    
+        delegate?.selectedCity(name: "강원도 강릉", tag: tag)
+        self.dismiss(animated: false)
+    }
+    
 }
