@@ -6,9 +6,6 @@ PODS:
   - Kingfisher (4.6.1)
   - ObjectMapper (3.1.0)
   - SnapKit (4.0.0)
-  - SQLite.swift (0.11.4):
-    - SQLite.swift/standard (= 0.11.4)
-  - SQLite.swift/standard (0.11.4)
   - SwiftGifOrigin (1.6.1)
   - Toaster (2.1.1)
 
@@ -18,7 +15,6 @@ DEPENDENCIES:
   - Kingfisher (~> 4.0)
   - ObjectMapper (~> 3.1)
   - SnapKit (~> 4.0.0)
-  - SQLite.swift (~> 0.11.4)
   - SwiftGifOrigin (~> 1.6.1)
   - Toaster
 
@@ -28,10 +24,9 @@ SPEC CHECKSUMS:
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SQLite.swift: 3e3bee21da701b5b9f87c4a672cb54f233505692
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: 6b2754e7be7e0852f86bbeae8b0511e44ffa8391
+PODFILE CHECKSUM: e2df0481dff7a3f328c93db7c6203a40e754d622
 
 COCOAPODS: 1.2.1

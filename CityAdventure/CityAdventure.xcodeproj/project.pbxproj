@@ -25,9 +25,6 @@
 		CEAAE7DD206E02A9006C2F88 /* cityNumber.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */; };
 		CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE7DE206E0321006C2F88 /* CityNumberDB.swift */; };
 		CEAAE7E1206E0481006C2F88 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE7E0206E0481006C2F88 /* DataManager.swift */; };
-		CEAAE838206E1A3C006C2F88 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAAE839206E1A3C006C2F88 /* SQLite.framework */; };
-		CEAAE83A206E1A5A006C2F88 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEAAE839206E1A3C006C2F88 /* SQLite.framework */; };
-		CEAAE83B206E1A5A006C2F88 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEAAE839206E1A3C006C2F88 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */; };
 		CEE3B3C4206A22A900156387 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C3206A22A900156387 /* Account.swift */; };
 		CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C6206A2C9600156387 /* StringExtensions.swift */; };
@@ -41,13 +38,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CEAAE835206E1814006C2F88 /* Embed Frameworks */ = {
+		CE16A97C206E271200415401 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CEAAE83B206E1A5A006C2F88 /* SQLite.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,8 +69,6 @@
 		CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = cityNumber.sqlite; sourceTree = "<group>"; };
 		CEAAE7DE206E0321006C2F88 /* CityNumberDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNumberDB.swift; sourceTree = "<group>"; };
 		CEAAE7E0206E0481006C2F88 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		CEAAE837206E1A36006C2F88 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEAAE839206E1A3C006C2F88 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSeccondController.swift; sourceTree = "<group>"; };
 		CEE3B3C3206A22A900156387 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CEE3B3C6206A2C9600156387 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -96,9 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEAAE838206E1A3C006C2F88 /* SQLite.framework in Frameworks */,
 				719AC02BAEEC44D234717BB9 /* Pods_CityAdventure.framework in Frameworks */,
-				CEAAE83A206E1A5A006C2F88 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +100,6 @@
 		5BB78BA01C450FB54BE89CD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CEAAE839206E1A3C006C2F88 /* SQLite.framework */,
-				CEAAE837206E1A36006C2F88 /* SnapKit.framework */,
 				44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */,
 			);
 			name = Frameworks;
@@ -238,7 +228,7 @@
 				CEF7162E2064CB1900B457E9 /* Resources */,
 				95480FDDCCEE3CE6A56363C9 /* [CP] Embed Pods Frameworks */,
 				5F6CFE9D4F7F921E7D3317DD /* [CP] Copy Pods Resources */,
-				CEAAE835206E1814006C2F88 /* Embed Frameworks */,
+				CE16A97C206E271200415401 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -513,6 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J5QNJTJL72;
 				INFOPLIST_FILE = CityAdventure/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bubu.CityAdventure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -529,6 +520,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J5QNJTJL72;
 				INFOPLIST_FILE = CityAdventure/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bubu.CityAdventure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
