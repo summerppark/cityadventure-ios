@@ -6,11 +6,13 @@
 //  Copyright © 2018년 bubu. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import SQLite
+
 class DataManager {
     // 고향,사는곳 선택하는 DB
     var citynumbers: [CityNumbersDB] = []
 
+    
     
 }
