@@ -70,6 +70,13 @@ class SelectCityViewController: UIViewController {
         // 태어난 곳인지 사는 곳인지
         tag = titleString?.first == "태" ? 0 : 1
         
+        connectDatabase()
+        
+    }
+    
+    func connectDatabase() {
+        let db = Bundle.main.path(forResource: "cityNumber", ofType: "sqlite")
+        print("Path = \(db)")
     }
     
     // X버튼 레이아웃

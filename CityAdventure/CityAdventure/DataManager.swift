@@ -1,0 +1,16 @@
+//
+//  DataManager.swift
+//  CityAdventure
+//
+//  Created by Jiyong on 2018. 3. 30..
+//  Copyright © 2018년 bubu. All rights reserved.
+//
+
+import UIKit
+import SQLite
+class DataManager {
+    // 고향,사는곳 선택하는 DB
+    var citynumbers: [CityNumbersDB] = []
+
+    
+}
