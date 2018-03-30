@@ -166,6 +166,14 @@ class SignupViewThirdController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    // 다음으로
+    @IBAction func goToNext(_ sender: Any) {
+        if let charVC = storyboard?.instantiateViewController(withIdentifier: "CharacterChoiceViewController") as? CharacterChoiceViewController {
+            self.navigationController?.pushViewController(charVC, animated: true)
+        }
+    }
+    
+    
     // 데이트피커 생성
     func createDatePicker() {
         //Toolbar
