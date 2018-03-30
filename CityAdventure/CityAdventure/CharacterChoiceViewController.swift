@@ -71,19 +71,9 @@ class CharacterChoiceViewController: UIViewController {
             default:
                 print("No  !   Case")
             }
-                
-                
-                
-            
-            if index == 3 {
-                
-            }
             let charImageView = UIImageView(frame: charImageSize)
             charImageView.image = charImageArray[index]
             view.addSubview(charImageView)
-            
-            
-            
             self.scrollView.addSubview(view)
         }
     }

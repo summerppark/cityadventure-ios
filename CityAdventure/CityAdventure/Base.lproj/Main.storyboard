@@ -2171,16 +2171,44 @@
                                     <constraint firstAttribute="height" constant="320" id="8XM-fD-cAl"/>
                                 </constraints>
                             </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Iia-DN-One">
+                                <rect key="frame" x="16" y="466" width="343" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XR7-oe-8aF">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" image="img_thumbChar_first"/>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbh-Cn-yRs">
+                                        <rect key="frame" x="88" y="0.0" width="79.5" height="80"/>
+                                        <state key="normal" title="Button" image="img_thumbChar_second"/>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VZ-WW-Egs">
+                                        <rect key="frame" x="175.5" y="0.0" width="80" height="80"/>
+                                        <state key="normal" title="Button" image="img_thumbChar_third"/>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnY-yR-qKg">
+                                        <rect key="frame" x="263.5" y="0.0" width="79.5" height="80"/>
+                                        <state key="normal" title="Button" image="img_thumbChar_fourth"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="BOb-OL-nLu"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.79784387350082397" green="0.77025479078292847" blue="0.68998926877975464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rCC-Ow-poB" firstAttribute="centerX" secondItem="7PS-22-CWe" secondAttribute="centerX" id="26i-Ma-5MI"/>
                             <constraint firstAttribute="trailing" secondItem="b6Z-tS-1hn" secondAttribute="trailing" id="9O3-FP-X42"/>
                             <constraint firstItem="5c6-Fx-7cH" firstAttribute="top" secondItem="GTz-0d-ZTs" secondAttribute="top" id="CBU-Xk-Sf9"/>
+                            <constraint firstItem="7PS-22-CWe" firstAttribute="trailing" secondItem="Iia-DN-One" secondAttribute="trailing" constant="16" id="Eae-yV-ZmJ"/>
                             <constraint firstItem="5c6-Fx-7cH" firstAttribute="leading" secondItem="GTz-0d-ZTs" secondAttribute="leading" id="FhH-Sx-K2x"/>
                             <constraint firstAttribute="trailing" secondItem="5c6-Fx-7cH" secondAttribute="trailing" id="LG9-1i-QEy"/>
+                            <constraint firstItem="Iia-DN-One" firstAttribute="leading" secondItem="7PS-22-CWe" secondAttribute="leading" constant="16" id="OhO-Q2-UnR"/>
                             <constraint firstItem="rCC-Ow-poB" firstAttribute="top" secondItem="5c6-Fx-7cH" secondAttribute="bottom" constant="24" id="YMN-qg-1yG"/>
                             <constraint firstItem="b6Z-tS-1hn" firstAttribute="top" secondItem="rCC-Ow-poB" secondAttribute="bottom" id="axa-fp-y6c"/>
+                            <constraint firstItem="Iia-DN-One" firstAttribute="top" secondItem="b6Z-tS-1hn" secondAttribute="bottom" constant="16" id="hcy-zc-sRo"/>
                             <constraint firstItem="b6Z-tS-1hn" firstAttribute="leading" secondItem="GTz-0d-ZTs" secondAttribute="leading" id="oHq-ri-EET"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7PS-22-CWe"/>
@@ -2234,6 +2262,10 @@
         <image name="img_selectChar_bg" width="491" height="126"/>
         <image name="img_selectCity_alertbg" width="950" height="995"/>
         <image name="img_setCity_bg" width="914" height="651"/>
+        <image name="img_thumbChar_first" width="236" height="237"/>
+        <image name="img_thumbChar_fourth" width="236" height="236"/>
+        <image name="img_thumbChar_second" width="236" height="236"/>
+        <image name="img_thumbChar_third" width="237" height="236"/>
         <image name="kakao_login" width="1159" height="173"/>
         <image name="launchscreen_backgroundImage" width="720" height="1280"/>
         <image name="loading.gif" width="550" height="500"/>
