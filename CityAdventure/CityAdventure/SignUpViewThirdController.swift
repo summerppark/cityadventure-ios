@@ -18,6 +18,12 @@ class SignupViewThirdController: UIViewController {
 
     var toggles: [Bool] = [false, false, false, false, false]
     
+    
+    // 저장 시킬 항목 변수
+    var savedBirthday: String = ""
+    var gender: String = ""
+    
+
     // 이름 텍스트필드
     @IBOutlet weak var nameTextField: UITextField! {
         didSet {
@@ -111,6 +117,20 @@ class SignupViewThirdController: UIViewController {
         addGesture()
     }
     
+    // MARK:- 회원가입정보 저장
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if nextButton.isEnabled {
+            print("실행되나요")
+             UserDefaults.standard.set(nameTextField.text, forKey: "signup_name")
+            UserDefaults.standard.set(gender, forKey: "signup_gender")
+            UserDefaults.standard.set(savedBirthday, forKey: "signup_birthday")
+            UserDefaults.standard.set(bornCityButton.currentTitle, forKey: "signup_borncity")
+            UserDefaults.standard.set(currentLiveCityButton.currentTitle, forKey: "signup_livecity")
+        }
+    }
+    
+    
     func addGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(closePressed))
         self.view.addGestureRecognizer(tapGesture)
@@ -120,8 +140,10 @@ class SignupViewThirdController: UIViewController {
     @objc func genderSelect(sender: UIButton) {
         toggles[1] = true
         if sender.tag == 0 {
+            gender = "m"
             makeAttributedString(toggle: true)
         } else {
+            gender = "f"
             makeAttributedString(toggle: false)
         }
     }
@@ -213,6 +235,8 @@ class SignupViewThirdController: UIViewController {
         dateFormatter.dateFormat = "yyyy년 M월 dd일"
         // 선택 값 넣어주기.
         birthdayTextField.text = dateFormatter.string(from: picker.date)
+        dateFormatter.dateFormat = "yyyy-M-dd"
+        savedBirthday = dateFormatter.string(from: picker.date)
         checkStatus()
         self.view.endEditing(true)
     }

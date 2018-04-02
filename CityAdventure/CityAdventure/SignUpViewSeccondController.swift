@@ -109,7 +109,17 @@ class SignUpViewSeccondController: UIViewController {
         
         addGesture()
         layoutCheck()
-
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Email , Password 저장
+        
+        if let email = emailTextField.text,
+            let password = passwordTextField.text {
+            UserDefaults.standard.set(email as String, forKey: "signup_email")
+            UserDefaults.standard.set(password as String, forKey: "signup_password")
+        }
     }
     
     func addGesture() {

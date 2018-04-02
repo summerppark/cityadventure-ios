@@ -184,8 +184,19 @@ extension SelectCityViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 셀 탭했을 때
         let city = searchedCity[indexPath.row]
+        
+        if tag == 0 {
+            UserDefaults.standard.set(city.provinceType, forKey: "signup_homeProvince")
+            UserDefaults.standard.set(city.number, forKey: "signup_homeNumber")
+        } else {
+            UserDefaults.standard.set(city.provinceType, forKey: "signup_livingProvince")
+            UserDefaults.standard.set(city.number, forKey: "signup_livingNumber")
+        }
+        
+        
         let selectedCity = city.areaName + " " + city.cityName
         delegate?.selectedCity(name: selectedCity, tag: tag)
         self.dismiss(animated: false)
     }
+ 
 }

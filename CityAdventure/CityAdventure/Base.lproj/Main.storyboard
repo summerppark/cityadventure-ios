@@ -2528,10 +2528,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Sb-Il-sMe"/>
                     </view>
+                    <connections>
+                        <outlet property="birthDay" destination="5oU-Sk-pLv" id="8vy-ph-pib"/>
+                        <outlet property="charImage" destination="XuN-td-ZMI" id="3SQ-Xl-JYc"/>
+                        <outlet property="gender" destination="a9i-t7-sjV" id="LrX-ve-bwh"/>
+                        <outlet property="homeProvince" destination="s5x-3U-96U" id="zGG-vi-wpL"/>
+                        <outlet property="livingProvince" destination="LYL-3c-2Z0" id="m7G-tY-Bzx"/>
+                        <outlet property="name" destination="rZ2-Hl-X7r" id="6fn-zx-Rly"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccx-W7-Y3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4339" y="67"/>
+            <point key="canvasLocation" x="4229" y="68"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7rV-qr-G49">

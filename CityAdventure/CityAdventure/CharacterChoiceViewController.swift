@@ -38,6 +38,12 @@ class CharacterChoiceViewController: UIViewController {
         charViewLayout(index: charCount)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UserDefaults.standard.set(String(charIndex), forKey: "signup_char")
+    }
+    
     
     // 캐릭터 선택 뷰
     func charViewLayout(index: Int) {
@@ -102,6 +108,7 @@ class CharacterChoiceViewController: UIViewController {
     
     @IBAction func goToNext(_ sender: Any) {
         if let final = storyboard?.instantiateViewController(withIdentifier: "SignUpViewFinalController") as? SignUpViewFinalController {
+            final.charIndex = charIndex
             self.navigationController?.pushViewController(final, animated: true)
         }
     }
