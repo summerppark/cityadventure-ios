@@ -14,6 +14,7 @@
 		CE1DA229206B62B1000C36B2 /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA228206B62B1000C36B2 /* APIUrls.swift */; };
 		CE1DA22B206B67AB000C36B2 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA22A206B67AB000C36B2 /* AlertViewController.swift */; };
 		CE1DA22D206B7EE5000C36B2 /* SignUpViewThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA22C206B7EE5000C36B2 /* SignUpViewThirdController.swift */; };
+		CE1EEC3C2071D06D00116625 /* SignUpViewFinalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EEC3B2071D06D00116625 /* SignUpViewFinalController.swift */; };
 		CE24D7852067AECA00B21EF3 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24D7842067AECA00B21EF3 /* ColorExtensions.swift */; };
 		CE24D7872067B03B00B21EF3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24D7862067B03B00B21EF3 /* SignUpViewController.swift */; };
 		CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24D7892067EECB00B21EF3 /* Constants.swift */; };
@@ -60,6 +61,7 @@
 		CE1DA228206B62B1000C36B2 /* APIUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
 		CE1DA22A206B67AB000C36B2 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		CE1DA22C206B7EE5000C36B2 /* SignUpViewThirdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewThirdController.swift; sourceTree = "<group>"; };
+		CE1EEC3B2071D06D00116625 /* SignUpViewFinalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewFinalController.swift; sourceTree = "<group>"; };
 		CE24D7842067AECA00B21EF3 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		CE24D7862067B03B00B21EF3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CE24D7892067EECB00B21EF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */,
 				CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */,
 				CE51A2AB206E472700B228DD /* CharCollectionViewCell.swift */,
+				CE1EEC3B2071D06D00116625 /* SignUpViewFinalController.swift */,
 			);
 			path = CityAdventure;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				CEE3B3C4206A22A900156387 /* Account.swift in Sources */,
 				CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */,
 				CEF716362064CB1900B457E9 /* ViewController.swift in Sources */,
+				CE1EEC3C2071D06D00116625 /* SignUpViewFinalController.swift in Sources */,
 				CE1DA22D206B7EE5000C36B2 /* SignUpViewThirdController.swift in Sources */,
 				CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */,
 				CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */,

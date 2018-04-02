@@ -24,17 +24,13 @@ class CharacterChoiceViewController: UIViewController {
     }
     
     var charCount: Int = 3
-    
-    @IBOutlet weak var firstCharView: UIView!
-    
-    @IBOutlet weak var secondCharView: UIView!
-    
-    @IBOutlet weak var thirdCharView: UIView!
-    
-    @IBOutlet weak var fourthCharView: UIView!
+    var charIndex: Int = 0
     
     let charImageArray: [UIImage] = [#imageLiteral(resourceName: "img_char_first"),#imageLiteral(resourceName: "img_char_second"),#imageLiteral(resourceName: "img_char_third"),#imageLiteral(resourceName: "img_char_fourth")]
-    
+    let thumbCharSelected = [#imageLiteral(resourceName: "img_thumbChar_first_On"),#imageLiteral(resourceName: "img_thumbChar_second_On"),#imageLiteral(resourceName: "img_thumbChar_third_On"),#imageLiteral(resourceName: "img_thumbChar_fourth_On")]
+    let thumbChar = [#imageLiteral(resourceName: "img_thumbChar_first"),#imageLiteral(resourceName: "img_thumbChar_second"),#imageLiteral(resourceName: "img_thumbChar_third"),#imageLiteral(resourceName: "img_thumbChar_fourth")]
+    @IBOutlet var thumbCharButtons: [UIButton]!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
@@ -84,15 +80,30 @@ class CharacterChoiceViewController: UIViewController {
         if Constants.DeviceType.IS_IPHONE_X {
             headerViewHeight.constant = 88
         }
-//        if Constants.DeviceType.IS_IPHONE_6P || Constants.DeviceType.IS_IPHONE_X {
-//            cityTopConstraint.constant = 42
-//            cityHeight.constant = 260
-//            cityLabelTopConstraint.constant = 12
-//            // 밑에 도시부분
-//            bornTopConstraint.constant = 28
-//            livedCityTopConstraint.constant = 18
-//            labelTopConstraint.constant = 12
-//        }
+    }
+    
+    
+    @IBAction func charChoice(_ sender: UIButton) {
+        charIndex = sender.tag
+        selecedControlSync(index: sender.tag)
+    }
+    
+    @IBAction func tappedSideButton(_ sender: UIButton) {
+        if sender.tag == 0 && charIndex != 0 {
+            charIndex -= 1
+            selecedControlSync(index: charIndex)
+        } else if sender.tag == 1 && charIndex != 3 {
+            charIndex += 1
+            selecedControlSync(index: charIndex)
+        } else {
+            print("NoCase")
+        }
+    }
+    
+    @IBAction func goToNext(_ sender: Any) {
+        if let final = storyboard?.instantiateViewController(withIdentifier: "SignUpViewFinalController") as? SignUpViewFinalController {
+            self.navigationController?.pushViewController(final, animated: true)
+        }
     }
 }
 
@@ -100,13 +111,34 @@ class CharacterChoiceViewController: UIViewController {
 extension CharacterChoiceViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         NSObject.cancelPreviousPerformRequests(withTarget: scrollView)
-        self.perform(#selector(self.scrollViewDidEndScrollingAnimation(_:)), with: scrollView, afterDelay: 0.3)
+        self.perform(#selector(self.scrollViewDidEndScrollingAnimation(_:)), with: scrollView, afterDelay: 0)
     }
     
+    // Page에 따른 버튼 상태
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         NSObject.cancelPreviousPerformRequests(withTarget: self)
         let pageNumber = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
         print(pageNumber)
+        selectedStatus(index: pageNumber)
+       
+        
     }
+    
+    // 선택된 캐릭터만 하이라이트
+    func selectedStatus(index: Int) {
+        charIndex = index
+        for index in 0...thumbCharButtons.count-1 {
+            thumbCharButtons[index].setImage(thumbChar[index], for: .normal)
+        }
+        thumbCharButtons[index].setImage(thumbCharSelected[index], for: .normal)
+    }
+    
+    func selecedControlSync(index: Int) {
+        selectedStatus(index: index)
+        let pageIndex = CGPoint(x: Double(scrollView.frame.size.width) * Double(index), y: 0)
+        scrollView.setContentOffset(pageIndex, animated: true)
+    }
+    
+    
 }
 

@@ -30,7 +30,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //엣지 팝 제스쳐 끄기
-        
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        self.navigationController?.navigationBar.isHidden = true
         
         initView()
         
@@ -38,8 +39,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        self.navigationController?.navigationBar.isHidden = true
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
