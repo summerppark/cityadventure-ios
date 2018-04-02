@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class DataManager {
     // 고향,사는곳 선택하는 DB
     var citynumbers: [CityNumbersDB] = []
