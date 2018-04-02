@@ -3,6 +3,7 @@ PODS:
   - AlamofireObjectMapper (5.0.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
+  - GRDB.swift (2.10.0)
   - Kingfisher (4.6.4)
   - ObjectMapper (3.1.0)
   - SnapKit (4.0.0)
@@ -12,6 +13,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireObjectMapper (~> 5.0)
+  - GRDB.swift
   - Kingfisher (~> 4.0)
   - ObjectMapper (~> 3.1)
   - SnapKit (~> 4.0.0)
@@ -22,6 +24,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireObjectMapper
+    - GRDB.swift
     - Kingfisher
     - ObjectMapper
     - SnapKit
@@ -31,12 +34,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  GRDB.swift: 9859cab1b990eac62ee550d3d2208ec1b44f76af
   Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: 0c39ae2a2938426e63e8d9ec7d1bb583aa095865
+PODFILE CHECKSUM: d48333f60c3cb86ca2521f591add2151af5b9516
 
 COCOAPODS: 1.5.0.beta.1

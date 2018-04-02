@@ -383,6 +383,11 @@
                                         <rect key="frame" x="0.0" y="57.999999999999972" width="338" height="186"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <view key="tableFooterView" contentMode="scaleToFill" id="p2n-og-OJ8">
+                                            <rect key="frame" x="0.0" y="68" width="338" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCityTableViewCell" rowHeight="40" id="HEb-67-PL6" customClass="SearchCityTableViewCell" customModule="CityAdventure" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="338" height="40"/>
@@ -2123,6 +2128,7 @@
                                         </constraints>
                                         <state key="normal" title="Button" image="signup_leftbarbutton"/>
                                         <connections>
+                                            <action selector="tappedBackButton:" destination="8GR-fm-Diz" eventType="touchUpInside" id="Pxc-3N-dB6"/>
                                             <action selector="tappedBackButton:" destination="95V-aK-lke" eventType="touchUpInside" id="ejF-FF-NdE"/>
                                             <action selector="tappedBackbutton:" destination="fyu-wJ-reb" eventType="touchUpInside" id="KhU-eY-2De"/>
                                             <action selector="tappedBackbutton:" destination="mSs-hC-JPU" eventType="touchUpInside" id="xDB-Tu-vrn"/>
@@ -2276,7 +2282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxv-TU-dAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3644" y="69"/>
+            <point key="canvasLocation" x="3578" y="45"/>
         </scene>
         <!--Sign Up View Final Controller-->
         <scene sceneID="AK5-IC-QFn">
@@ -2525,7 +2531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccx-W7-Y3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4333.6000000000004" y="68.815592203898049"/>
+            <point key="canvasLocation" x="4339" y="67"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7rV-qr-G49">

@@ -22,9 +22,7 @@ class Account: Mappable {
     var livingCity: String?
     var birth: String?
     var avatarNo: String?
-    
-    
-    
+
     required init?(map: Map) {
     }
     

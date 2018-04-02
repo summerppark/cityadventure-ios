@@ -27,6 +27,6 @@ target 'CityAdventure' do
     pod 'ObjectMapper', '~> 3.1'
     
     # DataBase
-    
+    pod 'GRDB.swift'
   # Pods for CityAdventure
 end

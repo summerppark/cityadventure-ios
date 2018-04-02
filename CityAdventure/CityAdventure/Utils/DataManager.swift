@@ -7,9 +7,13 @@
 //
 
 import Foundation
+import GRDB
+
+
 
 class DataManager {
     // 고향,사는곳 선택하는 DB
     var citynumbers: [CityNumbersDB] = []
+    static let shared: DataManager = DataManager()
     
 }

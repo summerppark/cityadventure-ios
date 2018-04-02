@@ -105,6 +105,11 @@ class CharacterChoiceViewController: UIViewController {
             self.navigationController?.pushViewController(final, animated: true)
         }
     }
+    
+    @IBAction func tappedBackButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 
@@ -120,8 +125,6 @@ extension CharacterChoiceViewController: UIScrollViewDelegate {
         let pageNumber = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
         print(pageNumber)
         selectedStatus(index: pageNumber)
-       
-        
     }
     
     // 선택된 캐릭터만 하이라이트
@@ -138,7 +141,5 @@ extension CharacterChoiceViewController: UIScrollViewDelegate {
         let pageIndex = CGPoint(x: Double(scrollView.frame.size.width) * Double(index), y: 0)
         scrollView.setContentOffset(pageIndex, animated: true)
     }
-    
-    
 }
 

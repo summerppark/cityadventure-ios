@@ -9,13 +9,13 @@
 import UIKit
 
 struct CityNumbersDB {
-    let number: Int64
+    let number: Int32
     let cityName: String
     let cityType: String
-    let provinceType: Int64
+    let provinceType: Int32
     let areaName: String
     
-    init(number: Int64, cityName: String, cityType: String, provinceType: Int64, areaName: String) {
+    init(number: Int32, cityName: String, cityType: String, provinceType: Int32, areaName: String) {
         self.number = number
         self.cityName = cityName
         self.cityType = cityType
