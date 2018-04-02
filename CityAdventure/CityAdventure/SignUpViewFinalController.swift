@@ -62,7 +62,25 @@ class SignUpViewFinalController: UIViewController {
             print("livingNumber => " ,livingNumber)
             print("char => " ,char)
             
-            
         }
     }
+    
+    
+    @IBAction func modifyInfo(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    
+    @IBAction func signUpSuccess(_ sender: Any) {
+        if let success = storyboard?.instantiateViewController(withIdentifier: "SignUpSuccessViewController") as? SignUpSuccessViewController {
+            success.name = self.name.text
+            success.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            success.modalPresentationStyle = .overFullScreen
+            
+            self.present(success, animated: false, completion: nil)
+        }
+    }
+    
+    
 }

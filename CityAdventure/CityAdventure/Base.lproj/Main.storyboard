@@ -474,6 +474,68 @@
             </objects>
             <point key="canvasLocation" x="2943" y="-744"/>
         </scene>
+        <!--Sign Up Success View Controller-->
+        <scene sceneID="f4n-k9-fLS">
+            <objects>
+                <viewController storyboardIdentifier="SignUpSuccessViewController" id="vKS-OI-sWb" customClass="SignUpSuccessViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NK3-wM-yGz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_finishSignup_bg" translatesAutoresizingMaskIntoConstraints="NO" id="Lw9-7I-cB1">
+                                <rect key="frame" x="57" y="288" width="300" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="LOj-7D-a9m"/>
+                                    <constraint firstAttribute="height" constant="160" id="pej-XH-8Gq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_finish_label" translatesAutoresizingMaskIntoConstraints="NO" id="8LS-yQ-iLh">
+                                <rect key="frame" x="107" y="329.66666666666669" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0Tv-6W-Moq"/>
+                                    <constraint firstAttribute="width" constant="200" id="ktT-5u-cqM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비유비유 대원님 가입이 완료되었습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2z-x8-IOc">
+                                <rect key="frame" x="75.333333333333343" y="389.66666666666669" width="263.66666666666663" height="19"/>
+                                <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qS-H2-gPp">
+                                <rect key="frame" x="279" y="126" width="116" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn_close_alert"/>
+                                <connections>
+                                    <action selector="closeSelectCity:" destination="xie-1g-ENV" eventType="touchUpInside" id="bGY-jL-0dN"/>
+                                    <action selector="closeWithSender:" destination="vKS-OI-sWb" eventType="touchUpInside" id="0P5-iO-XP1"/>
+                                    <action selector="dismissAlert:" destination="TDy-A3-Qqz" eventType="touchUpInside" id="Zti-ct-RKs"/>
+                                    <segue destination="8sg-Zd-nGi" kind="unwind" unwindAction="unWindLoginVC:" id="c9K-oM-YPY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8LS-yQ-iLh" firstAttribute="centerY" secondItem="Lw9-7I-cB1" secondAttribute="centerY" multiplier="0.95" id="So7-xe-Ifl"/>
+                            <constraint firstItem="z2z-x8-IOc" firstAttribute="centerX" secondItem="8LS-yQ-iLh" secondAttribute="centerX" id="dyE-qK-scn"/>
+                            <constraint firstItem="8LS-yQ-iLh" firstAttribute="centerX" secondItem="Lw9-7I-cB1" secondAttribute="centerX" id="hMk-9o-M8q"/>
+                            <constraint firstItem="z2z-x8-IOc" firstAttribute="top" secondItem="8LS-yQ-iLh" secondAttribute="bottom" constant="20" id="hx3-nx-NVN"/>
+                            <constraint firstItem="Lw9-7I-cB1" firstAttribute="centerX" secondItem="NK3-wM-yGz" secondAttribute="centerX" id="piu-4A-CXb"/>
+                            <constraint firstItem="Lw9-7I-cB1" firstAttribute="centerY" secondItem="NK3-wM-yGz" secondAttribute="centerY" id="vdX-X1-YFb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tvg-Ca-hiB"/>
+                    </view>
+                    <connections>
+                        <outlet property="alertBgImage" destination="Lw9-7I-cB1" id="39W-FV-Q0O"/>
+                        <outlet property="closeButton" destination="9qS-H2-gPp" id="miZ-dh-puC"/>
+                        <outlet property="nameLabel" destination="z2z-x8-IOc" id="RCm-a4-cQa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wLJ-m9-Scq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="8sg-Zd-nGi" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3631.884057971015" y="-747.554347826087"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="OHU-PL-oAG">
             <objects>
@@ -2500,6 +2562,9 @@
                                 <state key="normal" title="가입완료" backgroundImage="btn_yellow_bg">
                                     <color key="titleColor" red="0.0083823773209549257" green="0.0083823773209549257" blue="0.0083823773209549257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpSuccess:" destination="cVd-xN-ld6" eventType="touchUpInside" id="C0Q-HB-1di"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQg-MK-rIf">
                                 <rect key="frame" x="60.333333333333343" y="430" width="128" height="50"/>
@@ -2511,6 +2576,9 @@
                                 <state key="normal" title="수정하기" backgroundImage="btn_yellow_bg">
                                     <color key="titleColor" red="0.0083823773209549257" green="0.0083823773209549257" blue="0.0083823773209549257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="modifyInfo:" destination="cVd-xN-ld6" eventType="touchUpInside" id="75K-4L-bX8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.792156862745098" green="0.77254901960784317" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2580,6 +2648,8 @@
         <image name="gray_bg_policy" width="667" height="267"/>
         <image name="img_alert_bg" width="851" height="502"/>
         <image name="img_border_bottom" width="653" height="9"/>
+        <image name="img_finishSignup_bg" width="851" height="502"/>
+        <image name="img_finish_label" width="627" height="128"/>
         <image name="img_myProfile" width="229" height="66"/>
         <image name="img_profileSignup_bg" width="914" height="679"/>
         <image name="img_profile_thumb" width="279" height="279"/>

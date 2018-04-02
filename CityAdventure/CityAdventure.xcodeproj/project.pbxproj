@@ -34,6 +34,7 @@
 		CED8C4AB207212B000286A61 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4A4207212AE00286A61 /* FMDatabaseQueue.m */; };
 		CED8C4AC207212B000286A61 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4A6207212AF00286A61 /* FMResultSet.m */; };
 		CED8C4AD207212B000286A61 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4A7207212AF00286A61 /* FMDatabase.m */; };
+		CED8C4AF2072412300286A61 /* SignUpSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */; };
 		CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */; };
 		CEE3B3C4206A22A900156387 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C3206A22A900156387 /* Account.swift */; };
 		CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C6206A2C9600156387 /* StringExtensions.swift */; };
@@ -138,6 +139,7 @@
 		CED8C4A6207212AF00286A61 /* FMResultSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		CED8C4A7207212AF00286A61 /* FMDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		CED8C4A8207212AF00286A61 /* FMResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccessViewController.swift; sourceTree = "<group>"; };
 		CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSeccondController.swift; sourceTree = "<group>"; };
 		CEE3B3C3206A22A900156387 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CEE3B3C6206A2C9600156387 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */,
 				CE51A2AB206E472700B228DD /* CharCollectionViewCell.swift */,
 				CE1EEC3B2071D06D00116625 /* SignUpViewFinalController.swift */,
+				CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */,
 			);
 			path = CityAdventure;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1DA227206B5EDD000C36B2 /* EmailChecker.swift in Sources */,
+				CED8C4AF2072412300286A61 /* SignUpSuccessViewController.swift in Sources */,
 				CEAAE7E1206E0481006C2F88 /* DataManager.swift in Sources */,
 				CE1DA225206B5E49000C36B2 /* APIManager.swift in Sources */,
 				CED8C4AD207212B000286A61 /* FMDatabase.m in Sources */,
