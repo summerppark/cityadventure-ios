@@ -22,37 +22,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Loading View Controller-->
-        <scene sceneID="8Nv-ii-fwL">
-            <objects>
-                <viewController storyboardIdentifier="LoadingViewController" id="zZ6-Om-DNY" customClass="LoadingViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gfR-IS-3ez">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading.gif" translatesAutoresizingMaskIntoConstraints="NO" id="Rls-kK-sBH">
-                                <rect key="frame" x="143" y="304" width="128" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="4w8-nP-5VM"/>
-                                    <constraint firstAttribute="width" constant="128" id="caZ-Jv-bX0"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Rls-kK-sBH" firstAttribute="centerX" secondItem="gfR-IS-3ez" secondAttribute="centerX" id="nbl-ig-P9U"/>
-                            <constraint firstItem="Rls-kK-sBH" firstAttribute="centerY" secondItem="gfR-IS-3ez" secondAttribute="centerY" id="q9G-LX-bMn"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="gLv-TT-Nmt"/>
-                    </view>
-                    <connections>
-                        <outlet property="loadingGifView" destination="Rls-kK-sBH" id="9lc-wm-nlO"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NpL-CB-JAq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="226" y="-651"/>
-        </scene>
         <!--Launch Screen View Controller-->
         <scene sceneID="NWW-Ao-RKd">
             <objects>
@@ -349,7 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ske-wO-vFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2311" y="-743"/>
+            <point key="canvasLocation" x="1558" y="-608"/>
         </scene>
         <!--Select City View Controller-->
         <scene sceneID="bud-e8-U5g">
@@ -503,7 +472,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2943" y="-744"/>
+            <point key="canvasLocation" x="2223" y="-613"/>
         </scene>
         <!--Sign Up Success View Controller-->
         <scene sceneID="f4n-k9-fLS">
@@ -565,7 +534,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLJ-m9-Scq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="8sg-Zd-nGi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3631.884057971015" y="-747.554347826087"/>
+            <point key="canvasLocation" x="2865" y="-614"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="OHU-PL-oAG">
@@ -1368,7 +1337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ia-Zt-b8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1618" y="74"/>
+            <point key="canvasLocation" x="1549" y="84"/>
         </scene>
         <!--Sign Up View Seccond Controller-->
         <scene sceneID="9yb-A7-FCy">
@@ -1770,7 +1739,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNi-ju-c5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2307.2463768115945" y="71.739130434782609"/>
+            <point key="canvasLocation" x="2201" y="90"/>
         </scene>
         <!--Signup View Third Controller-->
         <scene sceneID="Por-fR-Cay">
@@ -2191,7 +2160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acL-Nl-aDb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2973.5999999999999" y="69.715142428785612"/>
+            <point key="canvasLocation" x="2851" y="94"/>
         </scene>
         <!--Character Choice View Controller-->
         <scene sceneID="Mjm-3r-WQk">
@@ -2375,7 +2344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxv-TU-dAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3578" y="45"/>
+            <point key="canvasLocation" x="3462" y="70"/>
         </scene>
         <!--Sign Up View Final Controller-->
         <scene sceneID="AK5-IC-QFn">
@@ -2638,7 +2607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccx-W7-Y3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4229" y="68"/>
+            <point key="canvasLocation" x="4088" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7rV-qr-G49">
