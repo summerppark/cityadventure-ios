@@ -44,8 +44,8 @@ struct APIManager {
                 print("성공케이스")
                 completion("성공", nil)
             default :
+                fail(response.error)
                 print("실패케이스")
-                return
             }
         }
     }

@@ -558,7 +558,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="도시탐험대 이용약관 동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsX-Kd-9WL">
-                                <rect key="frame" x="24" y="96" width="141" height="16"/>
+                                <rect key="frame" x="24" y="96" width="140.66666666666666" height="16"/>
                                 <fontDescription key="fontDescription" name="GodoM" family="Godo M" pointSize="13.300000190734863"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -820,7 +820,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 가입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7T-76-Yyg">
-                                        <rect key="frame" x="327" y="33" width="63" height="15"/>
+                                        <rect key="frame" x="327.33333333333331" y="33" width="62.666666666666686" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="Nfz-mj-I0m"/>
                                         </constraints>
@@ -863,7 +863,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 수집 및 이용에 대한 안내" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDy-42-WoY">
-                                <rect key="frame" x="24" y="235" width="184.66666666666666" height="15"/>
+                                <rect key="frame" x="24" y="235" width="184.33333333333334" height="15"/>
                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1001,7 +1001,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치정보 이용약관 동의" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgw-vX-QVp">
-                                <rect key="frame" x="24" y="373" width="126" height="15"/>
+                                <rect key="frame" x="24.000000000000007" y="373" width="125.66666666666669" height="15"/>
                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
