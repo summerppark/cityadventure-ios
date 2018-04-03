@@ -8,8 +8,9 @@
 
 import UIKit
 
-class SignUpViewFinalController: UIViewController {
+class SignUpViewFinalController: BaseViewController {
     
+    //어떤캐릭터를 골랐는지.
     var charIndex: Int = 0
     
     @IBOutlet weak var name: UILabel!
@@ -28,7 +29,6 @@ class SignUpViewFinalController: UIViewController {
     
     //MARK:- Presenter 선언
     var presenter: SignUpFinalPresenter!
-    
     var parameters: [String: String] = [:]
 
     override func viewDidLoad() {
@@ -36,6 +36,7 @@ class SignUpViewFinalController: UIViewController {
         
         presenter = SignUpFinalPresenter(presenter: self)
         
+        //USerdefault를 사용하여 저장한 데이터를 가져옴.
         if let email = UserDefaults.standard.object(forKey: "signup_email"),
             let password = UserDefaults.standard.object(forKey: "signup_password"),
             let name = UserDefaults.standard.object(forKey: "signup_name"),
@@ -74,42 +75,18 @@ class SignUpViewFinalController: UIViewController {
                 "birth": birthday as! String,
                 "avatarNo": String(charIndex)
             ]
-            
-            
-            dump(parameters)
-     
-            print("Email => " ,email)
-            print("password => " ,password)
-            print("name => " ,name)
-            print("gender => " ,gender)
-            print("birthday => " ,birthday)
-            print("homeProvince => " ,homeProvince)
-            print("homeNumber => " ,homeNumber)
-            print("livingProvince => " ,livingProvince)
-            print("livingNumber => " ,livingNumber)
-            print("char => " ,char)
-            
         }
     }
     
-    
+    // 수정하기 -> 뒤로감
     @IBAction func modifyInfo(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     
-    
+    // 가입완료버튼
     @IBAction func signUpSuccess(_ sender: Any) {
-        
         self.presenter.connectPostSignUp(parameter: parameters)
-        
-//        if let success = storyboard?.instantiateViewController(withIdentifier: "SignUpSuccessViewController") as? SignUpSuccessViewController {
-//            success.name = self.name.text
-//            success.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-//            success.modalPresentationStyle = .overFullScreen
-//            
-//            self.present(success, animated: false, completion: nil)
-//        }
     }
     
     func presentSuccessAlert() {
@@ -121,7 +98,6 @@ class SignUpViewFinalController: UIViewController {
             self.present(success, animated: false, completion: nil)
         }
     }
-    
 }
 
 
@@ -131,8 +107,12 @@ extension SignUpViewFinalController: SignUpFinalPresenterProtocol {
     }
     
     func startLoading() {
+        print("LOADING")
+        super.showLoading(view: self.view)
     }
     
     func stopLoading() {
+        print("Hide")
+        super.hideLoading()
     }
 }

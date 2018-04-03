@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class SignUpViewSeccondController: UIViewController {
+class SignUpViewSeccondController: BaseViewController {
 
     //헤더뷰 높이
     @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
@@ -314,10 +314,12 @@ extension SignUpViewSeccondController: SignUpViewSecondPresenterProtocol {
     }
     
     func startLoading() {
+        super.showLoading(view: self.view)
         print("로딩시작")
     }
     
     func stopLoading() {
+        super.hideLoading()
         print("로딩 머뭄")
     }
 }

@@ -37,6 +37,8 @@
 		CED8C4AF2072412300286A61 /* SignUpSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */; };
 		CED8C4B220730B7A00286A61 /* SignUpFinalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4B120730B7A00286A61 /* SignUpFinalPresenter.swift */; };
 		CED8C4BB2073112600286A61 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4BA2073112600286A61 /* BaseResponse.swift */; };
+		CED8C4BF2073498E00286A61 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4BE2073498E00286A61 /* UIViewControllerExtensions.swift */; };
+		CED8C4C120734A6100286A61 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4C020734A6100286A61 /* LoadingViewController.swift */; };
 		CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */; };
 		CEE3B3C4206A22A900156387 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C3206A22A900156387 /* Account.swift */; };
 		CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C6206A2C9600156387 /* StringExtensions.swift */; };
@@ -144,6 +146,8 @@
 		CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccessViewController.swift; sourceTree = "<group>"; };
 		CED8C4B120730B7A00286A61 /* SignUpFinalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFinalPresenter.swift; sourceTree = "<group>"; };
 		CED8C4BA2073112600286A61 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		CED8C4BE2073498E00286A61 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		CED8C4C020734A6100286A61 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSeccondController.swift; sourceTree = "<group>"; };
 		CEE3B3C3206A22A900156387 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CEE3B3C6206A2C9600156387 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				CEE3B3C6206A2C9600156387 /* StringExtensions.swift */,
 				CE1DA224206B5E49000C36B2 /* APIManager.swift */,
 				CE1DA228206B62B1000C36B2 /* APIUrls.swift */,
+				CED8C4BE2073498E00286A61 /* UIViewControllerExtensions.swift */,
+				CED8C4C020734A6100286A61 /* LoadingViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -526,6 +532,7 @@
 				CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */,
 				CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */,
 				CE24D7872067B03B00B21EF3 /* SignUpViewController.swift in Sources */,
+				CED8C4C120734A6100286A61 /* LoadingViewController.swift in Sources */,
 				CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */,
 				CE1DA229206B62B1000C36B2 /* APIUrls.swift in Sources */,
 				CE51A2AC206E472700B228DD /* CharCollectionViewCell.swift in Sources */,
@@ -534,6 +541,7 @@
 				CEE3B3C4206A22A900156387 /* Account.swift in Sources */,
 				CED8C4AA207212B000286A61 /* FMDatabasePool.m in Sources */,
 				CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */,
+				CED8C4BF2073498E00286A61 /* UIViewControllerExtensions.swift in Sources */,
 				CEF716362064CB1900B457E9 /* ViewController.swift in Sources */,
 				CED8C4AC207212B000286A61 /* FMResultSet.m in Sources */,
 				CED8C4BB2073112600286A61 /* BaseResponse.swift in Sources */,
