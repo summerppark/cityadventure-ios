@@ -9,23 +9,16 @@
 import UIKit
 import ObjectMapper
 
-class EmailChecker: Mappable {
-    
-    var responseCode: String?
-    var message: String?
-    var dataLength: Int?
+class EmailChecker: BaseResponse {
     var email_data : [String: Any] = [:]
     
     required init?(map: Map) {
+        super.init(map: map)
     }
     
-    func mapping(map: Map) {
-        responseCode <- map["responseCode"]
-        message <- map["message"]
-        dataLength <- map["dataLength"]
+    override func mapping(map: Map) {
         email_data <- map["data"]
     }
-    
     
     public class EmailData: Mappable {
         var no: Int?

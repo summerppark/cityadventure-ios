@@ -26,14 +26,20 @@ class SignUpViewFinalController: UIViewController {
     
     let thumbCharSelected = [#imageLiteral(resourceName: "img_thumbChar_first_On"),#imageLiteral(resourceName: "img_thumbChar_second_On"),#imageLiteral(resourceName: "img_thumbChar_third_On"),#imageLiteral(resourceName: "img_thumbChar_fourth_On")]
     
+    //MARK:- Presenter 선언
+    var presenter: SignUpFinalPresenter!
     
+    var parameters: [String: String] = [:]
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter = SignUpFinalPresenter(presenter: self)
         
         if let email = UserDefaults.standard.object(forKey: "signup_email"),
             let password = UserDefaults.standard.object(forKey: "signup_password"),
             let name = UserDefaults.standard.object(forKey: "signup_name"),
-            let gender = UserDefaults.standard.object(forKey: "signup_gender"),
+            let gender = UserDefaults.standard.object(forKey: "signup_gender") ,
             let birthday = UserDefaults.standard.object(forKey: "signup_birthday"),
             let homeProvince = UserDefaults.standard.object(forKey: "signup_homeProvince"),
             let homeNumber = UserDefaults.standard.object(forKey: "signup_homeNumber"),
@@ -51,6 +57,27 @@ class SignUpViewFinalController: UIViewController {
             self.livingProvince.text = living as? String ?? ""
             
             
+            
+            
+            // 서버로 보낼 파라미터
+            parameters = [
+                "userLoginType": "0",
+                "email": email as! String,
+                "password": password as! String,
+                "kakaoId": "0",
+                "name": name as! String,
+                "gender": gender as! String,
+                "homeProvince": String(describing: homeProvince),
+                "homeCity": String(describing:homeNumber),
+                "livingProvince": String(describing: livingProvince),
+                "livingCity": String(describing:livingNumber),
+                "birth": birthday as! String,
+                "avatarNo": String(charIndex)
+            ]
+            
+            
+            dump(parameters)
+     
             print("Email => " ,email)
             print("password => " ,password)
             print("name => " ,name)
@@ -73,6 +100,19 @@ class SignUpViewFinalController: UIViewController {
     
     
     @IBAction func signUpSuccess(_ sender: Any) {
+        
+        self.presenter.connectPostSignUp(parameter: parameters)
+        
+//        if let success = storyboard?.instantiateViewController(withIdentifier: "SignUpSuccessViewController") as? SignUpSuccessViewController {
+//            success.name = self.name.text
+//            success.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+//            success.modalPresentationStyle = .overFullScreen
+//            
+//            self.present(success, animated: false, completion: nil)
+//        }
+    }
+    
+    func presentSuccessAlert() {
         if let success = storyboard?.instantiateViewController(withIdentifier: "SignUpSuccessViewController") as? SignUpSuccessViewController {
             success.name = self.name.text
             success.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
@@ -82,5 +122,17 @@ class SignUpViewFinalController: UIViewController {
         }
     }
     
+}
+
+
+extension SignUpViewFinalController: SignUpFinalPresenterProtocol {
+    func signUpResult(text: String) {
+        presentSuccessAlert()
+    }
     
+    func startLoading() {
+    }
+    
+    func stopLoading() {
+    }
 }
