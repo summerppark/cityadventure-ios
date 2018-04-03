@@ -51,10 +51,10 @@ class SignUpViewSeccondController: BaseViewController {
     // 3번째 입력 부분 - 비밀번호 입력
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
-            let attributedString = [ NSAttributedStringKey.font : UIFont(name: "GodoM", size: 8.0),
-                                     NSAttributedStringKey.foregroundColor : UIColor.textView_gray_Color
-            ] as [NSAttributedStringKey: Any]!
-            passwordTextField.attributedPlaceholder = NSMutableAttributedString(string: "비밀번호 입력 (8자 이상,영문 숫자 혼합)", attributes: attributedString)
+//            let attributedString = [ NSAttributedStringKey.font : UIFont(name: "GodoM", size: 8.0),
+//                                     NSAttributedStringKey.foregroundColor : UIColor.textView_gray_Color
+//            ] as [NSAttributedStringKey: Any]!
+//            passwordTextField.attributedPlaceholder = NSMutableAttributedString(string: "비밀번호 입력 (8자 이상,영문 숫자 혼합)", attributes: attributedString)
             
             passwordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
         }
@@ -117,8 +117,8 @@ class SignUpViewSeccondController: BaseViewController {
         
         if let email = emailTextField.text,
             let password = passwordTextField.text {
-            UserDefaults.standard.set(email as String, forKey: "signup_email")
-            UserDefaults.standard.set(password as String, forKey: "signup_password")
+            UserDefaults.standard.set(email, forKey: "signup_email")
+            UserDefaults.standard.set(password, forKey: "signup_password")
         }
     }
     
@@ -243,7 +243,7 @@ extension SignUpViewSeccondController: UITextFieldDelegate {
         } else {
             let image = UIImage(named: "btn_next")
             // 임시로 열어둠
-            self.nextButton.isEnabled = true
+            self.nextButton.isEnabled = false
             self.nextButton.setImage(image, for: .normal)
         }
     }

@@ -1702,7 +1702,7 @@
                                 <color key="textColor" red="0.55243653059005737" green="0.52331000566482544" blue="0.42767512798309326" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr9-mx-yve">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jr9-mx-yve">
                                 <rect key="frame" x="143" y="638" width="128" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="FTG-hh-z23"/>
@@ -2117,7 +2117,7 @@
                                 <color key="textColor" red="0.55243653059005737" green="0.52331000566482544" blue="0.42767512798309326" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48k-3N-XkV">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48k-3N-XkV">
                                 <rect key="frame" x="143" y="638" width="128" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="AFa-fs-3GA"/>

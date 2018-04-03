@@ -115,8 +115,11 @@ class SignUpViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         if Constants.DeviceType.IS_IPHONE_X || Constants.DeviceType.IS_IPHONE_6P {
+            
+            let adjustHeight: CGFloat = Constants.DeviceType.IS_IPHONE_X ? 160.0 : 150.0
+            
             textViewHeights.forEach({ height in
-                height.constant = 160
+                height.constant = adjustHeight
             })
         }
     }

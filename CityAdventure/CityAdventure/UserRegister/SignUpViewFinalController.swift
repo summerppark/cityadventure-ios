@@ -24,7 +24,6 @@ class SignUpViewFinalController: BaseViewController {
         }
     }
     
-    
     let thumbCharSelected = [#imageLiteral(resourceName: "img_thumbChar_first_On"),#imageLiteral(resourceName: "img_thumbChar_second_On"),#imageLiteral(resourceName: "img_thumbChar_third_On"),#imageLiteral(resourceName: "img_thumbChar_fourth_On")]
     
     //MARK:- Presenter 선언
@@ -57,9 +56,6 @@ class SignUpViewFinalController: BaseViewController {
             self.homeProvince.text = home as? String ?? ""
             self.livingProvince.text = living as? String ?? ""
             
-            
-            
-            
             // 서버로 보낼 파라미터
             parameters = [
                 "userLoginType": "0",
@@ -89,6 +85,7 @@ class SignUpViewFinalController: BaseViewController {
         self.presenter.connectPostSignUp(parameter: parameters)
     }
     
+    // 가입 성공 되면 완료 됬다는 알럿창을 띄워준다
     func presentSuccessAlert() {
         if let success = storyboard?.instantiateViewController(withIdentifier: "SignUpSuccessViewController") as? SignUpSuccessViewController {
             success.name = self.name.text

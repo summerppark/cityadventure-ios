@@ -23,7 +23,6 @@
 		CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */; };
 		CE3F2B8A206CBF3500B4D9D0 /* SearchCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */; };
 		CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */; };
-		CE51A2AC206E472700B228DD /* CharCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51A2AB206E472700B228DD /* CharCollectionViewCell.swift */; };
 		CE76E92C2068C0FD00DF46C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE76E92B2068C0FC00DF46C4 /* Assets.xcassets */; };
 		CE7C12D42072043E0095F1C9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C12D32072043E0095F1C9 /* libsqlite3.0.tbd */; };
 		CEAAE7DD206E02A9006C2F88 /* cityNumber.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */; };
@@ -37,13 +36,11 @@
 		CED8C4AF2072412300286A61 /* SignUpSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */; };
 		CED8C4B220730B7A00286A61 /* SignUpFinalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4B120730B7A00286A61 /* SignUpFinalPresenter.swift */; };
 		CED8C4BB2073112600286A61 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4BA2073112600286A61 /* BaseResponse.swift */; };
-		CED8C4BF2073498E00286A61 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4BE2073498E00286A61 /* UIViewControllerExtensions.swift */; };
-		CED8C4C120734A6100286A61 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4C020734A6100286A61 /* LoadingViewController.swift */; };
+		CED8C4BF2073498E00286A61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4BE2073498E00286A61 /* BaseViewController.swift */; };
 		CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */; };
 		CEE3B3C4206A22A900156387 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C3206A22A900156387 /* Account.swift */; };
 		CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C6206A2C9600156387 /* StringExtensions.swift */; };
 		CEF716342064CB1900B457E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF716332064CB1900B457E9 /* AppDelegate.swift */; };
-		CEF716362064CB1900B457E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF716352064CB1900B457E9 /* ViewController.swift */; };
 		CEF716392064CB1900B457E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF716372064CB1900B457E9 /* Main.storyboard */; };
 		CEF7163E2064CB1900B457E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF7163C2064CB1900B457E9 /* LaunchScreen.storyboard */; };
 		CEF716472064D2BF00B457E9 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = CEF716462064D2BF00B457E9 /* loading.gif */; };
@@ -120,7 +117,6 @@
 		CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
 		CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityTableViewCell.swift; sourceTree = "<group>"; };
 		CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterChoiceViewController.swift; sourceTree = "<group>"; };
-		CE51A2AB206E472700B228DD /* CharCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE76E92B2068C0FC00DF46C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7C12942071FD8A0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C12B72072015F0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,7 +127,7 @@
 		CEAAE7DE206E0321006C2F88 /* CityNumberDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNumberDB.swift; sourceTree = "<group>"; };
 		CEAAE7E0206E0481006C2F88 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CED8C49C2072108D00286A61 /* FMDBDatabase_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBDatabase_Header.h; sourceTree = "<group>"; };
-		CED8C49D207212AC00286A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = fmdb/Info.plist; sourceTree = "<group>"; };
+		CED8C49D207212AC00286A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED8C49E207212AC00286A61 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		CED8C49F207212AD00286A61 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		CED8C4A0207212AD00286A61 /* FMDatabasePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
@@ -146,14 +142,12 @@
 		CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccessViewController.swift; sourceTree = "<group>"; };
 		CED8C4B120730B7A00286A61 /* SignUpFinalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFinalPresenter.swift; sourceTree = "<group>"; };
 		CED8C4BA2073112600286A61 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
-		CED8C4BE2073498E00286A61 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
-		CED8C4C020734A6100286A61 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		CED8C4BE2073498E00286A61 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSeccondController.swift; sourceTree = "<group>"; };
 		CEE3B3C3206A22A900156387 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CEE3B3C6206A2C9600156387 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CEF716302064CB1900B457E9 /* CityAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF716332064CB1900B457E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEF716352064CB1900B457E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEF716382064CB1900B457E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEF7163D2064CB1900B457E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEF7163F2064CB1900B457E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -216,8 +210,7 @@
 				CEE3B3C6206A2C9600156387 /* StringExtensions.swift */,
 				CE1DA224206B5E49000C36B2 /* APIManager.swift */,
 				CE1DA228206B62B1000C36B2 /* APIUrls.swift */,
-				CED8C4BE2073498E00286A61 /* UIViewControllerExtensions.swift */,
-				CED8C4C020734A6100286A61 /* LoadingViewController.swift */,
+				CED8C4BE2073498E00286A61 /* BaseViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -238,6 +231,33 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		CE6512F82073651A006ABE4F /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		CE651300207367FD006ABE4F /* FMDBFolder */ = {
+			isa = PBXGroup;
+			children = (
+				CED8C4A1207212AE00286A61 /* FMDatabase.h */,
+				CED8C4A7207212AF00286A61 /* FMDatabase.m */,
+				CED8C49E207212AC00286A61 /* FMDatabaseAdditions.h */,
+				CED8C49F207212AD00286A61 /* FMDatabaseAdditions.m */,
+				CED8C4A5207212AF00286A61 /* FMDatabasePool.h */,
+				CED8C4A0207212AD00286A61 /* FMDatabasePool.m */,
+				CED8C4A2207212AE00286A61 /* FMDatabaseQueue.h */,
+				CED8C4A4207212AE00286A61 /* FMDatabaseQueue.m */,
+				CED8C4A3207212AE00286A61 /* FMDB.h */,
+				CED8C4A8207212AF00286A61 /* FMResultSet.h */,
+				CED8C4A6207212AF00286A61 /* FMResultSet.m */,
+				CED8C49D207212AC00286A61 /* Info.plist */,
+			);
+			name = FMDBFolder;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		CE7C12BB207202870095F1C9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +270,63 @@
 				CE7C12D1207202870095F1C9 /* SQLite.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CECA53992073632E00340FDA /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CED8C4B120730B7A00286A61 /* SignUpFinalPresenter.swift */,
+				CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		CED8C4C32073626F00286A61 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CEF716332064CB1900B457E9 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		CED8C4CC2073628900286A61 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CEF716482064DB3200B457E9 /* LaunchScreenViewController.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		CED8C4CD2073629800286A61 /* UserRegister */ = {
+			isa = PBXGroup;
+			children = (
+				CECA53992073632E00340FDA /* presenter */,
+				CE24D7862067B03B00B21EF3 /* SignUpViewController.swift */,
+				CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */,
+				CE1DA22C206B7EE5000C36B2 /* SignUpViewThirdController.swift */,
+				CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */,
+				CE1EEC3B2071D06D00116625 /* SignUpViewFinalController.swift */,
+			);
+			path = UserRegister;
+			sourceTree = "<group>";
+		};
+		CED8C4CE207362BC00286A61 /* UserLogin */ = {
+			isa = PBXGroup;
+			children = (
+				CEF7164A2064F40700B457E9 /* LoginViewController.swift */,
+			);
+			path = UserLogin;
+			sourceTree = "<group>";
+		};
+		CED8C4CF207362E200286A61 /* Alert&Popup */ = {
+			isa = PBXGroup;
+			children = (
+				CE1DA22A206B67AB000C36B2 /* AlertViewController.swift */,
+				CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */,
+				CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */,
+				CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */,
+			);
+			path = "Alert&Popup";
 			sourceTree = "<group>";
 		};
 		CEE3B3C5206A2A6A00156387 /* Models */ = {
@@ -285,42 +362,21 @@
 		CEF716322064CB1900B457E9 /* CityAdventure */ = {
 			isa = PBXGroup;
 			children = (
-				CED8C4A1207212AE00286A61 /* FMDatabase.h */,
-				CED8C4A7207212AF00286A61 /* FMDatabase.m */,
-				CED8C49E207212AC00286A61 /* FMDatabaseAdditions.h */,
-				CED8C49F207212AD00286A61 /* FMDatabaseAdditions.m */,
-				CED8C4A5207212AF00286A61 /* FMDatabasePool.h */,
-				CED8C4A0207212AD00286A61 /* FMDatabasePool.m */,
-				CED8C4A2207212AE00286A61 /* FMDatabaseQueue.h */,
-				CED8C4A4207212AE00286A61 /* FMDatabaseQueue.m */,
-				CED8C4A3207212AE00286A61 /* FMDB.h */,
-				CED8C4A8207212AF00286A61 /* FMResultSet.h */,
-				CED8C4A6207212AF00286A61 /* FMResultSet.m */,
-				CED8C49D207212AC00286A61 /* Info.plist */,
+				CE651300207367FD006ABE4F /* FMDBFolder */,
+				CE6512F82073651A006ABE4F /* StoryBoards */,
+				CED8C4CF207362E200286A61 /* Alert&Popup */,
+				CED8C4CE207362BC00286A61 /* UserLogin */,
+				CED8C4CD2073629800286A61 /* UserRegister */,
+				CED8C4CC2073628900286A61 /* LaunchScreen */,
+				CED8C4C32073626F00286A61 /* AppDelegate */,
 				CE3F2B86206C792100B4D9D0 /* Database */,
 				CEE3B3C5206A2A6A00156387 /* Models */,
 				CE24D7882067EEB800B21EF3 /* Constants */,
 				CE24D7832067AE0600B21EF3 /* Utils */,
 				CEF716452064D12200B457E9 /* Assets */,
-				CEF716332064CB1900B457E9 /* AppDelegate.swift */,
-				CEF716352064CB1900B457E9 /* ViewController.swift */,
-				CEF716482064DB3200B457E9 /* LaunchScreenViewController.swift */,
 				CEF716372064CB1900B457E9 /* Main.storyboard */,
 				CEF7163C2064CB1900B457E9 /* LaunchScreen.storyboard */,
 				CEF7163F2064CB1900B457E9 /* Info.plist */,
-				CEF7164A2064F40700B457E9 /* LoginViewController.swift */,
-				CE1DA22A206B67AB000C36B2 /* AlertViewController.swift */,
-				CE24D7862067B03B00B21EF3 /* SignUpViewController.swift */,
-				CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */,
-				CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */,
-				CE1DA22C206B7EE5000C36B2 /* SignUpViewThirdController.swift */,
-				CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */,
-				CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */,
-				CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */,
-				CE51A2AB206E472700B228DD /* CharCollectionViewCell.swift */,
-				CE1EEC3B2071D06D00116625 /* SignUpViewFinalController.swift */,
-				CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */,
-				CED8C4B120730B7A00286A61 /* SignUpFinalPresenter.swift */,
 			);
 			path = CityAdventure;
 			sourceTree = "<group>";
@@ -532,17 +588,14 @@
 				CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */,
 				CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */,
 				CE24D7872067B03B00B21EF3 /* SignUpViewController.swift in Sources */,
-				CED8C4C120734A6100286A61 /* LoadingViewController.swift in Sources */,
 				CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */,
 				CE1DA229206B62B1000C36B2 /* APIUrls.swift in Sources */,
-				CE51A2AC206E472700B228DD /* CharCollectionViewCell.swift in Sources */,
 				CEF7164B2064F40800B457E9 /* LoginViewController.swift in Sources */,
 				CE24D7852067AECA00B21EF3 /* ColorExtensions.swift in Sources */,
 				CEE3B3C4206A22A900156387 /* Account.swift in Sources */,
 				CED8C4AA207212B000286A61 /* FMDatabasePool.m in Sources */,
 				CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */,
-				CED8C4BF2073498E00286A61 /* UIViewControllerExtensions.swift in Sources */,
-				CEF716362064CB1900B457E9 /* ViewController.swift in Sources */,
+				CED8C4BF2073498E00286A61 /* BaseViewController.swift in Sources */,
 				CED8C4AC207212B000286A61 /* FMResultSet.m in Sources */,
 				CED8C4BB2073112600286A61 /* BaseResponse.swift in Sources */,
 				CE1EEC3C2071D06D00116625 /* SignUpViewFinalController.swift in Sources */,
