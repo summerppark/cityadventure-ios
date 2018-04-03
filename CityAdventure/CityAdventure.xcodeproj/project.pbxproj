@@ -7,28 +7,148 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		97123B1BFBF35870DFFAFEE4 /* Pods_CityAdventure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */; };
-		CE24D7812066899600B21EF3 /* GodoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE24D78020667D2600B21EF3 /* GodoB.ttf */; };
-		CE24D7822066899600B21EF3 /* GodoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE24D77F20667D2500B21EF3 /* GodoM.ttf */; };
+		719AC02BAEEC44D234717BB9 /* Pods_CityAdventure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */; };
+		CE1DA223206B5B48000C36B2 /* SignUpViewSecondPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */; };
+		CE1DA225206B5E49000C36B2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA224206B5E49000C36B2 /* APIManager.swift */; };
+		CE1DA227206B5EDD000C36B2 /* EmailChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA226206B5EDD000C36B2 /* EmailChecker.swift */; };
+		CE1DA229206B62B1000C36B2 /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA228206B62B1000C36B2 /* APIUrls.swift */; };
+		CE1DA22B206B67AB000C36B2 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA22A206B67AB000C36B2 /* AlertViewController.swift */; };
+		CE1DA22D206B7EE5000C36B2 /* SignUpViewThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA22C206B7EE5000C36B2 /* SignUpViewThirdController.swift */; };
+		CE1EEC3C2071D06D00116625 /* SignUpViewFinalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1EEC3B2071D06D00116625 /* SignUpViewFinalController.swift */; };
+		CE24D7852067AECA00B21EF3 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24D7842067AECA00B21EF3 /* ColorExtensions.swift */; };
+		CE24D7872067B03B00B21EF3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24D7862067B03B00B21EF3 /* SignUpViewController.swift */; };
+		CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE24D7892067EECB00B21EF3 /* Constants.swift */; };
+		CE24D78D2067FB8400B21EF3 /* GodoB.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE24D78B2067FAF300B21EF3 /* GodoB.otf */; };
+		CE24D78E2067FB8400B21EF3 /* GodoM.otf in Resources */ = {isa = PBXBuildFile; fileRef = CE24D78C2067FAF400B21EF3 /* GodoM.otf */; };
+		CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */; };
+		CE3F2B8A206CBF3500B4D9D0 /* SearchCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */; };
+		CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */; };
+		CE76E92C2068C0FD00DF46C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE76E92B2068C0FC00DF46C4 /* Assets.xcassets */; };
+		CE7C12D42072043E0095F1C9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C12D32072043E0095F1C9 /* libsqlite3.0.tbd */; };
+		CEAAE7DD206E02A9006C2F88 /* cityNumber.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */; };
+		CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE7DE206E0321006C2F88 /* CityNumberDB.swift */; };
+		CEAAE7E1206E0481006C2F88 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE7E0206E0481006C2F88 /* DataManager.swift */; };
+		CED8C4A9207212B000286A61 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8C49F207212AD00286A61 /* FMDatabaseAdditions.m */; };
+		CED8C4AA207212B000286A61 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4A0207212AD00286A61 /* FMDatabasePool.m */; };
+		CED8C4AB207212B000286A61 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4A4207212AE00286A61 /* FMDatabaseQueue.m */; };
+		CED8C4AC207212B000286A61 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4A6207212AF00286A61 /* FMResultSet.m */; };
+		CED8C4AD207212B000286A61 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4A7207212AF00286A61 /* FMDatabase.m */; };
+		CED8C4AF2072412300286A61 /* SignUpSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */; };
+		CED8C4B220730B7A00286A61 /* SignUpFinalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4B120730B7A00286A61 /* SignUpFinalPresenter.swift */; };
+		CED8C4BB2073112600286A61 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4BA2073112600286A61 /* BaseResponse.swift */; };
+		CED8C4BF2073498E00286A61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4BE2073498E00286A61 /* BaseViewController.swift */; };
+		CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */; };
+		CEE3B3C4206A22A900156387 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C3206A22A900156387 /* Account.swift */; };
+		CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C6206A2C9600156387 /* StringExtensions.swift */; };
 		CEF716342064CB1900B457E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF716332064CB1900B457E9 /* AppDelegate.swift */; };
-		CEF716362064CB1900B457E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF716352064CB1900B457E9 /* ViewController.swift */; };
 		CEF716392064CB1900B457E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF716372064CB1900B457E9 /* Main.storyboard */; };
-		CEF7163B2064CB1900B457E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF7163A2064CB1900B457E9 /* Assets.xcassets */; };
 		CEF7163E2064CB1900B457E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF7163C2064CB1900B457E9 /* LaunchScreen.storyboard */; };
 		CEF716472064D2BF00B457E9 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = CEF716462064D2BF00B457E9 /* loading.gif */; };
 		CEF716492064DB3200B457E9 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF716482064DB3200B457E9 /* LaunchScreenViewController.swift */; };
 		CEF7164B2064F40800B457E9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7164A2064F40700B457E9 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CE7C12C4207202870095F1C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7C12BA207202870095F1C9 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		CE7C12C6207202870095F1C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7C12BA207202870095F1C9 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		CE7C12C8207202870095F1C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7C12BA207202870095F1C9 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		CE7C12CA207202870095F1C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7C12BA207202870095F1C9 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		CE7C12CC207202870095F1C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7C12BA207202870095F1C9 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		CE7C12CE207202870095F1C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7C12BA207202870095F1C9 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		CE7C12D0207202870095F1C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7C12BA207202870095F1C9 /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE24D77F20667D2500B21EF3 /* GodoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GodoM.ttf; sourceTree = "<group>"; };
-		CE24D78020667D2600B21EF3 /* GodoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GodoB.ttf; sourceTree = "<group>"; };
+		CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSecondPresenter.swift; sourceTree = "<group>"; };
+		CE1DA224206B5E49000C36B2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		CE1DA226206B5EDD000C36B2 /* EmailChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailChecker.swift; sourceTree = "<group>"; };
+		CE1DA228206B62B1000C36B2 /* APIUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
+		CE1DA22A206B67AB000C36B2 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		CE1DA22C206B7EE5000C36B2 /* SignUpViewThirdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewThirdController.swift; sourceTree = "<group>"; };
+		CE1EEC3B2071D06D00116625 /* SignUpViewFinalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewFinalController.swift; sourceTree = "<group>"; };
+		CE24D7842067AECA00B21EF3 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		CE24D7862067B03B00B21EF3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CE24D7892067EECB00B21EF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CE24D78B2067FAF300B21EF3 /* GodoB.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GodoB.otf; sourceTree = "<group>"; };
+		CE24D78C2067FAF400B21EF3 /* GodoM.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GodoM.otf; sourceTree = "<group>"; };
+		CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
+		CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityTableViewCell.swift; sourceTree = "<group>"; };
+		CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterChoiceViewController.swift; sourceTree = "<group>"; };
+		CE76E92B2068C0FC00DF46C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE7C12942071FD8A0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7C12B72072015F0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7C12B9207202530095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7C12BA207202870095F1C9 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
+		CE7C12D32072043E0095F1C9 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = cityNumber.sqlite; sourceTree = "<group>"; };
+		CEAAE7DE206E0321006C2F88 /* CityNumberDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNumberDB.swift; sourceTree = "<group>"; };
+		CEAAE7E0206E0481006C2F88 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CED8C49C2072108D00286A61 /* FMDBDatabase_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBDatabase_Header.h; sourceTree = "<group>"; };
+		CED8C49D207212AC00286A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED8C49E207212AC00286A61 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		CED8C49F207212AD00286A61 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		CED8C4A0207212AD00286A61 /* FMDatabasePool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		CED8C4A1207212AE00286A61 /* FMDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		CED8C4A2207212AE00286A61 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		CED8C4A3207212AE00286A61 /* FMDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		CED8C4A4207212AE00286A61 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		CED8C4A5207212AF00286A61 /* FMDatabasePool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		CED8C4A6207212AF00286A61 /* FMResultSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		CED8C4A7207212AF00286A61 /* FMDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		CED8C4A8207212AF00286A61 /* FMResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccessViewController.swift; sourceTree = "<group>"; };
+		CED8C4B120730B7A00286A61 /* SignUpFinalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFinalPresenter.swift; sourceTree = "<group>"; };
+		CED8C4BA2073112600286A61 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		CED8C4BE2073498E00286A61 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSeccondController.swift; sourceTree = "<group>"; };
+		CEE3B3C3206A22A900156387 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		CEE3B3C6206A2C9600156387 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		CEF716302064CB1900B457E9 /* CityAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF716332064CB1900B457E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEF716352064CB1900B457E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEF716382064CB1900B457E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CEF7163A2064CB1900B457E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEF7163D2064CB1900B457E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEF7163F2064CB1900B457E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEF716462064D2BF00B457E9 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
@@ -43,7 +163,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97123B1BFBF35870DFFAFEE4 /* Pods_CityAdventure.framework in Frameworks */,
+				CE7C12D42072043E0095F1C9 /* libsqlite3.0.tbd in Frameworks */,
+				719AC02BAEEC44D234717BB9 /* Pods_CityAdventure.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +174,11 @@
 		5BB78BA01C450FB54BE89CD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE7C12D32072043E0095F1C9 /* libsqlite3.0.tbd */,
+				CE7C12BA207202870095F1C9 /* SQLite.xcodeproj */,
+				CE7C12B9207202530095F1C9 /* SQLite.framework */,
+				CE7C12B72072015F0095F1C9 /* SQLite.framework */,
+				CE7C12942071FD8A0095F1C9 /* SQLite.framework */,
 				44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */,
 			);
 			name = Frameworks;
@@ -70,15 +196,154 @@
 		CE24D77E20667D1300B21EF3 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				CE24D78020667D2600B21EF3 /* GodoB.ttf */,
-				CE24D77F20667D2500B21EF3 /* GodoM.ttf */,
+				CE24D78B2067FAF300B21EF3 /* GodoB.otf */,
+				CE24D78C2067FAF400B21EF3 /* GodoM.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CE24D7832067AE0600B21EF3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CEAAE7E0206E0481006C2F88 /* DataManager.swift */,
+				CE24D7842067AECA00B21EF3 /* ColorExtensions.swift */,
+				CEE3B3C6206A2C9600156387 /* StringExtensions.swift */,
+				CE1DA224206B5E49000C36B2 /* APIManager.swift */,
+				CE1DA228206B62B1000C36B2 /* APIUrls.swift */,
+				CED8C4BE2073498E00286A61 /* BaseViewController.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CE24D7882067EEB800B21EF3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				CE24D7892067EECB00B21EF3 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		CE3F2B86206C792100B4D9D0 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		CE6512F82073651A006ABE4F /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		CE651300207367FD006ABE4F /* FMDBFolder */ = {
+			isa = PBXGroup;
+			children = (
+				CED8C4A1207212AE00286A61 /* FMDatabase.h */,
+				CED8C4A7207212AF00286A61 /* FMDatabase.m */,
+				CED8C49E207212AC00286A61 /* FMDatabaseAdditions.h */,
+				CED8C49F207212AD00286A61 /* FMDatabaseAdditions.m */,
+				CED8C4A5207212AF00286A61 /* FMDatabasePool.h */,
+				CED8C4A0207212AD00286A61 /* FMDatabasePool.m */,
+				CED8C4A2207212AE00286A61 /* FMDatabaseQueue.h */,
+				CED8C4A4207212AE00286A61 /* FMDatabaseQueue.m */,
+				CED8C4A3207212AE00286A61 /* FMDB.h */,
+				CED8C4A8207212AF00286A61 /* FMResultSet.h */,
+				CED8C4A6207212AF00286A61 /* FMResultSet.m */,
+				CED8C49D207212AC00286A61 /* Info.plist */,
+			);
+			name = FMDBFolder;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		CE7C12BB207202870095F1C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C12C5207202870095F1C9 /* SQLite.framework */,
+				CE7C12C7207202870095F1C9 /* SQLiteTests iOS.xctest */,
+				CE7C12C9207202870095F1C9 /* SQLite.framework */,
+				CE7C12CB207202870095F1C9 /* SQLiteTests Mac.xctest */,
+				CE7C12CD207202870095F1C9 /* SQLite.framework */,
+				CE7C12CF207202870095F1C9 /* SQLiteTests tvOS.xctest */,
+				CE7C12D1207202870095F1C9 /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CECA53992073632E00340FDA /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CED8C4B120730B7A00286A61 /* SignUpFinalPresenter.swift */,
+				CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		CED8C4C32073626F00286A61 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CEF716332064CB1900B457E9 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		CED8C4CC2073628900286A61 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CEF716482064DB3200B457E9 /* LaunchScreenViewController.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		CED8C4CD2073629800286A61 /* UserRegister */ = {
+			isa = PBXGroup;
+			children = (
+				CECA53992073632E00340FDA /* presenter */,
+				CE24D7862067B03B00B21EF3 /* SignUpViewController.swift */,
+				CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */,
+				CE1DA22C206B7EE5000C36B2 /* SignUpViewThirdController.swift */,
+				CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */,
+				CE1EEC3B2071D06D00116625 /* SignUpViewFinalController.swift */,
+			);
+			path = UserRegister;
+			sourceTree = "<group>";
+		};
+		CED8C4CE207362BC00286A61 /* UserLogin */ = {
+			isa = PBXGroup;
+			children = (
+				CEF7164A2064F40700B457E9 /* LoginViewController.swift */,
+			);
+			path = UserLogin;
+			sourceTree = "<group>";
+		};
+		CED8C4CF207362E200286A61 /* Alert&Popup */ = {
+			isa = PBXGroup;
+			children = (
+				CE1DA22A206B67AB000C36B2 /* AlertViewController.swift */,
+				CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */,
+				CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */,
+				CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */,
+			);
+			path = "Alert&Popup";
+			sourceTree = "<group>";
+		};
+		CEE3B3C5206A2A6A00156387 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEAAE7DE206E0321006C2F88 /* CityNumberDB.swift */,
+				CEE3B3C3206A22A900156387 /* Account.swift */,
+				CE1DA226206B5EDD000C36B2 /* EmailChecker.swift */,
+				CED8C4BA2073112600286A61 /* BaseResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CEF716272064CB1900B457E9 = {
 			isa = PBXGroup;
 			children = (
+				CED8C49C2072108D00286A61 /* FMDBDatabase_Header.h */,
 				CEF716322064CB1900B457E9 /* CityAdventure */,
 				CEF716312064CB1900B457E9 /* Products */,
 				9C85A1D423DEC09FAFF113EF /* Pods */,
@@ -97,14 +362,21 @@
 		CEF716322064CB1900B457E9 /* CityAdventure */ = {
 			isa = PBXGroup;
 			children = (
+				CE651300207367FD006ABE4F /* FMDBFolder */,
+				CE6512F82073651A006ABE4F /* StoryBoards */,
+				CED8C4CF207362E200286A61 /* Alert&Popup */,
+				CED8C4CE207362BC00286A61 /* UserLogin */,
+				CED8C4CD2073629800286A61 /* UserRegister */,
+				CED8C4CC2073628900286A61 /* LaunchScreen */,
+				CED8C4C32073626F00286A61 /* AppDelegate */,
+				CE3F2B86206C792100B4D9D0 /* Database */,
+				CEE3B3C5206A2A6A00156387 /* Models */,
+				CE24D7882067EEB800B21EF3 /* Constants */,
+				CE24D7832067AE0600B21EF3 /* Utils */,
 				CEF716452064D12200B457E9 /* Assets */,
-				CEF716332064CB1900B457E9 /* AppDelegate.swift */,
-				CEF716352064CB1900B457E9 /* ViewController.swift */,
-				CEF716482064DB3200B457E9 /* LaunchScreenViewController.swift */,
 				CEF716372064CB1900B457E9 /* Main.storyboard */,
 				CEF7163C2064CB1900B457E9 /* LaunchScreen.storyboard */,
 				CEF7163F2064CB1900B457E9 /* Info.plist */,
-				CEF7164A2064F40700B457E9 /* LoginViewController.swift */,
 			);
 			path = CityAdventure;
 			sourceTree = "<group>";
@@ -112,8 +384,8 @@
 		CEF716452064D12200B457E9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CE76E92B2068C0FC00DF46C4 /* Assets.xcassets */,
 				CE24D77E20667D1300B21EF3 /* Fonts */,
-				CEF7163A2064CB1900B457E9 /* Assets.xcassets */,
 				CEF716462064D2BF00B457E9 /* loading.gif */,
 			);
 			path = Assets;
@@ -131,7 +403,6 @@
 				CEF7162D2064CB1900B457E9 /* Frameworks */,
 				CEF7162E2064CB1900B457E9 /* Resources */,
 				95480FDDCCEE3CE6A56363C9 /* [CP] Embed Pods Frameworks */,
-				5F6CFE9D4F7F921E7D3317DD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -169,6 +440,12 @@
 			mainGroup = CEF716272064CB1900B457E9;
 			productRefGroup = CEF716312064CB1900B457E9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CE7C12BB207202870095F1C9 /* Products */;
+					ProjectRef = CE7C12BA207202870095F1C9 /* SQLite.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CEF7162F2064CB1900B457E9 /* CityAdventure */,
@@ -176,16 +453,69 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		CE7C12C5207202870095F1C9 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = CE7C12C4207202870095F1C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE7C12C7207202870095F1C9 /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = CE7C12C6207202870095F1C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE7C12C9207202870095F1C9 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = CE7C12C8207202870095F1C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE7C12CB207202870095F1C9 /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = CE7C12CA207202870095F1C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE7C12CD207202870095F1C9 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = CE7C12CC207202870095F1C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE7C12CF207202870095F1C9 /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = CE7C12CE207202870095F1C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CE7C12D1207202870095F1C9 /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = CE7C12D0207202870095F1C9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		CEF7162E2064CB1900B457E9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE24D7812066899600B21EF3 /* GodoB.ttf in Resources */,
-				CE24D7822066899600B21EF3 /* GodoM.ttf in Resources */,
+				CEAAE7DD206E02A9006C2F88 /* cityNumber.sqlite in Resources */,
+				CE24D78D2067FB8400B21EF3 /* GodoB.otf in Resources */,
+				CE24D78E2067FB8400B21EF3 /* GodoM.otf in Resources */,
 				CEF7163E2064CB1900B457E9 /* LaunchScreen.storyboard in Resources */,
 				CEF716472064D2BF00B457E9 /* loading.gif in Resources */,
-				CEF7163B2064CB1900B457E9 /* Assets.xcassets in Resources */,
+				CE76E92C2068C0FD00DF46C4 /* Assets.xcassets in Resources */,
 				CEF716392064CB1900B457E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,34 +523,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5F6CFE9D4F7F921E7D3317DD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CityAdventure/Pods-CityAdventure-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		869CE5D3EE5214EEB81F177B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CityAdventure-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		95480FDDCCEE3CE6A56363C9 /* [CP] Embed Pods Frameworks */ = {
@@ -229,9 +547,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CityAdventure/Pods-CityAdventure-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -245,10 +580,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1DA227206B5EDD000C36B2 /* EmailChecker.swift in Sources */,
+				CED8C4AF2072412300286A61 /* SignUpSuccessViewController.swift in Sources */,
+				CEAAE7E1206E0481006C2F88 /* DataManager.swift in Sources */,
+				CE1DA225206B5E49000C36B2 /* APIManager.swift in Sources */,
+				CED8C4AD207212B000286A61 /* FMDatabase.m in Sources */,
+				CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */,
+				CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */,
+				CE24D7872067B03B00B21EF3 /* SignUpViewController.swift in Sources */,
+				CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */,
+				CE1DA229206B62B1000C36B2 /* APIUrls.swift in Sources */,
 				CEF7164B2064F40800B457E9 /* LoginViewController.swift in Sources */,
-				CEF716362064CB1900B457E9 /* ViewController.swift in Sources */,
+				CE24D7852067AECA00B21EF3 /* ColorExtensions.swift in Sources */,
+				CEE3B3C4206A22A900156387 /* Account.swift in Sources */,
+				CED8C4AA207212B000286A61 /* FMDatabasePool.m in Sources */,
+				CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */,
+				CED8C4BF2073498E00286A61 /* BaseViewController.swift in Sources */,
+				CED8C4AC207212B000286A61 /* FMResultSet.m in Sources */,
+				CED8C4BB2073112600286A61 /* BaseResponse.swift in Sources */,
+				CE1EEC3C2071D06D00116625 /* SignUpViewFinalController.swift in Sources */,
+				CE1DA22D206B7EE5000C36B2 /* SignUpViewThirdController.swift in Sources */,
+				CED8C4AB207212B000286A61 /* FMDatabaseQueue.m in Sources */,
+				CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */,
+				CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */,
+				CE1DA223206B5B48000C36B2 /* SignUpViewSecondPresenter.swift in Sources */,
+				CE3F2B8A206CBF3500B4D9D0 /* SearchCityTableViewCell.swift in Sources */,
+				CED8C4B220730B7A00286A61 /* SignUpFinalPresenter.swift in Sources */,
 				CEF716492064DB3200B457E9 /* LaunchScreenViewController.swift in Sources */,
+				CE1DA22B206B67AB000C36B2 /* AlertViewController.swift in Sources */,
 				CEF716342064CB1900B457E9 /* AppDelegate.swift in Sources */,
+				CED8C4A9207212B000286A61 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,9 +750,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J5QNJTJL72;
 				INFOPLIST_FILE = CityAdventure/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bubu.CityAdventure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMDBDatabase_Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -405,9 +768,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J5QNJTJL72;
 				INFOPLIST_FILE = CityAdventure/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bubu.CityAdventure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMDBDatabase_Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
