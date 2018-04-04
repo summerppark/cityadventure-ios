@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Toaster
 
-class LoginViewController: UIViewController {
+
+class LoginViewController: BaseViewController {
     
     // Email
     @IBOutlet weak var emailTextField: UITextField! {
@@ -26,6 +28,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButton: UIButton!
    
+    var presenter: LoginViewPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +37,15 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         
         initView()
+        presenter = LoginViewPresenter(presenter: self)
+        toastViewSetting()
         
+    }
+    
+    func toastViewSetting() {
+        
+        ToastView.appearance().font = UIFont(name: "GodoM", size: 18.0)
+        ToastView.appearance().frame = CGRect(x: 0, y: 0, width: 200, height: 150)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +68,22 @@ class LoginViewController: UIViewController {
     @objc func keyboardHide() {
         self.view.endEditing(true)
     }
+    
+    
+    
+    
+    @IBAction func tryEmailLogin(_ sender: UIButton) {
+        guard emailTextField.text != "" || passwordTextField.text != "" else {
+            print("아무 입력값도 없을 땐 통신할 필요도 없다.")
+            return
+        }
+        // 키보드 내려준다.
+        keyboardHide()
+        
+        if let email = emailTextField.text, let password = passwordTextField.text {
+            self.presenter.tryEmailLogin(email: email, password: password)
+        }
+    }
 }
 
 //MARK:- @IBAction
@@ -67,12 +94,10 @@ extension LoginViewController {
         }
     }
     
+    //MARK:- UnWind
     @IBAction func unWindLoginVC(_ segue: UIStoryboardSegue) {
-        
+        // 회원가입 완료 팝업 창에서 닫기 눌렀을 때 이쪽으로 소환
     }
-    
-    
-    
 }
 
 
@@ -82,4 +107,32 @@ extension LoginViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         return true
     }
+}
+
+extension LoginViewController: LoginViewPresenterProtocol {
+    func tryLoginHandler(userInfo: loginResponse) {
+        stopLoading()
+        //로그인 성공했으므로, 토큰 로컬에 저장
+        //
+        
+        
+        
+        
+        print("여기서 체크하고 넘기고 토스트")
+    }
+    
+    func startLoading() {
+        print("login시도중")
+        super.showLoading(view: self.view)
+    }
+    
+    func stopLoading() {
+        super.hideLoading()
+    }
+    
+    func failEmailLogin(msg: String?) {
+        print("실패를 알려준다 토스트 온")
+        Toast(text: msg).show()
+    }
+    
 }

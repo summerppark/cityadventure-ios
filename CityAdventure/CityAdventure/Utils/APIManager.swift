@@ -49,4 +49,22 @@ struct APIManager {
             }
         }
     }
+    
+    static func postTryEmailLogin(url: String, completion: @escaping (loginResponse, _ error: Error?) -> Void, fail: @escaping (_ message: String?, _ error: Error?) -> Void) {
+        Alamofire.request("\(server_url)\(url)", method: .post, parameters: nil, encoding: JSONEncoding.default).responseObject { (response: DataResponse<loginResponse>) in
+            
+            guard let statusCode = response.response?.statusCode else { return }
+            
+            switch statusCode {
+            case 201:
+                completion(response.result.value!, nil)
+                print("성공")
+            case 400:
+                print("실패")
+                fail(response.result.value?.message, response.error)
+            default:
+                print("postTryEmailLogin 문제가 발생하였습니다.")
+            }
+        }
+    }
 }

@@ -18,4 +18,9 @@ class APIUrls {
     static func getSignUpUrls(params: [String: String]) -> String {
         return "/accounts?name=\(params["name"]!)&email=\(params["email"]!)&kakaoId=\(params["kakaoId"]!)&homeProvince=\(params["homeProvince"]!)&password=\(params["password"]!)&gender=\(params["gender"]!)&birth=\(params["birth"]!)&homeCity=\(params["homeCity"]!)&livingCity=\(params["livingCity"]!)&livingProvince=\(params["livingProvince"]!)&userLoginType=\(params["userLoginType"]!)&avatarNo=\(params["avatarNo"]!)"
     }
+    
+    //email 로그인
+    static func postTryEmailLogin(email: String, password: String) -> String {
+        return "/tokens?email=\(email)&password=\(password)"
+    }
 }

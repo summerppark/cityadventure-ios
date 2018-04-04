@@ -23,6 +23,8 @@
 		CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */; };
 		CE3F2B8A206CBF3500B4D9D0 /* SearchCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */; };
 		CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */; };
+		CE642C192074CD84000C2F01 /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C182074CD84000C2F01 /* LoginViewPresenter.swift */; };
+		CE642C1B2074D1CC000C2F01 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C1A2074D1CC000C2F01 /* LoginResponse.swift */; };
 		CE76E92C2068C0FD00DF46C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE76E92B2068C0FC00DF46C4 /* Assets.xcassets */; };
 		CE7C12D42072043E0095F1C9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C12D32072043E0095F1C9 /* libsqlite3.0.tbd */; };
 		CEAAE7DD206E02A9006C2F88 /* cityNumber.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */; };
@@ -117,6 +119,8 @@
 		CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
 		CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityTableViewCell.swift; sourceTree = "<group>"; };
 		CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterChoiceViewController.swift; sourceTree = "<group>"; };
+		CE642C182074CD84000C2F01 /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
+		CE642C1A2074D1CC000C2F01 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		CE76E92B2068C0FC00DF46C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7C12942071FD8A0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C12B72072015F0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +235,14 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		CE642C102074CD6C000C2F01 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CE642C182074CD84000C2F01 /* LoginViewPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
 		CE6512F82073651A006ABE4F /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +325,7 @@
 		CED8C4CE207362BC00286A61 /* UserLogin */ = {
 			isa = PBXGroup;
 			children = (
+				CE642C102074CD6C000C2F01 /* presenter */,
 				CEF7164A2064F40700B457E9 /* LoginViewController.swift */,
 			);
 			path = UserLogin;
@@ -336,6 +349,7 @@
 				CEE3B3C3206A22A900156387 /* Account.swift */,
 				CE1DA226206B5EDD000C36B2 /* EmailChecker.swift */,
 				CED8C4BA2073112600286A61 /* BaseResponse.swift */,
+				CE642C1A2074D1CC000C2F01 /* LoginResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -590,6 +604,7 @@
 				CE24D7872067B03B00B21EF3 /* SignUpViewController.swift in Sources */,
 				CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */,
 				CE1DA229206B62B1000C36B2 /* APIUrls.swift in Sources */,
+				CE642C192074CD84000C2F01 /* LoginViewPresenter.swift in Sources */,
 				CEF7164B2064F40800B457E9 /* LoginViewController.swift in Sources */,
 				CE24D7852067AECA00B21EF3 /* ColorExtensions.swift in Sources */,
 				CEE3B3C4206A22A900156387 /* Account.swift in Sources */,
@@ -601,6 +616,7 @@
 				CE1EEC3C2071D06D00116625 /* SignUpViewFinalController.swift in Sources */,
 				CE1DA22D206B7EE5000C36B2 /* SignUpViewThirdController.swift in Sources */,
 				CED8C4AB207212B000286A61 /* FMDatabaseQueue.m in Sources */,
+				CE642C1B2074D1CC000C2F01 /* LoginResponse.swift in Sources */,
 				CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */,
 				CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */,
 				CE1DA223206B5B48000C36B2 /* SignUpViewSecondPresenter.swift in Sources */,
