@@ -25,6 +25,13 @@
 		CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */; };
 		CE642C192074CD84000C2F01 /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C182074CD84000C2F01 /* LoginViewPresenter.swift */; };
 		CE642C1B2074D1CC000C2F01 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C1A2074D1CC000C2F01 /* LoginResponse.swift */; };
+		CE642C1D20770339000C2F01 /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C1C20770339000C2F01 /* FindPasswordViewController.swift */; };
+		CE642C1F20773091000C2F01 /* FindPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C1E20773091000C2F01 /* FindPasswordPresenter.swift */; };
+		CE642C2120773D15000C2F01 /* FindPasswordSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C2020773D15000C2F01 /* FindPasswordSecondViewController.swift */; };
+		CE642C232077439A000C2F01 /* RetryAuthAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C222077439A000C2F01 /* RetryAuthAlertViewController.swift */; };
+		CE642C26207755A5000C2F01 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C25207755A5000C2F01 /* MainViewController.swift */; };
+		CE642C282077612F000C2F01 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C272077612F000C2F01 /* NoticeViewController.swift */; };
+		CE642C2A2077777A000C2F01 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C292077777A000C2F01 /* TimeFormatter.swift */; };
 		CE76E92C2068C0FD00DF46C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE76E92B2068C0FC00DF46C4 /* Assets.xcassets */; };
 		CE7C12D42072043E0095F1C9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C12D32072043E0095F1C9 /* libsqlite3.0.tbd */; };
 		CEAAE7DD206E02A9006C2F88 /* cityNumber.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */; };
@@ -121,6 +128,13 @@
 		CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterChoiceViewController.swift; sourceTree = "<group>"; };
 		CE642C182074CD84000C2F01 /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
 		CE642C1A2074D1CC000C2F01 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		CE642C1C20770339000C2F01 /* FindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
+		CE642C1E20773091000C2F01 /* FindPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordPresenter.swift; sourceTree = "<group>"; };
+		CE642C2020773D15000C2F01 /* FindPasswordSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordSecondViewController.swift; sourceTree = "<group>"; };
+		CE642C222077439A000C2F01 /* RetryAuthAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryAuthAlertViewController.swift; sourceTree = "<group>"; };
+		CE642C25207755A5000C2F01 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CE642C272077612F000C2F01 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		CE642C292077777A000C2F01 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		CE76E92B2068C0FC00DF46C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7C12942071FD8A0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C12B72072015F0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +229,7 @@
 				CE1DA224206B5E49000C36B2 /* APIManager.swift */,
 				CE1DA228206B62B1000C36B2 /* APIUrls.swift */,
 				CED8C4BE2073498E00286A61 /* BaseViewController.swift */,
+				CE642C292077777A000C2F01 /* TimeFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -239,8 +254,18 @@
 			isa = PBXGroup;
 			children = (
 				CE642C182074CD84000C2F01 /* LoginViewPresenter.swift */,
+				CE642C1E20773091000C2F01 /* FindPasswordPresenter.swift */,
 			);
 			path = presenter;
+			sourceTree = "<group>";
+		};
+		CE642C2420775594000C2F01 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CE642C25207755A5000C2F01 /* MainViewController.swift */,
+				CE642C272077612F000C2F01 /* NoticeViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		CE6512F82073651A006ABE4F /* StoryBoards */ = {
@@ -327,6 +352,8 @@
 			children = (
 				CE642C102074CD6C000C2F01 /* presenter */,
 				CEF7164A2064F40700B457E9 /* LoginViewController.swift */,
+				CE642C2020773D15000C2F01 /* FindPasswordSecondViewController.swift */,
+				CE642C1C20770339000C2F01 /* FindPasswordViewController.swift */,
 			);
 			path = UserLogin;
 			sourceTree = "<group>";
@@ -338,6 +365,7 @@
 				CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */,
 				CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */,
 				CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */,
+				CE642C222077439A000C2F01 /* RetryAuthAlertViewController.swift */,
 			);
 			path = "Alert&Popup";
 			sourceTree = "<group>";
@@ -376,6 +404,7 @@
 		CEF716322064CB1900B457E9 /* CityAdventure */ = {
 			isa = PBXGroup;
 			children = (
+				CE642C2420775594000C2F01 /* Main */,
 				CE651300207367FD006ABE4F /* FMDBFolder */,
 				CE6512F82073651A006ABE4F /* StoryBoards */,
 				CED8C4CF207362E200286A61 /* Alert&Popup */,
@@ -598,8 +627,10 @@
 				CED8C4AF2072412300286A61 /* SignUpSuccessViewController.swift in Sources */,
 				CEAAE7E1206E0481006C2F88 /* DataManager.swift in Sources */,
 				CE1DA225206B5E49000C36B2 /* APIManager.swift in Sources */,
+				CE642C232077439A000C2F01 /* RetryAuthAlertViewController.swift in Sources */,
 				CED8C4AD207212B000286A61 /* FMDatabase.m in Sources */,
 				CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */,
+				CE642C2A2077777A000C2F01 /* TimeFormatter.swift in Sources */,
 				CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */,
 				CE24D7872067B03B00B21EF3 /* SignUpViewController.swift in Sources */,
 				CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */,
@@ -609,16 +640,21 @@
 				CE24D7852067AECA00B21EF3 /* ColorExtensions.swift in Sources */,
 				CEE3B3C4206A22A900156387 /* Account.swift in Sources */,
 				CED8C4AA207212B000286A61 /* FMDatabasePool.m in Sources */,
+				CE642C282077612F000C2F01 /* NoticeViewController.swift in Sources */,
 				CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */,
 				CED8C4BF2073498E00286A61 /* BaseViewController.swift in Sources */,
 				CED8C4AC207212B000286A61 /* FMResultSet.m in Sources */,
+				CE642C1F20773091000C2F01 /* FindPasswordPresenter.swift in Sources */,
 				CED8C4BB2073112600286A61 /* BaseResponse.swift in Sources */,
+				CE642C26207755A5000C2F01 /* MainViewController.swift in Sources */,
+				CE642C1D20770339000C2F01 /* FindPasswordViewController.swift in Sources */,
 				CE1EEC3C2071D06D00116625 /* SignUpViewFinalController.swift in Sources */,
 				CE1DA22D206B7EE5000C36B2 /* SignUpViewThirdController.swift in Sources */,
 				CED8C4AB207212B000286A61 /* FMDatabaseQueue.m in Sources */,
 				CE642C1B2074D1CC000C2F01 /* LoginResponse.swift in Sources */,
 				CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */,
 				CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */,
+				CE642C2120773D15000C2F01 /* FindPasswordSecondViewController.swift in Sources */,
 				CE1DA223206B5B48000C36B2 /* SignUpViewSecondPresenter.swift in Sources */,
 				CE3F2B8A206CBF3500B4D9D0 /* SearchCityTableViewCell.swift in Sources */,
 				CED8C4B220730B7A00286A61 /* SignUpFinalPresenter.swift in Sources */,

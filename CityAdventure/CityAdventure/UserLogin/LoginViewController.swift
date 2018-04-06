@@ -84,6 +84,23 @@ class LoginViewController: BaseViewController {
             self.presenter.tryEmailLogin(email: email, password: password)
         }
     }
+    
+    //MARK:- FindPassword
+    // 비밀번호 찾기 화면으로 이동
+    @IBAction func findPassword(_ sender: Any) {
+        if let findPwVC = storyboard?.instantiateViewController(withIdentifier: "FindPasswordViewController") as? FindPasswordViewController {
+            self.navigationController?.pushViewController(findPwVC, animated: true)
+        }
+    }
+    
+    
+    @IBAction func goToMain(_ sender: Any) {
+        if let next = storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController {
+            self.navigationController?.pushViewController(next, animated: true)
+        }
+        
+    }
+    
 }
 
 //MARK:- @IBAction
