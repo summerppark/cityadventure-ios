@@ -10,30 +10,35 @@ import UIKit
 
 class MainViewController: BaseViewController {
     
+    @IBOutlet weak var firstButton: UIButton!
     
     @IBOutlet weak var headerViewHeight: NSLayoutConstraint!
     @IBOutlet weak var mainBackgroundImage: UIImageView!
     
-    
+    // 디바이스 별 레이아웃
     @IBOutlet var heightCollection: [NSLayoutConstraint]!
     @IBOutlet weak var lastHeight: NSLayoutConstraint!
-    
-    
     @IBOutlet weak var viewTrailing: NSLayoutConstraint!
     @IBOutlet weak var viewLeading: NSLayoutConstraint!
-    
-    
     @IBOutlet weak var quizWidth: NSLayoutConstraint!
-    
     @IBOutlet weak var playWidth: NSLayoutConstraint!
-    
     @IBOutlet weak var exerciseBottomConst: NSLayoutConstraint!
-    
     @IBOutlet weak var bongTopConstraint: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var animationView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
         setBackGroundImageForTime()
+      
+        UIView.animate(withDuration: 0.6, delay: 2, options: [.autoreverse, .repeat], animations: {
+            [weak self] in
+           self?.firstButton.frame.origin.y -= 10
+        }) { (action) in
+            print("핸들러")
+        }
     }
     
     
@@ -75,7 +80,33 @@ class MainViewController: BaseViewController {
         if let notice = storyboard?.instantiateViewController(withIdentifier: "NoticeViewController") as? NoticeViewController {
             self.present(notice, animated: true, completion: nil)
         }
-        
     }
+    
+    
+    
+    @IBAction func playExercise(_ sender: UIButton) {
+        print("준비운동")
+    }
+    
+    @IBAction func playAdventure(_ sender: UIButton) {
+        print("도시탐험")
+    }
+    
+    @IBAction func playQuiz(_ sender: UIButton) {
+        print("퀴즈")
+    }
+    
+    @IBAction func playGame(_ sender: UIButton) {
+        print("놀이")
+    }
+    
+    @IBAction func playStory(_ sender: UIButton) {
+        print("동화")
+    }
+    
+    
+    
+    
+    
     
 }

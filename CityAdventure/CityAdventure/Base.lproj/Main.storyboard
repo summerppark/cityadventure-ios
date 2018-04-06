@@ -3211,6 +3211,9 @@
                                             <constraint firstAttribute="height" constant="90" id="OLQ-9X-Wlr"/>
                                         </constraints>
                                         <state key="normal" image="img_exercise_first"/>
+                                        <connections>
+                                            <action selector="playExercise:" destination="hiT-Y5-9Zm" eventType="touchUpInside" id="d37-fv-fz5"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxU-xO-92w">
                                         <rect key="frame" x="0.0" y="106" width="251" height="90"/>
@@ -3218,6 +3221,9 @@
                                             <constraint firstAttribute="height" constant="90" id="7PJ-e0-49H"/>
                                         </constraints>
                                         <state key="normal" image="img_adventure_second"/>
+                                        <connections>
+                                            <action selector="playAdventure:" destination="hiT-Y5-9Zm" eventType="touchUpInside" id="48C-1t-9AI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbw-TF-h6j">
                                         <rect key="frame" x="-15" y="216" width="124" height="90"/>
@@ -3226,6 +3232,9 @@
                                             <constraint firstAttribute="width" constant="124" id="vl0-RN-ksM"/>
                                         </constraints>
                                         <state key="normal" image="img_quiz_third"/>
+                                        <connections>
+                                            <action selector="playQuiz:" destination="hiT-Y5-9Zm" eventType="touchUpInside" id="vud-0H-yeI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahb-ct-A9d">
                                         <rect key="frame" x="139" y="216" width="124" height="90"/>
@@ -3234,6 +3243,9 @@
                                             <constraint firstAttribute="width" constant="124" id="Hpf-Nz-bIU"/>
                                         </constraints>
                                         <state key="normal" image="img_play_fourth"/>
+                                        <connections>
+                                            <action selector="playGame:" destination="hiT-Y5-9Zm" eventType="touchUpInside" id="4Zs-YT-m7r"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIJ-gq-FOr">
                                         <rect key="frame" x="0.0" y="322" width="251" height="94"/>
@@ -3241,6 +3253,9 @@
                                             <constraint firstAttribute="height" constant="94" id="q3D-XQ-aH6"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="img_story_fifth"/>
+                                        <connections>
+                                            <action selector="playStory:" destination="hiT-Y5-9Zm" eventType="touchUpInside" id="ioA-Ez-pTJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3281,8 +3296,10 @@
                         <viewLayoutGuide key="safeArea" id="hsW-1Z-YGX"/>
                     </view>
                     <connections>
+                        <outlet property="animationView" destination="f5E-n5-jij" id="ksD-Fu-fpr"/>
                         <outlet property="bongTopConstraint" destination="AqZ-TR-f2I" id="chb-oR-Z59"/>
                         <outlet property="exerciseBottomConst" destination="42r-pj-Luq" id="tHp-0k-j46"/>
+                        <outlet property="firstButton" destination="ZYh-NU-nv8" id="e5d-QG-DQU"/>
                         <outlet property="headerViewHeight" destination="dip-K1-XlR" id="A0i-Ip-RrD"/>
                         <outlet property="lastHeight" destination="q3D-XQ-aH6" id="g2b-3g-XIP"/>
                         <outlet property="mainBackgroundImage" destination="RkI-Dx-Nqx" id="aNF-K2-U2P"/>
