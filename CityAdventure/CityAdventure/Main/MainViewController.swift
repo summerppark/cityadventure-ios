@@ -33,7 +33,7 @@ class MainViewController: BaseViewController {
         layoutCheck()
         setBackGroundImageForTime()
       
-        UIView.animate(withDuration: 0.6, delay: 2, options: [.autoreverse, .repeat], animations: {
+        UIView.animate(withDuration: 0.6, delay: 2, options: [.repeat, .autoreverse], animations: {
             [weak self] in
            self?.firstButton.frame.origin.y -= 10
         }) { (action) in

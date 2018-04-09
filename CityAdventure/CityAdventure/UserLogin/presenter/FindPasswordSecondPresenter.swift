@@ -1,32 +1,31 @@
 //
-//  FindPasswordPresenter.swift
+//  FindPasswordSecondPresenter.swift
 //  CityAdventure
 //
-//  Created by Jiyong on 2018. 4. 6..
+//  Created by Jiyong on 2018. 4. 9..
 //  Copyright © 2018년 bubu. All rights reserved.
 //
 
 import UIKit
-import Alamofire
 
-protocol FindPasswordPresenterProtocl: BasePresenterProtocol {
-    func presentAlertView(text: String)
+protocol FindPasswordSecondPresenterProtocol: BasePresenterProtocol {
+    func presentAlert(isSuccess: Bool)
 }
 
 
-class FindPasswordPresenter: NSObject {
-    var presenter: FindPasswordPresenterProtocl!
-    init(presenter: FindPasswordPresenterProtocl) {
+class FindPasswordSecondPresenter: NSObject {
+    var presenter: FindPasswordSecondPresenterProtocol!
+    init(presenter: FindPasswordSecondPresenterProtocol) {
         self.presenter = presenter
     }
     
-    func findPassword(email: String) {
-        //통신 중임을 표시
+    
+    func tryAccessNumberCheck(email: String, number: String) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.presenter.startLoading()
         APIManager.findPassword(url: APIUrls.findPassword(email: email), completion: { (resultsString, error) in
             if error == nil {
-                self.presenter.presentAlertView(text: resultsString)
+                self.presenter.presentAlert(isSuccess: true)
             }
             self.presenter.stopLoading()
         }) { (error) in

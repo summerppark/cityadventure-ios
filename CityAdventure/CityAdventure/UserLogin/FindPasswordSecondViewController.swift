@@ -27,6 +27,9 @@ class FindPasswordSecondViewController: BaseViewController {
         NSAttributedStringKey.underlineStyle : NSUnderlineStyle.styleSingle.rawValue]
 
     
+    var email: String?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
@@ -66,5 +69,22 @@ class FindPasswordSecondViewController: BaseViewController {
             self.present(retryAuthAlertView, animated: false, completion: nil)
         }
     }
+}
+
+
+
+extension FindPasswordSecondViewController: FindPasswordSecondPresenterProtocol {
+    func presentAlert(isSuccess: Bool) {
+        print("인증번호 확인결과를 띄우는 알럿")
+    }
+    
+    func startLoading() {
+        super.showLoading(view: self.view)
+    }
+    
+    func stopLoading() {
+        super.hideLoading()
+    }
+    
     
 }

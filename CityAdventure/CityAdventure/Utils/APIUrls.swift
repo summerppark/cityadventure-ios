@@ -23,4 +23,16 @@ class APIUrls {
     static func postTryEmailLogin(email: String, password: String) -> String {
         return "/tokens?email=\(email)&password=\(password)"
     }
+    
+    
+    // 비밀번호 찾기 이메일 인증
+    static func findPassword(email: String) -> String {
+        return "/passwordResetRequests?email=\(email)"
+    }
+    
+    
+    // 인증번호 체크
+    static func authNumberCheck(email: String, number: String) -> String {
+        return "/passwordResetRequests/\(number)?email=\(email)"
+    }
 }

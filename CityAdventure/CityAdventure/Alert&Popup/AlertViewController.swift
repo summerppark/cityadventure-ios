@@ -18,6 +18,7 @@ class AlertviewController : UIViewController {
     
     var alertString: String?
     var delegate: AlertViewProtocol?
+    var statusCode: Int?
     
     @IBOutlet weak var alertStringLabel: UILabel! {
         didSet {
@@ -38,6 +39,7 @@ class AlertviewController : UIViewController {
     
     @IBAction func dismissAlert(_ sender: Any) {
         self.dismiss(animated: false) {
+            // 성공된 케이스 일때는 다음 뷰로 진행한다.
             if let text = self.alertString {
                 if text.first == "인" {
                     self.delegate?.successAuth()

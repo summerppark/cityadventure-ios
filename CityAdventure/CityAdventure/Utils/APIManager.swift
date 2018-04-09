@@ -50,6 +50,7 @@ struct APIManager {
         }
     }
     
+    // 이메일 로그인
     static func postTryEmailLogin(url: String, completion: @escaping (loginResponse, _ error: Error?) -> Void, fail: @escaping (_ message: String?, _ error: Error?) -> Void) {
         Alamofire.request("\(server_url)\(url)", method: .post, parameters: nil, encoding: JSONEncoding.default).responseObject { (response: DataResponse<loginResponse>) in
             
@@ -64,6 +65,35 @@ struct APIManager {
                 fail(response.result.value?.message, response.error)
             default:
                 print("postTryEmailLogin 문제가 발생하였습니다.")
+            }
+        }
+    }
+    
+    
+    // 비밀번호 찾기 이메일 체크
+    static func findPassword(url: String, completion: @escaping (String, _ error: Error?) -> Void, fail: @escaping (_ error: Error?) -> Void) {
+        Alamofire.request("\(server_url)\(url)", method: .post, parameters: nil, encoding: JSONEncoding.default).responseObject { (response: DataResponse<BaseResponse>) in
+            guard let statusCode = response.response?.statusCode else { return }
+            switch statusCode {
+            case 201 :
+                completion("인증번호 전송 완료.", nil)
+            case 400 :
+                completion("등록된 이메일이 아닙니다.", nil)
+            default:
+                completion("인증번호 전송 실패!", nil)
+            }
+        }
+    }
+    
+    // 인증번호 체크
+    static func authNumberCheck(url: String, completion: @escaping (String, _ error: Error?) -> Void) {
+        Alamofire.request("\(server_url)\(url)", method: .delete, parameters: nil, encoding: JSONEncoding.default).responseObject { (response: DataResponse<BaseResponse>) in
+            guard let statusCode = response.response?.statusCode else { return }
+            switch statusCode {
+            case 201:
+                completion("성공", nil)
+            case 401:
+                completion("실패", nil)
             }
         }
     }
