@@ -68,10 +68,7 @@ class LoginViewController: BaseViewController {
     @objc func keyboardHide() {
         self.view.endEditing(true)
     }
-    
-    
-    
-    
+
     @IBAction func tryEmailLogin(_ sender: UIButton) {
         guard emailTextField.text != "" || passwordTextField.text != "" else {
             print("아무 입력값도 없을 땐 통신할 필요도 없다.")
@@ -127,17 +124,18 @@ extension LoginViewController: UITextFieldDelegate {
 }
 
 extension LoginViewController: LoginViewPresenterProtocol {
-    func tryLoginHandler(userInfo: loginResponse) {
+    func tryLoginHandler(nick: String) {
         stopLoading()
-        //로그인 성공했으므로, 토큰 로컬에 저장
-        //
+        // email, password 를 통해서 API 를 날려 토큰을 받아 온 후 바로 Token 을 가지고 유저 정보, 유저 계정정보 2군두에 통신을 시도한 후 핸들러로 이곳에 도착하여 메인뷰로 넘어간다.
+        // Toast 를 위한 구문
+        failEmailLogin(msg: "\(nick)대원님 환영합니다.")
         
-        
-        
-        
-        print("여기서 체크하고 넘기고 토스트")
+        // Main 화면으로 보내기
+        let main = self.storyboard?.instantiateViewController(withIdentifier: "mainNav") as! UINavigationController
+        let appDelegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = main
     }
-    
+
     func startLoading() {
         print("login시도중")
         super.showLoading(view: self.view)

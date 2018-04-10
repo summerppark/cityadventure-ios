@@ -28,17 +28,36 @@ class MainViewController: BaseViewController {
     
     @IBOutlet weak var animationView: UIView!
     
+    
+    
+    @IBOutlet weak var progressView: UIProgressView! {
+        didSet {
+            progressView.layer.borderColor = UIColor.black.cgColor
+            progressView.layer.borderWidth = 2.0
+            progressView.layer.cornerRadius = 4.0
+            progressView.clipsToBounds = true
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
         setBackGroundImageForTime()
       
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        
         UIView.animate(withDuration: 0.6, delay: 2, options: [.repeat, .autoreverse], animations: {
             [weak self] in
            self?.firstButton.frame.origin.y -= 10
         }) { (action) in
             print("핸들러")
         }
+        
+        
+        print("여기서 체크하고 넘기고 토스트")
+        print(DataManager.shared.getUserInfo()?.userInfo?.s_name)
+        print(DataManager.shared.getUserAccountInfo()?.userAccountInfo?.s_email)
+        print(DataManager.shared.getUserCardInfo()?.dataLength)
     }
     
     

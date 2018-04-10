@@ -20,12 +20,21 @@ class FindPasswordSecondPresenter: NSObject {
     }
     
     
+    // 인증번호 확인.
     func tryAccessNumberCheck(email: String, number: String) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.presenter.startLoading()
-        APIManager.findPassword(url: APIUrls.findPassword(email: email), completion: { (resultsString, error) in
+        
+        APIManager.authNumberCheck(url: APIUrls.authNumberCheck(email: email, number: number),completion:  { (result, error) in
             if error == nil {
-                self.presenter.presentAlert(isSuccess: true)
+                switch result {
+                case "성공":
+                    self.presenter.presentAlert(isSuccess: true)
+                case "실패":
+                    self.presenter.presentAlert(isSuccess: false)
+                default:
+                    print("No Response Case")
+                }
             }
             self.presenter.stopLoading()
         }) { (error) in

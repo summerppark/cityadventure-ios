@@ -86,7 +86,7 @@ struct APIManager {
     }
     
     // 인증번호 체크
-    static func authNumberCheck(url: String, completion: @escaping (String, _ error: Error?) -> Void) {
+    static func authNumberCheck(url: String, completion: @escaping (String, _ error: Error?) -> Void, fail: @escaping (_ error: Error?) -> Void) {
         Alamofire.request("\(server_url)\(url)", method: .delete, parameters: nil, encoding: JSONEncoding.default).responseObject { (response: DataResponse<BaseResponse>) in
             guard let statusCode = response.response?.statusCode else { return }
             switch statusCode {
@@ -94,6 +94,9 @@ struct APIManager {
                 completion("성공", nil)
             case 401:
                 completion("실패", nil)
+            default:
+                print("연결실패")
+                return
             }
         }
     }

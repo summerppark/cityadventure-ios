@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Toaster
 
 class RetryAuthAlertViewController: BaseViewController {
     
@@ -23,15 +24,17 @@ class RetryAuthAlertViewController: BaseViewController {
             self.alertView.clipsToBounds = true
         }
     }
+
+    var currentEmail: String?
     
-    
-    
+    var presenter: FindPasswordPresenter!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         closeButtonLayout()
-   
+        presenter = FindPasswordPresenter(presenter: self)
+        
     }
     
     
@@ -46,4 +49,31 @@ class RetryAuthAlertViewController: BaseViewController {
     @objc func closeAlert() {
         self.dismiss(animated: false, completion: nil)
     }
+    
+    @IBAction func authNumberResend(_ sender: UIButton) {
+        if let email = currentEmail {
+            print(email)
+            self.presenter.findPassword(email: email)
+        }
+    }
+
+}
+
+extension RetryAuthAlertViewController: FindPasswordPresenterProtocl {
+    func presentAlertView(text: String) {
+        self.view.backgroundColor? = .clear
+        self.dismiss(animated: true) {
+            Toast(text: text).show()
+        }
+    }
+    
+    func startLoading() {
+        super.showLoading(view: self.view)
+    }
+    
+    func stopLoading() {
+        super.hideLoading()
+    }
+    
+    
 }

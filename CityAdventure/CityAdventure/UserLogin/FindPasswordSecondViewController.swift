@@ -26,12 +26,15 @@ class FindPasswordSecondViewController: BaseViewController {
         NSAttributedStringKey.foregroundColor : UIColor.red,
         NSAttributedStringKey.underlineStyle : NSUnderlineStyle.styleSingle.rawValue]
 
+    @IBOutlet weak var numberTextField: UITextField!
     
     var email: String?
-    
+    var presenter: FindPasswordSecondPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = FindPasswordSecondPresenter(presenter: self)
+        
         layoutCheck()
         addGesture()
     }
@@ -59,10 +62,20 @@ class FindPasswordSecondViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    @IBAction func authCheck(_ sender: UIButton) {
+        //인증번호를 작성한 후 요청
+        if let email = email,
+            let number = numberTextField.text {
+            self.presenter.tryAccessNumberCheck(email: email, number: number)
+        }
+    }
+    
+    
     // 인증메일 재발송
     @IBAction func retryAuth(_ sender: Any) {
         if let retryAuthAlertView = storyboard?.instantiateViewController(withIdentifier: "RetryAuthAlertViewController") as? RetryAuthAlertViewController {
-            
+            retryAuthAlertView.currentEmail = self.email
             retryAuthAlertView.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
             retryAuthAlertView.modalPresentationStyle = .overFullScreen
             
@@ -75,7 +88,20 @@ class FindPasswordSecondViewController: BaseViewController {
 
 extension FindPasswordSecondViewController: FindPasswordSecondPresenterProtocol {
     func presentAlert(isSuccess: Bool) {
-        print("인증번호 확인결과를 띄우는 알럿")
+        print("인증번호 확인결과를 띄우는 알럿,", isSuccess)
+        let title: String = isSuccess ? "비밀번호 변경 성공" : "비밀번호 변경 실패"
+        let desc: String = isSuccess ? "임시비밀번호로 변경되었습니다." : "유효한 인증번호가 아닙니다."
+        
+        if let authResultAlertView = storyboard?.instantiateViewController(withIdentifier: "AlertGreenViewController") as? AlertGreenViewController {
+            authResultAlertView.titleText = title
+            authResultAlertView.descText = desc
+            authResultAlertView.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            authResultAlertView.modalPresentationStyle = .overFullScreen
+            self.present(authResultAlertView, animated: false, completion: nil)
+        }
+        
+        
+        
     }
     
     func startLoading() {

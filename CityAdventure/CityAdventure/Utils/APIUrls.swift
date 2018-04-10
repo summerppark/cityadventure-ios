@@ -24,15 +24,28 @@ class APIUrls {
         return "/tokens?email=\(email)&password=\(password)"
     }
     
-    
     // 비밀번호 찾기 이메일 인증
     static func findPassword(email: String) -> String {
         return "/passwordResetRequests?email=\(email)"
     }
     
-    
     // 인증번호 체크
     static func authNumberCheck(email: String, number: String) -> String {
         return "/passwordResetRequests/\(number)?email=\(email)"
+    }
+    
+    // 유저 캐릭터정보, 개인정보
+    static func getUserInfo(memberNo: Int, token: String) -> String {
+        return "/members/\(memberNo)?token=\(token)"
+    }
+    
+    // 유저 계정정보
+    static func getUserAccountInfo(token: String) -> String {
+        return "/accounts/accountByToken?token=\(token)"
+    }
+    
+    // 카드 정보.
+    static func getCardlistInfo(token: String, number: Int) -> String {
+        return "/members/\(number)/cardCollectingLogs?token=\(token)"
     }
 }

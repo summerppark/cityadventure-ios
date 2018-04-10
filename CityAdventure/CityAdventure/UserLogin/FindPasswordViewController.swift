@@ -107,8 +107,6 @@ extension FindPasswordViewController: FindPasswordPresenterProtocl {
 
 extension FindPasswordViewController: AlertViewProtocol {
     func successAuth() {
-        print("성공")
-        
         // 넥스트 인증번호 입력 란으로 변경.
         if let authCheckVC = storyboard?.instantiateViewController(withIdentifier: "FindPasswordSecondViewController") as? FindPasswordSecondViewController {
             authCheckVC.email = self.emailTextField.text
