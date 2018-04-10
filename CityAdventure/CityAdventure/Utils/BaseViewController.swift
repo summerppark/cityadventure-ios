@@ -11,6 +11,9 @@ import UIKit
 class BaseViewController: UIViewController {
     let gifImage = UIImageView()
     
+    
+    var charImages = [#imageLiteral(resourceName: "img_thumbChar_first_On"),#imageLiteral(resourceName: "img_thumbChar_second_On"),#imageLiteral(resourceName: "img_thumbChar_third_On"),#imageLiteral(resourceName: "img_thumbChar_fourth_On")]
+    
     // loading 중임을 표시.
     func showLoading(view: UIView) {
         gifImage.frame = CGRect(x: view.center.x - 64, y: view.center.y - 64, width: 128, height: 128)

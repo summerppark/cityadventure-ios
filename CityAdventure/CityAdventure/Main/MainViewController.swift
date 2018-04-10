@@ -39,6 +39,35 @@ class MainViewController: BaseViewController {
         }
     }
     
+    
+    @IBOutlet weak var coinView: UIView! {
+        didSet {
+            coinView.layer.cornerRadius = 4.0
+            coinView.clipsToBounds = true
+        }
+    }
+    
+    
+    @IBOutlet weak var cardListView: UIView! {
+        didSet {
+            cardListView.layer.cornerRadius = 4.0
+            cardListView.clipsToBounds = true
+        }
+    }
+    
+    
+    // Data
+    @IBOutlet weak var userCharView: UIImageView!
+    @IBOutlet weak var currentLevelLabel: UILabel!
+    @IBOutlet weak var expMaxLabel: UILabel!
+    @IBOutlet weak var expCurrentLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var myCardsCount: UILabel!
+    @IBOutlet weak var myCoin: UILabel!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
@@ -46,18 +75,33 @@ class MainViewController: BaseViewController {
       
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         
-        UIView.animate(withDuration: 0.6, delay: 2, options: [.repeat, .autoreverse], animations: {
-            [weak self] in
-           self?.firstButton.frame.origin.y -= 10
-        }) { (action) in
-            print("핸들러")
-        }
+//        UIView.animate(withDuration: 0.6, delay: 2, options: [.repeat, .autoreverse], animations: {
+//            [weak self] in
+//           self?.firstButton.frame.origin.y -= 10
+//        }) { (action) in
+//            print("핸들러")
+//        }
         
         
         print("여기서 체크하고 넘기고 토스트")
-        print(DataManager.shared.getUserInfo()?.userInfo?.s_name)
-        print(DataManager.shared.getUserAccountInfo()?.userAccountInfo?.s_email)
-        print(DataManager.shared.getUserCardInfo()?.dataLength)
+        
+        if let coin = DataManager.shared.getUserInfo()?.userInfo?.ui_credit {
+            myCoin.text = "\(coin)"
+        }
+        
+        if let count = DataManager.shared.getUserCardInfo()?.dataLength {
+            myCardsCount.text = "00\(count)"
+        }
+       
+        if let name = DataManager.shared.getUserInfo()?.userInfo?.s_name {
+             userNameLabel.text = name
+        }
+        
+        
+        if let index = DataManager.shared.getUserInfo()?.userInfo?.ui_avatarNo {
+            print(index)
+            userCharView.image = super.charImages[index]
+        }
     }
     
     
