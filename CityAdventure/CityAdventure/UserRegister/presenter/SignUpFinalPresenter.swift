@@ -32,11 +32,12 @@ class SignUpFinalPresenter: NSObject {
             if error == nil {
                 self.presenter.signUpResult(text: resultString)
             }
-          
             self.presenter.stopLoading()
-        }) { (error) in
-          
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }) { (error)  in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.presenter.stopLoading()
+            print("회원가입부분에서 에러가 발생했습니다.", error?.localizedDescription ?? "")
         }
     }
 }
