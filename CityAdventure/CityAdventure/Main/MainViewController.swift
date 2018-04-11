@@ -25,7 +25,9 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var exerciseBottomConst: NSLayoutConstraint!
     @IBOutlet weak var bongTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var progressViewLeading: NSLayoutConstraint!
     
+    @IBOutlet weak var userNameLabelTrailing: NSLayoutConstraint!
     @IBOutlet weak var animationView: UIView!
     
     
@@ -85,6 +87,24 @@ class MainViewController: BaseViewController {
         
         print("여기서 체크하고 넘기고 토스트")
         
+        guard let currentExp = DataManager.shared.getUserInfo()?.userInfo?.ui_exp else {
+            return
+        }
+        
+        
+        let level = super.getLevel(exp: currentExp)
+        let curExp = super.getAbsExp(exp: currentExp)
+        let maxExp = super.getNextNeedExpByLevel(level: level)
+        
+        // 현재 레벨을 표현해준다.
+        currentLevelLabel.text = "\(level)"
+        expCurrentLabel.text = "\(curExp)"
+        expMaxLabel.text = "\(maxExp)"
+        
+        print("level = ", level)
+        print("currentExp = ", super.getAbsExp(exp: currentExp))
+        print("maxExp = ", super.getNextNeedExpByLevel(level: level))
+        
         if let coin = DataManager.shared.getUserInfo()?.userInfo?.ui_credit {
             myCoin.text = "\(coin)"
         }
@@ -100,8 +120,11 @@ class MainViewController: BaseViewController {
         
         if let index = DataManager.shared.getUserInfo()?.userInfo?.ui_avatarNo {
             print(index)
-            userCharView.image = super.charImages[index]
+            userCharView.image = super.charImages[index-1]
         }
+        
+        // 프로그레스 뷰 상태를 셋팅
+        progressView.progress = (Float(curExp)/Float(maxExp))
     }
     
     
@@ -124,6 +147,8 @@ class MainViewController: BaseViewController {
         if Constants.DeviceType.IS_IPHONE_6P {
             quizWidth.constant = 150
             playWidth.constant = 150
+            progressViewLeading.constant = 12
+            userNameLabelTrailing.constant = 24
         }
     }
     

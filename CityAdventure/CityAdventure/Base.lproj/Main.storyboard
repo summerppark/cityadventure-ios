@@ -406,7 +406,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강원도 강릉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xj2-3Z-JYt">
-                                                            <rect key="frame" x="24" y="11" width="77.5" height="18.5"/>
+                                                            <rect key="frame" x="24" y="11" width="77.5" height="19"/>
                                                             <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -658,7 +658,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 변경 실패" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdq-1w-zw0">
-                                                <rect key="frame" x="73.5" y="8" width="165.5" height="24"/>
+                                                <rect key="frame" x="73" y="8" width="165.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="21"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -672,13 +672,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유효한 인증번호가 아닙니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGB-Zh-hel">
-                                        <rect key="frame" x="56" y="64" width="199" height="19.5"/>
+                                        <rect key="frame" x="56" y="64" width="199" height="20"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메일을 확인해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqs-Rz-zPr">
-                                        <rect key="frame" x="80.5" y="99.5" width="150" height="19.5"/>
+                                        <rect key="frame" x="81" y="100" width="150" height="20"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2948,7 +2948,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9i-t7-sjV">
-                                        <rect key="frame" x="188" y="95" width="29.5" height="18.5"/>
+                                        <rect key="frame" x="188" y="94.5" width="29.5" height="19"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2969,7 +2969,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017년 9월 27일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oU-Sk-pLv">
-                                                <rect key="frame" x="119" y="10.5" width="121" height="19.5"/>
+                                                <rect key="frame" x="119" y="10.5" width="121" height="20"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3003,7 +3003,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광주 광역시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5x-3U-96U">
-                                                <rect key="frame" x="138" y="10.5" width="82" height="19.5"/>
+                                                <rect key="frame" x="138.5" y="10.5" width="82" height="20"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3037,7 +3037,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울 특별시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYL-3c-2Z0">
-                                                <rect key="frame" x="138" y="10.5" width="82" height="19.5"/>
+                                                <rect key="frame" x="138.5" y="10.5" width="82" height="20"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3388,7 +3388,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" progressImage="img_progress" translatesAutoresizingMaskIntoConstraints="NO" id="Lho-vd-3Nv">
-                                                        <rect key="frame" x="37" y="5" width="40" height="12"/>
+                                                        <rect key="frame" x="39.5" y="5" width="37.5" height="12"/>
                                                         <color key="tintColor" red="0.23529411764705882" green="0.69803921568627447" blue="0.71764705882352942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="6wz-8W-gSs"/>
@@ -3396,19 +3396,19 @@
                                                         <color key="trackTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZN-Dt-16r">
-                                                        <rect key="frame" x="56" y="8" width="2.5" height="6"/>
+                                                        <rect key="frame" x="57.5" y="8" width="2.5" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VT-SC-sXc">
-                                                        <rect key="frame" x="60" y="8" width="14" height="6"/>
+                                                        <rect key="frame" x="61.5" y="8" width="14" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIx-ho-c97">
-                                                        <rect key="frame" x="43.5" y="8" width="11" height="6"/>
+                                                        <rect key="frame" x="45" y="8" width="11" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -3419,8 +3419,8 @@
                                                     <constraint firstItem="q9r-EW-9DS" firstAttribute="leading" secondItem="gGL-3p-RBG" secondAttribute="leading" constant="6" id="7nl-a4-hti"/>
                                                     <constraint firstAttribute="trailing" secondItem="Lho-vd-3Nv" secondAttribute="trailing" constant="8" id="AdP-9O-oFK"/>
                                                     <constraint firstAttribute="bottom" secondItem="toE-DM-rgJ" secondAttribute="bottom" id="Ikc-n2-Igj"/>
+                                                    <constraint firstItem="Lho-vd-3Nv" firstAttribute="leading" secondItem="TuK-tv-EpO" secondAttribute="trailing" constant="4" id="JO8-PI-U1z"/>
                                                     <constraint firstItem="toE-DM-rgJ" firstAttribute="top" secondItem="gGL-3p-RBG" secondAttribute="top" id="JbM-jI-nv0"/>
-                                                    <constraint firstItem="Lho-vd-3Nv" firstAttribute="leading" secondItem="TuK-tv-EpO" secondAttribute="trailing" constant="2" id="LNk-Qf-08g"/>
                                                     <constraint firstItem="toE-DM-rgJ" firstAttribute="leading" secondItem="gGL-3p-RBG" secondAttribute="leading" id="P4c-bo-Iri"/>
                                                     <constraint firstItem="q9r-EW-9DS" firstAttribute="top" secondItem="gGL-3p-RBG" secondAttribute="top" constant="4" id="PVa-oe-rVR"/>
                                                     <constraint firstItem="pIx-ho-c97" firstAttribute="centerY" secondItem="8VT-SC-sXc" secondAttribute="centerY" id="Rq2-ow-vVR"/>
@@ -3594,9 +3594,11 @@
                         <outlet property="myCoin" destination="b3Q-CU-WM1" id="Od7-a0-erl"/>
                         <outlet property="playWidth" destination="Hpf-Nz-bIU" id="MsB-fG-WtH"/>
                         <outlet property="progressView" destination="Lho-vd-3Nv" id="LAq-Mc-Ro1"/>
+                        <outlet property="progressViewLeading" destination="JO8-PI-U1z" id="83j-RK-fYE"/>
                         <outlet property="quizWidth" destination="vl0-RN-ksM" id="UCf-nt-bg5"/>
                         <outlet property="userCharView" destination="j3P-p2-K4o" id="fL2-dt-AGJ"/>
                         <outlet property="userNameLabel" destination="uIN-0i-Ufc" id="XTm-Yt-zJv"/>
+                        <outlet property="userNameLabelTrailing" destination="4HS-Be-Jgw" id="B0F-1B-USy"/>
                         <outlet property="viewLeading" destination="3fR-la-pSt" id="TEZ-Aq-vMj"/>
                         <outlet property="viewTrailing" destination="pw0-iv-s7Y" id="Mii-qi-r1O"/>
                         <outletCollection property="heightCollection" destination="OLQ-9X-Wlr" collectionClass="NSMutableArray" id="hD3-0T-rG2"/>
