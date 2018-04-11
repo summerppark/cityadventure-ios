@@ -67,7 +67,7 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var myCardsCount: UILabel!
     @IBOutlet weak var myCoin: UILabel!
     
-    
+    var menuOnOff: Bool = true
     
     
     override func viewDidLoad() {
@@ -86,7 +86,13 @@ class MainViewController: BaseViewController {
         
         
         print("여기서 체크하고 넘기고 토스트")
+        dataSetting()
         
+        dump(DataManager.shared.citynumbers)
+    }
+    
+    // 상단 뷰 데이타 셋팅
+    func dataSetting() {
         guard let currentExp = DataManager.shared.getUserInfo()?.userInfo?.ui_exp else {
             return
         }
@@ -112,9 +118,9 @@ class MainViewController: BaseViewController {
         if let count = DataManager.shared.getUserCardInfo()?.dataLength {
             myCardsCount.text = "00\(count)"
         }
-       
+        
         if let name = DataManager.shared.getUserInfo()?.userInfo?.s_name {
-             userNameLabel.text = name
+            userNameLabel.text = name
         }
         
         
@@ -126,7 +132,6 @@ class MainViewController: BaseViewController {
         // 프로그레스 뷰 상태를 셋팅
         progressView.progress = (Float(curExp)/Float(maxExp))
     }
-    
     
     // safeArea 사용
  
@@ -192,6 +197,13 @@ class MainViewController: BaseViewController {
         print("동화")
     }
     
+    
+    @IBAction func presentRightSideMenu(_ sender: UIButton) {
+        super.showMenu {
+            super.backgroundBlackAlpha(view: self.view)
+            self.view.layoutIfNeeded()
+        }
+    }
     
     
     

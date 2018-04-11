@@ -27,6 +27,7 @@
 		CE300639207C7F6D00E90DC3 /* UserAccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE300638207C7F6D00E90DC3 /* UserAccountInfo.swift */; };
 		CE30063B207C828C00E90DC3 /* APIGetUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE30063A207C828C00E90DC3 /* APIGetUserInfo.swift */; };
 		CE30063D207CAD0B00E90DC3 /* UserCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE30063C207CAD0A00E90DC3 /* UserCardInfo.swift */; };
+		CE300640207DB81300E90DC3 /* RightSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE30063F207DB81200E90DC3 /* RightSideMenuViewController.swift */; };
 		CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */; };
 		CE3F2B8A206CBF3500B4D9D0 /* SearchCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */; };
 		CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */; };
@@ -137,6 +138,7 @@
 		CE300638207C7F6D00E90DC3 /* UserAccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountInfo.swift; sourceTree = "<group>"; };
 		CE30063A207C828C00E90DC3 /* APIGetUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIGetUserInfo.swift; sourceTree = "<group>"; };
 		CE30063C207CAD0A00E90DC3 /* UserCardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardInfo.swift; sourceTree = "<group>"; };
+		CE30063F207DB81200E90DC3 /* RightSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuViewController.swift; sourceTree = "<group>"; };
 		CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
 		CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityTableViewCell.swift; sourceTree = "<group>"; };
 		CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterChoiceViewController.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				CED8C4AE2072412300286A61 /* SignUpSuccessViewController.swift */,
 				CE642C222077439A000C2F01 /* RetryAuthAlertViewController.swift */,
 				CE300634207C5A3C00E90DC3 /* AlertGreenViewController.swift */,
+				CE30063F207DB81200E90DC3 /* RightSideMenuViewController.swift */,
 			);
 			path = "Alert&Popup";
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				CE642C2120773D15000C2F01 /* FindPasswordSecondViewController.swift in Sources */,
 				CE1DA223206B5B48000C36B2 /* SignUpViewSecondPresenter.swift in Sources */,
 				CE3F2B8A206CBF3500B4D9D0 /* SearchCityTableViewCell.swift in Sources */,
+				CE300640207DB81300E90DC3 /* RightSideMenuViewController.swift in Sources */,
 				CED8C4B220730B7A00286A61 /* SignUpFinalPresenter.swift in Sources */,
 				CE300633207C54FA00E90DC3 /* RetryAuthAlertViewPresenter.swift in Sources */,
 				CEF716492064DB3200B457E9 /* LaunchScreenViewController.swift in Sources */,

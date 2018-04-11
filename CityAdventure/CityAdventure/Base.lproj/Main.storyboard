@@ -3261,6 +3261,46 @@
             </objects>
             <point key="canvasLocation" x="6370" y="-2228"/>
         </scene>
+        <!--Right Side Menu View Controller-->
+        <scene sceneID="tMM-2H-Rl0">
+            <objects>
+                <viewController storyboardIdentifier="RightSideMenuViewController" id="ZDD-XA-R1b" customClass="RightSideMenuViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FYA-nG-16G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQM-bd-Noj">
+                                <rect key="frame" x="169" y="20" width="206" height="647"/>
+                                <color key="backgroundColor" red="0.99607843139999996" green="0.83529411760000005" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nt-bX-1iJ">
+                                <rect key="frame" x="115" y="20" width="54" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="54" id="D3S-hk-0IY"/>
+                                    <constraint firstAttribute="height" constant="44" id="wrk-rI-rv7"/>
+                                </constraints>
+                                <state key="normal" image="btn_menu_close"/>
+                                <connections>
+                                    <action selector="tappedCloseButton:" destination="ZDD-XA-R1b" eventType="touchUpInside" id="vQ0-0j-FpS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7Nt-bX-1iJ" firstAttribute="top" secondItem="oQM-bd-Noj" secondAttribute="top" id="9Q2-ck-LBW"/>
+                            <constraint firstItem="G75-aw-8MM" firstAttribute="bottom" secondItem="oQM-bd-Noj" secondAttribute="bottom" id="VQw-hF-7as"/>
+                            <constraint firstItem="oQM-bd-Noj" firstAttribute="leading" secondItem="7Nt-bX-1iJ" secondAttribute="trailing" id="cuE-Nq-LHi"/>
+                            <constraint firstItem="G75-aw-8MM" firstAttribute="trailing" secondItem="oQM-bd-Noj" secondAttribute="trailing" id="oTj-cn-Meb"/>
+                            <constraint firstItem="oQM-bd-Noj" firstAttribute="width" secondItem="FYA-nG-16G" secondAttribute="width" multiplier="0.55" id="pxg-sI-FjA"/>
+                            <constraint firstItem="oQM-bd-Noj" firstAttribute="top" secondItem="G75-aw-8MM" secondAttribute="top" id="qZ6-RH-3C6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G75-aw-8MM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0V5-I8-EjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8128" y="-2097"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="IW7-gT-kiX">
             <objects>
@@ -3288,6 +3328,9 @@
                                             <constraint firstAttribute="width" constant="42" id="U7d-em-zef"/>
                                         </constraints>
                                         <state key="normal" image="btn_menu_top"/>
+                                        <connections>
+                                            <action selector="presentRightSideMenu:" destination="hiT-Y5-9Zm" eventType="touchUpInside" id="sVp-jG-Qem"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KU1-S0-idw">
                                         <rect key="frame" x="60" y="10" width="255" height="82"/>
@@ -3658,6 +3701,7 @@
         <image name="btn_duplicated_icon_before" width="150" height="150"/>
         <image name="btn_email_delete" width="65" height="65"/>
         <image name="btn_left_pink" width="153" height="180"/>
+        <image name="btn_menu_close" width="213" height="178"/>
         <image name="btn_menu_top" width="128" height="244"/>
         <image name="btn_next" width="377" height="150"/>
         <image name="btn_next_On" width="377" height="150"/>
