@@ -406,7 +406,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강원도 강릉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xj2-3Z-JYt">
-                                                            <rect key="frame" x="24" y="11" width="77.666666666666671" height="19"/>
+                                                            <rect key="frame" x="24" y="11" width="77.333333333333329" height="19"/>
                                                             <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -506,7 +506,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비유비유 대원님 가입이 완료되었습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2z-x8-IOc">
-                                <rect key="frame" x="75" y="390" width="264" height="19"/>
+                                <rect key="frame" x="75.333333333333343" y="390" width="263.66666666666663" height="19"/>
                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1566,7 +1566,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4BD-vu-TXv">
-                                        <rect key="frame" x="299" y="33" width="91" height="15"/>
+                                        <rect key="frame" x="299.33333333333331" y="33" width="90.666666666666686" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="dS7-iU-hvG"/>
                                         </constraints>
@@ -1604,13 +1604,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="256"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원가입 시 등록한 이메일 주소를 입력주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8a-aA-WCT">
-                                        <rect key="frame" x="24" y="31.999999999999996" width="252" height="38.666666666666657"/>
+                                        <rect key="frame" x="24" y="31.999999999999996" width="252" height="39.666666666666657"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="17"/>
                                         <color key="textColor" red="0.27843137254901962" green="0.22352941176470589" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAe-AE-5bC">
-                                        <rect key="frame" x="16" y="94.666666666666657" width="268" height="50"/>
+                                        <rect key="frame" x="16" y="95.666666666666657" width="268" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signup_email_bg" translatesAutoresizingMaskIntoConstraints="NO" id="P7j-re-7mq">
                                                 <rect key="frame" x="0.0" y="0.0" width="268" height="50"/>
@@ -1646,13 +1646,13 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="본인 확인을 위해 이메일 주소로 인증번호를 전송합니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aV9-2O-wSN">
-                                        <rect key="frame" x="16" y="152.66666666666669" width="268" height="12.333333333333343"/>
+                                        <rect key="frame" x="16" y="153.66666666666669" width="268" height="13"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="11"/>
                                         <color key="textColor" red="0.47843137254901963" green="0.45098039215686275" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D45-ls-UXw">
-                                        <rect key="frame" x="86" y="183" width="128" height="50"/>
+                                        <rect key="frame" x="86" y="184.66666666666669" width="128" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="fHE-hF-45e"/>
                                         </constraints>
@@ -1897,7 +1897,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 가입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc8-u2-a7r">
-                                        <rect key="frame" x="327" y="33" width="63" height="15"/>
+                                        <rect key="frame" x="327.33333333333331" y="33" width="62.666666666666686" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="aTQ-wI-miC"/>
                                         </constraints>
@@ -2948,7 +2948,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9i-t7-sjV">
-                                        <rect key="frame" x="188" y="94.666666666666657" width="29.666666666666657" height="19"/>
+                                        <rect key="frame" x="188" y="94.666666666666657" width="29.333333333333343" height="19"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2963,13 +2963,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ2-Rq-XCK">
-                                                <rect key="frame" x="12.000000000000002" y="12.666666666666657" width="23.666666666666671" height="15"/>
+                                                <rect key="frame" x="12.000000000000002" y="12.666666666666657" width="22.666666666666671" height="15"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017년 9월 27일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oU-Sk-pLv">
-                                                <rect key="frame" x="144.33333333333334" y="10.666666666666657" width="121.00000000000003" height="20"/>
+                                                <rect key="frame" x="144.66666666666666" y="10.666666666666657" width="120.99999999999997" height="20"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3003,7 +3003,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광주 광역시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5x-3U-96U">
-                                                <rect key="frame" x="164" y="10.666666666666686" width="82" height="20"/>
+                                                <rect key="frame" x="163" y="10.666666666666686" width="82" height="20"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3037,7 +3037,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울 특별시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYL-3c-2Z0">
-                                                <rect key="frame" x="164" y="10.666666666666686" width="82" height="20"/>
+                                                <rect key="frame" x="163.33333333333334" y="10.666666666666686" width="81.666666666666657" height="20"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3155,7 +3155,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공지사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDE-5H-afh">
-                                        <rect key="frame" x="167.33333333333334" y="27" width="80" height="25"/>
+                                        <rect key="frame" x="167.66666666666666" y="27" width="79.666666666666657" height="25"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -3471,7 +3471,7 @@
                                                 <state key="normal" image="effect_sound_on"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ai-Tf-Wy4">
-                                                <rect key="frame" x="26.666666666666657" y="430" width="32" height="14"/>
+                                                <rect key="frame" x="27" y="430" width="32" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="lus-xw-Fnz"/>
                                                 </constraints>
@@ -3481,14 +3481,14 @@
                                                 </state>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMM-Nf-0XF">
-                                                <rect key="frame" x="70.666666666666686" y="430" width="2" height="14"/>
+                                                <rect key="frame" x="71" y="430" width="2" height="14"/>
                                                 <color key="backgroundColor" red="0.65098039215686276" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="2" id="GSf-4Z-gut"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ya9-48-ikD">
-                                                <rect key="frame" x="84.666666666666686" y="430" width="48" height="14"/>
+                                                <rect key="frame" x="85" y="430" width="48" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="w77-4f-Hxi"/>
                                                 </constraints>
@@ -3498,7 +3498,7 @@
                                                 </state>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gic-u4-d27">
-                                                <rect key="frame" x="144.66666666666669" y="430" width="2" height="14"/>
+                                                <rect key="frame" x="145" y="430" width="2" height="14"/>
                                                 <color key="backgroundColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="2" id="cV3-iH-2Lc"/>
@@ -3506,7 +3506,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMu-1e-3Vn">
-                                                <rect key="frame" x="158.66666666666669" y="430" width="47" height="14"/>
+                                                <rect key="frame" x="159" y="430" width="47" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="x1n-7u-Ryk"/>
                                                 </constraints>
@@ -3930,7 +3930,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hOp-Dx-41E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6920.8000000000002" y="-1351.5742128935533"/>
+            <point key="canvasLocation" x="6796" y="-1335"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7rV-qr-G49">
