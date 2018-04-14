@@ -9,11 +9,7 @@
 import UIKit
 
 class RightSideMenuViewController: BaseViewController {
-    
-    
-    
-    
-    
+ 
     @IBOutlet weak var leftView: UIView!
     
     
@@ -26,8 +22,6 @@ class RightSideMenuViewController: BaseViewController {
     @IBOutlet weak var userAge: UILabel!
     @IBOutlet weak var provinceCity: UILabel!
     
-    // UserInfo
-    var userInfo: UserInfo.UserCharInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,11 +55,6 @@ class RightSideMenuViewController: BaseViewController {
         let temp = DataManager.shared.citynumbers[cityNumber-1]
             provinceCity.text = "\(temp.cityName) \(temp.areaName)"
         }
-        
-        
-        
-        
-        
     }
     
     func addGesture() {
