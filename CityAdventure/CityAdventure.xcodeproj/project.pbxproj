@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		666B6E582084C42000CD28DB /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E572084C42000CD28DB /* LogoutViewController.swift */; };
+		66D9390B208480DE005A66F4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9390A208480DE005A66F4 /* SettingViewController.swift */; };
 		719AC02BAEEC44D234717BB9 /* Pods_CityAdventure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */; };
 		CE1DA223206B5B48000C36B2 /* SignUpViewSecondPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */; };
 		CE1DA225206B5E49000C36B2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA224206B5E49000C36B2 /* APIManager.swift */; };
@@ -119,6 +121,8 @@
 
 /* Begin PBXFileReference section */
 		44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		666B6E572084C42000CD28DB /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		66D9390A208480DE005A66F4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSecondPresenter.swift; sourceTree = "<group>"; };
 		CE1DA224206B5E49000C36B2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CE1DA226206B5EDD000C36B2 /* EmailChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailChecker.swift; sourceTree = "<group>"; };
@@ -395,6 +399,8 @@
 				CE642C222077439A000C2F01 /* RetryAuthAlertViewController.swift */,
 				CE300634207C5A3C00E90DC3 /* AlertGreenViewController.swift */,
 				CE30063F207DB81200E90DC3 /* RightSideMenuViewController.swift */,
+				66D9390A208480DE005A66F4 /* SettingViewController.swift */,
+				666B6E572084C42000CD28DB /* LogoutViewController.swift */,
 			);
 			path = "Alert&Popup";
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 				CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */,
 				CE642C2A2077777A000C2F01 /* TimeFormatter.swift in Sources */,
 				CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */,
+				666B6E582084C42000CD28DB /* LogoutViewController.swift in Sources */,
 				CE24D7872067B03B00B21EF3 /* SignUpViewController.swift in Sources */,
 				CE30063B207C828C00E90DC3 /* APIGetUserInfo.swift in Sources */,
 				CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */,
@@ -690,6 +697,7 @@
 				CED8C4AB207212B000286A61 /* FMDatabaseQueue.m in Sources */,
 				CE642C1B2074D1CC000C2F01 /* LoginResponse.swift in Sources */,
 				CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */,
+				66D9390B208480DE005A66F4 /* SettingViewController.swift in Sources */,
 				CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */,
 				CE642C2120773D15000C2F01 /* FindPasswordSecondViewController.swift in Sources */,
 				CE1DA223206B5B48000C36B2 /* SignUpViewSecondPresenter.swift in Sources */,

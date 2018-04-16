@@ -12,7 +12,6 @@ class RightSideMenuViewController: BaseViewController {
  
     @IBOutlet weak var leftView: UIView!
     
-    
     @IBOutlet weak var bgmSoundButtonHeight: NSLayoutConstraint!
     @IBOutlet weak var effectSoundButtonHeight: NSLayoutConstraint!
     
@@ -21,6 +20,8 @@ class RightSideMenuViewController: BaseViewController {
     
     @IBOutlet weak var userAge: UILabel!
     @IBOutlet weak var provinceCity: UILabel!
+    
+    
     
     
     override func viewDidLoad() {
@@ -36,6 +37,10 @@ class RightSideMenuViewController: BaseViewController {
     func dataSetting() {
         guard let info = DataManager.shared.userInfo?.userInfo else {
             return
+        }
+        
+        if let name = info.s_name {
+            userName.text = name
         }
         
         // 캐릭터 이미지
@@ -87,4 +92,16 @@ class RightSideMenuViewController: BaseViewController {
             self.view.removeFromSuperview()
         }
     }
+    
+    
+    @IBAction func goSetting(_ sender: UIButton) {
+        if let setting = storyboard?.instantiateViewController(withIdentifier: "SettingViewController") as? SettingViewController {
+            setting.modalPresentationStyle = .overFullScreen
+            setting.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            
+            self.present(setting, animated: false, completion: nil)
+        }
+    }
+    
+    
 }

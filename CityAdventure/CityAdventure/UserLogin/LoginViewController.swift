@@ -95,9 +95,7 @@ class LoginViewController: BaseViewController {
         if let next = storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController {
             self.navigationController?.pushViewController(next, animated: true)
         }
-        
     }
-    
 }
 
 //MARK:- @IBAction
