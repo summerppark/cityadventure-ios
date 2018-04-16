@@ -2969,7 +2969,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017년 9월 27일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oU-Sk-pLv">
-                                                <rect key="frame" x="144.66666666666666" y="10.666666666666657" width="120.99999999999997" height="20"/>
+                                                <rect key="frame" x="143.66666666666666" y="10.666666666666657" width="120.99999999999997" height="20"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -3367,6 +3367,12 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpK-Fi-yRp">
+                                                <rect key="frame" x="138.33333333333331" y="152" width="12" height="15"/>
+                                                <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -3386,6 +3392,7 @@
                                             <constraint firstItem="431-bb-zFv" firstAttribute="top" secondItem="txA-F9-1lV" secondAttribute="top" constant="16" id="OGe-zM-ZS1"/>
                                             <constraint firstItem="NwK-ZG-hjc" firstAttribute="centerX" secondItem="362-Bz-8Ns" secondAttribute="centerX" id="PqB-Bc-qCc"/>
                                             <constraint firstItem="e5Q-ya-0w2" firstAttribute="leading" secondItem="txA-F9-1lV" secondAttribute="leading" constant="24" id="QDY-Db-FfV"/>
+                                            <constraint firstItem="bpK-Fi-yRp" firstAttribute="centerY" secondItem="nn0-91-5hW" secondAttribute="centerY" id="Qgy-Fy-jmA"/>
                                             <constraint firstItem="lqx-Tp-LbQ" firstAttribute="centerX" secondItem="txA-F9-1lV" secondAttribute="centerX" id="Ruj-rY-mat"/>
                                             <constraint firstItem="Kvg-28-aXa" firstAttribute="leading" secondItem="G74-la-ifu" secondAttribute="leading" id="S7a-fn-1Zp"/>
                                             <constraint firstItem="nn0-91-5hW" firstAttribute="top" secondItem="Px0-4j-K4d" secondAttribute="bottom" constant="4" id="Tlf-7E-JaE"/>
@@ -3403,6 +3410,7 @@
                                             <constraint firstItem="GM0-4s-2Io" firstAttribute="trailing" secondItem="Px0-4j-K4d" secondAttribute="trailing" constant="-8" id="skU-HD-ZZQ"/>
                                             <constraint firstAttribute="bottom" secondItem="txA-F9-1lV" secondAttribute="bottom" constant="14" id="tCs-Jg-Ayq"/>
                                             <constraint firstItem="GM0-4s-2Io" firstAttribute="leading" secondItem="qwH-FW-G4q" secondAttribute="trailing" constant="12" id="teS-ft-7Iv"/>
+                                            <constraint firstItem="bpK-Fi-yRp" firstAttribute="leading" secondItem="nn0-91-5hW" secondAttribute="trailing" constant="14" id="uLV-0u-ti6"/>
                                             <constraint firstItem="362-Bz-8Ns" firstAttribute="top" secondItem="NwK-ZG-hjc" secondAttribute="bottom" constant="3" id="whx-tG-vw3"/>
                                         </constraints>
                                     </view>
@@ -3571,8 +3579,12 @@
                     </view>
                     <connections>
                         <outlet property="bgmSoundButtonHeight" destination="u1A-34-86E" id="eL3-sb-Xbe"/>
+                        <outlet property="charImage" destination="431-bb-zFv" id="Qql-ue-z0h"/>
                         <outlet property="effectSoundButtonHeight" destination="Ci2-gc-PG5" id="nIF-h6-cVD"/>
                         <outlet property="leftView" destination="iUE-14-mhs" id="jaM-Au-EUc"/>
+                        <outlet property="provinceCity" destination="NwK-ZG-hjc" id="QWp-MB-dZ0"/>
+                        <outlet property="userAge" destination="nn0-91-5hW" id="sG7-0K-D2G"/>
+                        <outlet property="userName" destination="qwH-FW-G4q" id="Iwl-K6-mIQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0V5-I8-EjU" userLabel="First Responder" sceneMemberID="firstResponder"/>
