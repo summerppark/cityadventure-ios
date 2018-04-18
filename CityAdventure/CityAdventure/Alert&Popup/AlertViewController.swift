@@ -12,6 +12,7 @@ import SnapKit
 
 protocol AlertViewProtocol: class {
     func successAuth()
+     func successCallback()
 }
 
 class AlertviewController : UIViewController {
@@ -43,6 +44,8 @@ class AlertviewController : UIViewController {
             if let text = self.alertString {
                 if text.first == "인" {
                     self.delegate?.successAuth()
+                } else if text == "비밀번호가 변경되었습니다. \n다시 로그인 해주세요~" {
+                    self.delegate?.successCallback()
                 }
             }
         }

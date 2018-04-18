@@ -11,6 +11,7 @@ import SnapKit
 
 class SettingViewController: BaseViewController {
     
+    var delegate: SettingViewProtocol?
     let sampleImages = [#imageLiteral(resourceName: "btn_check_gender"), #imageLiteral(resourceName: "btn_checkOn_gender")]
   
     @IBOutlet weak var settingView: UIView! {
@@ -123,4 +124,14 @@ class SettingViewController: BaseViewController {
             self.present(logoutAlert, animated: false, completion: nil)
         }
     }
+    
+    @IBAction func resetPassword(_ sender: UIButton) {
+        self.dismiss(animated: false) {
+            self.delegate?.resetPassword()
+        }
+    }
+}
+
+protocol SettingViewProtocol: class {
+    func resetPassword()
 }

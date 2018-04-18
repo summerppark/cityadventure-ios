@@ -83,14 +83,7 @@ class RightSideMenuViewController: BaseViewController {
     
     
     @IBAction func tappedCloseButton(_ sender: UIButton) {
-        print("ASD")
-        self.leftView.backgroundColor = .clear
-        UIView.animate(withDuration: 0.3, animations: {
-             self.view.frame = CGRect(x: self.view.frame.width, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        }) { (finished) in
-            
-            self.view.removeFromSuperview()
-        }
+        hideView(type: 0)
     }
     
     
@@ -98,10 +91,46 @@ class RightSideMenuViewController: BaseViewController {
         if let setting = storyboard?.instantiateViewController(withIdentifier: "SettingViewController") as? SettingViewController {
             setting.modalPresentationStyle = .overFullScreen
             setting.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-            
+            setting.delegate = self
             self.present(setting, animated: false, completion: nil)
         }
     }
     
+    @IBAction func goTermsOfUse(_ sender: UIButton) {
+        hideView(type: 2)
+    }
     
+    @IBAction func goClientCenter(_ sender: UIButton) {
+        hideView(type: 3)
+    }
+    
+    func hideView(type: Int) {
+        self.leftView.backgroundColor = .clear
+        UIView.animate(withDuration: 0.3, animations: {
+            self.view.frame = CGRect(x: self.view.frame.width, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        }) { (finished) in
+            self.view.removeFromSuperview()
+            // Reset 일때
+            if type == 1 {
+                if let reset = self.storyboard?.instantiateViewController(withIdentifier: "ResetPasswordViewController") as? ResetPasswordViewController {
+                    self.navigationController?.pushViewController(reset, animated: true)
+                }
+            } else if type == 2 {
+                if let termsOfUse = self.storyboard?.instantiateViewController(withIdentifier: "TermsOfUseViewController") as? TermsOfUseViewController {
+                    self.navigationController?.pushViewController(termsOfUse, animated: true)
+                }
+            } else if type == 3 {
+                if let clientCenter = self.storyboard?.instantiateViewController(withIdentifier: "ClientCenterViewController") as? ClientCenterViewController {
+                    self.navigationController?.pushViewController(clientCenter, animated: true)
+                }
+            }
+        }
+    }
+}
+
+
+extension RightSideMenuViewController: SettingViewProtocol {
+    func resetPassword() {
+        hideView(type: 1)
+    }
 }

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		666B6E582084C42000CD28DB /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E572084C42000CD28DB /* LogoutViewController.swift */; };
+		666B6E5A2086D41D00CD28DB /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E592086D41D00CD28DB /* ResetPasswordViewController.swift */; };
+		666B6E5D2087190B00CD28DB /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E5C2087190B00CD28DB /* TermsOfUseViewController.swift */; };
+		666B6E5F2087234600CD28DB /* TermsOfUseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E5E2087234600CD28DB /* TermsOfUseDetailViewController.swift */; };
+		666B6E6120872A3A00CD28DB /* ClientCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E6020872A3A00CD28DB /* ClientCenterViewController.swift */; };
+		666B6E6320874DED00CD28DB /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E6220874DED00CD28DB /* ResetPasswordPresenter.swift */; };
 		66D9390B208480DE005A66F4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9390A208480DE005A66F4 /* SettingViewController.swift */; };
 		719AC02BAEEC44D234717BB9 /* Pods_CityAdventure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */; };
 		CE1DA223206B5B48000C36B2 /* SignUpViewSecondPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */; };
@@ -122,6 +127,11 @@
 /* Begin PBXFileReference section */
 		44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		666B6E572084C42000CD28DB /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		666B6E592086D41D00CD28DB /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		666B6E5C2087190B00CD28DB /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
+		666B6E5E2087234600CD28DB /* TermsOfUseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseDetailViewController.swift; sourceTree = "<group>"; };
+		666B6E6020872A3A00CD28DB /* ClientCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCenterViewController.swift; sourceTree = "<group>"; };
+		666B6E6220874DED00CD28DB /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 		66D9390A208480DE005A66F4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSecondPresenter.swift; sourceTree = "<group>"; };
 		CE1DA224206B5E49000C36B2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -222,6 +232,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		666B6E5B208718F600CD28DB /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				666B6E5C2087190B00CD28DB /* TermsOfUseViewController.swift */,
+				666B6E5E2087234600CD28DB /* TermsOfUseDetailViewController.swift */,
+				666B6E6020872A3A00CD28DB /* ClientCenterViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		9C85A1D423DEC09FAFF113EF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +305,7 @@
 				CE642C182074CD84000C2F01 /* LoginViewPresenter.swift */,
 				CE642C1E20773091000C2F01 /* FindPasswordPresenter.swift */,
 				CE300628207B830A00E90DC3 /* FindPasswordSecondPresenter.swift */,
+				666B6E6220874DED00CD28DB /* ResetPasswordPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -384,6 +405,7 @@
 				CEF7164A2064F40700B457E9 /* LoginViewController.swift */,
 				CE642C2020773D15000C2F01 /* FindPasswordSecondViewController.swift */,
 				CE642C1C20770339000C2F01 /* FindPasswordViewController.swift */,
+				666B6E592086D41D00CD28DB /* ResetPasswordViewController.swift */,
 			);
 			path = UserLogin;
 			sourceTree = "<group>";
@@ -442,6 +464,7 @@
 		CEF716322064CB1900B457E9 /* CityAdventure */ = {
 			isa = PBXGroup;
 			children = (
+				666B6E5B208718F600CD28DB /* Setting */,
 				CE642C2420775594000C2F01 /* Main */,
 				CE651300207367FD006ABE4F /* FMDBFolder */,
 				CE6512F82073651A006ABE4F /* StoryBoards */,
@@ -668,6 +691,7 @@
 				CE30063D207CAD0B00E90DC3 /* UserCardInfo.swift in Sources */,
 				CE1DA225206B5E49000C36B2 /* APIManager.swift in Sources */,
 				CE642C232077439A000C2F01 /* RetryAuthAlertViewController.swift in Sources */,
+				666B6E5A2086D41D00CD28DB /* ResetPasswordViewController.swift in Sources */,
 				CED8C4AD207212B000286A61 /* FMDatabase.m in Sources */,
 				CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */,
 				CE642C2A2077777A000C2F01 /* TimeFormatter.swift in Sources */,
@@ -675,6 +699,7 @@
 				666B6E582084C42000CD28DB /* LogoutViewController.swift in Sources */,
 				CE24D7872067B03B00B21EF3 /* SignUpViewController.swift in Sources */,
 				CE30063B207C828C00E90DC3 /* APIGetUserInfo.swift in Sources */,
+				666B6E5D2087190B00CD28DB /* TermsOfUseViewController.swift in Sources */,
 				CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */,
 				CE1DA229206B62B1000C36B2 /* APIUrls.swift in Sources */,
 				CE642C192074CD84000C2F01 /* LoginViewPresenter.swift in Sources */,
@@ -683,8 +708,10 @@
 				CEE3B3C4206A22A900156387 /* Account.swift in Sources */,
 				CED8C4AA207212B000286A61 /* FMDatabasePool.m in Sources */,
 				CE642C282077612F000C2F01 /* NoticeViewController.swift in Sources */,
+				666B6E6120872A3A00CD28DB /* ClientCenterViewController.swift in Sources */,
 				CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */,
 				CED8C4BF2073498E00286A61 /* BaseViewController.swift in Sources */,
+				666B6E5F2087234600CD28DB /* TermsOfUseDetailViewController.swift in Sources */,
 				CE300629207B830A00E90DC3 /* FindPasswordSecondPresenter.swift in Sources */,
 				CED8C4AC207212B000286A61 /* FMResultSet.m in Sources */,
 				CE642C1F20773091000C2F01 /* FindPasswordPresenter.swift in Sources */,
@@ -704,6 +731,7 @@
 				CE3F2B8A206CBF3500B4D9D0 /* SearchCityTableViewCell.swift in Sources */,
 				CE300640207DB81300E90DC3 /* RightSideMenuViewController.swift in Sources */,
 				CED8C4B220730B7A00286A61 /* SignUpFinalPresenter.swift in Sources */,
+				666B6E6320874DED00CD28DB /* ResetPasswordPresenter.swift in Sources */,
 				CE300633207C54FA00E90DC3 /* RetryAuthAlertViewPresenter.swift in Sources */,
 				CEF716492064DB3200B457E9 /* LaunchScreenViewController.swift in Sources */,
 				CE1DA22B206B67AB000C36B2 /* AlertViewController.swift in Sources */,

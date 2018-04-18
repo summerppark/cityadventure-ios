@@ -59,12 +59,15 @@ class LoginViewPresenter: NSObject {
                     self.memberNumber = member
                     self.token = token
                     
+                    
+                    //Token값을 로컬에 저장
+                    UserDefaults.standard.set(token, forKey: "token")
+                    
                     // 토큰정보를 받아와서 추가적인 서버와 통신한다.
                     self.getCardInfo()
                 }
             }
             self.presenter.stopLoading()
-            
         }) { (msg, err) in
             print(msg!)
             self.presenter.failEmailLogin(msg: msg)
