@@ -27,7 +27,7 @@ struct TimeFormatter {
         var result = 0
         
         if let myBirth = birth {
-           result = year - myBirth
+           result = year - myBirth + 1
         }
 
         return String(result)

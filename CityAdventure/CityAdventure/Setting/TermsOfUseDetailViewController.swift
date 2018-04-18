@@ -20,11 +20,6 @@ class TermsOfUseDetailViewController: UIViewController {
         didSet {
             descText.layer.cornerRadius = 8.0
             descText.clipsToBounds = true
-            
-            let contentHeight = descText.contentSize.height
-            let offSet = descText.contentOffset.y
-            let contentOffset = contentHeight - offSet
-            descText.contentOffset = CGPoint(x: 0,y: -contentOffset)
         }
     }
     
@@ -33,6 +28,8 @@ class TermsOfUseDetailViewController: UIViewController {
     var index: Int?
     
     let descs = ["""
+    
+
     제 1 장 총 칙
     
     제1조 [목적]
@@ -270,6 +267,7 @@ class TermsOfUseDetailViewController: UIViewController {
     부칙
     1. 본 약관은 2017년 2월 1일부터 시행됩니다.
 """, """
+
 개인정보 취급방침
 
  제1조(의의)
@@ -598,6 +596,11 @@ class TermsOfUseDetailViewController: UIViewController {
         if let index = index {
            descText.text = descs[index]
         }
+        
+        let contentHeight = descText.contentSize.height
+        let offSet = descText.contentOffset.y
+        let contentOffset = contentHeight - offSet
+        descText.contentOffset = CGPoint(x: 0,y: -contentOffset)
     }
     
 

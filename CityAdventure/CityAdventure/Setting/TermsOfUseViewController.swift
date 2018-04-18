@@ -55,7 +55,7 @@ extension TermsOfUseViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         
-        if indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2 {
+        if indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2) {
             if let detail = storyboard?.instantiateViewController(withIdentifier: "TermsOfUseDetailViewController") as? TermsOfUseDetailViewController {
                 detail.titleString = str
                 detail.index = indexPath.row
