@@ -64,11 +64,6 @@ class FindPasswordViewController: BaseViewController, UIGestureRecognizerDelegat
         // 버튼 눌렀을 때
         self.view.endEditing(true)
         self.presenter.findPassword(email: emailTextField.text ?? "잘못 입력하였습니다." )
-        
-        
-        
-        
-        
     }
     
     
@@ -106,6 +101,10 @@ extension FindPasswordViewController: FindPasswordPresenterProtocl {
 
 
 extension FindPasswordViewController: AlertViewProtocol {
+    func successCallback() {
+        print("사용되지않는")
+    }
+    
     func successAuth() {
         // 넥스트 인증번호 입력 란으로 변경.
         if let authCheckVC = storyboard?.instantiateViewController(withIdentifier: "FindPasswordSecondViewController") as? FindPasswordSecondViewController {

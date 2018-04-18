@@ -87,8 +87,6 @@ class MainViewController: BaseViewController {
         
         print("여기서 체크하고 넘기고 토스트")
         dataSetting()
-        
-        dump(DataManager.shared.citynumbers)
     }
     
     // 상단 뷰 데이타 셋팅

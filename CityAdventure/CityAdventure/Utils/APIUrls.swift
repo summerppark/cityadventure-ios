@@ -48,4 +48,9 @@ class APIUrls {
     static func getCardlistInfo(token: String, number: Int) -> String {
         return "/members/\(number)/cardCollectingLogs?token=\(token)"
     }
+    
+    // 비밀번호 변경
+    static func changePassword(token: String, password: String) -> String {
+        return "/accounts/password?token=\(token)&password=\(password)"
+    }
 }
