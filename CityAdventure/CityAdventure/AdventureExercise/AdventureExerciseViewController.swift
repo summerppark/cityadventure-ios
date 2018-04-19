@@ -68,7 +68,11 @@ extension AdventureExerciseViewController: UICollectionViewDataSource, UICollect
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExerciseCollectionViewCell", for: indexPath) as! ExerciseCollectionViewCell
        cell.stageLabel.text = "\(indexPath.item + 1)"
-        
+        if indexPath.item == 0 {
+            cell.stageView.layer.borderColor = UIColor.red.cgColor
+            cell.stageView.backgroundColor = UIColor.lightBrownBgColor
+            cell.stageLabel.textColor = .black
+        }
         
         return cell
     }

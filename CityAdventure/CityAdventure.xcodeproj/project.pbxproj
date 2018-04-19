@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6665F9AF2088914600A5D2BE /* AdventureExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665F9AE2088914600A5D2BE /* AdventureExerciseViewController.swift */; };
 		6665F9B1208898E100A5D2BE /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665F9B0208898E100A5D2BE /* ExerciseCollectionViewCell.swift */; };
+		6665F9B32088B26400A5D2BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6665F9B22088B26000A5D2BE /* Assets.xcassets */; };
 		666B6E582084C42000CD28DB /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E572084C42000CD28DB /* LogoutViewController.swift */; };
 		666B6E5A2086D41D00CD28DB /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E592086D41D00CD28DB /* ResetPasswordViewController.swift */; };
 		666B6E5D2087190B00CD28DB /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E5C2087190B00CD28DB /* TermsOfUseViewController.swift */; };
@@ -50,7 +51,6 @@
 		CE642C26207755A5000C2F01 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C25207755A5000C2F01 /* MainViewController.swift */; };
 		CE642C282077612F000C2F01 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C272077612F000C2F01 /* NoticeViewController.swift */; };
 		CE642C2A2077777A000C2F01 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C292077777A000C2F01 /* TimeFormatter.swift */; };
-		CE76E92C2068C0FD00DF46C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE76E92B2068C0FC00DF46C4 /* Assets.xcassets */; };
 		CE7C12D42072043E0095F1C9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C12D32072043E0095F1C9 /* libsqlite3.0.tbd */; };
 		CEAAE7DD206E02A9006C2F88 /* cityNumber.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */; };
 		CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE7DE206E0321006C2F88 /* CityNumberDB.swift */; };
@@ -131,6 +131,7 @@
 		44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6665F9AE2088914600A5D2BE /* AdventureExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureExerciseViewController.swift; sourceTree = "<group>"; };
 		6665F9B0208898E100A5D2BE /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
+		6665F9B22088B26000A5D2BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		666B6E572084C42000CD28DB /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		666B6E592086D41D00CD28DB /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		666B6E5C2087190B00CD28DB /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
@@ -171,7 +172,6 @@
 		CE642C25207755A5000C2F01 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE642C272077612F000C2F01 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		CE642C292077777A000C2F01 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
-		CE76E92B2068C0FC00DF46C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE7C12942071FD8A0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C12B72072015F0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C12B9207202530095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -505,7 +505,7 @@
 		CEF716452064D12200B457E9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				CE76E92B2068C0FC00DF46C4 /* Assets.xcassets */,
+				6665F9B22088B26000A5D2BE /* Assets.xcassets */,
 				CE24D77E20667D1300B21EF3 /* Fonts */,
 				CEF716462064D2BF00B457E9 /* loading.gif */,
 			);
@@ -635,8 +635,8 @@
 				CE24D78D2067FB8400B21EF3 /* GodoB.otf in Resources */,
 				CE24D78E2067FB8400B21EF3 /* GodoM.otf in Resources */,
 				CEF7163E2064CB1900B457E9 /* LaunchScreen.storyboard in Resources */,
+				6665F9B32088B26400A5D2BE /* Assets.xcassets in Resources */,
 				CEF716472064D2BF00B457E9 /* loading.gif in Resources */,
-				CE76E92C2068C0FD00DF46C4 /* Assets.xcassets in Resources */,
 				CEF716392064CB1900B457E9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
