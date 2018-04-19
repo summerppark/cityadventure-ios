@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import StoreKit
 
 class SettingViewController: BaseViewController {
     
@@ -58,6 +59,8 @@ class SettingViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var versionStatus: UILabel!
+    @IBOutlet weak var updateButton: UIButton!
     
     @IBOutlet weak var leaveButton: UIButton! {
         didSet {
@@ -65,7 +68,8 @@ class SettingViewController: BaseViewController {
                                         NSAttributedStringKey.foregroundColor: UIColor.black
             
                 ] as [NSAttributedStringKey : Any]
-            let attributeString = NSMutableAttributedString(string: "회원탈퇴",                                                    attributes: linkbuttonAttributes)
+            let attributeString = NSMutableAttributedString(string: "회원탈퇴",
+                                                            attributes: linkbuttonAttributes)
             
             leaveButton.setAttributedTitle(attributeString, for: .normal)
             
@@ -74,7 +78,15 @@ class SettingViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var localVersion: UILabel! {
+        didSet {
+            if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                localVersion.text = version
+            }
+        }
+    }
     
+    @IBOutlet weak var latestVersion: UILabel!
     
     @IBAction func selectOption(_ sender: UIButton) {
         switch sender.tag {
@@ -113,8 +125,20 @@ class SettingViewController: BaseViewController {
             make.centerY.equalTo(settingView.snp.top).offset(4)
             make.width.height.equalTo(48)
         }
+        
+        getLatestVersion()
+        versionCheck()
     }
     
+    func versionCheck() {
+        if latestVersion.text == localVersion.text {
+            updateButton.isHidden = true
+            versionStatus.isHidden = false
+        } else {
+            updateButton.isHidden = false
+            versionStatus.isHidden = true
+        }
+    }
     
     @IBAction func logout(_ sender: UIButton) {
         if let logoutAlert = storyboard?.instantiateViewController(withIdentifier: "LogoutViewController") as? LogoutViewController {
@@ -130,8 +154,51 @@ class SettingViewController: BaseViewController {
             self.delegate?.resetPassword()
         }
     }
+    
+    @IBAction func leave(_ sender: UIButton) {
+        self.dismiss(animated: false) {
+            self.delegate?.leave()
+        }
+    }
+    
+    // appstore
+    @IBAction func appUpdate(_ sender: UIButton) {
+       print("TOTO", isUpdateAvailable())
+    }
+    
+    
+    // 현재 스토어에 등록 된 버전을 가져와서 label에 표시해준다.
+    func getLatestVersion() {
+        // 번들ID 를 포함한 URL을 작성
+        if let url = URL(string: "http://itunes.apple.com/lookup?bundleId=com.sharecaring.drdiary-ios"),
+        let data = try? Data(contentsOf: url),
+        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any],
+        let results = json?["results"] as? [[String:Any]], results.count > 0,
+            let storeVersion = results[0]["version"] as? String {
+            latestVersion.text = storeVersion
+        }
+    }
+    
+    
+    //Appstore 로 보내는 로직 버전 체크
+    func isUpdateAvailable() -> Bool {
+        guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+            let url = URL(string: "http://itunes.apple.com/lookup?bundleId=com.sharecaring.drdiary-ios"),
+            let data = try? Data(contentsOf: url),
+            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any],
+            let results = json?["results"] as? [[String: Any]], results.count > 0,
+            let appStoreVersion = results[0]["version"] as? String else { return false }
+        
+        
+        if (version == appStoreVersion) {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
 protocol SettingViewProtocol: class {
     func resetPassword()
+    func leave()
 }

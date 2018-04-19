@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6665F9AF2088914600A5D2BE /* AdventureExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665F9AE2088914600A5D2BE /* AdventureExerciseViewController.swift */; };
+		6665F9B1208898E100A5D2BE /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665F9B0208898E100A5D2BE /* ExerciseCollectionViewCell.swift */; };
 		666B6E582084C42000CD28DB /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E572084C42000CD28DB /* LogoutViewController.swift */; };
 		666B6E5A2086D41D00CD28DB /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E592086D41D00CD28DB /* ResetPasswordViewController.swift */; };
 		666B6E5D2087190B00CD28DB /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E5C2087190B00CD28DB /* TermsOfUseViewController.swift */; };
@@ -14,6 +16,7 @@
 		666B6E6120872A3A00CD28DB /* ClientCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E6020872A3A00CD28DB /* ClientCenterViewController.swift */; };
 		666B6E6320874DED00CD28DB /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E6220874DED00CD28DB /* ResetPasswordPresenter.swift */; };
 		66D9390B208480DE005A66F4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9390A208480DE005A66F4 /* SettingViewController.swift */; };
+		66FF42962088276A000C58A7 /* LeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF42952088276A000C58A7 /* LeaveViewController.swift */; };
 		719AC02BAEEC44D234717BB9 /* Pods_CityAdventure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */; };
 		CE1DA223206B5B48000C36B2 /* SignUpViewSecondPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */; };
 		CE1DA225206B5E49000C36B2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DA224206B5E49000C36B2 /* APIManager.swift */; };
@@ -126,6 +129,8 @@
 
 /* Begin PBXFileReference section */
 		44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6665F9AE2088914600A5D2BE /* AdventureExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureExerciseViewController.swift; sourceTree = "<group>"; };
+		6665F9B0208898E100A5D2BE /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
 		666B6E572084C42000CD28DB /* LogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		666B6E592086D41D00CD28DB /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		666B6E5C2087190B00CD28DB /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +138,7 @@
 		666B6E6020872A3A00CD28DB /* ClientCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCenterViewController.swift; sourceTree = "<group>"; };
 		666B6E6220874DED00CD28DB /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
 		66D9390A208480DE005A66F4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		66FF42952088276A000C58A7 /* LeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveViewController.swift; sourceTree = "<group>"; };
 		CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSecondPresenter.swift; sourceTree = "<group>"; };
 		CE1DA224206B5E49000C36B2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		CE1DA226206B5EDD000C36B2 /* EmailChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailChecker.swift; sourceTree = "<group>"; };
@@ -232,12 +238,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6665F9AD208890E300A5D2BE /* AdventureExercise */ = {
+			isa = PBXGroup;
+			children = (
+				6665F9AE2088914600A5D2BE /* AdventureExerciseViewController.swift */,
+				6665F9B0208898E100A5D2BE /* ExerciseCollectionViewCell.swift */,
+			);
+			path = AdventureExercise;
+			sourceTree = "<group>";
+		};
 		666B6E5B208718F600CD28DB /* Setting */ = {
 			isa = PBXGroup;
 			children = (
 				666B6E5C2087190B00CD28DB /* TermsOfUseViewController.swift */,
 				666B6E5E2087234600CD28DB /* TermsOfUseDetailViewController.swift */,
 				666B6E6020872A3A00CD28DB /* ClientCenterViewController.swift */,
+				66FF42952088276A000C58A7 /* LeaveViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -464,6 +480,7 @@
 		CEF716322064CB1900B457E9 /* CityAdventure */ = {
 			isa = PBXGroup;
 			children = (
+				6665F9AD208890E300A5D2BE /* AdventureExercise */,
 				666B6E5B208718F600CD28DB /* Setting */,
 				CE642C2420775594000C2F01 /* Main */,
 				CE651300207367FD006ABE4F /* FMDBFolder */,
@@ -660,6 +677,7 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
 				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
+				"${BUILT_PRODUCTS_DIR}/UITextView+Placeholder/UITextView_Placeholder.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -671,6 +689,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITextView_Placeholder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -695,6 +714,7 @@
 				CED8C4AD207212B000286A61 /* FMDatabase.m in Sources */,
 				CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */,
 				CE642C2A2077777A000C2F01 /* TimeFormatter.swift in Sources */,
+				66FF42962088276A000C58A7 /* LeaveViewController.swift in Sources */,
 				CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */,
 				666B6E582084C42000CD28DB /* LogoutViewController.swift in Sources */,
 				CE24D7872067B03B00B21EF3 /* SignUpViewController.swift in Sources */,
@@ -712,6 +732,7 @@
 				CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */,
 				CED8C4BF2073498E00286A61 /* BaseViewController.swift in Sources */,
 				666B6E5F2087234600CD28DB /* TermsOfUseDetailViewController.swift in Sources */,
+				6665F9B1208898E100A5D2BE /* ExerciseCollectionViewCell.swift in Sources */,
 				CE300629207B830A00E90DC3 /* FindPasswordSecondPresenter.swift in Sources */,
 				CED8C4AC207212B000286A61 /* FMResultSet.m in Sources */,
 				CE642C1F20773091000C2F01 /* FindPasswordPresenter.swift in Sources */,
@@ -720,6 +741,7 @@
 				CE642C26207755A5000C2F01 /* MainViewController.swift in Sources */,
 				CE642C1D20770339000C2F01 /* FindPasswordViewController.swift in Sources */,
 				CE1EEC3C2071D06D00116625 /* SignUpViewFinalController.swift in Sources */,
+				6665F9AF2088914600A5D2BE /* AdventureExerciseViewController.swift in Sources */,
 				CE1DA22D206B7EE5000C36B2 /* SignUpViewThirdController.swift in Sources */,
 				CED8C4AB207212B000286A61 /* FMDatabaseQueue.m in Sources */,
 				CE642C1B2074D1CC000C2F01 /* LoginResponse.swift in Sources */,

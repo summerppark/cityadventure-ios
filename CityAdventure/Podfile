@@ -28,5 +28,8 @@ target 'CityAdventure' do
     
     # DataBase
     pod 'GRDB.swift'
+
+    # TextViewPlaceHolder
+    pod 'UITextView+Placeholder', '~> 1.2'
   # Pods for CityAdventure
 end
