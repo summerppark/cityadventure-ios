@@ -16,6 +16,7 @@
 		666B6E5F2087234600CD28DB /* TermsOfUseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E5E2087234600CD28DB /* TermsOfUseDetailViewController.swift */; };
 		666B6E6120872A3A00CD28DB /* ClientCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E6020872A3A00CD28DB /* ClientCenterViewController.swift */; };
 		666B6E6320874DED00CD28DB /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E6220874DED00CD28DB /* ResetPasswordPresenter.swift */; };
+		66A05F29208989B500CDCF4C /* ExerciseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */; };
 		66D9390B208480DE005A66F4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9390A208480DE005A66F4 /* SettingViewController.swift */; };
 		66FF42962088276A000C58A7 /* LeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF42952088276A000C58A7 /* LeaveViewController.swift */; };
 		719AC02BAEEC44D234717BB9 /* Pods_CityAdventure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */; };
@@ -138,6 +139,7 @@
 		666B6E5E2087234600CD28DB /* TermsOfUseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseDetailViewController.swift; sourceTree = "<group>"; };
 		666B6E6020872A3A00CD28DB /* ClientCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCenterViewController.swift; sourceTree = "<group>"; };
 		666B6E6220874DED00CD28DB /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
+		66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGameViewController.swift; sourceTree = "<group>"; };
 		66D9390A208480DE005A66F4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		66FF42952088276A000C58A7 /* LeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveViewController.swift; sourceTree = "<group>"; };
 		CE1DA222206B5B48000C36B2 /* SignUpViewSecondPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSecondPresenter.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			children = (
 				6665F9AE2088914600A5D2BE /* AdventureExerciseViewController.swift */,
 				6665F9B0208898E100A5D2BE /* ExerciseCollectionViewCell.swift */,
+				66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */,
 			);
 			path = AdventureExercise;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				CEAAE7E1206E0481006C2F88 /* DataManager.swift in Sources */,
 				CE30063D207CAD0B00E90DC3 /* UserCardInfo.swift in Sources */,
 				CE1DA225206B5E49000C36B2 /* APIManager.swift in Sources */,
+				66A05F29208989B500CDCF4C /* ExerciseGameViewController.swift in Sources */,
 				CE642C232077439A000C2F01 /* RetryAuthAlertViewController.swift in Sources */,
 				666B6E5A2086D41D00CD28DB /* ResetPasswordViewController.swift in Sources */,
 				CED8C4AD207212B000286A61 /* FMDatabase.m in Sources */,

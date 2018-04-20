@@ -14,6 +14,7 @@ import GRDB
 class DataManager {
     // 고향,사는곳 선택하는 DB
     var citynumbers: [CityNumbersDB] = []
+    static var adventureExercise: Int = 0
     static let shared: DataManager = DataManager()
     
     init() {

@@ -187,11 +187,7 @@ class MainViewController: BaseViewController {
     @IBAction func playExercise(_ sender: UIButton) {
         print("준비운동")
         if let adventureExercise = self.storyboard?.instantiateViewController(withIdentifier: "AdventureExerciseViewController") as? AdventureExerciseViewController {
-            
-            if let count = DataManager.shared.getUserCardInfo()?.dataLength {
-                adventureExercise.cardCount = "\(count)"
-            }
-            self.navigationController?.pushViewController(adventureExercise, animated: true)
+        self.navigationController?.pushViewController(adventureExercise, animated: true)
         }
     }
     

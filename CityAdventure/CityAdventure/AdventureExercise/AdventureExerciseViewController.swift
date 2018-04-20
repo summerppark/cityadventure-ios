@@ -26,19 +26,32 @@ class AdventureExerciseViewController: BaseViewController {
         }
     }
     
-    var cardCount: String?
-    
-    @IBOutlet weak var getCardsStatus: UILabel! {
-        didSet {
-            print(cardCount)
-            getCardsStatus.text = "\(cardCount!) / 162"
-        }
-    }
-    
+    @IBOutlet weak var getCardsStatus: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 화면 뜰 때마다 로컬에 저장된 데이터를 가져온다.
+        if let name = DataManager.shared.getUserInfo()?.userInfo?.s_name {
+             DataManager.adventureExercise = UserDefaults.standard.integer(forKey: "\(name)_exerciseStage")
+        }
+        print(DataManager.adventureExercise)
+        
+        getCardsStatus.text = "\(DataManager.adventureExercise) / 162"
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        if let name = DataManager.shared.getUserInfo()?.userInfo?.s_name {
+            // 스테이지 상태를 로컬에 저장한다.
+            UserDefaults.standard.set(DataManager.adventureExercise, forKey: "\(name)_exerciseStage")
+            print("저장 키워드 == \(name)_exerciseStage")
+        }
     }
     
     
@@ -47,6 +60,23 @@ class AdventureExerciseViewController: BaseViewController {
         if Constants.DeviceType.IS_IPHONE_X {
             topViewHeight.constant = 88
             // iPhone X 일 때 레이아웃
+        }
+    }
+    
+    func stageSetting(label: UILabel, view: UIView, type: Int) {
+        // type = 1 이면 현재 깨야되는 판 -> 레드
+        if type == 1 {
+            view.layer.borderColor = UIColor.red.cgColor
+            view.backgroundColor = UIColor.insideRedColor
+            label.textColor = .white
+        } else if type == 2{
+            view.layer.borderColor = UIColor().colorFromHex("#c4c4c4").cgColor
+            view.backgroundColor = UIColor.clear.withAlphaComponent(0.1)
+            label.textColor = .black
+        } else {
+            view.layer.borderColor = UIColor.placeHolderColor.cgColor
+            view.backgroundColor = UIColor().colorFromHex("#797979")
+            label.textColor = .white
         }
     }
     
@@ -68,12 +98,15 @@ extension AdventureExerciseViewController: UICollectionViewDataSource, UICollect
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ExerciseCollectionViewCell", for: indexPath) as! ExerciseCollectionViewCell
        cell.stageLabel.text = "\(indexPath.item + 1)"
-        if indexPath.item == 0 {
-            cell.stageView.layer.borderColor = UIColor.red.cgColor
-            cell.stageView.backgroundColor = UIColor.lightBrownBgColor
-            cell.stageLabel.textColor = .black
+       
+        if indexPath.item + 1 <= DataManager.adventureExercise {
+            self.stageSetting(label: cell.stageLabel, view: cell.stageView, type: 2)
+        } else if indexPath.item == DataManager.adventureExercise {
+            self.stageSetting(label: cell.stageLabel, view: cell.stageView, type: 1)
+        } else {
+            //기본 스토리보드에 셋팅한 값.
+            self.stageSetting(label: cell.stageLabel, view: cell.stageView, type: 0)
         }
-        
         return cell
     }
     
@@ -86,6 +119,8 @@ extension AdventureExerciseViewController: UICollectionViewDataSource, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item, "GGG")
+        if indexPath.item + 1 <= DataManager.adventureExercise ||  indexPath.item == DataManager.adventureExercise {
+            print(indexPath.item, "GGG")
+        }
     }
 }

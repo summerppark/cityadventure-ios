@@ -133,9 +133,7 @@ class RightSideMenuViewController: BaseViewController {
                     self.navigationController?.pushViewController(leave, animated: true)
                 }
             } else if type == 5 {
-                if let adventureExercise = self.storyboard?.instantiateViewController(withIdentifier: "AdventureExerciseViewController") as? AdventureExerciseViewController,
-                    let cardCount = DataManager.shared.getUserCardInfo()?.dataLength {
-                    adventureExercise.cardCount = "\(cardCount)"
+                if let adventureExercise = self.storyboard?.instantiateViewController(withIdentifier: "AdventureExerciseViewController") as? AdventureExerciseViewController{
                     self.navigationController?.pushViewController(adventureExercise, animated: true)
                 }
             }
