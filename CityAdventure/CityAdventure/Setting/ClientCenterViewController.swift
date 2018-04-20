@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UITextView_Placeholder
 
 class ClientCenterViewController: UIViewController {
     
@@ -47,11 +48,8 @@ class ClientCenterViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView! {
         didSet {
-            let contentHeight = textView.contentSize.height
-            let offSet = textView.contentOffset.y
-            let contentOffset = contentHeight - offSet
-            textView.contentOffset = CGPoint(x: 0,y: -contentOffset)
-            textView.font = UIFont(name: "GodoM", size: 16.0)
+
+            textView.placeholder = "문의내용을 상세히 보내주시면 더욱 빨리 답변이 가능합니다!"
             textView.delegate = self
         }
     }
@@ -75,23 +73,11 @@ class ClientCenterViewController: UIViewController {
             // iPhone X 일 때 레이아웃
         }
     }
+    
+    
 }
 
 
 
 extension ClientCenterViewController: UITextViewDelegate {
-    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        textView.text = ""
-        textView.textColor = UIColor.black
-        return true
-    }
-    
-    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
-        if textView.text == "" {
-            textView.textColor = UIColor.placeHolderColor
-            textView.text = "문의 내용을 상세히 보내주시면 더욱 빨리 답변이 가능합니다!"
-        }
-        
-        return true
-    }
 }

@@ -14,6 +14,8 @@ import GRDB
 class DataManager {
     // 고향,사는곳 선택하는 DB
     var citynumbers: [CityNumbersDB] = []
+    var exerciseHintList: [ExerciseGameDB] = []
+    static var adventureExercise: Int = 0
     static let shared: DataManager = DataManager()
     
     init() {
@@ -34,6 +36,30 @@ class DataManager {
             }
         }
         path.close()
+        
+        
+        // 힌트정보를 가져온다.
+        
+        let hintDB = Bundle.main.path(forResource: "prepareDB", ofType: "sqlite")
+        print("HintDB",hintDB)
+        let hintPath = FMDatabase(path: hintDB)
+        print("hintPath", hintPath)
+        if hintPath.open() {
+            let fetchData = "SELECT * FROM prepareDB"
+            guard let results: FMResultSet = hintPath.executeQuery(fetchData, withArgumentsIn: []) else { return }
+            
+            while results.next() == true {
+                let hintInfo = ExerciseGameDB.init(number: results.string(forColumn: "no") ?? "",
+                                                   hint: results.string(forColumn: "hint") ?? "" )
+                
+                exerciseHintList.append(hintInfo)
+            }
+        }
+        
+        
+        
+        hintPath.close()
+ 
     }
     
   

@@ -104,6 +104,11 @@ class RightSideMenuViewController: BaseViewController {
         hideView(type: 3)
     }
     
+    @IBAction func goAdventureExercise(_ sender: UIButton) {
+        hideView(type: 5)
+    }
+    
+    
     func hideView(type: Int) {
         self.leftView.backgroundColor = .clear
         UIView.animate(withDuration: 0.3, animations: {
@@ -123,6 +128,14 @@ class RightSideMenuViewController: BaseViewController {
                 if let clientCenter = self.storyboard?.instantiateViewController(withIdentifier: "ClientCenterViewController") as? ClientCenterViewController {
                     self.navigationController?.pushViewController(clientCenter, animated: true)
                 }
+            } else if type == 4 {
+                if let leave = self.storyboard?.instantiateViewController(withIdentifier: "LeaveViewController") as? LeaveViewController {
+                    self.navigationController?.pushViewController(leave, animated: true)
+                }
+            } else if type == 5 {
+                if let adventureExercise = self.storyboard?.instantiateViewController(withIdentifier: "AdventureExerciseViewController") as? AdventureExerciseViewController{
+                    self.navigationController?.pushViewController(adventureExercise, animated: true)
+                }
             }
         }
     }
@@ -130,7 +143,14 @@ class RightSideMenuViewController: BaseViewController {
 
 
 extension RightSideMenuViewController: SettingViewProtocol {
+    func leave() {
+        hideView(type: 4)
+    }
+    
     func resetPassword() {
         hideView(type: 1)
     }
+    
+    
+    
 }

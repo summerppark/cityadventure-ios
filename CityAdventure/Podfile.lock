@@ -9,6 +9,7 @@ PODS:
   - SnapKit (4.0.0)
   - SwiftGifOrigin (1.6.1)
   - Toaster (2.1.1)
+  - "UITextView+Placeholder (1.2.0)"
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SwiftGifOrigin (~> 1.6.1)
   - Toaster
+  - "UITextView+Placeholder (~> 1.2)"
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -30,6 +32,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftGifOrigin
     - Toaster
+    - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
@@ -40,7 +43,8 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
+  "UITextView+Placeholder": 77680995fcdd07c3f52ec92fe1150874a2ac89ff
 
-PODFILE CHECKSUM: d48333f60c3cb86ca2521f591add2151af5b9516
+PODFILE CHECKSUM: dbaf1459b64722b7baa5961603950e9fcbfc4a37
 
 COCOAPODS: 1.5.0

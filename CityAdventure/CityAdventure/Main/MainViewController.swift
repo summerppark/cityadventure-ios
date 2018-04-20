@@ -114,7 +114,16 @@ class MainViewController: BaseViewController {
         }
         
         if let count = DataManager.shared.getUserCardInfo()?.dataLength {
-            myCardsCount.text = "00\(count)"
+            var str = ""
+            if count < 10 {
+                str = "00\(count)"
+            } else if count < 100 {
+                str = "0\(count)"
+            } else {
+                str = "\(count)"
+            }
+            
+            myCardsCount.text = str
         }
         
         if let name = DataManager.shared.getUserInfo()?.userInfo?.s_name {
@@ -177,6 +186,9 @@ class MainViewController: BaseViewController {
     
     @IBAction func playExercise(_ sender: UIButton) {
         print("준비운동")
+        if let adventureExercise = self.storyboard?.instantiateViewController(withIdentifier: "AdventureExerciseViewController") as? AdventureExerciseViewController {
+        self.navigationController?.pushViewController(adventureExercise, animated: true)
+        }
     }
     
     @IBAction func playAdventure(_ sender: UIButton) {
@@ -202,9 +214,4 @@ class MainViewController: BaseViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
-    
-    
-    
-    
 }
