@@ -28,6 +28,10 @@ class AdventureExerciseViewController: BaseViewController {
     
     @IBOutlet weak var getCardsStatus: UILabel!
     
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
@@ -119,8 +123,13 @@ extension AdventureExerciseViewController: UICollectionViewDataSource, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.item + 1 <= DataManager.adventureExercise ||  indexPath.item == DataManager.adventureExercise {
-            print(indexPath.item, "GGG")
+        if indexPath.item + 1 <= DataManager.adventureExercise || true
+//            indexPath.item == DataManager.adventureExercise
+        {
+            if let game = storyboard?.instantiateViewController(withIdentifier: "ExerciseGameViewController") as? ExerciseGameViewController {
+                game.stageNumber = indexPath.item
+                self.navigationController?.pushViewController(game, animated: true)
+            }
         }
     }
 }

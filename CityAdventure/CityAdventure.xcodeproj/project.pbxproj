@@ -16,6 +16,9 @@
 		666B6E5F2087234600CD28DB /* TermsOfUseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E5E2087234600CD28DB /* TermsOfUseDetailViewController.swift */; };
 		666B6E6120872A3A00CD28DB /* ClientCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E6020872A3A00CD28DB /* ClientCenterViewController.swift */; };
 		666B6E6320874DED00CD28DB /* ResetPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B6E6220874DED00CD28DB /* ResetPasswordPresenter.swift */; };
+		6673644F2089B32C0098E8E0 /* ButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673644E2089B32C0098E8E0 /* ButtonExtensions.swift */; };
+		667364542089C8D00098E8E0 /* ExerciseGameDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667364532089C8D00098E8E0 /* ExerciseGameDB.swift */; };
+		667364562089D9AA0098E8E0 /* prepareDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 667364552089D2B50098E8E0 /* prepareDB.sqlite */; };
 		66A05F29208989B500CDCF4C /* ExerciseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */; };
 		66D9390B208480DE005A66F4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9390A208480DE005A66F4 /* SettingViewController.swift */; };
 		66FF42962088276A000C58A7 /* LeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF42952088276A000C58A7 /* LeaveViewController.swift */; };
@@ -139,6 +142,9 @@
 		666B6E5E2087234600CD28DB /* TermsOfUseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseDetailViewController.swift; sourceTree = "<group>"; };
 		666B6E6020872A3A00CD28DB /* ClientCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCenterViewController.swift; sourceTree = "<group>"; };
 		666B6E6220874DED00CD28DB /* ResetPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordPresenter.swift; sourceTree = "<group>"; };
+		6673644E2089B32C0098E8E0 /* ButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtensions.swift; sourceTree = "<group>"; };
+		667364532089C8D00098E8E0 /* ExerciseGameDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGameDB.swift; sourceTree = "<group>"; };
+		667364552089D2B50098E8E0 /* prepareDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = prepareDB.sqlite; sourceTree = "<group>"; };
 		66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGameViewController.swift; sourceTree = "<group>"; };
 		66D9390A208480DE005A66F4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		66FF42952088276A000C58A7 /* LeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveViewController.swift; sourceTree = "<group>"; };
@@ -290,6 +296,7 @@
 				CE1DA228206B62B1000C36B2 /* APIUrls.swift */,
 				CED8C4BE2073498E00286A61 /* BaseViewController.swift */,
 				CE642C292077777A000C2F01 /* TimeFormatter.swift */,
+				6673644E2089B32C0098E8E0 /* ButtonExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -314,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */,
+				667364552089D2B50098E8E0 /* prepareDB.sqlite */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -457,6 +465,7 @@
 				CE300636207C7CEC00E90DC3 /* UserInfo.swift */,
 				CE300638207C7F6D00E90DC3 /* UserAccountInfo.swift */,
 				CE30063C207CAD0A00E90DC3 /* UserCardInfo.swift */,
+				667364532089C8D00098E8E0 /* ExerciseGameDB.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -634,6 +643,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				667364562089D9AA0098E8E0 /* prepareDB.sqlite in Resources */,
 				CEAAE7DD206E02A9006C2F88 /* cityNumber.sqlite in Resources */,
 				CE24D78D2067FB8400B21EF3 /* GodoB.otf in Resources */,
 				CE24D78E2067FB8400B21EF3 /* GodoM.otf in Resources */,
@@ -729,6 +739,7 @@
 				CE642C192074CD84000C2F01 /* LoginViewPresenter.swift in Sources */,
 				CEF7164B2064F40800B457E9 /* LoginViewController.swift in Sources */,
 				CE24D7852067AECA00B21EF3 /* ColorExtensions.swift in Sources */,
+				667364542089C8D00098E8E0 /* ExerciseGameDB.swift in Sources */,
 				CEE3B3C4206A22A900156387 /* Account.swift in Sources */,
 				CED8C4AA207212B000286A61 /* FMDatabasePool.m in Sources */,
 				CE642C282077612F000C2F01 /* NoticeViewController.swift in Sources */,
@@ -759,6 +770,7 @@
 				CED8C4B220730B7A00286A61 /* SignUpFinalPresenter.swift in Sources */,
 				666B6E6320874DED00CD28DB /* ResetPasswordPresenter.swift in Sources */,
 				CE300633207C54FA00E90DC3 /* RetryAuthAlertViewPresenter.swift in Sources */,
+				6673644F2089B32C0098E8E0 /* ButtonExtensions.swift in Sources */,
 				CEF716492064DB3200B457E9 /* LaunchScreenViewController.swift in Sources */,
 				CE1DA22B206B67AB000C36B2 /* AlertViewController.swift in Sources */,
 				CE300635207C5A3C00E90DC3 /* AlertGreenViewController.swift in Sources */,
