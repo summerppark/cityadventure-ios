@@ -368,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSr-xG-SiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798" y="-730"/>
+            <point key="canvasLocation" x="881" y="-620"/>
         </scene>
         <!--Alertview Controller-->
         <scene sceneID="1tv-cP-izJ">
@@ -5553,6 +5553,60 @@
             </objects>
             <point key="canvasLocation" x="8079" y="-1335"/>
         </scene>
+        <!--Result Correct Pop Up-->
+        <scene sceneID="2ZA-JG-72V">
+            <objects>
+                <viewController storyboardIdentifier="ResultCorrectPopUp" id="MBX-YC-a9Z" customClass="ResultCorrectPopUp" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pF1-1J-asJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhJ-CU-Z6L">
+                                <rect key="frame" x="97" y="190" width="180" height="220"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_game_correct" translatesAutoresizingMaskIntoConstraints="NO" id="aCq-hq-hjb">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="220"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="aCq-hq-hjb" firstAttribute="top" secondItem="uhJ-CU-Z6L" secondAttribute="top" id="N4y-ZU-8kf"/>
+                                    <constraint firstItem="aCq-hq-hjb" firstAttribute="leading" secondItem="uhJ-CU-Z6L" secondAttribute="leading" id="SOD-uC-VNg"/>
+                                    <constraint firstAttribute="height" constant="220" id="oD0-h5-5ac"/>
+                                    <constraint firstAttribute="bottom" secondItem="aCq-hq-hjb" secondAttribute="bottom" id="oso-l7-zX0"/>
+                                    <constraint firstAttribute="trailing" secondItem="aCq-hq-hjb" secondAttribute="trailing" id="rLo-ef-kPS"/>
+                                    <constraint firstAttribute="width" constant="180" id="t0V-0k-ewo"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egA-6Y-jSf">
+                                <rect key="frame" x="97" y="430" width="180" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="2Wz-tA-r1l"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="btn_game_next"/>
+                                <connections>
+                                    <action selector="goToNext:" destination="MBX-YC-a9Z" eventType="touchUpInside" id="LWK-G3-LZo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="egA-6Y-jSf" firstAttribute="leading" secondItem="uhJ-CU-Z6L" secondAttribute="leading" id="I83-Ml-acG"/>
+                            <constraint firstItem="uhJ-CU-Z6L" firstAttribute="centerY" secondItem="pF1-1J-asJ" secondAttribute="centerY" multiplier="0.9" id="L0x-8f-cs7"/>
+                            <constraint firstItem="uhJ-CU-Z6L" firstAttribute="centerX" secondItem="pF1-1J-asJ" secondAttribute="centerX" id="PoK-WT-1cW"/>
+                            <constraint firstItem="egA-6Y-jSf" firstAttribute="top" secondItem="uhJ-CU-Z6L" secondAttribute="bottom" constant="20" id="dDD-aq-aQU"/>
+                            <constraint firstItem="egA-6Y-jSf" firstAttribute="trailing" secondItem="uhJ-CU-Z6L" secondAttribute="trailing" id="uCT-au-kmG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fhd-Vg-KUp"/>
+                    </view>
+                    <connections>
+                        <outlet property="centerView" destination="uhJ-CU-Z6L" id="pFr-GE-HhU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2g7-uP-AkP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="-615"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="7rV-qr-G49">
             <objects>
@@ -5603,6 +5657,7 @@
         <image name="btn_close_top" width="54" height="54"/>
         <image name="btn_duplicated_icon_before" width="150" height="150"/>
         <image name="btn_email_delete" width="65" height="65"/>
+        <image name="btn_game_next" width="767" height="296"/>
         <image name="btn_left_pink" width="153" height="180"/>
         <image name="btn_menu_close" width="213" height="178"/>
         <image name="btn_menu_top" width="128" height="244"/>
@@ -5637,6 +5692,7 @@
         <image name="img_findPassword_bg" width="914" height="783"/>
         <image name="img_finishSignup_bg" width="851" height="502"/>
         <image name="img_finish_label" width="627" height="128"/>
+        <image name="img_game_correct" width="688" height="884"/>
         <image name="img_green_buttn" width="919" height="175"/>
         <image name="img_hint" width="106" height="152"/>
         <image name="img_level_bg" width="265" height="67"/>

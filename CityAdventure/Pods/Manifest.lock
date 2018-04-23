@@ -10,6 +10,7 @@ PODS:
   - SwiftGifOrigin (1.6.1)
   - Toaster (2.1.1)
   - "UITextView+Placeholder (1.2.0)"
+  - "UIView+Shake (1.4.0)"
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - SwiftGifOrigin (~> 1.6.1)
   - Toaster
   - "UITextView+Placeholder (~> 1.2)"
+  - "UIView+Shake"
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -33,6 +35,7 @@ SPEC REPOS:
     - SwiftGifOrigin
     - Toaster
     - "UITextView+Placeholder"
+    - "UIView+Shake"
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
@@ -44,7 +47,8 @@ SPEC CHECKSUMS:
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
   "UITextView+Placeholder": 77680995fcdd07c3f52ec92fe1150874a2ac89ff
+  "UIView+Shake": 055ad67721de1f74d29c0a1d464697e505dfc62f
 
-PODFILE CHECKSUM: dbaf1459b64722b7baa5961603950e9fcbfc4a37
+PODFILE CHECKSUM: e998eeb4254cdcdffef1ee041dc8a82ec43e9053
 
 COCOAPODS: 1.5.0
