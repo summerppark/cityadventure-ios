@@ -15,6 +15,10 @@ class DataManager {
     // 고향,사는곳 선택하는 DB
     var citynumbers: [CityNumbersDB] = []
     var exerciseHintList: [ExerciseGameDB] = []
+    var randomChar: [String] = []
+    var randomCharArray:[String] = []
+    
+    
     static var adventureExercise: Int = 0
     static let shared: DataManager = DataManager()
     
@@ -32,6 +36,7 @@ class DataManager {
                                                   cityType: results.string(forColumn: "s_type") ?? "",
                                                   provinceType: results.int(forColumn: "ui_province"),
                                                   areaName: results.string(forColumn: "s_area") ?? "")
+                randomChar.append(cityInfo.cityName)
                 citynumbers.append(cityInfo)
             }
         }
@@ -55,11 +60,8 @@ class DataManager {
                 exerciseHintList.append(hintInfo)
             }
         }
-        
-        
-        
+
         hintPath.close()
- 
     }
     
   

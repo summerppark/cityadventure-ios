@@ -51,6 +51,8 @@ class ResultCorrectPopUp: BaseViewController {
     
     
     @IBAction func goToNext(_ sender: UIButton) {
-        self.delegate?.tappedNext()
+        self.dismiss(animated: false) {
+            self.delegate?.tappedNext()
+        }
     }
 }

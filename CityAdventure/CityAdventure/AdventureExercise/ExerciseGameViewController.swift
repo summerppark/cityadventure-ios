@@ -38,11 +38,14 @@
     var stageNumber = 0
     var count = 0
     var answerArray: [String] = ["", "", ""]
+    var randomCharArray: [String] = []
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
+        setPuzzleButton(stageNumber: 0)
     }
     
     // 셋팅
@@ -272,7 +275,69 @@
     }
     
     func tappedNext() {
-        cardImage.image = #imageLiteral(resourceName: "btn_menu_top")
+        stageNumber += 1
+        print(stageNumber)
+        setGame(stageNumber: stageNumber)
+    }
+    
+    func setGame(stageNumber: Int) {
+        hintLabel.text = DataManager.shared.exerciseHintList[stageNumber].hint
+        
+        var stageImage = ""
+        
+        if stageNumber + 1 < 10 {
+            stageImage = "00\(stageNumber+1)"
+        } else if stageNumber + 1 < 100 {
+            stageImage = "0\(stageNumber+1)"
+        } else {
+            stageImage = "\(stageNumber+1)"
+        }
+        
+        // 상단에 몇번째 스테이지인지.
+        getCardsStatus.text = "\(stageNumber+1) / 162"
+        
+        // 해당하는 카드를 로드.
+        cardImage.image = UIImage(named: "card_thumbnail_\(stageImage)")
+        
+        
+        if DataManager.shared.citynumbers[stageNumber].cityName.count == 3 {
+            threeCharStackView.isHidden = false
+            twoCharStackView.isHidden = true
+        } else {
+            threeCharStackView.isHidden = true
+            twoCharStackView.isHidden = false
+        }
+        
+        print("정답" , DataManager.shared.citynumbers[stageNumber].cityName)
+    }
+    
+    func setPuzzleButton(stageNumber: Int) {
+        var count = 2
+        
+        if DataManager.shared.citynumbers[stageNumber].cityName.count == 3 {
+            count = 3
+        }
+        
+        // 중 복 제 거
+        let charArray = Array(Set(DataManager.shared.randomChar.flatMap { $0 }))
+       
+        var sampleArray: [Int] = []
+        var resultArray: [String] = []
+        resultArray = DataManager.shared.citynumbers[stageNumber].cityName.map { String($0)
+            
+        }
+      
+        
+        while resultArray.count < 8 {
+            let num = Int(arc4random_uniform(UInt32(charArray.count-1)))
+            resultArray.append(String(charArray[num]))
+        }
+        
+        dump(resultArray)
+    }
+    
+    func splitString(input:String) -> [Character] {
+        return Array(input)
     }
     
     
