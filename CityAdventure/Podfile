@@ -31,5 +31,10 @@ target 'CityAdventure' do
 
     # TextViewPlaceHolder
     pod 'UITextView+Placeholder', '~> 1.2'
-  # Pods for CityAdventure
+    
+    # Animation
+    pod 'UIView+Shake'
+
+
+ # Pods for CityAdventure
 end

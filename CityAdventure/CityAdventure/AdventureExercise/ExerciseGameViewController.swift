@@ -1,12 +1,13 @@
  //
-//  ExerciseGameViewController.swift
-//  CityAdventure
-//
-//  Created by Jiyong on 2018. 4. 20..
-//  Copyright © 2018년 bubu. All rights reserved.
-//
-
-import UIKit
+ //  ExerciseGameViewController.swift
+ //  CityAdventure
+ //
+ //  Created by Jiyong on 2018. 4. 20..
+ //  Copyright © 2018년 bubu. All rights reserved.
+ //
+ 
+ import UIKit
+ import Toaster
  
  class ExerciseGameViewController: BaseViewController {
     
@@ -36,12 +37,15 @@ import UIKit
     var answerText: String = ""
     var stageNumber = 0
     var count = 0
-    var answerArray: [String] = []
+    var answerArray: [String] = ["", "", ""]
+    var randomCharArray: [String] = []
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
+        setPuzzleButton(stageNumber: 0)
     }
     
     // 셋팅
@@ -49,11 +53,11 @@ import UIKit
         super.viewWillAppear(animated)
         print("stage" , stageNumber)
         // 힌트 DB에 있는거 가져오기.
-
+        
         hintLabel.text = DataManager.shared.exerciseHintList[stageNumber].hint
-
+        
         var stageImage = ""
-     
+        
         if stageNumber + 1 < 10 {
             stageImage = "00\(stageNumber+1)"
         } else if stageNumber + 1 < 100 {
@@ -64,7 +68,7 @@ import UIKit
         
         // 상단에 몇번째 스테이지인지.
         getCardsStatus.text = "\(stageNumber+1) / 162"
- 
+        
         // 해당하는 카드를 로드.
         cardImage.image = UIImage(named: "card_thumbnail_\(stageImage)")
         
@@ -84,7 +88,7 @@ import UIKit
     
     
     func layoutCheck() {
-    
+        
         charButtons.forEach { (btn) in
             btn.layer.cornerRadius = 8.0
             btn.clipsToBounds = true
@@ -122,64 +126,133 @@ import UIKit
     @objc func tappedCharButton(sender: UIButton) {
         print(sender.tag)
         
+        // 8개의 버튼을 누를 때 마다 정답 배열에 앞에서부터 체크한다.
+        
+        
+        // 정답배열에 추가
         if charButtons[sender.tag].backgroundColor == .white {
+            // 정답배열에 추가 된 버튼의 색은 회색으로 설정.
             charButtons[sender.tag].backgroundColor = .darkGray
-            answerText += charButtons[sender.tag].currentTitle!
-            answerArray.append("\(charButtons[sender.tag].currentTitle!)")
+            
+            // 정답이 몇글자 인지 체크
+            if DataManager.shared.citynumbers[stageNumber].cityName.count == 2 {
+                
+                // 정답을 가지고 있는 배열
+                if answerArray[0] == "" {
+                    answerArray[0] = sender.currentTitle!
+                } else {
+                    answerArray[1] = sender.currentTitle!
+                }
+                
+                // 3 글자일 때
+            } else {
+                if answerArray[0] == "" {
+                    answerArray[0] = sender.currentTitle!
+                } else if answerArray[1] == "" {
+                    answerArray[1] = sender.currentTitle!
+                } else {
+                    answerArray[2] = sender.currentTitle!
+                }
+            }
+            
+            
+            // 정답배열에서 제거
         } else {
             charButtons[sender.tag].backgroundColor = .white
-            count -= 1
-            answerArray.removeLast()
-            answerText.removeLast()
+            // 정답이 몇글자 인지 체크
+            if DataManager.shared.citynumbers[stageNumber].cityName.count == 2 {
+                
+                if sender.currentTitle! == answerArray[0] {
+                    answerArray[0] = ""
+                } else {
+                    answerArray[1] = ""
+                }
+                
+            } else {
+                if sender.currentTitle! == answerArray[0] {
+                    answerArray[0] = ""
+                } else if sender.currentTitle! == answerArray[1] {
+                    answerArray[1] = ""
+                } else {
+                    answerArray[2] = ""
+                }
+            }
         }
         
-        if DataManager.shared.citynumbers[stageNumber].cityName.count == 2 {
-            answerButton[count].setTitle( answerArray.count == 0 ? "" : answerArray[count], for: .normal)
-        } else {
-            answerThreeButton[count].setTitle(answerArray[count], for: .normal)
-        }
         
         
-        
-        count += 1
-        
-        
-        if answerArray.count == Int(DataManager.shared.citynumbers[stageNumber].cityName.count) {
-            checkAnswer()
-        }
+        print(answerArray.joined(), "현재 정답")
+        inputAnswerButtons()
         
     }
     
-    func checkAnswer() {
-        print("정답인지 아닌지 체크 ")
-        charButtons.forEach { (btn) in
-            btn.backgroundColor = UIColor.white
+    func inputAnswerButtons() {
+        if DataManager.shared.citynumbers[stageNumber].cityName.count == 2 {
+            answerButton[0].setTitle(answerArray[0], for: .normal)
+            answerButton[1].setTitle(answerArray[1], for: .normal)
+        } else {
+            answerThreeButton[0].setTitle(answerArray[0], for: .normal)
+            answerThreeButton[1].setTitle(answerArray[1], for: .normal)
+            answerThreeButton[2].setTitle(answerArray[2], for: .normal)
         }
         
-        
+        if answerArray.joined().count == DataManager.shared.citynumbers[stageNumber].cityName.count {
+            
+            checkAnswer()
+        }
+    }
+    
+    func checkAnswer() {
         
         if answerArray.joined() == DataManager.shared.citynumbers[stageNumber].cityName {
-            print("정답")
+            gameResult(result: true)
+            
         } else {
-            print("오답")
+            print("실패")
+            gameResult(result: false)
+
         }
-        
-        
-        
+    }
+    
+    func gameResult(result: Bool) {
+        if result {
+            //성공일 때
+            if let correct = storyboard?.instantiateViewController(withIdentifier: "ResultCorrectPopUp") as? ResultCorrectPopUp {
+                correct.modalPresentationStyle = .overFullScreen
+                correct.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+                correct.delegate = self
+                self.present(correct, animated: false) {
+                    self.answerButtonsInit()
+                }
+            }
+        } else {
+            Toast.init(text: "\(answerArray.joined()) X , 다시 생각해 보세요!!").show()
+            answerButtonsInit()
+        }
+    }
+    
+    func answerButtonsInit() {
         if DataManager.shared.citynumbers[stageNumber].cityName.count == 2 {
             answerButton.forEach({ (btn) in
                 btn.setTitle("", for: .normal)
             })
+            answerArray = ["","",""]
+            
+            charButtons.forEach({ (btn) in
+                btn.backgroundColor = .white
+            })
+            
         } else {
             answerThreeButton.forEach({ (btn) in
                 btn.setTitle("", for: .normal)
             })
+            answerArray = ["","",""]
+            
+            charButtons.forEach({ (btn) in
+                btn.backgroundColor = .white
+            })
+            
         }
-        
-        count = 0
-        answerArray.removeAll()
-        answerText = ""
-        
     }
     
     // 임시 힌트
@@ -191,4 +264,81 @@ import UIKit
     @IBAction func tappedBackButton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
+ }
+ 
+ 
+ 
+ extension ExerciseGameViewController: ResultCorrectPopUpProtocol {
+    func tappedBGView() {
+        print("바탕을 눌렀다")
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func tappedNext() {
+        stageNumber += 1
+        print(stageNumber)
+        setGame(stageNumber: stageNumber)
+    }
+    
+    func setGame(stageNumber: Int) {
+        hintLabel.text = DataManager.shared.exerciseHintList[stageNumber].hint
+        
+        var stageImage = ""
+        
+        if stageNumber + 1 < 10 {
+            stageImage = "00\(stageNumber+1)"
+        } else if stageNumber + 1 < 100 {
+            stageImage = "0\(stageNumber+1)"
+        } else {
+            stageImage = "\(stageNumber+1)"
+        }
+        
+        // 상단에 몇번째 스테이지인지.
+        getCardsStatus.text = "\(stageNumber+1) / 162"
+        
+        // 해당하는 카드를 로드.
+        cardImage.image = UIImage(named: "card_thumbnail_\(stageImage)")
+        
+        
+        if DataManager.shared.citynumbers[stageNumber].cityName.count == 3 {
+            threeCharStackView.isHidden = false
+            twoCharStackView.isHidden = true
+        } else {
+            threeCharStackView.isHidden = true
+            twoCharStackView.isHidden = false
+        }
+        
+        print("정답" , DataManager.shared.citynumbers[stageNumber].cityName)
+    }
+    
+    func setPuzzleButton(stageNumber: Int) {
+        var count = 2
+        
+        if DataManager.shared.citynumbers[stageNumber].cityName.count == 3 {
+            count = 3
+        }
+        
+        // 중 복 제 거
+        let charArray = Array(Set(DataManager.shared.randomChar.flatMap { $0 }))
+       
+        var sampleArray: [Int] = []
+        var resultArray: [String] = []
+        resultArray = DataManager.shared.citynumbers[stageNumber].cityName.map { String($0)
+            
+        }
+      
+        
+        while resultArray.count < 8 {
+            let num = Int(arc4random_uniform(UInt32(charArray.count-1)))
+            resultArray.append(String(charArray[num]))
+        }
+        
+        dump(resultArray)
+    }
+    
+    func splitString(input:String) -> [Character] {
+        return Array(input)
+    }
+    
+    
  }
