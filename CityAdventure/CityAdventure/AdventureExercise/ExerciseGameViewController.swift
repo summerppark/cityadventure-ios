@@ -45,14 +45,16 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
-        setPuzzleButton(stageNumber: 0)
+        
     }
     
     // 셋팅
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("stage" , stageNumber)
+        setPuzzleButton(stageNumber: stageNumber)
         // 힌트 DB에 있는거 가져오기.
+        
         
         hintLabel.text = DataManager.shared.exerciseHintList[stageNumber].hint
         
@@ -216,6 +218,16 @@
     
     func gameResult(result: Bool) {
         if result {
+            if let name = DataManager.shared.getUserInfo()?.userInfo?.s_name {
+                // 스테이지 상태를 로컬에 저장한다.
+                
+                // 최종으로 깬 스테이지가 지금 깬 스테이지보다 작을때만 로컬에 갱신한다.
+                
+                if stageNumber+1 > UserDefaults.standard.integer(forKey: "\(name)_exerciseStage") {
+                    UserDefaults.standard.set(stageNumber+1, forKey: "\(name)_exerciseStage")
+                }
+            }
+            
             //성공일 때
             if let correct = storyboard?.instantiateViewController(withIdentifier: "ResultCorrectPopUp") as? ResultCorrectPopUp {
                 correct.modalPresentationStyle = .overFullScreen
@@ -274,10 +286,13 @@
         self.navigationController?.popViewController(animated: true)
     }
     
+    
+    // 다음으로 눌렀을 때
     func tappedNext() {
         stageNumber += 1
         print(stageNumber)
         setGame(stageNumber: stageNumber)
+        setPuzzleButton(stageNumber: stageNumber)
     }
     
     func setGame(stageNumber: Int) {
@@ -327,18 +342,22 @@
             
         }
       
-        
+        // 랜덤으로 글자배열을 만듬
         while resultArray.count < 8 {
             let num = Int(arc4random_uniform(UInt32(charArray.count-1)))
             resultArray.append(String(charArray[num]))
         }
         
-        dump(resultArray)
+        // 랜덤인덱스를 만듬
+        while sampleArray.count < 8 {
+            let num = Int(arc4random_uniform(8))
+            if !sampleArray.contains(num) {
+                sampleArray.append(num)
+            }
+        }
+        
+        for index in 0...charButtons.count-1 {
+            charButtons[index].setTitle(String(resultArray[sampleArray[index]]), for: .normal)
+        }
     }
-    
-    func splitString(input:String) -> [Character] {
-        return Array(input)
-    }
-    
-    
  }

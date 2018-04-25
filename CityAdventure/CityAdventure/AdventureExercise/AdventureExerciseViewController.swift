@@ -46,6 +46,8 @@ class AdventureExerciseViewController: BaseViewController {
         print(DataManager.adventureExercise)
         
         getCardsStatus.text = "\(DataManager.adventureExercise) / 162"
+        collectionView.reloadData()
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -56,6 +58,9 @@ class AdventureExerciseViewController: BaseViewController {
             UserDefaults.standard.set(DataManager.adventureExercise, forKey: "\(name)_exerciseStage")
             print("저장 키워드 == \(name)_exerciseStage")
         }
+        
+        
+        
     }
     
     
@@ -123,8 +128,7 @@ extension AdventureExerciseViewController: UICollectionViewDataSource, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.item + 1 <= DataManager.adventureExercise || true
-//            indexPath.item == DataManager.adventureExercise
+        if indexPath.item + 1 <= DataManager.adventureExercise || indexPath.item == DataManager.adventureExercise
         {
             if let game = storyboard?.instantiateViewController(withIdentifier: "ExerciseGameViewController") as? ExerciseGameViewController {
                 game.stageNumber = indexPath.item
