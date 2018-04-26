@@ -8,6 +8,7 @@
  
  import UIKit
  import Toaster
+ import AVFoundation
  
  class ExerciseGameViewController: BaseViewController {
     
@@ -127,6 +128,15 @@
     
     @objc func tappedCharButton(sender: UIButton) {
         print(sender.tag)
+        
+        // 글자를 소리내주는 부분
+        let synthesizer = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: sender.currentTitle!)
+        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate
+        
+        synthesizer.speak(utterance)
+        
         
         // 8개의 버튼을 누를 때 마다 정답 배열에 앞에서부터 체크한다.
         
