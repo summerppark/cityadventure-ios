@@ -279,8 +279,12 @@
     
     // 임시 힌트
     @IBAction func tappedHintButton(_ sender: UIButton) {
-        twoCharStackView.isHidden = true
-        threeCharStackView.isHidden = false
+        if let hint = storyboard?.instantiateViewController(withIdentifier: "HintPopViewController") as? HintPopViewController {
+            hint.modalPresentationStyle = .overFullScreen
+            hint.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            //자음만
+            self.present(hint, animated: false)
+        }
     }
     
     @IBAction func tappedBackButton(_ sender: UIButton) {
