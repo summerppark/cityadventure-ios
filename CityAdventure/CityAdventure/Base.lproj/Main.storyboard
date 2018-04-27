@@ -5553,6 +5553,107 @@
             </objects>
             <point key="canvasLocation" x="8079" y="-1335"/>
         </scene>
+        <!--Hint Pop View Controller-->
+        <scene sceneID="AeT-n9-Wbf">
+            <objects>
+                <viewController storyboardIdentifier="HintPopViewController" id="E97-fG-n1a" customClass="HintPopViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wlA-lx-F1J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLv-2E-527">
+                                <rect key="frame" x="57" y="238" width="260" height="190"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅈㅂ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oT-To-rax">
+                                        <rect key="frame" x="26.5" y="47.5" width="208" height="95.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDR-M9-kXx">
+                                        <rect key="frame" x="16" y="16" width="228" height="158"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코인 300개를 사용해서 힌트를 보시겠습니까?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWi-RS-vYc">
+                                                <rect key="frame" x="20" y="40" width="188" height="48"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s2b-UO-WSw">
+                                                <rect key="frame" x="2" y="120" width="224" height="36"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0v-bQ-5hr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="108" height="36"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <state key="normal" title="예">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qf-WQ-8wb">
+                                                        <rect key="frame" x="116" y="0.0" width="108" height="36"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <state key="normal" title="아니요">
+                                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.62745098040000002" green="0.81176470590000005" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="s2b-UO-WSw" firstAttribute="leading" secondItem="jDR-M9-kXx" secondAttribute="leading" constant="2" id="186-Ol-htH"/>
+                                            <constraint firstAttribute="trailing" secondItem="s2b-UO-WSw" secondAttribute="trailing" constant="2" id="DcN-Xo-VP6"/>
+                                            <constraint firstAttribute="bottom" secondItem="s2b-UO-WSw" secondAttribute="bottom" constant="2" id="QVk-lK-wVw"/>
+                                            <constraint firstItem="s2b-UO-WSw" firstAttribute="top" secondItem="zWi-RS-vYc" secondAttribute="bottom" constant="32" id="dsX-HD-0ph"/>
+                                            <constraint firstAttribute="trailing" secondItem="zWi-RS-vYc" secondAttribute="trailing" constant="20" id="kbA-cH-vjJ"/>
+                                            <constraint firstItem="zWi-RS-vYc" firstAttribute="leading" secondItem="jDR-M9-kXx" secondAttribute="leading" constant="20" id="nQh-kR-Ecj"/>
+                                            <constraint firstItem="zWi-RS-vYc" firstAttribute="centerX" secondItem="jDR-M9-kXx" secondAttribute="centerX" id="sMK-7I-DCn"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.62745098039215685" green="0.81176470588235294" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jDR-M9-kXx" secondAttribute="trailing" constant="16" id="7hJ-JY-LOR"/>
+                                    <constraint firstItem="5oT-To-rax" firstAttribute="centerX" secondItem="vLv-2E-527" secondAttribute="centerX" id="Efm-sK-Dl0"/>
+                                    <constraint firstItem="jDR-M9-kXx" firstAttribute="top" secondItem="vLv-2E-527" secondAttribute="top" constant="16" id="FJH-5t-S6Q"/>
+                                    <constraint firstAttribute="height" constant="190" id="IED-Ab-32K"/>
+                                    <constraint firstItem="jDR-M9-kXx" firstAttribute="leading" secondItem="vLv-2E-527" secondAttribute="leading" constant="16" id="MiT-RX-R5i"/>
+                                    <constraint firstAttribute="width" constant="260" id="RTa-Ha-jco"/>
+                                    <constraint firstItem="5oT-To-rax" firstAttribute="centerY" secondItem="vLv-2E-527" secondAttribute="centerY" id="UFo-jA-10y"/>
+                                    <constraint firstAttribute="bottom" secondItem="jDR-M9-kXx" secondAttribute="bottom" constant="16" id="lHQ-Bc-2Kz"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlC-5k-W2L">
+                                <rect key="frame" x="110" y="92" width="116" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn_close_alert"/>
+                                <connections>
+                                    <action selector="cancleLogoutWithSender:" destination="dIK-Jk-dkH" eventType="touchUpInside" id="fj7-G4-sBW"/>
+                                    <action selector="dismissAlert:" destination="TDy-A3-Qqz" eventType="touchUpInside" id="1oS-bG-8EA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vLv-2E-527" firstAttribute="centerY" secondItem="wlA-lx-F1J" secondAttribute="centerY" id="La8-zJ-eqh"/>
+                            <constraint firstItem="vLv-2E-527" firstAttribute="centerX" secondItem="wlA-lx-F1J" secondAttribute="centerX" id="PfM-Ev-HeW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="h5Q-aW-Teq"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="NlC-5k-W2L" id="Shp-HR-JSL"/>
+                        <outlet property="firstView" destination="jDR-M9-kXx" id="St7-kB-lQ5"/>
+                        <outlet property="hintLabel" destination="5oT-To-rax" id="SiQ-Sn-Ooe"/>
+                        <outlet property="hintView" destination="vLv-2E-527" id="OTb-I3-W3f"/>
+                        <outlet property="noButton" destination="6Qf-WQ-8wb" id="jfS-A3-PjN"/>
+                        <outlet property="noticeLabel" destination="zWi-RS-vYc" id="elN-wS-5IT"/>
+                        <outlet property="yesButton" destination="j0v-bQ-5hr" id="4Zw-Cc-Jec"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9n5-37-ELM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-439.19999999999999" y="-618.44077961019491"/>
+        </scene>
         <!--Result Correct Pop Up-->
         <scene sceneID="2ZA-JG-72V">
             <objects>

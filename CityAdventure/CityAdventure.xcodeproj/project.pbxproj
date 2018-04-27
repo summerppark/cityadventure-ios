@@ -60,6 +60,7 @@
 		CEAAE7DD206E02A9006C2F88 /* cityNumber.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */; };
 		CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE7DE206E0321006C2F88 /* CityNumberDB.swift */; };
 		CEAAE7E1206E0481006C2F88 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE7E0206E0481006C2F88 /* DataManager.swift */; };
+		CEBCA2E120922975005DFA9D /* HintPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCA2E020922975005DFA9D /* HintPopViewController.swift */; };
 		CED8C4A9207212B000286A61 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8C49F207212AD00286A61 /* FMDatabaseAdditions.m */; };
 		CED8C4AA207212B000286A61 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4A0207212AD00286A61 /* FMDatabasePool.m */; };
 		CED8C4AB207212B000286A61 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4A4207212AE00286A61 /* FMDatabaseQueue.m */; };
@@ -190,6 +191,7 @@
 		CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = cityNumber.sqlite; sourceTree = "<group>"; };
 		CEAAE7DE206E0321006C2F88 /* CityNumberDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityNumberDB.swift; sourceTree = "<group>"; };
 		CEAAE7E0206E0481006C2F88 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CEBCA2E020922975005DFA9D /* HintPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintPopViewController.swift; sourceTree = "<group>"; };
 		CED8C49C2072108D00286A61 /* FMDBDatabase_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBDatabase_Header.h; sourceTree = "<group>"; };
 		CED8C49D207212AC00286A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED8C49E207212AC00286A61 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				66D9390A208480DE005A66F4 /* SettingViewController.swift */,
 				666B6E572084C42000CD28DB /* LogoutViewController.swift */,
 				6628E658208DF06E009DD4C2 /* ResultCorrectPopUp.swift */,
+				CEBCA2E020922975005DFA9D /* HintPopViewController.swift */,
 			);
 			path = "Alert&Popup";
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1DA227206B5EDD000C36B2 /* EmailChecker.swift in Sources */,
+				CEBCA2E120922975005DFA9D /* HintPopViewController.swift in Sources */,
 				CE300637207C7CEC00E90DC3 /* UserInfo.swift in Sources */,
 				CED8C4AF2072412300286A61 /* SignUpSuccessViewController.swift in Sources */,
 				CEAAE7E1206E0481006C2F88 /* DataManager.swift in Sources */,
