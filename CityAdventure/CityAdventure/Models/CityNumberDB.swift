@@ -14,12 +14,14 @@ struct CityNumbersDB {
     let cityType: String
     let provinceType: Int32
     let areaName: String
+    let hint: String
     
-    init(number: Int32, cityName: String, cityType: String, provinceType: Int32, areaName: String) {
+    init(number: Int32, cityName: String, cityType: String, provinceType: Int32, areaName: String, hint: String) {
         self.number = number
         self.cityName = cityName
         self.cityType = cityType
         self.provinceType = provinceType
         self.areaName = areaName
+        self.hint = hint
     }
 }

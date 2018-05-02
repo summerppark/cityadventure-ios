@@ -286,6 +286,7 @@
             hint.modalPresentationStyle = .overFullScreen
             hint.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
             //자음만
+            hint.hintString = DataManager.shared.citynumbers[stageNumber].hint
             self.present(hint, animated: false)
         }
     }

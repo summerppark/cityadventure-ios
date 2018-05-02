@@ -44,7 +44,7 @@ class HintPopViewController: BaseViewController {
         }
     }
     
-    var hintString: String = ""
+    var hintString: String?
     
     @IBOutlet weak var noticeLabel: UILabel! {
         didSet {
@@ -58,7 +58,11 @@ class HintPopViewController: BaseViewController {
         }
     }
     @IBOutlet weak var firstView: UIView!
-    @IBOutlet weak var hintLabel: UILabel!
+    @IBOutlet weak var hintLabel: UILabel! {
+        didSet {
+            hintLabel.text = hintString
+        }
+    }
     
     override func viewDidLoad() {
         closeButtonLayout()
@@ -72,8 +76,14 @@ class HintPopViewController: BaseViewController {
         }
     }
     
+    var hintText: String?
+    
+    
     @objc func tappedYesButton() {
         firstView.isHidden = true
+        hintLabel.isHidden = false
+        hintLabel.text = hintString
+        print(hintString, "을 보여준다.")
     }
     
     @objc func tappedCloseButton() {
