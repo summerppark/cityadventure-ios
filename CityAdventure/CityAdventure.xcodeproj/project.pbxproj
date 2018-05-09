@@ -56,6 +56,7 @@
 		CE642C26207755A5000C2F01 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C25207755A5000C2F01 /* MainViewController.swift */; };
 		CE642C282077612F000C2F01 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C272077612F000C2F01 /* NoticeViewController.swift */; };
 		CE642C2A2077777A000C2F01 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C292077777A000C2F01 /* TimeFormatter.swift */; };
+		CE794FFC20A348F9000BC59C /* AdventureQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE794FFB20A348F9000BC59C /* AdventureQRCodeViewController.swift */; };
 		CE7C12D42072043E0095F1C9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C12D32072043E0095F1C9 /* libsqlite3.0.tbd */; };
 		CEAAE7DD206E02A9006C2F88 /* cityNumber.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */; };
 		CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE7DE206E0321006C2F88 /* CityNumberDB.swift */; };
@@ -183,6 +184,7 @@
 		CE642C25207755A5000C2F01 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE642C272077612F000C2F01 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		CE642C292077777A000C2F01 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		CE794FFB20A348F9000BC59C /* AdventureQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeViewController.swift; sourceTree = "<group>"; };
 		CE7C12942071FD8A0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C12B72072015F0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C12B9207202530095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -377,6 +379,14 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		CE794FF320A348DF000BC59C /* AdventureQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				CE794FFB20A348F9000BC59C /* AdventureQRCodeViewController.swift */,
+			);
+			path = AdventureQRCode;
+			sourceTree = "<group>";
+		};
 		CE7C12BB207202870095F1C9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +508,7 @@
 		CEF716322064CB1900B457E9 /* CityAdventure */ = {
 			isa = PBXGroup;
 			children = (
+				CE794FF320A348DF000BC59C /* AdventureQRCode */,
 				6665F9AD208890E300A5D2BE /* AdventureExercise */,
 				666B6E5B208718F600CD28DB /* Setting */,
 				CE642C2420775594000C2F01 /* Main */,
@@ -769,6 +780,7 @@
 				CE1DA22D206B7EE5000C36B2 /* SignUpViewThirdController.swift in Sources */,
 				CED8C4AB207212B000286A61 /* FMDatabaseQueue.m in Sources */,
 				CE642C1B2074D1CC000C2F01 /* LoginResponse.swift in Sources */,
+				CE794FFC20A348F9000BC59C /* AdventureQRCodeViewController.swift in Sources */,
 				CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */,
 				66D9390B208480DE005A66F4 /* SettingViewController.swift in Sources */,
 				CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */,
