@@ -40,7 +40,8 @@
     var count = 0
     var answerArray: [String] = ["", "", ""]
     var randomCharArray: [String] = []
-    
+    // synthesizer 딜레이.
+    var synthesizer = AVSpeechSynthesizer()
     
     
     override func viewDidLoad() {
@@ -130,12 +131,14 @@
         print(sender.tag)
         
         // 글자를 소리내주는 부분
-        let synthesizer = AVSpeechSynthesizer()
-        let utterance = AVSpeechUtterance(string: sender.currentTitle!)
-        utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
-        utterance.rate = AVSpeechUtteranceDefaultSpeechRate
+        DispatchQueue.main.async {
+            let utterance = AVSpeechUtterance(string: sender.currentTitle!)
+            utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+            utterance.rate = AVSpeechUtteranceDefaultSpeechRate
+            self.synthesizer.speak(utterance)
+        }
         
-        synthesizer.speak(utterance)
+       
         
         
         // 8개의 버튼을 누를 때 마다 정답 배열에 앞에서부터 체크한다.
@@ -248,7 +251,7 @@
                 }
             }
         } else {
-            Toast.init(text: "\(answerArray.joined()) X , 다시 생각해 보세요!!").show()
+            Toast.init(text: "다시 생각해 보세요!!", delay: 0, duration: 0.25).show()
             answerButtonsInit()
         }
     }
