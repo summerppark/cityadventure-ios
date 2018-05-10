@@ -35,7 +35,7 @@ class DataManager {
                                                   cityName: results.string(forColumn: "s_name") ?? "",
                                                   cityType: results.string(forColumn: "s_type") ?? "",
                                                   provinceType: results.int(forColumn: "ui_province"),
-                                                  areaName: results.string(forColumn: "s_area") ?? "")
+                                                  areaName: results.string(forColumn: "s_area") ?? "", hint: results.string(forColumn: "s_hint") ?? "")
                 randomChar.append(cityInfo.cityName)
                 citynumbers.append(cityInfo)
             }
