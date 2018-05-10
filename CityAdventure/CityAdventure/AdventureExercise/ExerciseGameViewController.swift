@@ -231,6 +231,9 @@
     
     func gameResult(result: Bool) {
         if result {
+            // 이 부분에서 코인업 요청.
+            
+            
             if let name = DataManager.shared.getUserInfo()?.userInfo?.s_name {
                 // 스테이지 상태를 로컬에 저장한다.
                 
@@ -286,7 +289,12 @@
             hint.modalPresentationStyle = .overFullScreen
             hint.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
             //자음만
+<<<<<<< HEAD
             hint.hintString = DataManager.shared.citynumbers[stageNumber].hint
+=======
+            
+            
+>>>>>>> 03f73397ae67504d5539384f042800479f871dd7
             self.present(hint, animated: false)
         }
     }

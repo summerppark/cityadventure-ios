@@ -196,6 +196,9 @@ class MainViewController: BaseViewController {
     
     @IBAction func playAdventure(_ sender: UIButton) {
         print("도시탐험")
+        if let adventureQRCode = self.storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeViewController") as? AdventureQRCodeViewController {
+            self.navigationController?.pushViewController(adventureQRCode, animated: true)
+        }
     }
     
     @IBAction func playQuiz(_ sender: UIButton) {

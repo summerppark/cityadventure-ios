@@ -86,6 +86,7 @@ class DataManager {
     }
     
     public func setUserAccountInfo(response: UserAccountInfo) {
+        dump(response)
         userAccountInfo = response
     }
 
