@@ -5365,14 +5365,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_square_qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="Rk8-f1-y3h">
-                                        <rect key="frame" x="37.5" y="245" width="300" height="300"/>
+                                        <rect key="frame" x="37.5" y="265" width="300" height="280"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="8SH-QK-9GA"/>
+                                            <constraint firstAttribute="height" constant="280" id="8SH-QK-9GA"/>
                                             <constraint firstAttribute="width" constant="300" id="yYX-sa-kkt"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEP-eY-uhK">
-                                        <rect key="frame" x="70.5" y="315" width="235" height="46"/>
+                                        <rect key="frame" x="70.5" y="325" width="235" height="46"/>
                                         <string key="text">스마트폰을 뚱카에 거치하고,
 탐험카드를 준비하세요!</string>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="20"/>
@@ -5380,7 +5380,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2t-ls-nt9">
-                                        <rect key="frame" x="98" y="369" width="180" height="80"/>
+                                        <rect key="frame" x="98" y="379" width="180" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="tVV-19-8NU"/>
                                             <constraint firstAttribute="height" constant="80" id="z1e-wh-2hW"/>
@@ -5395,7 +5395,7 @@
                                     <constraint firstItem="esB-wJ-IAh" firstAttribute="top" secondItem="4E5-5o-dYb" secondAttribute="top" constant="32" id="4c5-xX-7xV"/>
                                     <constraint firstItem="5EV-Xz-03e" firstAttribute="leading" secondItem="zPP-dB-FTd" secondAttribute="leading" id="BXO-dK-chd"/>
                                     <constraint firstAttribute="bottom" secondItem="Rk8-f1-y3h" secondAttribute="bottom" id="Drx-BA-WBa"/>
-                                    <constraint firstItem="rEP-eY-uhK" firstAttribute="top" secondItem="Rk8-f1-y3h" secondAttribute="top" constant="70" id="Fad-xa-5ra"/>
+                                    <constraint firstItem="rEP-eY-uhK" firstAttribute="top" secondItem="Rk8-f1-y3h" secondAttribute="top" constant="60" id="Fad-xa-5ra"/>
                                     <constraint firstItem="rEP-eY-uhK" firstAttribute="centerX" secondItem="Rk8-f1-y3h" secondAttribute="centerX" id="Gtd-Qv-flS"/>
                                     <constraint firstItem="GaA-NH-ujz" firstAttribute="bottom" secondItem="6d7-Xp-ZDC" secondAttribute="bottom" id="Jq7-yh-6MT"/>
                                     <constraint firstItem="I2t-ls-nt9" firstAttribute="centerX" secondItem="zPP-dB-FTd" secondAttribute="centerX" id="NEv-I0-Cgg"/>
@@ -5430,6 +5430,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="10u-Cy-g8X"/>
                     </view>
+                    <connections>
+                        <outlet property="squareHeight" destination="8SH-QK-9GA" id="BwM-lY-lOE"/>
+                        <outlet property="textTopConstraint" destination="Fad-xa-5ra" id="mVD-zF-5la"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABo-XB-ren" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
