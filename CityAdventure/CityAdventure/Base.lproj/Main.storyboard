@@ -651,19 +651,19 @@
                                 <rect key="frame" x="45.5" y="163.5" width="284" height="340"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앗!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDG-Vf-3yG">
-                                        <rect key="frame" x="125" y="40" width="34" height="30"/>
+                                        <rect key="frame" x="125.5" y="40" width="34" height="30"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증메일을 받지 못하셨나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5B-bd-W2C">
-                                        <rect key="frame" x="42" y="78" width="200" height="18.5"/>
+                                        <rect key="frame" x="42" y="78" width="200" height="19"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. 이메일을 바르게 입력했는지 확인해보세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXG-Km-qvT">
-                                        <rect key="frame" x="42" y="120" width="200" height="50"/>
+                                        <rect key="frame" x="42" y="120.5" width="200" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="lmJ-bK-yaK"/>
                                         </constraints>
@@ -672,7 +672,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. 스팸편지함 혹은 휴지통 등을 확인해보세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0y-5H-K2B">
-                                        <rect key="frame" x="42" y="170" width="200" height="50"/>
+                                        <rect key="frame" x="42" y="170.5" width="200" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="jCh-lA-uQh"/>
                                         </constraints>
@@ -681,7 +681,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rq9-ZH-PHV">
-                                        <rect key="frame" x="78" y="244" width="128" height="50"/>
+                                        <rect key="frame" x="78" y="244.5" width="128" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="128" id="NLw-s4-3Nu"/>
                                             <constraint firstAttribute="height" constant="50" id="oJs-PT-QTA"/>
@@ -752,7 +752,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 변경 실패" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdq-1w-zw0">
-                                                <rect key="frame" x="72.5" y="8" width="166" height="24"/>
+                                                <rect key="frame" x="73" y="8" width="165.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="21"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2167,7 +2167,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLg-tc-Smx">
-                                        <rect key="frame" x="82" y="28" width="136" height="38.5"/>
+                                        <rect key="frame" x="82.5" y="28" width="135.5" height="38.5"/>
                                         <string key="text">새로운 비밀번호를 
 입력해주세요.</string>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="17"/>
@@ -2899,7 +2899,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="325"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증메일이 발송되었습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2W-3F-7Ht">
-                                        <rect key="frame" x="52" y="32" width="197" height="20"/>
+                                        <rect key="frame" x="52" y="32" width="197.5" height="20"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="17"/>
                                         <color key="textColor" red="0.27843137254901962" green="0.22352941176470589" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -3536,13 +3536,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성별" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpZ-1i-A5P">
-                                        <rect key="frame" x="12" y="12" width="24" height="15"/>
+                                        <rect key="frame" x="12" y="12" width="23.5" height="15"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okm-ho-iH2">
-                                        <rect key="frame" x="60" y="4" width="196" height="32"/>
+                                        <rect key="frame" x="59.5" y="4" width="196.5" height="32"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4s7-RZ-09u">
                                                 <rect key="frame" x="8" y="4" width="60" height="24"/>
@@ -5210,19 +5210,19 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="22"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bA-rh-QA3">
-                                                        <rect key="frame" x="6" y="4" width="8.5" height="8"/>
+                                                        <rect key="frame" x="6" y="4" width="8" height="8"/>
                                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="7"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kV5-MH-cuQ">
-                                                        <rect key="frame" x="18.5" y="2.5" width="17" height="19"/>
+                                                        <rect key="frame" x="18" y="2.5" width="16.5" height="19"/>
                                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" progressImage="img_progress" translatesAutoresizingMaskIntoConstraints="NO" id="o6V-Ei-rfA">
-                                                        <rect key="frame" x="39.5" y="5" width="37.5" height="12"/>
+                                                        <rect key="frame" x="38.5" y="5" width="38.5" height="12"/>
                                                         <color key="tintColor" red="0.23529411759999999" green="0.69803921570000005" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="xfp-1p-7Hv"/>
@@ -5329,7 +5329,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개의 도시를 탐험했네요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaA-NH-ujz">
-                                        <rect key="frame" x="90.5" y="221" width="164" height="19"/>
+                                        <rect key="frame" x="90" y="221" width="163.5" height="19"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -5347,19 +5347,19 @@
                                         </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비유비유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esB-wJ-IAh">
-                                        <rect key="frame" x="51.5" y="184" width="85" height="26"/>
+                                        <rect key="frame" x="51.5" y="184" width="84.5" height="26"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="23"/>
                                         <color key="textColor" red="0.043137254901960784" green="0.4392156862745098" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="162" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6d7-Xp-ZDC">
-                                        <rect key="frame" x="51.5" y="214" width="37" height="26"/>
+                                        <rect key="frame" x="51.5" y="214" width="36.5" height="26"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="23"/>
                                         <color key="textColor" red="0.043137254901960784" green="0.4392156862745098" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대원," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3L-mL-Gja">
-                                        <rect key="frame" x="140.5" y="190" width="37" height="20"/>
+                                        <rect key="frame" x="140" y="190" width="37" height="20"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -5386,6 +5386,9 @@
                                             <constraint firstAttribute="height" constant="80" id="z1e-wh-2hW"/>
                                         </constraints>
                                         <state key="normal" image="btn_qrcode_start"/>
+                                        <connections>
+                                            <action selector="goToQRCodeReader:" destination="29n-sZ-J5c" eventType="touchUpInside" id="eeW-5X-oM9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5438,6 +5441,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABo-XB-ren" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6808.8000000000002" y="-659.82008995502258"/>
+        </scene>
+        <!--AdventureQR Code Reader View Controller-->
+        <scene sceneID="ZEi-wi-1pn">
+            <objects>
+                <viewController storyboardIdentifier="AdventureQRCodeReaderViewController" id="vRj-le-8Rw" customClass="AdventureQRCodeReaderViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9E4-N4-BYf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nN-Lc-nx4">
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.92941176469999998" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="NGa-k8-TJW"/>
+                                    <constraint firstAttribute="width" constant="100" id="sxE-1e-zq0"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpW-4a-lHr">
+                                <rect key="frame" x="182" y="547" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8nN-Lc-nx4" firstAttribute="centerX" secondItem="9E4-N4-BYf" secondAttribute="centerX" id="Uho-Di-dSG"/>
+                            <constraint firstItem="8nN-Lc-nx4" firstAttribute="centerY" secondItem="9E4-N4-BYf" secondAttribute="centerY" id="fh9-Xm-y1F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zLh-EH-7vq"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="hpW-4a-lHr" id="bj3-dm-R3N"/>
+                        <outlet property="topbar" destination="8nN-Lc-nx4" id="vJE-Jc-ycb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3tz-kh-vr5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7471" y="-658"/>
         </scene>
         <!--Adventure Exercise View Controller-->
         <scene sceneID="Kgl-eS-d3b">
@@ -5527,7 +5570,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eme-Yk-KnN">
-                                                            <rect key="frame" x="53.5" y="42.5" width="14" height="36.5"/>
+                                                            <rect key="frame" x="53.5" y="42.5" width="14.5" height="36.5"/>
                                                             <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="32"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>

@@ -57,6 +57,7 @@
 		CE642C282077612F000C2F01 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C272077612F000C2F01 /* NoticeViewController.swift */; };
 		CE642C2A2077777A000C2F01 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C292077777A000C2F01 /* TimeFormatter.swift */; };
 		CE794FFC20A348F9000BC59C /* AdventureQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE794FFB20A348F9000BC59C /* AdventureQRCodeViewController.swift */; };
+		CE794FFF20ADD272000BC59C /* AdventureQRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE794FFE20ADD272000BC59C /* AdventureQRCodeReaderViewController.swift */; };
 		CE7C12D42072043E0095F1C9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C12D32072043E0095F1C9 /* libsqlite3.0.tbd */; };
 		CEAAE7DD206E02A9006C2F88 /* cityNumber.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */; };
 		CEAAE7DF206E0321006C2F88 /* CityNumberDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAAE7DE206E0321006C2F88 /* CityNumberDB.swift */; };
@@ -185,6 +186,7 @@
 		CE642C272077612F000C2F01 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		CE642C292077777A000C2F01 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		CE794FFB20A348F9000BC59C /* AdventureQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeViewController.swift; sourceTree = "<group>"; };
+		CE794FFE20ADD272000BC59C /* AdventureQRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		CE7C12942071FD8A0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C12B72072015F0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C12B9207202530095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -383,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				CE794FFB20A348F9000BC59C /* AdventureQRCodeViewController.swift */,
+				CE794FFE20ADD272000BC59C /* AdventureQRCodeReaderViewController.swift */,
 			);
 			path = AdventureQRCode;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				666B6E5F2087234600CD28DB /* TermsOfUseDetailViewController.swift in Sources */,
 				6665F9B1208898E100A5D2BE /* ExerciseCollectionViewCell.swift in Sources */,
 				CE300629207B830A00E90DC3 /* FindPasswordSecondPresenter.swift in Sources */,
+				CE794FFF20ADD272000BC59C /* AdventureQRCodeReaderViewController.swift in Sources */,
 				CED8C4AC207212B000286A61 /* FMResultSet.m in Sources */,
 				CE642C1F20773091000C2F01 /* FindPasswordPresenter.swift in Sources */,
 				CE300639207C7F6D00E90DC3 /* UserAccountInfo.swift in Sources */,

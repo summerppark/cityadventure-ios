@@ -46,4 +46,14 @@ class AdventureQRCodeViewController: BaseViewController {
         }
     }
     
+    
+    @IBAction func goToQRCodeReader(_ sender: Any) {
+        
+        if let qrCodeReaderView = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeReaderViewController") as? AdventureQRCodeReaderViewController {
+            self.navigationController?.pushViewController(qrCodeReaderView, animated: true)
+        }
+        
+    }
+    
+    
 }
