@@ -47,6 +47,7 @@
 		CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */; };
 		CE3F2B8A206CBF3500B4D9D0 /* SearchCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */; };
 		CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */; };
+		CE571EBD20B46D10008D276A /* TestQRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE571EBC20B46D10008D276A /* TestQRCode.swift */; };
 		CE642C192074CD84000C2F01 /* LoginViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C182074CD84000C2F01 /* LoginViewPresenter.swift */; };
 		CE642C1B2074D1CC000C2F01 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C1A2074D1CC000C2F01 /* LoginResponse.swift */; };
 		CE642C1D20770339000C2F01 /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C1C20770339000C2F01 /* FindPasswordViewController.swift */; };
@@ -176,6 +177,7 @@
 		CE3F2B87206C9FB400B4D9D0 /* SelectCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCityViewController.swift; sourceTree = "<group>"; };
 		CE3F2B89206CBF3500B4D9D0 /* SearchCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityTableViewCell.swift; sourceTree = "<group>"; };
 		CE51A2A9206E450200B228DD /* CharacterChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterChoiceViewController.swift; sourceTree = "<group>"; };
+		CE571EBC20B46D10008D276A /* TestQRCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestQRCode.swift; sourceTree = "<group>"; };
 		CE642C182074CD84000C2F01 /* LoginViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewPresenter.swift; sourceTree = "<group>"; };
 		CE642C1A2074D1CC000C2F01 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		CE642C1C20770339000C2F01 /* FindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
@@ -530,6 +532,7 @@
 				CEF716372064CB1900B457E9 /* Main.storyboard */,
 				CEF7163C2064CB1900B457E9 /* LaunchScreen.storyboard */,
 				CEF7163F2064CB1900B457E9 /* Info.plist */,
+				CE571EBC20B46D10008D276A /* TestQRCode.swift */,
 			);
 			path = CityAdventure;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				666B6E6320874DED00CD28DB /* ResetPasswordPresenter.swift in Sources */,
 				CE300633207C54FA00E90DC3 /* RetryAuthAlertViewPresenter.swift in Sources */,
 				6673644F2089B32C0098E8E0 /* ButtonExtensions.swift in Sources */,
+				CE571EBD20B46D10008D276A /* TestQRCode.swift in Sources */,
 				CEF716492064DB3200B457E9 /* LaunchScreenViewController.swift in Sources */,
 				CE1DA22B206B67AB000C36B2 /* AlertViewController.swift in Sources */,
 				6628E659208DF06E009DD4C2 /* ResultCorrectPopUp.swift in Sources */,

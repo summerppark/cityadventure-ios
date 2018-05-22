@@ -18,9 +18,11 @@ class AdventureQRCodeReaderViewController: UIViewController {
     
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
+
+    @IBOutlet weak var checkRecognizeView: UIView!
     
     
-    
+    @IBOutlet weak var animationView: UIView!
     
     private let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
                                       AVMetadataObject.ObjectType.code39,
@@ -39,6 +41,9 @@ class AdventureQRCodeReaderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+       
         // Get the back-facing camera for capturing videos
         
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
@@ -92,11 +97,25 @@ class AdventureQRCodeReaderViewController: UIViewController {
             view.addSubview(qrCodeFrameView)
             view.bringSubview(toFront: qrCodeFrameView)
         }
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Animation
+        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseOut, .repeat], animations: {
+            [weak self] in
+            self?.animationView.frame.origin.y -= 50
+        }) { (action) in
+            print("핸들러")
+        }
     }
     
     // MARK: - Helper methods
@@ -125,15 +144,40 @@ class AdventureQRCodeReaderViewController: UIViewController {
         present(alertPrompt, animated: true, completion: nil)
     }
     
+    func shakeView(vw: UIView) {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position.x"
+        animation.values = [0, 10, -10, 10, -5, 5, -5, 0 ]
+        animation.keyTimes = [0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1]
+        animation.duration = 0.4
+        animation.isAdditive = true
+        
+        vw.layer.add(animation, forKey: "shake")
+    }
+    
+    
+    @IBAction func presentAlertView(_ sender: Any) {
+        
+    }
+    
+    
 }
 
 extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         // Check if the metadataObjects array is not nil and it contains at least one object.
+        print("!!")
+        dump(output)
+        dump(metadataObjects)
+        dump(connection)
+        self.shakeView(vw: checkRecognizeView)
+        
+        print("!!")
         if metadataObjects.count == 0 {
-            qrCodeFrameView?.frame = CGRect.zero
-            messageLabel.text = "No QR code is detected"
+            print("인식 안됨")
+            
+            
             return
         }
         
@@ -143,9 +187,12 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
         if supportedCodeTypes.contains(metadataObj.type) {
             // If the found metadata is equal to the QR code metadata (or barcode) then update the status label's text and set the bounds
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
-            qrCodeFrameView?.frame = barCodeObject!.bounds
+//            qrCodeFrameView?.frame = barCodeObject!.bounds
             
+            
+            // 읽은 값을 가져온다.
             if metadataObj.stringValue != nil {
+                print("CC",metadataObj.stringValue )
                 launchApp(decodedURL: metadataObj.stringValue!)
                 messageLabel.text = metadataObj.stringValue
             }
@@ -153,9 +200,7 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
     }
     
     private func updatePreviewLayer(layer: AVCaptureConnection, orientation: AVCaptureVideoOrientation) {
-        
         layer.videoOrientation = orientation
-        
         videoPreviewLayer?.frame = self.view.bounds
     }
     override func viewDidLayoutSubviews() {
