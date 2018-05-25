@@ -2576,21 +2576,24 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HU3-Eh-1hS">
                                         <rect key="frame" x="72" y="136" width="150.5" height="24"/>
-                                        <string key="text">스마트폰 카메라에 이물질이 묻었는지 확인하고 닦아주세요.</string>
+                                        <string key="text">스마트폰 카메라에 이물질이 묻었는지 
+확인하고 닦아주세요.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3q0-5V-Ar1">
                                         <rect key="frame" x="72" y="180" width="179.5" height="24"/>
-                                        <string key="text">너무 어두운 곳에서는 인식이 잘 되지 않아요. 조금 밝은 곳으로 가보세요.</string>
+                                        <string key="text">너무 어두운 곳에서는 인식이 잘 되지 않아요. 
+조금 밝은 곳으로 가보세요.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cc4-Tm-iH5">
                                         <rect key="frame" x="72" y="224" width="168" height="24"/>
-                                        <string key="text">어플리케이션의 “인식확인”을 통해 QR코드가 제대로 보이는지 확인해 주세요.</string>
+                                        <string key="text">어플리케이션의 “인식확인”을 통해 
+QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2666,14 +2669,16 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLS-ic-oCL">
                                         <rect key="frame" x="72" y="92" width="181.5" height="24"/>
-                                        <string key="text">카드를 뺐다가 다시 넣어보세요. (QR코드는 움직이면 다시 인식지점을 찾아요)</string>
+                                        <string key="text">카드를 뺐다가 다시 넣어보세요. 
+(QR코드는 움직이면 다시 인식지점을 찾아요)</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ogi-PJ-Bw7">
                                         <rect key="frame" x="72" y="268" width="173.5" height="24"/>
-                                        <string key="text">탐험카드의 QR코드가 구겨지거나 훼손되면 인식이 잘 되지 않아요.</string>
+                                        <string key="text">탐험카드의 QR코드가 구겨지거나 훼손되면 
+인식이 잘 되지 않아요.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

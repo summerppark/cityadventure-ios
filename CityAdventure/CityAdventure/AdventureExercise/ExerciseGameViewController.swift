@@ -361,12 +361,12 @@
         
         // 중 복 제 거
         let charArray = Array(Set(DataManager.shared.randomChar.flatMap { $0 }))
-       
+        print("C!C!", charArray)
         var sampleArray: [Int] = []
         var resultArray: [String] = []
         resultArray = DataManager.shared.citynumbers[stageNumber].cityName.map { String($0)
-            
         }
+        print("C!C!@", resultArray)
       
         // 랜덤으로 글자배열을 만듬
         while resultArray.count < 8 {

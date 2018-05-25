@@ -177,7 +177,6 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
         if metadataObjects.count == 0 {
             print("인식 안됨")
             
-            
             return
         }
         
