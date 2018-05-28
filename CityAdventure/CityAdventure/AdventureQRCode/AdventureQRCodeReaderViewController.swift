@@ -157,11 +157,14 @@ class AdventureQRCodeReaderViewController: UIViewController {
     
     
     @IBAction func presentAlertView(_ sender: Any) {
-        
+        if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeCheckPopup") as? AdventureQRCodeCheckPopup {
+            alert.modalPresentationStyle = .overFullScreen
+            alert.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+            self.present(alert, animated: false)
+        }
     }
-    
-    
 }
+
 
 extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDelegate {
     
