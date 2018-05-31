@@ -17,6 +17,7 @@ class DataManager {
     var exerciseHintList: [ExerciseGameDB] = []
     var randomChar: [String] = []
     var randomCharArray:[String] = []
+    var groupCities: [Int32: [String]] = [Int32:[String]]()
     
     
     static var adventureExercise: Int = 0
@@ -36,6 +37,8 @@ class DataManager {
                                                   cityType: results.string(forColumn: "s_type") ?? "",
                                                   provinceType: results.int(forColumn: "ui_province"),
                                                   areaName: results.string(forColumn: "s_area") ?? "", hint: results.string(forColumn: "s_hint") ?? "")
+                
+                groupCities[cityInfo.provinceType]?.append(cityInfo.cityName)
                 randomChar.append(cityInfo.cityName)
                 citynumbers.append(cityInfo)
             }
