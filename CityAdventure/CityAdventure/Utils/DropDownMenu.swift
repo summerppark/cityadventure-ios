@@ -170,11 +170,12 @@ class HADropDown: UIView {
         label.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         self.addSubview(label)
         textAllignment = .center
-        
+        label.font = UIFont(name: "GodoM", size: 12.0)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
         self.addGestureRecognizer(tapGesture)
         table.delegate = self
         table.dataSource = self
+        table.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         var rootView = self.superview
         
         // here we getting top superview to add table on that.
@@ -207,7 +208,7 @@ class HADropDown: UIView {
             self.table.layer.borderWidth = 1
             self.table.layer.cornerRadius = 4
             var rootView = self.superview
-            // adding tableview to root view( we can say first view in hierarchy)
+            // additang tableview to root view( we can say first view in hierarchy)
             while rootView?.superview != nil {
                 rootView = rootView?.superview
             }
@@ -270,8 +271,8 @@ extension HADropDown : UITableViewDelegate, UITableViewDataSource {
         }
         cell?.textLabel?.textAlignment = textAllignment
         cell?.textLabel?.text = items[indexPath.row]
-        let font = UIFont(descriptor: itemFont.fontDescriptor, size: itemFontSize)
-        
+//        let font = UIFont(descriptor: itemFont.fontDescriptor, size: itemFontSize)
+        let font = UIFont(name: "GodoM", size: itemFontSize)
         cell?.textLabel?.font = font
         
         cell?.textLabel?.textColor = itemTextColor
