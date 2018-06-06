@@ -78,18 +78,28 @@ class MainViewController: BaseViewController {
         setBackGroundImageForTime()
       
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        
-//        UIView.animate(withDuration: 0.6, delay: 2, options: [.repeat, .autoreverse], animations: {
-//            [weak self] in
-//           self?.firstButton.frame.origin.y -= 10
-//        }) { (action) in
-//            print("핸들러")
-//        }
-        
-        
+   
         
         print("여기서 체크하고 넘기고 토스트")
         dataSetting()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        UIView.animate(withDuration: 0.8, delay: 0, options: [.repeat, .autoreverse,.allowUserInteraction], animations: {
+            [weak self] in
+            self?.animationView.frame.origin.y -= 10
+        }) { (action) in
+            print("핸들러")
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        
     }
     
     // 상단 뷰 데이타 셋팅
