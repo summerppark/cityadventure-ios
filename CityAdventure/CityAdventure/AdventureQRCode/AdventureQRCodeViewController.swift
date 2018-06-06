@@ -34,6 +34,11 @@ class AdventureQRCodeViewController: BaseViewController {
     
     }
     
+    @IBAction func unWindQRCodeVC(_ segue: UIStoryboardSegue) {
+        // 회원가입 완료 팝업 창에서 닫기 눌렀을 때 이쪽으로 소환
+    }
+    
+    
     @IBAction func tappedBackButton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }

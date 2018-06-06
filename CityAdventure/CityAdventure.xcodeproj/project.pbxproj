@@ -61,6 +61,7 @@
 		CE642C26207755A5000C2F01 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C25207755A5000C2F01 /* MainViewController.swift */; };
 		CE642C282077612F000C2F01 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C272077612F000C2F01 /* NoticeViewController.swift */; };
 		CE642C2A2077777A000C2F01 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C292077777A000C2F01 /* TimeFormatter.swift */; };
+		CE717CF020C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE717CEF20C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift */; };
 		CE794FFC20A348F9000BC59C /* AdventureQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE794FFB20A348F9000BC59C /* AdventureQRCodeViewController.swift */; };
 		CE794FFF20ADD272000BC59C /* AdventureQRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE794FFE20ADD272000BC59C /* AdventureQRCodeReaderViewController.swift */; };
 		CE7C12D42072043E0095F1C9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C12D32072043E0095F1C9 /* libsqlite3.0.tbd */; };
@@ -195,6 +196,7 @@
 		CE642C25207755A5000C2F01 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE642C272077612F000C2F01 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		CE642C292077777A000C2F01 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		CE717CEF20C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeFlipViewController.swift; sourceTree = "<group>"; };
 		CE794FFB20A348F9000BC59C /* AdventureQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeViewController.swift; sourceTree = "<group>"; };
 		CE794FFE20ADD272000BC59C /* AdventureQRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		CE7C12942071FD8A0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -400,6 +402,7 @@
 				CE09EA9920B80B8300693BF8 /* AdventureQRCodeCheckPopup.swift */,
 				CE09EAA220BC549D00693BF8 /* MyCollectCityViewController.swift */,
 				CE09EAA420BC565300693BF8 /* MyCollectCityCell.swift */,
+				CE717CEF20C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift */,
 			);
 			path = AdventureQRCode;
 			sourceTree = "<group>";
@@ -805,6 +808,7 @@
 				CE642C1B2074D1CC000C2F01 /* LoginResponse.swift in Sources */,
 				CE794FFC20A348F9000BC59C /* AdventureQRCodeViewController.swift in Sources */,
 				CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */,
+				CE717CF020C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift in Sources */,
 				66D9390B208480DE005A66F4 /* SettingViewController.swift in Sources */,
 				CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */,
 				CE642C2120773D15000C2F01 /* FindPasswordSecondViewController.swift in Sources */,

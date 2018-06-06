@@ -144,6 +144,8 @@ class AdventureQRCodeReaderViewController: UIViewController {
         present(alertPrompt, animated: true, completion: nil)
     }
     
+    
+    // 인식 확인 흔들리는 애니메이션
     func shakeView(vw: UIView) {
         let animation = CAKeyframeAnimation()
         animation.keyPath = "position.x"
@@ -194,9 +196,16 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
             
             // 읽은 값을 가져온다.
             if metadataObj.stringValue != nil {
-                print("CC",metadataObj.stringValue )
-                launchApp(decodedURL: metadataObj.stringValue!)
-                messageLabel.text = metadataObj.stringValue
+                
+                if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
+                    result.cityNumber = metadataObj.stringValue ?? "result is Nil"
+                    self.navigationController?.pushViewController(result, animated: true)
+                    return
+                }
+//
+//                print("CC",metadataObj.stringValue )
+//                launchApp(decodedURL: metadataObj.stringValue!)
+//                messageLabel.text = metadataObj.stringValue
             }
         }
     }
