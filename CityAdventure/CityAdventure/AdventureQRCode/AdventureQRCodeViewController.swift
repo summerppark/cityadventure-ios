@@ -20,6 +20,10 @@ class AdventureQRCodeViewController: BaseViewController {
         
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
     func layoutCheck() {
         //iPhoneX 는 네비게이션,스테이터스바 가 다른형식임
         if Constants.DeviceType.IS_IPHONE_X {
