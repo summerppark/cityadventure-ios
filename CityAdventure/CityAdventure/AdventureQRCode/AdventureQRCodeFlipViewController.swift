@@ -66,9 +66,17 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     }
     
     
-    @IBOutlet weak var travelInfoButton: UIButton!
+    @IBOutlet weak var travelInfoButton: UIButton! {
+        didSet {
+            travelInfoButton.addTarget(self, action: #selector(presentWebView), for: .touchUpInside)
+        }
+    }
     
-    @IBOutlet weak var nationInfoButton: UIButton!
+    @IBOutlet weak var nationInfoButton: UIButton! {
+        didSet {
+            nationInfoButton.addTarget(self, action: #selector(presentBoard), for: .touchUpInside)
+        }
+    }
     
     
     
@@ -92,16 +100,38 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var closeButton: UIButton! {
+        didSet {
+            closeButton.layer.cornerRadius = closeButton.frame.width / 2
+            closeButton.layer.borderWidth = 2.0
+            
+            closeButton.layer.borderColor = UIColor.white.cgColor
+            closeButton.clipsToBounds = true
+        }
+    }
     
     @IBInspectable
     @IBOutlet weak var backMaplocationButton: UIButton!
     
+    @IBOutlet weak var backborderView: UIView! {
+        didSet {
+            backborderView.layer.cornerRadius = 8.0
+            backborderView.clipsToBounds = true
+        }
+    }
+    
+    @IBOutlet weak var backBorderInnterView: UIView! {
+        didSet {
+            backBorderInnterView.layer.cornerRadius = 8.0
+            backBorderInnterView.clipsToBounds = true
+        }
+    }
     
     
     
     // BOTTOM
     var helpImage: UIImageView = {
-        let iv = UIImageView(frame: CGRect(x: 0, y: 24, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-24))
+        let iv = UIImageView(frame: CGRect(x: 24, y: 24, width: UIScreen.main.bounds.width-48, height: UIScreen.main.bounds.height-48))
         iv.image = #imageLiteral(resourceName: "icon_qrcode_help")
         iv.isUserInteractionEnabled = true
         return iv
@@ -115,10 +145,22 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     
     @IBOutlet var bottomMaps: [UIButton]!
     
+    
+    @IBOutlet weak var infoView: UIView!
+    
+    
+    
+    
     var flipToggle: Bool = false
     var cityNumber: String = ""
 
     
+    @IBOutlet weak var bottomTextView: UITextView! {
+        didSet {
+            bottomTextView.delegate = self
+            bottomTextView.font = UIFont(name: "GodoM", size: 10.0)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,12 +171,62 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         helpImage.addGestureRecognizer(tapGesture)
         
         
+        
         bottomMaps.forEach { (btn) in
             btn.layer.cornerRadius = 8.0
             btn.layer.borderWidth = 3.0
             btn.layer.borderColor = UIColor().colorFromHex("#ff4863").cgColor
             btn.clipsToBounds = true
         }
+        
+        
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        swipeGesture.direction = .left
+        let swipeGesture2 = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
+        swipeGesture2.direction = .right
+        mainView.addGestureRecognizer(swipeGesture)
+        mainView.addGestureRecognizer(swipeGesture2)
+        
+        
+        infoView.isUserInteractionEnabled = true
+        let infoTapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedInfoView))
+        infoView.addGestureRecognizer(infoTapGesture)
+        
+    }
+    
+    @objc func swipe(sender: UISwipeGestureRecognizer) {
+        print("Swipe")
+        switch sender.direction {
+        case .left:
+            print("레프트")
+            
+            if flipToggle {
+                flipToggle = false
+                frontView.isHidden = false
+                backView.isHidden = true
+                UIView.transition(with: mainView, duration: 0.25, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+            }
+            
+            
+        case .right:
+            print("라이트")
+            
+            if !flipToggle {
+                flipToggle = true
+                backView.isHidden = false
+                frontView.isHidden = true
+                UIView.transition(with: mainView, duration: 0.25, options: .transitionFlipFromRight, animations: nil, completion: nil)
+            }
+            
+        default:
+            break
+        }
+        
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
    
@@ -161,10 +253,17 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         
         if Constants.DeviceType.IS_IPHONE_X {
             helpImage = UIImageView(frame: CGRect(x: 0, y: 46, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height-46-32))
-            helpImage.image = #imageLiteral(resourceName: "icon_qrcode_help")
+
             helpImage.isUserInteractionEnabled = true
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideHelpView))
             helpImage.addGestureRecognizer(tapGesture)
+        }
+        
+        if flipToggle {
+            helpImage.image = #imageLiteral(resourceName: "img_help_back")
+            
+        } else {
+            helpImage.image = #imageLiteral(resourceName: "icon_qrcode_help")
         }
         
         self.view.addSubview(backGroundView)
@@ -175,4 +274,40 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         backGroundView.removeFromSuperview()
         helpImage.removeFromSuperview()
     }
+    
+    // 여행정보 보여주기
+    @objc func presentWebView() {
+        if let travelInfo = storyboard?.instantiateViewController(withIdentifier: "AvdentureQRCodeTravelInfo") as? AvdentureQRCodeTravelInfo {
+            
+            let navigationController = UINavigationController(rootViewController: travelInfo)
+            self.present(navigationController, animated: true, completion: nil)
+            
+        }
+    }
+    
+    
+    // 해당 도시의 정보를 보여주는 뷰.
+    @objc func presentBoard() {
+        if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeBoardPopUp") as? AdventureQRCodeBoardPopUp {
+            alert.modalPresentationStyle = .overFullScreen
+            
+            alert.titleString = "부산의 면적은 1000㎢ 입니다."
+            alert.subTitleString = "님자: 9,000,000명, 여자: 2,000,000명\n 부산의 인구는 약 1100만명"
+            alert.fmCount = 200
+            alert.mCount = 900
+            
+            self.present(alert, animated: false)
+        }
+    }
+    
+    
+    // 한자 한글 읽어주기
+    @objc func tappedInfoView() {
+        print("Tapped")
+    }
+}
+
+
+extension AdventureQRCodeFlipViewController: UITextViewDelegate {
+
 }
