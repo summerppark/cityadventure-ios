@@ -200,24 +200,20 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         case .left:
             print("레프트")
             
-            if flipToggle {
-                flipToggle = false
-                frontView.isHidden = false
-                backView.isHidden = true
-                UIView.transition(with: mainView, duration: 0.25, options: .transitionFlipFromLeft, animations: nil, completion: nil)
-            }
-            
-            
-        case .right:
-            print("라이트")
-            
             if !flipToggle {
                 flipToggle = true
                 backView.isHidden = false
                 frontView.isHidden = true
                 UIView.transition(with: mainView, duration: 0.25, options: .transitionFlipFromRight, animations: nil, completion: nil)
             }
-            
+        case .right:
+            print("라이트")
+            if flipToggle {
+                flipToggle = false
+                frontView.isHidden = false
+                backView.isHidden = true
+                UIView.transition(with: mainView, duration: 0.25, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+            }
         default:
             break
         }
@@ -304,6 +300,13 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     // 한자 한글 읽어주기
     @objc func tappedInfoView() {
         print("Tapped")
+        if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeTextSoundViewController") as? AdventureQRCodeTextSoundViewController {
+            alert.modalPresentationStyle = .overFullScreen
+
+            self.present(alert, animated: false)
+        }
+        
+        
     }
 }
 
