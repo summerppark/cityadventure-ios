@@ -36,10 +36,7 @@ class AdventureQRCodeTextSoundViewController: BaseViewController {
             koreaTextView.layer.borderColor = UIColor().colorFromHex("#e3d8a4").cgColor
         }
     }
-    
-    let synthesizer = AVSpeechSynthesizer()
-    
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
@@ -59,15 +56,15 @@ class AdventureQRCodeTextSoundViewController: BaseViewController {
     
         if sender.tag == 15 {
             
-            let utterance = AVSpeechUtterance(string: "부산")
-            utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
-            utterance.rate = 0.4
-            synthesizer.speak(utterance)
-        } else {
             let utterance = AVSpeechUtterance(string: "가마 부 뫼 산")
             utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
             utterance.rate = 0.4
-            synthesizer.speak(utterance)
+            LaunchScreenViewController.syntheSizer.speak(utterance)
+        } else {
+            let utterance = AVSpeechUtterance(string: "부산")
+            utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
+            utterance.rate = 0.4
+            LaunchScreenViewController.syntheSizer.speak(utterance)
         }
     }
     

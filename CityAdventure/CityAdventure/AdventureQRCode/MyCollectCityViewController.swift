@@ -71,8 +71,19 @@ class MyCollectCityViewController: BaseViewController {
                 cityCount.text = "0 / \(cityArray.count)"
             }
         }
-        
         cityCollectionView.reloadData()
+    }
+    
+    
+    @IBAction func tappedBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func openSideMenu(_ sender: Any) {
+        super.showMenu {
+            super.backgroundBlackAlpha(view: self.view)
+            self.view.layoutIfNeeded()
+        }
     }
     
 }
@@ -89,9 +100,7 @@ extension MyCollectCityViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectCityCell", for: indexPath) as! MyCollectCityCell
-        
         return cell
-        
     }
     
     // Button ( CELL ) Size

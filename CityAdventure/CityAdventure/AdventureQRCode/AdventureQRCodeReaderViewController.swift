@@ -19,8 +19,6 @@ class AdventureQRCodeReaderViewController: UIViewController {
     var qrCodeFrameView: UIView?
 
     @IBOutlet weak var checkRecognizeView: UIView!
-    
-    
     @IBOutlet weak var animationView: UIView!
  
     
@@ -109,6 +107,17 @@ class AdventureQRCodeReaderViewController: UIViewController {
             self.present(alert, animated: false)
         }
     }
+    
+    @IBAction func close(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func openShoppingMall(_ sender: UIButton) {
+        if let url = URL(string: "http://naver.com") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
 }
 
 

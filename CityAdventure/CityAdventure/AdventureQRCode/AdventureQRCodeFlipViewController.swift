@@ -30,10 +30,24 @@ class AdventureQRCodeFlipViewController: BaseViewController {
             helpButton.addTarget(self, action: #selector(helpView), for: .touchUpInside)
         }
     }
+    @IBOutlet weak var frontBackGround: UIImageView! {
+        didSet {
+            
+        }
+    }
+    
+    
+    @IBOutlet weak var backBackGround: UIImageView! {
+        didSet {
+            
+        }
+    }
+    
     
     // FRONT VIEW
     @IBOutlet weak var frontView: UIView! {
         didSet {
+            frontView.backgroundColor = .clear
             frontView.layer.cornerRadius = 8.0
             frontView.clipsToBounds = false
 //            frontView.layer.masksToBounds = false
@@ -305,9 +319,25 @@ class AdventureQRCodeFlipViewController: BaseViewController {
 
             self.present(alert, animated: false)
         }
-        
-        
     }
+    
+    
+    @IBAction func tappedSpeechButton(_ sender: UIButton) {
+        
+        if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeTTSDescViewController") as? AdventureQRCodeTTSDescViewController {
+            alert.modalPresentationStyle = .overFullScreen
+            self.present(alert, animated: false)
+        }
+    }
+    
+    @IBAction func tappedPuzzle(_ sender: UIButton) {
+        if let puzzle = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodePuzzleViewController") as? AdventureQRCodePuzzleViewController {
+            self.navigationController?.pushViewController(puzzle, animated: true)
+        }
+    }
+    
+   
+    
 }
 
 
