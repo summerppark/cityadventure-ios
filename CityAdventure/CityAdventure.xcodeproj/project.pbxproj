@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6615319C20CE401500CBA51E /* AdventureNewQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615319B20CE401500CBA51E /* AdventureNewQRCodeViewController.swift */; };
 		6628E659208DF06E009DD4C2 /* ResultCorrectPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628E658208DF06E009DD4C2 /* ResultCorrectPopUp.swift */; };
+		6641D92A20D34ECA000C7406 /* AdventureQRCodeTTSDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6641D92920D34ECA000C7406 /* AdventureQRCodeTTSDescViewController.swift */; };
+		6658379E20D2788F007FC163 /* AdventureQRCodeTextSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658379D20D2788F007FC163 /* AdventureQRCodeTextSoundViewController.swift */; };
 		665E2D1C20C0590700F13909 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665E2D1B20C0590700F13909 /* DropDownMenu.swift */; };
+		6663922820D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6663922720D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift */; };
 		6665F9AF2088914600A5D2BE /* AdventureExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665F9AE2088914600A5D2BE /* AdventureExerciseViewController.swift */; };
 		6665F9B1208898E100A5D2BE /* ExerciseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6665F9B0208898E100A5D2BE /* ExerciseCollectionViewCell.swift */; };
 		6665F9B32088B26400A5D2BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6665F9B22088B26000A5D2BE /* Assets.xcassets */; };
@@ -22,6 +26,8 @@
 		667364542089C8D00098E8E0 /* ExerciseGameDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667364532089C8D00098E8E0 /* ExerciseGameDB.swift */; };
 		667364562089D9AA0098E8E0 /* prepareDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 667364552089D2B50098E8E0 /* prepareDB.sqlite */; };
 		66A05F29208989B500CDCF4C /* ExerciseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */; };
+		66C8CBDE20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8CBDD20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift */; };
+		66C8CBE020CFC95000C89F4C /* AvdentureQRCodeTravelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8CBDF20CFC95000C89F4C /* AvdentureQRCodeTravelInfo.swift */; };
 		66D9390B208480DE005A66F4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9390A208480DE005A66F4 /* SettingViewController.swift */; };
 		66FF42962088276A000C58A7 /* LeaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FF42952088276A000C58A7 /* LeaveViewController.swift */; };
 		719AC02BAEEC44D234717BB9 /* Pods_CityAdventure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */; };
@@ -143,8 +149,12 @@
 
 /* Begin PBXFileReference section */
 		44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6615319B20CE401500CBA51E /* AdventureNewQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureNewQRCodeViewController.swift; sourceTree = "<group>"; };
 		6628E658208DF06E009DD4C2 /* ResultCorrectPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCorrectPopUp.swift; sourceTree = "<group>"; };
+		6641D92920D34ECA000C7406 /* AdventureQRCodeTTSDescViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeTTSDescViewController.swift; sourceTree = "<group>"; };
+		6658379D20D2788F007FC163 /* AdventureQRCodeTextSoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeTextSoundViewController.swift; sourceTree = "<group>"; };
 		665E2D1B20C0590700F13909 /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
+		6663922720D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodePuzzleViewController.swift; sourceTree = "<group>"; };
 		6665F9AE2088914600A5D2BE /* AdventureExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureExerciseViewController.swift; sourceTree = "<group>"; };
 		6665F9B0208898E100A5D2BE /* ExerciseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCollectionViewCell.swift; sourceTree = "<group>"; };
 		6665F9B22088B26000A5D2BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +168,8 @@
 		667364532089C8D00098E8E0 /* ExerciseGameDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGameDB.swift; sourceTree = "<group>"; };
 		667364552089D2B50098E8E0 /* prepareDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = prepareDB.sqlite; sourceTree = "<group>"; };
 		66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGameViewController.swift; sourceTree = "<group>"; };
+		66C8CBDD20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeBoardPopUp.swift; sourceTree = "<group>"; };
+		66C8CBDF20CFC95000C89F4C /* AvdentureQRCodeTravelInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvdentureQRCodeTravelInfo.swift; sourceTree = "<group>"; };
 		66D9390A208480DE005A66F4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		66FF42952088276A000C58A7 /* LeaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveViewController.swift; sourceTree = "<group>"; };
 		CE09EA9920B80B8300693BF8 /* AdventureQRCodeCheckPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeCheckPopup.swift; sourceTree = "<group>"; };
@@ -403,6 +415,12 @@
 				CE09EAA220BC549D00693BF8 /* MyCollectCityViewController.swift */,
 				CE09EAA420BC565300693BF8 /* MyCollectCityCell.swift */,
 				CE717CEF20C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift */,
+				6615319B20CE401500CBA51E /* AdventureNewQRCodeViewController.swift */,
+				66C8CBDD20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift */,
+				66C8CBDF20CFC95000C89F4C /* AvdentureQRCodeTravelInfo.swift */,
+				6658379D20D2788F007FC163 /* AdventureQRCodeTextSoundViewController.swift */,
+				6641D92920D34ECA000C7406 /* AdventureQRCodeTTSDescViewController.swift */,
+				6663922720D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift */,
 			);
 			path = AdventureQRCode;
 			sourceTree = "<group>";
@@ -765,8 +783,10 @@
 				CE30063D207CAD0B00E90DC3 /* UserCardInfo.swift in Sources */,
 				CE1DA225206B5E49000C36B2 /* APIManager.swift in Sources */,
 				66A05F29208989B500CDCF4C /* ExerciseGameViewController.swift in Sources */,
+				66C8CBE020CFC95000C89F4C /* AvdentureQRCodeTravelInfo.swift in Sources */,
 				CE642C232077439A000C2F01 /* RetryAuthAlertViewController.swift in Sources */,
 				666B6E5A2086D41D00CD28DB /* ResetPasswordViewController.swift in Sources */,
+				6641D92A20D34ECA000C7406 /* AdventureQRCodeTTSDescViewController.swift in Sources */,
 				CED8C4AD207212B000286A61 /* FMDatabase.m in Sources */,
 				CE51A2AA206E450200B228DD /* CharacterChoiceViewController.swift in Sources */,
 				CE642C2A2077777A000C2F01 /* TimeFormatter.swift in Sources */,
@@ -783,6 +803,7 @@
 				CE24D7852067AECA00B21EF3 /* ColorExtensions.swift in Sources */,
 				667364542089C8D00098E8E0 /* ExerciseGameDB.swift in Sources */,
 				CE09EAA320BC549D00693BF8 /* MyCollectCityViewController.swift in Sources */,
+				6658379E20D2788F007FC163 /* AdventureQRCodeTextSoundViewController.swift in Sources */,
 				CEE3B3C4206A22A900156387 /* Account.swift in Sources */,
 				CED8C4AA207212B000286A61 /* FMDatabasePool.m in Sources */,
 				CE642C282077612F000C2F01 /* NoticeViewController.swift in Sources */,
@@ -814,6 +835,8 @@
 				CE642C2120773D15000C2F01 /* FindPasswordSecondViewController.swift in Sources */,
 				CE1DA223206B5B48000C36B2 /* SignUpViewSecondPresenter.swift in Sources */,
 				CE3F2B8A206CBF3500B4D9D0 /* SearchCityTableViewCell.swift in Sources */,
+				6663922820D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift in Sources */,
+				66C8CBDE20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift in Sources */,
 				CE300640207DB81300E90DC3 /* RightSideMenuViewController.swift in Sources */,
 				CED8C4B220730B7A00286A61 /* SignUpFinalPresenter.swift in Sources */,
 				666B6E6320874DED00CD28DB /* ResetPasswordPresenter.swift in Sources */,
@@ -825,6 +848,7 @@
 				6628E659208DF06E009DD4C2 /* ResultCorrectPopUp.swift in Sources */,
 				CE300635207C5A3C00E90DC3 /* AlertGreenViewController.swift in Sources */,
 				CEF716342064CB1900B457E9 /* AppDelegate.swift in Sources */,
+				6615319C20CE401500CBA51E /* AdventureNewQRCodeViewController.swift in Sources */,
 				CED8C4A9207212B000286A61 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

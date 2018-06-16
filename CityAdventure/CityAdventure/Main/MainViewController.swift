@@ -187,6 +187,10 @@ class MainViewController: BaseViewController {
         }
     }
     
+    @IBAction func unWindMainVC(_ segue: UIStoryboardSegue) {
+        // 메인으로ㅇ이동
+        
+    }
     
     // 공지사항 클릭
     @IBAction func presentNotice(_ sender: UIButton) {

@@ -8,9 +8,12 @@
 
 import UIKit
 import SwiftGifOrigin
-
+import AVFoundation
 
 class LaunchScreenViewController: UIViewController {
+    
+    static var syntheSizer = AVSpeechSynthesizer()
+    
     
     // gif
     @IBOutlet weak var loadGifImage: UIImageView! {

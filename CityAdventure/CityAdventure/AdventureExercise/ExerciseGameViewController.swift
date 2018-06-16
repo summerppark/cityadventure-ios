@@ -135,7 +135,7 @@
             let utterance = AVSpeechUtterance(string: sender.currentTitle!)
             utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
             utterance.rate = AVSpeechUtteranceDefaultSpeechRate
-            self.synthesizer.speak(utterance)
+            LaunchScreenViewController.syntheSizer.speak(utterance)
         }
         
        
