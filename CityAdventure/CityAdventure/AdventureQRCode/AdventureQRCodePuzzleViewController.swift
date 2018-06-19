@@ -11,38 +11,27 @@ import UIKit
 class AdventureQRCodePuzzleViewController: BaseViewController {
     
     
-    @IBOutlet weak var topView2: UIView!
-    @IBOutlet weak var bottomView: UIView!
+    
+   
     
     @IBOutlet var topImageViews: [UIImageView]!
     
     
-    @IBOutlet var randomImageCard: [UIImageView]! {
-        didSet {
-            randomImageCard.forEach { (img) in
-                img.isUserInteractionEnabled = true
-                let pangesture = UIPanGestureRecognizer(target: self, action: #selector(handleCard))
-                img.addGestureRecognizer(pangesture)
-            }
-        }
-    }
+    @IBOutlet var randomImageCard: [UIImageView]!
     
     
     @IBOutlet weak var topViewHeight: NSLayoutConstraint!
     
     var imagesArray: [UIImage] = []
+    var initialCenter = CGPoint()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
-        
-        
-        
-        
-        
+  
         super.showLoading(view: self.view)
-        var img = #imageLiteral(resourceName: "card_thumbnail_017")
-        var img2 = img
+        var img = #imageLiteral(resourceName: "adventure_Exercise_bg")
+        let img2 = img
         
         DispatchQueue.global().async {
             img = self.Noir(image: img)
@@ -76,6 +65,16 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
                     img.isUserInteractionEnabled = true
                     img.addGestureRecognizer(pangesture)
                 }
+                
+                
+                self.randomImageCard.forEach({ (img) in
+                    img.isUserInteractionEnabled = true
+                    img.layer.borderWidth = 1
+                    img.layer.borderColor = UIColor.black.cgColor
+                    let pangesture = UIPanGestureRecognizer(target: self, action: #selector(self.handleCard))
+                    pangesture.minimumNumberOfTouches = 1
+                    img.addGestureRecognizer(pangesture)
+                })
             }
         }
     }
@@ -86,20 +85,54 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
     
     @objc func handleCard(sender: UIPanGestureRecognizer) {
         
-        print(sender.view?.tag, sender.location(in: topImageViews[(sender.view?.tag)!]))
-        if ((sender.state != UIGestureRecognizerState.ended) &&
-            (sender.state != UIGestureRecognizerState.failed)) {
-            sender.view?.center = sender.location(in: sender.view?.superview)
+        let piece = sender.view!
+        let initPoint = piece.center
+        let translation = sender.translation(in: piece.superview)
+        
+        let anaswerImage = topImageViews[(sender.view?.tag)!]
+        if sender.state == .began {
+            self.initialCenter = piece.center
+        }
+        if sender.state != .cancelled {
+            print("Cancel")
+            let newCenter = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y + translation.y)
+            piece.center = newCenter
+        }
+        
+        if sender.state == .ended {
+            print("ended",piece.center,initPoint,topImageViews[(sender.view?.tag)!].center)
+            // 정답 위치로
+            
+            if abs((anaswerImage.center.x+anaswerImage.center.y)-(piece.center.x+piece.center.y)) < 16 {
+//                piece.center = anaswerImage.center
+                topImageViews[(sender.view?.tag)!].image = (sender.view as? UIImageView)?.image
+                sender.view?.isHidden = true
+                
+            } else {
+                // 원래자리로
+                piece.center = self.initialCenter
+            }
             
             
-            let image = (sender.view as? UIImageView)?.image
-            
-            topImageViews[(sender.view?.tag)!].image = image
+        }
+     
+        
+        
+        
+//        print(sender.view?.tag, sender.location(in: topImageViews[(sender.view?.tag)!]))
+//        if ((sender.state != UIGestureRecognizerState.ended) &&
+//            (sender.state != UIGestureRecognizerState.failed)) {
+//            sender.view?.center = sender.location(in: sender.view?.superview)
+//
+//
+//            let image = (sender.view as? UIImageView)?.image
+//
+//            topImageViews[(sender.view?.tag)!].image = image
 //            (sender.view as? UIImageView)?.image = nil
             
             
             
-        }
+//        }
     }
     
     

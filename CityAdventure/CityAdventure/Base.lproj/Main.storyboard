@@ -1998,7 +1998,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 재설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lm-0r-ADO">
-                                        <rect key="frame" x="249.5" y="33" width="101.5" height="15"/>
+                                        <rect key="frame" x="245.5" y="33" width="105.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="gFr-eF-RSO"/>
                                         </constraints>
@@ -2035,7 +2035,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="360"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rg5-zu-Pq6">
-                                        <rect key="frame" x="18" y="152" width="264" height="50"/>
+                                        <rect key="frame" x="18" y="150.5" width="264" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signup_email_bg" translatesAutoresizingMaskIntoConstraints="NO" id="hpy-XT-C81">
                                                 <rect key="frame" x="0.0" y="0.0" width="264" height="50"/>
@@ -2044,13 +2044,13 @@
                                                 <rect key="frame" x="-1" y="-1" width="267" height="52"/>
                                             </imageView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불일치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbB-3A-A6g">
-                                                <rect key="frame" x="218" y="18" width="34" height="15"/>
+                                                <rect key="frame" x="217" y="18" width="35" height="15"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                                 <color key="textColor" red="0.97634261850000004" green="0.14278486369999999" blue="0.0044555929489999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whb-xk-QGB">
-                                                <rect key="frame" x="190" y="15" width="20" height="20"/>
+                                                <rect key="frame" x="189" y="15" width="20" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="20" id="s7t-ZV-eA9"/>
                                                     <constraint firstAttribute="height" constant="20" id="skV-kC-q7N"/>
@@ -2068,7 +2068,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 재입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MS3-HS-Dbe">
-                                                <rect key="frame" x="44" y="5" width="138" height="40"/>
+                                                <rect key="frame" x="44" y="5" width="137" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="AcE-zb-x3x"/>
                                                 </constraints>
@@ -2102,7 +2102,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJL-Wd-Nj2">
-                                        <rect key="frame" x="18" y="92" width="264" height="50"/>
+                                        <rect key="frame" x="18" y="90.5" width="264" height="50"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="signup_email_bg" translatesAutoresizingMaskIntoConstraints="NO" id="qnG-x6-Brc">
                                                 <rect key="frame" x="0.0" y="0.0" width="264" height="50"/>
@@ -2167,7 +2167,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLg-tc-Smx">
-                                        <rect key="frame" x="86.5" y="28" width="127.5" height="40"/>
+                                        <rect key="frame" x="82.5" y="28" width="135.5" height="38.5"/>
                                         <string key="text">새로운 비밀번호를 
 입력해주세요.</string>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="17"/>
@@ -2175,7 +2175,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jm6-jW-LcM">
-                                        <rect key="frame" x="29.5" y="214" width="241.5" height="36"/>
+                                        <rect key="frame" x="24" y="212.5" width="253" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="Nfw-BZ-CWj"/>
                                         </constraints>
@@ -3219,7 +3219,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원 가입" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc8-u2-a7r">
-                                        <rect key="frame" x="291" y="33" width="60" height="15"/>
+                                        <rect key="frame" x="288" y="33" width="63" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="aTQ-wI-miC"/>
                                         </constraints>
@@ -3254,7 +3254,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프로필 등록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bq-PJ-gmG">
-                                <rect key="frame" x="238.5" y="108" width="60" height="15"/>
+                                <rect key="frame" x="238.5" y="108" width="64.5" height="15"/>
                                 <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="13"/>
                                 <color key="textColor" red="0.92487287521362305" green="0.91061300039291382" blue="0.86336368322372437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -3335,7 +3335,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="50"/>
                                     </imageView>
                                     <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcw-Te-VG2">
-                                        <rect key="frame" x="186" y="15" width="20" height="20"/>
+                                        <rect key="frame" x="185" y="15" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="c1n-E2-Axz"/>
                                             <constraint firstAttribute="height" constant="20" id="g6H-bT-J4N"/>
@@ -3353,13 +3353,13 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         </constraints>
                                     </imageView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불일치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ry-0T-eEO">
-                                        <rect key="frame" x="214" y="18" width="34" height="15"/>
+                                        <rect key="frame" x="213" y="18" width="35" height="15"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                         <color key="textColor" red="0.97634261846542358" green="0.14278486371040344" blue="0.0044555929489433765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일 재입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="koX-bA-VLT">
-                                        <rect key="frame" x="44" y="5.5" width="134" height="40"/>
+                                        <rect key="frame" x="44" y="5.5" width="133" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="9Jr-KL-bBs"/>
@@ -3466,13 +3466,13 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <rect key="frame" x="-1" y="-1" width="263" height="52"/>
                                     </imageView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불일치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfr-q4-zgD">
-                                        <rect key="frame" x="214" y="17.5" width="34" height="15"/>
+                                        <rect key="frame" x="213" y="17.5" width="35" height="15"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                         <color key="textColor" red="0.97634261850000004" green="0.14278486369999999" blue="0.0044555929489999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="99I-Cj-Gl9">
-                                        <rect key="frame" x="186" y="15" width="20" height="20"/>
+                                        <rect key="frame" x="185" y="15" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="Onx-rY-WGP"/>
                                             <constraint firstAttribute="height" constant="20" id="W1Z-Jb-ZpC"/>
@@ -3490,7 +3490,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 재입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xke-qo-A7r">
-                                        <rect key="frame" x="44" y="5" width="134" height="40"/>
+                                        <rect key="frame" x="44" y="5" width="133" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="3D3-Na-mqd"/>
                                         </constraints>
@@ -4890,7 +4890,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 <rect key="frame" x="14.5" y="14" width="177.5" height="232"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_border_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Px0-4j-K4d">
-                                                <rect key="frame" x="38.5" y="143" width="129.5" height="3"/>
+                                                <rect key="frame" x="38.5" y="144" width="129.5" height="3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="Obz-oq-H8g"/>
                                                 </constraints>
@@ -4925,37 +4925,37 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_border_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="lqx-Tp-LbQ">
-                                                <rect key="frame" x="38.5" y="168.5" width="129.5" height="3"/>
+                                                <rect key="frame" x="38.5" y="169" width="129.5" height="3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="3" id="wUl-td-9BN"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광주 광역시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NwK-ZG-hjc">
-                                                <rect key="frame" x="73" y="175.5" width="60" height="15.5"/>
+                                                <rect key="frame" x="71.5" y="176" width="63" height="15"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8세" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nn0-91-5hW">
-                                                <rect key="frame" x="94" y="150" width="18.5" height="15.5"/>
+                                                <rect key="frame" x="93.5" y="151" width="19.5" height="15"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM0-4s-2Io">
-                                                <rect key="frame" x="142.5" y="128" width="17.5" height="12"/>
+                                                <rect key="frame" x="141.5" y="129.5" width="18.5" height="11.5"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="10"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비유비유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwH-FW-G4q">
-                                                <rect key="frame" x="54" y="114" width="76.5" height="26"/>
+                                                <rect key="frame" x="50" y="116" width="79.5" height="25"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpK-Fi-yRp">
-                                                <rect key="frame" x="126.5" y="150" width="11.5" height="15.5"/>
+                                                <rect key="frame" x="127" y="151" width="12" height="15"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -5069,7 +5069,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 <state key="normal" image="effect_sound_on"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ai-Tf-Wy4">
-                                                <rect key="frame" x="20" y="361" width="30" height="14"/>
+                                                <rect key="frame" x="16.5" y="361" width="32" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="lus-xw-Fnz"/>
                                                 </constraints>
@@ -5082,14 +5082,14 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMM-Nf-0XF">
-                                                <rect key="frame" x="62" y="361" width="2" height="14"/>
+                                                <rect key="frame" x="60.5" y="361" width="2" height="14"/>
                                                 <color key="backgroundColor" red="0.65098039215686276" green="0.65098039215686276" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="2" id="GSf-4Z-gut"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ya9-48-ikD">
-                                                <rect key="frame" x="76" y="361" width="45" height="14"/>
+                                                <rect key="frame" x="74.5" y="361" width="48" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="w77-4f-Hxi"/>
                                                 </constraints>
@@ -5102,7 +5102,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gic-u4-d27">
-                                                <rect key="frame" x="133" y="361" width="2" height="14"/>
+                                                <rect key="frame" x="134.5" y="361" width="2" height="14"/>
                                                 <color key="backgroundColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="2" id="cV3-iH-2Lc"/>
@@ -5110,7 +5110,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMu-1e-3Vn">
-                                                <rect key="frame" x="147" y="361" width="45" height="14"/>
+                                                <rect key="frame" x="148.5" y="361" width="47" height="14"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="14" id="x1n-7u-Ryk"/>
                                                 </constraints>
@@ -5827,7 +5827,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEP-eY-uhK">
-                                        <rect key="frame" x="71" y="325" width="235" height="45.5"/>
+                                        <rect key="frame" x="70" y="325" width="235" height="45.5"/>
                                         <string key="text">스마트폰을 뚱카에 거치하고,
 탐험카드를 준비하세요!</string>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="20"/>
@@ -6730,7 +6730,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가마 부  뫼 산" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19y-jL-Imb">
-                                                        <rect key="frame" x="40.5" y="-4.5" width="69.5" height="14"/>
+                                                        <rect key="frame" x="39.5" y="-4.5" width="69.5" height="14"/>
                                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -6929,7 +6929,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="부  산" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5d9-s5-e28">
-                                                <rect key="frame" x="92" y="19.5" width="160.5" height="82"/>
+                                                <rect key="frame" x="92" y="21" width="173.5" height="79.5"/>
                                                 <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="70"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -7002,13 +7002,13 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리나라 제 1의 항구도시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYL-ZM-NPo">
-                                        <rect key="frame" x="54" y="36" width="221" height="26"/>
+                                        <rect key="frame" x="47" y="36" width="233.5" height="25"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbn-8P-3BE">
-                                        <rect key="frame" x="20" y="78" width="287" height="120"/>
+                                        <rect key="frame" x="20" y="77" width="287" height="120"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="G8j-3k-v4i">
                                                 <rect key="frame" x="-2" y="16" width="291" height="9"/>
@@ -7060,7 +7060,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Vo-DJ-L9A">
-                                        <rect key="frame" x="30" y="214" width="267" height="190"/>
+                                        <rect key="frame" x="30" y="213" width="267" height="191"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">부산은 우리나라에서 두번째로 큰 세계적인 항구 도시입니다. 고층빌딩에 둘러싸인 넓은 백사장으로 유명한 해운대 해수욕장, 광안리 해수욕장에서 바라보는 광안대교의 화려한 야경, 없는 것 빼고 다 있는 국제시장, 길거리 음식이 가득한 부평깡통시장, 온갖 해산물을 구경할 수 있는 자갈치시장 등 보고 즐길 거리가 아주 많아 다 구경하려면 다리가 아플 지도 몰라요.</string>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
@@ -7117,7 +7117,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카드 수집하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYv-pu-LMM">
-                                        <rect key="frame" x="263.5" y="33" width="87.5" height="15"/>
+                                        <rect key="frame" x="259.5" y="33" width="91.5" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="bgu-ol-Iat"/>
                                         </constraints>
@@ -7151,197 +7151,199 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                     <constraint firstAttribute="bottom" secondItem="Yew-iG-Jf8" secondAttribute="bottom" constant="16" id="m1H-E8-lTM"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ps3-i0-7gO">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1s6-av-Uq2">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NaY-21-SXf">
-                                                <rect key="frame" x="24" y="24" width="327" height="253.5"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ie6-0k-wRS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="253.5"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EG6-eR-i85">
-                                                                <rect key="frame" x="0.0" y="0.0" width="109" height="253.5"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahU-9g-QjZ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="teK-fC-Tic">
-                                                                        <rect key="frame" x="0.0" y="84.5" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HrB-2V-nZc">
-                                                                        <rect key="frame" x="0.0" y="169" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cWf-Az-P7p">
-                                                                <rect key="frame" x="109" y="0.0" width="109" height="253.5"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aHZ-Ks-Enk">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ki3-kF-uFn">
-                                                                        <rect key="frame" x="0.0" y="84.5" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-5i-Ivw">
-                                                                        <rect key="frame" x="0.0" y="169" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Hfi-oX-dmI">
-                                                                <rect key="frame" x="218" y="0.0" width="109" height="253.5"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fcD-4a-ZYT">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ilA-BP-G9K">
-                                                                        <rect key="frame" x="0.0" y="84.5" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K0B-0z-mjY">
-                                                                        <rect key="frame" x="0.0" y="169" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Ie6-0k-wRS" secondAttribute="trailing" id="bKX-JB-jUY"/>
-                                                    <constraint firstItem="Ie6-0k-wRS" firstAttribute="top" secondItem="NaY-21-SXf" secondAttribute="top" id="gqJ-hq-knW"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Ie6-0k-wRS" secondAttribute="bottom" id="mHC-fL-Fie"/>
-                                                    <constraint firstItem="Ie6-0k-wRS" firstAttribute="leading" secondItem="NaY-21-SXf" secondAttribute="leading" id="rah-5V-Y2q"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.9189453125" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="NaY-21-SXf" firstAttribute="top" secondItem="1s6-av-Uq2" secondAttribute="top" constant="24" id="2aw-O4-Fxq"/>
-                                            <constraint firstAttribute="trailing" secondItem="NaY-21-SXf" secondAttribute="trailing" constant="24" id="Rmu-At-YdW"/>
-                                            <constraint firstItem="NaY-21-SXf" firstAttribute="leading" secondItem="1s6-av-Uq2" secondAttribute="leading" constant="24" id="Xsb-zx-JjF"/>
-                                            <constraint firstAttribute="bottom" secondItem="NaY-21-SXf" secondAttribute="bottom" constant="24" id="byJ-Tj-vP3"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBK-Qj-wWv">
-                                        <rect key="frame" x="0.0" y="301.5" width="375" height="301.5"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_layer_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="Z7u-fV-rdk">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAV-as-J5d">
-                                                <rect key="frame" x="24" y="24" width="327" height="253.5"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sj5-UP-UIU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="253.5"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="h9h-A5-anY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="109" height="253.5"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g5h-R4-XOr">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TLM-lw-pYU">
-                                                                        <rect key="frame" x="0.0" y="84.5" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jgc-pn-Wic">
-                                                                        <rect key="frame" x="0.0" y="169" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7IB-cE-INO">
-                                                                <rect key="frame" x="109" y="0.0" width="109" height="253.5"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Xl-Kh-Cvv">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RsO-ir-44l">
-                                                                        <rect key="frame" x="0.0" y="84.5" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLh-EM-owh">
-                                                                        <rect key="frame" x="0.0" y="169" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oNj-bn-SS4">
-                                                                <rect key="frame" x="218" y="0.0" width="109" height="253.5"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Va-Xd-ijL">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ebE-To-NZ7">
-                                                                        <rect key="frame" x="0.0" y="84.5" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fqW-mA-Ye1">
-                                                                        <rect key="frame" x="0.0" y="169" width="109" height="84.5"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.46684527399999998" green="0.62638306619999995" blue="0.89022648329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <constraints>
-                                                    <constraint firstItem="sj5-UP-UIU" firstAttribute="leading" secondItem="VAV-as-J5d" secondAttribute="leading" id="43r-sU-c2L"/>
-                                                    <constraint firstAttribute="bottom" secondItem="sj5-UP-UIU" secondAttribute="bottom" id="D8q-5e-ZAU"/>
-                                                    <constraint firstAttribute="trailing" secondItem="sj5-UP-UIU" secondAttribute="trailing" id="lah-yR-EF9"/>
-                                                    <constraint firstItem="sj5-UP-UIU" firstAttribute="top" secondItem="VAV-as-J5d" secondAttribute="top" id="sKb-Bo-OHz"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="VAV-as-J5d" firstAttribute="centerX" secondItem="lBK-Qj-wWv" secondAttribute="centerX" id="0Ox-di-Au3"/>
-                                            <constraint firstItem="VAV-as-J5d" firstAttribute="centerY" secondItem="lBK-Qj-wWv" secondAttribute="centerY" id="U5h-6s-Ru1"/>
-                                            <constraint firstItem="Z7u-fV-rdk" firstAttribute="leading" secondItem="lBK-Qj-wWv" secondAttribute="leading" id="Ubv-u1-Wts"/>
-                                            <constraint firstAttribute="bottom" secondItem="Z7u-fV-rdk" secondAttribute="bottom" id="a1j-YZ-LzM"/>
-                                            <constraint firstItem="Z7u-fV-rdk" firstAttribute="top" secondItem="lBK-Qj-wWv" secondAttribute="top" id="jZy-xZ-JO7"/>
-                                            <constraint firstAttribute="trailing" secondItem="Z7u-fV-rdk" secondAttribute="trailing" id="sio-8O-7K1"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DuG-qf-xPC">
+                                <rect key="frame" x="132" y="88" width="110" height="80"/>
                                 <constraints>
-                                    <constraint firstItem="VAV-as-J5d" firstAttribute="height" secondItem="NaY-21-SXf" secondAttribute="height" id="83h-q7-Bb1"/>
-                                    <constraint firstItem="VAV-as-J5d" firstAttribute="width" secondItem="NaY-21-SXf" secondAttribute="width" id="c6A-oV-AHk"/>
+                                    <constraint firstAttribute="height" constant="80" id="7Lo-SS-MhF"/>
+                                    <constraint firstAttribute="width" constant="110" id="kmZ-Ou-VjD"/>
                                 </constraints>
-                            </stackView>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SHD-Xn-jmV">
+                                <rect key="frame" x="242" y="88" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="mar-zT-l5q"/>
+                                    <constraint firstAttribute="width" constant="110" id="wEU-nh-ZPD"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="REi-kA-pfm">
+                                <rect key="frame" x="22" y="88" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="geL-db-Kfd"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GAR-q4-nbn">
+                                <rect key="frame" x="132" y="168" width="110" height="80"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wtL-Rs-i2Z">
+                                <rect key="frame" x="242" y="168" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Pik-0t-Q4B"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XjV-h7-nDx">
+                                <rect key="frame" x="22" y="168" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="LQs-SW-0ZI"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rqk-LE-BP3">
+                                <rect key="frame" x="132" y="248" width="110" height="80"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i4T-ir-16E">
+                                <rect key="frame" x="22" y="248" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="P2f-6A-0wE"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vfC-bk-okC">
+                                <rect key="frame" x="242" y="248" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="nCj-El-Sju"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D9L-sX-xUX">
+                                <rect key="frame" x="132.5" y="403" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Apc-wS-VYR"/>
+                                    <constraint firstAttribute="height" constant="80" id="L5V-vx-e0s"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qYy-XX-STD">
+                                <rect key="frame" x="242.5" y="403" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="j9g-90-Jw6"/>
+                                    <constraint firstAttribute="width" constant="110" id="pU9-i8-4qZ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C4O-uW-b3U">
+                                <rect key="frame" x="22.5" y="403" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="EeY-6j-0t8"/>
+                                    <constraint firstAttribute="height" constant="80" id="vv6-LL-eah"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dM9-uH-FpL">
+                                <rect key="frame" x="132.5" y="483" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="96M-9A-6O6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="27W-kh-HxG">
+                                <rect key="frame" x="242.5" y="483" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="HTp-Rj-yqv"/>
+                                    <constraint firstAttribute="width" constant="110" id="gsH-El-hiF"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cf5-hC-gqw">
+                                <rect key="frame" x="22.5" y="483" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="EfO-tA-AKE"/>
+                                    <constraint firstAttribute="width" constant="110" id="QtN-5L-S2b"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P3R-iN-Uby">
+                                <rect key="frame" x="132.5" y="563" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="4kB-Ka-TaH"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bpT-g4-o45">
+                                <rect key="frame" x="22.5" y="563" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Tm5-NT-0lf"/>
+                                    <constraint firstAttribute="height" constant="80" id="wo1-g9-qxx"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2cD-b7-M1r">
+                                <rect key="frame" x="242.5" y="563" width="110" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="KYM-mg-ol6"/>
+                                    <constraint firstAttribute="width" constant="110" id="O6B-yf-5zF"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.99625867605209351" green="0.99701160192489624" blue="0.99637514352798462" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.9189453125" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="27W-kh-HxG" firstAttribute="leading" secondItem="dM9-uH-FpL" secondAttribute="trailing" id="0TI-Dr-V8n"/>
+                            <constraint firstItem="P3R-iN-Uby" firstAttribute="top" secondItem="dM9-uH-FpL" secondAttribute="bottom" id="3Oi-ef-9o2"/>
+                            <constraint firstItem="wtL-Rs-i2Z" firstAttribute="top" secondItem="GAR-q4-nbn" secondAttribute="top" id="3Xh-wV-Fm1"/>
+                            <constraint firstItem="cf5-hC-gqw" firstAttribute="top" secondItem="C4O-uW-b3U" secondAttribute="bottom" id="3ak-Hh-I37"/>
+                            <constraint firstItem="GAR-q4-nbn" firstAttribute="trailing" secondItem="DuG-qf-xPC" secondAttribute="trailing" id="3fq-Jz-y3S"/>
                             <constraint firstItem="7ht-xU-Tyj" firstAttribute="top" secondItem="GwS-Rn-eRI" secondAttribute="top" id="4N3-h0-GbA"/>
-                            <constraint firstItem="Ps3-i0-7gO" firstAttribute="top" secondItem="7ht-xU-Tyj" secondAttribute="bottom" id="5JG-xG-RGB"/>
+                            <constraint firstItem="i4T-ir-16E" firstAttribute="height" secondItem="DuG-qf-xPC" secondAttribute="height" id="52F-zc-04p"/>
+                            <constraint firstItem="vfC-bk-okC" firstAttribute="top" secondItem="wtL-Rs-i2Z" secondAttribute="bottom" id="5iJ-E2-ckQ"/>
+                            <constraint firstItem="wtL-Rs-i2Z" firstAttribute="leading" secondItem="GAR-q4-nbn" secondAttribute="trailing" id="7CB-b9-oMz"/>
+                            <constraint firstItem="P3R-iN-Uby" firstAttribute="leading" secondItem="dM9-uH-FpL" secondAttribute="leading" id="7fm-TJ-hrz"/>
+                            <constraint firstItem="REi-kA-pfm" firstAttribute="bottom" secondItem="DuG-qf-xPC" secondAttribute="bottom" id="8Xu-nn-Vii"/>
+                            <constraint firstItem="REi-kA-pfm" firstAttribute="height" secondItem="DuG-qf-xPC" secondAttribute="height" id="8ch-X4-PBR"/>
+                            <constraint firstItem="bpT-g4-o45" firstAttribute="top" secondItem="cf5-hC-gqw" secondAttribute="bottom" id="9rc-em-qfg"/>
+                            <constraint firstItem="2cD-b7-M1r" firstAttribute="leading" secondItem="P3R-iN-Uby" secondAttribute="trailing" id="ARW-2f-Jya"/>
+                            <constraint firstItem="REi-kA-pfm" firstAttribute="top" secondItem="DuG-qf-xPC" secondAttribute="top" id="B6z-Nu-exF"/>
+                            <constraint firstItem="GAR-q4-nbn" firstAttribute="height" secondItem="DuG-qf-xPC" secondAttribute="height" id="Bf4-BH-oBU"/>
+                            <constraint firstItem="GAR-q4-nbn" firstAttribute="leading" secondItem="DuG-qf-xPC" secondAttribute="leading" id="BkX-Az-Xy7"/>
+                            <constraint firstItem="27W-kh-HxG" firstAttribute="top" secondItem="dM9-uH-FpL" secondAttribute="top" id="C0J-CE-3IF"/>
+                            <constraint firstItem="dM9-uH-FpL" firstAttribute="top" secondItem="D9L-sX-xUX" secondAttribute="bottom" id="CfX-lE-TYt"/>
                             <constraint firstItem="7ht-xU-Tyj" firstAttribute="trailing" secondItem="BJV-HX-CjT" secondAttribute="trailing" id="EvJ-xZ-e6e"/>
-                            <constraint firstItem="Ps3-i0-7gO" firstAttribute="leading" secondItem="BJV-HX-CjT" secondAttribute="leading" id="Gk6-6u-6qJ"/>
-                            <constraint firstItem="BJV-HX-CjT" firstAttribute="bottom" secondItem="Ps3-i0-7gO" secondAttribute="bottom" id="SSO-pY-0Cm"/>
+                            <constraint firstItem="dM9-uH-FpL" firstAttribute="leading" secondItem="D9L-sX-xUX" secondAttribute="leading" id="F60-Fm-0c9"/>
+                            <constraint firstItem="qYy-XX-STD" firstAttribute="leading" secondItem="D9L-sX-xUX" secondAttribute="trailing" id="Hd0-p0-Cb7"/>
+                            <constraint firstItem="rqk-LE-BP3" firstAttribute="leading" secondItem="GAR-q4-nbn" secondAttribute="leading" id="L1x-oK-CJc"/>
+                            <constraint firstItem="GAR-q4-nbn" firstAttribute="leading" secondItem="XjV-h7-nDx" secondAttribute="trailing" id="MPS-Py-eNH"/>
+                            <constraint firstItem="vfC-bk-okC" firstAttribute="leading" secondItem="rqk-LE-BP3" secondAttribute="trailing" id="NBo-kC-5EX"/>
+                            <constraint firstItem="GAR-q4-nbn" firstAttribute="top" secondItem="DuG-qf-xPC" secondAttribute="bottom" id="OkB-Jk-cKb"/>
+                            <constraint firstItem="DuG-qf-xPC" firstAttribute="top" secondItem="7ht-xU-Tyj" secondAttribute="bottom" constant="24" id="PJQ-Pl-L6v"/>
+                            <constraint firstItem="GAR-q4-nbn" firstAttribute="height" secondItem="XjV-h7-nDx" secondAttribute="height" id="ReD-RC-Cny"/>
+                            <constraint firstItem="qYy-XX-STD" firstAttribute="bottom" secondItem="D9L-sX-xUX" secondAttribute="bottom" id="SID-WO-yup"/>
+                            <constraint firstItem="DuG-qf-xPC" firstAttribute="leading" secondItem="REi-kA-pfm" secondAttribute="trailing" id="XG7-gt-3Hf"/>
+                            <constraint firstItem="2cD-b7-M1r" firstAttribute="top" secondItem="27W-kh-HxG" secondAttribute="bottom" id="Xu7-cG-VXH"/>
+                            <constraint firstItem="C4O-uW-b3U" firstAttribute="top" secondItem="D9L-sX-xUX" secondAttribute="top" id="ZJr-UC-QCM"/>
+                            <constraint firstItem="rqk-LE-BP3" firstAttribute="height" secondItem="DuG-qf-xPC" secondAttribute="height" id="cS2-3L-kPW"/>
+                            <constraint firstItem="dM9-uH-FpL" firstAttribute="leading" secondItem="cf5-hC-gqw" secondAttribute="trailing" id="dW0-MS-X7S"/>
+                            <constraint firstItem="XjV-h7-nDx" firstAttribute="top" secondItem="REi-kA-pfm" secondAttribute="bottom" id="dsV-K3-YtD"/>
                             <constraint firstItem="7ht-xU-Tyj" firstAttribute="leading" secondItem="BJV-HX-CjT" secondAttribute="leading" id="e3O-W5-jYQ"/>
-                            <constraint firstItem="BJV-HX-CjT" firstAttribute="trailing" secondItem="Ps3-i0-7gO" secondAttribute="trailing" id="nIm-9q-Vjh"/>
+                            <constraint firstItem="rqk-LE-BP3" firstAttribute="top" secondItem="GAR-q4-nbn" secondAttribute="bottom" id="ePV-ga-gIn"/>
+                            <constraint firstItem="P3R-iN-Uby" firstAttribute="leading" secondItem="bpT-g4-o45" secondAttribute="trailing" id="fw8-Ei-amf"/>
+                            <constraint firstItem="qYy-XX-STD" firstAttribute="top" secondItem="D9L-sX-xUX" secondAttribute="top" id="grE-i3-5dx"/>
+                            <constraint firstItem="rqk-LE-BP3" firstAttribute="trailing" secondItem="GAR-q4-nbn" secondAttribute="trailing" id="iil-55-4WH"/>
+                            <constraint firstItem="vfC-bk-okC" firstAttribute="height" secondItem="DuG-qf-xPC" secondAttribute="height" id="jE6-W5-69Q"/>
+                            <constraint firstItem="DuG-qf-xPC" firstAttribute="centerX" secondItem="GwS-Rn-eRI" secondAttribute="centerX" id="kEn-UB-PnB"/>
+                            <constraint firstItem="SHD-Xn-jmV" firstAttribute="top" secondItem="DuG-qf-xPC" secondAttribute="top" id="kGe-Nq-kQx"/>
+                            <constraint firstItem="P3R-iN-Uby" firstAttribute="trailing" secondItem="dM9-uH-FpL" secondAttribute="trailing" id="kLX-Mj-vCp"/>
+                            <constraint firstItem="D9L-sX-xUX" firstAttribute="leading" secondItem="C4O-uW-b3U" secondAttribute="trailing" id="lMw-HZ-Fyu"/>
+                            <constraint firstItem="i4T-ir-16E" firstAttribute="top" secondItem="XjV-h7-nDx" secondAttribute="bottom" id="mjb-SQ-oxp"/>
+                            <constraint firstItem="wtL-Rs-i2Z" firstAttribute="height" secondItem="DuG-qf-xPC" secondAttribute="height" id="njs-2Y-2ZH"/>
+                            <constraint firstItem="SHD-Xn-jmV" firstAttribute="bottom" secondItem="DuG-qf-xPC" secondAttribute="bottom" id="opj-aB-Ms3"/>
+                            <constraint firstItem="BJV-HX-CjT" firstAttribute="bottom" secondItem="P3R-iN-Uby" secondAttribute="bottom" constant="24" id="rjb-jE-31f"/>
+                            <constraint firstItem="27W-kh-HxG" firstAttribute="bottom" secondItem="dM9-uH-FpL" secondAttribute="bottom" id="rrL-Et-wYy"/>
+                            <constraint firstItem="C4O-uW-b3U" firstAttribute="bottom" secondItem="D9L-sX-xUX" secondAttribute="bottom" id="rsq-2W-OwF"/>
+                            <constraint firstItem="dM9-uH-FpL" firstAttribute="trailing" secondItem="D9L-sX-xUX" secondAttribute="trailing" id="twj-gb-DZ0"/>
+                            <constraint firstItem="wtL-Rs-i2Z" firstAttribute="bottom" secondItem="GAR-q4-nbn" secondAttribute="bottom" id="tzC-ws-x1f"/>
+                            <constraint firstItem="rqk-LE-BP3" firstAttribute="leading" secondItem="i4T-ir-16E" secondAttribute="trailing" id="yC7-1c-ffh"/>
+                            <constraint firstItem="SHD-Xn-jmV" firstAttribute="leading" secondItem="DuG-qf-xPC" secondAttribute="trailing" id="z5o-uJ-Bee"/>
+                            <constraint firstItem="D9L-sX-xUX" firstAttribute="centerX" secondItem="GwS-Rn-eRI" secondAttribute="centerX" id="zNM-zw-ghM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BJV-HX-CjT"/>
                     </view>
                     <connections>
-                        <outlet property="bottomView" destination="VAV-as-J5d" id="IbZ-1J-2fm"/>
-                        <outlet property="topView2" destination="NaY-21-SXf" id="mtU-Pc-GbE"/>
                         <outlet property="topViewHeight" destination="8RZ-w7-N13" id="Myy-ig-IcH"/>
-                        <outletCollection property="topImageViews" destination="ahU-9g-QjZ" collectionClass="NSMutableArray" id="r17-Oq-i4v"/>
-                        <outletCollection property="topImageViews" destination="aHZ-Ks-Enk" collectionClass="NSMutableArray" id="hBS-f3-EZV"/>
-                        <outletCollection property="topImageViews" destination="fcD-4a-ZYT" collectionClass="NSMutableArray" id="yNb-Tg-Aot"/>
-                        <outletCollection property="topImageViews" destination="teK-fC-Tic" collectionClass="NSMutableArray" id="m4t-jG-q9U"/>
-                        <outletCollection property="topImageViews" destination="ki3-kF-uFn" collectionClass="NSMutableArray" id="9HU-Xh-Np1"/>
-                        <outletCollection property="topImageViews" destination="ilA-BP-G9K" collectionClass="NSMutableArray" id="PLD-pu-fIU"/>
-                        <outletCollection property="topImageViews" destination="HrB-2V-nZc" collectionClass="NSMutableArray" id="vGA-KB-GQf"/>
-                        <outletCollection property="topImageViews" destination="2hD-5i-Ivw" collectionClass="NSMutableArray" id="KpG-46-gIv"/>
-                        <outletCollection property="topImageViews" destination="K0B-0z-mjY" collectionClass="NSMutableArray" id="Epo-eg-Dfb"/>
-                        <outletCollection property="randomImageCard" destination="g5h-R4-XOr" collectionClass="NSMutableArray" id="Dvw-Km-z4d"/>
-                        <outletCollection property="randomImageCard" destination="3Xl-Kh-Cvv" collectionClass="NSMutableArray" id="QxM-vR-Ig0"/>
-                        <outletCollection property="randomImageCard" destination="6Va-Xd-ijL" collectionClass="NSMutableArray" id="bnH-kA-amg"/>
-                        <outletCollection property="randomImageCard" destination="TLM-lw-pYU" collectionClass="NSMutableArray" id="e9K-Pb-UWS"/>
-                        <outletCollection property="randomImageCard" destination="RsO-ir-44l" collectionClass="NSMutableArray" id="wer-CS-98Q"/>
-                        <outletCollection property="randomImageCard" destination="ebE-To-NZ7" collectionClass="NSMutableArray" id="DEN-3t-p0l"/>
-                        <outletCollection property="randomImageCard" destination="Jgc-pn-Wic" collectionClass="NSMutableArray" id="Kuv-Bn-HdW"/>
-                        <outletCollection property="randomImageCard" destination="fLh-EM-owh" collectionClass="NSMutableArray" id="as2-Y9-tBF"/>
-                        <outletCollection property="randomImageCard" destination="fqW-mA-Ye1" collectionClass="NSMutableArray" id="SHz-0P-xsd"/>
+                        <outletCollection property="topImageViews" destination="REi-kA-pfm" collectionClass="NSMutableArray" id="Uc2-2m-3aj"/>
+                        <outletCollection property="topImageViews" destination="DuG-qf-xPC" collectionClass="NSMutableArray" id="byg-88-jTF"/>
+                        <outletCollection property="topImageViews" destination="SHD-Xn-jmV" collectionClass="NSMutableArray" id="KXN-nj-hKa"/>
+                        <outletCollection property="topImageViews" destination="XjV-h7-nDx" collectionClass="NSMutableArray" id="oiG-0x-w9m"/>
+                        <outletCollection property="topImageViews" destination="GAR-q4-nbn" collectionClass="NSMutableArray" id="ZSv-4W-wtB"/>
+                        <outletCollection property="topImageViews" destination="wtL-Rs-i2Z" collectionClass="NSMutableArray" id="NNU-HL-TOM"/>
+                        <outletCollection property="topImageViews" destination="i4T-ir-16E" collectionClass="NSMutableArray" id="FQu-Jw-soG"/>
+                        <outletCollection property="topImageViews" destination="rqk-LE-BP3" collectionClass="NSMutableArray" id="lKM-Gb-B10"/>
+                        <outletCollection property="topImageViews" destination="vfC-bk-okC" collectionClass="NSMutableArray" id="0YX-Nk-VTt"/>
+                        <outletCollection property="randomImageCard" destination="C4O-uW-b3U" collectionClass="NSMutableArray" id="JSd-Ko-nL1"/>
+                        <outletCollection property="randomImageCard" destination="D9L-sX-xUX" collectionClass="NSMutableArray" id="J1A-Ny-mK6"/>
+                        <outletCollection property="randomImageCard" destination="qYy-XX-STD" collectionClass="NSMutableArray" id="Ivs-km-aAP"/>
+                        <outletCollection property="randomImageCard" destination="cf5-hC-gqw" collectionClass="NSMutableArray" id="oGg-YV-HRm"/>
+                        <outletCollection property="randomImageCard" destination="dM9-uH-FpL" collectionClass="NSMutableArray" id="iTw-Ra-b3u"/>
+                        <outletCollection property="randomImageCard" destination="27W-kh-HxG" collectionClass="NSMutableArray" id="qyR-HM-uXy"/>
+                        <outletCollection property="randomImageCard" destination="bpT-g4-o45" collectionClass="NSMutableArray" id="rjG-Wz-2Z0"/>
+                        <outletCollection property="randomImageCard" destination="P3R-iN-Uby" collectionClass="NSMutableArray" id="iK4-zz-i4Y"/>
+                        <outletCollection property="randomImageCard" destination="2cD-b7-M1r" collectionClass="NSMutableArray" id="Ryh-gf-B64"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xi-yP-44B" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -8218,7 +8220,6 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="img_game_correct" width="688" height="884"/>
         <image name="img_green_buttn" width="919" height="175"/>
         <image name="img_hint" width="106" height="152"/>
-        <image name="img_layer_bottom" width="1440" height="1131"/>
         <image name="img_level_bg" width="265" height="67"/>
         <image name="img_logout_bg" width="1072" height="928"/>
         <image name="img_mainbg_AM" width="1080" height="1614"/>
