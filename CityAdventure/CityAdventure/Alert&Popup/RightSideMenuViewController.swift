@@ -108,6 +108,9 @@ class RightSideMenuViewController: BaseViewController {
         hideView(type: 5)
     }
     
+    @IBAction func goMyCollectionCity(_ sender: UIButton) {
+        hideView(type: 6)
+    }
     
     func hideView(type: Int) {
         self.leftView.backgroundColor = .clear
@@ -133,8 +136,20 @@ class RightSideMenuViewController: BaseViewController {
                     self.navigationController?.pushViewController(leave, animated: true)
                 }
             } else if type == 5 {
+                // 준비 운동
                 if let adventureExercise = self.storyboard?.instantiateViewController(withIdentifier: "AdventureExerciseViewController") as? AdventureExerciseViewController{
                     self.navigationController?.pushViewController(adventureExercise, animated: true)
+                }
+            } else if type == 6 {
+                
+                // 내 컬렉션
+                if let collect = self.storyboard?.instantiateViewController(withIdentifier: "MyCollectCityViewController") as? MyCollectCityViewController {
+                    
+                    if let vc = self.navigationController?.viewControllers.last as? MyCollectCityViewController {
+                        print("이미",vc)
+                    } else {
+                        self.navigationController?.pushViewController(collect, animated: true)
+                    }
                 }
             }
         }

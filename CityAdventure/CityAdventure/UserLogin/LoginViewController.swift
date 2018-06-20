@@ -100,8 +100,10 @@ class LoginViewController: BaseViewController {
     @IBAction func autoLogin(_ sender: UIButton) {
         
         guard let session = KOSession.shared() else { return }
+        // 오픈되어있으면 바로 로그인 ㄱ
         if session.isOpen() {
-            session.close()
+            print("isOpen?")
+//            session.close()
         }
         
         session.presentingViewController = self

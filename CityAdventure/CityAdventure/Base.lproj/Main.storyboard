@@ -14,6 +14,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Regular</string>
+        </array>
         <array key="GodoB.otf">
             <string>GodoB</string>
         </array>
@@ -4915,6 +4918,9 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuM-WG-TI8">
                                                         <rect key="frame" x="69" y="0.0" width="60.5" height="24"/>
                                                         <state key="normal" image="btn_my_Collection"/>
+                                                        <connections>
+                                                            <action selector="goMyCollectionCity:" destination="ZDD-XA-R1b" eventType="touchUpInside" id="dw7-3S-Ecd"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -6513,7 +6519,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 </constraints>
                                                 <state key="normal" image="btn_close_alert"/>
                                                 <connections>
-                                                    <segue destination="5El-sO-RQD" kind="unwind" unwindAction="unWindQRCodeVC:" id="r6L-oQ-xmZ"/>
+                                                    <segue destination="5El-sO-RQD" kind="unwind" identifier="" unwindAction="unWindQRCodeVC:" id="r6L-oQ-xmZ"/>
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zlb-07-sXT">
@@ -6760,7 +6766,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 </constraints>
                                                 <state key="normal" image="btn_close_alert"/>
                                                 <connections>
-                                                    <segue destination="5El-sO-RQD" kind="unwind" unwindAction="unWindQRCodeVC:" id="cHt-97-Bup"/>
+                                                    <segue destination="5El-sO-RQD" kind="unwind" identifier="" unwindAction="unWindQRCodeVC:" id="cHt-97-Bup"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -7941,6 +7947,94 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AE2-7T-ddS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8079" y="-1335"/>
+        </scene>
+        <!--Collect City Popup View Controller-->
+        <scene sceneID="yS2-vN-Qwj">
+            <objects>
+                <viewController storyboardIdentifier="CollectCityPopupViewController" id="5fc-rz-2fd" customClass="CollectCityPopupViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f0S-PJ-XPv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2AN-kd-xfp">
+                                <rect key="frame" x="32" y="183" width="311" height="300"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="성공!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AF5-cK-6zF">
+                                        <rect key="frame" x="120" y="24" width="70.5" height="36.5"/>
+                                        <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3g-zA-Tkm">
+                                        <rect key="frame" x="45" y="70.5" width="221.5" height="45.5"/>
+                                        <string key="text">축하합니다!
+영월 카드를 획득했습니다.</string>
+                                        <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="모은 카드를 확인하러 가볼까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ewv-DW-QKi">
+                                        <rect key="frame" x="43" y="146" width="225" height="22"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nAg-o9-wHf">
+                                        <rect key="frame" x="75" y="204" width="160" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="YFb-6q-Isi"/>
+                                            <constraint firstAttribute="width" constant="160" id="qRo-7p-Ohs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="21"/>
+                                        <state key="normal" title="확인" backgroundImage="btn_yellow_bg">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Cqw-fI-rgu" kind="unwind" identifier="goCollectVC" unwindAction="unWindQRCodeVC:" id="dMS-In-Z9C"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="nAg-o9-wHf" firstAttribute="top" secondItem="ewv-DW-QKi" secondAttribute="bottom" constant="36" id="3Y1-B9-mA9"/>
+                                    <constraint firstItem="ewv-DW-QKi" firstAttribute="centerX" secondItem="2AN-kd-xfp" secondAttribute="centerX" id="9SS-KA-5hF"/>
+                                    <constraint firstItem="AF5-cK-6zF" firstAttribute="centerX" secondItem="2AN-kd-xfp" secondAttribute="centerX" id="Gii-OU-bHd"/>
+                                    <constraint firstItem="nAg-o9-wHf" firstAttribute="centerX" secondItem="2AN-kd-xfp" secondAttribute="centerX" id="HUa-FZ-7ia"/>
+                                    <constraint firstItem="AF5-cK-6zF" firstAttribute="top" secondItem="2AN-kd-xfp" secondAttribute="top" constant="24" id="Mnp-aD-M5p"/>
+                                    <constraint firstItem="ewv-DW-QKi" firstAttribute="top" secondItem="U3g-zA-Tkm" secondAttribute="bottom" constant="30" id="ZTJ-dY-4F6"/>
+                                    <constraint firstItem="U3g-zA-Tkm" firstAttribute="centerX" secondItem="2AN-kd-xfp" secondAttribute="centerX" id="ZTK-zp-SaI"/>
+                                    <constraint firstAttribute="height" constant="300" id="mBe-73-R6t"/>
+                                    <constraint firstItem="U3g-zA-Tkm" firstAttribute="top" secondItem="AF5-cK-6zF" secondAttribute="bottom" constant="10" id="qQ4-Yn-T6r"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMW-RG-Njy">
+                                <rect key="frame" x="154" y="42" width="116" height="116"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn_close_alert"/>
+                                <connections>
+                                    <segue destination="Cqw-fI-rgu" kind="unwind" unwindAction="unWindQRCodeVC:" id="fFC-Oa-osu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2AN-kd-xfp" firstAttribute="centerX" secondItem="f0S-PJ-XPv" secondAttribute="centerX" id="BRD-9l-Iuv"/>
+                            <constraint firstItem="2AN-kd-xfp" firstAttribute="leading" secondItem="tWY-tQ-5DL" secondAttribute="leading" constant="32" id="RCC-Bl-MfN"/>
+                            <constraint firstItem="2AN-kd-xfp" firstAttribute="centerY" secondItem="f0S-PJ-XPv" secondAttribute="centerY" id="W3c-pT-rTg"/>
+                            <constraint firstItem="tWY-tQ-5DL" firstAttribute="trailing" secondItem="2AN-kd-xfp" secondAttribute="trailing" constant="32" id="leI-qe-7Au"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tWY-tQ-5DL"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="qMW-RG-Njy" id="qvM-C3-Ma1"/>
+                        <outlet property="mainView" destination="2AN-kd-xfp" id="6fi-Nl-cmX"/>
+                        <outlet property="resultLabel" destination="U3g-zA-Tkm" id="HlW-sS-g1b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a0g-PS-2Cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Cqw-fI-rgu" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1137" y="-616"/>
         </scene>
         <!--Hint Pop View Controller-->
         <scene sceneID="AeT-n9-Wbf">

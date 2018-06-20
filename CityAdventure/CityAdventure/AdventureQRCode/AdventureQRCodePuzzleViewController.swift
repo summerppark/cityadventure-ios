@@ -9,21 +9,15 @@
 import UIKit
 
 class AdventureQRCodePuzzleViewController: BaseViewController {
-    
-    
-    
-   
-    
+
     @IBOutlet var topImageViews: [UIImageView]!
-    
-    
     @IBOutlet var randomImageCard: [UIImageView]!
-    
-    
     @IBOutlet weak var topViewHeight: NSLayoutConstraint!
     
     var imagesArray: [UIImage] = []
     var initialCenter = CGPoint()
+    
+    var collectCardCount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +88,6 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
             self.initialCenter = piece.center
         }
         if sender.state != .cancelled {
-            print("Cancel")
             let newCenter = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y + translation.y)
             piece.center = newCenter
         }
@@ -103,66 +96,50 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
             print("ended",piece.center,initPoint,topImageViews[(sender.view?.tag)!].center)
             // 정답 위치로
             
-            if abs((anaswerImage.center.x+anaswerImage.center.y)-(piece.center.x+piece.center.y)) < 16 {
-//                piece.center = anaswerImage.center
+            if abs((anaswerImage.center.x+anaswerImage.center.y)-(piece.center.x+piece.center.y)) < 24 {
                 topImageViews[(sender.view?.tag)!].image = (sender.view as? UIImageView)?.image
                 sender.view?.isHidden = true
+                // 정답인 경우!!!!
+                collectCardCount += 1
+                if collectCardCount == 9 {
+                    print("모두 획득하였습니다.")
+                    
+                    if let popup = storyboard?.instantiateViewController(withIdentifier: "CollectCityPopupViewController") as? CollectCityPopupViewController {
+                        popup.modalPresentationStyle = .overFullScreen
+                        self.present(popup, animated: false, completion: nil)
+                    }
+                    
+                }
                 
             } else {
-                // 원래자리로
+                // 원래자리로 , 실패
                 piece.center = self.initialCenter
             }
             
             
         }
-     
-        
-        
-        
-//        print(sender.view?.tag, sender.location(in: topImageViews[(sender.view?.tag)!]))
-//        if ((sender.state != UIGestureRecognizerState.ended) &&
-//            (sender.state != UIGestureRecognizerState.failed)) {
-//            sender.view?.center = sender.location(in: sender.view?.superview)
-//
-//
-//            let image = (sender.view as? UIImageView)?.image
-//
-//            topImageViews[(sender.view?.tag)!].image = image
-//            (sender.view as? UIImageView)?.image = nil
-            
-            
-            
-//        }
     }
     
     
+    // random 으로 카드를 배열
     func makeRandomCard(image: UIImage) {
-        randomImageCard[2].image = image.topHalf?.leftHalf
-        randomImageCard[2].tag = 0
+        var randomArray : [Int] = [0,1,2,3,4,5,6,7,8]
+        randomArray.shuffle()
+        print("random",randomArray)
+        let puzzleArray = [image.topHalf?.leftHalf,
+                           image.topHalf?.centerHalf,
+                           image.topHalf?.rightHalf,
+                           image.middleHalf?.leftHalf,
+                           image.middleHalf?.centerHalf,
+                           image.middleHalf?.rightHalf,
+                           image.bottomHalf?.leftHalf,
+                           image.bottomHalf?.centerHalf,
+                           image.bottomHalf?.rightHalf]
         
-        randomImageCard[3].image = image.middleHalf?.centerHalf
-        randomImageCard[3].tag = 4
-        
-        randomImageCard[5].image = image.middleHalf?.rightHalf
-        randomImageCard[5].tag = 5
-        
-        randomImageCard[1].image = image.bottomHalf?.leftHalf
-        randomImageCard[1].tag = 6
-        
-        randomImageCard[0].image = image.bottomHalf?.centerHalf
-        randomImageCard[0].tag = 7
-        
-        randomImageCard[4].image = image.bottomHalf?.rightHalf
-        randomImageCard[4].tag = 8
-        
-        randomImageCard[8].image = image.middleHalf?.leftHalf
-        randomImageCard[8].tag = 3
-        
-        randomImageCard[6].image = image.topHalf?.rightHalf
-        randomImageCard[6].tag = 2
-        
-        randomImageCard[7].image = image.topHalf?.centerHalf
-        randomImageCard[7].tag = 1
+        for index in 0...randomArray.count-1 {
+            randomImageCard[randomArray[index]].image = puzzleArray[index]
+            randomImageCard[randomArray[index]].tag = index
+        }
     }
     
     @IBOutlet weak var topView: UIView! {
@@ -240,14 +217,17 @@ extension UIImage {
         
         return UIImage(cgImage: image)
     }
-    
-    func applying(contrast value: NSNumber) -> UIImage? {
-        guard
-            let ciImage = CIImage(image: self)?.applyingFilter("CIColorControls", parameters: [kCIInputContrastKey: value])
-            else { return nil } // Swift 3 uses withInputParameters instead of parameters
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        defer { UIGraphicsEndImageContext() }
-        UIImage(ciImage: ciImage).draw(in: CGRect(origin: .zero, size: size))
-        return UIGraphicsGetImageFromCurrentImageContext()
+}
+
+
+extension Array
+{
+    /** Randomizes the order of an array's elements. */
+    mutating func shuffle()
+    {
+        for _ in 0..<10
+        {
+            sort { (_,_) in arc4random() < arc4random() }
+        }
     }
 }

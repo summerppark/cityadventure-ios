@@ -40,6 +40,19 @@ class AdventureQRCodeViewController: BaseViewController {
     
     @IBAction func unWindQRCodeVC(_ segue: UIStoryboardSegue) {
         // 회원가입 완료 팝업 창에서 닫기 눌렀을 때 이쪽으로 소환
+        print("unwind", segue.identifier)
+        
+        
+        // 퍼즐을 획득하고 화면 전환. 바로 수집되있는 부분으로 이동.
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            if let id = segue.identifier, id == "goCollectVC" {
+                if let collect = self.storyboard?.instantiateViewController(withIdentifier: "MyCollectCityViewController") as? MyCollectCityViewController {
+                    self.navigationController?.pushViewController(collect, animated: true)
+                }
+            }
+        }
+       
+        
     }
     
     

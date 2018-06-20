@@ -11,6 +11,7 @@
 		6628E659208DF06E009DD4C2 /* ResultCorrectPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628E658208DF06E009DD4C2 /* ResultCorrectPopUp.swift */; };
 		6641D92A20D34ECA000C7406 /* AdventureQRCodeTTSDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6641D92920D34ECA000C7406 /* AdventureQRCodeTTSDescViewController.swift */; };
 		6642515E20DA275900DEC55F /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6642515D20DA275900DEC55F /* KakaoOpenSDK.framework */; };
+		6642516120DA3EA300DEC55F /* CollectCityPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6642516020DA3EA300DEC55F /* CollectCityPopupViewController.swift */; };
 		6658379E20D2788F007FC163 /* AdventureQRCodeTextSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658379D20D2788F007FC163 /* AdventureQRCodeTextSoundViewController.swift */; };
 		665E2D1C20C0590700F13909 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665E2D1B20C0590700F13909 /* DropDownMenu.swift */; };
 		6663922820D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6663922720D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift */; };
@@ -155,6 +156,7 @@
 		6641D92920D34ECA000C7406 /* AdventureQRCodeTTSDescViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeTTSDescViewController.swift; sourceTree = "<group>"; };
 		6642515D20DA275900DEC55F /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
 		6642515F20DA28C700DEC55F /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		6642516020DA3EA300DEC55F /* CollectCityPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectCityPopupViewController.swift; sourceTree = "<group>"; };
 		6658379D20D2788F007FC163 /* AdventureQRCodeTextSoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeTextSoundViewController.swift; sourceTree = "<group>"; };
 		665E2D1B20C0590700F13909 /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
 		6663922720D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodePuzzleViewController.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 				6658379D20D2788F007FC163 /* AdventureQRCodeTextSoundViewController.swift */,
 				6641D92920D34ECA000C7406 /* AdventureQRCodeTTSDescViewController.swift */,
 				6663922720D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift */,
+				6642516020DA3EA300DEC55F /* CollectCityPopupViewController.swift */,
 			);
 			path = AdventureQRCode;
 			sourceTree = "<group>";
@@ -814,6 +817,7 @@
 				CED8C4AA207212B000286A61 /* FMDatabasePool.m in Sources */,
 				CE642C282077612F000C2F01 /* NoticeViewController.swift in Sources */,
 				666B6E6120872A3A00CD28DB /* ClientCenterViewController.swift in Sources */,
+				6642516120DA3EA300DEC55F /* CollectCityPopupViewController.swift in Sources */,
 				CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */,
 				CED8C4BF2073498E00286A61 /* BaseViewController.swift in Sources */,
 				666B6E5F2087234600CD28DB /* TermsOfUseDetailViewController.swift in Sources */,
