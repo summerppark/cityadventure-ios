@@ -5453,7 +5453,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                             <constraint firstAttribute="height" constant="90" id="bVH-kJ-aTc"/>
                                             <constraint firstAttribute="width" constant="124" id="vl0-RN-ksM"/>
                                         </constraints>
-                                        <state key="normal" image="img_quiz_third"/>
+                                        <state key="normal" image="quiz_bk"/>
                                         <connections>
                                             <action selector="playQuiz:" destination="hiT-Y5-9Zm" eventType="touchUpInside" id="vud-0H-yeI"/>
                                         </connections>
@@ -5464,7 +5464,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                             <constraint firstAttribute="height" constant="90" id="Aha-D1-Fv2"/>
                                             <constraint firstAttribute="width" constant="124" id="Hpf-Nz-bIU"/>
                                         </constraints>
-                                        <state key="normal" image="img_play_fourth"/>
+                                        <state key="normal" image="play_bk"/>
                                         <connections>
                                             <action selector="playGame:" destination="hiT-Y5-9Zm" eventType="touchUpInside" id="4Zs-YT-m7r"/>
                                         </connections>
@@ -5474,7 +5474,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="94" id="q3D-XQ-aH6"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="img_story_fifth"/>
+                                        <state key="normal" title="Button" image="toon_bk"/>
                                         <connections>
                                             <action selector="playStory:" destination="hiT-Y5-9Zm" eventType="touchUpInside" id="ioA-Ez-pTJ"/>
                                         </connections>
@@ -5537,6 +5537,9 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                         <outlet property="progressView" destination="Lho-vd-3Nv" id="LAq-Mc-Ro1"/>
                         <outlet property="progressViewLeading" destination="JO8-PI-U1z" id="83j-RK-fYE"/>
                         <outlet property="quizWidth" destination="vl0-RN-ksM" id="UCf-nt-bg5"/>
+                        <outlet property="unusedButon1" destination="zbw-TF-h6j" id="cvI-eD-kLZ"/>
+                        <outlet property="unusedButton2" destination="Ahb-ct-A9d" id="glh-Yh-iPw"/>
+                        <outlet property="unusedButton3" destination="dIJ-gq-FOr" id="Hpk-tz-RTI"/>
                         <outlet property="userCharView" destination="j3P-p2-K4o" id="fL2-dt-AGJ"/>
                         <outlet property="userNameLabel" destination="uIN-0i-Ufc" id="XTm-Yt-zJv"/>
                         <outlet property="userNameLabelTrailing" destination="4HS-Be-Jgw" id="B0F-1B-USy"/>
@@ -5898,8 +5901,21 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                         <viewLayoutGuide key="safeArea" id="10u-Cy-g8X"/>
                     </view>
                     <connections>
+                        <outlet property="currentLevelLabel" destination="kV5-MH-cuQ" id="N5i-Vo-n9i"/>
+                        <outlet property="expCurrentLabel" destination="Py6-iV-tYI" id="CGG-Fc-2qW"/>
+                        <outlet property="expMaxLabel" destination="duM-T6-zlH" id="cEp-hw-dhb"/>
+                        <outlet property="mainAvartarView" destination="oni-cS-80I" id="fER-i6-hW3"/>
+                        <outlet property="mainCityCount" destination="6d7-Xp-ZDC" id="V15-4w-r5a"/>
+                        <outlet property="mainNickname" destination="esB-wJ-IAh" id="8sr-ZR-hHs"/>
+                        <outlet property="myCardsCount" destination="4Pg-g8-lc2" id="2mc-dj-VrK"/>
+                        <outlet property="myCoin" destination="m4x-hN-F7G" id="W9k-XA-aiG"/>
+                        <outlet property="progressView" destination="o6V-Ei-rfA" id="eaD-2E-gC8"/>
+                        <outlet property="progressViewLeading" destination="zbs-ho-B7A" id="Dy8-ec-E8B"/>
                         <outlet property="squareHeight" destination="8SH-QK-9GA" id="BwM-lY-lOE"/>
                         <outlet property="textTopConstraint" destination="Fad-xa-5ra" id="mVD-zF-5la"/>
+                        <outlet property="userCharView" destination="Gkg-oO-7VK" id="zvh-YS-UdU"/>
+                        <outlet property="userNameLabel" destination="qle-5y-Ttb" id="bZW-O0-flh"/>
+                        <outlet property="userNameLabelTrailing" destination="fJj-5a-otd" id="sKE-Fe-z0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ABo-XB-ren" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5925,7 +5941,6 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <state key="normal" image="btn_notice_top"/>
                                         <connections>
                                             <action selector="tappedBackButton:" destination="D49-R0-aBe" eventType="touchUpInside" id="3Hh-3M-S8Q"/>
-                                            <action selector="tappedBackButton:" destination="29n-sZ-J5c" eventType="touchUpInside" id="TKY-jm-Dws"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHC-v7-q1a">
@@ -5936,8 +5951,6 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <state key="normal" image="btn_menu_top"/>
                                         <connections>
                                             <action selector="openSideMenu:" destination="D49-R0-aBe" eventType="touchUpInside" id="upK-O9-LS5"/>
-                                            <action selector="presentRightSideMenu:" destination="hiT-Y5-9Zm" eventType="touchUpInside" id="Fal-59-2kP"/>
-                                            <action selector="presentRightSideMenu:" destination="29n-sZ-J5c" eventType="touchUpInside" id="jvZ-Ia-bHK"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9uC-99-DdM">
@@ -6253,7 +6266,17 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                         <outlet property="cityCollectionView" destination="qTV-cL-P3E" id="lZi-Di-gyL"/>
                         <outlet property="cityCount" destination="Aaj-dc-VYu" id="TsB-2a-rAR"/>
                         <outlet property="cityCountView" destination="evg-kL-nZz" id="TRk-wi-oLE"/>
+                        <outlet property="currentLevelLabel" destination="oIV-nR-90D" id="y39-Dg-Wkz"/>
+                        <outlet property="expCurrentLabel" destination="D2C-I5-yR0" id="V7d-LE-cNm"/>
+                        <outlet property="expMaxLabel" destination="CDU-5d-YjP" id="HtV-t5-Ty1"/>
+                        <outlet property="myCardsCount" destination="Jfm-Dg-8HK" id="gKM-OB-k6q"/>
+                        <outlet property="myCoin" destination="bhw-UB-77B" id="H5w-ZZ-3ag"/>
+                        <outlet property="progressView" destination="k2U-BX-JNk" id="fpi-xq-cnU"/>
+                        <outlet property="progressViewLeading" destination="7aX-ZD-G8C" id="pec-w9-t2X"/>
                         <outlet property="selectCitysView" destination="eu9-hW-oCd" id="flf-mu-B9i"/>
+                        <outlet property="userCharView" destination="RXi-A1-lpo" id="cMQ-gs-CU2"/>
+                        <outlet property="userNameLabel" destination="2He-Ih-Mwx" id="QF1-Zc-7L6"/>
+                        <outlet property="userNameLabelTrailing" destination="MLO-6L-yvx" id="5kT-ao-tDM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4V-fy-GEg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -8323,11 +8346,9 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="img_mark_map" width="97" height="122"/>
         <image name="img_myProfile" width="229" height="66"/>
         <image name="img_only_char_third" width="789" height="409"/>
-        <image name="img_play_fourth" width="365" height="292"/>
         <image name="img_profileSignup_bg" width="914" height="679"/>
         <image name="img_profile_thumb" width="279" height="279"/>
         <image name="img_progress" width="67" height="36"/>
-        <image name="img_quiz_third" width="373" height="285"/>
         <image name="img_search_icon" width="73" height="75"/>
         <image name="img_selectChar_bg" width="491" height="126"/>
         <image name="img_selectCity_alertbg" width="950" height="995"/>
@@ -8337,7 +8358,6 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="img_signup_finalbg" width="977" height="948"/>
         <image name="img_square_qrcode" width="1216" height="1429"/>
         <image name="img_story_bubble" width="940" height="373"/>
-        <image name="img_story_fifth" width="737" height="288"/>
         <image name="img_thumbChar_first_On" width="236" height="237"/>
         <image name="img_thumbChar_fourth" width="236" height="236"/>
         <image name="img_thumbChar_fourth_On" width="236" height="236"/>
@@ -8357,9 +8377,12 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="login_join_btn" width="870" height="131"/>
         <image name="login_password_icon" width="29" height="46"/>
         <image name="noncheck" width="40" height="40"/>
+        <image name="play_bk" width="482" height="386"/>
+        <image name="quiz_bk" width="492" height="376"/>
         <image name="select_char_label" width="273" height="65"/>
         <image name="signup_email_bg" width="652" height="150"/>
         <image name="signup_leftbarbutton" width="27" height="19"/>
+        <image name="toon_bk" width="973" height="380"/>
         <image name="topview_bg_policy" width="667" height="80"/>
     </resources>
 </document>

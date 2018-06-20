@@ -16,7 +16,7 @@ class BaseViewController: UIViewController {
     
     
     var charImages = [#imageLiteral(resourceName: "img_thumbChar_first_On"),#imageLiteral(resourceName: "img_thumbChar_second_On"),#imageLiteral(resourceName: "img_thumbChar_third_On"),#imageLiteral(resourceName: "img_thumbChar_fourth_On")]
-    
+    var mainCharImages = [#imageLiteral(resourceName: "main1"),#imageLiteral(resourceName: "main2"),#imageLiteral(resourceName: "main3"),#imageLiteral(resourceName: "main4")]
     
     override func viewDidLoad() {
         super.viewDidLoad()

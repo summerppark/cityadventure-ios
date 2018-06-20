@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-import SpriteKit
+import Toaster
 
 class MainViewController: BaseViewController {
     
@@ -37,7 +36,7 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var progressView: UIProgressView! {
         didSet {
             progressView.layer.borderColor = UIColor.black.cgColor
-            progressView.layer.borderWidth = 2.0
+            progressView.layer.borderWidth = 1.0
             progressView.layer.cornerRadius = 4.0
             progressView.clipsToBounds = true
         }
@@ -59,6 +58,12 @@ class MainViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var unusedButon1: UIButton!
+    
+    @IBOutlet weak var unusedButton2: UIButton!
+    
+    @IBOutlet weak var unusedButton3: UIButton!
+    
     
     // Data
     @IBOutlet weak var userCharView: UIImageView!
@@ -76,7 +81,7 @@ class MainViewController: BaseViewController {
         super.viewDidLoad()
         layoutCheck()
         setBackGroundImageForTime()
-      
+        print("!!!", self.animationView.frame.origin.y)
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
    
         
@@ -86,14 +91,28 @@ class MainViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("!!!1", self.animationView.frame.origin.y)
+
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        
+        print("!!!2", self.animationView.frame.origin.y)
         UIView.animate(withDuration: 0.8, delay: 0, options: [.repeat, .autoreverse,.allowUserInteraction], animations: {
             [weak self] in
+            
+            if Constants.DeviceType.IS_IPHONE_X {
+                self?.animationView.frame.origin.y = 262.0
+            } else if Constants.DeviceType.IS_IPHONE_6P {
+                self?.animationView.frame.origin.y = 210.0
+            } else {
+                self?.animationView.frame.origin.y = 199.0
+            }
             self?.animationView.frame.origin.y -= 10
         }) { (action) in
             print("핸들러")
         }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -217,14 +236,21 @@ class MainViewController: BaseViewController {
     
     @IBAction func playQuiz(_ sender: UIButton) {
         print("퀴즈")
+        self.openToast()
     }
     
     @IBAction func playGame(_ sender: UIButton) {
         print("놀이")
+        self.openToast()
     }
     
     @IBAction func playStory(_ sender: UIButton) {
         print("동화")
+        self.openToast()
+    }
+    
+    func openToast() {
+        Toast(text: "서비스 준비중입니다.").show()
     }
     
     

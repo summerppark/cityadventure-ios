@@ -14,9 +14,37 @@ class AdventureQRCodeViewController: BaseViewController {
     @IBOutlet weak var squareHeight: NSLayoutConstraint!
     @IBOutlet weak var textTopConstraint: NSLayoutConstraint!
     
+    
+    @IBOutlet weak var userCharView: UIImageView!
+    @IBOutlet weak var currentLevelLabel: UILabel!
+    @IBOutlet weak var expMaxLabel: UILabel!
+    @IBOutlet weak var expCurrentLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var myCardsCount: UILabel!
+    @IBOutlet weak var myCoin: UILabel!
+    
+    @IBOutlet weak var progressView: UIProgressView! {
+        didSet {
+            progressView.layer.borderColor = UIColor.black.cgColor
+            progressView.layer.borderWidth = 1.0
+            progressView.layer.cornerRadius = 4.0
+            progressView.clipsToBounds = true
+        }
+    }
+    
+    @IBOutlet weak var progressViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var userNameLabelTrailing: NSLayoutConstraint!
+    
+    
+    
+    @IBOutlet weak var mainAvartarView: UIImageView!
+    @IBOutlet weak var mainNickname: UILabel!
+    @IBOutlet weak var mainCityCount: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
+        dataSetting()
         
     }
     
@@ -31,9 +59,15 @@ class AdventureQRCodeViewController: BaseViewController {
             // iPhone X 일 때 레이아웃
         }
         
+        if Constants.DeviceType.IS_IPHONE_6P {
+            progressViewLeading.constant = 12
+            userNameLabelTrailing.constant = 24
+        }
+        
         if Constants.DeviceType.IS_IPHONE_X || Constants.DeviceType.IS_IPHONE_6P {
             squareHeight.constant = 340
             textTopConstraint.constant = 78
+            
         }
     
     }
@@ -81,6 +115,61 @@ class AdventureQRCodeViewController: BaseViewController {
         if let collect = storyboard?.instantiateViewController(withIdentifier: "MyCollectCityViewController") as? MyCollectCityViewController {
             self.navigationController?.pushViewController(collect, animated: true)
         }
+    }
+    
+    
+    // 상단 뷰 데이타 셋팅
+    func dataSetting() {
+        guard let currentExp = DataManager.shared.getUserInfo()?.userInfo?.ui_exp else {
+            return
+        }
+        
+        
+        let level = super.getLevel(exp: currentExp)
+        let curExp = super.getAbsExp(exp: currentExp)
+        let maxExp = super.getNextNeedExpByLevel(level: level)
+        
+        // 현재 레벨을 표현해준다.
+        currentLevelLabel.text = "\(level)"
+        expCurrentLabel.text = "\(curExp)"
+        expMaxLabel.text = "\(maxExp)"
+        
+        print("level = ", level)
+        print("currentExp = ", super.getAbsExp(exp: currentExp))
+        print("maxExp = ", super.getNextNeedExpByLevel(level: level))
+        
+        if let coin = DataManager.shared.getUserInfo()?.userInfo?.ui_credit {
+            myCoin.text = "\(coin)"
+        }
+        
+        if let count = DataManager.shared.getUserCardInfo()?.dataLength {
+            var str = ""
+            if count < 10 {
+                str = "00\(count)"
+            } else if count < 100 {
+                str = "0\(count)"
+            } else {
+                str = "\(count)"
+            }
+            
+            myCardsCount.text = str
+            mainCityCount.text = str
+        }
+        
+        if let name = DataManager.shared.getUserInfo()?.userInfo?.s_name {
+            userNameLabel.text = name
+            mainNickname.text = name
+        }
+        
+        
+        if let index = DataManager.shared.getUserInfo()?.userInfo?.ui_avatarNo {
+            print(index)
+            userCharView.image = super.charImages[index-1]
+            mainAvartarView.image = super.mainCharImages[index-1]
+        }
+        
+        // 프로그레스 뷰 상태를 셋팅
+        progressView.progress = (Float(curExp)/Float(maxExp))
     }
     
 }
