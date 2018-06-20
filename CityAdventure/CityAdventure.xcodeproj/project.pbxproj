@@ -10,6 +10,7 @@
 		6615319C20CE401500CBA51E /* AdventureNewQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615319B20CE401500CBA51E /* AdventureNewQRCodeViewController.swift */; };
 		6628E659208DF06E009DD4C2 /* ResultCorrectPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628E658208DF06E009DD4C2 /* ResultCorrectPopUp.swift */; };
 		6641D92A20D34ECA000C7406 /* AdventureQRCodeTTSDescViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6641D92920D34ECA000C7406 /* AdventureQRCodeTTSDescViewController.swift */; };
+		6642515E20DA275900DEC55F /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6642515D20DA275900DEC55F /* KakaoOpenSDK.framework */; };
 		6658379E20D2788F007FC163 /* AdventureQRCodeTextSoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6658379D20D2788F007FC163 /* AdventureQRCodeTextSoundViewController.swift */; };
 		665E2D1C20C0590700F13909 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665E2D1B20C0590700F13909 /* DropDownMenu.swift */; };
 		6663922820D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6663922720D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift */; };
@@ -152,6 +153,8 @@
 		6615319B20CE401500CBA51E /* AdventureNewQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureNewQRCodeViewController.swift; sourceTree = "<group>"; };
 		6628E658208DF06E009DD4C2 /* ResultCorrectPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCorrectPopUp.swift; sourceTree = "<group>"; };
 		6641D92920D34ECA000C7406 /* AdventureQRCodeTTSDescViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeTTSDescViewController.swift; sourceTree = "<group>"; };
+		6642515D20DA275900DEC55F /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		6642515F20DA28C700DEC55F /* KakaoOpenSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KakaoOpenSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		6658379D20D2788F007FC163 /* AdventureQRCodeTextSoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeTextSoundViewController.swift; sourceTree = "<group>"; };
 		665E2D1B20C0590700F13909 /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
 		6663922720D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodePuzzleViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +262,7 @@
 			files = (
 				CE7C12D42072043E0095F1C9 /* libsqlite3.0.tbd in Frameworks */,
 				719AC02BAEEC44D234717BB9 /* Pods_CityAdventure.framework in Frameworks */,
+				6642515E20DA275900DEC55F /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +272,7 @@
 		5BB78BA01C450FB54BE89CD8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6642515D20DA275900DEC55F /* KakaoOpenSDK.framework */,
 				CE7C12D32072043E0095F1C9 /* libsqlite3.0.tbd */,
 				CE7C12BA207202870095F1C9 /* SQLite.xcodeproj */,
 				CE7C12B9207202530095F1C9 /* SQLite.framework */,
@@ -527,6 +532,7 @@
 		CEF716272064CB1900B457E9 = {
 			isa = PBXGroup;
 			children = (
+				6642515F20DA28C700DEC55F /* KakaoOpenSDK-Bridging-Header.h */,
 				CED8C49C2072108D00286A61 /* FMDBDatabase_Header.h */,
 				CEF716322064CB1900B457E9 /* CityAdventure */,
 				CEF716312064CB1900B457E9 /* Products */,
@@ -989,9 +995,38 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J5QNJTJL72;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CityAdventure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireObjectMapper\"",
+					"-framework",
+					"\"GRDB\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwiftGifOrigin\"",
+					"-framework",
+					"\"Toaster\"",
+					"-framework",
+					"\"UITextView_Placeholder\"",
+					"-framework",
+					"\"UIView_Shake\"",
+					"-force_load",
+					"$(SRCROOT)/KakaoOpenSDK.framework/KakaoOpenSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bubu.CityAdventure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMDBDatabase_Header.h";
@@ -1007,9 +1042,38 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J5QNJTJL72;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CityAdventure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireObjectMapper\"",
+					"-framework",
+					"\"GRDB\"",
+					"-framework",
+					"\"Kingfisher\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"SwiftGifOrigin\"",
+					"-framework",
+					"\"Toaster\"",
+					"-framework",
+					"\"UITextView_Placeholder\"",
+					"-framework",
+					"\"UIView_Shake\"",
+					"-force_load",
+					"$(SRCROOT)/KakaoOpenSDK.framework/KakaoOpenSDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bubu.CityAdventure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMDBDatabase_Header.h";

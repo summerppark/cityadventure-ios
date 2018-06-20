@@ -9,7 +9,7 @@
 #ifndef FMDBDatabase_Header_h
 #define FMDBDatabase_Header_h
 
-
+#import <KakaoOpenSDK/KakaoOpenSDK.h>
 #endif /* FMDBDatabase_Header_h */
 
 #import "FMDB.h"

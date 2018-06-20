@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>KAKAO_APP_KEY</key>
+	<string>b3e91934ae5fab89387c894ffc83b6ad</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -18,6 +20,17 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakaob3e91934ae5fab89387c894ffc83b6ad</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -37,6 +50,10 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>YES</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>YES</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>GodoB.otf</string>
@@ -56,10 +73,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>YES</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>YES</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -67,5 +80,23 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <!-- 공통 -->
+        <string>kakaob3e91934ae5fab89387c894ffc83b6ad</string>
+        
+        <!-- 간편로그인 -->
+        <string>kakaokompassauth</string>
+        <string>storykompassauth</string>
+        
+        <!-- 카카오톡링크 -->
+        <string>kakaolink</string>
+        <string>kakaotalk-5.9.7</string>
+        
+        <!-- 카카오스토리링크 -->
+        <string>storylink</string>
+    </array>
+    
 </dict>
 </plist>

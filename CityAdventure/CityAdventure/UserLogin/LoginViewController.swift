@@ -96,6 +96,40 @@ class LoginViewController: BaseViewController {
             self.navigationController?.pushViewController(next, animated: true)
         }
     }
+    
+    @IBAction func autoLogin(_ sender: UIButton) {
+        
+        guard let session = KOSession.shared() else { return }
+        if session.isOpen() {
+            session.close()
+        }
+        
+        session.presentingViewController = self
+        session.open { (error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            } else if session.isOpen() {
+                KOSessionTask.userMeTask(completion: { (error, me) in
+                    if let error = error as NSError? {
+                        print(error, "Error")
+                    } else if let me = me as KOUserMe? {
+                        print("login",me)
+                        dump(me)
+                    } else {
+                        print("아이디없다")
+                    }
+                })
+
+
+            } else {
+                print("failed")
+            }
+        }
+        
+    }
+    
+    
+    
 }
 
 //MARK:- @IBAction
