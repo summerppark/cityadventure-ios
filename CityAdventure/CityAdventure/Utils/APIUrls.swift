@@ -53,4 +53,27 @@ class APIUrls {
     static func changePassword(token: String, password: String) -> String {
         return "/accounts/password?token=\(token)&password=\(password)"
     }
+    
+    // 준비운동 코인 ,경험치
+    static func updateExpCoin(token: String) -> String {
+        return "/members/credit-exp?token=\(token)&credit=50&exp=50"
+    }
+
+    
+    static func getImageFlipFront(cardNumber: String) -> String {
+        return "http://www.bubu-expedition.com/resources/CardFront_final/\(cardNumber).png"
+    }
+    
+    static func getImageMinimap(cardNumber: String) -> String {
+        return "http://www.bubu-expedition.com/resources/minimaps/\(cardNumber).png"
+    }
+    
+    static func getImagelandMark(cardNumber: String, index: String) -> String {
+        return "http://www.bubu-expedition.com/resources/landmarks/\(cardNumber)/\(index).png"
+    }
+    
+    static func getPuzzleImage(cardNumber: String) -> String {
+        return "http://www.bubu-expedition.com/resources/puzzleimages/\(cardNumber).png"
+    }
+    
 }

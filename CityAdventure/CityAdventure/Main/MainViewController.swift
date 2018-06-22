@@ -91,6 +91,7 @@ class MainViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        dataSetting()
         print("!!!1", self.animationView.frame.origin.y)
 
     }

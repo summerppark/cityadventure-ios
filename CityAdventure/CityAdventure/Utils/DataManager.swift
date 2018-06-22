@@ -83,6 +83,10 @@ class DataManager {
     public func setUserInfo(response: UserInfo) {
         userInfo = response
     }
+    public func updateUserInfo(exp: Int, coin: Int) {
+        userInfo?.userInfo?.ui_exp = exp
+        userInfo?.userInfo?.ui_credit = coin
+    }
 
     public func getUserAccountInfo() -> UserAccountInfo? {
         return userAccountInfo

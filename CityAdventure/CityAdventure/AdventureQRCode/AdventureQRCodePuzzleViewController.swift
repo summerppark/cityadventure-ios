@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class AdventureQRCodePuzzleViewController: BaseViewController {
 
@@ -18,59 +19,69 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
     var initialCenter = CGPoint()
     
     var collectCardCount: Int = 0
+    var puzzleCity = ""
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
   
-        super.showLoading(view: self.view)
-        var img = #imageLiteral(resourceName: "adventure_Exercise_bg")
-        let img2 = img
         
-        DispatchQueue.global().async {
-            img = self.Noir(image: img)
-            DispatchQueue.main.async {
-                super.hideLoading()
-                self.makeRandomCard(image: img2)
-                let top = img.topHalf
-                let mid = img.middleHalf
-                let bottom = img.bottomHalf
+        super.showLoading(view: self.view)
+        var img = UIImage()
+        var img2 = UIImage()
+        
+        guard let url = URL(string: APIUrls.getPuzzleImage(cardNumber: self.puzzleCity)) else { return }
+        
+        KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+            DispatchQueue.global().async {
                 
+                guard let image = image else { return }
                 
-                self.topImageViews[0].image = top?.leftHalf
-                self.topImageViews[1].image = top?.centerHalf
-                self.topImageViews[2].image = top?.rightHalf
-                
-                self.topImageViews[3].image = mid?.leftHalf
-                self.topImageViews[4].image = mid?.centerHalf
-                self.topImageViews[5].image = mid?.rightHalf
-                
-                self.topImageViews[6].image = bottom?.leftHalf
-                self.topImageViews[7].image = bottom?.centerHalf
-                self.topImageViews[8].image = bottom?.rightHalf
-                
-                var count = 0
-                let pangesture = UIPanGestureRecognizer(target: self, action: #selector(self.isCollect))
-                self.topImageViews.forEach { (img) in
-                    img.tag = count
-                    img.layer.borderWidth = 1
-                    img.layer.borderColor = UIColor.black.cgColor
-                    count = count + 1
-                    img.isUserInteractionEnabled = true
-                    img.addGestureRecognizer(pangesture)
+                img = self.Noir(image: image)
+                img2 = image
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    super.hideLoading()
+                    self.makeRandomCard(image: img2)
+                    let top = img.topHalf
+                    let mid = img.middleHalf
+                    let bottom = img.bottomHalf
+                    
+                    self.topImageViews[0].image = top?.leftHalf
+                    self.topImageViews[1].image = top?.centerHalf
+                    self.topImageViews[2].image = top?.rightHalf
+                    
+                    self.topImageViews[3].image = mid?.leftHalf
+                    self.topImageViews[4].image = mid?.centerHalf
+                    self.topImageViews[5].image = mid?.rightHalf
+                    
+                    self.topImageViews[6].image = bottom?.leftHalf
+                    self.topImageViews[7].image = bottom?.centerHalf
+                    self.topImageViews[8].image = bottom?.rightHalf
+                    
+                    var count = 0
+                    let pangesture = UIPanGestureRecognizer(target: self, action: #selector(self.isCollect))
+                    self.topImageViews.forEach { (img) in
+                        img.tag = count
+                        img.layer.borderWidth = 1
+                        img.layer.borderColor = UIColor.black.cgColor
+                        count = count + 1
+                        img.isUserInteractionEnabled = true
+                        img.addGestureRecognizer(pangesture)
+                    }
+                    self.randomImageCard.forEach({ (img) in
+                        img.isUserInteractionEnabled = true
+                        img.layer.borderWidth = 1
+                        img.layer.borderColor = UIColor.black.cgColor
+                        let pangesture = UIPanGestureRecognizer(target: self, action: #selector(self.handleCard))
+                        pangesture.minimumNumberOfTouches = 1
+                        img.addGestureRecognizer(pangesture)
+                    })
                 }
-                
-                
-                self.randomImageCard.forEach({ (img) in
-                    img.isUserInteractionEnabled = true
-                    img.layer.borderWidth = 1
-                    img.layer.borderColor = UIColor.black.cgColor
-                    let pangesture = UIPanGestureRecognizer(target: self, action: #selector(self.handleCard))
-                    pangesture.minimumNumberOfTouches = 1
-                    img.addGestureRecognizer(pangesture)
-                })
             }
-        }
+        })
     }
     
     @objc func isCollect(sender: UIPanGestureRecognizer) {

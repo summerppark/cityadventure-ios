@@ -6060,19 +6060,19 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <color key="trackTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-e6-eOl">
-                                                        <rect key="frame" x="57" y="8" width="2" height="6"/>
+                                                        <rect key="frame" x="57.5" y="8" width="2" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-5d-YjP">
-                                                        <rect key="frame" x="61" y="8" width="14" height="6"/>
+                                                        <rect key="frame" x="61.5" y="8" width="14" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2C-I5-yR0">
-                                                        <rect key="frame" x="44" y="8" width="11" height="6"/>
+                                                        <rect key="frame" x="44.5" y="8" width="11" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -6645,29 +6645,6 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSk-Ee-ca0">
-                                                                <rect key="frame" x="11" y="136" width="80" height="80"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="80" id="8UP-O8-Lon"/>
-                                                                    <constraint firstAttribute="height" constant="80" id="Jkn-h7-GPQ"/>
-                                                                </constraints>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9v-N0-o2U">
-                                                                <rect key="frame" x="103" y="136" width="80" height="80"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="80" id="HhY-VF-ZGK"/>
-                                                                    <constraint firstAttribute="width" constant="80" id="sdw-gm-iJ3"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vp-kY-dWG">
-                                                                <rect key="frame" x="195" y="136" width="80" height="80"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="80" id="Yqk-zA-rky"/>
-                                                                    <constraint firstAttribute="height" constant="80" id="dgB-aD-cpY"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                            </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닥터 다이어리" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unx-6P-m0F">
                                                                 <rect key="frame" x="23" y="224" width="57" height="12"/>
                                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="10"/>
@@ -6686,27 +6663,48 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NjB-bg-FHW">
+                                                                <rect key="frame" x="103.5" y="136" width="80" height="80"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="80" id="5gS-cL-CCN"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="ZCf-Lq-Pqh"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FhL-CR-vDC">
+                                                                <rect key="frame" x="195.5" y="136" width="80" height="80"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="80" id="rHM-D4-63k"/>
+                                                                    <constraint firstAttribute="height" constant="80" id="rzu-KX-mxs"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SuP-l5-RLi">
+                                                                <rect key="frame" x="11" y="136" width="80" height="80"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="80" id="Klx-Jn-vud"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="sIb-k9-VWL"/>
+                                                                </constraints>
+                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="h7x-3d-ZKT" firstAttribute="bottom" secondItem="unx-6P-m0F" secondAttribute="bottom" id="6Wg-nX-vKY"/>
-                                                            <constraint firstItem="unx-6P-m0F" firstAttribute="centerX" secondItem="TSk-Ee-ca0" secondAttribute="centerX" id="7i1-z2-jI7"/>
-                                                            <constraint firstItem="miz-LU-bJ0" firstAttribute="top" secondItem="8Vp-kY-dWG" secondAttribute="bottom" constant="8" id="AA6-VE-5Ig"/>
+                                                            <constraint firstItem="miz-LU-bJ0" firstAttribute="top" secondItem="FhL-CR-vDC" secondAttribute="bottom" constant="8" id="7vI-8f-77g"/>
                                                             <constraint firstItem="h7x-3d-ZKT" firstAttribute="centerX" secondItem="vge-cW-7wm" secondAttribute="centerX" id="AON-tX-0xB"/>
-                                                            <constraint firstItem="b9v-N0-o2U" firstAttribute="centerX" secondItem="vge-cW-7wm" secondAttribute="centerX" id="H42-dG-1tq"/>
-                                                            <constraint firstItem="TSk-Ee-ca0" firstAttribute="top" secondItem="uiI-1z-xw9" secondAttribute="bottom" constant="8" id="J7n-bg-f0o"/>
-                                                            <constraint firstItem="miz-LU-bJ0" firstAttribute="centerX" secondItem="8Vp-kY-dWG" secondAttribute="centerX" id="JPg-Sf-teH"/>
+                                                            <constraint firstItem="NjB-bg-FHW" firstAttribute="top" secondItem="uiI-1z-xw9" secondAttribute="bottom" constant="8" id="FbV-3i-bPO"/>
+                                                            <constraint firstItem="miz-LU-bJ0" firstAttribute="centerX" secondItem="FhL-CR-vDC" secondAttribute="centerX" id="Lan-6G-bPl"/>
+                                                            <constraint firstItem="unx-6P-m0F" firstAttribute="top" secondItem="SuP-l5-RLi" secondAttribute="bottom" constant="8" id="Mpj-PJ-sGf"/>
                                                             <constraint firstAttribute="bottom" secondItem="unx-6P-m0F" secondAttribute="bottom" constant="10" id="Q2r-6i-P0g"/>
                                                             <constraint firstItem="miz-LU-bJ0" firstAttribute="bottom" secondItem="unx-6P-m0F" secondAttribute="bottom" id="XDl-yZ-ejB"/>
-                                                            <constraint firstItem="8Vp-kY-dWG" firstAttribute="leading" secondItem="b9v-N0-o2U" secondAttribute="trailing" constant="12" id="ZYL-rj-WE4"/>
-                                                            <constraint firstItem="unx-6P-m0F" firstAttribute="top" secondItem="TSk-Ee-ca0" secondAttribute="bottom" constant="8" id="dsF-Ce-cra"/>
+                                                            <constraint firstItem="unx-6P-m0F" firstAttribute="centerX" secondItem="SuP-l5-RLi" secondAttribute="centerX" id="ZOY-Xa-QuR"/>
+                                                            <constraint firstItem="FhL-CR-vDC" firstAttribute="leading" secondItem="NjB-bg-FHW" secondAttribute="trailing" constant="12" id="dkG-7K-aCZ"/>
                                                             <constraint firstItem="uiI-1z-xw9" firstAttribute="top" secondItem="vge-cW-7wm" secondAttribute="top" constant="8" id="gP8-Sw-D6A"/>
                                                             <constraint firstItem="miz-LU-bJ0" firstAttribute="top" secondItem="unx-6P-m0F" secondAttribute="top" id="i2s-hf-5OM"/>
+                                                            <constraint firstItem="NjB-bg-FHW" firstAttribute="leading" secondItem="SuP-l5-RLi" secondAttribute="trailing" constant="12" id="iLp-hA-GhA"/>
                                                             <constraint firstItem="h7x-3d-ZKT" firstAttribute="top" secondItem="unx-6P-m0F" secondAttribute="top" id="kAA-Cx-RDq"/>
+                                                            <constraint firstItem="NjB-bg-FHW" firstAttribute="centerX" secondItem="vge-cW-7wm" secondAttribute="centerX" id="loo-ji-1rY"/>
                                                             <constraint firstAttribute="trailing" secondItem="uiI-1z-xw9" secondAttribute="trailing" constant="8" id="pdE-wM-qr1"/>
                                                             <constraint firstItem="uiI-1z-xw9" firstAttribute="leading" secondItem="vge-cW-7wm" secondAttribute="leading" constant="8" id="t1z-0x-Crb"/>
-                                                            <constraint firstItem="b9v-N0-o2U" firstAttribute="leading" secondItem="TSk-Ee-ca0" secondAttribute="trailing" constant="12" id="vSR-Pk-rom"/>
-                                                            <constraint firstItem="h7x-3d-ZKT" firstAttribute="top" secondItem="b9v-N0-o2U" secondAttribute="bottom" constant="8" id="zPZ-Pn-eQ0"/>
+                                                            <constraint firstItem="h7x-3d-ZKT" firstAttribute="top" secondItem="NjB-bg-FHW" secondAttribute="bottom" constant="8" id="wHx-Ed-XxC"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -6726,7 +6724,6 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="mrX-mJ-5fk" secondAttribute="height" multiplier="1:1" id="v7Y-Wo-qQg"/>
                                                 </constraints>
-                                                <state key="normal" image="btn_map_backView"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6n-uF-PwA">
                                                 <rect key="frame" x="3" y="160" width="42" height="42"/>
@@ -6856,18 +6853,18 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                         <outlet property="bottomTextView" destination="uiI-1z-xw9" id="GZL-qX-ajp"/>
                         <outlet property="closeButton" destination="2Vg-jc-H8Y" id="rbi-ev-Jxy"/>
                         <outlet property="customCloseButton" destination="lLQ-qL-Jb3" id="6ZW-Ih-I1e"/>
+                        <outlet property="firstLandMark" destination="SuP-l5-RLi" id="LnS-4F-NuL"/>
                         <outlet property="flipButton" destination="EE3-H9-U7R" id="Y2M-RQ-kjn"/>
                         <outlet property="frontBackGround" destination="TnI-Yj-fvV" id="ew6-6L-pYP"/>
                         <outlet property="frontImageView" destination="zlb-07-sXT" id="j4g-wR-WEg"/>
                         <outlet property="frontView" destination="akW-vF-xmi" id="1uE-Jk-Z7n"/>
                         <outlet property="helpButton" destination="KAq-TG-2KK" id="4Rh-mQ-o6e"/>
                         <outlet property="infoView" destination="mLz-1K-5yU" id="OKE-rN-UQo"/>
+                        <outlet property="lastLandMark" destination="FhL-CR-vDC" id="6zq-p2-sIw"/>
                         <outlet property="mainView" destination="H7c-Fk-DON" id="d7F-5Y-Rb8"/>
+                        <outlet property="middleLandMark" destination="NjB-bg-FHW" id="fuC-f8-fhK"/>
                         <outlet property="nationInfoButton" destination="nHQ-7D-7lJ" id="iAQ-3t-sAV"/>
                         <outlet property="travelInfoButton" destination="JxY-s4-8bX" id="by8-6V-ApA"/>
-                        <outletCollection property="bottomMaps" destination="TSk-Ee-ca0" collectionClass="NSMutableArray" id="h6F-T9-CNn"/>
-                        <outletCollection property="bottomMaps" destination="b9v-N0-o2U" collectionClass="NSMutableArray" id="huM-qC-T9B"/>
-                        <outletCollection property="bottomMaps" destination="8Vp-kY-dWG" collectionClass="NSMutableArray" id="W4u-QT-5Nh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWy-V7-SBL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -7185,6 +7182,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DuG-qf-xPC">
                                 <rect key="frame" x="132" y="88" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="7Lo-SS-MhF"/>
                                     <constraint firstAttribute="width" constant="110" id="kmZ-Ou-VjD"/>
@@ -7192,6 +7190,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SHD-Xn-jmV">
                                 <rect key="frame" x="242" y="88" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="mar-zT-l5q"/>
                                     <constraint firstAttribute="width" constant="110" id="wEU-nh-ZPD"/>
@@ -7199,42 +7198,50 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="REi-kA-pfm">
                                 <rect key="frame" x="22" y="88" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="geL-db-Kfd"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GAR-q4-nbn">
                                 <rect key="frame" x="132" y="168" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wtL-Rs-i2Z">
                                 <rect key="frame" x="242" y="168" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="Pik-0t-Q4B"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XjV-h7-nDx">
                                 <rect key="frame" x="22" y="168" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="LQs-SW-0ZI"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rqk-LE-BP3">
                                 <rect key="frame" x="132" y="248" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i4T-ir-16E">
                                 <rect key="frame" x="22" y="248" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="P2f-6A-0wE"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vfC-bk-okC">
                                 <rect key="frame" x="242" y="248" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="nCj-El-Sju"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D9L-sX-xUX">
                                 <rect key="frame" x="132.5" y="403" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="Apc-wS-VYR"/>
                                     <constraint firstAttribute="height" constant="80" id="L5V-vx-e0s"/>
@@ -7242,6 +7249,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qYy-XX-STD">
                                 <rect key="frame" x="242.5" y="403" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="j9g-90-Jw6"/>
                                     <constraint firstAttribute="width" constant="110" id="pU9-i8-4qZ"/>
@@ -7249,6 +7257,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C4O-uW-b3U">
                                 <rect key="frame" x="22.5" y="403" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="EeY-6j-0t8"/>
                                     <constraint firstAttribute="height" constant="80" id="vv6-LL-eah"/>
@@ -7256,12 +7265,14 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dM9-uH-FpL">
                                 <rect key="frame" x="132.5" y="483" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="96M-9A-6O6"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="27W-kh-HxG">
                                 <rect key="frame" x="242.5" y="483" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="HTp-Rj-yqv"/>
                                     <constraint firstAttribute="width" constant="110" id="gsH-El-hiF"/>
@@ -7269,6 +7280,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cf5-hC-gqw">
                                 <rect key="frame" x="22.5" y="483" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="EfO-tA-AKE"/>
                                     <constraint firstAttribute="width" constant="110" id="QtN-5L-S2b"/>
@@ -7276,12 +7288,14 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P3R-iN-Uby">
                                 <rect key="frame" x="132.5" y="563" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="4kB-Ka-TaH"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bpT-g4-o45">
                                 <rect key="frame" x="22.5" y="563" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="110" id="Tm5-NT-0lf"/>
                                     <constraint firstAttribute="height" constant="80" id="wo1-g9-qxx"/>
@@ -7289,6 +7303,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2cD-b7-M1r">
                                 <rect key="frame" x="242.5" y="563" width="110" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="KYM-mg-ol6"/>
                                     <constraint firstAttribute="width" constant="110" id="O6B-yf-5zF"/>
@@ -8268,7 +8283,6 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="btn_frint_nationInfo" width="520" height="139"/>
         <image name="btn_game_next" width="767" height="296"/>
         <image name="btn_left_pink" width="153" height="180"/>
-        <image name="btn_map_backView" width="607" height="607"/>
         <image name="btn_menu_close" width="213" height="178"/>
         <image name="btn_menu_top" width="128" height="244"/>
         <image name="btn_mgnt_profile" width="263" height="103"/>

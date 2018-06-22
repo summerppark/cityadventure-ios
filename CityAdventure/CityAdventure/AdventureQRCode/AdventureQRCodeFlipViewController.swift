@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 extension UIView {
     func roundCorners(corners:UIRectCorner, radius: CGFloat) {
@@ -22,9 +23,7 @@ extension UIView {
 class AdventureQRCodeFlipViewController: BaseViewController {
     
     @IBOutlet weak var flipButton: UIButton!
-    
     @IBOutlet weak var mainView: UIView!
-    
     @IBOutlet weak var helpButton: UIButton! {
         didSet {
             helpButton.addTarget(self, action: #selector(helpView), for: .touchUpInside)
@@ -94,6 +93,36 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     
     
     
+    @IBOutlet weak var firstLandMark: UIImageView! {
+        didSet {
+            firstLandMark.layer.cornerRadius = 8.0
+            firstLandMark.layer.borderWidth = 3.0
+            firstLandMark.layer.borderColor = UIColor().colorFromHex("#ff4863").cgColor
+            firstLandMark.clipsToBounds = true
+        }
+    }
+    
+    
+    @IBOutlet weak var middleLandMark: UIImageView! {
+        didSet {
+            middleLandMark.layer.cornerRadius = 8.0
+            middleLandMark.layer.borderWidth = 3.0
+            middleLandMark.layer.borderColor = UIColor().colorFromHex("#ff4863").cgColor
+            middleLandMark.clipsToBounds = true
+        }
+    }
+    
+    
+    @IBOutlet weak var lastLandMark: UIImageView! {
+        didSet {
+            lastLandMark.layer.cornerRadius = 8.0
+            lastLandMark.layer.borderWidth = 3.0
+            lastLandMark.layer.borderColor = UIColor().colorFromHex("#ff4863").cgColor
+            lastLandMark.clipsToBounds = true
+        }
+    }
+    
+    
     // BACK VIEW
     
     
@@ -125,7 +154,14 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     }
     
     @IBInspectable
-    @IBOutlet weak var backMaplocationButton: UIButton!
+    @IBOutlet weak var backMaplocationButton: UIButton! {
+        didSet {
+            backMaplocationButton.layer.cornerRadius = 8.0
+            backMaplocationButton.layer.borderWidth = 8.0
+            backMaplocationButton.layer.borderColor = UIColor().colorFromHex("#ff4863").cgColor
+            backMaplocationButton.clipsToBounds = true
+        }
+    }
     
     @IBOutlet weak var backborderView: UIView! {
         didSet {
@@ -157,14 +193,9 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         return view
     }()
     
-    @IBOutlet var bottomMaps: [UIButton]!
-    
     
     @IBOutlet weak var infoView: UIView!
-    
-    
-    
-    
+   
     var flipToggle: Bool = false
     var cityNumber: String = ""
 
@@ -179,21 +210,35 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(cityNumber , " is result" )
+        
         backView.isHidden = true
+        
+        
+        // 제스쳐 등록
+        addGestureRecognizerImages()
+        
+        
+        
+        // Imageload Front
+        // cityNumber
+        //
+        // 이미지 셋팅
+        setImagesAllContents(cityNumbers: "1")
+        
+        //텍스트 데이타 셋팅
+        setTextDataSetting()
+      
+    }
+    
+    func setTextDataSetting() {
+        
+    }
+    
+    func addGestureRecognizerImages() {
+        // HelpImage
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideHelpView))
         helpImage.addGestureRecognizer(tapGesture)
-        
-        
-        
-        bottomMaps.forEach { (btn) in
-            btn.layer.cornerRadius = 8.0
-            btn.layer.borderWidth = 3.0
-            btn.layer.borderColor = UIColor().colorFromHex("#ff4863").cgColor
-            btn.clipsToBounds = true
-        }
-        
-        
+        // Swipe Gesture
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
         swipeGesture.direction = .left
         let swipeGesture2 = UISwipeGestureRecognizer(target: self, action: #selector(swipe))
@@ -201,11 +246,36 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         mainView.addGestureRecognizer(swipeGesture)
         mainView.addGestureRecognizer(swipeGesture2)
         
-        
         infoView.isUserInteractionEnabled = true
         let infoTapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedInfoView))
         infoView.addGestureRecognizer(infoTapGesture)
         
+        // LandMark
+        let tappedLandmark = UITapGestureRecognizer(target: self, action: #selector(landmark(sender:)))
+        firstLandMark.addGestureRecognizer(tappedLandmark)
+        let tappedLandmark2 = UITapGestureRecognizer(target: self, action: #selector(landmark(sender:)))
+        middleLandMark.addGestureRecognizer(tappedLandmark2)
+        let tappedLandmark3 = UITapGestureRecognizer(target: self, action: #selector(landmark(sender:)))
+        lastLandMark.addGestureRecognizer(tappedLandmark3)
+    }
+    
+    @objc func landmark(sender: UITapGestureRecognizer) {
+        print(sender.view?.tag)
+    }
+    
+    
+    func setImagesAllContents(cityNumbers: String) {
+        // 전면 앞
+        frontImageView.kf.setImage(with: URL(string: APIUrls.getImageFlipFront(cardNumber: "001")))
+        
+        
+        backMaplocationButton.kf.setImage(with:  URL(string: APIUrls.getImageMinimap(cardNumber: cityNumbers)), for: .normal)
+        
+        
+        self.firstLandMark.kf.setImage(with: URL(string:APIUrls.getImagelandMark(cardNumber: cityNumbers, index: "1")))
+        self.middleLandMark.kf.setImage(with: URL(string:APIUrls.getImagelandMark(cardNumber: cityNumbers, index: "2")))
+        self.lastLandMark.kf.setImage(with: URL(string:APIUrls.getImagelandMark(cardNumber: cityNumbers, index: "3")))
+
     }
     
     @objc func swipe(sender: UISwipeGestureRecognizer) {
@@ -332,12 +402,12 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     
     @IBAction func tappedPuzzle(_ sender: UIButton) {
         if let puzzle = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodePuzzleViewController") as? AdventureQRCodePuzzleViewController {
+            
+            // 어떤 도시인지 숫자를 알려주어야 함
+            puzzle.puzzleCity = "3"
             self.navigationController?.pushViewController(puzzle, animated: true)
         }
     }
-    
-   
-    
 }
 
 

@@ -8,13 +8,9 @@
 
 import UIKit
 
-
-
-
 class MyCollectCityViewController: BaseViewController {
     
     @IBOutlet weak var cityCollectionView: UICollectionView!
-    
     @IBOutlet weak var selectCitysView: HADropDown! {
         didSet {
             selectCitysView.layer.cornerRadius = 8.0
@@ -70,7 +66,7 @@ class MyCollectCityViewController: BaseViewController {
         cityArray = DataManager.shared.citynumbers
         cityCollectionView.reloadData()
 
-        
+        dataSetting()
         layoutCheck()
     }
     
@@ -177,9 +173,6 @@ extension MyCollectCityViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("DataManager.shared.citynumbers.count",  DataManager.shared.citynumbers.count)
         return cityArray.count
-        
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

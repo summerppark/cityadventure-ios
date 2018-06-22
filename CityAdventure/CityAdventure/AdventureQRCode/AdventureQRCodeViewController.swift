@@ -45,7 +45,11 @@ class AdventureQRCodeViewController: BaseViewController {
         super.viewDidLoad()
         layoutCheck()
         dataSetting()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dataSetting()
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,7 +59,6 @@ class AdventureQRCodeViewController: BaseViewController {
     func layoutCheck() {
         //iPhoneX 는 네비게이션,스테이터스바 가 다른형식임
         if Constants.DeviceType.IS_IPHONE_X {
-            
             // iPhone X 일 때 레이아웃
         }
         
@@ -67,9 +70,7 @@ class AdventureQRCodeViewController: BaseViewController {
         if Constants.DeviceType.IS_IPHONE_X || Constants.DeviceType.IS_IPHONE_6P {
             squareHeight.constant = 340
             textTopConstraint.constant = 78
-            
         }
-    
     }
     
     @IBAction func unWindQRCodeVC(_ segue: UIStoryboardSegue) {
@@ -104,19 +105,16 @@ class AdventureQRCodeViewController: BaseViewController {
     
     
     @IBAction func goToQRCodeReader(_ sender: Any) {
-        
         if let qrCodeReaderView = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeReaderViewController") as? AdventureQRCodeReaderViewController {
             self.navigationController?.pushViewController(qrCodeReaderView, animated: true)
         }
     }
     
     @IBAction func goToMyCollectionView(_ sender: Any) {
-        
         if let collect = storyboard?.instantiateViewController(withIdentifier: "MyCollectCityViewController") as? MyCollectCityViewController {
             self.navigationController?.pushViewController(collect, animated: true)
         }
     }
-    
     
     // 상단 뷰 데이타 셋팅
     func dataSetting() {
