@@ -1014,7 +1014,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J5QNJTJL72;
+				DEVELOPMENT_TEAM = K4258937QK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1047,7 +1047,7 @@
 					"-force_load",
 					"$(SRCROOT)/KakaoOpenSDK.framework/KakaoOpenSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bubu.CityAdventure;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bubu.City-Adventure";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMDBDatabase_Header.h";
 				SWIFT_VERSION = 4.0;
@@ -1061,7 +1061,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J5QNJTJL72;
+				DEVELOPMENT_TEAM = K4258937QK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1094,7 +1094,7 @@
 					"-force_load",
 					"$(SRCROOT)/KakaoOpenSDK.framework/KakaoOpenSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bubu.CityAdventure;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bubu.City-Adventure";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/FMDBDatabase_Header.h";
 				SWIFT_VERSION = 4.0;
