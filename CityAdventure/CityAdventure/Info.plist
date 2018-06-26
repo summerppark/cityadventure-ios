@@ -60,9 +60,9 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>YES</string>
+	<string>QR코드 인식을 위해서 카메라 사용권한이 필요합니다.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>YES</string>
+	<string>앨범을 접근하기 위해서는 권한이 필요합니다.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>GodoB.otf</string>

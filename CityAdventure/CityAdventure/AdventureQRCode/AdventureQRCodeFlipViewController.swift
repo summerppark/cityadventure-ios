@@ -130,16 +130,6 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         didSet {
             backView.layer.cornerRadius = 8.0
             backView.clipsToBounds = true
-
-//            backView.layer.masksToBounds = false
-//            backView.layer.shadowColor = UIColor.gray.cgColor
-//            backView.layer.shadowOpacity = 1
-//            backView.layer.shadowOffset = CGSize(width: 5, height: 5)
-//            backView.layer.shadowRadius = 8.0
-//
-//            backView.layer.shadowPath = UIBezierPath(rect: backView.bounds).cgPath
-//            backView.layer.shouldRasterize = true
-            
         }
     }
     
@@ -223,7 +213,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         // cityNumber
         //
         // 이미지 셋팅
-        setImagesAllContents(cityNumbers: "1")
+        setImagesAllContents(cityNumbers: String(cityNumber.dropLast()))
         
         //텍스트 데이타 셋팅
         setTextDataSetting()
@@ -266,15 +256,33 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     
     func setImagesAllContents(cityNumbers: String) {
         // 전면 앞
-        frontImageView.kf.setImage(with: URL(string: APIUrls.getImageFlipFront(cardNumber: "001")))
+        
+        var imageNumber: String = ""
+        
+        if let number = Int(cityNumbers) {
+            if number < 10 {
+                imageNumber = "00\(number)"
+            } else if number < 100 {
+                imageNumber = "0\(number)"
+            } else {
+                imageNumber = String(number)
+            }
+        }
+      
+        
+        frontImageView.kf.setImage(with: URL(string: APIUrls.getImageFlipFront(cardNumber: imageNumber)))
         
         
         backMaplocationButton.kf.setImage(with:  URL(string: APIUrls.getImageMinimap(cardNumber: cityNumbers)), for: .normal)
         
-        
+        // LandMark 이미지
         self.firstLandMark.kf.setImage(with: URL(string:APIUrls.getImagelandMark(cardNumber: cityNumbers, index: "1")))
         self.middleLandMark.kf.setImage(with: URL(string:APIUrls.getImagelandMark(cardNumber: cityNumbers, index: "2")))
         self.lastLandMark.kf.setImage(with: URL(string:APIUrls.getImagelandMark(cardNumber: cityNumbers, index: "3")))
+        
+        
+        // LandMark 이름
+        
 
     }
     

@@ -27,6 +27,7 @@
 		6673644F2089B32C0098E8E0 /* ButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673644E2089B32C0098E8E0 /* ButtonExtensions.swift */; };
 		667364542089C8D00098E8E0 /* ExerciseGameDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667364532089C8D00098E8E0 /* ExerciseGameDB.swift */; };
 		667364562089D9AA0098E8E0 /* prepareDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 667364552089D2B50098E8E0 /* prepareDB.sqlite */; };
+		667AF8A520E249710068C125 /* CityCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AF8A420E249710068C125 /* CityCardInfo.swift */; };
 		66A05F29208989B500CDCF4C /* ExerciseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */; };
 		66C8CBDE20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8CBDD20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift */; };
 		66C8CBE020CFC95000C89F4C /* AvdentureQRCodeTravelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8CBDF20CFC95000C89F4C /* AvdentureQRCodeTravelInfo.swift */; };
@@ -176,6 +177,7 @@
 		6673644E2089B32C0098E8E0 /* ButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtensions.swift; sourceTree = "<group>"; };
 		667364532089C8D00098E8E0 /* ExerciseGameDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGameDB.swift; sourceTree = "<group>"; };
 		667364552089D2B50098E8E0 /* prepareDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = prepareDB.sqlite; sourceTree = "<group>"; };
+		667AF8A420E249710068C125 /* CityCardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCardInfo.swift; sourceTree = "<group>"; };
 		66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGameViewController.swift; sourceTree = "<group>"; };
 		66C8CBDD20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeBoardPopUp.swift; sourceTree = "<group>"; };
 		66C8CBDF20CFC95000C89F4C /* AvdentureQRCodeTravelInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvdentureQRCodeTravelInfo.swift; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 				CE300638207C7F6D00E90DC3 /* UserAccountInfo.swift */,
 				CE30063C207CAD0A00E90DC3 /* UserCardInfo.swift */,
 				667364532089C8D00098E8E0 /* ExerciseGameDB.swift */,
+				667AF8A420E249710068C125 /* CityCardInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 				6665F9AF2088914600A5D2BE /* AdventureExerciseViewController.swift in Sources */,
 				CE1DA22D206B7EE5000C36B2 /* SignUpViewThirdController.swift in Sources */,
 				CED8C4AB207212B000286A61 /* FMDatabaseQueue.m in Sources */,
+				667AF8A520E249710068C125 /* CityCardInfo.swift in Sources */,
 				CE642C1B2074D1CC000C2F01 /* LoginResponse.swift in Sources */,
 				CE794FFC20A348F9000BC59C /* AdventureQRCodeViewController.swift in Sources */,
 				66E3EA3C20DCED4E00269E6B /* APIManager_Exercise.swift in Sources */,
