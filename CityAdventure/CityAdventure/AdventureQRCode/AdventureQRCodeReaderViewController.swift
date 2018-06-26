@@ -28,13 +28,11 @@ class AdventureQRCodeReaderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
-//            result.cityNumber = "수원"
-////            if let stringValue = (object as? AVMetadataMachineReadableCodeObject)?.stringValue {
-////                result.cityNumber = stringValue
-////            }
-//            self.navigationController?.pushViewController(result, animated: true)
-//        }
+        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
+            result.cityNumber = "150a"
+            
+            self.navigationController?.pushViewController(result, animated: true)
+        }
         
         guard let captureDevice =  AVCaptureDevice.default(for: .video) else { return }
         

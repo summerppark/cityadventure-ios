@@ -27,34 +27,11 @@ class LaunchScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // navi hidden
-        
-        makeDB()
-        
-        
-        Alamofire.request("http://www.bubu-expedition.com/API/v1/cityCards", method: .get, parameters: nil, encoding: JSONEncoding.default).responseObject { (response: DataResponse<CityCardInfo>) in
-            print("DBInfo",response.result.value)
-            
-            guard let city = response.result.value?.cityInfo else { return }
-            let db = FMDatabase(path: self.cardCityDBPath)
-            city.forEach({ (data) in
-                
-                print(data.t_cityExplain)
-//                if db.open() {
-//                    let insertSQL = "INSERT INTO CardCityInfo (S_NAME,S_TYPE ,UI_PROVINCE ,UI_CITYNO ,UTI_CARDNO ,S_KANJI ,T_KANJIEXPLAIN ,T_SLOGAN,T_CITYEXPLAIN,T_TOURURL,VERSION) values (\(data.s_name!), \(data.s_type!), \(data.ui_province!), \(data.ui_cityNo!), \(data.uti_cardNo!), \(data.s_kanji!), \(data.t_kanjiExplain!), \(data.t_slogan!), \(data.t_cityExplain!), \(data.t_tourURL!), \(data.version!) )"
-//
-//                    db.executeQuery(insertSQL, withArgumentsIn: [])
-//
-//                }
-            })
-            
-            
-            
-            
-            
-        }
-        
-        
-    
+        // db 내용에 '' 가 포함되어 FMDB INSERT 쿼리문 에러발생.
+        // BUNDLE -> CityCard 대체
+//        makeDB()
+//        insertDB()
+
         self.navigationController?.navigationBar.isHidden = true
         
     }
@@ -73,27 +50,37 @@ class LaunchScreenViewController: UIViewController {
             
             let contactDB = FMDatabase(path: dirPath!)
             if contactDB.open() {
-                let createQuery = "CREATE TABLE IF NOT EXISTS CardCityInfo ( ID INTEGER PRIMARY KEY AUTOINCREMENT , S_NAME TEXT, S_TYPE TEXT, UI_PROVINCE TEXT, UI_CITYNO TEXT, UTI_CARDNO TEXT, S_KANJI TEXT, T_KANJIEXPLAIN TEXT, T_SLOGAN TEXT, T_CITYEXPLAIN TEXT, T_TOURURL TEXT, VERSION TEXT )"
+                let createQuery = "CREATE TABLE IF NOT EXISTS CardCityInfo (ID INTEGER PRIMARY KEY AUTOINCREMENT, S_NAME TEXT, S_TYPE TEXT, UI_PROVINCE INTEGER, UI_CITYNO INTEGER, UTI_CARDNO INTEGER, S_KANJI TEXT, T_KANJIEXPLAIN TEXT, T_SLOGAN TEXT, T_CITYEXPLAIN TEXT, T_TOURURL TEXT, VERSION INTEGER)"
                 
                 if !contactDB.executeStatements(createQuery) {
                     print("contactDB Execute Fail", contactDB.lastError())
                 }
                 contactDB.close()
             }
-            
         } else {
             print("이미 있다.")
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    }
+    
+    func insertDB() {
+        Alamofire.request("http://www.bubu-expedition.com/API/v1/cityCards", method: .get, parameters: nil, encoding: JSONEncoding.default).responseObject { (response: DataResponse<CityCardInfo>) in
+            print("DBInfo",response.result.value)
+            
+            guard let city = response.result.value?.cityInfo else { return }
+            let db = FMDatabase(path: self.cardCityDBPath)
+            city.forEach({ (data) in
+                if db.open() {
+                    let insertSQL = "INSERT INTO CardCityInfo (S_NAME,S_TYPE ,UI_PROVINCE ,UI_CITYNO ,UTI_CARDNO ,S_KANJI ,T_KANJIEXPLAIN ,T_SLOGAN,T_CITYEXPLAIN,T_TOURURL,VERSION) VALUES ('\(data.s_name ?? "")', '\(data.s_type ?? "")', '\(data.ui_province ?? 999)', '\(data.ui_cityNo ?? 999)', '\(data.uti_cardNo ?? 999)', '\(data.s_kanji ?? "")', '\(data.t_kanjiExplain ?? "")', '\(data.t_slogan ?? "")', ' test\')', '\(data.t_tourURL ?? "")', '\(data.version ?? 999)')"
+                    
+                    do {
+                        try db.executeUpdate(insertSQL, values: nil)
+                    } catch {
+                        print(db.lastError())
+                    }
+                    
+                }
+            })
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

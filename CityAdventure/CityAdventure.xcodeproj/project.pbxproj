@@ -91,6 +91,7 @@
 		CED8C4B220730B7A00286A61 /* SignUpFinalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4B120730B7A00286A61 /* SignUpFinalPresenter.swift */; };
 		CED8C4BB2073112600286A61 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4BA2073112600286A61 /* BaseResponse.swift */; };
 		CED8C4BF2073498E00286A61 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED8C4BE2073498E00286A61 /* BaseViewController.swift */; };
+		CEDBFF6E20E2985600B375EA /* citycard.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = CEDBFF6D20E291C300B375EA /* citycard.sqlite */; };
 		CEE3B3BE2069E14E00156387 /* SignUpViewSeccondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */; };
 		CEE3B3C4206A22A900156387 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C3206A22A900156387 /* Account.swift */; };
 		CEE3B3C7206A2C9600156387 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3B3C6206A2C9600156387 /* StringExtensions.swift */; };
@@ -252,6 +253,7 @@
 		CED8C4B120730B7A00286A61 /* SignUpFinalPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFinalPresenter.swift; sourceTree = "<group>"; };
 		CED8C4BA2073112600286A61 /* BaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
 		CED8C4BE2073498E00286A61 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CEDBFF6D20E291C300B375EA /* citycard.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = citycard.sqlite; sourceTree = "<group>"; };
 		CEE3B3BD2069E14E00156387 /* SignUpViewSeccondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewSeccondController.swift; sourceTree = "<group>"; };
 		CEE3B3C3206A22A900156387 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		CEE3B3C6206A2C9600156387 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				CEAAE7DC206E0289006C2F88 /* cityNumber.sqlite */,
+				CEDBFF6D20E291C300B375EA /* citycard.sqlite */,
 				667364552089D2B50098E8E0 /* prepareDB.sqlite */,
 			);
 			path = Database;
@@ -731,6 +734,7 @@
 				6665F9B32088B26400A5D2BE /* Assets.xcassets in Resources */,
 				CEF716472064D2BF00B457E9 /* loading.gif in Resources */,
 				CEF716392064CB1900B457E9 /* Main.storyboard in Resources */,
+				CEDBFF6E20E2985600B375EA /* citycard.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

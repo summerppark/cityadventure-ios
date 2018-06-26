@@ -257,6 +257,8 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     func setImagesAllContents(cityNumbers: String) {
         // 전면 앞
         
+        print("ㅉ", DataManager.shared.cityCards.count)
+    
         var imageNumber: String = ""
         
         if let number = Int(cityNumbers) {

@@ -18,7 +18,7 @@ class DataManager {
     var randomChar: [String] = []
     var randomCharArray:[String] = []
     var groupCities: [Int32: [String]] = [Int32:[String]]()
-    
+    var cityCards: [CityCardLocalDB] = []
     
     static var adventureExercise: Int = 0
     static let shared: DataManager = DataManager()
@@ -47,7 +47,6 @@ class DataManager {
         
         
         // 힌트정보를 가져온다.
-        
         let hintDB = Bundle.main.path(forResource: "prepareDB", ofType: "sqlite")
         print("HintDB",hintDB)
         let hintPath = FMDatabase(path: hintDB)
@@ -65,6 +64,35 @@ class DataManager {
         }
 
         hintPath.close()
+        
+        
+        let cityCard = Bundle.main.path(forResource: "citycard", ofType: "sqlite")
+        let cityCardDB = FMDatabase(path: cityCard)
+        print("CityCardDB:",cityCardDB.databasePath)
+        if cityCardDB.open() {
+            let fetchQuery = "SELECT * FROM citycard"
+            guard let results: FMResultSet = cityCardDB.executeQuery(fetchQuery, withArgumentsIn: []) else {
+                print("실패")
+                return }
+            
+            while results.next() == true {
+                let col = CityCardLocalDB.init(s_name: results.string(forColumn: "s_name") ?? "",
+                                     s_type: results.string(forColumn: "s_type") ?? "",
+                                     ui_province: results.int(forColumn: "ui_province"),
+                                     ui_cityNo: results.int(forColumn: "ui_cityNo"),
+                                     uti_cardNo: results.int(forColumn: "uti_cardNo"),
+                                     s_kanji: results.string(forColumn: "s_kanji") ?? "",
+                                     t_kanjiExplain: results.string(forColumn: "t_kanjiExplain") ?? "",
+                                     t_slogan: results.string(forColumn: "t_slogan") ?? "",
+                                     t_cityExplain: results.string(forColumn: "t_cityExplain") ?? "",
+                                     t_tourURL: results.string(forColumn: "t_tourURL") ?? "",
+                                     version: results.int(forColumn: "version"))
+                
+                print(col, "TEST")
+                cityCards.append(col)
+            }
+        }
+        cityCardDB.close()
     }
     
   
