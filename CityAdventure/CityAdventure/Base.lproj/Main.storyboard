@@ -657,7 +657,7 @@
                                 <rect key="frame" x="45.5" y="163.5" width="284" height="340"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앗!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDG-Vf-3yG">
-                                        <rect key="frame" x="125.5" y="40" width="34" height="30"/>
+                                        <rect key="frame" x="125" y="40" width="34" height="30"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="26"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -758,7 +758,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 변경 실패" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdq-1w-zw0">
-                                                <rect key="frame" x="73" y="8" width="165.5" height="24"/>
+                                                <rect key="frame" x="73.5" y="8" width="165.5" height="24"/>
                                                 <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="21"/>
                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -778,7 +778,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메일을 확인해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqs-Rz-zPr">
-                                        <rect key="frame" x="80.5" y="100" width="150" height="20"/>
+                                        <rect key="frame" x="81" y="100" width="150" height="20"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -4644,16 +4644,16 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_board_note" translatesAutoresizingMaskIntoConstraints="NO" id="aFC-hD-EmP">
-                                        <rect key="frame" x="30" y="218" width="100" height="80"/>
+                                        <rect key="frame" x="30" y="218" width="110" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="DQn-mS-Br0"/>
+                                            <constraint firstAttribute="width" constant="110" id="DQn-mS-Br0"/>
                                             <constraint firstAttribute="height" constant="80" id="NuI-Q1-CWj"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_board_note" translatesAutoresizingMaskIntoConstraints="NO" id="bq2-JC-9P6">
-                                        <rect key="frame" x="197" y="217.5" width="100" height="80"/>
+                                        <rect key="frame" x="187" y="217.5" width="110" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="Uvg-43-gAI"/>
+                                            <constraint firstAttribute="width" constant="110" id="Uvg-43-gAI"/>
                                             <constraint firstAttribute="height" constant="80" id="sDr-Cn-LTX"/>
                                         </constraints>
                                     </imageView>
@@ -4665,7 +4665,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_board_green" translatesAutoresizingMaskIntoConstraints="NO" id="Tue-Ht-mmS">
-                                        <rect key="frame" x="213" y="245.5" width="32" height="46"/>
+                                        <rect key="frame" x="203" y="245.5" width="32" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="46" id="8rS-hH-2ab"/>
                                             <constraint firstAttribute="width" constant="32" id="ayQ-N5-hlY"/>
@@ -4678,7 +4678,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="505만명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08y-oD-7pV">
-                                        <rect key="frame" x="247" y="261.5" width="42" height="14"/>
+                                        <rect key="frame" x="237" y="261.5" width="42" height="14"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -5694,19 +5694,19 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <color key="trackTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ca3-K1-UhH">
-                                                        <rect key="frame" x="57" y="8" width="2" height="6"/>
+                                                        <rect key="frame" x="57.5" y="8" width="2" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duM-T6-zlH">
-                                                        <rect key="frame" x="61" y="8" width="14" height="6"/>
+                                                        <rect key="frame" x="61.5" y="8" width="14" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Py6-iV-tYI">
-                                                        <rect key="frame" x="44" y="8" width="11" height="6"/>
+                                                        <rect key="frame" x="44.5" y="8" width="11" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -5839,7 +5839,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEP-eY-uhK">
-                                        <rect key="frame" x="70" y="325" width="235" height="45.5"/>
+                                        <rect key="frame" x="70.5" y="325" width="235" height="45.5"/>
                                         <string key="text">스마트폰을 뚱카에 거치하고,
 탐험카드를 준비하세요!</string>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="20"/>
@@ -6060,19 +6060,19 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <color key="trackTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-e6-eOl">
-                                                        <rect key="frame" x="57.5" y="8" width="2" height="6"/>
+                                                        <rect key="frame" x="57" y="8" width="2" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-5d-YjP">
-                                                        <rect key="frame" x="61.5" y="8" width="14" height="6"/>
+                                                        <rect key="frame" x="61" y="8" width="14" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2C-I5-yR0">
-                                                        <rect key="frame" x="44.5" y="8" width="11" height="6"/>
+                                                        <rect key="frame" x="44" y="8" width="11" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -6741,26 +6741,26 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 <rect key="frame" x="157" y="68" width="162" height="81"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광역시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUY-5c-7xQ">
-                                                        <rect key="frame" x="122.5" y="57" width="46" height="20"/>
+                                                        <rect key="frame" x="109" y="57" width="46" height="20"/>
                                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="부산" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mre-dY-Ue3">
-                                                        <rect key="frame" x="36" y="29.5" width="76.5" height="47.5"/>
-                                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="42"/>
+                                                        <rect key="frame" x="24" y="30.5" width="75" height="46.5"/>
+                                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="41"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="釜     山" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ix-g4-wGY">
-                                                        <rect key="frame" x="53" y="11.5" width="42.5" height="14"/>
-                                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="12"/>
+                                                        <rect key="frame" x="52" y="10.5" width="49.5" height="16"/>
+                                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가마 부  뫼 산" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19y-jL-Imb">
-                                                        <rect key="frame" x="39.5" y="-4.5" width="69.5" height="14"/>
-                                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="12"/>
+                                                        <rect key="frame" x="24" y="-7" width="75" height="15"/>
+                                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -6768,14 +6768,14 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
-                                                    <constraint firstItem="mre-dY-Ue3" firstAttribute="leading" secondItem="mLz-1K-5yU" secondAttribute="leading" constant="36" id="0It-lM-YTI"/>
+                                                    <constraint firstItem="mre-dY-Ue3" firstAttribute="leading" secondItem="mLz-1K-5yU" secondAttribute="leading" constant="24" id="0It-lM-YTI"/>
                                                     <constraint firstAttribute="bottom" secondItem="tUY-5c-7xQ" secondAttribute="bottom" constant="4" id="6uh-JM-kWR"/>
                                                     <constraint firstAttribute="bottom" secondItem="mre-dY-Ue3" secondAttribute="bottom" constant="4" id="8I4-pK-6vb"/>
                                                     <constraint firstItem="mre-dY-Ue3" firstAttribute="top" secondItem="6ix-g4-wGY" secondAttribute="bottom" constant="4" id="Mfc-YV-krf"/>
+                                                    <constraint firstItem="mre-dY-Ue3" firstAttribute="centerX" secondItem="6ix-g4-wGY" secondAttribute="centerX" multiplier="0.8" id="QCq-UO-G9l"/>
+                                                    <constraint firstItem="19y-jL-Imb" firstAttribute="centerX" secondItem="mre-dY-Ue3" secondAttribute="centerX" id="RUg-Mj-cfM"/>
                                                     <constraint firstItem="6ix-g4-wGY" firstAttribute="top" secondItem="19y-jL-Imb" secondAttribute="bottom" constant="2" id="VOM-LS-O3o"/>
                                                     <constraint firstItem="tUY-5c-7xQ" firstAttribute="leading" secondItem="mre-dY-Ue3" secondAttribute="trailing" constant="10" id="Vhl-Hr-2V9"/>
-                                                    <constraint firstItem="6ix-g4-wGY" firstAttribute="centerX" secondItem="mre-dY-Ue3" secondAttribute="centerX" id="sHk-by-Rqb"/>
-                                                    <constraint firstItem="19y-jL-Imb" firstAttribute="centerX" secondItem="6ix-g4-wGY" secondAttribute="centerX" id="xQE-Ys-qYM"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Vg-jc-H8Y">
@@ -6851,20 +6851,39 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                         <outlet property="backView" destination="S47-rK-VEI" id="mle-vO-AXj"/>
                         <outlet property="backborderView" destination="uYT-KN-TTy" id="oez-RK-pQk"/>
                         <outlet property="bottomTextView" destination="uiI-1z-xw9" id="GZL-qX-ajp"/>
+                        <outlet property="cityArea" destination="tUY-5c-7xQ" id="cd2-UB-AHg"/>
+                        <outlet property="cityKanji" destination="6ix-g4-wGY" id="J4e-7k-vqg"/>
+                        <outlet property="cityName" destination="mre-dY-Ue3" id="tPQ-zH-9Dw"/>
                         <outlet property="closeButton" destination="2Vg-jc-H8Y" id="rbi-ev-Jxy"/>
+                        <outlet property="currentLevelLabel" destination="Axe-1j-Gwk" id="bI5-My-nRM"/>
                         <outlet property="customCloseButton" destination="lLQ-qL-Jb3" id="6ZW-Ih-I1e"/>
+                        <outlet property="expCurrentLabel" destination="xPU-Fy-adw" id="yna-uw-bkM"/>
+                        <outlet property="expMaxLabel" destination="jaU-Vb-8hJ" id="axC-jC-5Gp"/>
                         <outlet property="firstLandMark" destination="SuP-l5-RLi" id="LnS-4F-NuL"/>
                         <outlet property="flipButton" destination="EE3-H9-U7R" id="Y2M-RQ-kjn"/>
                         <outlet property="frontBackGround" destination="TnI-Yj-fvV" id="ew6-6L-pYP"/>
+                        <outlet property="frontCityName" destination="xVr-84-XUe" id="NIn-Qm-tWg"/>
                         <outlet property="frontImageView" destination="zlb-07-sXT" id="j4g-wR-WEg"/>
                         <outlet property="frontView" destination="akW-vF-xmi" id="1uE-Jk-Z7n"/>
                         <outlet property="helpButton" destination="KAq-TG-2KK" id="4Rh-mQ-o6e"/>
                         <outlet property="infoView" destination="mLz-1K-5yU" id="OKE-rN-UQo"/>
+                        <outlet property="kanjiExplain" destination="19y-jL-Imb" id="vuK-9Z-GKl"/>
+                        <outlet property="landmark_first" destination="unx-6P-m0F" id="ocA-EX-LUT"/>
+                        <outlet property="landmark_second" destination="h7x-3d-ZKT" id="JOh-QT-phi"/>
+                        <outlet property="landmark_third" destination="miz-LU-bJ0" id="ZTl-Qp-kfR"/>
                         <outlet property="lastLandMark" destination="FhL-CR-vDC" id="6zq-p2-sIw"/>
                         <outlet property="mainView" destination="H7c-Fk-DON" id="d7F-5Y-Rb8"/>
                         <outlet property="middleLandMark" destination="NjB-bg-FHW" id="fuC-f8-fhK"/>
+                        <outlet property="myCardsCount" destination="wPI-jJ-Y12" id="8PL-px-fKl"/>
+                        <outlet property="myCoin" destination="QNv-Vi-TLI" id="SDS-Y9-grP"/>
                         <outlet property="nationInfoButton" destination="nHQ-7D-7lJ" id="iAQ-3t-sAV"/>
+                        <outlet property="progressView" destination="ndI-SB-5Lk" id="RcT-CO-ueq"/>
+                        <outlet property="progressViewLeading" destination="3hH-sM-owZ" id="I0f-T8-tc7"/>
+                        <outlet property="sloganTitle" destination="WCH-UA-uYo" id="FYu-xc-0d5"/>
                         <outlet property="travelInfoButton" destination="JxY-s4-8bX" id="by8-6V-ApA"/>
+                        <outlet property="userCharView" destination="vY7-Fs-M6r" id="gJ0-QE-YrD"/>
+                        <outlet property="userNameLabel" destination="3br-cU-aYb" id="13D-TQ-2b4"/>
+                        <outlet property="userNameLabelTrailing" destination="PPa-gf-Bxy" id="QGJ-oN-8z8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWy-V7-SBL" userLabel="First Responder" sceneMemberID="firstResponder"/>

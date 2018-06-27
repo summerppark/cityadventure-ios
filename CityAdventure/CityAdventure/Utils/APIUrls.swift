@@ -76,4 +76,7 @@ class APIUrls {
         return "http://www.bubu-expedition.com/resources/puzzleimages/\(cardNumber).png"
     }
     
+    static func getCityStatistics(index: String) -> String {
+        return "http://www.bubu-expedition.com/API/v1/cities/\(index)/statistics"
+    }
 }

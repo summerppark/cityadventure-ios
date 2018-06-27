@@ -68,7 +68,7 @@ class DataManager {
         
         let cityCard = Bundle.main.path(forResource: "citycard", ofType: "sqlite")
         let cityCardDB = FMDatabase(path: cityCard)
-        print("CityCardDB:",cityCardDB.databasePath)
+        
         if cityCardDB.open() {
             let fetchQuery = "SELECT * FROM citycard"
             guard let results: FMResultSet = cityCardDB.executeQuery(fetchQuery, withArgumentsIn: []) else {
@@ -78,9 +78,8 @@ class DataManager {
             while results.next() == true {
                 let col = CityCardLocalDB.init(s_name: results.string(forColumn: "s_name") ?? "",
                                      s_type: results.string(forColumn: "s_type") ?? "",
-                                     ui_province: results.int(forColumn: "ui_province"),
                                      ui_cityNo: results.int(forColumn: "ui_cityNo"),
-                                     uti_cardNo: results.int(forColumn: "uti_cardNo"),
+                                     ui_cardNo: results.int(forColumn: "ui_cardNo"),
                                      s_kanji: results.string(forColumn: "s_kanji") ?? "",
                                      t_kanjiExplain: results.string(forColumn: "t_kanjiExplain") ?? "",
                                      t_slogan: results.string(forColumn: "t_slogan") ?? "",
@@ -88,7 +87,6 @@ class DataManager {
                                      t_tourURL: results.string(forColumn: "t_tourURL") ?? "",
                                      version: results.int(forColumn: "version"))
                 
-                print(col, "TEST")
                 cityCards.append(col)
             }
         }

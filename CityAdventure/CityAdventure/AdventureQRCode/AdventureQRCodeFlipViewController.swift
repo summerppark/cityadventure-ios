@@ -21,6 +21,30 @@ extension UIView {
 
 
 class AdventureQRCodeFlipViewController: BaseViewController {
+    //탑뷰
+    @IBOutlet weak var userCharView: UIImageView!
+    @IBOutlet weak var currentLevelLabel: UILabel!
+    @IBOutlet weak var expMaxLabel: UILabel!
+    @IBOutlet weak var expCurrentLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var myCardsCount: UILabel!
+    @IBOutlet weak var myCoin: UILabel!
+    
+    @IBOutlet weak var progressView: UIProgressView! {
+        didSet {
+            progressView.layer.borderColor = UIColor.black.cgColor
+            progressView.layer.borderWidth = 1.0
+            progressView.layer.cornerRadius = 4.0
+            progressView.clipsToBounds = true
+        }
+    }
+    
+    @IBOutlet weak var progressViewLeading: NSLayoutConstraint!
+    @IBOutlet weak var userNameLabelTrailing: NSLayoutConstraint!
+    
+    
+    //////
+    
     
     @IBOutlet weak var flipButton: UIButton!
     @IBOutlet weak var mainView: UIView!
@@ -42,6 +66,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var frontCityName: UILabel!
     
     // FRONT VIEW
     @IBOutlet weak var frontView: UIView! {
@@ -197,6 +222,24 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         }
     }
     
+    
+    @IBOutlet weak var cityArea: UILabel! // 광역시
+    @IBOutlet weak var cityName: UILabel! // 부산
+    @IBOutlet weak var cityKanji: UILabel! // 한자
+    @IBOutlet weak var kanjiExplain: UILabel! // 가마부 뫼산
+    @IBOutlet weak var sloganTitle: UILabel!
+    
+    
+    @IBOutlet weak var landmark_first: UILabel!
+    
+    @IBOutlet weak var landmark_second: UILabel!
+    
+    @IBOutlet weak var landmark_third: UILabel!
+    
+    
+    
+    var travelInfoUrl = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -206,8 +249,8 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         
         // 제스쳐 등록
         addGestureRecognizerImages()
-        
-        
+        dataSetting()
+        layoutCheck()
         
         // Imageload Front
         // cityNumber
@@ -216,12 +259,104 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         setImagesAllContents(cityNumbers: String(cityNumber.dropLast()))
         
         //텍스트 데이타 셋팅
-        setTextDataSetting()
-      
+        
+        if let index = Int(String(cityNumber.dropLast())) {
+            print(index ," index")
+            setTextDataSetting(index: index-1)
+        }
+    
+        // 뒷장일 경우 바로 뒷면을 보여준다.
+        if String(cityNumber.removeLast()) == "b" {
+           presentBackView()
+        }
     }
     
-    func setTextDataSetting() {
+    func layoutCheck() {
+        if Constants.DeviceType.IS_IPHONE_6P {
+            progressViewLeading.constant = 12
+            userNameLabelTrailing.constant = 24
+        }
+    }
+    
+    func presentBackView() {
+        flipToggle = true
+        backView.isHidden = false
+        frontView.isHidden = true
+        UIView.transition(with: mainView, duration: 0.25, options: .transitionFlipFromRight, animations: nil, completion: nil)
+    }
+    
+    func setTextDataSetting(index: Int) {
+        let city = DataManager.shared.cityCards[index]
+        var kanjiString = ""
         
+        city.s_kanji.forEach { (char) in
+            kanjiString += "\(char)     "
+        }
+
+        frontCityName.text = "\(city.s_name) \(city.s_type)"
+        cityArea.text = city.s_type
+        cityName.text = city.s_name
+        cityKanji.text = String(kanjiString.dropLast(5))
+        kanjiExplain.text = city.t_kanjiExplain.replacingOccurrences(of: ",", with: "   ")
+  
+        sloganTitle.text = city.t_slogan
+
+        bottomTextView.attributedText = city.t_cityExplain.convertHtml()
+        bottomTextView.font = UIFont.init(name: "GodoM", size: 12.0)
+        
+        travelInfoUrl = city.t_tourURL
+        
+    }
+    
+    // 상단 뷰 데이타 셋팅
+    func dataSetting() {
+        guard let currentExp = DataManager.shared.getUserInfo()?.userInfo?.ui_exp else {
+            return
+        }
+        
+        
+        let level = super.getLevel(exp: currentExp)
+        let curExp = super.getAbsExp(exp: currentExp)
+        let maxExp = super.getNextNeedExpByLevel(level: level)
+        
+        // 현재 레벨을 표현해준다.
+        currentLevelLabel.text = "\(level)"
+        expCurrentLabel.text = "\(curExp)"
+        expMaxLabel.text = "\(maxExp)"
+        
+        print("level = ", level)
+        print("currentExp = ", super.getAbsExp(exp: currentExp))
+        print("maxExp = ", super.getNextNeedExpByLevel(level: level))
+        
+        if let coin = DataManager.shared.getUserInfo()?.userInfo?.ui_credit {
+            myCoin.text = "\(coin)"
+        }
+        
+        if let count = DataManager.shared.getUserCardInfo()?.dataLength {
+            var str = ""
+            if count < 10 {
+                str = "00\(count)"
+            } else if count < 100 {
+                str = "0\(count)"
+            } else {
+                str = "\(count)"
+            }
+            
+            myCardsCount.text = str
+        }
+        
+        if let name = DataManager.shared.getUserInfo()?.userInfo?.s_name {
+            userNameLabel.text = name
+        }
+        
+        
+        if let index = DataManager.shared.getUserInfo()?.userInfo?.ui_avatarNo {
+            print(index)
+            userCharView.image = super.charImages[index-1]
+        }
+        
+        // 프로그레스 뷰 상태를 셋팅
+        progressView.progress = (Float(curExp)/Float(maxExp))
     }
     
     func addGestureRecognizerImages() {
@@ -368,7 +503,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     // 여행정보 보여주기
     @objc func presentWebView() {
         if let travelInfo = storyboard?.instantiateViewController(withIdentifier: "AvdentureQRCodeTravelInfo") as? AvdentureQRCodeTravelInfo {
-            
+            travelInfo.travelInfoUrl = travelInfoUrl
             let navigationController = UINavigationController(rootViewController: travelInfo)
             self.present(navigationController, animated: true, completion: nil)
             
@@ -380,12 +515,8 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     @objc func presentBoard() {
         if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeBoardPopUp") as? AdventureQRCodeBoardPopUp {
             alert.modalPresentationStyle = .overFullScreen
-            
-            alert.titleString = "부산의 면적은 1000㎢ 입니다."
-            alert.subTitleString = "님자: 9,000,000명, 여자: 2,000,000명\n 부산의 인구는 약 1100만명"
-            alert.fmCount = 200
-            alert.mCount = 900
-            
+            alert.cityNumber = cityNumber
+            alert.cityName = self.cityName.text ?? ""
             self.present(alert, animated: false)
         }
     }
@@ -396,14 +527,12 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         print("Tapped")
         if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeTextSoundViewController") as? AdventureQRCodeTextSoundViewController {
             alert.modalPresentationStyle = .overFullScreen
-
             self.present(alert, animated: false)
         }
     }
     
     
     @IBAction func tappedSpeechButton(_ sender: UIButton) {
-        
         if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeTTSDescViewController") as? AdventureQRCodeTTSDescViewController {
             alert.modalPresentationStyle = .overFullScreen
             self.present(alert, animated: false)
@@ -412,9 +541,8 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     
     @IBAction func tappedPuzzle(_ sender: UIButton) {
         if let puzzle = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodePuzzleViewController") as? AdventureQRCodePuzzleViewController {
-            
             // 어떤 도시인지 숫자를 알려주어야 함
-            puzzle.puzzleCity = "3"
+            puzzle.puzzleCity = cityNumber
             self.navigationController?.pushViewController(puzzle, animated: true)
         }
     }

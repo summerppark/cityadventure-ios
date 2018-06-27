@@ -33,7 +33,15 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
         var img = UIImage()
         var img2 = UIImage()
         
-        guard let url = URL(string: APIUrls.getPuzzleImage(cardNumber: self.puzzleCity)) else { return }
+        
+        print(self.puzzleCity)
+        
+        guard let url = URL(string: APIUrls.getPuzzleImage(cardNumber: self.puzzleCity)) else {
+            print("ERROR")
+            super.hideLoading()
+            return
+            
+        }
         
         KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
             DispatchQueue.global().async {

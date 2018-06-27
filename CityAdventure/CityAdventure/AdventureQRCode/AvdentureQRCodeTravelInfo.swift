@@ -17,10 +17,18 @@ class AvdentureQRCodeTravelInfo: BaseViewController {
         }
     }
     
+    
+    var travelInfoUrl = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         settingNavigation()
-        setWebView()
+        if travelInfoUrl == "" {
+            setWebView(url: "www.naver.com")
+        } else {
+            setWebView(url: travelInfoUrl)
+        }
+        
     }
     
     func settingNavigation() {
@@ -36,9 +44,9 @@ class AvdentureQRCodeTravelInfo: BaseViewController {
     }
     
     
-    func setWebView() {
+    func setWebView(url: String) {
         DispatchQueue.global().async { [weak self] in
-            if let url = URL(string: "https://www.naver.com") {
+            if let url = URL(string: url) {
                 let request = URLRequest(url: url)
                 DispatchQueue.main.async { [weak self] in
                     self?.webView.load(request)
@@ -56,7 +64,7 @@ class AvdentureQRCodeTravelInfo: BaseViewController {
 
 extension AvdentureQRCodeTravelInfo: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        super.showLoading(view: self.view)
+        super.showLoading(view: self.webView)
     }
     
     // 로딩 끝
