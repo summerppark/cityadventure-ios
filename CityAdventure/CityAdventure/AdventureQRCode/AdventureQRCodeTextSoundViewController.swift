@@ -37,21 +37,48 @@ class AdventureQRCodeTextSoundViewController: BaseViewController {
         }
     }
     
+    
+    
+    
+    @IBOutlet weak var twoWordBottomView: UIView!
+    @IBOutlet weak var twoWordUpView: UIView!
+    
+    
+    
+    
     @IBOutlet weak var firstKanji: UILabel!
     @IBOutlet weak var secondKanji: UILabel!
     @IBOutlet weak var firstKanjiExp: UILabel!
     @IBOutlet weak var secondKanjiExp: UILabel!
     
-    
     @IBOutlet weak var firstCityname: UILabel!
     @IBOutlet weak var secondCityname: UILabel!
+    
+    
+    
+    
+    
+    @IBOutlet weak var oneKanjiExp: UILabel!
+    @IBOutlet weak var twoKanjiExp: UILabel!
+    @IBOutlet weak var threeKanjiExp: UILabel!
+    
+    
+    @IBOutlet weak var oneKanji: UILabel!
+    @IBOutlet weak var twoKanji: UILabel!
+    @IBOutlet weak var threeKanji: UILabel!
+    
+    
+    
+    
+    
+    
     
     var strArray: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
-        
+        twoWordUpView.isHidden = true
         
         firstKanji.text = String(describing: strArray[2].first!)
         secondKanji.text = String(describing: strArray[2].last!)
