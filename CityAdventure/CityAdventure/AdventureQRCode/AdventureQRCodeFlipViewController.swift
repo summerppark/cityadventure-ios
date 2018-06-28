@@ -193,6 +193,10 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     }
     
     
+    @IBOutlet weak var leadingCityNameConstant: NSLayoutConstraint!
+    
+    var kanjiStrArray :[String] = []
+    
     
     // BOTTOM
     var helpImage: UIImageView = {
@@ -275,6 +279,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         if Constants.DeviceType.IS_IPHONE_6P {
             progressViewLeading.constant = 12
             userNameLabelTrailing.constant = 24
+            leadingCityNameConstant.constant = 36
         }
     }
     
@@ -288,9 +293,12 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     func setTextDataSetting(index: Int) {
         let city = DataManager.shared.cityCards[index]
         var kanjiString = ""
+        var kanjiText = ""
+        
         
         city.s_kanji.forEach { (char) in
             kanjiString += "\(char)     "
+            kanjiText += "\(char)"
         }
 
         frontCityName.text = "\(city.s_name) \(city.s_type)"
@@ -299,6 +307,11 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         cityKanji.text = String(kanjiString.dropLast(5))
         kanjiExplain.text = city.t_kanjiExplain.replacingOccurrences(of: ",", with: "   ")
   
+        kanjiStrArray = city.t_kanjiExplain.components(separatedBy: ",")
+        kanjiStrArray.append(kanjiText)
+        kanjiStrArray.append(city.s_name)
+        
+        print("QQQ",kanjiStrArray)
         sloganTitle.text = city.t_slogan
 
         bottomTextView.attributedText = city.t_cityExplain.convertHtml()
@@ -526,6 +539,10 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     @objc func tappedInfoView() {
         print("Tapped")
         if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeTextSoundViewController") as? AdventureQRCodeTextSoundViewController {
+            
+            alert.strArray = self.kanjiStrArray
+            
+            
             alert.modalPresentationStyle = .overFullScreen
             self.present(alert, animated: false)
         }
@@ -534,6 +551,8 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     
     @IBAction func tappedSpeechButton(_ sender: UIButton) {
         if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeTTSDescViewController") as? AdventureQRCodeTTSDescViewController {
+            
+            
             alert.modalPresentationStyle = .overFullScreen
             self.present(alert, animated: false)
         }

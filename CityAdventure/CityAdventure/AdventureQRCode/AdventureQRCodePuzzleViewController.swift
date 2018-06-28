@@ -20,10 +20,7 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
     
     var collectCardCount: Int = 0
     var puzzleCity = ""
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()

@@ -36,10 +36,29 @@ class AdventureQRCodeTextSoundViewController: BaseViewController {
             koreaTextView.layer.borderColor = UIColor().colorFromHex("#e3d8a4").cgColor
         }
     }
- 
+    
+    @IBOutlet weak var firstKanji: UILabel!
+    @IBOutlet weak var secondKanji: UILabel!
+    @IBOutlet weak var firstKanjiExp: UILabel!
+    @IBOutlet weak var secondKanjiExp: UILabel!
+    
+    
+    @IBOutlet weak var firstCityname: UILabel!
+    @IBOutlet weak var secondCityname: UILabel!
+    
+    var strArray: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        
+        
+        firstKanji.text = String(describing: strArray[2].first!)
+        secondKanji.text = String(describing: strArray[2].last!)
+        firstKanjiExp.text = strArray[0]
+        secondKanjiExp.text = String(strArray[1].dropFirst())
+        firstCityname.text = String(describing: strArray[3].first!)
+        secondCityname.text = String(describing: strArray[3].last!)
 
     }
     
