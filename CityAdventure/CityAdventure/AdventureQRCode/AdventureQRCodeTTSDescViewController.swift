@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class AdventureQRCodeTTSDescViewController: BaseViewController {
     
@@ -33,31 +34,35 @@ class AdventureQRCodeTTSDescViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var cityTitle: UILabel!
+    
     @IBOutlet weak var textView: UITextView! {
         didSet {
             textView.font = UIFont(name: "GodoM", size: 18.0)
         }
     }
     
+    
+    var player: AVPlayer?
+    var cityNumber: String = ""
+    var cityTitleString: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
 
-        
-//        let thumbImage = #imageLiteral(resourceName: "icon_sliderCircle")
-//        let size = CGSize(width: thumbImage.size.width * 0.7, height: thumbImage.size.height * 0.7)
-//        playerSlider.setThumbImage(self.imageWithImage(image: thumbImage, scaledToSize: size), for: .normal)
-//        playerSlider.setThumbImage(self.imageWithImage(image: thumbImage, scaledToSize: size), for: .highlighted)
-        
-
+        dataSet(text: cityNumber)
     }
     
-    func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
-        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return newImage
+    func dataSet(text: String) {
+         cityTitle.text = cityTitleString
+        let index = Int(text) ?? 0
+        // TextView
+        textView.attributedText = DataManager.shared.cityCards[index-1].t_cityExplain.convertHtml()
+        textView.font = UIFont(name: "GodoM", size: 18.0)
+        
+        // Sound
+         loadRadio(radioURL: APIUrls.getKanjiExpMp3Loading(index: text, type: "3"))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,6 +71,13 @@ class AdventureQRCodeTTSDescViewController: BaseViewController {
     
     @IBAction func close(_ sender: UIButton) {
         self.dismiss(animated: false, completion: nil)
+    }
+    
+    func loadRadio(radioURL: String) {
+        guard let url = URL.init(string: radioURL) else { return }
+        let playerItem = AVPlayerItem.init(url: url)
+        player = AVPlayer.init(playerItem: playerItem)
+        player?.play()
     }
     
    

@@ -295,23 +295,39 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         var kanjiString = ""
         var kanjiText = ""
         
-        
-        city.s_kanji.forEach { (char) in
-            kanjiString += "\(char)     "
-            kanjiText += "\(char)"
+        if city.s_name.count == 2 {
+            city.s_kanji.forEach { (char) in
+                kanjiString += "\(char)     "
+                kanjiText += "\(char)"
+            }
+            kanjiStrArray = city.t_kanjiExplain.components(separatedBy: ",")
+            cityKanji.text = String(kanjiString.dropLast(5))
+            kanjiStrArray.append(kanjiText)
+            kanjiStrArray.append(city.s_name)
+        } else {
+            
+            city.s_kanji.forEach({ (char) in
+                kanjiString += "\(char)     "
+                kanjiText += "\(char)"
+            })
+            //0,1,2
+            kanjiStrArray = city.t_kanjiExplain.components(separatedBy: ",")
+            //3
+            kanjiStrArray.append(kanjiText)
+            
+            //4
+            kanjiStrArray.append(city.s_name)
+            cityKanji.text = String(kanjiString.dropLast(5))
         }
-
+        
+        
+        kanjiExplain.text = city.t_kanjiExplain.replacingOccurrences(of: ",", with: "   ")
+        
+        
         frontCityName.text = "\(city.s_name) \(city.s_type)"
         cityArea.text = city.s_type
         cityName.text = city.s_name
-        cityKanji.text = String(kanjiString.dropLast(5))
-        kanjiExplain.text = city.t_kanjiExplain.replacingOccurrences(of: ",", with: "   ")
-  
-        kanjiStrArray = city.t_kanjiExplain.components(separatedBy: ",")
-        kanjiStrArray.append(kanjiText)
-        kanjiStrArray.append(city.s_name)
         
-        print("QQQ",kanjiStrArray)
         sloganTitle.text = city.t_slogan
 
         bottomTextView.attributedText = city.t_cityExplain.convertHtml()
@@ -541,7 +557,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeTextSoundViewController") as? AdventureQRCodeTextSoundViewController {
             
             alert.strArray = self.kanjiStrArray
-            
+            alert.number = cityNumber
             
             alert.modalPresentationStyle = .overFullScreen
             self.present(alert, animated: false)
@@ -551,8 +567,8 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     
     @IBAction func tappedSpeechButton(_ sender: UIButton) {
         if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeTTSDescViewController") as? AdventureQRCodeTTSDescViewController {
-            
-            
+            alert.cityTitleString = self.sloganTitle.text ?? "nil"
+            alert.cityNumber = cityNumber
             alert.modalPresentationStyle = .overFullScreen
             self.present(alert, animated: false)
         }

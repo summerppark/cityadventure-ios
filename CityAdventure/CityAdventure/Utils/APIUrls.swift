@@ -79,4 +79,8 @@ class APIUrls {
     static func getCityStatistics(index: String) -> String {
         return "http://www.bubu-expedition.com/API/v1/cities/\(index)/statistics"
     }
+    
+    static func getKanjiExpMp3Loading(index: String, type: String) -> String {
+        return "http://www.bubu-expedition.com/resources/sounds/mp3/\(index)/\(type).mp3"
+    }
 }
