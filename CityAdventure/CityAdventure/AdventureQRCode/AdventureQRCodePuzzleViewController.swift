@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toaster
 import Kingfisher
 
 class AdventureQRCodePuzzleViewController: BaseViewController {
@@ -116,15 +117,36 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
                 topImageViews[(sender.view?.tag)!].image = (sender.view as? UIImageView)?.image
                 sender.view?.isHidden = true
                 // 정답인 경우!!!!
+                
                 collectCardCount += 1
                 if collectCardCount == 9 {
                     print("모두 획득하였습니다.")
-                    
-                    if let popup = storyboard?.instantiateViewController(withIdentifier: "CollectCityPopupViewController") as? CollectCityPopupViewController {
-                        popup.modalPresentationStyle = .overFullScreen
-                        self.present(popup, animated: false, completion: nil)
-                    }
-                    
+                    // 서버에 획득한 리스트를 갱신한다.
+                    super.showLoading(view: self.view)
+                    APIManager.getCityFromPuzzleGame(number: self.puzzleCity, result: { (result) in
+                        if result == nil {
+                            Toast(text: "다시 시도해주세요", delay: 0, duration: 0.25).show()
+                        } else {
+                            // 나의 카드 수집 리스트를 가져와서 싱글턴 갱신시켜준다.
+                            if let member = DataManager.shared.getUserCardInfo()?.cardInfo?.first?.ui_memberNo {
+                                print("HERO")
+                                APIManager.getMyCollectedCityList(memberId: String(member), result: { (result) in
+                                    print("Where",result?.cardInfo?.count)
+                                    if let cardlist = result {
+                                        DataManager.shared.setUserCardInfo(response: cardlist)
+                                        super.hideLoading()
+                                        if let popup = self.storyboard?.instantiateViewController(withIdentifier: "CollectCityPopupViewController") as? CollectCityPopupViewController {
+                                            popup.modalPresentationStyle = .overFullScreen
+                                            self.present(popup, animated: false, completion: nil)
+                                        }
+                                        
+                                    } else {
+                                        Toast(text: "다시 시도해주세요", delay: 0, duration: 0.25).show()
+                                    }
+                                })
+                            }
+                        }
+                    })
                 }
                 
             } else {

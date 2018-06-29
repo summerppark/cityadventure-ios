@@ -45,6 +45,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     
     //////
     
+    @IBOutlet weak var puzzleButton: UIButton!
     
     @IBOutlet weak var flipButton: UIButton!
     @IBOutlet weak var mainView: UIView!
@@ -248,6 +249,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         super.viewDidLoad()
         
         
+        dump(DataManager.shared.getUserCardInfo()?.cardInfo)
         backView.isHidden = true
         
         
@@ -273,6 +275,15 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         if String(cityNumber.removeLast()) == "b" {
            presentBackView()
         }
+        
+        DataManager.shared.getUserCardInfo()?.cardInfo?.forEach({ (cardInfo) in
+            if let no = cardInfo.uti_cardNo {
+                if no == Int(cityNumber) {
+                    print("획득한 카드")
+                    puzzleButton.setImage(#imageLiteral(resourceName: "btn_collected_city"), for: .normal)
+                }
+            }
+        })
     }
     
     func layoutCheck() {

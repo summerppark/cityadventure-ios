@@ -85,7 +85,8 @@ class MainViewController: BaseViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
    
         
-        print("여기서 체크하고 넘기고 토스트")
+        print("CARDCOLLECT", DataManager.shared.userCardInfo?.cardInfo)
+        dump(DataManager.shared.userCardInfo?.cardInfo)
         dataSetting()
     }
     

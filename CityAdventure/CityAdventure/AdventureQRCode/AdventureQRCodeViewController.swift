@@ -49,6 +49,7 @@ class AdventureQRCodeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print(DataManager.shared.getUserCardInfo()?.cardInfo?.count, "갱신 후")
         dataSetting()
     }
     

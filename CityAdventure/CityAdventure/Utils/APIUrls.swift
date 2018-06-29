@@ -83,4 +83,16 @@ class APIUrls {
     static func getKanjiExpMp3Loading(index: String, type: String) -> String {
         return "http://www.bubu-expedition.com/resources/sounds/mp3/\(index)/\(type).mp3"
     }
+    
+    static func getCityFromPuzzleUrl(number: String, token: String) -> String {
+        return "http://www.bubu-expedition.com/API/v1/cityPuzzleSessions/\(number)/submit?token=\(token)"
+    }
+    
+    static func getMycityCardList(member: String, token: String) -> String {
+        return  "http://www.bubu-expedition.com/API/v1/members/\(member)/cardCollectingLogs?token=\(token)"
+    }
+    
+    static func getMyCollectedCityList(member: String, token: String) -> String {
+        return "http://www.bubu-expedition.com/API/v1/members/\(member)/cardCollectingLogs?token=\(token)"
+    }
 }

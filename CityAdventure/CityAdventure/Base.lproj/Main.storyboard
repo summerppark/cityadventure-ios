@@ -6883,6 +6883,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                         <outlet property="nationInfoButton" destination="nHQ-7D-7lJ" id="iAQ-3t-sAV"/>
                         <outlet property="progressView" destination="ndI-SB-5Lk" id="RcT-CO-ueq"/>
                         <outlet property="progressViewLeading" destination="3hH-sM-owZ" id="I0f-T8-tc7"/>
+                        <outlet property="puzzleButton" destination="4qA-Z0-4KH" id="YCV-te-IJt"/>
                         <outlet property="sloganTitle" destination="WCH-UA-uYo" id="FYu-xc-0d5"/>
                         <outlet property="travelInfoButton" destination="JxY-s4-8bX" id="by8-6V-ApA"/>
                         <outlet property="userCharView" destination="vY7-Fs-M6r" id="gJ0-QE-YrD"/>
@@ -7027,7 +7028,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="0.46684527399999998" green="0.62638306619999995" blue="0.89022648329999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="GnL-40-S3b" firstAttribute="top" secondItem="SIp-oR-Nzh" secondAttribute="bottom" constant="10" id="0aF-7w-ybn"/>
                                                     <constraint firstItem="WRT-93-jDJ" firstAttribute="top" secondItem="Gre-Iw-mmk" secondAttribute="top" constant="8" id="9fN-cZ-nKh"/>
