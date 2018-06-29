@@ -74,6 +74,9 @@ class ClientCenterViewController: UIViewController {
         }
     }
     
+    @IBAction func send(_ sender: Any) {
+    }
+    
     
 }
 
