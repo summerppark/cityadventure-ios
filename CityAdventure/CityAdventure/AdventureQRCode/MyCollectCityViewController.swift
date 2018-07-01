@@ -56,6 +56,9 @@ class MyCollectCityViewController: BaseViewController {
     
     
     
+    var groupType: Int = 0
+    var myCityLisy: [Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         selectCitysView.items = ["전체보기", "특광역시","경기도", "강원도","충청북도", "충청남도","전라북도", "전라남도", "경상북도", "경상남도", "제주도"]
@@ -68,12 +71,14 @@ class MyCollectCityViewController: BaseViewController {
 
         dataSetting()
         layoutCheck()
+        getCities(group: -1)
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dataSetting()
+        getCities(group: -1)
     }
     
     // 상단 뷰 데이타 셋팅
@@ -125,6 +130,9 @@ class MyCollectCityViewController: BaseViewController {
         
         // 프로그레스 뷰 상태를 셋팅
         progressView.progress = (Float(curExp)/Float(maxExp))
+        
+         cityCount.text = "\(DataManager.shared.getUserCardInfo()?.cardInfo?.count ?? 999) / 162"
+        
     }
     
     func layoutCheck() {
@@ -135,20 +143,35 @@ class MyCollectCityViewController: BaseViewController {
     }
     
     func getCities(group: Int) {
-        
+        myCityLisy.removeAll()
         self.cityArray.removeAll()
+        
+        
+        var groupCount = 0
+        if let cityinfo = DataManager.shared.getUserCardInfo()?.cardInfo {
+            cityinfo.forEach({ (card) in
+                if let province = card.ui_province, province == group, let no = card.uti_cardNo {
+                    groupCount += 1
+                    myCityLisy.append(no)
+                } else {
+                    myCityLisy.append(card.uti_cardNo!)
+                }
+            })
+        }
         
         guard group != -1 else {
             self.cityArray = DataManager.shared.citynumbers
-            cityCount.text = "\(cityArray.count) / 162"
+            
+            cityCount.text = "\(DataManager.shared.getUserCardInfo()?.cardInfo?.count ?? 999) / 162"
             cityCollectionView.reloadData()
             return
         }
         
+
         DataManager.shared.citynumbers.forEach { (city) in
             if city.provinceType == Int32(group) {
                 self.cityArray.append(city)
-                cityCount.text = "0 / \(cityArray.count)"
+                cityCount.text = "\(groupCount) / \(cityArray.count)"
             }
         }
         cityCollectionView.reloadData()
@@ -177,6 +200,64 @@ extension MyCollectCityViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectCityCell", for: indexPath) as! MyCollectCityCell
+        
+        print("card_thumbnail_\(Int(cityArray[indexPath.row].number))")
+        dump(myCityLisy)
+        
+        if myCityLisy.contains(Int(cityArray[indexPath.row].number)) {
+            var name: String = ""
+            let imageNumber = Int(cityArray[indexPath.row].number)
+            
+            if imageNumber < 10 {
+                name = "00\(imageNumber)"
+            } else if imageNumber < 100 {
+                name = "0\(imageNumber)"
+            } else {
+                name = "\(imageNumber)"
+            }
+            
+            
+            cell.cityButton.setImage(UIImage(named:"card_thumbnail_\(name)"), for: .normal)
+        } else {
+            cell.cityButton.setImage(UIImage(named:"icon_lock_cityCard"), for: .normal)
+            
+        }
+        
+//        switch groupType {
+//        case 0:
+//            print("전체보기")
+//        case 1:
+//            print("특,광역시")
+//        case 2:
+//            print("경기도")
+//        case 3:
+//            print("강원도")
+//        case 4:
+//            print("충청북도")
+//        case 5:
+//            print("진아남도")
+//        case 6:
+//            print("진아북도")
+//        case 7:
+//            print("진아남도")
+//        case 8:
+//            print("진아북도")
+//        case 9:
+//            print("진아남도")
+//        default:
+//            print("진아제주도")
+//            dump(cityArray[indexPath.row])
+//            if myCityLisy.contains(Int(cityArray[indexPath.row].number)) {
+//                cell.cityButton.setImage(UIImage(named:"card_thumbnail_\(Int(cityArray[indexPath.row].number))"), for: .normal)
+//            } else {
+//                cell.cityButton.setImage(UIImage(named:"icon_lock_cityCard"), for: .normal)
+//
+//            }
+//            print(myCityLisy)
+//
+//
+//
+//        }
         return cell
     }
     
@@ -193,6 +274,8 @@ extension MyCollectCityViewController: UICollectionViewDelegate, UICollectionVie
 extension MyCollectCityViewController: HADropDownDelegate {
     func didSelectItem(dropDown: HADropDown, at index: Int) {
         print("Item selected at index \(index)")
+        groupType = index
         getCities(group: index-1)
+        
     }
 }

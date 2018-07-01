@@ -5941,7 +5941,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="OVw-st-7dM"/>
                                         </constraints>
-                                        <state key="normal" image="btn_notice_top"/>
+                                        <state key="normal" image="back_button"/>
                                         <connections>
                                             <action selector="tappedBackButton:" destination="D49-R0-aBe" eventType="touchUpInside" id="3Hh-3M-S8Q"/>
                                         </connections>
@@ -8446,6 +8446,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="5" width="324" height="195"/>
         <image name="adventure_Exercise_bg" width="1440" height="2349"/>
         <image name="auto_login_no" width="60" height="60"/>
+        <image name="back_button" width="171" height="326"/>
         <image name="back_music_on" width="283" height="128"/>
         <image name="btn_allCheck_agreement" width="1000" height="150"/>
         <image name="btn_back_black" width="72" height="49"/>
