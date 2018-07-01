@@ -34,6 +34,7 @@ class LaunchScreenViewController: UIViewController {
 
         self.navigationController?.navigationBar.isHidden = true
         
+        
     }
     
     func makeDB() {

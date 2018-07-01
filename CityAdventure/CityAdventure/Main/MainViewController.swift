@@ -8,6 +8,7 @@
 
 import UIKit
 import Toaster
+import AVFoundation
 
 class MainViewController: BaseViewController {
     
@@ -76,26 +77,25 @@ class MainViewController: BaseViewController {
     
     var menuOnOff: Bool = true
     
+    var audioPlayer = AVAudioPlayer()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
         setBackGroundImageForTime()
-        print("!!!", self.animationView.frame.origin.y)
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-   
-        
-        print("CARDCOLLECT", DataManager.shared.userCardInfo?.cardInfo)
-        dump(DataManager.shared.userCardInfo?.cardInfo)
         dataSetting()
+        
+        DataManager.shared.bgmControl()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dataSetting()
-        print("!!!1", self.animationView.frame.origin.y)
-
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

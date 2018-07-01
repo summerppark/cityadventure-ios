@@ -75,6 +75,8 @@
 		CE642C282077612F000C2F01 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C272077612F000C2F01 /* NoticeViewController.swift */; };
 		CE642C2A2077777A000C2F01 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C292077777A000C2F01 /* TimeFormatter.swift */; };
 		CE717CF020C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE717CEF20C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift */; };
+		CE73B4FC20E8DF86001FFAAF /* end_bgm_loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE73B4FB20E8DF84001FFAAF /* end_bgm_loop.mp3 */; };
+		CE73B4FE20E8E04C001FFAAF /* BGMPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73B4FD20E8E04C001FFAAF /* BGMPlayerManager.swift */; };
 		CE794FFC20A348F9000BC59C /* AdventureQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE794FFB20A348F9000BC59C /* AdventureQRCodeViewController.swift */; };
 		CE794FFF20ADD272000BC59C /* AdventureQRCodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE794FFE20ADD272000BC59C /* AdventureQRCodeReaderViewController.swift */; };
 		CE7C12D42072043E0095F1C9 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7C12D32072043E0095F1C9 /* libsqlite3.0.tbd */; };
@@ -225,6 +227,8 @@
 		CE642C272077612F000C2F01 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		CE642C292077777A000C2F01 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		CE717CEF20C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeFlipViewController.swift; sourceTree = "<group>"; };
+		CE73B4FB20E8DF84001FFAAF /* end_bgm_loop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end_bgm_loop.mp3; sourceTree = "<group>"; };
+		CE73B4FD20E8E04C001FFAAF /* BGMPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMPlayerManager.swift; sourceTree = "<group>"; };
 		CE794FFB20A348F9000BC59C /* AdventureQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeViewController.swift; sourceTree = "<group>"; };
 		CE794FFE20ADD272000BC59C /* AdventureQRCodeReaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeReaderViewController.swift; sourceTree = "<group>"; };
 		CE7C12942071FD8A0095F1C9 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -352,6 +356,7 @@
 				665E2D1B20C0590700F13909 /* DropDownMenu.swift */,
 				66E3EA3B20DCED4E00269E6B /* APIManager_Exercise.swift */,
 				66E3EA3F20DCFC4800269E6B /* APIManager_QRCode.swift */,
+				CE73B4FD20E8E04C001FFAAF /* BGMPlayerManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -603,6 +608,7 @@
 				6665F9B22088B26000A5D2BE /* Assets.xcassets */,
 				CE24D77E20667D1300B21EF3 /* Fonts */,
 				CEF716462064D2BF00B457E9 /* loading.gif */,
+				CE73B4FB20E8DF84001FFAAF /* end_bgm_loop.mp3 */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -733,6 +739,7 @@
 				CEF7163E2064CB1900B457E9 /* LaunchScreen.storyboard in Resources */,
 				6665F9B32088B26400A5D2BE /* Assets.xcassets in Resources */,
 				CEF716472064D2BF00B457E9 /* loading.gif in Resources */,
+				CE73B4FC20E8DF86001FFAAF /* end_bgm_loop.mp3 in Resources */,
 				CEF716392064CB1900B457E9 /* Main.storyboard in Resources */,
 				CEDBFF6E20E2985600B375EA /* citycard.sqlite in Resources */,
 			);
@@ -857,6 +864,7 @@
 				CE09EA9A20B80B8300693BF8 /* AdventureQRCodeCheckPopup.swift in Sources */,
 				6665F9AF2088914600A5D2BE /* AdventureExerciseViewController.swift in Sources */,
 				CE1DA22D206B7EE5000C36B2 /* SignUpViewThirdController.swift in Sources */,
+				CE73B4FE20E8E04C001FFAAF /* BGMPlayerManager.swift in Sources */,
 				CED8C4AB207212B000286A61 /* FMDatabaseQueue.m in Sources */,
 				667AF8A520E249710068C125 /* CityCardInfo.swift in Sources */,
 				CE642C1B2074D1CC000C2F01 /* LoginResponse.swift in Sources */,

@@ -21,7 +21,7 @@ class RightSideMenuViewController: BaseViewController {
     @IBOutlet weak var userAge: UILabel!
     @IBOutlet weak var provinceCity: UILabel!
     
-    
+    var audioIsPlay: Bool = false
     
     
     override func viewDidLoad() {
@@ -51,8 +51,6 @@ class RightSideMenuViewController: BaseViewController {
         // 나이를 계산.
         if let birth = info.date_birth {
             userAge.text = TimeFormatter().getCurrentAge(date_birth: birth)
-            
-            print(birth)
         }
         
         // 사는 지역 보여주기.
@@ -79,6 +77,18 @@ class RightSideMenuViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.leftView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+    }
+    
+    @IBAction func bgmControlButton(_ sender: UIButton) {
+        
+        if audioIsPlay {
+            sender.setImage(#imageLiteral(resourceName: "back_music_on"), for: .normal)
+            BGMPlayerManager.shared.bgmStart()
+        } else {
+             sender.setImage(#imageLiteral(resourceName: "back_music_off"), for: .normal)
+            BGMPlayerManager.shared.bgmStop()
+        }
+        audioIsPlay = !audioIsPlay
     }
     
     
@@ -110,6 +120,10 @@ class RightSideMenuViewController: BaseViewController {
     
     @IBAction func goMyCollectionCity(_ sender: UIButton) {
         hideView(type: 6)
+    }
+    
+    @IBAction func goToQRCodeGame(_ sender: UIButton) {
+        hideView(type: 7)
     }
     
     func hideView(type: Int) {
@@ -149,6 +163,18 @@ class RightSideMenuViewController: BaseViewController {
                         print("이미",vc)
                     } else {
                         self.navigationController?.pushViewController(collect, animated: true)
+                    }
+                }
+            } else if type == 7 {
+                if let adventureQRCode = self.storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeViewController") as? AdventureQRCodeViewController {
+                    
+                    if let vc = self.navigationController?.viewControllers.last as? AdventureQRCodeViewController {
+                        print("이미 QRCode")
+                    } else if let vc2 =
+                        self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-3] as? AdventureQRCodeViewController{
+                        print("이미 QRCode")
+                    } else {
+                        self.navigationController?.pushViewController(adventureQRCode, animated: true)
                     }
                 }
             }

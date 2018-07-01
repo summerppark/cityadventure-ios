@@ -131,4 +131,7 @@ class DataManager {
         return userCardInfo
     }
     
+    public func bgmControl() {
+        BGMPlayerManager.shared.bgmStart()
+    }
 }

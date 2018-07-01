@@ -96,6 +96,7 @@ class AdventureQRCodeTextSoundViewController: BaseViewController {
             threeWordBottomView.isHidden = true
             twoWordUpView.isHidden = false
             twoWordBottomView.isHidden = false
+            print("!@!@",strArray[2])
             firstKanji.text = String(describing: strArray[2].first!)
             secondKanji.text = String(describing: strArray[2].last!)
             firstKanjiExp.text = strArray[0]

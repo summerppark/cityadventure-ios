@@ -592,6 +592,15 @@ class AdventureQRCodeFlipViewController: BaseViewController {
             self.navigationController?.pushViewController(puzzle, animated: true)
         }
     }
+    
+    
+    @IBAction func openRightSideMenu(_ sender: UIButton) {
+        super.showMenu {
+            super.backgroundBlackAlpha(view: self.view)
+            self.view.layoutIfNeeded()
+        }
+    }
+    
 }
 
 
