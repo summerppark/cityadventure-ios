@@ -170,9 +170,6 @@ class RightSideMenuViewController: BaseViewController {
                     
                     if let vc = self.navigationController?.viewControllers.last as? AdventureQRCodeViewController {
                         print("이미 QRCode")
-                    } else if let vc2 =
-                        self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count)!-3] as? AdventureQRCodeViewController{
-                        print("이미 QRCode")
                     } else {
                         self.navigationController?.pushViewController(adventureQRCode, animated: true)
                     }
