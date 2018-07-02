@@ -246,6 +246,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     var landmarkTuple = [(Int, String)]()
     
     var travelInfoUrl = ""
+    var cityType = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -367,6 +368,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         bottomTextView.font = UIFont.init(name: "GodoM", size: 12.0)
         
         travelInfoUrl = city.t_tourURL
+        cityType = Int(city.ui_province)
         
     }
     
@@ -604,6 +606,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeTTSDescViewController") as? AdventureQRCodeTTSDescViewController {
             alert.cityTitleString = self.sloganTitle.text ?? "nil"
             alert.cityNumber = cityNumber
+            alert.cityType = self.cityType
             alert.modalPresentationStyle = .overFullScreen
             self.present(alert, animated: false)
         }

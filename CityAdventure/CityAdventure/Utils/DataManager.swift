@@ -85,7 +85,7 @@ class DataManager {
                                      t_slogan: results.string(forColumn: "t_slogan") ?? "",
                                      t_cityExplain: results.string(forColumn: "t_cityExplain") ?? "",
                                      t_tourURL: results.string(forColumn: "t_tourURL") ?? "",
-                                     version: results.int(forColumn: "version"))
+                                     version: results.int(forColumn: "version"), ui_province: results.int(forColumn: "ui_province"))
                 
                 cityCards.append(col)
             }

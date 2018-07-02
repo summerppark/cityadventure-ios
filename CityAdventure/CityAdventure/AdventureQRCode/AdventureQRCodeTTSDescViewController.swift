@@ -64,12 +64,19 @@ class AdventureQRCodeTTSDescViewController: BaseViewController {
     var playerItem : AVPlayerItem?
     var cityNumber: String = ""
     var cityTitleString: String = ""
+    var cityType: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
-        
+   
         dataSet(text: cityNumber)
+        var image = UIImage(named: "icon_sound_play_\(cityType)")
+        playButton.setImage(image, for: .normal)
+        image = UIImage(named: "icon_sound_pause_\(cityType)")
+        stopButton.setImage(image, for: .normal)
+        image = UIImage(named: "icon_sound_reflsh_\(cityType)")
+        replayButton.setImage(image, for: .normal)
         
     }
     
