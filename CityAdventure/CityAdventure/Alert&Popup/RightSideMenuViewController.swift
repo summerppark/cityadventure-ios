@@ -20,6 +20,8 @@ class RightSideMenuViewController: BaseViewController {
     
     @IBOutlet weak var userAge: UILabel!
     @IBOutlet weak var provinceCity: UILabel!
+    @IBOutlet weak var bgmButtn: UIButton!
+    @IBOutlet weak var effectButton: UIButton!
     
     var audioIsPlay: Bool = false
     
@@ -73,6 +75,18 @@ class RightSideMenuViewController: BaseViewController {
         }
     }
   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let bgmData = UserDefaults.standard.object(forKey: "BGM") as? String {
+            if bgmData == "TRUE" {
+                bgmButtn.setImage(#imageLiteral(resourceName: "back_music_on"), for: .normal)
+                audioIsPlay = false
+            } else {
+                audioIsPlay = true
+                bgmButtn.setImage(#imageLiteral(resourceName: "back_music_off"), for: .normal)
+            }
+        }
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -83,9 +97,11 @@ class RightSideMenuViewController: BaseViewController {
         
         if audioIsPlay {
             sender.setImage(#imageLiteral(resourceName: "back_music_on"), for: .normal)
+            UserDefaults.standard.set("TRUE", forKey: "BGM")
             BGMPlayerManager.shared.bgmStart()
         } else {
              sender.setImage(#imageLiteral(resourceName: "back_music_off"), for: .normal)
+            UserDefaults.standard.set("FALSE", forKey: "BGM")
             BGMPlayerManager.shared.bgmStop()
         }
         audioIsPlay = !audioIsPlay

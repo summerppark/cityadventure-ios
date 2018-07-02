@@ -78,6 +78,7 @@ class MyCollectCityViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dataSetting()
+        selectCitysView.title = "전체보기"
         getCities(group: -1)
     }
     
@@ -201,6 +202,7 @@ extension MyCollectCityViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectCityCell", for: indexPath) as! MyCollectCityCell
         
+        
         print("card_thumbnail_\(Int(cityArray[indexPath.row].number))")
         dump(myCityLisy)
         
@@ -217,47 +219,11 @@ extension MyCollectCityViewController: UICollectionViewDelegate, UICollectionVie
             }
             
             
-            cell.cityButton.setImage(UIImage(named:"card_thumbnail_\(name)"), for: .normal)
+            cell.cityButton.image = (UIImage(named:"card_thumbnail_\(name)"))
         } else {
-            cell.cityButton.setImage(UIImage(named:"icon_lock_cityCard"), for: .normal)
-            
+            cell.cityButton.image = (UIImage(named:"icon_lock_cityCard"))
         }
-        
-//        switch groupType {
-//        case 0:
-//            print("전체보기")
-//        case 1:
-//            print("특,광역시")
-//        case 2:
-//            print("경기도")
-//        case 3:
-//            print("강원도")
-//        case 4:
-//            print("충청북도")
-//        case 5:
-//            print("진아남도")
-//        case 6:
-//            print("진아북도")
-//        case 7:
-//            print("진아남도")
-//        case 8:
-//            print("진아북도")
-//        case 9:
-//            print("진아남도")
-//        default:
-//            print("진아제주도")
-//            dump(cityArray[indexPath.row])
-//            if myCityLisy.contains(Int(cityArray[indexPath.row].number)) {
-//                cell.cityButton.setImage(UIImage(named:"card_thumbnail_\(Int(cityArray[indexPath.row].number))"), for: .normal)
-//            } else {
-//                cell.cityButton.setImage(UIImage(named:"icon_lock_cityCard"), for: .normal)
-//
-//            }
-//            print(myCityLisy)
-//
-//
-//
-//        }
+     
         return cell
     }
     
@@ -267,6 +233,18 @@ extension MyCollectCityViewController: UICollectionViewDelegate, UICollectionVie
         let width = UIScreen.main.bounds.width / 4.0
         let height = width * 1.25
         return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if myCityLisy.contains(Int(cityArray[indexPath.row].number)) {
+            if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
+                result.cityNumber = "\(Int(cityArray[indexPath.row].number))a"
+                 self.navigationController?.pushViewController(result, animated: true)
+            }
+            
+            print(cityArray[indexPath.item].number)
+        }
+        
     }
 }
 

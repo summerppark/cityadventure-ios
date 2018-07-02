@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Kingfisher
+import Alamofire
 
 extension UIView {
     func roundCorners(corners:UIRectCorner, radius: CGFloat) {
@@ -242,6 +243,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     @IBOutlet weak var landmark_third: UILabel!
     
     
+    var landmarkTuple = [(Int, String)]()
     
     var travelInfoUrl = ""
     
@@ -284,6 +286,26 @@ class AdventureQRCodeFlipViewController: BaseViewController {
                 }
             }
         })
+        
+        Alamofire.request(APIUrls.getLandmarks(number: cityNumber), method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response) in
+            if let result = response.result.value as? NSDictionary, let any = result["data"] as? NSArray {
+                
+                any.forEach({ (data) in
+                    if let dic = data as? NSDictionary, let no = dic["no"] as? Int, let name = dic["s_name"] as? String {
+                        self.landmarkTuple.append((no,name))
+                    }
+                })
+            }
+            DispatchQueue.main.async { [weak self] in
+                self?.landmark_first.text = self?.landmarkTuple[0].1
+                self?.landmark_second.text = self?.landmarkTuple[1].1
+                self?.landmark_third.text = self?.landmarkTuple[2].1
+            }
+        }
+        
+        
+        
+        
     }
     
     func layoutCheck() {
@@ -425,7 +447,9 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     }
     
     @objc func landmark(sender: UITapGestureRecognizer) {
-        print(sender.view?.tag)
+        print(landmarkTuple[(sender.view?.tag)!-1].0)
+        
+        
     }
     
     

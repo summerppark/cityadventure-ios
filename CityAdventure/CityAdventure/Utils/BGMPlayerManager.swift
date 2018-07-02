@@ -18,10 +18,7 @@ class BGMPlayerManager {
     }
     
     public func bgmStop() {
-        
-        if audioPlayer.isPlaying {
-            audioPlayer.stop()
-        }
+        audioPlayer.stop()
     }
     
     private func play(nameSound:String) {

@@ -9,5 +9,5 @@
 import UIKit
 
 class MyCollectCityCell: UICollectionViewCell {
-    @IBOutlet weak var cityButton: UIButton!
+    @IBOutlet weak var cityButton: UIImageView!
 }

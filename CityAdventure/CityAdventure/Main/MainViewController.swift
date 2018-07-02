@@ -87,8 +87,13 @@ class MainViewController: BaseViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
         dataSetting()
         
-        DataManager.shared.bgmControl()
-        
+        if let bgmData = UserDefaults.standard.object(forKey: "BGM") as? String {
+            if bgmData == "TRUE" {
+                DataManager.shared.bgmControl()
+            }
+        } else if currentLevelLabel.text ?? "" == "1" {
+            DataManager.shared.bgmControl()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

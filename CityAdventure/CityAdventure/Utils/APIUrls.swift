@@ -95,4 +95,8 @@ class APIUrls {
     static func getMyCollectedCityList(member: String, token: String) -> String {
         return "http://www.bubu-expedition.com/API/v1/members/\(member)/cardCollectingLogs?token=\(token)"
     }
+    
+    static func getLandmarks(number: String) -> String {
+        return "http://www.bubu-expedition.com/API/v1/cities/\(number)/landmarks"
+    }
 }
