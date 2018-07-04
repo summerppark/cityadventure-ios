@@ -13,12 +13,14 @@ import Alamofire
 extension APIManager {
     
     static func updateMyExpCoin(url: String, completion: @escaping (NSDictionary) -> Void, fail: @escaping (_ error: Error?) -> Void) {
+        
+        
         Alamofire.request("\(server_url)\(url)", method: .post, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response) in
             
             guard let statusCode = response.response?.statusCode else { return }
             switch statusCode {
             case 200:
-                print("Update", url, response.result.value)
+                print("UpdateCoin", url, response.result.value)
                 if let dic = response.result.value as? NSDictionary {
                     completion(dic)
                 }

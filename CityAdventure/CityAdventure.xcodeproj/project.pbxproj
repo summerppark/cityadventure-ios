@@ -29,6 +29,7 @@
 		667364562089D9AA0098E8E0 /* prepareDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 667364552089D2B50098E8E0 /* prepareDB.sqlite */; };
 		667AF8A520E249710068C125 /* CityCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AF8A420E249710068C125 /* CityCardInfo.swift */; };
 		66A05F29208989B500CDCF4C /* ExerciseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */; };
+		66BA20C120ECDA51001B307A /* LandMarkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA20C020ECDA51001B307A /* LandMarkDetailViewController.swift */; };
 		66C8CBDE20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8CBDD20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift */; };
 		66C8CBE020CFC95000C89F4C /* AvdentureQRCodeTravelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8CBDF20CFC95000C89F4C /* AvdentureQRCodeTravelInfo.swift */; };
 		66D9390B208480DE005A66F4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D9390A208480DE005A66F4 /* SettingViewController.swift */; };
@@ -183,6 +184,7 @@
 		667364552089D2B50098E8E0 /* prepareDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = prepareDB.sqlite; sourceTree = "<group>"; };
 		667AF8A420E249710068C125 /* CityCardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCardInfo.swift; sourceTree = "<group>"; };
 		66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGameViewController.swift; sourceTree = "<group>"; };
+		66BA20C020ECDA51001B307A /* LandMarkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandMarkDetailViewController.swift; sourceTree = "<group>"; };
 		66C8CBDD20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeBoardPopUp.swift; sourceTree = "<group>"; };
 		66C8CBDF20CFC95000C89F4C /* AvdentureQRCodeTravelInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvdentureQRCodeTravelInfo.swift; sourceTree = "<group>"; };
 		66D9390A208480DE005A66F4 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				6663922720D39B93002060D9 /* AdventureQRCodePuzzleViewController.swift */,
 				6642516020DA3EA300DEC55F /* CollectCityPopupViewController.swift */,
 				66E3EA3D20DCFBAA00269E6B /* QRCodeFlipPresenter.swift */,
+				66BA20C020ECDA51001B307A /* LandMarkDetailViewController.swift */,
 			);
 			path = AdventureQRCode;
 			sourceTree = "<group>";
@@ -865,6 +868,7 @@
 				CE642C1D20770339000C2F01 /* FindPasswordViewController.swift in Sources */,
 				CE1EEC3C2071D06D00116625 /* SignUpViewFinalController.swift in Sources */,
 				CE09EAA520BC565300693BF8 /* MyCollectCityCell.swift in Sources */,
+				66BA20C120ECDA51001B307A /* LandMarkDetailViewController.swift in Sources */,
 				CE09EA9A20B80B8300693BF8 /* AdventureQRCodeCheckPopup.swift in Sources */,
 				6665F9AF2088914600A5D2BE /* AdventureExerciseViewController.swift in Sources */,
 				CE1DA22D206B7EE5000C36B2 /* SignUpViewThirdController.swift in Sources */,

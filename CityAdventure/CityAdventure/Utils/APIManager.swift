@@ -113,4 +113,22 @@ struct APIManager {
             }
         }
     }
+    
+    static func updateExpCoinAfterPuzzleSuccess(url: String) {
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response) in
+            guard let statusCode = response.response?.statusCode else { return }
+            switch statusCode {
+            case 200 :
+                print("Success")
+                if let dict = response.result.value as? NSDictionary, let info = dict["data"] as? NSDictionary, let credit = info["ui_credit"] as? Int, let exp = info["ui_exp"] as? Int  {
+                    DataManager.shared.userInfo?.userInfo?.ui_credit = credit
+                    DataManager.shared.userInfo?.userInfo?.ui_exp = exp
+                    
+                }
+                
+            default:
+                print("ERror puzzleSucces")
+            }
+        }
+    }
 }

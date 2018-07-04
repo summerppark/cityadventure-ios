@@ -129,7 +129,10 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
                         } else {
                             // 나의 카드 수집 리스트를 가져와서 싱글턴 갱신시켜준다.
                             if let member = DataManager.shared.getUserCardInfo()?.cardInfo?.first?.ui_memberNo {
-                                print("HERO")
+                                print("HERO",member)
+                                
+                                APIManager.updateExpCoinAfterPuzzleSuccess(url: APIUrls.getMyExpCoinUpdatePuzzleSuccess(member: member))
+                                
                                 APIManager.getMyCollectedCityList(memberId: String(member), result: { (result) in
                                     print("Where",result?.cardInfo?.count)
                                     if let cardlist = result {

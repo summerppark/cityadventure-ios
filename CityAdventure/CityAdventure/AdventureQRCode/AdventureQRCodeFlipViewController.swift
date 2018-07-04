@@ -68,6 +68,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var speakButton: UIButton!
     @IBOutlet weak var frontCityName: UILabel!
     
     // FRONT VIEW
@@ -303,10 +304,28 @@ class AdventureQRCodeFlipViewController: BaseViewController {
                 self?.landmark_third.text = self?.landmarkTuple[2].1
             }
         }
+ 
+        layoutColor(cityNumber: cityType)
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dataSetting()
+    }
+    
+    func layoutColor(cityNumber: Int) {
+        print(cityNumber,"flipView")
         
-        
-        
+            let cityColor = UIColor().cityTypeColor(province: cityNumber)
+            // 밑에 배경색
+
+           backborderView.backgroundColor = cityColor
+            speakButton.setImage(UIImage(named: "icon_sound_\(cityNumber)"), for: .normal)
+            
+            firstLandMark.layer.borderColor = cityColor.cgColor
+            middleLandMark.layer.borderColor = cityColor.cgColor
+            lastLandMark.layer.borderColor = cityColor.cgColor
+            backMaplocationButton.layer.borderColor = cityColor.cgColor
     }
     
     func layoutCheck() {
@@ -449,8 +468,12 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     }
     
     @objc func landmark(sender: UITapGestureRecognizer) {
-        print(landmarkTuple[(sender.view?.tag)!-1].0)
         
+        if let landmark = self.storyboard?.instantiateViewController(withIdentifier: "LandMarkDetailViewController") as? LandMarkDetailViewController, let index = sender.view?.tag {
+            
+            landmark.landmarkNumber = landmarkTuple[index-1].0
+            self.navigationController?.pushViewController(landmark, animated: true)
+        }
         
     }
     
@@ -592,6 +615,11 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     @objc func tappedInfoView() {
         print("Tapped")
         if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeTextSoundViewController") as? AdventureQRCodeTextSoundViewController {
+            print("TEst",kanjiStrArray)
+            
+            if let name = kanjiStrArray.last, name == "서울" {
+                kanjiStrArray.insert("  ", at: 2)
+            }
             
             alert.strArray = self.kanjiStrArray
             alert.number = cityNumber

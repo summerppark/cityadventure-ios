@@ -99,4 +99,10 @@ class APIUrls {
     static func getLandmarks(number: String) -> String {
         return "http://www.bubu-expedition.com/API/v1/cities/\(number)/landmarks"
     }
+    
+    static func getMyExpCoinUpdatePuzzleSuccess(member: Int) -> String {
+        return "http://www.bubu-expedition.com/API/v1/members/\(member)/credit-exp"
+    }
+    
+    
 }

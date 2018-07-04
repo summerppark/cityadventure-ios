@@ -220,7 +220,6 @@
     }
     
     func checkAnswer() {
-        
         if answerArray.joined() == DataManager.shared.citynumbers[stageNumber].cityName {
             gameResult(result: true)
             

@@ -49,4 +49,8 @@ extension APIManager {
             }
         }
     }
+    
+//    static func getMyExpCoinUpdatedAfterPuzzleSuccess(memberId: String, result: @escaping) {
+//
+//    }
 }

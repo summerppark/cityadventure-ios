@@ -71,6 +71,16 @@ class AdventureQRCodeTTSDescViewController: BaseViewController {
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
    
         dataSet(text: cityNumber)
+        
+        layoutColor(cityType)
+        
+        
+    }
+    
+    func layoutColor(_ input: Int) {
+        // 재생, 스탑, 리플레이 버튼 이미지
+        
+        let cityColor = UIColor().cityTypeColor(province: input)
         var image = UIImage(named: "icon_sound_play_\(cityType)")
         playButton.setImage(image, for: .normal)
         image = UIImage(named: "icon_sound_pause_\(cityType)")
@@ -78,6 +88,9 @@ class AdventureQRCodeTTSDescViewController: BaseViewController {
         image = UIImage(named: "icon_sound_reflsh_\(cityType)")
         replayButton.setImage(image, for: .normal)
         
+        self.mainView.layer.borderColor = cityColor.cgColor
+        
+        self.playerSlider.minimumTrackTintColor = cityColor
     }
     
     func dataSet(text: String) {
