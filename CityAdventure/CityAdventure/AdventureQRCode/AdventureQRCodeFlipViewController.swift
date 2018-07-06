@@ -77,15 +77,6 @@ class AdventureQRCodeFlipViewController: BaseViewController {
             frontView.backgroundColor = .clear
             frontView.layer.cornerRadius = 8.0
             frontView.clipsToBounds = false
-//            frontView.layer.masksToBounds = false
-//            frontView.layer.shadowColor = UIColor.darkGray.cgColor
-//
-//            // 그림자 농도?
-//            frontView.layer.shadowOpacity = 0.5
-//            frontView.layer.shadowOffset = CGSize(width: 5, height: 5)
-//            frontView.layer.shadowRadius = 8.0
-//            frontView.layer.shadowPath = UIBezierPath(rect: frontView.bounds).cgPath
-//            frontView.layer.shouldRasterize = true
         }
     }
     

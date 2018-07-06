@@ -149,7 +149,16 @@ class MainViewController: BaseViewController {
         print("maxExp = ", super.getNextNeedExpByLevel(level: level))
         
         if let coin = DataManager.shared.getUserInfo()?.userInfo?.ui_credit {
-            myCoin.text = "\(coin)"
+//            let numFormatter : NSNumberFormatter = NSNumberFormatter();
+//            numFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+//            let value : Int = 1000
+//            let price : String = numFormatter.stringFromNumber(value)!
+            
+            
+            let nf = NumberFormatter()
+            nf.numberStyle = .decimal
+            
+            myCoin.text = nf.string(from: NSNumber(integerLiteral: coin))
         }
         
         if let count = DataManager.shared.getUserCardInfo()?.dataLength {

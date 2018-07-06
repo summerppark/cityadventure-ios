@@ -122,6 +122,11 @@ class CharacterChoiceViewController: UIViewController {
 
 extension CharacterChoiceViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        NSObject.cancelPreviousPerformRequests(withTarget: scrollView)
+//        self.perform(#selector(self.scrollViewDidEndScrollingAnimation(_:)), with: scrollView, afterDelay: 0)
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         NSObject.cancelPreviousPerformRequests(withTarget: scrollView)
         self.perform(#selector(self.scrollViewDidEndScrollingAnimation(_:)), with: scrollView, afterDelay: 0)
     }

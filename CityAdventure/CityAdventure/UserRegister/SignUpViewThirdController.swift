@@ -122,6 +122,12 @@ class SignupViewThirdController: UIViewController {
         super.viewWillDisappear(animated)
         if nextButton.isEnabled {
             print("실행되나요")
+            SignUpViewSeccondController.signupName = nameTextField.text ?? "name_nil"
+            SignUpViewSeccondController.signupGender = gender
+            SignUpViewSeccondController.signupBirthday = savedBirthday
+            SignUpViewSeccondController.signupBornCity = bornCityButton.currentTitle ?? "bornCityTitle_nil"
+            SignUpViewSeccondController.signupLiveCity = currentLiveCityButton.currentTitle ?? "livecitytitle_nil"
+            
              UserDefaults.standard.set(nameTextField.text, forKey: "signup_name")
             UserDefaults.standard.set(gender, forKey: "signup_gender")
             UserDefaults.standard.set(savedBirthday, forKey: "signup_birthday")

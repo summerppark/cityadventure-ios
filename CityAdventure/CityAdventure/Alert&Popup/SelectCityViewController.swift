@@ -90,8 +90,8 @@ class SelectCityViewController: UIViewController {
         
         // 검색 된 결과만 보여준다.
         for index in 0...citynumbers.count-1 {
-            if citynumbers[index].cityName.contains(inputText) {
-                print(citynumbers[index].cityName, inputText)
+            if citynumbers[index].cityName.contains(inputText) || citynumbers[index].areaName.contains(inputText) {
+                print(citynumbers[index].cityName, inputText )
                 searchedCity.append(citynumbers[index])
             }
         }
@@ -187,9 +187,17 @@ extension SelectCityViewController: UITableViewDataSource, UITableViewDelegate {
         let city = searchedCity[indexPath.row]
         
         if tag == 0 {
+           
+            SignUpViewSeccondController.signupHomeProvince = String(Int(city.provinceType))
+            SignUpViewSeccondController.signupHomeNumber = String(Int(city.number))
+            
             UserDefaults.standard.set(city.provinceType, forKey: "signup_homeProvince")
             UserDefaults.standard.set(city.number, forKey: "signup_homeNumber")
         } else {
+            
+            SignUpViewSeccondController.signupLivingProvince = String(Int(city.provinceType))
+            SignUpViewSeccondController.signupLiveCity = String(Int(city.number))
+            
             UserDefaults.standard.set(city.provinceType, forKey: "signup_livingProvince")
             UserDefaults.standard.set(city.number, forKey: "signup_livingNumber")
         }

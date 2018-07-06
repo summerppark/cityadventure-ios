@@ -45,7 +45,6 @@ class SignUpViewFinalController: BaseViewController {
             let homeNumber = UserDefaults.standard.object(forKey: "signup_homeNumber"),
             let livingProvince = UserDefaults.standard.object(forKey: "signup_livingProvince"),
             let livingNumber = UserDefaults.standard.object(forKey: "signup_livingNumber"),
-            let char = UserDefaults.standard.object(forKey: "signup_char"),
             let home = UserDefaults.standard.object(forKey: "signup_borncity"),
             let living = UserDefaults.standard.object(forKey: "signup_livecity") {
             
@@ -55,6 +54,10 @@ class SignUpViewFinalController: BaseViewController {
             self.birthDay.text = (birthday as? String) ?? ""
             self.homeProvince.text = home as? String ?? ""
             self.livingProvince.text = living as? String ?? ""
+            
+            print("FinalTest", SignUpViewSeccondController.signupEmail, SignUpViewSeccondController.signupPassword, SignUpViewSeccondController.signupName,SignUpViewSeccondController.signupGender,SignUpViewSeccondController.signupBirthday, SignUpViewSeccondController.signupHomeProvince,SignUpViewSeccondController.signupHomeNumber,SignUpViewSeccondController.signupLivingProvince,SignUpViewSeccondController.signupLivingNumber,SignUpViewSeccondController.signupBornCity,SignUpViewSeccondController.signupLiveCity,charIndex)
+            
+            
             
             // 서버로 보낼 파라미터
             parameters = [
