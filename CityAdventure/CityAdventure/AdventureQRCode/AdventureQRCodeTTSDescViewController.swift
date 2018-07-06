@@ -126,7 +126,6 @@ class AdventureQRCodeTTSDescViewController: BaseViewController {
         super.viewDidDisappear(animated)
         player?.pause()
         player = nil
-        
     }
     
     @objc func audioBox(sender: UIButton) {
@@ -147,6 +146,7 @@ class AdventureQRCodeTTSDescViewController: BaseViewController {
         guard let url = URL.init(string: radioURL) else { return }
         let playerItem = AVPlayerItem.init(url: url)
         self.playerItem = playerItem
+        player = nil
         player = AVPlayer.init(playerItem: playerItem)
         player?.play()
 

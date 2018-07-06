@@ -217,7 +217,7 @@ class HADropDown: UIView {
             
             self.table.reloadData()
             UIView.animate(withDuration: 0.25, animations: {
-                self.table.frame = CGRect(x: self.tableFrame.origin.x, y: self.tableFrame.origin.y + self.frame.height+5, width: self.frame.width, height: height)
+                self.table.frame = CGRect(x: self.tableFrame.origin.x, y: self.tableFrame.origin.y + self.frame.height+5, width: self.frame.width, height: 440.0)
                 
             })
             
@@ -238,7 +238,7 @@ class HADropDown: UIView {
         
     }
     func collapseTableView() {
-        
+        print(isCollapsed,"hideTest")
         if isCollapsed {
             // removing tableview from rootview
             UIView.animate(withDuration: 0.25, animations: {

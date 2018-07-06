@@ -109,12 +109,14 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     
     @IBOutlet weak var travelInfoButton: UIButton! {
         didSet {
+            travelInfoButton.titleLabel?.font = UIFont(name: "GodoM", size: 14.0)
             travelInfoButton.addTarget(self, action: #selector(presentWebView), for: .touchUpInside)
         }
     }
     
     @IBOutlet weak var nationInfoButton: UIButton! {
         didSet {
+            nationInfoButton.titleLabel?.font = UIFont(name: "GodoM", size: 14.0)
             nationInfoButton.addTarget(self, action: #selector(presentBoard), for: .touchUpInside)
         }
     }

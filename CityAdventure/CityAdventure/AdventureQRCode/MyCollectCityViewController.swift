@@ -82,6 +82,14 @@ class MyCollectCityViewController: BaseViewController {
         getCities(group: -1)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.selectCitysView.isCollapsed = true
+        self.selectCitysView.collapseTableView()
+        
+        
+    }
+    
     // 상단 뷰 데이타 셋팅
     func dataSetting() {
         guard let currentExp = DataManager.shared.getUserInfo()?.userInfo?.ui_exp else {
