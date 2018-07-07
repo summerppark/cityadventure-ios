@@ -851,6 +851,96 @@
             </objects>
             <point key="canvasLocation" x="4232.8000000000002" y="-620.23988005997012"/>
         </scene>
+        <!--Leave Popup View Controller-->
+        <scene sceneID="biZ-Bp-PTR">
+            <objects>
+                <viewController storyboardIdentifier="LeavePopupViewController" id="Ac2-eV-F9t" customClass="LeavePopupViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R8O-Kk-BPN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8CJ-fW-Klu">
+                                <rect key="frame" x="32" y="233.5" width="311" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a27-Y5-uxY">
+                                        <rect key="frame" x="0.0" y="0.0" width="311" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="탈퇴 문의 완료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6V-nO-WC7">
+                                                <rect key="frame" x="100.5" y="10" width="112" height="21"/>
+                                                <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="18"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1764705882" green="0.92941176469999998" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="z6V-nO-WC7" firstAttribute="centerY" secondItem="a27-Y5-uxY" secondAttribute="centerY" id="2oX-hs-Qv7"/>
+                                            <constraint firstAttribute="height" constant="40" id="6Rt-ry-k3g"/>
+                                            <constraint firstItem="z6V-nO-WC7" firstAttribute="centerX" secondItem="a27-Y5-uxY" secondAttribute="centerX" id="Shr-vr-n0b"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="탈퇴문의가 정상적으로 접수되었습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSy-6P-dKC">
+                                        <rect key="frame" x="18" y="64" width="276" height="20"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메일을 확인해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y95-2d-TSD">
+                                        <rect key="frame" x="80.5" y="100" width="150" height="20"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIb-Kk-ge4">
+                                        <rect key="frame" x="24" y="146" width="263" height="38"/>
+                                        <color key="backgroundColor" red="0.99607843139999996" green="0.83529411760000005" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="xGx-I9-pb7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="20"/>
+                                        <state key="normal" title="확인">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="close:" destination="Ac2-eV-F9t" eventType="touchUpInside" id="DjW-oU-9AR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="GSy-6P-dKC" firstAttribute="centerX" secondItem="8CJ-fW-Klu" secondAttribute="centerX" id="3E2-le-Oqd"/>
+                                    <constraint firstItem="Y95-2d-TSD" firstAttribute="centerX" secondItem="8CJ-fW-Klu" secondAttribute="centerX" id="CDz-RX-Rns"/>
+                                    <constraint firstAttribute="height" constant="200" id="DIE-Ib-Dqm"/>
+                                    <constraint firstItem="GSy-6P-dKC" firstAttribute="top" secondItem="a27-Y5-uxY" secondAttribute="bottom" constant="24" id="KTF-9G-DhL"/>
+                                    <constraint firstAttribute="bottom" secondItem="gIb-Kk-ge4" secondAttribute="bottom" constant="16" id="UUY-k6-T4M"/>
+                                    <constraint firstItem="a27-Y5-uxY" firstAttribute="top" secondItem="8CJ-fW-Klu" secondAttribute="top" id="dkc-70-aiy"/>
+                                    <constraint firstAttribute="trailing" secondItem="a27-Y5-uxY" secondAttribute="trailing" id="eFS-BB-LGT"/>
+                                    <constraint firstAttribute="trailing" secondItem="gIb-Kk-ge4" secondAttribute="trailing" constant="24" id="nlZ-xK-unQ"/>
+                                    <constraint firstItem="Y95-2d-TSD" firstAttribute="top" secondItem="GSy-6P-dKC" secondAttribute="bottom" constant="16" id="r4X-Sw-LO4"/>
+                                    <constraint firstItem="a27-Y5-uxY" firstAttribute="leading" secondItem="8CJ-fW-Klu" secondAttribute="leading" id="uJE-6l-XaC"/>
+                                    <constraint firstItem="gIb-Kk-ge4" firstAttribute="leading" secondItem="8CJ-fW-Klu" secondAttribute="leading" constant="24" id="v48-pA-hyu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dkk-b0-iPY" firstAttribute="trailing" secondItem="8CJ-fW-Klu" secondAttribute="trailing" constant="32" id="9ka-51-cMd"/>
+                            <constraint firstItem="8CJ-fW-Klu" firstAttribute="centerY" secondItem="R8O-Kk-BPN" secondAttribute="centerY" id="E0k-P3-vsi"/>
+                            <constraint firstItem="8CJ-fW-Klu" firstAttribute="centerX" secondItem="R8O-Kk-BPN" secondAttribute="centerX" id="ekM-2A-TKG"/>
+                            <constraint firstItem="8CJ-fW-Klu" firstAttribute="leading" secondItem="dkk-b0-iPY" secondAttribute="leading" constant="32" id="qzu-wT-s2V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dkk-b0-iPY"/>
+                    </view>
+                    <connections>
+                        <outlet property="content1" destination="GSy-6P-dKC" id="BVF-dH-STn"/>
+                        <outlet property="content2" destination="Y95-2d-TSD" id="thg-jX-smr"/>
+                        <outlet property="leaveLabel" destination="z6V-nO-WC7" id="O9i-Xb-TJG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9iE-1m-7sa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4935" y="-620"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="OHU-PL-oAG">
             <objects>
@@ -2507,8 +2597,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRj-p9-SnQ">
                                 <rect key="frame" x="32" y="348" width="311" height="48"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jjy488" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUP-Eb-XJZ">
-                                        <rect key="frame" x="12" y="14" width="48" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUP-Eb-XJZ">
+                                        <rect key="frame" x="12" y="24" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -2561,13 +2651,14 @@
                         <outlet property="backGroundView2" destination="btQ-UM-XUD" id="N87-4F-xRA"/>
                         <outlet property="backGroundView3" destination="gRj-p9-SnQ" id="s1d-92-2jh"/>
                         <outlet property="textView" destination="dTD-11-aK5" id="zlc-Nv-Dce"/>
+                        <outlet property="titleTextField" destination="ZBs-uB-mYK" id="3qa-ZO-11e"/>
                         <outlet property="topViewHeight" destination="Rb6-c6-ZtX" id="LFW-6m-ePi"/>
                         <outlet property="userEmail" destination="xUP-Eb-XJZ" id="FFA-e7-3bw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3C-qx-bpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2222" y="1490"/>
+            <point key="canvasLocation" x="2221.5999999999999" y="1489.2053973013494"/>
         </scene>
         <!--AdventureQR Code Check Popup-->
         <scene sceneID="RVK-v9-mZY">
@@ -2835,6 +2926,9 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                 <state key="normal" title="탈퇴 요청하기" backgroundImage="btn_yellow_bg">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="leaveBUBU:" destination="Fve-yQ-KI2" eventType="touchUpInside" id="mAp-p3-kuk"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sqs-CT-GLR">
                                 <rect key="frame" x="24" y="319" width="327" height="48"/>
@@ -2877,6 +2971,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                     <connections>
                         <outlet property="borderView" destination="SwU-QV-P1n" id="FBh-5y-TxW"/>
                         <outlet property="borderView2" destination="Sqs-CT-GLR" id="anq-fX-xOf"/>
+                        <outlet property="phoneNumber" destination="Rnx-gV-C4e" id="h1D-YC-8Fw"/>
                         <outlet property="textView" destination="0Ix-6S-OuO" id="jJY-vw-kG3"/>
                         <outlet property="topViewHeight" destination="OFx-HW-qjg" id="pak-oq-QHK"/>
                     </connections>
@@ -4502,12 +4597,25 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                             <action selector="close" destination="BvV-iQ-DcX" eventType="touchUpInside" id="thn-eC-Di6"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mON-pK-3S5">
+                                        <rect key="frame" x="16" y="32" width="32" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="XFF-g7-sgq"/>
+                                            <constraint firstAttribute="height" constant="20" id="nE4-S7-4zS"/>
+                                        </constraints>
+                                        <state key="normal" image="signup_leftbarbutton"/>
+                                        <connections>
+                                            <action selector="backBu:" destination="BvV-iQ-DcX" eventType="touchUpInside" id="bjR-P2-p0e"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.83529411760000005" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="tZH-Cj-Eyq" secondAttribute="trailing" constant="16" id="6Qv-DJ-tbb"/>
                                     <constraint firstItem="KDE-5H-afh" firstAttribute="centerX" secondItem="Y1x-Xq-RSl" secondAttribute="centerX" id="IeA-Hd-z3H"/>
+                                    <constraint firstAttribute="bottom" secondItem="mON-pK-3S5" secondAttribute="bottom" constant="12" id="MKN-T8-4TB"/>
                                     <constraint firstAttribute="bottom" secondItem="tZH-Cj-Eyq" secondAttribute="bottom" constant="12" id="MSO-zr-EIh"/>
+                                    <constraint firstItem="mON-pK-3S5" firstAttribute="leading" secondItem="Y1x-Xq-RSl" secondAttribute="leading" constant="16" id="SP9-Pa-Yb1"/>
                                     <constraint firstAttribute="bottom" secondItem="KDE-5H-afh" secondAttribute="bottom" constant="12" id="Wly-qW-ShA"/>
                                     <constraint firstAttribute="height" constant="64" id="eKN-kA-wVX"/>
                                 </constraints>
@@ -5143,6 +5251,9 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bh-nm-OQB">
                                                                 <rect key="frame" x="96" y="0.0" width="93.5" height="92"/>
                                                                 <state key="normal" image="drawer_btn_showping"/>
+                                                                <connections>
+                                                                    <action selector="shoppingMall:" destination="ZDD-XA-R1b" eventType="touchUpInside" id="QIA-58-fcl"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -6063,7 +6174,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 <rect key="frame" x="169" y="13.5" width="70" height="22"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,111,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhw-UB-77B">
-                                                        <rect key="frame" x="25.5" y="5.5" width="36.5" height="11"/>
+                                                        <rect key="frame" x="21.5" y="5.5" width="40.5" height="11"/>
                                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="9"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -6097,7 +6208,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfm-Dg-8HK">
-                                                        <rect key="frame" x="47.5" y="6" width="14.5" height="10.5"/>
+                                                        <rect key="frame" x="46.5" y="6" width="15.5" height="10.5"/>
                                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="9"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -6115,13 +6226,13 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4N-aH-nIh">
-                                                <rect key="frame" x="140.5" y="49" width="20.5" height="13"/>
+                                                <rect key="frame" x="141.5" y="49" width="19.5" height="13"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비유비유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2He-Ih-Mwx">
-                                                <rect key="frame" x="78.5" y="46" width="58" height="19"/>
+                                                <rect key="frame" x="82" y="46" width="55.5" height="19"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -6139,13 +6250,13 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIV-nR-90D">
-                                                        <rect key="frame" x="18" y="2.5" width="16.5" height="19"/>
+                                                        <rect key="frame" x="18" y="2.5" width="18" height="19"/>
                                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" progressImage="img_progress" translatesAutoresizingMaskIntoConstraints="NO" id="k2U-BX-JNk">
-                                                        <rect key="frame" x="38.5" y="5" width="38.5" height="12"/>
+                                                        <rect key="frame" x="40" y="5" width="37" height="12"/>
                                                         <color key="tintColor" red="0.23529411759999999" green="0.69803921570000005" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="lrL-kn-G5Z"/>
@@ -6153,19 +6264,19 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <color key="trackTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-e6-eOl">
-                                                        <rect key="frame" x="57" y="8" width="2" height="6"/>
+                                                        <rect key="frame" x="58.5" y="8" width="2" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-5d-YjP">
-                                                        <rect key="frame" x="61" y="8" width="14" height="6"/>
+                                                        <rect key="frame" x="62.5" y="8" width="14" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2C-I5-yR0">
-                                                        <rect key="frame" x="44" y="8" width="11" height="6"/>
+                                                        <rect key="frame" x="45.5" y="8" width="11" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -7690,6 +7801,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <state key="normal" title="Button" image="icon_shopping"/>
                                         <connections>
                                             <action selector="openShoppingMall:" destination="vRj-le-8Rw" eventType="touchUpInside" id="vmt-uT-cY0"/>
+                                            <action selector="shoppingMall:" destination="vRj-le-8Rw" eventType="touchUpInside" id="MQC-rk-dll"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxa-Ob-mjC">
@@ -7931,7 +8043,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qu8-2N-cRd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7428.985507246377" y="-1335.3260869565217"/>
+            <point key="canvasLocation" x="7428" y="-1335.3823088455774"/>
         </scene>
         <!--Exercise Game View Controller-->
         <scene sceneID="Nmc-i2-07h">

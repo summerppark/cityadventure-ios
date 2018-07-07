@@ -138,7 +138,9 @@ class AdventureQRCodeViewController: BaseViewController {
         print("maxExp = ", super.getNextNeedExpByLevel(level: level))
         
         if let coin = DataManager.shared.getUserInfo()?.userInfo?.ui_credit {
-            myCoin.text = "\(coin)"
+            let nf = NumberFormatter()
+            nf.numberStyle = .decimal
+            myCoin.text = nf.string(from: NSNumber(integerLiteral: coin))
         }
         
         if let count = DataManager.shared.getUserCardInfo()?.dataLength {

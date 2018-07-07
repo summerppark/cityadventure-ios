@@ -104,5 +104,14 @@ class APIUrls {
         return "http://www.bubu-expedition.com/API/v1/members/\(member)/credit-exp"
     }
     
+    static func shoppingMallUrl() -> String {
+        return "https://smartstore.naver.com/bubuinc"
+    }
+    
+    
+    static func leaveBubuApp(member: Int, token: String, email: String, subject: String, content: String, type: Int) -> String {
+        return "http://www.bubu-expedition.com/API/v1/accounts/\(member)/sendmail?token=\(token)&email=\(email)&subject=\(subject)&content=\(content)&type=\(type)"
+    }
+    
     
 }

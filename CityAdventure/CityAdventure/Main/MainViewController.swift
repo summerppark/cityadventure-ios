@@ -149,11 +149,6 @@ class MainViewController: BaseViewController {
         print("maxExp = ", super.getNextNeedExpByLevel(level: level))
         
         if let coin = DataManager.shared.getUserInfo()?.userInfo?.ui_credit {
-//            let numFormatter : NSNumberFormatter = NSNumberFormatter();
-//            numFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
-//            let value : Int = 1000
-//            let price : String = numFormatter.stringFromNumber(value)!
-            
             
             let nf = NumberFormatter()
             nf.numberStyle = .decimal

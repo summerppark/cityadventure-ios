@@ -28,6 +28,8 @@
 		667364542089C8D00098E8E0 /* ExerciseGameDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667364532089C8D00098E8E0 /* ExerciseGameDB.swift */; };
 		667364562089D9AA0098E8E0 /* prepareDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 667364552089D2B50098E8E0 /* prepareDB.sqlite */; };
 		667AF8A520E249710068C125 /* CityCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667AF8A420E249710068C125 /* CityCardInfo.swift */; };
+		66988C2D20F0DB76009B1A26 /* NewBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66988C2C20F0DB76009B1A26 /* NewBaseResponse.swift */; };
+		66988C2F20F0E48D009B1A26 /* LeavePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66988C2E20F0E48D009B1A26 /* LeavePopupViewController.swift */; };
 		66A05F29208989B500CDCF4C /* ExerciseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */; };
 		66BA20C120ECDA51001B307A /* LandMarkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA20C020ECDA51001B307A /* LandMarkDetailViewController.swift */; };
 		66C8CBDE20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8CBDD20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift */; };
@@ -183,6 +185,8 @@
 		667364532089C8D00098E8E0 /* ExerciseGameDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGameDB.swift; sourceTree = "<group>"; };
 		667364552089D2B50098E8E0 /* prepareDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = prepareDB.sqlite; sourceTree = "<group>"; };
 		667AF8A420E249710068C125 /* CityCardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCardInfo.swift; sourceTree = "<group>"; };
+		66988C2C20F0DB76009B1A26 /* NewBaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBaseResponse.swift; sourceTree = "<group>"; };
+		66988C2E20F0E48D009B1A26 /* LeavePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeavePopupViewController.swift; sourceTree = "<group>"; };
 		66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGameViewController.swift; sourceTree = "<group>"; };
 		66BA20C020ECDA51001B307A /* LandMarkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandMarkDetailViewController.swift; sourceTree = "<group>"; };
 		66C8CBDD20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeBoardPopUp.swift; sourceTree = "<group>"; };
@@ -539,6 +543,7 @@
 				666B6E572084C42000CD28DB /* LogoutViewController.swift */,
 				6628E658208DF06E009DD4C2 /* ResultCorrectPopUp.swift */,
 				CEBCA2E020922975005DFA9D /* HintPopViewController.swift */,
+				66988C2E20F0E48D009B1A26 /* LeavePopupViewController.swift */,
 			);
 			path = "Alert&Popup";
 			sourceTree = "<group>";
@@ -557,6 +562,7 @@
 				667364532089C8D00098E8E0 /* ExerciseGameDB.swift */,
 				667AF8A420E249710068C125 /* CityCardInfo.swift */,
 				66E7AC7120EA2AE300D82BA2 /* LandmarkInfos.swift */,
+				66988C2C20F0DB76009B1A26 /* NewBaseResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -880,6 +886,7 @@
 				66E3EA3C20DCED4E00269E6B /* APIManager_Exercise.swift in Sources */,
 				CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */,
 				CE717CF020C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift in Sources */,
+				66988C2F20F0E48D009B1A26 /* LeavePopupViewController.swift in Sources */,
 				66D9390B208480DE005A66F4 /* SettingViewController.swift in Sources */,
 				CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */,
 				CE642C2120773D15000C2F01 /* FindPasswordSecondViewController.swift in Sources */,
@@ -897,6 +904,7 @@
 				CE1DA22B206B67AB000C36B2 /* AlertViewController.swift in Sources */,
 				6628E659208DF06E009DD4C2 /* ResultCorrectPopUp.swift in Sources */,
 				CE300635207C5A3C00E90DC3 /* AlertGreenViewController.swift in Sources */,
+				66988C2D20F0DB76009B1A26 /* NewBaseResponse.swift in Sources */,
 				CEF716342064CB1900B457E9 /* AppDelegate.swift in Sources */,
 				6615319C20CE401500CBA51E /* AdventureNewQRCodeViewController.swift in Sources */,
 				CED8C4A9207212B000286A61 /* FMDatabaseAdditions.m in Sources */,

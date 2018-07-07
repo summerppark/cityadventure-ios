@@ -123,6 +123,12 @@ class AdventureQRCodeReaderViewController: UIViewController {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
+    
+    @IBAction func shoppingMall(_ sender: UIButton) {
+        if let url = URL(string: APIUrls.shoppingMallUrl()) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
 }
 
 

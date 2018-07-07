@@ -70,7 +70,11 @@ class NoticeViewController: BaseViewController, WKNavigationDelegate {
     @IBAction func noSeeNotice(_ sender: UIButton) {
         toggle = !toggle
         toggleButton.image = toggle ? images[0] : images[1]
-        
     }
+    
+    @IBAction func backBu(_ sender: UIButton) {
+        self.webView.goBack()
+    }
+    
     
 }

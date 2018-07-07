@@ -107,6 +107,11 @@ class RightSideMenuViewController: BaseViewController {
         audioIsPlay = !audioIsPlay
     }
     
+    @IBAction func shoppingMall(_ sender: UIButton) {
+        if let url = URL(string: APIUrls.shoppingMallUrl()) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
     
     @IBAction func tappedCloseButton(_ sender: UIButton) {
         hideView(type: 0)
@@ -190,7 +195,7 @@ class RightSideMenuViewController: BaseViewController {
                         self.navigationController?.pushViewController(adventureQRCode, animated: true)
                     }
                 }
-            }
+            } 
         }
     }
 }
