@@ -10,8 +10,9 @@ import UIKit
 import SwiftGifOrigin
 import AVFoundation
 import Alamofire
+import Toaster
 
-class LaunchScreenViewController: UIViewController {
+class LaunchScreenViewController: BaseViewController {
     
     static var syntheSizer = AVSpeechSynthesizer()
     
@@ -23,6 +24,7 @@ class LaunchScreenViewController: UIViewController {
             loadGifImage.image = gifFile
         }
     }
+    var presenter: LoginViewPresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,7 @@ class LaunchScreenViewController: UIViewController {
 
         self.navigationController?.navigationBar.isHidden = true
         
+        presenter = LoginViewPresenter(presenter: self)
         
     }
     
@@ -98,11 +101,44 @@ class LaunchScreenViewController: UIViewController {
             // gif stop
             self?.loadGifImage.stopAnimating()
             
-            
-            // 로그인 화면으로 옵셔널 체크 후 전환
-            if let loginVC = self?.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") {
-                self?.navigationController?.pushViewController(loginVC, animated: true)
+            if let email = UserDefaults.standard.object(forKey: "auto_email") as? String, let password = UserDefaults.standard.object(forKey: "auto_password") as? String {
+               
+                self?.presenter.tryEmailLogin(email: email, password: password)
+            } else {
+                // 로그인 화면으로 옵셔널 체크 후 전환
+                if let loginVC = self?.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") {
+                    self?.navigationController?.pushViewController(loginVC, animated: true)
+                }
             }
         })
+    }
+}
+
+
+extension LaunchScreenViewController: LoginViewPresenterProtocol {
+    func tryLoginHandler(nick: String) {
+        stopLoading()
+        // email, password 를 통해서 API 를 날려 토큰을 받아 온 후 바로 Token 을 가지고 유저 정보, 유저 계정정보 2군두에 통신을 시도한 후 핸들러로 이곳에 도착하여 메인뷰로 넘어간다.
+        // Toast 를 위한 구문
+        failEmailLogin(msg: "\(nick)대원님 환영합니다.")
+        
+        // Main 화면으로 보내기
+        let main = self.storyboard?.instantiateViewController(withIdentifier: "mainNav") as! UINavigationController
+        let appDelegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = main
+    }
+    
+    func startLoading() {
+        print("login시도중")
+        super.showLoading(view: self.view)
+    }
+    
+    func stopLoading() {
+        super.hideLoading()
+    }
+    
+    func failEmailLogin(msg: String?) {
+        print("실패를 알려준다 토스트 온")
+        Toast(text: msg).show()
     }
 }

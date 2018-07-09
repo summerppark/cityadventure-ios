@@ -582,7 +582,11 @@ class TermsOfUseDetailViewController: UIViewController {
 ①이름:
 ② 소속 :  ㈜비유비유
 ③ 연락처 :  02-304-3352
-"""]
+""", """
+-Alamofire
+ MIT License
+"""
+    ]
     
     
     

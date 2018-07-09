@@ -28,22 +28,44 @@ class LoginViewController: BaseViewController {
     
     @IBOutlet weak var loginButton: UIButton!
    
+    @IBOutlet weak var autoLogin: UIButton! {
+        didSet {
+            autoLogin.addTarget(self, action: #selector(autoLoginCheck), for: .touchUpInside)
+        }
+    }
+    
     var presenter: LoginViewPresenter!
+    var autoLoginToggle: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //엣지 팝 제스쳐 끄기
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         self.navigationController?.navigationBar.isHidden = true
-        
+  
         initView()
         presenter = LoginViewPresenter(presenter: self)
+        
+        if let email = UserDefaults.standard.object(forKey: "auto_email") as? String, let password = UserDefaults.standard.object(forKey: "auto_password") as? String {
+            autoLoginToggle = true
+            autoLogin.setImage(#imageLiteral(resourceName: "auto_login_ok"), for: .normal)
+            self.presenter.tryEmailLogin(email: email, password: password)
+        }
+        
         toastViewSetting()
         
     }
     
+    @objc func autoLoginCheck() {
+        autoLoginToggle = !autoLoginToggle
+        if autoLoginToggle {
+            autoLogin.setImage(#imageLiteral(resourceName: "auto_login_ok"), for: .normal)
+        } else {
+            autoLogin.setImage(#imageLiteral(resourceName: "auto_login_no"), for: .normal)
+        }
+    }
+    
     func toastViewSetting() {
-        
         ToastView.appearance().font = UIFont(name: "GodoM", size: 18.0)
         ToastView.appearance().frame = CGRect(x: 0, y: 0, width: 200, height: 150)
     }
@@ -77,9 +99,22 @@ class LoginViewController: BaseViewController {
         // 키보드 내려준다.
         keyboardHide()
         
+        //true
+        if autoLoginToggle {
+            print("설정")
+            UserDefaults.standard.set(emailTextField.text!, forKey: "auto_email")
+            UserDefaults.standard.set(passwordTextField.text!, forKey: "auto_password")
+            
+        } else {
+            UserDefaults.standard.set(nil, forKey: "auto_email")
+            UserDefaults.standard.set(nil, forKey: "auto_password")
+        }
+        
+        // 지운다.
         if let email = emailTextField.text, let password = passwordTextField.text {
             self.presenter.tryEmailLogin(email: email, password: password)
         }
+        
     }
     
     //MARK:- FindPassword
@@ -97,7 +132,7 @@ class LoginViewController: BaseViewController {
         }
     }
     
-    @IBAction func autoLogin(_ sender: UIButton) {
+    @IBAction func kakaoLogin(_ sender: UIButton) {
         
         guard let session = KOSession.shared() else { return }
         // 오픈되어있으면 바로 로그인 ㄱ
@@ -121,8 +156,6 @@ class LoginViewController: BaseViewController {
                         print("아이디없다")
                     }
                 })
-
-
             } else {
                 print("failed")
             }

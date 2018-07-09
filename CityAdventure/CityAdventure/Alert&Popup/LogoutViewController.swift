@@ -29,6 +29,10 @@ class LogoutViewController: UIViewController {
     @IBAction func agreeLogout(sender: UIButton) {
         self.dismiss(animated: false) {
             Toast(text: "로그아웃 되었습니다.").show()
+            
+            UserDefaults.standard.set(nil, forKey: "auto_email")
+            UserDefaults.standard.set(nil, forKey: "auto_password")
+            
             let login = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             let navigationController = UINavigationController(rootViewController: login)
             let appDelegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate

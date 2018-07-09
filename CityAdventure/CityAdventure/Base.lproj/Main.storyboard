@@ -171,20 +171,17 @@
                                             <constraint firstAttribute="width" secondItem="qAV-Jr-hhn" secondAttribute="height" multiplier="1:1" id="z5v-g9-49c"/>
                                         </constraints>
                                         <state key="normal" image="auto_login_no"/>
-                                        <connections>
-                                            <action selector="autoLogin:" destination="AFd-z1-rnF" eventType="touchUpInside" id="12d-Ia-6H5"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aN2-yD-68S">
-                                        <rect key="frame" x="32" y="3" width="60" height="28"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <rect key="frame" x="32" y="1" width="83" height="32"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                         <state key="normal" title="자동 로그인">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9T-eC-Qz8">
-                                        <rect key="frame" x="223" y="3" width="72" height="28"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <rect key="frame" x="198" y="1" width="97" height="32"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
                                         <state key="normal" title="비밀번호 찾기">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -218,12 +215,15 @@
                                     <action selector="tappedSignUpWithSender:" destination="AFd-z1-rnF" eventType="touchUpInside" id="r7j-ZS-HfM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny4-fX-fbV">
+                            <button hidden="YES" opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny4-fX-fbV">
                                 <rect key="frame" x="40" y="559.5" width="295" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="ha0-Fa-gbp"/>
                                 </constraints>
                                 <state key="normal" image="kakao_login"/>
+                                <connections>
+                                    <action selector="kakaoLogin:" destination="AFd-z1-rnF" eventType="touchUpInside" id="uqM-Z2-jqK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -270,6 +270,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CGS-ah-kqB"/>
                     <connections>
+                        <outlet property="autoLogin" destination="qAV-Jr-hhn" id="5FS-tU-7vn"/>
                         <outlet property="emailTextField" destination="b3P-W4-2tB" id="7o5-lL-PCr"/>
                         <outlet property="loginButton" destination="I59-li-PKC" id="pdw-pX-WQq"/>
                         <outlet property="passwordTextField" destination="QQm-Mn-G0W" id="cyG-yK-tTC"/>

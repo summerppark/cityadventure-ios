@@ -62,6 +62,7 @@ class LoginViewPresenter: NSObject {
                     
                     //Token값을 로컬에 저장
                     UserDefaults.standard.set(token, forKey: "token")
+                    UserDefaults.standard.set(member, forKey: "member")
                     
                     // 토큰정보를 받아와서 추가적인 서버와 통신한다.
                     self.getCardInfo()
