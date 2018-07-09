@@ -55,9 +55,15 @@ class APIUrls {
     }
     
     // 준비운동 코인 ,경험치
-    static func updateExpCoin(token: String) -> String {
-        return "/members/credit-exp?token=\(token)&credit=50&exp=50"
+    static func updateExpCoin(token: String, credit: Int, exp: Int) -> String {
+        return "/members/credit-exp?token=\(token)&credit=\(credit)&exp=\(exp)"
     }
+    
+    
+    static func hintExpCoin(token: String) -> String {
+        return "http://www.bubu-expedition.com/API/v1/members/credit-exp?token=\(token)&credit=-300&exp=0"
+    }
+   
 
     
     static func getImageFlipFront(cardNumber: String) -> String {

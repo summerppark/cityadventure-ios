@@ -306,6 +306,11 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         dataSetting()
     }
     
+    //MARK:- UnWind
+    @IBAction func unWindQRCodeFlip(_ segue: UIStoryboardSegue) {
+        // 회원가입 완료 팝업 창에서 닫기 눌렀을 때 이쪽으로 소환
+    }
+    
     func layoutColor(cityNumber: Int) {
         print(cityNumber,"flipView")
         
@@ -381,8 +386,9 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         
         travelInfoUrl = city.t_tourURL
         cityType = Int(city.ui_province)
-        
     }
+    
+    
     
     // 상단 뷰 데이타 셋팅
     func dataSetting() {

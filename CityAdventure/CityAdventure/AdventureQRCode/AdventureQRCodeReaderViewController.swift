@@ -27,13 +27,28 @@ class AdventureQRCodeReaderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let formattedString = NSMutableAttributedString()
+        formattedString
+            .bigGodoBold("탐험하고 싶은\n도시의 카드")
+            .godoNormal("를\n뚱카에 넣어주세요!")
+        messageLabel.attributedText = formattedString
         
-        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
-            result.cityNumber = "90a"
-
-            self.navigationController?.pushViewController(result, animated: true)
-        }
+//        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
+//            result.cityNumber = "90a"
+//
+//            self.navigationController?.pushViewController(result, animated: true)
+//        }
         
+       
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         guard let captureDevice =  AVCaptureDevice.default(for: .video) else { return }
         
         do {
@@ -56,7 +71,7 @@ class AdventureQRCodeReaderViewController: UIViewController {
         
         session.startRunning()
         
-       
+        
         // Get the back-facing camera for capturing videos
         // Move the message label and top bar to the front
         view.bringSubview(toFront: messageLabel)
@@ -71,23 +86,24 @@ class AdventureQRCodeReaderViewController: UIViewController {
             view.addSubview(qrCodeFrameView)
             view.bringSubview(toFront: qrCodeFrameView)
         }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("QRCode", session.isRunning)
-        // Animation
+        
+        
         UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseOut, .repeat], animations: {
             [weak self] in
             self?.animationView.frame.origin.y -= 50
         }) { (action) in
             print("핸들러")
         }
+        
+        
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("QRCode", session.isRunning)
+        // Animation
+        
     }
     
     // MARK: - Helper methods
@@ -200,5 +216,26 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
             }
         }
     }
+}
+
+
+extension NSMutableAttributedString {
+    @discardableResult func bigGodoBold(_ text: String) -> NSMutableAttributedString {
+        let attrs: [NSAttributedStringKey: Any] = [.font: UIFont.init(name: "GodoB", size: 32.0)]
+        let boldString = NSMutableAttributedString(string:text, attributes: attrs)
+        append(boldString)
+        
+        return self
+    }
+    
+    @discardableResult func godoNormal(_ text: String) -> NSMutableAttributedString {
+        
+        let attrs: [NSAttributedStringKey: Any] = [.font: UIFont.init(name: "GodoM", size: 30.0)]
+        let normal = NSAttributedString(string: text, attributes: attrs)
+        append(normal)
+        return self
+    }
+    
+    
 }
 

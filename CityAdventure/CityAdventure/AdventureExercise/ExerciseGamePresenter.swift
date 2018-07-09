@@ -21,7 +21,7 @@ class ExerciseGamePresenter: NSObject {
     
     func updateMyAccountInfo() {
         guard let token = UserDefaults.standard.object(forKey: "token") as? String else { return }
-        APIManager.updateMyExpCoin(url: APIUrls.updateExpCoin(token: token), completion: { (result) in
+        APIManager.updateMyExpCoin(url: APIUrls.updateExpCoin(token: token, credit: 50, exp: 50), completion: { (result) in
             
             // 나의 계정정보를 갱신.
             if let updateInfo = result["data"] as? NSDictionary {
@@ -30,7 +30,7 @@ class ExerciseGamePresenter: NSObject {
                     DataManager.shared.userInfo?.userInfo?.ui_credit = credit
                     DataManager.shared.userInfo?.userInfo?.ui_exp = exp
                 }
-                print("성공성공", updateInfo["ui_credit"] as! Int, updateInfo["ui_exp"] as! Int , token)
+                print("성공성공", updateInfo["ui_credit"] as! Int, updateInfo["ui_exp"] as! Int , token, APIUrls.updateExpCoin(token: token, credit: 50, exp: 50))
             }
         }) { (error) in
             print(error!.localizedDescription , "통신 실패 UpdateMyAccountInfo")
