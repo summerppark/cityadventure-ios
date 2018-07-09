@@ -171,6 +171,8 @@ class AdventureQRCodeFlipViewController: BaseViewController {
             backMaplocationButton.layer.borderWidth = 8.0
             backMaplocationButton.layer.borderColor = UIColor().colorFromHex("#ff4863").cgColor
             backMaplocationButton.clipsToBounds = true
+            
+            backMaplocationButton.addTarget(self, action: #selector(openMapView), for: .touchUpInside)
         }
     }
     
@@ -192,7 +194,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     @IBOutlet weak var leadingCityNameConstant: NSLayoutConstraint!
     
     var kanjiStrArray :[String] = []
-    
+    var location: (Float, Float) = (0.0, 0.0)
     
     // BOTTOM
     var helpImage: UIImageView = {
@@ -304,6 +306,15 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dataSetting()
+        DataManager.shared.getUserCardInfo()?.cardInfo?.forEach({ (cardInfo) in
+            if let no = cardInfo.uti_cardNo {
+                if no == Int(cityNumber) {
+                    print("획득한 카드")
+                    puzzleButton.setImage(#imageLiteral(resourceName: "btn_collected_city"), for: .normal)
+                }
+            }
+        })
+        
     }
     
     //MARK:- UnWind
@@ -345,6 +356,9 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         let city = DataManager.shared.cityCards[index]
         var kanjiString = ""
         var kanjiText = ""
+        
+        location.0 = city.latitude
+        location.1 = city.longitude
         
         if city.s_name.count == 2 {
             city.s_kanji.forEach { (char) in
@@ -388,7 +402,13 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         cityType = Int(city.ui_province)
     }
     
-    
+    @objc func openMapView() {
+        if let map = self.storyboard?.instantiateViewController(withIdentifier: "CityMapViewController") as? CityMapViewController {
+            map.location = location.self
+            map.cityname = "\(self.cityName.text ?? "" ) \(self.cityArea.text ?? "")"
+            self.navigationController?.pushViewController(map, animated: true)
+        }
+    }
     
     // 상단 뷰 데이타 셋팅
     func dataSetting() {

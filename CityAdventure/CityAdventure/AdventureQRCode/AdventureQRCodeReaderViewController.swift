@@ -33,12 +33,15 @@ class AdventureQRCodeReaderViewController: UIViewController {
             .godoNormal("를\n뚱카에 넣어주세요!")
         messageLabel.attributedText = formattedString
         
-//        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
-//            result.cityNumber = "90a"
-//
-//            self.navigationController?.pushViewController(result, animated: true)
-//        }
+
         
+        
+        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
+            result.cityNumber = "99a"
+
+            self.navigationController?.pushViewController(result, animated: true)
+        }
+
        
     }
     
@@ -49,6 +52,17 @@ class AdventureQRCodeReaderViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.animationView.layoutIfNeeded()
+        UIView.animate(withDuration: 2, delay: 0, options: [.repeat,.curveEaseOut, .repeat], animations: {
+            [weak self] in
+            self?.animationView.frame.origin.y -= 50
+            self?.animationView.layoutIfNeeded()
+        }) { (action) in
+            print("핸들러")
+        }
+        
+        
         guard let captureDevice =  AVCaptureDevice.default(for: .video) else { return }
         
         do {
@@ -86,16 +100,7 @@ class AdventureQRCodeReaderViewController: UIViewController {
             view.addSubview(qrCodeFrameView)
             view.bringSubview(toFront: qrCodeFrameView)
         }
-        
-        
-        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseOut, .repeat], animations: {
-            [weak self] in
-            self?.animationView.frame.origin.y -= 50
-        }) { (action) in
-            print("핸들러")
-        }
-        
-        
+
     }
     
     
@@ -135,7 +140,7 @@ class AdventureQRCodeReaderViewController: UIViewController {
     }
     
     @IBAction func openShoppingMall(_ sender: UIButton) {
-        if let url = URL(string: "http://naver.com") {
+        if let url = URL(string: APIUrls.shoppingMallUrl()) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }

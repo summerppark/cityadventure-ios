@@ -21,8 +21,11 @@ struct CityCardLocalDB {
     var t_tourURL: String // 도시투어 url
     var version: Int32
     var ui_province: Int32
+    var latitude: Float
+    var longitude: Float
     
-    init(s_name: String, s_type: String, ui_cityNo: Int32, ui_cardNo: Int32, s_kanji: String, t_kanjiExplain: String, t_slogan: String, t_cityExplain: String, t_tourURL: String, version: Int32,ui_province: Int32) {
+    
+    init(s_name: String, s_type: String, ui_cityNo: Int32, ui_cardNo: Int32, s_kanji: String, t_kanjiExplain: String, t_slogan: String, t_cityExplain: String, t_tourURL: String, version: Int32,ui_province: Int32, latitude: Float, longitude: Float) {
         self.s_name = s_name
         self.s_type = s_type
         self.ui_cityNo = ui_cityNo
@@ -34,6 +37,8 @@ struct CityCardLocalDB {
         self.t_tourURL = t_tourURL
         self.version = version
         self.ui_province = ui_province
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }
 

@@ -85,7 +85,7 @@ class DataManager {
                                      t_slogan: results.string(forColumn: "t_slogan") ?? "",
                                      t_cityExplain: results.string(forColumn: "t_cityExplain") ?? "",
                                      t_tourURL: results.string(forColumn: "t_tourURL") ?? "",
-                                     version: results.int(forColumn: "version"), ui_province: results.int(forColumn: "ui_province"))
+                                     version: results.int(forColumn: "version"), ui_province: results.int(forColumn: "ui_province"), latitude: Float(results.double(forColumn: "latitude")), longitude: Float(results.double(forColumn: "longitude")))
                 
                 cityCards.append(col)
             }
