@@ -36,11 +36,11 @@ class AdventureQRCodeReaderViewController: UIViewController {
 
         
         
-        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
-            result.cityNumber = "99a"
-
-            self.navigationController?.pushViewController(result, animated: true)
-        }
+//        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
+//            result.cityNumber = "99a"
+//
+//            self.navigationController?.pushViewController(result, animated: true)
+//        }
 
        
     }

@@ -13,14 +13,20 @@ class LandMarkDetailViewController: BaseViewController {
     @IBOutlet weak var topViewHeight: NSLayoutConstraint!
     @IBOutlet weak var landmarkTableView: UITableView!
     
-    var landmarkNumber: Int = 1
     
+    @IBOutlet weak var landmarkName: UILabel!
+    @IBOutlet weak var landmarkDesc: UITextView! {
+        didSet {
+            landmarkDesc.font = UIFont.init(name: "GodoM", size: 16.0)
+        }
+    }
+    
+    @IBOutlet weak var photoSliderView: UIScrollView!
+    
+    var landmarkNumber: Int = 1
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
-//        landmarkTableView.backgroundView?.addSubview(<#T##UIView#>)
         layoutcheck()
         print("landmarkNumber", landmarkNumber)
         // Do any additional setup after loading the view.
@@ -39,15 +45,6 @@ class LandMarkDetailViewController: BaseViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func tappedBackbutton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
