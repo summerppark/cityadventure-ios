@@ -14,6 +14,7 @@ class BaseViewController: UIViewController {
     
     let gifImage = UIImageView()
     
+    let bornArea = ["특광역시","경기도","강원도","충청북도","충청남도","전라북도","전라남도","경상북도","경상남도","제주도"]
     
     var charImages = [#imageLiteral(resourceName: "img_thumbChar_first_On"),#imageLiteral(resourceName: "img_thumbChar_second_On"),#imageLiteral(resourceName: "img_thumbChar_third_On"),#imageLiteral(resourceName: "img_thumbChar_fourth_On")]
     var mainCharImages = [#imageLiteral(resourceName: "main1"),#imageLiteral(resourceName: "main2"),#imageLiteral(resourceName: "main3"),#imageLiteral(resourceName: "main4")]
@@ -107,4 +108,23 @@ extension BaseViewController {
         return exp - nowExp
     }
     
+    func convertDateFormatter(inputDate: String?) -> String {
+        guard let inputDate = inputDate else {
+            return ""
+        }
+        
+        let dateString = inputDate.components(separatedBy: "-")
+        let resultArray = ["년", "월", "일"]
+        var result = ""
+        
+        for index in 0...dateString.count-1 {
+            result = result + dateString[index] + resultArray[index]
+            
+            if index != dateString.count-1 {
+                result = result + " "
+            }
+        }
+        
+        return result
+    }
 }

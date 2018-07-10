@@ -32,17 +32,13 @@ class AdventureQRCodeReaderViewController: UIViewController {
             .bigGodoBold("탐험하고 싶은\n도시의 카드")
             .godoNormal("를\n뚱카에 넣어주세요!")
         messageLabel.attributedText = formattedString
-        
+  
+        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
+            result.cityNumber = "69b"
 
-        
-        
-//        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
-//            result.cityNumber = "1a"
-//
-//            self.navigationController?.pushViewController(result, animated: true)
-//        }
+            self.navigationController?.pushViewController(result, animated: true)
+        }
 
-       
     }
     
     override func didReceiveMemoryWarning() {

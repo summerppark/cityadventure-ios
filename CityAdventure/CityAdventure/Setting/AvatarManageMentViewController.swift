@@ -11,7 +11,14 @@ import SnapKit
 
 class AvatarManageMentViewController: BaseViewController {
     // Data
-    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var progressView: UIProgressView! {
+        didSet {
+            progressView.layer.borderColor = UIColor.black.cgColor
+            progressView.layer.borderWidth = 1.0
+            progressView.layer.cornerRadius = 4.0
+            progressView.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var userCharView: UIImageView!
     @IBOutlet weak var currentLevelLabel: UILabel!
     @IBOutlet weak var expMaxLabel: UILabel!
@@ -24,11 +31,12 @@ class AvatarManageMentViewController: BaseViewController {
     @IBOutlet weak var userNameLabelTrailing: NSLayoutConstraint!
 
     ////
+    @IBOutlet weak var bottomConst: NSLayoutConstraint!
     
-    let charImageArray: [UIImage] = [#imageLiteral(resourceName: "img_char_first"),#imageLiteral(resourceName: "img_char_second"),#imageLiteral(resourceName: "img_char_third"),#imageLiteral(resourceName: "img_char_fourth")]
+    let charImageArray: [UIImage] = [#imageLiteral(resourceName: "img_char_first"),#imageLiteral(resourceName: "img_char_second"),#imageLiteral(resourceName: "img_char_third"),#imageLiteral(resourceName: "img_char_fourth"),#imageLiteral(resourceName: "img_char_fifth"),#imageLiteral(resourceName: "img_char_second")]
     let thumbCharSelected = [#imageLiteral(resourceName: "img_thumbChar_first_On"),#imageLiteral(resourceName: "img_thumbChar_second_On"),#imageLiteral(resourceName: "img_thumbChar_third_On"),#imageLiteral(resourceName: "img_thumbChar_fourth_On")]
     let thumbChar = [#imageLiteral(resourceName: "img_thumbChar_first"),#imageLiteral(resourceName: "img_thumbChar_second"),#imageLiteral(resourceName: "img_thumbChar_third"),#imageLiteral(resourceName: "img_thumbChar_fourth")]
-    let avartarPrice: [Int] = [5000,5000,5000,5000]
+    let avartarPrice: [Int] = [5000,5000,5000,5000,5000,10000]
     
     var myAvartar: [Int] = []
     var charCount: Int = 3
@@ -57,13 +65,81 @@ class AvatarManageMentViewController: BaseViewController {
             
         }
         
-        charViewLayout(index: 3)
+        charViewLayout(index: 5)
+        
+        let categoryScrollView = UIScrollView()
+        categoryScrollView.tag = 100
+        categoryScrollView.backgroundColor = .green
+        self.view.addSubview(categoryScrollView)
+        
+        categoryScrollView.snp.makeConstraints { (make) in
+            make.top.equalTo(mainScrollView.snp.bottom).offset(16.0)
+            make.centerX.equalTo(self.view.snp.centerX)
+            
+            make.leading.trailing.equalTo(self.view)
+            make.height.equalTo(80)
+        }
+        
+        categoryScrollView.clipsToBounds = true
+        categoryScrollView.isPagingEnabled = true
+        categoryScrollView.delegate = self
+        categoryScrollView.showsHorizontalScrollIndicator = false
+        categoryScrollView.contentSize = CGSize(width: self.view.frame.width * 2, height: 80.0)
+        
+        let firstpage = UIView()
+        let secondpage = UIView()
+        if Constants.DeviceType.IS_IPHONE_6P {
+            firstpage.frame = CGRect(x: 40, y: 0, width: self.view.frame.width - 80, height: 80)
+                    firstpage.backgroundColor = .red
+            categoryScrollView.addSubview(firstpage)
+            secondpage.frame = CGRect(x: self.view.frame.width + 40, y: 0, width: self.view.frame.width - 40, height: 80)
+                    secondpage.backgroundColor = .blue
+            categoryScrollView.addSubview(secondpage)
+        } else {
+            firstpage.frame = CGRect(x: 20, y: 0, width: self.view.frame.width - 40, height: 80)
+                    firstpage.backgroundColor = .red
+            categoryScrollView.addSubview(firstpage)
+            
+            secondpage.frame = CGRect(x: self.view.frame.width + 20, y: 0, width: self.view.frame.width - 40, height: 80)
+                    secondpage.backgroundColor = .blue
+            categoryScrollView.addSubview(secondpage)
+        }
+        
+        
+        for index in 0...3 {
+            let button = UIButton()
+            button.tag = index
+            button.addTarget(self, action: #selector(selectChar), for: .touchUpInside)
+            button.setImage(thumbChar[index], for: .normal)
+            button.frame = CGRect(x: 80.0 * Double(index) + Double(index) * 8, y: 0, width: 80.0, height: 80.0)
+            firstpage.addSubview(button)
+        }
+        
+        for index in 4...5 {
+            let newindex = index - 4
+            let button = UIButton()
+            button.tag = index
+            button.addTarget(self, action: #selector(selectChar), for: .touchUpInside)
+            button.setImage(thumbChar[index-3], for: .normal)
+            button.frame = CGRect(x: 80.0 * Double(newindex) + Double(newindex) * 8, y: 0, width: 80.0, height: 80.0)
+            secondpage.addSubview(button)
+        }
+        
+        
+        
     }
     
+    @objc func selectChar(sender: UIButton) {
+        print(sender.tag)
+    }
     func layoutCheck() {
         if Constants.DeviceType.IS_IPHONE_6P {
             progressViewLeading.constant = 12
             userNameLabelTrailing.constant = 24
+        }
+        
+        if Constants.DeviceType.IS_IPHONE_X {
+            bottomConst.constant = 48.0
         }
     }
     
@@ -101,12 +177,18 @@ class AvatarManageMentViewController: BaseViewController {
             case 3:
                 charImageSize = CGRect(x: 80, y: 80, width: 230, height: 116)
                 originY = 116.0
+            case 4:
+                charImageSize = CGRect(x: 80, y: 8, width: 210, height: 232)
+            case 5:
+                charImageSize = CGRect(x: 80, y: 8, width: 210, height: 232)
             default:
+                
                 print("No  !   Case")
             }
             
            
             let charImageView = UIImageView(frame: charImageSize)
+            
             charImageView.image = charImageArray[index]
             view.addSubview(charImageView)
             
@@ -233,8 +315,11 @@ class AvatarManageMentViewController: BaseViewController {
 
 extension AvatarManageMentViewController: UIScrollViewDelegate {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        NSObject.cancelPreviousPerformRequests(withTarget: scrollView)
-        self.perform(#selector(self.scrollViewDidEndScrollingAnimation(_:)), with: scrollView, afterDelay: 0)
+        if scrollView.tag != 100 {
+            NSObject.cancelPreviousPerformRequests(withTarget: scrollView)
+            self.perform(#selector(self.scrollViewDidEndScrollingAnimation(_:)), with: scrollView, afterDelay: 0)
+        }
+        
     }
     
     // Page에 따른 버튼 상태

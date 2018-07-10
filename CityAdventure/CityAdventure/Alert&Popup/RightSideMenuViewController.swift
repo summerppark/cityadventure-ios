@@ -148,7 +148,14 @@ class RightSideMenuViewController: BaseViewController {
     }
     
     @IBAction func goToChangeAvatar(_ sender: UIButton) {
-        hideView(type: 8)
+        if let mypage = self.storyboard?.instantiateViewController(withIdentifier: "MyPagePopupViewController") as? MyPagePopupViewController {
+             let navController = UINavigationController(rootViewController: mypage)
+            
+            navController.interactivePopGestureRecognizer?.isEnabled = false
+            navController.navigationBar.isHidden = true
+            self.present(navController, animated: true, completion: nil)
+            
+        }
     }
     
     func hideView(type: Int) {
@@ -200,9 +207,9 @@ class RightSideMenuViewController: BaseViewController {
                     }
                 }
             } else if type == 8 {
-                if let avatar = self.storyboard?.instantiateViewController(withIdentifier: "AvatarManageMentViewController") as? AvatarManageMentViewController {
-                    self.navigationController?.pushViewController(avatar, animated: true)
-                }
+//                if let avatar = self.storyboard?.instantiateViewController(withIdentifier: "AvatarManageMentViewController") as? AvatarManageMentViewController {
+//                    self.navigationController?.pushViewController(avatar, animated: true)
+//                }
             }
         }
     }

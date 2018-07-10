@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 import Alamofire
+import MarqueeLabel
 
 extension UIView {
     func roundCorners(corners:UIRectCorner, radius: CGFloat) {
@@ -232,11 +233,11 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     @IBOutlet weak var sloganTitle: UILabel!
     
     
-    @IBOutlet weak var landmark_first: UILabel!
+    @IBOutlet weak var landmark_first: MarqueeLabel!
     
-    @IBOutlet weak var landmark_second: UILabel!
+    @IBOutlet weak var landmark_second: MarqueeLabel!
     
-    @IBOutlet weak var landmark_third: UILabel!
+    @IBOutlet weak var landmark_third: MarqueeLabel!
     
     
     var landmarkTuple = [(Int, String)]()
@@ -247,6 +248,10 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        landmark_second.type = .continuous
+        landmark_second.speed = .rate(80)
+        landmark_second.fadeLength = 80.0
+        landmark_second.labelWillBeginScroll()
         
         dump(DataManager.shared.getUserCardInfo()?.cardInfo)
         backView.isHidden = true

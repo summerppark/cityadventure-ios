@@ -4617,7 +4617,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 <rect key="frame" x="169" y="14" width="70" height="22"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,111,500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmT-Qo-dcu">
-                                                        <rect key="frame" x="25.5" y="6" width="36.5" height="11"/>
+                                                        <rect key="frame" x="25.5" y="6.5" width="36.5" height="10.5"/>
                                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="9"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -4651,7 +4651,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESd-Fy-OlH">
-                                                        <rect key="frame" x="47" y="6" width="15" height="11"/>
+                                                        <rect key="frame" x="47.5" y="6.5" width="14.5" height="10.5"/>
                                                         <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="9"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -4669,13 +4669,13 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPc-LP-v38">
-                                                <rect key="frame" x="140.5" y="48.5" width="20.5" height="13"/>
+                                                <rect key="frame" x="140.5" y="49" width="20.5" height="12.5"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="11"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비유비유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdB-5z-adT">
-                                                <rect key="frame" x="78.5" y="45.5" width="58" height="19"/>
+                                                <rect key="frame" x="78.5" y="46" width="58" height="18.5"/>
                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -4687,19 +4687,19 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <rect key="frame" x="0.0" y="0.0" width="85" height="22"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssK-db-Rrc">
-                                                        <rect key="frame" x="6" y="4" width="8" height="8"/>
+                                                        <rect key="frame" x="6" y="4" width="8.5" height="8"/>
                                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="7"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-qr-D4v">
-                                                        <rect key="frame" x="18" y="3" width="16.5" height="19"/>
+                                                        <rect key="frame" x="18.5" y="3.5" width="16.5" height="18.5"/>
                                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="16"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" progressImage="img_progress" translatesAutoresizingMaskIntoConstraints="NO" id="w3F-M5-5on">
-                                                        <rect key="frame" x="38.5" y="5" width="38.5" height="12"/>
+                                                        <rect key="frame" x="39" y="5" width="38" height="12"/>
                                                         <color key="tintColor" red="0.23529411759999999" green="0.69803921570000005" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="12" id="Nyp-EO-dep"/>
@@ -4707,7 +4707,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <color key="trackTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZM-iY-2fF">
-                                                        <rect key="frame" x="56.5" y="8" width="3" height="6"/>
+                                                        <rect key="frame" x="57" y="8" width="2.5" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -4719,7 +4719,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDP-g8-z9b">
-                                                        <rect key="frame" x="44.5" y="8" width="11" height="6"/>
+                                                        <rect key="frame" x="45.5" y="8" width="10.5" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -4831,7 +4831,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RqI-zi-roC">
-                                <rect key="frame" x="123.5" y="569" width="128" height="50"/>
+                                <rect key="frame" x="123.5" y="593" width="128" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="128" id="nCe-Kw-RZo"/>
                                     <constraint firstAttribute="height" constant="50" id="ojw-dN-4b4"/>
@@ -4848,7 +4848,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                         </subviews>
                         <color key="backgroundColor" red="0.87450980392156863" green="0.87450980392156863" blue="0.88235294117647056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="oK9-IE-STX" firstAttribute="bottom" secondItem="RqI-zi-roC" secondAttribute="bottom" constant="48" id="8MF-pJ-Nre"/>
+                            <constraint firstItem="oK9-IE-STX" firstAttribute="bottom" secondItem="RqI-zi-roC" secondAttribute="bottom" constant="24" id="8MF-pJ-Nre"/>
                             <constraint firstItem="RqI-zi-roC" firstAttribute="centerX" secondItem="oK9-IE-STX" secondAttribute="centerX" id="DGv-Wc-ySS"/>
                             <constraint firstItem="Qs8-yl-WZ8" firstAttribute="leading" secondItem="oK9-IE-STX" secondAttribute="leading" id="QxM-rm-KQb"/>
                             <constraint firstAttribute="trailing" secondItem="Qs8-yl-WZ8" secondAttribute="trailing" id="SsG-YC-m3a"/>
@@ -4861,6 +4861,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                         <viewLayoutGuide key="safeArea" id="oK9-IE-STX"/>
                     </view>
                     <connections>
+                        <outlet property="bottomConst" destination="8MF-pJ-Nre" id="5Px-dw-5Av"/>
                         <outlet property="currentLevelLabel" destination="ybQ-qr-D4v" id="reM-be-Xpm"/>
                         <outlet property="expCurrentLabel" destination="SDP-g8-z9b" id="sNk-1b-GKN"/>
                         <outlet property="expMaxLabel" destination="8tu-Eo-bUG" id="hNE-KH-gmI"/>
@@ -4877,6 +4878,414 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37F-db-BJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4912.8000000000002" y="100.29985007496252"/>
+        </scene>
+        <!--My Page Popup View Controller-->
+        <scene sceneID="4Id-lv-EEv">
+            <objects>
+                <viewController storyboardIdentifier="MyPagePopupViewController" id="buO-Ui-32c" customClass="MyPagePopupViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SVn-pz-Kvo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7O-rl-dV3">
+                                <rect key="frame" x="105.5" y="44" width="164" height="42"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_selectChar_bg" translatesAutoresizingMaskIntoConstraints="NO" id="35M-q1-qSf">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="42"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_myProfile" translatesAutoresizingMaskIntoConstraints="NO" id="z15-Dp-PL4">
+                                        <rect key="frame" x="40" y="14" width="84" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="tta-kn-R7Y"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="164" id="1Wz-xs-Vb9"/>
+                                    <constraint firstItem="35M-q1-qSf" firstAttribute="top" secondItem="V7O-rl-dV3" secondAttribute="top" id="4I9-o5-rR0"/>
+                                    <constraint firstAttribute="bottom" secondItem="35M-q1-qSf" secondAttribute="bottom" id="8XZ-A5-9KF"/>
+                                    <constraint firstAttribute="trailing" secondItem="35M-q1-qSf" secondAttribute="trailing" id="BTP-yD-LPQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="z15-Dp-PL4" secondAttribute="trailing" constant="40" id="CEq-WG-sRi"/>
+                                    <constraint firstItem="35M-q1-qSf" firstAttribute="leading" secondItem="V7O-rl-dV3" secondAttribute="leading" id="KXA-MF-vDq"/>
+                                    <constraint firstItem="z15-Dp-PL4" firstAttribute="leading" secondItem="V7O-rl-dV3" secondAttribute="leading" constant="40" id="L0z-Iu-ldl"/>
+                                    <constraint firstAttribute="height" constant="42" id="UMk-Xr-cgx"/>
+                                    <constraint firstItem="z15-Dp-PL4" firstAttribute="top" secondItem="V7O-rl-dV3" secondAttribute="top" constant="14" id="xSY-Bp-HS5"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkY-ou-5VX">
+                                <rect key="frame" x="285.5" y="56" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="6kK-vM-Eh1"/>
+                                    <constraint firstAttribute="height" constant="30" id="md8-sF-6do"/>
+                                </constraints>
+                                <state key="normal" image="borderCloseButton"/>
+                                <connections>
+                                    <action selector="closeWithSender:" destination="buO-Ui-32c" eventType="touchUpInside" id="xs1-od-Bbp"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jrT-DR-CNN">
+                                <rect key="frame" x="17.5" y="86" width="340" height="560"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myPageBG" translatesAutoresizingMaskIntoConstraints="NO" id="w6J-ZF-Yns">
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="560"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광주광역시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HV-Q5-i3j">
+                                        <rect key="frame" x="211.5" y="384" width="73" height="19"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광역시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALB-Sz-jbk">
+                                        <rect key="frame" x="151.5" y="384" width="44" height="19"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRv-q6-lut">
+                                        <rect key="frame" x="151.5" y="141" width="60" height="22"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PrI-56-fa7">
+                                                <rect key="frame" x="29" y="6.5" width="23" height="10.5"/>
+                                                <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="9"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_coin" translatesAutoresizingMaskIntoConstraints="NO" id="9Gf-RX-uDc">
+                                                <rect key="frame" x="4" y="4" width="14" height="14"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="14" id="zQm-M5-vaL"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="PrI-56-fa7" secondAttribute="trailing" constant="8" id="Acl-Zr-khc"/>
+                                            <constraint firstItem="PrI-56-fa7" firstAttribute="centerY" secondItem="LRv-q6-lut" secondAttribute="centerY" id="Ckv-lA-UOp"/>
+                                            <constraint firstAttribute="width" constant="60" id="DsU-q6-DCz"/>
+                                            <constraint firstAttribute="bottom" secondItem="9Gf-RX-uDc" secondAttribute="bottom" constant="4" id="FyH-Zp-f2e"/>
+                                            <constraint firstItem="9Gf-RX-uDc" firstAttribute="centerY" secondItem="LRv-q6-lut" secondAttribute="centerY" id="IDl-Iw-l3A"/>
+                                            <constraint firstAttribute="height" constant="22" id="LEs-94-Eqp"/>
+                                            <constraint firstItem="9Gf-RX-uDc" firstAttribute="top" secondItem="LRv-q6-lut" secondAttribute="top" constant="4" id="YrU-N3-B3k"/>
+                                            <constraint firstItem="9Gf-RX-uDc" firstAttribute="leading" secondItem="LRv-q6-lut" secondAttribute="leading" constant="4" id="mF5-EE-Ow3"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SA1-Ky-lzu">
+                                        <rect key="frame" x="151.5" y="106" width="120" height="22"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_level_bg" translatesAutoresizingMaskIntoConstraints="NO" id="nlp-MF-7ZB">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="22"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LV" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bo4-uC-Lij">
+                                                <rect key="frame" x="6" y="4" width="8.5" height="8"/>
+                                                <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="7"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kU1-Xe-G35">
+                                                <rect key="frame" x="18.5" y="3.5" width="16.5" height="18.5"/>
+                                                <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" progressImage="img_progress" translatesAutoresizingMaskIntoConstraints="NO" id="wPF-8e-zWM">
+                                                <rect key="frame" x="39" y="5" width="73" height="12"/>
+                                                <color key="tintColor" red="0.23529411759999999" green="0.69803921570000005" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="12" id="s8g-EQ-RRd"/>
+                                                </constraints>
+                                                <color key="trackTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </progressView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2v-l9-qo1">
+                                                <rect key="frame" x="74.5" y="8" width="2.5" height="6"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQ4-LM-igi">
+                                                <rect key="frame" x="79" y="8" width="14" height="6"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eca-ij-3l5">
+                                                <rect key="frame" x="63" y="8" width="10.5" height="6"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="DQ4-LM-igi" firstAttribute="centerY" secondItem="W2v-l9-qo1" secondAttribute="centerY" id="3ce-mV-iGo"/>
+                                            <constraint firstItem="W2v-l9-qo1" firstAttribute="leading" secondItem="eca-ij-3l5" secondAttribute="trailing" constant="1.5" id="65N-rn-wsd"/>
+                                            <constraint firstItem="kU1-Xe-G35" firstAttribute="leading" secondItem="bo4-uC-Lij" secondAttribute="trailing" constant="4" id="79f-Jl-npl"/>
+                                            <constraint firstItem="bo4-uC-Lij" firstAttribute="leading" secondItem="SA1-Ky-lzu" secondAttribute="leading" constant="6" id="BAu-T0-Kh1"/>
+                                            <constraint firstAttribute="trailing" secondItem="nlp-MF-7ZB" secondAttribute="trailing" id="CB2-f5-l6E"/>
+                                            <constraint firstItem="nlp-MF-7ZB" firstAttribute="leading" secondItem="SA1-Ky-lzu" secondAttribute="leading" id="CrX-7p-8zX"/>
+                                            <constraint firstItem="W2v-l9-qo1" firstAttribute="centerY" secondItem="wPF-8e-zWM" secondAttribute="centerY" id="FPB-PL-H7e"/>
+                                            <constraint firstItem="bo4-uC-Lij" firstAttribute="top" secondItem="SA1-Ky-lzu" secondAttribute="top" constant="4" id="Mky-Pt-m4S"/>
+                                            <constraint firstAttribute="bottom" secondItem="nlp-MF-7ZB" secondAttribute="bottom" id="P0z-r1-sfg"/>
+                                            <constraint firstItem="wPF-8e-zWM" firstAttribute="leading" secondItem="kU1-Xe-G35" secondAttribute="trailing" constant="4" id="PGf-B2-hu1"/>
+                                            <constraint firstItem="nlp-MF-7ZB" firstAttribute="top" secondItem="SA1-Ky-lzu" secondAttribute="top" id="cDp-28-V0j"/>
+                                            <constraint firstAttribute="trailing" secondItem="wPF-8e-zWM" secondAttribute="trailing" constant="8" id="f7r-qL-D6s"/>
+                                            <constraint firstItem="DQ4-LM-igi" firstAttribute="leading" secondItem="W2v-l9-qo1" secondAttribute="trailing" constant="1.5" id="hrh-85-sch"/>
+                                            <constraint firstItem="kU1-Xe-G35" firstAttribute="centerY" secondItem="SA1-Ky-lzu" secondAttribute="centerY" multiplier="1.1" id="j59-zA-RxP"/>
+                                            <constraint firstAttribute="height" constant="22" id="kgo-Qe-vQt"/>
+                                            <constraint firstItem="wPF-8e-zWM" firstAttribute="centerY" secondItem="SA1-Ky-lzu" secondAttribute="centerY" id="m8C-BJ-NxM"/>
+                                            <constraint firstItem="eca-ij-3l5" firstAttribute="centerY" secondItem="DQ4-LM-igi" secondAttribute="centerY" id="nFQ-Rk-XOt"/>
+                                            <constraint firstAttribute="width" constant="120" id="nSV-SS-v0E"/>
+                                            <constraint firstItem="W2v-l9-qo1" firstAttribute="centerX" secondItem="wPF-8e-zWM" secondAttribute="centerX" id="xoM-1F-lCs"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_thumbChar_first_On" translatesAutoresizingMaskIntoConstraints="NO" id="G6Q-fJ-OBA">
+                                        <rect key="frame" x="47.5" y="48" width="80" height="80"/>
+                                        <color key="backgroundColor" red="0.62745098040000002" green="0.81176470590000005" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="D8v-7Y-YYR"/>
+                                            <constraint firstAttribute="width" constant="80" id="WIu-aB-aue"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7G-PF-4CU">
+                                        <rect key="frame" x="47.5" y="136" width="80" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="vAv-r1-HHV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="14"/>
+                                        <state key="normal" title="캐릭터 변경" backgroundImage="myPage_change">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비유비유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avU-Wi-dEs">
+                                        <rect key="frame" x="151.5" y="48" width="95.5" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_checkOn_gender" translatesAutoresizingMaskIntoConstraints="NO" id="X5l-xv-sqv">
+                                        <rect key="frame" x="151.5" y="81.5" width="16" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="16" id="lhh-oG-knm"/>
+                                            <constraint firstAttribute="height" constant="16" id="nK4-ad-m9r"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5q-FR-GSu">
+                                        <rect key="frame" x="175" y="82" width="25.5" height="16"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZlN-3G-97u">
+                                        <rect key="frame" x="219.5" y="141" width="60" height="22"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_card_list" translatesAutoresizingMaskIntoConstraints="NO" id="UIJ-V1-B5u">
+                                                <rect key="frame" x="4" y="4" width="14" height="14"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="14" id="Ceg-Mm-A98"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="001/162" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4d-kj-cOQ">
+                                                <rect key="frame" x="22" y="6.5" width="32.5" height="10.5"/>
+                                                <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="9"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="UIJ-V1-B5u" firstAttribute="top" secondItem="ZlN-3G-97u" secondAttribute="top" constant="4" id="MZx-II-4CA"/>
+                                            <constraint firstAttribute="width" constant="60" id="QKh-Ih-VgL"/>
+                                            <constraint firstAttribute="bottom" secondItem="UIJ-V1-B5u" secondAttribute="bottom" constant="4" id="alo-5t-esg"/>
+                                            <constraint firstItem="UIJ-V1-B5u" firstAttribute="leading" secondItem="ZlN-3G-97u" secondAttribute="leading" constant="4" id="eFe-QZ-qFn"/>
+                                            <constraint firstItem="D4d-kj-cOQ" firstAttribute="leading" secondItem="UIJ-V1-B5u" secondAttribute="trailing" constant="4" id="gak-cw-G4b"/>
+                                            <constraint firstItem="D4d-kj-cOQ" firstAttribute="centerY" secondItem="ZlN-3G-97u" secondAttribute="centerY" id="v9O-1j-IBP"/>
+                                            <constraint firstAttribute="height" constant="22" id="y6m-vk-X3F"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfE-m8-bvR">
+                                        <rect key="frame" x="139.5" y="187" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="qO9-xU-Zvn"/>
+                                            <constraint firstAttribute="width" constant="60" id="vVi-57-1rZ"/>
+                                        </constraints>
+                                        <state key="normal" image="myPage_second"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaD-zY-XgH">
+                                        <rect key="frame" x="223.5" y="187.5" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="51K-GK-9Cu"/>
+                                            <constraint firstAttribute="width" constant="60" id="aMg-DA-NZu"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="myPage_third"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-LV-Uao">
+                                        <rect key="frame" x="55.5" y="187.5" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="dbN-WK-SdB"/>
+                                            <constraint firstAttribute="height" constant="60" id="xYM-3Y-dfA"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="myPage_first"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxp-hn-XsT">
+                                        <rect key="frame" x="47.5" y="295.5" width="25.5" height="16"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017년 12월 10일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ww7-Fo-9IM">
+                                        <rect key="frame" x="151.5" y="294.5" width="132" height="18.5"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_border_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="30f-gH-Dvl">
+                                        <rect key="frame" x="47.5" y="321" width="236" height="3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="hOU-IZ-PBt"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="태어난 고향" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itJ-cz-9XR">
+                                        <rect key="frame" x="47" y="340" width="68" height="16"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광역시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fx-6A-ihC">
+                                        <rect key="frame" x="151.5" y="339" width="44" height="19"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광주광역시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGB-4X-bEu">
+                                        <rect key="frame" x="211.5" y="339" width="73" height="19"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="살고 있는 도시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6J-mI-UDO">
+                                        <rect key="frame" x="47" y="385" width="84.5" height="16"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_border_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="xWP-DN-bGF">
+                                        <rect key="frame" x="47.5" y="366" width="236" height="3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="5Md-C2-5k3"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="3" id="tYD-vl-1Zc"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_border_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="626-au-VLW">
+                                        <rect key="frame" x="47.5" y="411" width="236" height="3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="53X-2K-NUD"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3I-jq-zZ0">
+                                        <rect key="frame" x="106" y="462" width="128" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="128" id="3BW-Fz-NF3"/>
+                                            <constraint firstAttribute="height" constant="50" id="5XU-z9-fHX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
+                                        <state key="normal" title="정보 수정" backgroundImage="btn_yellow_bg">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="560" id="0yd-0a-ggu"/>
+                                    <constraint firstItem="L5q-FR-GSu" firstAttribute="leading" secondItem="X5l-xv-sqv" secondAttribute="trailing" constant="8" id="5Ge-yy-Nqs"/>
+                                    <constraint firstItem="30f-gH-Dvl" firstAttribute="top" secondItem="Ww7-Fo-9IM" secondAttribute="bottom" constant="8" id="6Bk-4d-U9v"/>
+                                    <constraint firstItem="X6J-mI-UDO" firstAttribute="top" secondItem="xWP-DN-bGF" secondAttribute="bottom" constant="16" id="7Dz-TM-1gB"/>
+                                    <constraint firstItem="RfE-m8-bvR" firstAttribute="centerX" secondItem="w6J-ZF-Yns" secondAttribute="centerX" id="7QL-UG-XMA"/>
+                                    <constraint firstItem="xWP-DN-bGF" firstAttribute="top" secondItem="2Fx-6A-ihC" secondAttribute="bottom" constant="8" id="Awa-Lp-5b2"/>
+                                    <constraint firstItem="6HV-Q5-i3j" firstAttribute="leading" secondItem="ALB-Sz-jbk" secondAttribute="trailing" constant="16" id="B98-MW-IeT"/>
+                                    <constraint firstAttribute="bottom" secondItem="R3I-jq-zZ0" secondAttribute="bottom" constant="48" id="CxT-Hb-wtO"/>
+                                    <constraint firstItem="Ww7-Fo-9IM" firstAttribute="leading" secondItem="avU-Wi-dEs" secondAttribute="leading" id="DG6-un-G9R"/>
+                                    <constraint firstItem="2Fx-6A-ihC" firstAttribute="leading" secondItem="Ww7-Fo-9IM" secondAttribute="leading" id="EfI-IJ-TDM"/>
+                                    <constraint firstAttribute="width" constant="340" id="GWc-tW-RRy"/>
+                                    <constraint firstItem="626-au-VLW" firstAttribute="top" secondItem="6HV-Q5-i3j" secondAttribute="bottom" constant="8" id="IE8-si-aqH"/>
+                                    <constraint firstItem="itJ-cz-9XR" firstAttribute="leading" secondItem="zxp-hn-XsT" secondAttribute="leading" id="JOP-PK-dcR"/>
+                                    <constraint firstItem="6HV-Q5-i3j" firstAttribute="centerY" secondItem="ALB-Sz-jbk" secondAttribute="centerY" id="JyW-pA-rRB"/>
+                                    <constraint firstItem="L5q-FR-GSu" firstAttribute="centerY" secondItem="X5l-xv-sqv" secondAttribute="centerY" id="KlR-09-XP3"/>
+                                    <constraint firstItem="RfE-m8-bvR" firstAttribute="leading" secondItem="dOH-LV-Uao" secondAttribute="trailing" constant="24" id="N8a-is-WsU"/>
+                                    <constraint firstItem="qaD-zY-XgH" firstAttribute="leading" secondItem="RfE-m8-bvR" secondAttribute="trailing" constant="24" id="Ppr-ZS-RPP"/>
+                                    <constraint firstItem="w6J-ZF-Yns" firstAttribute="leading" secondItem="jrT-DR-CNN" secondAttribute="leading" id="RE7-Yw-tVo"/>
+                                    <constraint firstItem="30f-gH-Dvl" firstAttribute="leading" secondItem="zxp-hn-XsT" secondAttribute="leading" id="ReJ-BA-pvN"/>
+                                    <constraint firstItem="xWP-DN-bGF" firstAttribute="trailing" secondItem="30f-gH-Dvl" secondAttribute="trailing" id="S0T-Un-34e"/>
+                                    <constraint firstItem="avU-Wi-dEs" firstAttribute="leading" secondItem="G6Q-fJ-OBA" secondAttribute="trailing" constant="24" id="T0l-BA-rED"/>
+                                    <constraint firstItem="L7G-PF-4CU" firstAttribute="trailing" secondItem="G6Q-fJ-OBA" secondAttribute="trailing" id="THZ-3j-xA1"/>
+                                    <constraint firstItem="Ww7-Fo-9IM" firstAttribute="trailing" secondItem="qaD-zY-XgH" secondAttribute="trailing" id="TRm-wa-Xrv"/>
+                                    <constraint firstItem="RfE-m8-bvR" firstAttribute="top" secondItem="LRv-q6-lut" secondAttribute="bottom" constant="24" id="UIb-DT-H8d"/>
+                                    <constraint firstItem="avU-Wi-dEs" firstAttribute="top" secondItem="G6Q-fJ-OBA" secondAttribute="top" id="UaL-xk-xZ3"/>
+                                    <constraint firstItem="LGB-4X-bEu" firstAttribute="centerY" secondItem="2Fx-6A-ihC" secondAttribute="centerY" id="WAc-ZH-wkb"/>
+                                    <constraint firstItem="626-au-VLW" firstAttribute="leading" secondItem="xWP-DN-bGF" secondAttribute="leading" id="XFy-9k-iyD"/>
+                                    <constraint firstItem="LRv-q6-lut" firstAttribute="centerY" secondItem="L7G-PF-4CU" secondAttribute="centerY" id="XKD-XL-9b1"/>
+                                    <constraint firstItem="LGB-4X-bEu" firstAttribute="leading" secondItem="2Fx-6A-ihC" secondAttribute="trailing" constant="16" id="XL1-ez-L4p"/>
+                                    <constraint firstItem="G6Q-fJ-OBA" firstAttribute="top" secondItem="jrT-DR-CNN" secondAttribute="top" constant="48" id="Xnz-t9-KHE"/>
+                                    <constraint firstItem="qaD-zY-XgH" firstAttribute="centerY" secondItem="RfE-m8-bvR" secondAttribute="centerY" id="Y2g-iu-xo0"/>
+                                    <constraint firstItem="ALB-Sz-jbk" firstAttribute="centerY" secondItem="X6J-mI-UDO" secondAttribute="centerY" id="Ykc-ee-F6Y"/>
+                                    <constraint firstItem="30f-gH-Dvl" firstAttribute="trailing" secondItem="Ww7-Fo-9IM" secondAttribute="trailing" id="aSk-LD-0Rm"/>
+                                    <constraint firstItem="SA1-Ky-lzu" firstAttribute="top" secondItem="L5q-FR-GSu" secondAttribute="bottom" constant="8" id="afa-uB-n9g"/>
+                                    <constraint firstItem="L7G-PF-4CU" firstAttribute="top" secondItem="G6Q-fJ-OBA" secondAttribute="bottom" constant="8" id="asw-dL-rjR"/>
+                                    <constraint firstItem="ZlN-3G-97u" firstAttribute="leading" secondItem="LRv-q6-lut" secondAttribute="trailing" constant="8" id="cOM-uf-Zzp"/>
+                                    <constraint firstItem="Ww7-Fo-9IM" firstAttribute="centerY" secondItem="zxp-hn-XsT" secondAttribute="centerY" id="d27-Ar-2PS"/>
+                                    <constraint firstItem="dOH-LV-Uao" firstAttribute="centerY" secondItem="RfE-m8-bvR" secondAttribute="centerY" id="eOh-ab-S6y"/>
+                                    <constraint firstItem="X5l-xv-sqv" firstAttribute="top" secondItem="avU-Wi-dEs" secondAttribute="bottom" constant="4" id="eto-iB-kHO"/>
+                                    <constraint firstItem="xWP-DN-bGF" firstAttribute="leading" secondItem="30f-gH-Dvl" secondAttribute="leading" id="fRQ-I1-SaI"/>
+                                    <constraint firstItem="X5l-xv-sqv" firstAttribute="leading" secondItem="avU-Wi-dEs" secondAttribute="leading" id="fXE-9r-Y1Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="w6J-ZF-Yns" secondAttribute="bottom" id="gGG-yI-Lfs"/>
+                                    <constraint firstItem="SA1-Ky-lzu" firstAttribute="leading" secondItem="X5l-xv-sqv" secondAttribute="leading" id="hJd-bx-RER"/>
+                                    <constraint firstItem="626-au-VLW" firstAttribute="trailing" secondItem="xWP-DN-bGF" secondAttribute="trailing" id="hi0-72-sNi"/>
+                                    <constraint firstItem="ZlN-3G-97u" firstAttribute="centerY" secondItem="LRv-q6-lut" secondAttribute="centerY" id="huW-0V-ZLX"/>
+                                    <constraint firstItem="L7G-PF-4CU" firstAttribute="leading" secondItem="G6Q-fJ-OBA" secondAttribute="leading" id="ibz-m3-qQ0"/>
+                                    <constraint firstItem="zxp-hn-XsT" firstAttribute="top" secondItem="dOH-LV-Uao" secondAttribute="bottom" constant="48" id="j8n-fp-zYX"/>
+                                    <constraint firstItem="ALB-Sz-jbk" firstAttribute="leading" secondItem="2Fx-6A-ihC" secondAttribute="leading" id="mcD-hh-iaJ"/>
+                                    <constraint firstItem="R3I-jq-zZ0" firstAttribute="centerX" secondItem="jrT-DR-CNN" secondAttribute="centerX" id="nlc-8y-1Ou"/>
+                                    <constraint firstAttribute="trailing" secondItem="w6J-ZF-Yns" secondAttribute="trailing" id="pL1-dl-fuv"/>
+                                    <constraint firstItem="X6J-mI-UDO" firstAttribute="leading" secondItem="itJ-cz-9XR" secondAttribute="leading" id="qso-mF-NSs"/>
+                                    <constraint firstItem="2Fx-6A-ihC" firstAttribute="centerY" secondItem="itJ-cz-9XR" secondAttribute="centerY" id="sCK-j3-aM5"/>
+                                    <constraint firstItem="w6J-ZF-Yns" firstAttribute="top" secondItem="jrT-DR-CNN" secondAttribute="top" id="uWl-dV-wiB"/>
+                                    <constraint firstItem="LRv-q6-lut" firstAttribute="leading" secondItem="nlp-MF-7ZB" secondAttribute="leading" id="uzY-2V-2ZQ"/>
+                                    <constraint firstItem="G6Q-fJ-OBA" firstAttribute="leading" secondItem="jrT-DR-CNN" secondAttribute="leading" constant="48" id="v0R-Ut-Gi2"/>
+                                    <constraint firstItem="zxp-hn-XsT" firstAttribute="leading" secondItem="G6Q-fJ-OBA" secondAttribute="leading" id="wa0-lB-nDe"/>
+                                    <constraint firstItem="itJ-cz-9XR" firstAttribute="top" secondItem="30f-gH-Dvl" secondAttribute="bottom" constant="16" id="xyD-gk-M8z"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xkY-ou-5VX" firstAttribute="leading" secondItem="V7O-rl-dV3" secondAttribute="trailing" constant="16" id="5rq-eC-AJT"/>
+                            <constraint firstItem="xkY-ou-5VX" firstAttribute="bottom" secondItem="35M-q1-qSf" secondAttribute="bottom" id="AdS-ks-7Es"/>
+                            <constraint firstItem="jrT-DR-CNN" firstAttribute="centerX" secondItem="10y-Hk-g8v" secondAttribute="centerX" id="WuV-qZ-s0J"/>
+                            <constraint firstItem="V7O-rl-dV3" firstAttribute="top" secondItem="10y-Hk-g8v" secondAttribute="top" constant="24" id="ehJ-6l-DJo"/>
+                            <constraint firstItem="jrT-DR-CNN" firstAttribute="top" secondItem="V7O-rl-dV3" secondAttribute="bottom" id="hH6-6Z-Y1g"/>
+                            <constraint firstItem="V7O-rl-dV3" firstAttribute="centerX" secondItem="10y-Hk-g8v" secondAttribute="centerX" id="xOc-rb-LWW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="10y-Hk-g8v"/>
+                    </view>
+                    <connections>
+                        <outlet property="birthLabel" destination="Ww7-Fo-9IM" id="leM-mn-EgL"/>
+                        <outlet property="bornCityArea" destination="2Fx-6A-ihC" id="amL-g3-rpu"/>
+                        <outlet property="bornCityLabel" destination="LGB-4X-bEu" id="1RC-mp-fL6"/>
+                        <outlet property="currentLevelLabel" destination="kU1-Xe-G35" id="aOM-IN-ZP2"/>
+                        <outlet property="expCurrentLabel" destination="eca-ij-3l5" id="XLl-Ve-Jdh"/>
+                        <outlet property="expMaxLabel" destination="DQ4-LM-igi" id="Qj6-Zj-utO"/>
+                        <outlet property="genderLabel" destination="L5q-FR-GSu" id="Mfo-mY-l0o"/>
+                        <outlet property="livingCityArea" destination="ALB-Sz-jbk" id="NOQ-hL-AHy"/>
+                        <outlet property="livingCityLabel" destination="6HV-Q5-i3j" id="LQH-Ps-X4G"/>
+                        <outlet property="myCardsCount" destination="D4d-kj-cOQ" id="esY-Fw-zD8"/>
+                        <outlet property="myCoin" destination="PrI-56-fa7" id="tcd-6d-mVT"/>
+                        <outlet property="progressView" destination="wPF-8e-zWM" id="Tnc-sQ-2su"/>
+                        <outlet property="userCharView" destination="G6Q-fJ-OBA" id="3Ow-sE-Gg1"/>
+                        <outlet property="userNameLabel" destination="avU-Wi-dEs" id="V7p-Fv-j4f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nhc-m6-GvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5649" y="120"/>
         </scene>
         <!--Notice View Controller-->
         <scene sceneID="7O4-cC-IAo">
@@ -7348,19 +7757,19 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닥터 다이어리" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unx-6P-m0F">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닥터 다이어리" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unx-6P-m0F" customClass="MarqueeLabel" customModule="MarqueeLabel">
                                                                 <rect key="frame" x="23" y="224" width="57" height="12"/>
                                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닥터 다이어리" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7x-3d-ZKT">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닥터 다이어리" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7x-3d-ZKT" customClass="MarqueeLabel" customModule="MarqueeLabel">
                                                                 <rect key="frame" x="115" y="224" width="57" height="12"/>
                                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닥터 다이어리" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miz-LU-bJ0">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닥터 다이어리" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miz-LU-bJ0" customClass="MarqueeLabel" customModule="MarqueeLabel">
                                                                 <rect key="frame" x="207" y="224" width="57" height="12"/>
                                                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="10"/>
                                                                 <nil key="textColor"/>
@@ -9214,6 +9623,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="auto_login_no" width="60" height="60"/>
         <image name="back_button" width="171" height="326"/>
         <image name="back_music_on" width="283" height="128"/>
+        <image name="borderCloseButton" width="156" height="128"/>
         <image name="btn_allCheck_agreement" width="1000" height="150"/>
         <image name="btn_back_black" width="72" height="49"/>
         <image name="btn_checkOn_gender" width="44" height="46"/>
@@ -9337,6 +9747,11 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="login_email_icon" width="33" height="36"/>
         <image name="login_join_btn" width="870" height="131"/>
         <image name="login_password_icon" width="29" height="46"/>
+        <image name="myPageBG" width="1301" height="2139"/>
+        <image name="myPage_change" width="360" height="112"/>
+        <image name="myPage_first" width="264" height="257"/>
+        <image name="myPage_second" width="264" height="257"/>
+        <image name="myPage_third" width="264" height="257"/>
         <image name="noncheck" width="40" height="40"/>
         <image name="play_bk" width="482" height="386"/>
         <image name="quiz_bk" width="492" height="376"/>
