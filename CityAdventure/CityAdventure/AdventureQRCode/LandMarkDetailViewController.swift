@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 import Toaster
-
+import Kingfisher
 
 class LandMarkDetailViewController: BaseViewController {
 
@@ -21,6 +21,8 @@ class LandMarkDetailViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var sizeWidthView: NSLayoutConstraint!
+    @IBOutlet weak var contentSizeView: UIView!
     
     @IBOutlet weak var landmarkName: UILabel!
     @IBOutlet weak var landmarkDesc: UITextView! {
@@ -34,7 +36,7 @@ class LandMarkDetailViewController: BaseViewController {
     
     var landmarkNumber: Int = 1
     var landmarkImage: UIImage?
-    
+    var landmarkImageUrls: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,11 +57,13 @@ class LandMarkDetailViewController: BaseViewController {
                     self.dataSetting(inputData: result)
                 }
             case .failure:
+                super.hideLoading()
                 Toast.init(text: "다시 시도해주세요").show()
             }
-            super.hideLoading()
+            
         }
-        
+     
+       
         
         
         layoutcheck()
@@ -88,8 +92,53 @@ class LandMarkDetailViewController: BaseViewController {
         // title
         landmarkName.text = landmark.s_name
         
-        
+        DispatchQueue.global().async {
+            Alamofire.request(APIUrls.getTourApi(search: landmark.s_name ?? ""), method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response) in
+                if let success = response.result.value as? NSDictionary,
+                    let response = success["response"] as? NSDictionary,
+                    let body = response["body"] as? NSDictionary,
+                    let items = body["items"] as? NSDictionary
+                {
+                    if let item = items["item"] as? NSDictionary {
+                        if let imageurl = item["firstimage"] as? String {
+                            print(imageurl)
+                            self.landmarkImageUrls.append(imageurl)
+                        }
+                    } else if let item2 = items["item"] as? [NSDictionary] {
+                        print("사진 여러장일 때")
+                        item2.forEach({ (dic) in
+                            if let imageurl = dic["firstimage"] as? String {
+                                print(imageurl)
+                                self.landmarkImageUrls.append(imageurl)
+                            }
+                        })
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.photoSliderView.contentSize = CGSize(width: (120.0*Double(self.landmarkImageUrls.count+1)), height: 120.0)
+                    
+                    print("SizeCheck",self.photoSliderView.contentSize.width,self.landmarkImageUrls.count+1)
+                    
+                    if self.landmarkImageUrls.count > 0 {
+                         self.addImage(index: self.landmarkImageUrls.count)
+                    } else {
+                        super.hideLoading()
+                    }
+                }
+            }
+        }
     }
+    
+    func addImage(index: Int) {
+        for idx in 0...index-1 {
+            let originX = Double(idx+1) * 120.0
+            let imageView = UIImageView(frame: CGRect(x: originX, y: 0.0, width: 120.0, height: 120.0))
+            photoSliderView.addSubview(imageView)
+            imageView.kf.setImage(with: URL(string: self.landmarkImageUrls[idx]))
+            super.hideLoading()
+        }
+    }
+    
 
     
     @IBAction func tappedBackbutton(_ sender: UIButton) {

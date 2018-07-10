@@ -81,6 +81,7 @@
 		CE642C2A2077777A000C2F01 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE642C292077777A000C2F01 /* TimeFormatter.swift */; };
 		CE6D633220F44D0400BAF2D4 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D633120F44D0400BAF2D4 /* LandmarkDetail.swift */; };
 		CE6D633420F453D200BAF2D4 /* LandmarkSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D633320F453D200BAF2D4 /* LandmarkSearchCell.swift */; };
+		CE6D633620F4745100BAF2D4 /* TourAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D633520F4745100BAF2D4 /* TourAPIModel.swift */; };
 		CE717CF020C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE717CEF20C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift */; };
 		CE73B4FC20E8DF86001FFAAF /* end_bgm_loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE73B4FB20E8DF84001FFAAF /* end_bgm_loop.mp3 */; };
 		CE73B4FE20E8E04C001FFAAF /* BGMPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73B4FD20E8E04C001FFAAF /* BGMPlayerManager.swift */; };
@@ -240,6 +241,7 @@
 		CE642C292077777A000C2F01 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		CE6D633120F44D0400BAF2D4 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
 		CE6D633320F453D200BAF2D4 /* LandmarkSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkSearchCell.swift; sourceTree = "<group>"; };
+		CE6D633520F4745100BAF2D4 /* TourAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourAPIModel.swift; sourceTree = "<group>"; };
 		CE717CEF20C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeFlipViewController.swift; sourceTree = "<group>"; };
 		CE73B4FB20E8DF84001FFAAF /* end_bgm_loop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end_bgm_loop.mp3; sourceTree = "<group>"; };
 		CE73B4FD20E8E04C001FFAAF /* BGMPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMPlayerManager.swift; sourceTree = "<group>"; };
@@ -572,6 +574,7 @@
 				66E7AC7120EA2AE300D82BA2 /* LandmarkInfos.swift */,
 				66988C2C20F0DB76009B1A26 /* NewBaseResponse.swift */,
 				CE6D633120F44D0400BAF2D4 /* LandmarkDetail.swift */,
+				CE6D633520F4745100BAF2D4 /* TourAPIModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -866,6 +869,7 @@
 				CEE3B3C4206A22A900156387 /* Account.swift in Sources */,
 				CED8C4AA207212B000286A61 /* FMDatabasePool.m in Sources */,
 				CE642C282077612F000C2F01 /* NoticeViewController.swift in Sources */,
+				CE6D633620F4745100BAF2D4 /* TourAPIModel.swift in Sources */,
 				66988C3320F34A7B009B1A26 /* CityMapViewController.swift in Sources */,
 				666B6E6120872A3A00CD28DB /* ClientCenterViewController.swift in Sources */,
 				6642516120DA3EA300DEC55F /* CollectCityPopupViewController.swift in Sources */,

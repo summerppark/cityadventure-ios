@@ -5069,48 +5069,17 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                                 <constraint firstAttribute="width" constant="120" id="Unt-cb-F2u"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ZN-b8-st5">
-                                                            <rect key="frame" x="120" y="0.0" width="120" height="120"/>
-                                                            <color key="backgroundColor" red="0.18934944270000001" green="0.4050831795" blue="0.70983541009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="120" id="Yj9-zu-CPz"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HsA-ox-he6">
-                                                            <rect key="frame" x="240" y="0.0" width="120" height="120"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="120" id="vLt-MA-QlH"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X1R-FY-zLe">
-                                                            <rect key="frame" x="360" y="0.0" width="120" height="120"/>
-                                                            <color key="backgroundColor" red="0.92346030469999996" green="0.34080994129999997" blue="0.4039123952" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="120" id="CxT-mp-Vbf"/>
-                                                            </constraints>
-                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="HsA-ox-he6" secondAttribute="bottom" id="9Nm-Vn-eMN"/>
-                                                        <constraint firstItem="HsA-ox-he6" firstAttribute="leading" secondItem="3ZN-b8-st5" secondAttribute="trailing" id="DrM-y0-4tA"/>
                                                         <constraint firstAttribute="bottom" secondItem="c8D-G8-4XV" secondAttribute="bottom" id="GZJ-1X-DOW"/>
-                                                        <constraint firstItem="X1R-FY-zLe" firstAttribute="leading" secondItem="HsA-ox-he6" secondAttribute="trailing" id="Lpa-cJ-cS1"/>
                                                         <constraint firstAttribute="height" constant="120" id="Nzg-ab-SFn"/>
                                                         <constraint firstAttribute="width" constant="480" id="OG1-Bo-KWc"/>
-                                                        <constraint firstItem="3ZN-b8-st5" firstAttribute="top" secondItem="D8A-ij-UYc" secondAttribute="top" id="RgZ-ue-z3z"/>
                                                         <constraint firstItem="c8D-G8-4XV" firstAttribute="top" secondItem="D8A-ij-UYc" secondAttribute="top" id="X6E-Fm-E0h"/>
-                                                        <constraint firstAttribute="bottom" secondItem="X1R-FY-zLe" secondAttribute="bottom" id="bP1-RB-Pti"/>
                                                         <constraint firstItem="c8D-G8-4XV" firstAttribute="leading" secondItem="D8A-ij-UYc" secondAttribute="leading" id="dAk-eE-3Tr"/>
-                                                        <constraint firstAttribute="bottom" secondItem="3ZN-b8-st5" secondAttribute="bottom" id="gKn-1X-ybW"/>
-                                                        <constraint firstItem="X1R-FY-zLe" firstAttribute="top" secondItem="D8A-ij-UYc" secondAttribute="top" id="piU-L5-UAu"/>
-                                                        <constraint firstItem="3ZN-b8-st5" firstAttribute="leading" secondItem="c8D-G8-4XV" secondAttribute="trailing" id="sm6-f9-3ev"/>
-                                                        <constraint firstItem="HsA-ox-he6" firstAttribute="top" secondItem="D8A-ij-UYc" secondAttribute="top" id="yin-gn-HGv"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.18934944270000001" green="0.4050831795" blue="0.70983541009999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="D8A-ij-UYc" secondAttribute="bottom" id="2Mg-2j-lnq"/>
                                                 <constraint firstAttribute="trailing" secondItem="D8A-ij-UYc" secondAttribute="trailing" id="4Lz-Mz-pG8"/>
@@ -5253,11 +5222,13 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                         <viewLayoutGuide key="safeArea" id="7zr-Nf-hsb"/>
                     </view>
                     <connections>
+                        <outlet property="contentSizeView" destination="D8A-ij-UYc" id="e5o-tP-TUm"/>
                         <outlet property="landmarkDesc" destination="B7S-gf-Wxr" id="7g3-F2-xtI"/>
                         <outlet property="landmarkName" destination="Jcr-79-Vov" id="9Zy-AW-0ck"/>
                         <outlet property="landmarkTableView" destination="6oi-tq-V2a" id="0x3-ep-0LX"/>
                         <outlet property="lm_firstImage" destination="c8D-G8-4XV" id="rPd-k7-N1L"/>
                         <outlet property="photoSliderView" destination="Iz3-DJ-gnM" id="9dh-Fp-KED"/>
+                        <outlet property="sizeWidthView" destination="OG1-Bo-KWc" id="gKX-Mt-yoU"/>
                         <outlet property="topViewHeight" destination="9Lw-tV-054" id="Fjb-9Y-W2x"/>
                     </connections>
                 </viewController>

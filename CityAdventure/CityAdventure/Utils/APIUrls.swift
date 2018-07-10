@@ -123,5 +123,12 @@ class APIUrls {
         return "http://www.bubu-expedition.com/API/v1/landmarks/\(number)"
     }
     
-    
+    static func getTourApi(search: String) -> String {
+//        return "http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchKeyword?ServiceKey=1bRQ7kZKeN7M%2FGK5dO6r7VZfTFPgmhkWKrwe3iyfRBQ549JRKV%2BqRY4qQiIO0EpShrSEwCWb90OKNqcOGxv8Cg%3D%3D&numOfRows=10&pageNo=1&MobileOS=IOS&MobileApp=cityadventure&keyword=\(search)&_type=json".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        
+        let search = search.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        
+        return "http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchKeyword?ServiceKey=1bRQ7kZKeN7M%2FGK5dO6r7VZfTFPgmhkWKrwe3iyfRBQ549JRKV%2BqRY4qQiIO0EpShrSEwCWb90OKNqcOGxv8Cg%3D%3D&numOfRows=10&pageNo=1&MobileOS=IOS&MobileApp=cityadventure&keyword=\(search)&_type=json"
+    }
+
 }
