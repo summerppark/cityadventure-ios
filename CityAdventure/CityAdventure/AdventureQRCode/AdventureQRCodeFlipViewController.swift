@@ -493,6 +493,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         if let landmark = self.storyboard?.instantiateViewController(withIdentifier: "LandMarkDetailViewController") as? LandMarkDetailViewController, let index = sender.view?.tag {
             
             landmark.landmarkNumber = landmarkTuple[index-1].0
+            landmark.landmarkImage = (sender.view as? UIImageView)?.image
             self.navigationController?.pushViewController(landmark, animated: true)
         }
         

@@ -10,6 +10,7 @@ import UIKit
 
 class LandmarkSearchCell: UITableViewCell {
 
+    @IBOutlet weak var tempImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -119,5 +119,9 @@ class APIUrls {
         return "http://www.bubu-expedition.com/API/v1/accounts/\(member)/sendmail?token=\(token)&email=\(email)&subject=\(subject)&content=\(content)&type=\(type)"
     }
     
+    static func getLandmarkDetail(number: Int) -> String {
+        return "http://www.bubu-expedition.com/API/v1/landmarks/\(number)"
+    }
+    
     
 }
