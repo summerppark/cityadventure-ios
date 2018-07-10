@@ -28,6 +28,7 @@ class LaunchScreenViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        toastViewSetting()
         // navi hidden
         // db 내용에 '' 가 포함되어 FMDB INSERT 쿼리문 에러발생.
         // BUNDLE -> CityCard 대체
@@ -55,6 +56,11 @@ class LaunchScreenViewController: BaseViewController {
         
         presenter = LoginViewPresenter(presenter: self)
         
+    }
+    
+    func toastViewSetting() {
+        ToastView.appearance().font = UIFont(name: "GodoM", size: 18.0)
+        ToastView.appearance().frame = CGRect(x: 0, y: 0, width: 200, height: 150)
     }
     
     func makeDB() {
