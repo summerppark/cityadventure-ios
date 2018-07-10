@@ -34,6 +34,23 @@ class LaunchScreenViewController: BaseViewController {
 //        makeDB()
 //        insertDB()
 
+        
+        if let day = UserDefaults.standard.object(forKey: "NoticeOffDay") as? Int ,
+            let month =  UserDefaults.standard.object(forKey: "NoticeOffMonth") as? Int {
+            
+            if month == Calendar.current.component(.month, from: Date()) {
+                if day < Calendar.current.component(.day, from: Date()) {
+                    // 같은 달 day 저장된 날짜가 작으면 공지뜨도록
+                    UserDefaults.standard.set(nil, forKey: "Notice_Toggle")
+                } else {
+                    print("Notice_Toggle값이 있으므로 공지를 보여주지 않는다.")
+                }
+            } else {
+                // 같은달이 아니면 무조건 뜨도록
+                UserDefaults.standard.set(nil, forKey: "Notice_Toggle")
+            }
+        }
+        
         self.navigationController?.navigationBar.isHidden = true
         
         presenter = LoginViewPresenter(presenter: self)

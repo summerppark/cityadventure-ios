@@ -94,6 +94,17 @@ class MainViewController: BaseViewController {
         } else if currentLevelLabel.text ?? "" == "1" {
             DataManager.shared.bgmControl()
         }
+        
+        if let noticeToggle = UserDefaults.standard.object(forKey: "Notice_Toggle") as? String {
+            print(" Saved Data2",noticeToggle)
+            
+            
+        } else {
+            if let notice = storyboard?.instantiateViewController(withIdentifier: "NoticeViewController") as? NoticeViewController {
+                self.present(notice, animated: true, completion: nil)
+            }
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
