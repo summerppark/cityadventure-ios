@@ -147,6 +147,10 @@ class RightSideMenuViewController: BaseViewController {
         hideView(type: 7)
     }
     
+    @IBAction func goToChangeAvatar(_ sender: UIButton) {
+        hideView(type: 8)
+    }
+    
     func hideView(type: Int) {
         self.leftView.backgroundColor = .clear
         UIView.animate(withDuration: 0.3, animations: {
@@ -195,7 +199,11 @@ class RightSideMenuViewController: BaseViewController {
                         self.navigationController?.pushViewController(adventureQRCode, animated: true)
                     }
                 }
-            } 
+            } else if type == 8 {
+                if let avatar = self.storyboard?.instantiateViewController(withIdentifier: "AvatarManageMentViewController") as? AvatarManageMentViewController {
+                    self.navigationController?.pushViewController(avatar, animated: true)
+                }
+            }
         }
     }
 }
