@@ -82,6 +82,7 @@
 		CE6D633220F44D0400BAF2D4 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D633120F44D0400BAF2D4 /* LandmarkDetail.swift */; };
 		CE6D633420F453D200BAF2D4 /* LandmarkSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D633320F453D200BAF2D4 /* LandmarkSearchCell.swift */; };
 		CE6D633620F4745100BAF2D4 /* TourAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D633520F4745100BAF2D4 /* TourAPIModel.swift */; };
+		CE6D633820F49D2400BAF2D4 /* AvatarManageMentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6D633720F49D2400BAF2D4 /* AvatarManageMentViewController.swift */; };
 		CE717CF020C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE717CEF20C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift */; };
 		CE73B4FC20E8DF86001FFAAF /* end_bgm_loop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE73B4FB20E8DF84001FFAAF /* end_bgm_loop.mp3 */; };
 		CE73B4FE20E8E04C001FFAAF /* BGMPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE73B4FD20E8E04C001FFAAF /* BGMPlayerManager.swift */; };
@@ -242,6 +243,7 @@
 		CE6D633120F44D0400BAF2D4 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
 		CE6D633320F453D200BAF2D4 /* LandmarkSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkSearchCell.swift; sourceTree = "<group>"; };
 		CE6D633520F4745100BAF2D4 /* TourAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourAPIModel.swift; sourceTree = "<group>"; };
+		CE6D633720F49D2400BAF2D4 /* AvatarManageMentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarManageMentViewController.swift; sourceTree = "<group>"; };
 		CE717CEF20C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeFlipViewController.swift; sourceTree = "<group>"; };
 		CE73B4FB20E8DF84001FFAAF /* end_bgm_loop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = end_bgm_loop.mp3; sourceTree = "<group>"; };
 		CE73B4FD20E8E04C001FFAAF /* BGMPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BGMPlayerManager.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 				666B6E5E2087234600CD28DB /* TermsOfUseDetailViewController.swift */,
 				666B6E6020872A3A00CD28DB /* ClientCenterViewController.swift */,
 				66FF42952088276A000C58A7 /* LeaveViewController.swift */,
+				CE6D633720F49D2400BAF2D4 /* AvatarManageMentViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -903,6 +906,7 @@
 				CE24D78A2067EECB00B21EF3 /* Constants.swift in Sources */,
 				CE717CF020C7FD2400ADCBE5 /* AdventureQRCodeFlipViewController.swift in Sources */,
 				66988C2F20F0E48D009B1A26 /* LeavePopupViewController.swift in Sources */,
+				CE6D633820F49D2400BAF2D4 /* AvatarManageMentViewController.swift in Sources */,
 				66D9390B208480DE005A66F4 /* SettingViewController.swift in Sources */,
 				CE3F2B88206C9FB400B4D9D0 /* SelectCityViewController.swift in Sources */,
 				CE642C2120773D15000C2F01 /* FindPasswordSecondViewController.swift in Sources */,
