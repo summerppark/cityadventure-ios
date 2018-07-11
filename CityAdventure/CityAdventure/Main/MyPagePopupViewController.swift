@@ -26,6 +26,21 @@ class MyPagePopupViewController: BaseViewController {
     @IBOutlet weak var myCardsCount: UILabel!
     @IBOutlet weak var myCoin: UILabel!
     
+    @IBOutlet weak var coinView: UIView! {
+        didSet {
+            coinView.layer.cornerRadius = 8.0
+            coinView.clipsToBounds = true
+        }
+    }
+    
+    @IBOutlet weak var expView: UIView! {
+        didSet {
+            expView.layer.cornerRadius = 8.0
+            expView.clipsToBounds = true
+        }
+    }
+    
+    
     
     @IBOutlet weak var genderLabel: UILabel!
     @IBOutlet weak var birthLabel: UILabel!
@@ -128,6 +143,14 @@ class MyPagePopupViewController: BaseViewController {
         }
     }
     
+    
+    @IBAction func tappedCollectCity(_ sender: Any) {
+        if let collect = self.storyboard?.instantiateViewController(withIdentifier: "MyCollectCityViewController") as? MyCollectCityViewController {
+            self.navigationController?.pushViewController(collect, animated: true)
+        }
+    }
+    
+    
     @IBAction func close(sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -143,5 +166,13 @@ class MyPagePopupViewController: BaseViewController {
             self.navigationController?.pushViewController(edit, animated: true)
         }
     }
+    
+    
+    @IBAction func changeChar(_ sender: UIButton) {
+        if let charChange = self.storyboard?.instantiateViewController(withIdentifier: "AvatarManageMentViewController") as? AvatarManageMentViewController {
+            self.navigationController?.pushViewController(charChange, animated: true)
+        }
+    }
+    
     
 }

@@ -16,7 +16,7 @@ extension APIManager {
         
         
         Alamofire.request("\(server_url)\(url)", method: .post, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response) in
-            
+            print("czczcz","\(server_url)\(url)")
             guard let statusCode = response.response?.statusCode else { return }
             switch statusCode {
             case 200:

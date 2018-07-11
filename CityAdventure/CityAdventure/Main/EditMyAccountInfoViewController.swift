@@ -190,6 +190,8 @@ class EditMyAccountInfoViewController: BaseViewController {
     
     
     
+    
+    
     // X 버튼 눌렀을 때
     @objc func deleteName() {
         nameTextField.text = ""

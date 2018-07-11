@@ -133,6 +133,8 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
                                 
                                 APIManager.updateExpCoinAfterPuzzleSuccess(url: APIUrls.getMyExpCoinUpdatePuzzleSuccess(member: member))
                                 
+                                
+                                print("11111",APIUrls.getMyExpCoinUpdatePuzzleSuccess(member: member))
                                 APIManager.getMyCollectedCityList(memberId: String(member), result: { (result) in
                                     print("Where",result?.cardInfo?.count)
                                     if let cardlist = result {

@@ -5054,6 +5054,9 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <state key="normal" title="캐릭터 변경" backgroundImage="myPage_change">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeChar:" destination="buO-Ui-32c" eventType="touchUpInside" id="Hyb-3m-vCe"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비유비유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avU-Wi-dEs">
                                         <rect key="frame" x="151.5" y="48" width="95.5" height="29.5"/>
@@ -5124,6 +5127,9 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                             <constraint firstAttribute="height" constant="60" id="xYM-3Y-dfA"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="myPage_first"/>
+                                        <connections>
+                                            <action selector="tappedCollectCity:" destination="buO-Ui-32c" eventType="touchUpInside" id="xy8-qR-tUa"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxp-hn-XsT">
                                         <rect key="frame" x="47.5" y="295.5" width="25.5" height="16"/>
@@ -5272,9 +5278,11 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                         <outlet property="birthLabel" destination="Ww7-Fo-9IM" id="leM-mn-EgL"/>
                         <outlet property="bornCityArea" destination="2Fx-6A-ihC" id="amL-g3-rpu"/>
                         <outlet property="bornCityLabel" destination="LGB-4X-bEu" id="1RC-mp-fL6"/>
+                        <outlet property="coinView" destination="LRv-q6-lut" id="8vR-do-E9c"/>
                         <outlet property="currentLevelLabel" destination="kU1-Xe-G35" id="aOM-IN-ZP2"/>
                         <outlet property="expCurrentLabel" destination="eca-ij-3l5" id="XLl-Ve-Jdh"/>
                         <outlet property="expMaxLabel" destination="DQ4-LM-igi" id="Qj6-Zj-utO"/>
+                        <outlet property="expView" destination="ZlN-3G-97u" id="XLk-DT-Tc7"/>
                         <outlet property="genderLabel" destination="L5q-FR-GSu" id="Mfo-mY-l0o"/>
                         <outlet property="livingCityArea" destination="ALB-Sz-jbk" id="NOQ-hL-AHy"/>
                         <outlet property="livingCityLabel" destination="6HV-Q5-i3j" id="LQH-Ps-X4G"/>

@@ -33,14 +33,19 @@ class AvatarManageMentViewController: BaseViewController {
     ////
     @IBOutlet weak var bottomConst: NSLayoutConstraint!
     
-    let charImageArray: [UIImage] = [#imageLiteral(resourceName: "img_char_first"),#imageLiteral(resourceName: "img_char_second"),#imageLiteral(resourceName: "img_char_third"),#imageLiteral(resourceName: "img_char_fourth"),#imageLiteral(resourceName: "img_char_fifth"),#imageLiteral(resourceName: "img_char_second")]
-    let thumbCharSelected = [#imageLiteral(resourceName: "img_thumbChar_first_On"),#imageLiteral(resourceName: "img_thumbChar_second_On"),#imageLiteral(resourceName: "img_thumbChar_third_On"),#imageLiteral(resourceName: "img_thumbChar_fourth_On")]
-    let thumbChar = [#imageLiteral(resourceName: "img_thumbChar_first"),#imageLiteral(resourceName: "img_thumbChar_second"),#imageLiteral(resourceName: "img_thumbChar_third"),#imageLiteral(resourceName: "img_thumbChar_fourth")]
-    let avartarPrice: [Int] = [5000,5000,5000,5000,5000,10000]
+    let charImageArray: [UIImage] = [#imageLiteral(resourceName: "img_char_first"),#imageLiteral(resourceName: "img_char_second"),#imageLiteral(resourceName: "img_char_third"),#imageLiteral(resourceName: "img_char_fourth"),#imageLiteral(resourceName: "img_char_fifth"),#imageLiteral(resourceName: "img_char_sixth")]
+    let thumbCharSelected = [#imageLiteral(resourceName: "img_thumbChar_first_On"),#imageLiteral(resourceName: "img_thumbChar_second_On"),#imageLiteral(resourceName: "img_thumbChar_third_On"),#imageLiteral(resourceName: "img_thumbChar_fourth_On"),#imageLiteral(resourceName: "img_thumbChar_fifth_On"),#imageLiteral(resourceName: "img_thumbChar_sixth_On")]
+    let thumbChar = [#imageLiteral(resourceName: "img_thumbChar_first"),#imageLiteral(resourceName: "img_thumbChar_second"),#imageLiteral(resourceName: "img_thumbChar_third"),#imageLiteral(resourceName: "img_thumbChar_fourth"),#imageLiteral(resourceName: "img_thumbChar_fifth"),#imageLiteral(resourceName: "img_thumbChar_sixth")]
+    let avartarPrice: [Int] = [5000,5000,5000,5000,20000,20000]
     
     var myAvartar: [Int] = []
     var charCount: Int = 3
     var charIndex: Int = 0
+    
+    var thumbButtons: [UIButton] = []
+    var thumbImages: [UIImageView] = []
+    
+    var categoryScrollView = UIScrollView()
     
     @IBOutlet weak var mainScrollView: UIScrollView! {
         didSet {
@@ -52,6 +57,9 @@ class AvatarManageMentViewController: BaseViewController {
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSetting()
@@ -62,14 +70,23 @@ class AvatarManageMentViewController: BaseViewController {
             myavar.forEach({ (avar) in
                 myAvartar.append(avar-1)
             })
-            
         }
-        
+
+        makeThumbScroll()
+        setCurrentChar()
         charViewLayout(index: 5)
-        
-        let categoryScrollView = UIScrollView()
+    }
+    
+    func setCurrentChar() {
+        if let info = DataManager.shared.userInfo?.userInfo?.ui_avatarNo {
+            self.thumbButtons[info-1].setImage(thumbCharSelected[info-1], for: .normal)
+            selecedControlSync(index: 4)
+        }
+    }
+    
+    func makeThumbScroll() {
         categoryScrollView.tag = 100
-        categoryScrollView.backgroundColor = .green
+        categoryScrollView.backgroundColor = .clear
         self.view.addSubview(categoryScrollView)
         
         categoryScrollView.snp.makeConstraints { (make) in
@@ -90,18 +107,18 @@ class AvatarManageMentViewController: BaseViewController {
         let secondpage = UIView()
         if Constants.DeviceType.IS_IPHONE_6P {
             firstpage.frame = CGRect(x: 40, y: 0, width: self.view.frame.width - 80, height: 80)
-                    firstpage.backgroundColor = .red
+            //                    firstpage.backgroundColor = .red
             categoryScrollView.addSubview(firstpage)
             secondpage.frame = CGRect(x: self.view.frame.width + 40, y: 0, width: self.view.frame.width - 40, height: 80)
-                    secondpage.backgroundColor = .blue
+            //                    secondpage.backgroundColor = .blue
             categoryScrollView.addSubview(secondpage)
         } else {
             firstpage.frame = CGRect(x: 20, y: 0, width: self.view.frame.width - 40, height: 80)
-                    firstpage.backgroundColor = .red
+            //                    firstpage.backgroundColor = .red
             categoryScrollView.addSubview(firstpage)
             
             secondpage.frame = CGRect(x: self.view.frame.width + 20, y: 0, width: self.view.frame.width - 40, height: 80)
-                    secondpage.backgroundColor = .blue
+            //                    secondpage.backgroundColor = .blue
             categoryScrollView.addSubview(secondpage)
         }
         
@@ -112,7 +129,18 @@ class AvatarManageMentViewController: BaseViewController {
             button.addTarget(self, action: #selector(selectChar), for: .touchUpInside)
             button.setImage(thumbChar[index], for: .normal)
             button.frame = CGRect(x: 80.0 * Double(index) + Double(index) * 8, y: 0, width: 80.0, height: 80.0)
+            
+            
+            
+            let isMyAvatar = UIImageView()
+            isMyAvatar.tag = index
+            isMyAvatar.backgroundColor = .clear
+            isMyAvatar.frame = CGRect(x: 80.0 * Double(index) + Double(index) * 8 + 56.0, y: 0, width: 20, height: 28)
+            isMyAvatar.isHidden = true
+            thumbButtons.append(button)
+            thumbImages.append(isMyAvatar)
             firstpage.addSubview(button)
+            firstpage.addSubview(isMyAvatar)
         }
         
         for index in 4...5 {
@@ -120,18 +148,32 @@ class AvatarManageMentViewController: BaseViewController {
             let button = UIButton()
             button.tag = index
             button.addTarget(self, action: #selector(selectChar), for: .touchUpInside)
-            button.setImage(thumbChar[index-3], for: .normal)
+            button.setImage(thumbChar[index], for: .normal)
             button.frame = CGRect(x: 80.0 * Double(newindex) + Double(newindex) * 8, y: 0, width: 80.0, height: 80.0)
+            
+            let isMyAvatar = UIImageView()
+            isMyAvatar.tag = index
+            isMyAvatar.backgroundColor = .clear
+            isMyAvatar.isHidden = true
+            isMyAvatar.frame = CGRect(x: 80.0 * Double(newindex) + Double(newindex) * 8 + 56.0, y: 0, width: 20, height: 28)
+            
+            
+            thumbButtons.append(button)
+            thumbImages.append(isMyAvatar)
             secondpage.addSubview(button)
+            secondpage.addSubview(isMyAvatar)
         }
         
-        
+        myAvartar.forEach { (index) in
+            thumbImages[index].isHidden = false
+        }
         
     }
     
     @objc func selectChar(sender: UIButton) {
-        print(sender.tag)
+        selecedControlSync(index: sender.tag)
     }
+    
     func layoutCheck() {
         if Constants.DeviceType.IS_IPHONE_6P {
             progressViewLeading.constant = 12
@@ -212,10 +254,7 @@ class AvatarManageMentViewController: BaseViewController {
             nf.numberStyle = .decimal
             price.text = nf.string(from: NSNumber(integerLiteral: avartarPrice[index]))
             coinView.addSubview(price)
-            
-            
-            
-            
+
             let selectButton = UIButton(frame: CGRect(x: 210.0, y: 320.0-48.0, width: 80.0, height: 30.0))
             selectButton.tag = index
              selectButton.addTarget(self, action: #selector(tappedPurchase), for: .touchUpInside)
@@ -245,6 +284,8 @@ class AvatarManageMentViewController: BaseViewController {
         print(sender.tag)
         // 내가 갖고있는 아바타 리스트에 포함되있다면 변경하는 로직
         // 없다면 구매하는 로직
+        
+        
         
     }
     
@@ -325,18 +366,26 @@ extension AvatarManageMentViewController: UIScrollViewDelegate {
     // Page에 따른 버튼 상태
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         NSObject.cancelPreviousPerformRequests(withTarget: self)
-        let pageNumber = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
-        print(pageNumber)
-        selectedStatus(index: pageNumber)
+        if scrollView.tag != 100 {
+            let pageNumber = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+            print(pageNumber)
+            selectedStatus(index: pageNumber)
+            selecedControlSync(index: pageNumber)
+        }
+        
     }
     
     // 선택된 캐릭터만 하이라이트
     func selectedStatus(index: Int) {
         charIndex = index
-//        for index in 0...thumbCharButtons.count-1 {
-//            thumbCharButtons[index].setImage(thumbChar[index], for: .normal)
-//        }
-//        thumbCharButtons[index].setImage(thumbCharSelected[index], for: .normal)
+        if index > 3 {
+            let page = CGPoint(x: self.view.frame.width, y: 0.0)
+            categoryScrollView.setContentOffset(page, animated: true)
+        } else {
+            let page = CGPoint(x: 0.0, y: 0.0)
+            categoryScrollView.setContentOffset(page, animated: true)
+        }
+        
     }
     
     
@@ -355,7 +404,36 @@ extension AvatarManageMentViewController: UIScrollViewDelegate {
     
     func selecedControlSync(index: Int) {
         selectedStatus(index: index)
-        let pageIndex = CGPoint(x: Double(mainScrollView.frame.size.width) * Double(index), y: 0)
-        mainScrollView.setContentOffset(pageIndex, animated: true)
+        
+        if Constants.DeviceType.IS_IPHONE_6P {
+            let pageIndex = CGPoint(x: 414.0 * Double(index), y: 0)
+            mainScrollView.setContentOffset(pageIndex, animated: true)
+        } else {
+            let pageIndex = CGPoint(x: Double(mainScrollView.frame.size.width) * Double(index), y: 0)
+            mainScrollView.setContentOffset(pageIndex, animated: true)
+        }
+        
+        if index > 3 {
+            let page = CGPoint(x: self.view.frame.width, y: 0.0)
+            categoryScrollView.setContentOffset(page, animated: true)
+        } else {
+            let page = CGPoint(x: 0.0, y: 0.0)
+            categoryScrollView.setContentOffset(page, animated: true)
+        }
+        
+        thumbImages.forEach { (img) in
+            img.image = #imageLiteral(resourceName: "myAvatar_off")
+        }
+        
+        thumbImages[index].image = #imageLiteral(resourceName: "myAvatar_on")
+        
+        
+        
+        for newIndex in 0...thumbChar.count-1 {
+            thumbButtons[newIndex].setImage(thumbChar[newIndex], for: .normal)
+        }
+        
+        thumbButtons[index].setImage(thumbCharSelected[index], for: .normal)
+        
     }
 }
