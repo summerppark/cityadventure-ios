@@ -316,11 +316,15 @@ class AdventureQRCodeFlipViewController: BaseViewController {
                 if no == Int(cityNumber) {
                     print("획득한 카드")
                     puzzleButton.setImage(#imageLiteral(resourceName: "btn_collected_city"), for: .normal)
-                } else {
-                    super.startAnimation(input: puzzleButton)
                 }
             }
         })
+        
+        if puzzleButton.imageView?.image != #imageLiteral(resourceName: "btn_collected_city") {
+            super.startAnimation(input: puzzleButton)
+        }
+        
+        
         
         
         
