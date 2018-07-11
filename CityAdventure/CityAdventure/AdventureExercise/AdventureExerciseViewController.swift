@@ -41,8 +41,11 @@ class AdventureExerciseViewController: BaseViewController {
         super.viewWillAppear(animated)
         // 화면 뜰 때마다 로컬에 저장된 데이터를 가져온다.
         if let name = DataManager.shared.getUserInfo()?.userInfo?.s_name {
-             DataManager.adventureExercise = UserDefaults.standard.integer(forKey: "\(name)_exerciseStage")
+//             DataManager.adventureExercise = UserDefaults.standard.integer(forKey: "\(name)_exerciseStage")
+            
+            DataManager.adventureExercise = 162
         }
+        
         print(DataManager.adventureExercise)
         
         getCardsStatus.text = "\(DataManager.adventureExercise) / 162"

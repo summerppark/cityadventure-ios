@@ -4583,7 +4583,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="YYo-EV-STW"/>
                                         </constraints>
-                                        <state key="normal" image="btn_notice_top"/>
+                                        <state key="normal" image="btn_top_back"/>
                                         <connections>
                                             <action selector="leftBackButtonWithSender:" destination="VnV-qw-3kV" eventType="touchUpInside" id="Ynd-JX-idK"/>
                                             <action selector="tappedBackButton:" destination="29n-sZ-J5c" eventType="touchUpInside" id="ZeX-fI-0eu"/>
@@ -6628,6 +6628,9 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                     <constraint firstAttribute="height" constant="42" id="Ci2-gc-PG5"/>
                                                 </constraints>
                                                 <state key="normal" image="effect_sound_on"/>
+                                                <connections>
+                                                    <action selector="effectSound:" destination="ZDD-XA-R1b" eventType="touchUpInside" id="rZ7-9U-pfv"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ai-Tf-Wy4">
                                                 <rect key="frame" x="16.5" y="361" width="32" height="14"/>
@@ -7125,7 +7128,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="6ST-nh-bhj"/>
                                         </constraints>
-                                        <state key="normal" image="btn_notice_top"/>
+                                        <state key="normal" image="btn_top_back"/>
                                         <connections>
                                             <action selector="tappedBackButton:" destination="29n-sZ-J5c" eventType="touchUpInside" id="2SF-vW-dxs"/>
                                         </connections>
@@ -7492,7 +7495,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="OVw-st-7dM"/>
                                         </constraints>
-                                        <state key="normal" image="back_button"/>
+                                        <state key="normal" image="btn_top_back"/>
                                         <connections>
                                             <action selector="tappedBackButton:" destination="D49-R0-aBe" eventType="touchUpInside" id="3Hh-3M-S8Q"/>
                                         </connections>
@@ -7852,9 +7855,10 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="42" id="TGw-jz-N1m"/>
                                         </constraints>
-                                        <state key="normal" image="btn_notice_top"/>
+                                        <state key="normal" image="btn_top_back"/>
                                         <connections>
                                             <action selector="tappedBackButton:" destination="29n-sZ-J5c" eventType="touchUpInside" id="RCz-R6-zhF"/>
+                                            <segue destination="5El-sO-RQD" kind="unwind" unwindAction="unWindQRCodeVC:" id="qOi-3N-hl7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-Z5-FdL">
@@ -10059,7 +10063,6 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="5" width="324" height="195"/>
         <image name="adventure_Exercise_bg" width="1440" height="2349"/>
         <image name="auto_login_no" width="60" height="60"/>
-        <image name="back_button" width="171" height="326"/>
         <image name="back_music_on" width="283" height="128"/>
         <image name="borderCloseButton" width="156" height="128"/>
         <image name="btn_allCheck_agreement" width="1000" height="150"/>
@@ -10090,6 +10093,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="btn_replay_pink" width="171" height="171"/>
         <image name="btn_right_pink" width="153" height="180"/>
         <image name="btn_stop_pink" width="169" height="169"/>
+        <image name="btn_top_back" width="128" height="244"/>
         <image name="btn_travel_info" width="520" height="139"/>
         <image name="btn_update_orange" width="432" height="101"/>
         <image name="btn_yellow_bg" width="378" height="151"/>

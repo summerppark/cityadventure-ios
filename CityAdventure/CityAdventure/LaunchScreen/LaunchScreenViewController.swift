@@ -14,7 +14,7 @@ import Toaster
 
 class LaunchScreenViewController: BaseViewController {
     
-    static var syntheSizer = AVSpeechSynthesizer()
+    static var syntherSizer: AVSpeechSynthesizer?
     
     var cardCityDBPath : String = ""
     // gif
@@ -28,6 +28,14 @@ class LaunchScreenViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let effectable = UserDefaults.standard.object(forKey: "Effect") as? String {
+            LaunchScreenViewController.syntherSizer = nil
+        } else {
+            LaunchScreenViewController.syntherSizer = AVSpeechSynthesizer()
+        }
+        
+        
         toastViewSetting()
         // navi hidden
         // db 내용에 '' 가 포함되어 FMDB INSERT 쿼리문 에러발생.

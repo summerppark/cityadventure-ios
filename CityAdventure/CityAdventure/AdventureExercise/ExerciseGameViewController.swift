@@ -130,14 +130,17 @@
     }
     
     @objc func tappedCharButton(sender: UIButton) {
-        print(sender.tag)
+        
+        guard stageNumber != 162 else {
+            return
+        }
         
         // 글자를 소리내주는 부분
         DispatchQueue.main.async {
             let utterance = AVSpeechUtterance(string: sender.currentTitle!)
             utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
             utterance.rate = AVSpeechUtteranceDefaultSpeechRate
-            LaunchScreenViewController.syntheSizer.speak(utterance)
+            LaunchScreenViewController.syntherSizer?.speak(utterance)
         }
         
        
@@ -314,10 +317,15 @@
     
     // 다음으로 눌렀을 때
     func tappedNext() {
+        
         stageNumber += 1
-        print(stageNumber)
-        setGame(stageNumber: stageNumber)
-        setPuzzleButton(stageNumber: stageNumber)
+        
+        if stageNumber < 162 {
+            setGame(stageNumber: stageNumber)
+            setPuzzleButton(stageNumber: stageNumber)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     func setGame(stageNumber: Int) {

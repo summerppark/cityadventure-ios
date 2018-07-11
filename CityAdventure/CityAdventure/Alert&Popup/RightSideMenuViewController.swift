@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class RightSideMenuViewController: BaseViewController {
  
@@ -24,7 +25,7 @@ class RightSideMenuViewController: BaseViewController {
     @IBOutlet weak var effectButton: UIButton!
     
     var audioIsPlay: Bool = false
-    
+    var effectSoundPlay: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +33,7 @@ class RightSideMenuViewController: BaseViewController {
         addGesture()
         dataSetting()
     }
-    
-    
-    
+  
     // 사이드메뉴 데이터 셋팅.
     func dataSetting() {
         guard let info = DataManager.shared.userInfo?.userInfo else {
@@ -78,13 +77,21 @@ class RightSideMenuViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let bgmData = UserDefaults.standard.object(forKey: "BGM") as? String {
-            if bgmData == "TRUE" {
-                bgmButtn.setImage(#imageLiteral(resourceName: "back_music_on"), for: .normal)
-                audioIsPlay = false
-            } else {
-                audioIsPlay = true
-                bgmButtn.setImage(#imageLiteral(resourceName: "back_music_off"), for: .normal)
-            }
+            bgmButtn.setImage(#imageLiteral(resourceName: "back_music_off"), for: .normal)
+            audioIsPlay = true
+        } else {
+            audioIsPlay = false
+            bgmButtn.setImage(#imageLiteral(resourceName: "back_music_on"), for: .normal)
+        }
+        
+        
+        if let effectData = UserDefaults.standard.object(forKey: "Effect") as? String {
+            effectSoundPlay = true
+            effectButton.setImage(#imageLiteral(resourceName: "effect_sound_off"), for: .normal)
+        } else {
+            //nil 이면 소리 나오게.
+            effectSoundPlay = false
+            effectButton.setImage(#imageLiteral(resourceName: "effect_sound_on"), for: .normal)
         }
     }
     
@@ -97,14 +104,30 @@ class RightSideMenuViewController: BaseViewController {
         
         if audioIsPlay {
             sender.setImage(#imageLiteral(resourceName: "back_music_on"), for: .normal)
-            UserDefaults.standard.set("TRUE", forKey: "BGM")
+            UserDefaults.standard.set(nil, forKey: "BGM")
             BGMPlayerManager.shared.bgmStart()
         } else {
-             sender.setImage(#imageLiteral(resourceName: "back_music_off"), for: .normal)
+            sender.setImage(#imageLiteral(resourceName: "back_music_off"), for: .normal)
             UserDefaults.standard.set("FALSE", forKey: "BGM")
             BGMPlayerManager.shared.bgmStop()
         }
+        
         audioIsPlay = !audioIsPlay
+    }
+    
+    @IBAction func effectSound(_ sender: UIButton) {
+        
+        if effectSoundPlay {
+            sender.setImage(#imageLiteral(resourceName: "effect_sound_on"), for: .normal)
+            LaunchScreenViewController.syntherSizer = AVSpeechSynthesizer()
+            UserDefaults.standard.set(nil, forKey: "Effect")
+        } else {
+            sender.setImage(#imageLiteral(resourceName: "effect_sound_off"), for: .normal)
+            LaunchScreenViewController.syntherSizer = nil
+            UserDefaults.standard.set("EffectOff", forKey: "Effect")
+        }
+        
+        effectSoundPlay = !effectSoundPlay
     }
     
     @IBAction func shoppingMall(_ sender: UIButton) {
@@ -146,6 +169,8 @@ class RightSideMenuViewController: BaseViewController {
     @IBAction func goToQRCodeGame(_ sender: UIButton) {
         hideView(type: 7)
     }
+    
+   
     
     @IBAction func goToChangeAvatar(_ sender: UIButton) {
         if let mypage = self.storyboard?.instantiateViewController(withIdentifier: "MyPagePopupViewController") as? MyPagePopupViewController {

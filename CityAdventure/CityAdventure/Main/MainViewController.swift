@@ -88,10 +88,7 @@ class MainViewController: BaseViewController {
         dataSetting()
         
         if let bgmData = UserDefaults.standard.object(forKey: "BGM") as? String {
-            if bgmData == "TRUE" {
-                DataManager.shared.bgmControl()
-            }
-        } else if currentLevelLabel.text ?? "" == "1" {
+        } else {
             DataManager.shared.bgmControl()
         }
         
