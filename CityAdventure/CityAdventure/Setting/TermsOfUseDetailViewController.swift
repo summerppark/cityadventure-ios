@@ -591,8 +591,55 @@ Any questions about our use of licensed work can be sent to bubuinc16@gmail.com.
 
 
 -Alamofire
- MIT License
-https://github.com
+    https://github.com/Alamofire/Alamofire
+    Alamofire is released under the MIT license.
+
+-AlamofireObjectMapper
+    https://github.com/tristanhimmelman/AlamofireObjectMapper
+    AlamofireObjectMapper is released under the MIT license.
+
+-SnapKit
+    https://github.com/SnapKit/SnapKit
+    http://snapkit.io
+    SnapKit is released under the MIT license.
+
+-Kingfisher
+    https://github.com/onevcat/Kingfisher
+    Kingfisher is released under the MIT license.
+-Toaster
+    https://github.com/devxoul/Toaster
+    Toaster is under WTFPL. You can do what the fuck you want with Toast.
+
+-UITextView+Placeholder
+    https://github.com/devxoul/UITextView-Placeholder
+    UITextView+Placeholder is under MIT license.
+
+-SwiftGifOrigin
+    https://github.com/swiftgif/SwiftGif
+    This repository is licensed under the MIT license
+
+
+[The MIT License (MIT)]
+
+Copyright (c) 2016 Arne Bahlo
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 """
     ]
     

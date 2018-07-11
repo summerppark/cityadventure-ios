@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import DCAnimationKit
+
 
 class BaseViewController: UIViewController {
     
@@ -126,5 +128,46 @@ extension BaseViewController {
         }
         
         return result
+    }
+    
+    
+    func startAnimation(input: UIButton) {
+        input.tada {
+            input.tada {
+                input.tada {
+                    input.tada {
+                        input.tada {
+                            input.tada {
+                                input.tada {
+                                    input.tada {
+                                        input.tada {
+                                            input.tada {
+                                                input.tada {
+                                                    input.tada {
+                                                        input.tada {
+                                                            input.tada {
+                                                                input.tada {
+                                                                    input.tada {
+                                                                        input.tada {
+                                                                            input.tada {
+                                                                                input.tada(nil)
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

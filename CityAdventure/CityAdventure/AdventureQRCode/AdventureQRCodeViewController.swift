@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import UIView_Shake
+import DCAnimationKit
 
 class AdventureQRCodeViewController: BaseViewController {
     
@@ -14,6 +16,7 @@ class AdventureQRCodeViewController: BaseViewController {
     @IBOutlet weak var squareHeight: NSLayoutConstraint!
     @IBOutlet weak var textTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var mainCharWidth: NSLayoutConstraint!
     
     @IBOutlet weak var userCharView: UIImageView!
     @IBOutlet weak var currentLevelLabel: UILabel!
@@ -41,16 +44,27 @@ class AdventureQRCodeViewController: BaseViewController {
     @IBOutlet weak var mainNickname: UILabel!
     @IBOutlet weak var mainCityCount: UILabel!
     
+    @IBOutlet weak var startButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
         dataSetting()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(DataManager.shared.getUserCardInfo()?.cardInfo?.count, "갱신 후")
         dataSetting()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        super.startAnimation(input: startButton)
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -167,6 +181,10 @@ class AdventureQRCodeViewController: BaseViewController {
             print(index)
             userCharView.image = super.charImages[index-1]
             mainAvartarView.image = super.mainCharImages[index-1]
+           
+            if index > 3 {
+                mainCharWidth.constant = 180.0
+            }
         }
         
         // 프로그레스 뷰 상태를 셋팅

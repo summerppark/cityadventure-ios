@@ -3,6 +3,7 @@ PODS:
   - AlamofireObjectMapper (5.0.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
+  - DCAnimationKit (0.0.6)
   - GRDB.swift (2.10.0)
   - Kingfisher (4.7.0)
   - MarqueeLabel/Swift (3.1.4)
@@ -16,6 +17,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireObjectMapper (~> 5.0)
+  - DCAnimationKit
   - GRDB.swift
   - Kingfisher (~> 4.0)
   - MarqueeLabel/Swift
@@ -30,6 +32,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireObjectMapper
+    - DCAnimationKit
     - GRDB.swift
     - Kingfisher
     - MarqueeLabel
@@ -43,6 +46,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  DCAnimationKit: 7133bef877ce1aa113dcfeea1380ca67f91f7608
   GRDB.swift: 9859cab1b990eac62ee550d3d2208ec1b44f76af
   Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   MarqueeLabel: bf768455fe88d427f71476ebb23f9092b660f40b
@@ -53,6 +57,6 @@ SPEC CHECKSUMS:
   "UITextView+Placeholder": 77680995fcdd07c3f52ec92fe1150874a2ac89ff
   "UIView+Shake": 055ad67721de1f74d29c0a1d464697e505dfc62f
 
-PODFILE CHECKSUM: bcb0f635ff70edef2ab7e534e203a459081a7ad1
+PODFILE CHECKSUM: 0707d9de21784368177b0f04410133bce50150c7
 
 COCOAPODS: 1.5.0.beta.1

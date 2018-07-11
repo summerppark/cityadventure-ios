@@ -316,9 +316,13 @@ class AdventureQRCodeFlipViewController: BaseViewController {
                 if no == Int(cityNumber) {
                     print("획득한 카드")
                     puzzleButton.setImage(#imageLiteral(resourceName: "btn_collected_city"), for: .normal)
+                } else {
+                    super.startAnimation(input: puzzleButton)
                 }
             }
         })
+        
+        
         
     }
     
@@ -626,6 +630,9 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         }
     }
     
+    @IBAction func tappedBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     // 해당 도시의 정보를 보여주는 뷰.
     @objc func presentBoard() {
