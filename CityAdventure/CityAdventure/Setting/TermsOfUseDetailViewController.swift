@@ -583,8 +583,16 @@ class TermsOfUseDetailViewController: UIViewController {
 ② 소속 :  ㈜비유비유
 ③ 연락처 :  02-304-3352
 """, """
+This application is Copyright BUBU Corp. All rights reserved.
+
+This applications use Open Source Software(OSS). You can find the source code of these open source projects, along with applicable license information, below. We are deeply grateful to these developers for their work and contribuistions.
+
+Any questions about our use of licensed work can be sent to bubuinc16@gmail.com.
+
+
 -Alamofire
  MIT License
+https://github.com
 """
     ]
     
