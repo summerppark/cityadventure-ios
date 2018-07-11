@@ -186,6 +186,10 @@ extension ResetPasswordViewController: ResetPasswordPresenterProtocol {
 
 
 extension ResetPasswordViewController: AlertViewProtocol {
+    func successEdit() {
+        
+    }
+    
     func successAuth() {
         print("ㅇㅣ쪽은 사용되지 않는 프로토콜")
     }

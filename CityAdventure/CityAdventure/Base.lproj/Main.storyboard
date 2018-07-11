@@ -5039,7 +5039,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_thumbChar_first_On" translatesAutoresizingMaskIntoConstraints="NO" id="G6Q-fJ-OBA">
                                         <rect key="frame" x="47.5" y="48" width="80" height="80"/>
-                                        <color key="backgroundColor" red="0.62745098040000002" green="0.81176470590000005" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="D8v-7Y-YYR"/>
                                             <constraint firstAttribute="width" constant="80" id="WIu-aB-aue"/>
@@ -5195,7 +5195,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="560" id="0yd-0a-ggu"/>
                                     <constraint firstItem="L5q-FR-GSu" firstAttribute="leading" secondItem="X5l-xv-sqv" secondAttribute="trailing" constant="8" id="5Ge-yy-Nqs"/>
@@ -5635,7 +5635,10 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                             <constraint firstAttribute="height" constant="50" id="AUz-c4-3IC"/>
                                             <constraint firstAttribute="width" constant="128" id="XR0-q3-s8Y"/>
                                         </constraints>
-                                        <state key="normal" title="수정하기" backgroundImage="btn_yellow_bg"/>
+                                        <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="17"/>
+                                        <state key="normal" title="수정하기" backgroundImage="btn_yellow_bg">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="goToNext:" destination="95V-aK-lke" eventType="touchUpInside" id="37Q-Mj-Uk5"/>
                                             <action selector="goToNext:" destination="vxN-bQ-d1R" eventType="touchUpInside" id="Djx-DJ-beH"/>

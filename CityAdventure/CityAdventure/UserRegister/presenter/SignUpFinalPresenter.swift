@@ -28,7 +28,7 @@ class SignUpFinalPresenter: NSObject {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.presenter.startLoading()
         APIManager.postRegisterUserInfo(url: APIUrls.getSignUpUrls(params: parameter), completion: { (resultString, error) in
-            
+            print("값 확인",APIUrls.getSignUpUrls(params: parameter))
             if error == nil {
                 self.presenter.signUpResult(text: resultString)
             }

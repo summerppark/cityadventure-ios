@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Toaster
+import Alamofire
 
 class EditMyAccountInfoViewController: BaseViewController {
     
@@ -114,16 +116,39 @@ class EditMyAccountInfoViewController: BaseViewController {
     var editedCurrentCity: String = ""
     var editedGenderString: String = ""
     
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
         createDatePicker()
         addGesture()
         setData()
+        
+        cityDataSet()
+        
+    }
+    
+    func cityDataSet() {
+        
+        if let city = DataManager.shared.userInfo?.userInfo,
+            let homeProvince = city.ui_homeProvince,
+            let homeCity = city.ui_homeCity,
+            let livingProvince = city.ui_livingProvince,
+            let livingCity = city.ui_livingCity {
+            
+            UserDefaults.standard.set(homeProvince, forKey: "signup_homeProvince")
+            UserDefaults.standard.set(homeCity, forKey: "signup_homeNumber")
+            UserDefaults.standard.set(livingProvince, forKey: "signup_livingProvince")
+            UserDefaults.standard.set(livingCity, forKey: "signup_livingNumber")
+        }
+        
+        
+        
     }
     
     func setData() {
+        
+        
         self.birthdayTextField.text = editedBirth
         self.nameTextField.text = editedName
         makeAttributedString(toggle: editedGender)
@@ -214,9 +239,6 @@ class EditMyAccountInfoViewController: BaseViewController {
             print("수정내용 있음")
             nextButton.isEnabled = true
         }
-        
-        
-        
     }
     
     // 뒤로가기
@@ -226,8 +248,81 @@ class EditMyAccountInfoViewController: BaseViewController {
     
     // 다음으로
     @IBAction func goToNext(_ sender: Any) {
-        if let charVC = storyboard?.instantiateViewController(withIdentifier: "CharacterChoiceViewController") as? CharacterChoiceViewController {
-            self.navigationController?.pushViewController(charVC, animated: true)
+        super.showLoading(view: self.view)
+        guard let token = UserDefaults.standard.object(forKey: "token") as? String else {
+            Toast.init(text: "다시 시도해주세요").show()
+            return
+        }
+        
+        guard let member = DataManager.shared.userInfo?.userInfo?.no else {
+            Toast.init(text: "다시 시도해주세요").show()
+            return
+        }
+        
+        //urlQuery
+        guard let name = self.nameTextField.text else {
+            Toast.init(text: "다시 시도해주세요").show()
+            return
+        }
+        
+        guard let homeCity = UserDefaults.standard.object(forKey: "signup_homeNumber") as? Int32 else {
+            return
+        }
+        
+        guard let homeProvince = UserDefaults.standard.object(forKey: "signup_homeProvince") as? Int32 else {
+            return
+        }
+        guard let livingProvince = UserDefaults.standard.object(forKey: "signup_livingProvince") as? Int32 else {
+            return
+        }
+        guard let livingCity = UserDefaults.standard.object(forKey: "signup_livingNumber") as? Int32 else {
+            return
+        }
+        
+        guard let birth = self.birthdayTextField.text else {
+            return
+        }
+        
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
+        // 선택 값 넣어주기.
+        birthdayTextField.text = dateFormatter.string(from: picker.date)
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        print("EditInfo", token,member,name,homeCity,homeProvince,livingCity,livingProvince,dateFormatter.string(from: picker.date), editedGenderString, gender)
+        
+        print("===>", APIUrls.getEditMyInfo(token: token, memberNumber: member, homeProvince: homeProvince, homeCity: homeCity, livingProvince: livingProvince, livingCity: livingCity, name: name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "", gender: gender, birth: dateFormatter.string(from: picker.date)))
+        
+        
+        
+        Alamofire.request(APIUrls.getEditMyInfo(token: token, memberNumber: member, homeProvince: homeProvince, homeCity: homeCity, livingProvince: livingProvince, livingCity: livingCity, name: name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "", gender: gender, birth: dateFormatter.string(from: picker.date)), method: .put, parameters: nil, encoding: JSONEncoding.default).responseObject { (response : DataResponse<NewBaseResponse>) in
+            switch response.result {
+            case .success:
+                if let userInfo = DataManager.shared.userInfo?.userInfo {
+                    userInfo.c_gender = self.gender
+                    userInfo.date_birth = dateFormatter.string(from: self.picker.date)
+                    userInfo.ui_homeCity = Int(homeCity)
+                    userInfo.ui_homeProvince = Int(homeProvince)
+                    userInfo.ui_livingCity = Int(livingCity)
+                    userInfo.ui_livingProvince = Int(livingProvince)
+                    userInfo.s_name = name
+                }
+                
+                super.hideLoading()
+                if let alert = self.storyboard?.instantiateViewController(withIdentifier: "AlertviewController") as? AlertviewController {
+                    alert.delegate = self
+                    alert.modalPresentationStyle = .overCurrentContext
+                    alert.alertString = "정보가 성공적으로 수정되었습니다."
+                    self.present(alert, animated: false, completion: nil)
+                }
+                
+                
+            case .failure(let error):
+                print("실1패", error.localizedDescription)
+                super.hideLoading()
+                Toast.init(text: "정보 수정에 실패하였습니다.").show()
+            }
         }
     }
     
@@ -261,6 +356,14 @@ class EditMyAccountInfoViewController: BaseViewController {
         birthdayTextField.inputView = picker
         
         picker.datePickerMode = .date
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
+        if let date = dateFormatter.date(from: editedBirth) {
+            picker.setDate(date, animated: true)
+        }
+        
+        
     }
     
     // 선택
@@ -268,10 +371,10 @@ class EditMyAccountInfoViewController: BaseViewController {
         toggles[2] = true
         // 데이트 형식 셋팅
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy년 M월 dd일"
+        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
         // 선택 값 넣어주기.
         birthdayTextField.text = dateFormatter.string(from: picker.date)
-        dateFormatter.dateFormat = "yyyy-M-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         savedBirthday = dateFormatter.string(from: picker.date)
         checkStatus()
         checkEdited()
@@ -369,4 +472,21 @@ extension EditMyAccountInfoViewController: SelectCityProtocol {
             checkEdited()
         }
     }
+}
+
+
+extension EditMyAccountInfoViewController: AlertViewProtocol {
+    func successAuth() {
+        
+    }
+    
+    func successCallback() {
+        
+    }
+    
+    func successEdit() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
 }

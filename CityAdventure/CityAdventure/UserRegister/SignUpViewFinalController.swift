@@ -74,6 +74,7 @@ class SignUpViewFinalController: BaseViewController {
                 "birth": birthday as! String,
                 "avatarNo": String(charIndex)
             ]
+            
         }
     }
     

@@ -16,7 +16,7 @@ extension APIManager {
         Alamofire.request("\(server_url)\(url)", method: .get, parameters: nil, encoding: JSONEncoding.default).responseObject { (response: DataResponse<UserInfo>) in
             if let userInfo = response.result.value {
                 print("유저 캐릭터 정보, 유저정보를 받아오는 부분 ")
-                print(userInfo.userInfo?.s_name)
+                dump(userInfo)
                 completion(userInfo, nil)
             }
         }

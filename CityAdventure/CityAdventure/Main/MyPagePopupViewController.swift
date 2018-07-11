@@ -119,11 +119,11 @@ class MyPagePopupViewController: BaseViewController {
             
          
             if let bornIndex = userCharInfo.ui_homeCity {
-                self.bornCityLabel.text = DataManager.shared.citynumbers[bornIndex].cityName
+                self.bornCityLabel.text = DataManager.shared.citynumbers[bornIndex-1].cityName
             }
             
             if let livingIndex = userCharInfo.ui_livingCity {
-                self.livingCityLabel.text = DataManager.shared.citynumbers[livingIndex].cityName
+                self.livingCityLabel.text = DataManager.shared.citynumbers[livingIndex-1].cityName
             }
         }
     }

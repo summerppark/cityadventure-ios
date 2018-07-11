@@ -130,5 +130,12 @@ class APIUrls {
         
         return "http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchKeyword?ServiceKey=1bRQ7kZKeN7M%2FGK5dO6r7VZfTFPgmhkWKrwe3iyfRBQ549JRKV%2BqRY4qQiIO0EpShrSEwCWb90OKNqcOGxv8Cg%3D%3D&numOfRows=10&pageNo=1&MobileOS=IOS&MobileApp=cityadventure&keyword=\(search)&_type=json"
     }
+    
+    
+    static func getEditMyInfo(token: String, memberNumber: Int, homeProvince: Int32, homeCity: Int32, livingProvince: Int32, livingCity: Int32, name: String, gender: String, birth: String ) -> String {
+        return "http://www.bubu-expedition.com/API/v1/members/\(memberNumber)?token=\(token)&homeProvince=\(homeProvince)&homeCity=\(homeCity)&livingProvince=\(livingProvince)&livingCity=\(livingCity)&name=\(name)&gender=\(gender)&birth=\(birth)"
+    }
+    
+    
 
 }
