@@ -132,5 +132,16 @@ class MyPagePopupViewController: BaseViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func editMyInfo(_ sender: UIButton) {
+        if let edit = self.storyboard?.instantiateViewController(withIdentifier: "EditMyAccountInfoViewController") as? EditMyAccountInfoViewController {
+            
+            edit.editedName = self.userNameLabel.text ?? "BUBU"
+            edit.editedBirth = self.birthLabel.text ?? "BUBU"
+            edit.editedBornCity = "\(self.bornCityArea.text ?? "") \(self.bornCityLabel.text ?? "")"
+            edit.editedCurrentCity = "\(self.livingCityArea.text ?? "") \(self.livingCityLabel.text ?? "BUBU")"
+            edit.editedGender = self.genderLabel.text ?? "" == "남자" ? true : false
+            self.navigationController?.pushViewController(edit, animated: true)
+        }
+    }
     
 }

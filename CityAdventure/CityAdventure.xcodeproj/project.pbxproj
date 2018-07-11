@@ -31,6 +31,7 @@
 		66988C2D20F0DB76009B1A26 /* NewBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66988C2C20F0DB76009B1A26 /* NewBaseResponse.swift */; };
 		66988C2F20F0E48D009B1A26 /* LeavePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66988C2E20F0E48D009B1A26 /* LeavePopupViewController.swift */; };
 		66988C3320F34A7B009B1A26 /* CityMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66988C3220F34A7B009B1A26 /* CityMapViewController.swift */; };
+		66988C3820F59DEE009B1A26 /* EditMyAccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66988C3720F59DED009B1A26 /* EditMyAccountInfoViewController.swift */; };
 		66A05F29208989B500CDCF4C /* ExerciseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */; };
 		66BA20C120ECDA51001B307A /* LandMarkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BA20C020ECDA51001B307A /* LandMarkDetailViewController.swift */; };
 		66C8CBDE20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C8CBDD20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift */; };
@@ -194,6 +195,7 @@
 		66988C2C20F0DB76009B1A26 /* NewBaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBaseResponse.swift; sourceTree = "<group>"; };
 		66988C2E20F0E48D009B1A26 /* LeavePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeavePopupViewController.swift; sourceTree = "<group>"; };
 		66988C3220F34A7B009B1A26 /* CityMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityMapViewController.swift; sourceTree = "<group>"; };
+		66988C3720F59DED009B1A26 /* EditMyAccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyAccountInfoViewController.swift; sourceTree = "<group>"; };
 		66A05F28208989B500CDCF4C /* ExerciseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseGameViewController.swift; sourceTree = "<group>"; };
 		66BA20C020ECDA51001B307A /* LandMarkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandMarkDetailViewController.swift; sourceTree = "<group>"; };
 		66C8CBDD20CFB0EC00C89F4C /* AdventureQRCodeBoardPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureQRCodeBoardPopUp.swift; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 				CE642C25207755A5000C2F01 /* MainViewController.swift */,
 				CE642C272077612F000C2F01 /* NoticeViewController.swift */,
 				CE6D633A20F50AED00BAF2D4 /* MyPagePopupViewController.swift */,
+				66988C3720F59DED009B1A26 /* EditMyAccountInfoViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -895,6 +898,7 @@
 				CE300639207C7F6D00E90DC3 /* UserAccountInfo.swift in Sources */,
 				CED8C4BB2073112600286A61 /* BaseResponse.swift in Sources */,
 				CE642C26207755A5000C2F01 /* MainViewController.swift in Sources */,
+				66988C3820F59DEE009B1A26 /* EditMyAccountInfoViewController.swift in Sources */,
 				CE642C1D20770339000C2F01 /* FindPasswordViewController.swift in Sources */,
 				CE6D633220F44D0400BAF2D4 /* LandmarkDetail.swift in Sources */,
 				CE1EEC3C2071D06D00116625 /* SignUpViewFinalController.swift in Sources */,
