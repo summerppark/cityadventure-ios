@@ -28,22 +28,44 @@ class LoginViewController: BaseViewController {
     
     @IBOutlet weak var loginButton: UIButton!
    
+    @IBOutlet weak var autoLogin: UIButton! {
+        didSet {
+            autoLogin.addTarget(self, action: #selector(autoLoginCheck), for: .touchUpInside)
+        }
+    }
+    
     var presenter: LoginViewPresenter!
+    var autoLoginToggle: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //엣지 팝 제스쳐 끄기
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         self.navigationController?.navigationBar.isHidden = true
-        
+  
         initView()
         presenter = LoginViewPresenter(presenter: self)
+        
+        if let email = UserDefaults.standard.object(forKey: "auto_email") as? String, let password = UserDefaults.standard.object(forKey: "auto_password") as? String {
+            autoLoginToggle = true
+            autoLogin.setImage(#imageLiteral(resourceName: "auto_login_ok"), for: .normal)
+            self.presenter.tryEmailLogin(email: email, password: password)
+        }
+        
         toastViewSetting()
         
     }
     
+    @objc func autoLoginCheck() {
+        autoLoginToggle = !autoLoginToggle
+        if autoLoginToggle {
+            autoLogin.setImage(#imageLiteral(resourceName: "auto_login_ok"), for: .normal)
+        } else {
+            autoLogin.setImage(#imageLiteral(resourceName: "auto_login_no"), for: .normal)
+        }
+    }
+    
     func toastViewSetting() {
-        
         ToastView.appearance().font = UIFont(name: "GodoM", size: 18.0)
         ToastView.appearance().frame = CGRect(x: 0, y: 0, width: 200, height: 150)
     }
@@ -77,9 +99,22 @@ class LoginViewController: BaseViewController {
         // 키보드 내려준다.
         keyboardHide()
         
+        //true
+        if autoLoginToggle {
+            print("설정")
+            UserDefaults.standard.set(emailTextField.text!, forKey: "auto_email")
+            UserDefaults.standard.set(passwordTextField.text!, forKey: "auto_password")
+            
+        } else {
+            UserDefaults.standard.set(nil, forKey: "auto_email")
+            UserDefaults.standard.set(nil, forKey: "auto_password")
+        }
+        
+        // 지운다.
         if let email = emailTextField.text, let password = passwordTextField.text {
             self.presenter.tryEmailLogin(email: email, password: password)
         }
+        
     }
     
     //MARK:- FindPassword
@@ -96,6 +131,40 @@ class LoginViewController: BaseViewController {
             self.navigationController?.pushViewController(next, animated: true)
         }
     }
+    
+    @IBAction func kakaoLogin(_ sender: UIButton) {
+        
+        guard let session = KOSession.shared() else { return }
+        // 오픈되어있으면 바로 로그인 ㄱ
+        if session.isOpen() {
+            print("isOpen?")
+//            session.close()
+        }
+        
+        session.presentingViewController = self
+        session.open { (error) in
+            if error != nil {
+                print(error?.localizedDescription)
+            } else if session.isOpen() {
+                KOSessionTask.userMeTask(completion: { (error, me) in
+                    if let error = error as NSError? {
+                        print(error, "Error")
+                    } else if let me = me as KOUserMe? {
+                        print("login",me)
+                        dump(me)
+                    } else {
+                        print("아이디없다")
+                    }
+                })
+            } else {
+                print("failed")
+            }
+        }
+        
+    }
+    
+    
+    
 }
 
 //MARK:- @IBAction
@@ -126,7 +195,7 @@ extension LoginViewController: LoginViewPresenterProtocol {
         stopLoading()
         // email, password 를 통해서 API 를 날려 토큰을 받아 온 후 바로 Token 을 가지고 유저 정보, 유저 계정정보 2군두에 통신을 시도한 후 핸들러로 이곳에 도착하여 메인뷰로 넘어간다.
         // Toast 를 위한 구문
-        failEmailLogin(msg: "\(nick)대원님 환영합니다.")
+        failEmailLogin(msg: "\(nick)대원님 도시탐험 하러가요!")
         
         // Main 화면으로 보내기
         let main = self.storyboard?.instantiateViewController(withIdentifier: "mainNav") as! UINavigationController

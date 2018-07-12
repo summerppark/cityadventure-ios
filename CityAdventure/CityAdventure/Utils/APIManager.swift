@@ -52,7 +52,7 @@ struct APIManager {
     
     // 이메일 로그인
     static func postTryEmailLogin(url: String, completion: @escaping (loginResponse, _ error: Error?) -> Void, fail: @escaping (_ message: String?, _ error: Error?) -> Void) {
-        print("\(server_url)\(url)")
+        print("1212, \(server_url)\(url)")
         Alamofire.request("\(server_url)\(url)", method: .post, parameters: nil, encoding: JSONEncoding.default).responseObject { (response: DataResponse<loginResponse>) in
             
             guard let statusCode = response.response?.statusCode else { return }
@@ -110,6 +110,24 @@ struct APIManager {
                 completion("성공", nil)
             default:
                 completion("실패", nil)
+            }
+        }
+    }
+    
+    static func updateExpCoinAfterPuzzleSuccess(url: String) {
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response) in
+            guard let statusCode = response.response?.statusCode else { return }
+            switch statusCode {
+            case 200 :
+                print("Success")
+                if let dict = response.result.value as? NSDictionary, let info = dict["data"] as? NSDictionary, let credit = info["ui_credit"] as? Int, let exp = info["ui_exp"] as? Int  {
+                    DataManager.shared.userInfo?.userInfo?.ui_credit = credit
+                    DataManager.shared.userInfo?.userInfo?.ui_exp = exp
+                    
+                }
+                
+            default:
+                print("ERror puzzleSucces")
             }
         }
     }

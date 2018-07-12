@@ -51,11 +51,6 @@ class SignUpViewSeccondController: BaseViewController {
     // 3번째 입력 부분 - 비밀번호 입력
     @IBOutlet weak var passwordTextField: UITextField! {
         didSet {
-//            let attributedString = [ NSAttributedStringKey.font : UIFont(name: "GodoM", size: 8.0),
-//                                     NSAttributedStringKey.foregroundColor : UIColor.textView_gray_Color
-//            ] as [NSAttributedStringKey: Any]!
-//            passwordTextField.attributedPlaceholder = NSMutableAttributedString(string: "비밀번호 입력 (8자 이상,영문 숫자 혼합)", attributes: attributedString)
-            
             passwordTextField.addTarget(self, action: #selector(textFieldDidChange(sender:)), for: .editingChanged)
         }
     }
@@ -89,6 +84,21 @@ class SignUpViewSeccondController: BaseViewController {
     
     
     
+    // Login Info static
+    static var signupEmail: String = ""
+    static var signupPassword: String = ""
+    static var signupName: String = ""
+    static var signupGender: String = ""
+    static var signupBirthday: String = ""
+    static var signupHomeProvince: String = ""
+    static var signupHomeNumber: String = ""
+    static var signupLivingProvince: String = ""
+    static var signupLivingNumber: String = ""
+    static var signupBornCity: String = ""
+    static var signupLiveCity: String = ""
+    
+    
+    
     //Presenter
     var presenter: SignUpViewSecondPresenter!
     
@@ -117,6 +127,9 @@ class SignUpViewSeccondController: BaseViewController {
         
         if let email = emailTextField.text,
             let password = passwordTextField.text {
+            SignUpViewSeccondController.signupEmail = email
+            SignUpViewSeccondController.signupPassword = password
+            
             UserDefaults.standard.set(email, forKey: "signup_email")
             UserDefaults.standard.set(password, forKey: "signup_password")
         }
@@ -133,9 +146,7 @@ class SignUpViewSeccondController: BaseViewController {
         //iPhoneX 는 네비게이션,스테이터스바 가 다른형식임
         if Constants.DeviceType.IS_IPHONE_X {
             headerViewHeight.constant = 88
-            
             // iPhone X 일 때 레이아웃
-           
         }
         
         // iPhoneX ,plus 일 때 레이아웃
@@ -155,8 +166,6 @@ class SignUpViewSeccondController: BaseViewController {
         if let nextVC = storyboard?.instantiateViewController(withIdentifier: "SignupViewThirdController") as? SignupViewThirdController {
             self.navigationController?.pushViewController(nextVC, animated: true)
         }
-        
-        
     }
     
     // 배경 눌렀을 때 키보드 내려감
@@ -168,6 +177,7 @@ class SignUpViewSeccondController: BaseViewController {
     // 삭제 버튼 눌렀을 때 입력 값 지움
     @IBAction func tappedDeleteButton(_ sender: UIButton) {
         textFields[sender.tag].text = ""
+        self.duplicatedCheckButton.setImage(UIImage(named:"btn_duplicated_icon_before"), for: .normal)
     }
     
     @IBAction func tappedBackbutton(_ sender: Any) {
@@ -181,6 +191,7 @@ class SignUpViewSeccondController: BaseViewController {
             print("email값이 없으면 그냥 종료")
             return 
         }
+
         self.presenter.isValidEmailAddress(email: email)
     }
     
@@ -189,9 +200,13 @@ class SignUpViewSeccondController: BaseViewController {
 
 extension SignUpViewSeccondController: UITextFieldDelegate {
     
-    
     // 입력값에 따른 상태 체크
     @objc func textFieldDidChange(sender: UITextField) {
+        
+        if let emailCheck = self.emailTextField.text, emailCheck == "" {
+            self.duplicatedCheckButton.setImage(UIImage(named:"btn_duplicated_icon_before"), for: .normal)
+        }
+        
         deleteButtons[sender.tag].isHidden = false
         // 이메일 + 이메일 재입력
         if sender.tag == 1 || (sender.tag == 0 && !(retryEmailTextField.text?.isEmpty)!) {

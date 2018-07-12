@@ -34,6 +34,9 @@ target 'CityAdventure' do
     
     # Animation
     pod 'UIView+Shake'
+    pod 'DCAnimationKit'
+    
+
 
 
  # Pods for CityAdventure

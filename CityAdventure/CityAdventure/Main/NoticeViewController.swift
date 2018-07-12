@@ -53,6 +53,14 @@ class NoticeViewController: BaseViewController, WKNavigationDelegate {
     @IBAction func close() {
         // 닫을 때 현재 토글값을 로컬에 저장하여, 로그아웃 후 로그인 하였을 때 공지사항을 보여줄지 말지 컨트롤하는 것을 구현한다.
         
+        if toggle {
+            print("저장")
+            UserDefaults.standard.set("NoticeOff", forKey: "Notice_Toggle")
+            UserDefaults.standard.set(Calendar.current.component(.day, from: Date()), forKey: "NoticeOffDay")
+            UserDefaults.standard.set(Calendar.current.component(.month, from: Date()), forKey: "NoticeOffMonth")
+        }
+        
+        
         self.dismiss(animated: true, completion: nil)
     }
    
@@ -70,7 +78,11 @@ class NoticeViewController: BaseViewController, WKNavigationDelegate {
     @IBAction func noSeeNotice(_ sender: UIButton) {
         toggle = !toggle
         toggleButton.image = toggle ? images[0] : images[1]
-        
     }
+    
+    @IBAction func backBu(_ sender: UIButton) {
+        self.webView.goBack()
+    }
+    
     
 }

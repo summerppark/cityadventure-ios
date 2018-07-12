@@ -34,6 +34,17 @@ extension String {
     }
     
     
+    func convertHtml() -> NSAttributedString{
+        guard let data = data(using: .utf8) else { return NSAttributedString() }
+        do{
+             let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html,
+                                                                                NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue]
+            return try NSAttributedString(data: data, options: options, documentAttributes: nil)
+        }catch{
+            return NSAttributedString()
+        }
+    }
+    
     
     
 }

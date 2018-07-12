@@ -52,10 +52,12 @@ extension TermsOfUseViewController: UITableViewDelegate, UITableViewDataSource {
             str = "위치기반 서비스 이용약관"
         } else if indexPath.row == 2 {
             str = "개인정보 처리방침"
+        } else if indexPath.row == 3 {
+            str = "Open Source Software(OSS)"
         }
         
         
-        if indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2) {
+        if indexPath.section == 0 && (indexPath.row == 0 || indexPath.row == 1 || indexPath.row == 2 || indexPath.row == 3) {
             if let detail = storyboard?.instantiateViewController(withIdentifier: "TermsOfUseDetailViewController") as? TermsOfUseDetailViewController {
                 detail.titleString = str
                 detail.index = indexPath.row

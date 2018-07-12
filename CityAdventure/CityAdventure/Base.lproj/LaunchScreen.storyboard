@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,21 +22,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchscreen_backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="VCG-dj-2bG">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubu_domain" translatesAutoresizingMaskIntoConstraints="NO" id="h3N-Nt-smX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bubu_domain" translatesAutoresizingMaskIntoConstraints="NO" id="h3N-Nt-smX">
                                 <rect key="frame" x="100" y="631" width="175" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="X94-5m-tlZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VERSION. 17.09.14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTD-jX-ASE">
-                                <rect key="frame" x="143" y="654" width="89" height="8"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="8" id="jrf-Km-gDn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bubu_LogoImage" translatesAutoresizingMaskIntoConstraints="NO" id="sem-Zd-EtU">
                                 <rect key="frame" x="82" y="117" width="211" height="100"/>
                                 <constraints>
@@ -47,14 +37,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RTD-jX-ASE" firstAttribute="top" secondItem="h3N-Nt-smX" secondAttribute="bottom" constant="8" id="28V-44-Quf"/>
                             <constraint firstAttribute="trailing" secondItem="h3N-Nt-smX" secondAttribute="trailing" constant="100" id="6vw-kD-lyn"/>
                             <constraint firstItem="h3N-Nt-smX" firstAttribute="leading" secondItem="qNe-hY-p9V" secondAttribute="leading" constant="100" id="AIC-Vt-FOR"/>
                             <constraint firstItem="VCG-dj-2bG" firstAttribute="leading" secondItem="qNe-hY-p9V" secondAttribute="leading" id="KlQ-PZ-qfH"/>
                             <constraint firstItem="sem-Zd-EtU" firstAttribute="leading" secondItem="qNe-hY-p9V" secondAttribute="leading" constant="82" id="Mzs-E7-zYY"/>
                             <constraint firstItem="VCG-dj-2bG" firstAttribute="top" secondItem="qNe-hY-p9V" secondAttribute="top" id="OvV-d0-ksh"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="RTD-jX-ASE" secondAttribute="bottom" constant="5" id="RCx-of-hbg"/>
-                            <constraint firstItem="RTD-jX-ASE" firstAttribute="centerX" secondItem="h3N-Nt-smX" secondAttribute="centerX" id="UzK-HB-RtR"/>
                             <constraint firstAttribute="bottom" secondItem="VCG-dj-2bG" secondAttribute="bottom" id="flT-Nl-7d3"/>
                             <constraint firstAttribute="trailing" secondItem="VCG-dj-2bG" secondAttribute="trailing" id="lO3-iq-Gdd"/>
                             <constraint firstAttribute="trailing" secondItem="sem-Zd-EtU" secondAttribute="trailing" constant="82" id="qlz-92-TJh"/>

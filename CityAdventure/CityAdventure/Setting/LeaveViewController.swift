@@ -8,6 +8,8 @@
 
 import UIKit
 import UITextView_Placeholder
+import Alamofire
+import Toaster
 
 class LeaveViewController: BaseViewController {
     
@@ -31,6 +33,8 @@ class LeaveViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var phoneNumber: UITextField!
+    
     @IBOutlet weak var topViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -51,4 +55,34 @@ class LeaveViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func leaveBUBU(_ sender: UIButton) {
+        //1415
+        if let token = UserDefaults.standard.object(forKey: "token") as? String,
+            let email = DataManager.shared.userAccountInfo?.userAccountInfo?.s_email, let member = DataManager.shared.userAccountInfo?.userAccountInfo?.no, let content = textView.text, let phoneNumber = phoneNumber.text, phoneNumber != "", content != "" {
+            
+            let leaveUrl = APIUrls.leaveBubuApp(member: member, token: token, email: email, subject: "탈퇴하기-\(phoneNumber)", content: content, type: 2).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+            super.showLoading(view: self.view)
+            Alamofire.request(leaveUrl, method: .post, parameters: nil, encoding: JSONEncoding.default).responseObject(completionHandler: { (response: DataResponse<NewBaseResponse>) in
+                switch response.result {
+                case .success:
+                    if let popup = self.storyboard?.instantiateViewController(withIdentifier: "LeavePopupViewController") as? LeavePopupViewController {
+                        
+                        popup.modalPresentationStyle = .overCurrentContext
+                        self.present(popup, animated: false, completion: {
+                            super.hideLoading()
+                        }
+                        )
+                    }
+                    
+                    break
+                case .failure:
+                    Toast.init(text: "에러가 발생했습니다. 다시 시도해 주세요.").show()
+                    super.hideLoading()
+                    break
+                }
+            })
+        } else {
+            Toast.init(text: "에러가 발생했습니다. 다시 시도해 주세요.").show()
+        }
+    }
 }

@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-import SpriteKit
+import Toaster
+import AVFoundation
 
 class MainViewController: BaseViewController {
     
@@ -37,7 +37,7 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var progressView: UIProgressView! {
         didSet {
             progressView.layer.borderColor = UIColor.black.cgColor
-            progressView.layer.borderWidth = 2.0
+            progressView.layer.borderWidth = 1.0
             progressView.layer.cornerRadius = 4.0
             progressView.clipsToBounds = true
         }
@@ -59,6 +59,12 @@ class MainViewController: BaseViewController {
         }
     }
     
+    @IBOutlet weak var unusedButon1: UIButton!
+    
+    @IBOutlet weak var unusedButton2: UIButton!
+    
+    @IBOutlet weak var unusedButton3: UIButton!
+    
     
     // Data
     @IBOutlet weak var userCharView: UIImageView!
@@ -71,29 +77,57 @@ class MainViewController: BaseViewController {
     
     var menuOnOff: Bool = true
     
+    var audioPlayer = AVAudioPlayer()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
         setBackGroundImageForTime()
-      
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-   
-        
-        print("여기서 체크하고 넘기고 토스트")
         dataSetting()
+        
+        if let bgmData = UserDefaults.standard.object(forKey: "BGM") as? String {
+        } else {
+            DataManager.shared.bgmControl()
+        }
+        
+        if let noticeToggle = UserDefaults.standard.object(forKey: "Notice_Toggle") as? String {
+            print(" Saved Data2",noticeToggle)
+            
+            
+        } else {
+            if let notice = storyboard?.instantiateViewController(withIdentifier: "NoticeViewController") as? NoticeViewController {
+                self.present(notice, animated: true, completion: nil)
+            }
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        dataSetting()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        
+        print("!!!2", self.animationView.frame.origin.y)
         UIView.animate(withDuration: 0.8, delay: 0, options: [.repeat, .autoreverse,.allowUserInteraction], animations: {
             [weak self] in
+            
+            if Constants.DeviceType.IS_IPHONE_X {
+                self?.animationView.frame.origin.y = 262.0
+            } else if Constants.DeviceType.IS_IPHONE_6P {
+                self?.animationView.frame.origin.y = 210.0
+            } else {
+                self?.animationView.frame.origin.y = 199.0
+            }
             self?.animationView.frame.origin.y -= 10
         }) { (action) in
             print("핸들러")
         }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -123,7 +157,11 @@ class MainViewController: BaseViewController {
         print("maxExp = ", super.getNextNeedExpByLevel(level: level))
         
         if let coin = DataManager.shared.getUserInfo()?.userInfo?.ui_credit {
-            myCoin.text = "\(coin)"
+            
+            let nf = NumberFormatter()
+            nf.numberStyle = .decimal
+            
+            myCoin.text = nf.string(from: NSNumber(integerLiteral: coin))
         }
         
         if let count = DataManager.shared.getUserCardInfo()?.dataLength {
@@ -217,14 +255,21 @@ class MainViewController: BaseViewController {
     
     @IBAction func playQuiz(_ sender: UIButton) {
         print("퀴즈")
+        self.openToast()
     }
     
     @IBAction func playGame(_ sender: UIButton) {
         print("놀이")
+        self.openToast()
     }
     
     @IBAction func playStory(_ sender: UIButton) {
         print("동화")
+        self.openToast()
+    }
+    
+    func openToast() {
+        Toast.init(text: "서비스 준비중입니다.", delay: 0.0, duration: 0.08).show()
     }
     
     

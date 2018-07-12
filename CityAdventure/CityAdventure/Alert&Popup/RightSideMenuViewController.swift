@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class RightSideMenuViewController: BaseViewController {
  
@@ -20,9 +21,11 @@ class RightSideMenuViewController: BaseViewController {
     
     @IBOutlet weak var userAge: UILabel!
     @IBOutlet weak var provinceCity: UILabel!
+    @IBOutlet weak var bgmButtn: UIButton!
+    @IBOutlet weak var effectButton: UIButton!
     
-    
-    
+    var audioIsPlay: Bool = false
+    var effectSoundPlay: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +33,7 @@ class RightSideMenuViewController: BaseViewController {
         addGesture()
         dataSetting()
     }
-    
-    
-    
+  
     // 사이드메뉴 데이터 셋팅.
     func dataSetting() {
         guard let info = DataManager.shared.userInfo?.userInfo else {
@@ -51,8 +52,6 @@ class RightSideMenuViewController: BaseViewController {
         // 나이를 계산.
         if let birth = info.date_birth {
             userAge.text = TimeFormatter().getCurrentAge(date_birth: birth)
-            
-            print(birth)
         }
         
         // 사는 지역 보여주기.
@@ -75,12 +74,67 @@ class RightSideMenuViewController: BaseViewController {
         }
     }
   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let bgmData = UserDefaults.standard.object(forKey: "BGM") as? String {
+            bgmButtn.setImage(#imageLiteral(resourceName: "back_music_off"), for: .normal)
+            audioIsPlay = true
+        } else {
+            audioIsPlay = false
+            bgmButtn.setImage(#imageLiteral(resourceName: "back_music_on"), for: .normal)
+        }
+        
+        
+        if let effectData = UserDefaults.standard.object(forKey: "Effect") as? String {
+            effectSoundPlay = true
+            effectButton.setImage(#imageLiteral(resourceName: "effect_sound_off"), for: .normal)
+        } else {
+            //nil 이면 소리 나오게.
+            effectSoundPlay = false
+            effectButton.setImage(#imageLiteral(resourceName: "effect_sound_on"), for: .normal)
+        }
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.leftView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
     }
     
+    @IBAction func bgmControlButton(_ sender: UIButton) {
+        
+        if audioIsPlay {
+            sender.setImage(#imageLiteral(resourceName: "back_music_on"), for: .normal)
+            UserDefaults.standard.set(nil, forKey: "BGM")
+            BGMPlayerManager.shared.bgmStart()
+        } else {
+            sender.setImage(#imageLiteral(resourceName: "back_music_off"), for: .normal)
+            UserDefaults.standard.set("FALSE", forKey: "BGM")
+            BGMPlayerManager.shared.bgmStop()
+        }
+        
+        audioIsPlay = !audioIsPlay
+    }
+    
+    @IBAction func effectSound(_ sender: UIButton) {
+        
+        if effectSoundPlay {
+            sender.setImage(#imageLiteral(resourceName: "effect_sound_on"), for: .normal)
+            LaunchScreenViewController.syntherSizer = AVSpeechSynthesizer()
+            UserDefaults.standard.set(nil, forKey: "Effect")
+        } else {
+            sender.setImage(#imageLiteral(resourceName: "effect_sound_off"), for: .normal)
+            LaunchScreenViewController.syntherSizer = nil
+            UserDefaults.standard.set("EffectOff", forKey: "Effect")
+        }
+        
+        effectSoundPlay = !effectSoundPlay
+    }
+    
+    @IBAction func shoppingMall(_ sender: UIButton) {
+        if let url = URL(string: APIUrls.shoppingMallUrl()) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
     
     @IBAction func tappedCloseButton(_ sender: UIButton) {
         hideView(type: 0)
@@ -108,6 +162,26 @@ class RightSideMenuViewController: BaseViewController {
         hideView(type: 5)
     }
     
+    @IBAction func goMyCollectionCity(_ sender: UIButton) {
+        hideView(type: 6)
+    }
+    
+    @IBAction func goToQRCodeGame(_ sender: UIButton) {
+        hideView(type: 7)
+    }
+    
+   
+    
+    @IBAction func goToChangeAvatar(_ sender: UIButton) {
+        if let mypage = self.storyboard?.instantiateViewController(withIdentifier: "MyPagePopupViewController") as? MyPagePopupViewController {
+             let navController = UINavigationController(rootViewController: mypage)
+            
+            navController.interactivePopGestureRecognizer?.isEnabled = false
+            navController.navigationBar.isHidden = true
+            self.present(navController, animated: true, completion: nil)
+            
+        }
+    }
     
     func hideView(type: Int) {
         self.leftView.backgroundColor = .clear
@@ -133,9 +207,34 @@ class RightSideMenuViewController: BaseViewController {
                     self.navigationController?.pushViewController(leave, animated: true)
                 }
             } else if type == 5 {
+                // 준비 운동
                 if let adventureExercise = self.storyboard?.instantiateViewController(withIdentifier: "AdventureExerciseViewController") as? AdventureExerciseViewController{
                     self.navigationController?.pushViewController(adventureExercise, animated: true)
                 }
+            } else if type == 6 {
+                
+                // 내 컬렉션
+                if let collect = self.storyboard?.instantiateViewController(withIdentifier: "MyCollectCityViewController") as? MyCollectCityViewController {
+                    
+                    if let vc = self.navigationController?.viewControllers.last as? MyCollectCityViewController {
+                        print("이미",vc)
+                    } else {
+                        self.navigationController?.pushViewController(collect, animated: true)
+                    }
+                }
+            } else if type == 7 {
+                if let adventureQRCode = self.storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeViewController") as? AdventureQRCodeViewController {
+                    
+                    if let vc = self.navigationController?.viewControllers.last as? AdventureQRCodeViewController {
+                        print("이미 QRCode")
+                    } else {
+                        self.navigationController?.pushViewController(adventureQRCode, animated: true)
+                    }
+                }
+            } else if type == 8 {
+//                if let avatar = self.storyboard?.instantiateViewController(withIdentifier: "AvatarManageMentViewController") as? AvatarManageMentViewController {
+//                    self.navigationController?.pushViewController(avatar, animated: true)
+//                }
             }
         }
     }

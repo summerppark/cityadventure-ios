@@ -32,14 +32,19 @@ class SignUpViewSecondPresenter: NSObject {
         //통신 중임을 표시
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.presenter.startLoading()
+        
+        let email = email.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        
         APIManager.getIsValidEmailAddress(url: APIUrls.getValidEmailAddress(email: email), completion: { (resultsString, error) in
             if error == nil {
                 self.presenter.presentAlertView(text: resultsString)
             }
             self.presenter.stopLoading()
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }) { (error) in
             print("EMAIL CHECKER ERROR")
             self.presenter.stopLoading()
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
 }

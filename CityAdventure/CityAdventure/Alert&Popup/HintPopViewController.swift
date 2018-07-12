@@ -8,6 +8,8 @@
 
 import UIKit
 import SnapKit
+import Toaster
+import Alamofire
 
 class HintPopViewController: BaseViewController {
     
@@ -80,10 +82,40 @@ class HintPopViewController: BaseViewController {
     
     
     @objc func tappedYesButton() {
-        firstView.isHidden = true
-        hintLabel.isHidden = false
-        hintLabel.text = hintString
-        print(hintString, "을 보여준다.")
+  
+        super.showLoading(view: self.view)
+        
+        
+        if let myCoin = DataManager.shared.userInfo?.userInfo?.ui_credit, myCoin >= 300, let token = UserDefaults.standard.object(forKey: "token") as? String {
+            
+            Alamofire.request(APIUrls.hintExpCoin(token: token), method: .post, parameters: nil, encoding: JSONEncoding.default).responseJSON(completionHandler: { (response) in
+                guard let statusCode = response.response?.statusCode else {
+                    Toast.init(text: "다시 시도해 주세요.").show()
+                    return
+                }
+                
+                switch statusCode {
+                case 200 :
+                    if let result = response.result.value as? NSDictionary, let data = result["data"] as? NSDictionary, let credit = data["ui_credit"] as? Int, let exp = data["ui_exp"] as? Int {
+                        DataManager.shared.userInfo?.userInfo?.ui_credit = credit
+                        DataManager.shared.userInfo?.userInfo?.ui_exp = exp
+                    }
+                    self.firstView.isHidden = true
+                    self.hintLabel.isHidden = false
+                    self.hintLabel.text = self.hintString
+                    super.hideLoading()
+                default :
+                    Toast.init(text: "다시 시도해 주세요.").show()
+                    super.hideLoading()
+                    break
+                }
+            })
+            
+        } else {
+            
+            Toast.init(text: "코인이 부족합니다.").show()
+            super.hideLoading()
+        }
     }
     
     @objc func tappedCloseButton() {

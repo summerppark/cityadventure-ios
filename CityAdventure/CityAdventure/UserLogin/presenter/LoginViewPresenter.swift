@@ -53,6 +53,7 @@ class LoginViewPresenter: NSObject {
     func tryEmailLogin(email: String, password: String) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.presenter.startLoading()
+        print("===> Query , " , APIUrls.postTryEmailLogin(email: email, password: password))
         APIManager.postTryEmailLogin(url: APIUrls.postTryEmailLogin(email: email, password: password), completion: { (result, error) in
             if error == nil {
                 if let responseData = result.loginResponse, let member = responseData.memberNo, let token = responseData.token {
@@ -62,6 +63,7 @@ class LoginViewPresenter: NSObject {
                     
                     //Token값을 로컬에 저장
                     UserDefaults.standard.set(token, forKey: "token")
+                    UserDefaults.standard.set(member, forKey: "member")
                     
                     // 토큰정보를 받아와서 추가적인 서버와 통신한다.
                     self.getCardInfo()
@@ -69,7 +71,7 @@ class LoginViewPresenter: NSObject {
             }
             self.presenter.stopLoading()
         }) { (msg, err) in
-            print(msg!)
+            print(msg!,"msgmsg")
             self.presenter.failEmailLogin(msg: msg)
             self.presenter.stopLoading()
         }

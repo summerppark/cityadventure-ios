@@ -53,4 +53,89 @@ class APIUrls {
     static func changePassword(token: String, password: String) -> String {
         return "/accounts/password?token=\(token)&password=\(password)"
     }
+    
+    // 준비운동 코인 ,경험치
+    static func updateExpCoin(token: String, credit: Int, exp: Int) -> String {
+        return "/members/credit-exp?token=\(token)&credit=\(credit)&exp=\(exp)"
+    }
+    
+    
+    static func hintExpCoin(token: String) -> String {
+        return "http://www.bubu-expedition.com/API/v1/members/credit-exp?token=\(token)&credit=-300&exp=0"
+    }
+   
+
+    
+    static func getImageFlipFront(cardNumber: String) -> String {
+        return "http://www.bubu-expedition.com/resources/CardFront_final/\(cardNumber).png"
+    }
+    
+    static func getImageMinimap(cardNumber: String) -> String {
+        return "http://www.bubu-expedition.com/resources/minimaps/\(cardNumber).png"
+    }
+    
+    static func getImagelandMark(cardNumber: String, index: String) -> String {
+        return "http://www.bubu-expedition.com/resources/landmarks/\(cardNumber)/\(index).png"
+    }
+    
+    static func getPuzzleImage(cardNumber: String) -> String {
+        return "http://www.bubu-expedition.com/resources/puzzleimages/\(cardNumber).png"
+    }
+    
+    static func getCityStatistics(index: String) -> String {
+        return "http://www.bubu-expedition.com/API/v1/cities/\(index)/statistics"
+    }
+    
+    static func getKanjiExpMp3Loading(index: String, type: String) -> String {
+        return "http://www.bubu-expedition.com/resources/sounds/mp3/\(index)/\(type).mp3"
+    }
+    
+    static func getCityFromPuzzleUrl(number: String, token: String) -> String {
+        return "http://www.bubu-expedition.com/API/v1/cityPuzzleSessions/\(number)/submit?token=\(token)"
+    }
+    
+    static func getMycityCardList(member: String, token: String) -> String {
+        return  "http://www.bubu-expedition.com/API/v1/members/\(member)/cardCollectingLogs?token=\(token)"
+    }
+    
+    static func getMyCollectedCityList(member: String, token: String) -> String {
+        return "http://www.bubu-expedition.com/API/v1/members/\(member)/cardCollectingLogs?token=\(token)"
+    }
+    
+    static func getLandmarks(number: String) -> String {
+        return "http://www.bubu-expedition.com/API/v1/cities/\(number)/landmarks"
+    }
+    
+    static func getMyExpCoinUpdatePuzzleSuccess(member: Int) -> String {
+        return "http://www.bubu-expedition.com/API/v1/members/\(member)/credit-exp"
+    }
+    
+    static func shoppingMallUrl() -> String {
+        return "https://smartstore.naver.com/bubuinc"
+    }
+    
+    
+    static func leaveBubuApp(member: Int, token: String, email: String, subject: String, content: String, type: Int) -> String {
+        return "http://www.bubu-expedition.com/API/v1/accounts/\(member)/sendmail?token=\(token)&email=\(email)&subject=\(subject)&content=\(content)&type=\(type)"
+    }
+    
+    static func getLandmarkDetail(number: Int) -> String {
+        return "http://www.bubu-expedition.com/API/v1/landmarks/\(number)"
+    }
+    
+    static func getTourApi(search: String) -> String {
+//        return "http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchKeyword?ServiceKey=1bRQ7kZKeN7M%2FGK5dO6r7VZfTFPgmhkWKrwe3iyfRBQ549JRKV%2BqRY4qQiIO0EpShrSEwCWb90OKNqcOGxv8Cg%3D%3D&numOfRows=10&pageNo=1&MobileOS=IOS&MobileApp=cityadventure&keyword=\(search)&_type=json".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        
+        let search = search.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        
+        return "http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchKeyword?ServiceKey=1bRQ7kZKeN7M%2FGK5dO6r7VZfTFPgmhkWKrwe3iyfRBQ549JRKV%2BqRY4qQiIO0EpShrSEwCWb90OKNqcOGxv8Cg%3D%3D&numOfRows=10&pageNo=1&MobileOS=IOS&MobileApp=cityadventure&keyword=\(search)&_type=json"
+    }
+    
+    
+    static func getEditMyInfo(token: String, memberNumber: Int, homeProvince: Int32, homeCity: Int32, livingProvince: Int32, livingCity: Int32, name: String, gender: String, birth: String ) -> String {
+        return "http://www.bubu-expedition.com/API/v1/members/\(memberNumber)?token=\(token)&homeProvince=\(homeProvince)&homeCity=\(homeCity)&livingProvince=\(livingProvince)&livingCity=\(livingCity)&name=\(name)&gender=\(gender)&birth=\(birth)"
+    }
+    
+    
+
 }

@@ -7,36 +7,185 @@
 //
 
 import UIKit
+import Toaster
+import Kingfisher
 
 class AdventureQRCodePuzzleViewController: BaseViewController {
-    
+
+    @IBOutlet var topImageViews: [UIImageView]!
+    @IBOutlet var randomImageCard: [UIImageView]!
     @IBOutlet weak var topViewHeight: NSLayoutConstraint!
+    
+    var imagesArray: [UIImage] = []
+    var initialCenter = CGPoint()
+    
+    var collectCardCount: Int = 0
+    var puzzleCity = ""
+
+    var cityName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
-//        let img = #imageLiteral(resourceName: "icon_!")
-
-        let img = #imageLiteral(resourceName: "img_mainbg_PM")
-//
-        let top = img.topHalf
-        let bottom = img.bottomHalf
-        dump(top)
-        dump(bottom)
-        puzzles_top[0].setImage(top?.leftHalf, for: .normal)
-        puzzles_top[1].setImage(bottom?.leftHalf, for: .normal)
-
-        puzzles_top[2].setImage(top?.rightHalf, for: .normal)
-        puzzles_top[3].setImage(bottom?.rightHalf, for: .normal)
+  
         
+        super.showLoading(view: self.view)
+        var img = UIImage()
+        var img2 = UIImage()
         
-        let img1 = cropToBounds(image: img, width: 60.0, height: 60.0)
+       
         
-        puzzles_top[5].setImage(img1, for: .normal)
+        guard let url = URL(string: APIUrls.getPuzzleImage(cardNumber: self.puzzleCity)) else {
+            print("ERROR")
+            super.hideLoading()
+            return
+            
+        }
+        
+        KingfisherManager.shared.retrieveImage(with: url, options: nil, progressBlock: nil, completionHandler: { image, error, cacheType, imageURL in
+            DispatchQueue.global().async {
+                
+                guard let image = image else { return }
+                
+                img = self.Noir(image: image)
+                img2 = image
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    super.hideLoading()
+                    self.makeRandomCard(image: img2)
+                    let top = img.topHalf
+                    let mid = img.middleHalf
+                    let bottom = img.bottomHalf
+                    
+                    self.topImageViews[0].image = top?.leftHalf
+                    self.topImageViews[1].image = top?.centerHalf
+                    self.topImageViews[2].image = top?.rightHalf
+                    
+                    self.topImageViews[3].image = mid?.leftHalf
+                    self.topImageViews[4].image = mid?.centerHalf
+                    self.topImageViews[5].image = mid?.rightHalf
+                    
+                    self.topImageViews[6].image = bottom?.leftHalf
+                    self.topImageViews[7].image = bottom?.centerHalf
+                    self.topImageViews[8].image = bottom?.rightHalf
+                    
+                    var count = 0
+                    let pangesture = UIPanGestureRecognizer(target: self, action: #selector(self.isCollect))
+                    self.topImageViews.forEach { (img) in
+                        img.tag = count
+                        img.layer.borderWidth = 1
+                        img.layer.borderColor = UIColor.black.cgColor
+                        count = count + 1
+                        img.isUserInteractionEnabled = true
+                        img.addGestureRecognizer(pangesture)
+                    }
+                    self.randomImageCard.forEach({ (img) in
+                        img.isUserInteractionEnabled = true
+                        img.layer.borderWidth = 1
+                        img.layer.borderColor = UIColor.black.cgColor
+                        let pangesture = UIPanGestureRecognizer(target: self, action: #selector(self.handleCard))
+                        pangesture.minimumNumberOfTouches = 1
+                        img.addGestureRecognizer(pangesture)
+                    })
+                }
+            }
+        })
+    }
+    
+    @objc func isCollect(sender: UIPanGestureRecognizer) {
+        
+    }
+    
+    @objc func handleCard(sender: UIPanGestureRecognizer) {
+        
+        let piece = sender.view!
+        let initPoint = piece.center
+        let translation = sender.translation(in: piece.superview)
+        
+        let anaswerImage = topImageViews[(sender.view?.tag)!]
+        if sender.state == .began {
+            self.initialCenter = piece.center
+        }
+        if sender.state != .cancelled {
+            let newCenter = CGPoint(x: initialCenter.x + translation.x, y: initialCenter.y + translation.y)
+            piece.center = newCenter
+        }
+        
+        if sender.state == .ended {
+            print("ended",piece.center,initPoint,topImageViews[(sender.view?.tag)!].center)
+            // 정답 위치로
+            
+            if abs((anaswerImage.center.x+anaswerImage.center.y)-(piece.center.x+piece.center.y)) < 24 {
+                topImageViews[(sender.view?.tag)!].image = (sender.view as? UIImageView)?.image
+                sender.view?.isHidden = true
+                // 정답인 경우!!!!
+                
+                collectCardCount += 1
+                if collectCardCount == 9 {
+                    print("모두 획득하였습니다.")
+                    // 서버에 획득한 리스트를 갱신한다.
+                    super.showLoading(view: self.view)
+                    APIManager.getCityFromPuzzleGame(number: self.puzzleCity, result: { (result) in
+                        if result == nil {
+                            Toast(text: "다시 시도해주세요", delay: 0, duration: 0.25).show()
+                        } else {
+                            // 나의 카드 수집 리스트를 가져와서 싱글턴 갱신시켜준다.
+                            if let member = DataManager.shared.getUserCardInfo()?.cardInfo?.first?.ui_memberNo {
+                                print("HERO",member)
+                                
+                                APIManager.updateExpCoinAfterPuzzleSuccess(url: APIUrls.getMyExpCoinUpdatePuzzleSuccess(member: member))
+                                
+                                
+                                print("11111",APIUrls.getMyExpCoinUpdatePuzzleSuccess(member: member))
+                                APIManager.getMyCollectedCityList(memberId: String(member), result: { (result) in
+                                    print("Where",result?.cardInfo?.count)
+                                    if let cardlist = result {
+                                        DataManager.shared.setUserCardInfo(response: cardlist)
+                                        super.hideLoading()
+                                        if let popup = self.storyboard?.instantiateViewController(withIdentifier: "CollectCityPopupViewController") as? CollectCityPopupViewController {
+                                            popup.cityName = self.cityName
+                                            popup.modalPresentationStyle = .overFullScreen
+                                            self.present(popup, animated: false, completion: nil)
+                                        }
+                                        
+                                    } else {
+                                        Toast(text: "다시 시도해주세요", delay: 0, duration: 0.25).show()
+                                    }
+                                })
+                            }
+                        }
+                    })
+                }
+                
+            } else {
+                // 원래자리로 , 실패
+                piece.center = self.initialCenter
+            }
+            
+            
+        }
     }
     
     
-    @IBOutlet var puzzles_top: [UIButton]!
+    // random 으로 카드를 배열
+    func makeRandomCard(image: UIImage) {
+        var randomArray : [Int] = [0,1,2,3,4,5,6,7,8]
+        randomArray.shuffle()
+        print("random",randomArray)
+        let puzzleArray = [image.topHalf?.leftHalf,
+                           image.topHalf?.centerHalf,
+                           image.topHalf?.rightHalf,
+                           image.middleHalf?.leftHalf,
+                           image.middleHalf?.centerHalf,
+                           image.middleHalf?.rightHalf,
+                           image.bottomHalf?.leftHalf,
+                           image.bottomHalf?.centerHalf,
+                           image.bottomHalf?.rightHalf]
+        
+        for index in 0...randomArray.count-1 {
+            randomImageCard[randomArray[index]].image = puzzleArray[index]
+            randomImageCard[randomArray[index]].tag = index
+        }
+    }
     
     @IBOutlet weak var topView: UIView! {
         didSet{
@@ -60,60 +209,70 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
     @IBAction func tappedBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+ 
     
-    func cropToBounds(image: UIImage, width: Double, height: Double) -> UIImage {
+    func Noir(image: UIImage) -> UIImage {
+        var context = CIContext(options: nil)
         
-        let cgimage = image.cgImage!
-        let contextImage: UIImage = UIImage(cgImage: cgimage)
-        let contextSize: CGSize = contextImage.size
-        var posX: CGFloat = 0.0
-        var posY: CGFloat = 0.0
-        var cgwidth: CGFloat = CGFloat(width)
-        var cgheight: CGFloat = CGFloat(height)
-        
-        // See what size is longer and create the center off of that
-        if contextSize.width > contextSize.height {
-            posX = ((contextSize.width - contextSize.height) / 2)
-            posY = 0
-            cgwidth = contextSize.height
-            cgheight = contextSize.height
-        } else {
-            posX = 0
-            posY = ((contextSize.height - contextSize.width) / 2)
-            cgwidth = contextSize.width
-            cgheight = contextSize.width
-        }
-        
-        let rect: CGRect = CGRect(x: posX, y: posY, width: cgwidth, height: cgheight)
-        
-        // Create bitmap image from context using the rect
-        let imageRef: CGImage = cgimage.cropping(to: rect)!
-        
-        // Create a new image based on the imageRef and rotate back to the original orientation
-        let image: UIImage = UIImage(cgImage: imageRef, scale: image.scale, orientation: image.imageOrientation)
-        
-        return image
+        let currentFilter = CIFilter(name: "CIPhotoEffectNoir")
+        currentFilter!.setValue(CIImage(image: image), forKey: kCIInputImageKey)
+        let output = currentFilter!.outputImage
+        let cgimg = context.createCGImage(output!,from: output!.extent)
+        let processedImage = UIImage(cgImage: cgimg!)
+        return processedImage
     }
-    
     
 }
 
 extension UIImage {
     var topHalf: UIImage? {
-        guard let cgImage = cgImage, let image = cgImage.cropping(to: CGRect(origin: .zero, size: CGSize(width: size.width, height: size.height/2))) else { return nil }
+        guard let cgImage = cgImage, let image = cgImage.cropping(to: CGRect(origin: .zero, size: CGSize(width: size.width, height: size.height/3))) else { return nil }
         return UIImage(cgImage: image, scale: 1, orientation: imageOrientation)
     }
+    
+    var middleHalf: UIImage? {
+        guard let cgImage = cgImage, let image = cgImage.cropping(to: CGRect(x: 0, y: self.size.height/3, width: size.width, height: size.height/3)) else { return nil }
+        
+        print("middle", image)
+        return UIImage(cgImage: image)
+    }
+
     var bottomHalf: UIImage? {
-        guard let cgImage = cgImage, let image = cgImage.cropping(to: CGRect(origin: CGPoint(x: 0,  y: CGFloat(Int(size.height)-Int(size.height/2))), size: CGSize(width: size.width, height: CGFloat(Int(size.height) - Int(size.height/2))))) else { return nil }
+        guard let cgImage = cgImage, let image = cgImage.cropping(to: CGRect(x: 0, y: self.size.height/3*2, width: size.width, height: size.height/3)) else { return nil }
+        
+        print("bottom", image)
         return UIImage(cgImage: image)
     }
+    
+    
     var leftHalf: UIImage? {
-        guard let cgImage = cgImage, let image = cgImage.cropping(to: CGRect(origin: .zero, size: CGSize(width: size.width/2, height: size.height))) else { return nil }
+        guard let cgImage = cgImage, let image = cgImage.cropping(to: CGRect(origin: .zero, size: CGSize(width: size.width/3, height: size.height))) else { return nil }
         return UIImage(cgImage: image)
     }
-    var rightHalf: UIImage? {
-        guard let cgImage = cgImage, let image = cgImage.cropping(to: CGRect(origin: CGPoint(x: CGFloat(Int(size.width)-Int((size.width/2))), y: 0), size: CGSize(width: CGFloat(Int(size.width)-Int((size.width/2))), height: size.height)))
-            else { return nil }
+    
+    var centerHalf: UIImage? {
+        guard let cgImage = cgImage, let image = cgImage.cropping(to: CGRect(x: size.width/3, y: 0, width: size.width/3, height: size.height)) else { return nil }
+        
         return UIImage(cgImage: image)
+    }
+    
+    
+    var rightHalf: UIImage? {
+        guard let cgImage = cgImage, let image = cgImage.cropping(to: CGRect(x: size.width/3*2, y: 0, width: size.width/3, height: size.height)) else { return nil }
+        
+        return UIImage(cgImage: image)
+    }
+}
+
+
+extension Array
+{
+    /** Randomizes the order of an array's elements. */
+    mutating func shuffle()
+    {
+        for _ in 0..<10
+        {
+            sort { (_,_) in arc4random() < arc4random() }
+        }
     }
 }

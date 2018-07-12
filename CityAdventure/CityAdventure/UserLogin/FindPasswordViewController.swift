@@ -101,6 +101,10 @@ extension FindPasswordViewController: FindPasswordPresenterProtocl {
 
 
 extension FindPasswordViewController: AlertViewProtocol {
+    func successEdit() {
+        
+    }
+    
     func successCallback() {
         print("사용되지않는")
     }

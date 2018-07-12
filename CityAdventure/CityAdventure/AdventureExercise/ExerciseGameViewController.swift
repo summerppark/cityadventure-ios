@@ -43,11 +43,13 @@
     // synthesizer 딜레이.
     var synthesizer = AVSpeechSynthesizer()
     
+    var presenter: ExerciseGamePresenter!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
         
+        self.presenter = ExerciseGamePresenter(presenter: self)
     }
     
     // 셋팅
@@ -128,14 +130,17 @@
     }
     
     @objc func tappedCharButton(sender: UIButton) {
-        print(sender.tag)
+        
+        guard stageNumber != 162 else {
+            return
+        }
         
         // 글자를 소리내주는 부분
         DispatchQueue.main.async {
             let utterance = AVSpeechUtterance(string: sender.currentTitle!)
             utterance.voice = AVSpeechSynthesisVoice(language: "ko-KR")
             utterance.rate = AVSpeechUtteranceDefaultSpeechRate
-            LaunchScreenViewController.syntheSizer.speak(utterance)
+            LaunchScreenViewController.syntherSizer?.speak(utterance)
         }
         
        
@@ -218,7 +223,6 @@
     }
     
     func checkAnswer() {
-        
         if answerArray.joined() == DataManager.shared.citynumbers[stageNumber].cityName {
             gameResult(result: true)
             
@@ -232,17 +236,16 @@
     func gameResult(result: Bool) {
         if result {
             // 이 부분에서 코인업 요청.
-            
+            self.presenter.updateMyAccountInfo()
             
             if let name = DataManager.shared.getUserInfo()?.userInfo?.s_name {
                 // 스테이지 상태를 로컬에 저장한다.
-                
                 // 최종으로 깬 스테이지가 지금 깬 스테이지보다 작을때만 로컬에 갱신한다.
-                
                 if stageNumber+1 > UserDefaults.standard.integer(forKey: "\(name)_exerciseStage") {
                     UserDefaults.standard.set(stageNumber+1, forKey: "\(name)_exerciseStage")
                 }
             }
+            
             
             //성공일 때
             if let correct = storyboard?.instantiateViewController(withIdentifier: "ResultCorrectPopUp") as? ResultCorrectPopUp {
@@ -279,7 +282,6 @@
             charButtons.forEach({ (btn) in
                 btn.backgroundColor = .white
             })
-            
         }
     }
     
@@ -315,10 +317,15 @@
     
     // 다음으로 눌렀을 때
     func tappedNext() {
+        
         stageNumber += 1
-        print(stageNumber)
-        setGame(stageNumber: stageNumber)
-        setPuzzleButton(stageNumber: stageNumber)
+        
+        if stageNumber < 162 {
+            setGame(stageNumber: stageNumber)
+            setPuzzleButton(stageNumber: stageNumber)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     func setGame(stageNumber: Int) {
@@ -386,4 +393,21 @@
             charButtons[index].setTitle(String(resultArray[sampleArray[index]]), for: .normal)
         }
     }
+ }
+
+ 
+ extension ExerciseGameViewController: ExerciseGamePresenterProtocol {
+    func updateExpCoin() {
+        print("")
+    }
+    
+    func startLoading() {
+        super.showLoading(view: self.view)
+    }
+    
+    func stopLoading() {
+        super.hideLoading()
+    }
+    
+    
  }
