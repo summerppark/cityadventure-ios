@@ -137,7 +137,7 @@ class APIUrls {
     }
     
     
-    static func getUpdateAvatarInfo(token: String, index: Int, member: String) -> String{
+    static func getUpdateAvatarInfo(token: String, index: Int, member: Int) -> String{
         return "http://www.bubu-expedition.com/API/v1/members/\(member)?token=\(token)&avatarNo=\(index)"
     }
     

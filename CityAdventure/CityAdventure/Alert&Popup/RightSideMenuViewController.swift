@@ -33,6 +33,8 @@ class RightSideMenuViewController: BaseViewController {
         addGesture()
         dataSetting()
     }
+    
+    
   
     // 사이드메뉴 데이터 셋팅.
     func dataSetting() {
@@ -76,6 +78,8 @@ class RightSideMenuViewController: BaseViewController {
   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        dataSetting()
+        
         if let bgmData = UserDefaults.standard.object(forKey: "BGM") as? String {
             bgmButtn.setImage(#imageLiteral(resourceName: "back_music_off"), for: .normal)
             audioIsPlay = true
