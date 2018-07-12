@@ -282,6 +282,10 @@ class AvatarManageMentViewController: BaseViewController {
     
     @objc func tappedPurchase(sender: UIButton) {
         print(sender.tag)
+        
+//        myAvartar
+        
+        
         // 내가 갖고있는 아바타 리스트에 포함되있다면 변경하는 로직
         // 없다면 구매하는 로직
         
