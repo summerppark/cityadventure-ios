@@ -8,7 +8,8 @@
 
 import UIKit
 import SnapKit
-
+import Alamofire
+import Toaster
 class AvatarManageMentViewController: BaseViewController {
     // Data
     @IBOutlet weak var progressView: UIProgressView! {
@@ -45,6 +46,8 @@ class AvatarManageMentViewController: BaseViewController {
     var thumbButtons: [UIButton] = []
     var thumbImages: [UIImageView] = []
     
+    var avatarViews: [UIView] = []
+    var purchaseButtons: [UIButton] = []
     var categoryScrollView = UIScrollView()
     
     @IBOutlet weak var mainScrollView: UIScrollView! {
@@ -197,7 +200,7 @@ class AvatarManageMentViewController: BaseViewController {
         for index in 0...index {
             let view = UIView(frame: CGRect(x: self.view.frame.width * CGFloat(index), y: 0, width: self.view.frame.width, height: 320))
             view.backgroundColor = .clear
-            
+            avatarViews.append(view)
             
             let imageView = UIImageView(frame: CGRect(x: 20, y: 0, width: view.frame.width-40, height: view.frame.height))
             imageView.image = UIImage(named:"img_char_bg")
@@ -263,7 +266,7 @@ class AvatarManageMentViewController: BaseViewController {
             selectButton.titleLabel?.font = UIFont.init(name: "GodoM", size: 14.0)
             selectButton.setTitleColor(.black, for: .normal)
             view.addSubview(selectButton)
-            
+            purchaseButtons.append(selectButton)
             
             if self.myAvartar.contains(index) {
                 let mine = UIImageView(frame: CGRect(x: 220.0, y: 320.0-48.0-16.0-90.0, width: 80.0, height: 80.0))
@@ -282,11 +285,88 @@ class AvatarManageMentViewController: BaseViewController {
     
     @objc func tappedPurchase(sender: UIButton) {
         print(sender.tag)
+        guard let token = UserDefaults.standard.object(forKey: "token") as? String else { return }
+        
+        guard let member = DataManager.shared.userInfo?.userInfo?.no else { return }
+        
+        
+        
+//        AlertviewController
+        if myAvartar.contains(sender.tag) {
+            print("이미 내가 아바타를 갖고 있는 경우 ", sender.tag+1 )
+            super.showLoading(view: self.view)
+            Alamofire.request(APIUrls.getUpdateAvatarInfo(token: token, index: sender.tag+1, member: member), method: HTTPMethod.put, parameters: nil, encoding: JSONEncoding.default).responseObject(completionHandler: { (response: DataResponse<NewBaseResponse>) in
+                print("11111", response.result.value)
+                dump(response.result.value)
+                switch response.result {
+                case .success:
+                    DataManager.shared.userInfo?.userInfo?.ui_avatarNo = sender.tag+1
+                    self.userCharView.image = self.thumbCharSelected[sender.tag]
+                    if let alert = self.storyboard?.instantiateViewController(withIdentifier: "AlertviewController") as? AlertviewController {
+                        alert.alertString = "캐릭터가 성공적으로 변경되었습니다."
+                        alert.modalPresentationStyle = .overCurrentContext
+                        self.present(alert, animated: false, completion: nil)
+                    }
+                case .failure(let error):
+                   Toast.init(text: "다시 시도해 주세요", delay: 0.0, duration: 0.2).show()
+                }
+                super.hideLoading()
+            })
+        } else {
+            if let coin = DataManager.shared.userInfo?.userInfo?.ui_credit, coin >= avartarPrice[sender.tag] {
+                // 구매 진행
+                
+                super.showLoading(view: self.view)
+                Alamofire.request(APIUrls.getUpdateAvatarInfo(token: token, index: sender.tag+1, member: member), method: HTTPMethod.put, parameters: nil, encoding: JSONEncoding.default).responseObject(completionHandler: { (response: DataResponse<NewBaseResponse>) in
+                    switch response.result {
+                    case .success:
+                        // 싱글턴 수정
+                        DataManager.shared.userInfo?.userInfo?.ui_avatarNo = sender.tag+1
+                        DataManager.shared.userInfo?.userInfo?.ui_credit = coin-self.avartarPrice[sender.tag]
+                        
+                        // 뷰 수정
+                        self.userCharView.image = self.thumbCharSelected[sender.tag]
+                        let nf = NumberFormatter()
+                        nf.numberStyle = .decimal
+                        self.myCoin.text = nf.string(from: NSNumber(integerLiteral: (coin-self.avartarPrice[sender.tag])))
+                        self.thumbImages[sender.tag].isHidden = false
+                        self.thumbImages[sender.tag].image = #imageLiteral(resourceName: "myAvatar_on")
+                        
+                        let mine = UIImageView(frame: CGRect(x: 220.0, y: 320.0-48.0-16.0-90.0, width: 80.0, height: 80.0))
+                        mine.image = #imageLiteral(resourceName: "img_isMyAvatar")
+                        self.avatarViews[sender.tag].addSubview(mine)
+                        self.purchaseButtons[sender.tag].setTitle("선택하기", for: .normal)
+                        
+                        
+                        
+                        
+                        
+                        if let alert = self.storyboard?.instantiateViewController(withIdentifier: "AlertviewController") as? AlertviewController {
+                            alert.alertString = "캐릭터를 성공적으로 구매하였습니다."
+                            alert.modalPresentationStyle = .overCurrentContext
+                            self.present(alert, animated: false, completion: nil)
+                        }
+                    case .failure(let error):
+                        Toast.init(text: "다시 시도해 주세요", delay: 0.0, duration: 0.2).show()
+                    }
+                    super.hideLoading()
+                })
+                
+                
+            } else {
+                if let alert = self.storyboard?.instantiateViewController(withIdentifier: "AlertviewController") as? AlertviewController {
+                    alert.alertString = "코인이 부족합니다."
+                    alert.modalPresentationStyle = .overCurrentContext
+                    self.present(alert, animated: false, completion: nil)
+                }
+            }
+        }
+//        myAvartar
+        
+        
         // 내가 갖고있는 아바타 리스트에 포함되있다면 변경하는 로직
         // 없다면 구매하는 로직
-        
-        
-        
+
     }
     
     func dataSetting() {

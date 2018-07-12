@@ -4837,12 +4837,11 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                     <constraint firstAttribute="height" constant="50" id="ojw-dN-4b4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="18"/>
-                                <state key="normal" title="변경하기" backgroundImage="btn_yellow_bg">
+                                <state key="normal" title="확인" backgroundImage="btn_yellow_bg">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="goToNext:" destination="8GR-fm-Diz" eventType="touchUpInside" id="08L-Ab-5TM"/>
-                                    <action selector="goToNext:" destination="95V-aK-lke" eventType="touchUpInside" id="q91-LA-7qB"/>
+                                    <action selector="leftBackButtonWithSender:" destination="VnV-qw-3kV" eventType="touchUpInside" id="U8r-pP-XBQ"/>
                                 </connections>
                             </button>
                         </subviews>
