@@ -35,8 +35,7 @@ target 'CityAdventure' do
     # Animation
     pod 'UIView+Shake'
     pod 'DCAnimationKit'
-    # Label Ticker
-    pod 'MarqueeLabel/Swift'
+    
 
 
 

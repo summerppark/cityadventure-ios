@@ -37,6 +37,8 @@ class LandMarkDetailViewController: BaseViewController {
     var landmarkNumber: Int = 1
     var landmarkImage: UIImage?
     var landmarkImageUrls: [String] = []
+    var landmakrImageArray: [UIImageView] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,12 @@ class LandMarkDetailViewController: BaseViewController {
         super.showLoading(view: self.view)
         
         if let image = landmarkImage {
+            
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+            lm_firstImage.isUserInteractionEnabled = true
+            lm_firstImage.tag = 0
+            lm_firstImage.addGestureRecognizer(tapGesture)
+            self.landmakrImageArray.append(lm_firstImage)
             self.lm_firstImage.image = image
         }
         // bubu API
@@ -130,16 +138,32 @@ class LandMarkDetailViewController: BaseViewController {
     }
     
     func addImage(index: Int) {
+        
         for idx in 0...index-1 {
             let originX = Double(idx+1) * 120.0
             let imageView = UIImageView(frame: CGRect(x: originX, y: 0.0, width: 120.0, height: 120.0))
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+            landmakrImageArray.append(imageView)
             photoSliderView.addSubview(imageView)
             imageView.kf.setImage(with: URL(string: self.landmarkImageUrls[idx]))
+            imageView.tag = idx+1
+            imageView.isUserInteractionEnabled = true
+            imageView.addGestureRecognizer(tapGesture)
+            
+
             super.hideLoading()
         }
     }
     
-
+    
+    @objc func imageTapped(sender: UITapGestureRecognizer) {
+        print(sender.view?.tag)
+        
+        if let img = self.storyboard?.instantiateViewController(withIdentifier: "LandmarkImageView") as? LandmarkImageView, let tag = sender.view?.tag {
+            img.lmImage = landmakrImageArray[tag].image
+            self.present(img, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func tappedBackbutton(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)

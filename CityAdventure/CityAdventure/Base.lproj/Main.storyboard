@@ -4881,7 +4881,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <!--My Page Popup View Controller-->
         <scene sceneID="4Id-lv-EEv">
             <objects>
-                <viewController storyboardIdentifier="MyPagePopupViewController" id="buO-Ui-32c" customClass="MyPagePopupViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MyPagePopupViewController" storyboardIdentifier="MyPagePopupViewController" id="buO-Ui-32c" customClass="MyPagePopupViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SVn-pz-Kvo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7114,7 +7114,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <!--AdventureQR Code View Controller-->
         <scene sceneID="6XX-33-20e">
             <objects>
-                <viewController storyboardIdentifier="AdventureQRCodeViewController" id="29n-sZ-J5c" customClass="AdventureQRCodeViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="AdventureQRCodeViewController" storyboardIdentifier="AdventureQRCodeViewController" id="29n-sZ-J5c" customClass="AdventureQRCodeViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S2g-hL-vSp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7483,7 +7483,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <!--My Collect City View Controller-->
         <scene sceneID="uEk-Lx-eAc">
             <objects>
-                <viewController storyboardIdentifier="MyCollectCityViewController" id="D49-R0-aBe" customClass="MyCollectCityViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MyCollectCityViewController" storyboardIdentifier="MyCollectCityViewController" id="D49-R0-aBe" customClass="MyCollectCityViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sqf-Rq-Zbf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -7618,19 +7618,19 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <color key="trackTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </progressView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNY-e6-eOl">
-                                                        <rect key="frame" x="57" y="8" width="2" height="6"/>
+                                                        <rect key="frame" x="57.5" y="8" width="2" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-5d-YjP">
-                                                        <rect key="frame" x="61" y="8" width="14" height="6"/>
+                                                        <rect key="frame" x="61.5" y="8" width="14" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2C-I5-yR0">
-                                                        <rect key="frame" x="44" y="8" width="11" height="6"/>
+                                                        <rect key="frame" x="44.5" y="8" width="11" height="6"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="5"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -7859,6 +7859,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <state key="normal" image="btn_top_back"/>
                                         <connections>
                                             <action selector="tappedBackButton:" destination="8mT-kh-Beq" eventType="touchUpInside" id="YxO-fT-wwe"/>
+                                            <segue destination="5El-sO-RQD" kind="unwind" unwindAction="unWindQRCodeVC:" id="Gfm-v8-jiw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7l-Z5-FdL">
@@ -9188,10 +9189,56 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
             </objects>
             <point key="canvasLocation" x="5016.8000000000002" y="815.44227886056979"/>
         </scene>
+        <!--Landmark Image View-->
+        <scene sceneID="cqR-wB-8em">
+            <objects>
+                <viewController storyboardIdentifier="LandmarkImageView" id="b0t-Ut-12X" customClass="LandmarkImageView" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3dQ-KK-OxP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8x0-5C-q9u">
+                                <rect key="frame" x="0.0" y="227.5" width="375" height="211"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8x0-5C-q9u" secondAttribute="height" multiplier="16:9" id="ugw-jM-coW"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrf-cL-JHu">
+                                <rect key="frame" x="311" y="44" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5bI-O2-CA0"/>
+                                    <constraint firstAttribute="width" constant="40" id="o4a-Yd-61a"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="btn_close_alert"/>
+                                <connections>
+                                    <action selector="closeWithSender:" destination="b0t-Ut-12X" eventType="touchUpInside" id="01e-7A-UeX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8x0-5C-q9u" firstAttribute="centerY" secondItem="3dQ-KK-OxP" secondAttribute="centerY" id="459-Gz-ktp"/>
+                            <constraint firstItem="zrf-cL-JHu" firstAttribute="top" secondItem="Thd-NQ-aZy" secondAttribute="top" constant="24" id="9aH-bg-5mu"/>
+                            <constraint firstItem="Thd-NQ-aZy" firstAttribute="trailing" secondItem="8x0-5C-q9u" secondAttribute="trailing" id="FrU-S2-jaz"/>
+                            <constraint firstItem="Thd-NQ-aZy" firstAttribute="trailing" secondItem="zrf-cL-JHu" secondAttribute="trailing" constant="24" id="Pkn-tf-oVr"/>
+                            <constraint firstItem="8x0-5C-q9u" firstAttribute="centerX" secondItem="3dQ-KK-OxP" secondAttribute="centerX" id="UZd-8Y-Qe3"/>
+                            <constraint firstItem="8x0-5C-q9u" firstAttribute="leading" secondItem="Thd-NQ-aZy" secondAttribute="leading" id="bXL-am-7Lx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Thd-NQ-aZy"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="8x0-5C-q9u" id="zo9-px-gNA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zHX-0a-z1c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5194" y="1565"/>
+        </scene>
         <!--AdventureQR Code Reader View Controller-->
         <scene sceneID="ZEi-wi-1pn">
             <objects>
-                <viewController storyboardIdentifier="AdventureQRCodeReaderViewController" id="vRj-le-8Rw" customClass="AdventureQRCodeReaderViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="AdventureQRCodeReaderViewController" storyboardIdentifier="AdventureQRCodeReaderViewController" id="vRj-le-8Rw" customClass="AdventureQRCodeReaderViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9E4-N4-BYf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -10037,7 +10084,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qB8-Ti-7mW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-466" y="76"/>
+            <point key="canvasLocation" x="-440" y="100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TU5-iD-0Rh">

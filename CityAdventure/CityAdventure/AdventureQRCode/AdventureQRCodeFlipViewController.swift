@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 import Kingfisher
 import Alamofire
-import MarqueeLabel
 
 extension UIView {
     func roundCorners(corners:UIRectCorner, radius: CGFloat) {
@@ -233,11 +232,11 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     @IBOutlet weak var sloganTitle: UILabel!
     
     
-    @IBOutlet weak var landmark_first: MarqueeLabel!
+    @IBOutlet weak var landmark_first: UILabel!
     
-    @IBOutlet weak var landmark_second: MarqueeLabel!
+    @IBOutlet weak var landmark_second: UILabel!
     
-    @IBOutlet weak var landmark_third: MarqueeLabel!
+    @IBOutlet weak var landmark_third: UILabel!
     
     
     var landmarkTuple = [(Int, String)]()
@@ -247,13 +246,11 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        print("PRE", self.navigationController?.viewControllers[(navigationController?.viewControllers.count)!-2])
         
-        landmark_second.type = .continuous
-        landmark_second.speed = .rate(80)
-        landmark_second.fadeLength = 80.0
-        landmark_second.labelWillBeginScroll()
+       
         
-        dump(DataManager.shared.getUserCardInfo()?.cardInfo)
         backView.isHidden = true
         
         
@@ -635,7 +632,27 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     }
     
     @IBAction func tappedBackButton(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        
+        print("pre, start")
+        guard let myinfo = self.storyboard?.instantiateViewController(withIdentifier: "MyPagePopupViewController") as? MyPagePopupViewController else { return }
+        
+        guard let qrcode = self.storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeViewController") as? AdventureQRCodeViewController else { return }
+        
+        print(qrcode.restorationIdentifier, myinfo.restorationIdentifier,"pre")
+  
+        if let prev = self.navigationController?.viewControllers[(navigationController?.viewControllers.count)!-3], let id = prev.restorationIdentifier, let unwind = qrcode.restorationIdentifier, let pop = myinfo.restorationIdentifier {
+           
+            if id == unwind {
+                
+            } else if id == pop {
+                self.navigationController?.popViewController(animated: true)
+            }
+            
+        } else {
+            print("이도저도안댐")
+        }
+        
+        
     }
     
     // 해당 도시의 정보를 보여주는 뷰.

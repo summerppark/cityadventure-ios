@@ -13,8 +13,7 @@ class AdventureQRCodeReaderViewController: UIViewController {
   
     @IBOutlet var messageLabel:UILabel!
     @IBOutlet var topbar: UIView!
-    
-    
+
     var videoPreviewLayer: AVCaptureVideoPreviewLayer?
     var qrCodeFrameView: UIView?
 
@@ -33,11 +32,11 @@ class AdventureQRCodeReaderViewController: UIViewController {
             .godoNormal("를\n뚱카에 넣어주세요!")
         messageLabel.attributedText = formattedString
   
-        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
-            result.cityNumber = "142a"
-
-            self.navigationController?.pushViewController(result, animated: true)
-        }
+//        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
+//            result.cityNumber = "142a"
+//
+//            self.navigationController?.pushViewController(result, animated: true)
+//        }
 
     }
     
