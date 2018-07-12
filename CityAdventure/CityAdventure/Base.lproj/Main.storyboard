@@ -88,6 +88,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="loadGifImage" destination="MYF-ZJ-L0i" id="tc4-kc-8gi"/>
+                        <outlet property="versionLabel" destination="Otc-v7-QhF" id="zGM-Jv-cya"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfC-KC-nJ2" userLabel="First Responder" sceneMemberID="firstResponder"/>

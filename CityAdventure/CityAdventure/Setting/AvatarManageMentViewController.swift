@@ -80,7 +80,7 @@ class AvatarManageMentViewController: BaseViewController {
     func setCurrentChar() {
         if let info = DataManager.shared.userInfo?.userInfo?.ui_avatarNo {
             self.thumbButtons[info-1].setImage(thumbCharSelected[info-1], for: .normal)
-            selecedControlSync(index: 4)
+            selecedControlSync(index: info-1)
         }
     }
     

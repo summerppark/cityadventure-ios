@@ -16,6 +16,14 @@ class LaunchScreenViewController: BaseViewController {
     
     static var syntherSizer: AVSpeechSynthesizer?
     
+    @IBOutlet weak var versionLabel: UILabel! {
+        didSet {
+            if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                versionLabel.text = "VERSION \(version)"
+            }
+        }
+    }
+    
     var cardCityDBPath : String = ""
     // gif
     @IBOutlet weak var loadGifImage: UIImageView! {
@@ -36,14 +44,13 @@ class LaunchScreenViewController: BaseViewController {
         }
         
         
+        
+        
         toastViewSetting()
         // navi hidden
         // db 내용에 '' 가 포함되어 FMDB INSERT 쿼리문 에러발생.
         // BUNDLE -> CityCard 대체
-//        makeDB()
-//        insertDB()
 
-        
         if let day = UserDefaults.standard.object(forKey: "NoticeOffDay") as? Int ,
             let month =  UserDefaults.standard.object(forKey: "NoticeOffMonth") as? Int {
             

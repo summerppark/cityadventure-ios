@@ -652,7 +652,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
             }
             
         } else {
-            print("이도저도안댐")
+            self.navigationController?.popViewController(animated: true)
         }
         
         

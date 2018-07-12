@@ -203,7 +203,7 @@ extension SignUpViewSeccondController: UITextFieldDelegate {
     // 입력값에 따른 상태 체크
     @objc func textFieldDidChange(sender: UITextField) {
         
-        if let emailCheck = sender.text, emailCheck == "" {
+        if let emailCheck = self.emailTextField.text, emailCheck == "" {
             self.duplicatedCheckButton.setImage(UIImage(named:"btn_duplicated_icon_before"), for: .normal)
         }
         

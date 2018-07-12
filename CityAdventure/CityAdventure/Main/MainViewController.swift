@@ -269,7 +269,7 @@ class MainViewController: BaseViewController {
     }
     
     func openToast() {
-        Toast(text: "서비스 준비중입니다.").show()
+        Toast.init(text: "서비스 준비중입니다.", delay: 0.0, duration: 0.08).show()
     }
     
     

@@ -87,8 +87,6 @@ class SignUpViewFinalController: BaseViewController {
     // 가입완료버튼
     @IBAction func signUpSuccess(_ sender: Any) {
         self.presenter.connectPostSignUp(parameter: parameters)
-        
-        print("==<>", parameters)
     }
     
     // 가입 성공 되면 완료 됬다는 알럿창을 띄워준다

@@ -86,7 +86,13 @@ class SettingViewController: BaseViewController {
         }
     }
     
-    @IBOutlet weak var latestVersion: UILabel!
+    @IBOutlet weak var latestVersion: UILabel! {
+        didSet {
+            if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                latestVersion.text = version
+            }
+        }
+    }
     
     @IBAction func selectOption(_ sender: UIButton) {
         switch sender.tag {
@@ -126,7 +132,7 @@ class SettingViewController: BaseViewController {
             make.width.height.equalTo(48)
         }
         
-        getLatestVersion()
+//        getLatestVersion()
         versionCheck()
     }
     
