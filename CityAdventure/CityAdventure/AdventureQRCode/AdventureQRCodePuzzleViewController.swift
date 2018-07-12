@@ -22,6 +22,8 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
     var collectCardCount: Int = 0
     var puzzleCity = ""
 
+    var cityName: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCheck()
@@ -31,8 +33,7 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
         var img = UIImage()
         var img2 = UIImage()
         
-        
-        print(self.puzzleCity)
+       
         
         guard let url = URL(string: APIUrls.getPuzzleImage(cardNumber: self.puzzleCity)) else {
             print("ERROR")
@@ -141,6 +142,7 @@ class AdventureQRCodePuzzleViewController: BaseViewController {
                                         DataManager.shared.setUserCardInfo(response: cardlist)
                                         super.hideLoading()
                                         if let popup = self.storyboard?.instantiateViewController(withIdentifier: "CollectCityPopupViewController") as? CollectCityPopupViewController {
+                                            popup.cityName = self.cityName
                                             popup.modalPresentationStyle = .overFullScreen
                                             self.present(popup, animated: false, completion: nil)
                                         }

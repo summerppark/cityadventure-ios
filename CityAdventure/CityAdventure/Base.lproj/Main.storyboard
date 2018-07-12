@@ -9905,7 +9905,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Cqw-fI-rgu" kind="unwind" identifier="goCollectVC" unwindAction="unWindQRCodeVC:" id="dMS-In-Z9C"/>
+                                            <segue destination="Cqw-fI-rgu" kind="unwind" unwindAction="unWindQRCodeVC:" id="YwW-46-jru"/>
                                         </connections>
                                     </button>
                                 </subviews>

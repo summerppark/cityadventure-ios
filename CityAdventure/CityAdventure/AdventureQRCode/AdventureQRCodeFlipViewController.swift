@@ -702,6 +702,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         if let puzzle = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodePuzzleViewController") as? AdventureQRCodePuzzleViewController {
             // 어떤 도시인지 숫자를 알려주어야 함
             puzzle.puzzleCity = cityNumber
+            puzzle.cityName = self.cityName.text
             self.navigationController?.pushViewController(puzzle, animated: true)
         }
     }

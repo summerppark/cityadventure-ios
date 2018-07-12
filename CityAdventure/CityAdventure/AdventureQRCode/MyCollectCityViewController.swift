@@ -86,10 +86,12 @@ class MyCollectCityViewController: BaseViewController {
         super.viewWillDisappear(animated)
         self.selectCitysView.isCollapsed = true
         self.selectCitysView.collapseTableView()
-        
-        
     }
     
+     @IBAction func unWindCollectedVC(_ segue: UIStoryboardSegue) {
+    
+    }
+        
     // 상단 뷰 데이타 셋팅
     func dataSetting() {
         guard let currentExp = DataManager.shared.getUserInfo()?.userInfo?.ui_exp else {

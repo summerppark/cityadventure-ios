@@ -17,9 +17,12 @@ class CollectCityPopupViewController: BaseViewController {
             mainView.clipsToBounds = true
         }
     }
+    
     @IBOutlet weak var closeButton: UIButton!
     
     @IBOutlet weak var resultLabel: UILabel!
+    
+    var cityName: String?
     
     
     
@@ -27,6 +30,10 @@ class CollectCityPopupViewController: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         closeButtonLayout()
+        
+        if let name = cityName {
+            resultLabel.text = "축하합니다!\n\(name) 카드를 획득했습니다."
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
