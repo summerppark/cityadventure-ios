@@ -41,7 +41,7 @@ class CharacterChoiceViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        UserDefaults.standard.set(String(charIndex), forKey: "signup_char")
+        UserDefaults.standard.set(String(charIndex+1), forKey: "signup_char")
     }
     
     
@@ -108,7 +108,7 @@ class CharacterChoiceViewController: UIViewController {
     
     @IBAction func goToNext(_ sender: Any) {
         if let final = storyboard?.instantiateViewController(withIdentifier: "SignUpViewFinalController") as? SignUpViewFinalController {
-            final.charIndex = charIndex
+            final.charIndex = charIndex+1
             self.navigationController?.pushViewController(final, animated: true)
         }
     }

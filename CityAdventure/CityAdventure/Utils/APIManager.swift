@@ -52,7 +52,7 @@ struct APIManager {
     
     // 이메일 로그인
     static func postTryEmailLogin(url: String, completion: @escaping (loginResponse, _ error: Error?) -> Void, fail: @escaping (_ message: String?, _ error: Error?) -> Void) {
-        print("\(server_url)\(url)")
+        print("1212, \(server_url)\(url)")
         Alamofire.request("\(server_url)\(url)", method: .post, parameters: nil, encoding: JSONEncoding.default).responseObject { (response: DataResponse<loginResponse>) in
             
             guard let statusCode = response.response?.statusCode else { return }

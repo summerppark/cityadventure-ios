@@ -137,13 +137,13 @@
                                     <constraint firstAttribute="width" constant="15" id="5gW-sM-6dS"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jjy48801@naver.com" placeholder="이메일 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3P-W4-2tB">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="이메일 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3P-W4-2tB">
                                 <rect key="frame" x="93" y="291" width="234" height="16"/>
                                 <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GodoM" family="Godo M" pointSize="13.300000190734863"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartInsertDeleteType="no"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="zzzzzzz1" placeholder="비밀번호 입력" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QQm-Mn-G0W">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호 입력" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QQm-Mn-G0W">
                                 <rect key="frame" x="91" y="343.5" width="236" height="16"/>
                                 <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GodoM" family="Godo M" pointSize="13.300000190734863"/>
@@ -6173,7 +6173,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                 <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Abl-Yr-E61">
-                                    <rect key="frame" x="0.0" y="0.0" width="343" height="393"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="343" height="486"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_top_spring" translatesAutoresizingMaskIntoConstraints="NO" id="w4Q-5M-2fc">
@@ -6200,21 +6200,21 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z52-iG-tqg">
-                                            <rect key="frame" x="0.0" y="64" width="18" height="329"/>
+                                            <rect key="frame" x="0.0" y="64" width="18" height="422"/>
                                             <color key="backgroundColor" red="0.23765578866004944" green="0.52235114574432373" blue="0.69413954019546509" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="18" id="YnG-x5-09o"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kvj-4k-PjE">
-                                            <rect key="frame" x="322.5" y="64" width="20.5" height="329"/>
+                                            <rect key="frame" x="322.5" y="64" width="20.5" height="422"/>
                                             <color key="backgroundColor" red="0.23921568627450979" green="0.52156862745098043" blue="0.69411764705882351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20.5" id="V5g-vx-2Vk"/>
                                             </constraints>
                                         </view>
                                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iz3-DJ-gnM">
-                                            <rect key="frame" x="19" y="273" width="302.5" height="120"/>
+                                            <rect key="frame" x="19" y="366" width="302.5" height="120"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D8A-ij-UYc">
                                                     <rect key="frame" x="0.0" y="0.0" width="480" height="120"/>
@@ -6246,11 +6246,8 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                             </constraints>
                                         </scrollView>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7S-gf-Wxr">
-                                            <rect key="frame" x="34" y="138" width="272.5" height="120"/>
+                                            <rect key="frame" x="34" y="138" width="272.5" height="212"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="120" id="eGb-Kj-Jt4"/>
-                                            </constraints>
                                             <string key="text">광안대교는 부산 수영구 남천동에서 해운대구 센텀시티 부근을 잇는 총길이 7.42km의 바다를 가로지르는 다리에요. 국내에서 처음으로 첨단 조명 시스템이 구축되어 10만 가지 이상의 색상을 연출 할 수 있어요. 광안대교를 둘러싼 황령산과 백사장, 해운대 동백섬과 달맞이 언덕 등이 한눈에 들어와 주변 경관도 일품이랍니다.</string>
                                             <fontDescription key="fontDescription" name="GodoM" family="Godo" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -6278,15 +6275,55 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <constraint firstAttribute="trailing" secondItem="Kvj-4k-PjE" secondAttribute="trailing" id="kcb-rd-Uog"/>
                                         <constraint firstItem="B7S-gf-Wxr" firstAttribute="leading" secondItem="z52-iG-tqg" secondAttribute="trailing" constant="16" id="kpG-EG-1rc"/>
                                         <constraint firstAttribute="bottom" secondItem="Iz3-DJ-gnM" secondAttribute="bottom" id="lzI-GA-G0A"/>
+                                        <constraint firstItem="Iz3-DJ-gnM" firstAttribute="top" secondItem="B7S-gf-Wxr" secondAttribute="bottom" constant="16" id="rj8-ze-9Xa"/>
                                         <constraint firstAttribute="bottom" secondItem="z52-iG-tqg" secondAttribute="bottom" id="vPa-3y-KTW"/>
                                         <constraint firstItem="Jcr-79-Vov" firstAttribute="top" secondItem="w4Q-5M-2fc" secondAttribute="bottom" constant="8" id="wig-ot-Aip"/>
                                         <constraint firstItem="Iz3-DJ-gnM" firstAttribute="leading" secondItem="z52-iG-tqg" secondAttribute="trailing" constant="1" id="xC8-cY-hKM"/>
                                         <constraint firstItem="Kvj-4k-PjE" firstAttribute="leading" secondItem="B7S-gf-Wxr" secondAttribute="trailing" constant="16" id="zI0-af-Paw"/>
                                     </constraints>
                                 </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="UoN-4x-JZ1">
+                                    <rect key="frame" x="0.0" y="610" width="343" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sp-1s-8EP">
+                                            <rect key="frame" x="0.0" y="0.0" width="18" height="44"/>
+                                            <color key="backgroundColor" red="0.23765578870000001" green="0.52235114569999996" blue="0.69413954020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="18" id="OOz-A4-0G0"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N5W-iK-ROx">
+                                            <rect key="frame" x="322.5" y="0.0" width="20.5" height="44"/>
+                                            <color key="backgroundColor" red="0.23765578870000001" green="0.52235114569999996" blue="0.69413954020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20.5" id="YXs-7j-FKk"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLN-JX-djN">
+                                            <rect key="frame" x="18" y="24" width="304.5" height="20"/>
+                                            <color key="backgroundColor" red="0.23765578870000001" green="0.52235114569999996" blue="0.69413954020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Pyw-Ah-wLv"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.93333333330000001" green="0.99215686270000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstItem="2Sp-1s-8EP" firstAttribute="leading" secondItem="UoN-4x-JZ1" secondAttribute="leading" id="DMi-qQ-szO"/>
+                                        <constraint firstItem="N5W-iK-ROx" firstAttribute="top" secondItem="UoN-4x-JZ1" secondAttribute="top" id="Dai-Jw-At3"/>
+                                        <constraint firstAttribute="bottom" secondItem="mLN-JX-djN" secondAttribute="bottom" id="FPq-t1-7az"/>
+                                        <constraint firstAttribute="trailing" secondItem="N5W-iK-ROx" secondAttribute="trailing" id="Jhk-gK-9wP"/>
+                                        <constraint firstItem="mLN-JX-djN" firstAttribute="leading" secondItem="2Sp-1s-8EP" secondAttribute="trailing" id="Ljz-fh-gNu"/>
+                                        <constraint firstAttribute="bottom" secondItem="2Sp-1s-8EP" secondAttribute="bottom" id="QFc-Or-gQ2"/>
+                                        <constraint firstItem="2Sp-1s-8EP" firstAttribute="top" secondItem="UoN-4x-JZ1" secondAttribute="top" id="gea-PI-Mme"/>
+                                        <constraint firstItem="N5W-iK-ROx" firstAttribute="leading" secondItem="mLN-JX-djN" secondAttribute="trailing" id="pDS-w9-u7Q"/>
+                                        <constraint firstAttribute="bottom" secondItem="N5W-iK-ROx" secondAttribute="bottom" id="uA5-GJ-H9D"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LandmarkSearchCell" rowHeight="96" id="YhK-0r-Oug" customClass="LandmarkSearchCell" customModule="CityAdventure" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="421" width="343" height="96"/>
+                                        <rect key="frame" x="0.0" y="514" width="343" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YhK-0r-Oug" id="YtO-l6-Mdn">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="96"/>

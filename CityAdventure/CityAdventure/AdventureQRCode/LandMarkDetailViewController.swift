@@ -95,7 +95,10 @@ class LandMarkDetailViewController: BaseViewController {
     func dataSetting(inputData: LandmarkDetail) {
         guard let landmark = inputData.detailData else { return }
         // 내용
-        landmarkDesc.text = landmark.t_description
+        
+        if let text = landmark.t_description {
+            landmarkDesc.text = "\n\(text)"
+        }
         
         // title
         landmarkName.text = landmark.s_name
@@ -174,7 +177,7 @@ class LandMarkDetailViewController: BaseViewController {
 extension LandMarkDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 네이버 블로그 검색 결과갯수만큼
-        return 10
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

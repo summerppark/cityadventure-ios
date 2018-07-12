@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 import Kingfisher
 import Alamofire
+import Toaster
 
 extension UIView {
     func roundCorners(corners:UIRectCorner, radius: CGFloat) {
@@ -247,8 +248,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        print("PRE", self.navigationController?.viewControllers[(navigationController?.viewControllers.count)!-2])
-        
+       
        
         
         backView.isHidden = true
@@ -410,6 +410,9 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         
         travelInfoUrl = city.t_tourURL
         cityType = Int(city.ui_province)
+        
+        Toast.init(text: "\(city.s_name) \(city.s_type)에 오신걸 환영합니다!\n 멋진 탐험과 게임을 즐기고 카드도 수집해 보세요!", delay: 0.0, duration: 0.33).show()
+        
     }
     
     @objc func openMapView() {

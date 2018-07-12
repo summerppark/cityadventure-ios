@@ -195,7 +195,7 @@ extension LoginViewController: LoginViewPresenterProtocol {
         stopLoading()
         // email, password 를 통해서 API 를 날려 토큰을 받아 온 후 바로 Token 을 가지고 유저 정보, 유저 계정정보 2군두에 통신을 시도한 후 핸들러로 이곳에 도착하여 메인뷰로 넘어간다.
         // Toast 를 위한 구문
-        failEmailLogin(msg: "\(nick)대원님 환영합니다.")
+        failEmailLogin(msg: "\(nick)대원님 도시탐험 하러가요!")
         
         // Main 화면으로 보내기
         let main = self.storyboard?.instantiateViewController(withIdentifier: "mainNav") as! UINavigationController
