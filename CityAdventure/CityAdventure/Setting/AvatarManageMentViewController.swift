@@ -65,7 +65,7 @@ class AvatarManageMentViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSetting()
+        
         layoutCheck()
         mainScrollView.contentSize = CGSize(width: Double(self.view.frame.width) * Double(6.0), height: 320.0)
         
@@ -76,8 +76,11 @@ class AvatarManageMentViewController: BaseViewController {
         }
 
         makeThumbScroll()
+        
+        
         setCurrentChar()
         charViewLayout(index: 5)
+        dataSetting()
     }
     
     func setCurrentChar() {
@@ -274,6 +277,7 @@ class AvatarManageMentViewController: BaseViewController {
                     view.addSubview(mine)
                 selectButton.setTitle("선택하기", for: .normal)
             } else {
+                selectButton.setBackgroundImage(#imageLiteral(resourceName: "btn_yellow_bg"), for: .normal)
                 selectButton.setTitle("구매하기", for: .normal)
             }
             
@@ -301,6 +305,8 @@ class AvatarManageMentViewController: BaseViewController {
                 switch response.result {
                 case .success:
                     DataManager.shared.userInfo?.userInfo?.ui_avatarNo = sender.tag+1
+                    
+                    print("DataManager.shared.userInfo?.userInfo?.ui_avatarNo",DataManager.shared.userInfo?.userInfo?.ui_avatarNo)
                     self.userCharView.image = self.thumbCharSelected[sender.tag]
                     if let alert = self.storyboard?.instantiateViewController(withIdentifier: "AlertviewController") as? AlertviewController {
                         alert.alertString = "캐릭터가 성공적으로 변경되었습니다."
@@ -322,6 +328,8 @@ class AvatarManageMentViewController: BaseViewController {
                     case .success:
                         // 싱글턴 수정
                         DataManager.shared.userInfo?.userInfo?.ui_avatarNo = sender.tag+1
+                       
+                       print("DataManager.shared.userInfo?.userInfo?.ui_avatarNo",DataManager.shared.userInfo?.userInfo?.ui_avatarNo)
                         DataManager.shared.userInfo?.userInfo?.ui_credit = coin-self.avartarPrice[sender.tag]
                         
                         // 뷰 수정
@@ -335,12 +343,10 @@ class AvatarManageMentViewController: BaseViewController {
                         let mine = UIImageView(frame: CGRect(x: 220.0, y: 320.0-48.0-16.0-90.0, width: 80.0, height: 80.0))
                         mine.image = #imageLiteral(resourceName: "img_isMyAvatar")
                         self.avatarViews[sender.tag].addSubview(mine)
+                        
+                        self.purchaseButtons[sender.tag].setBackgroundImage(#imageLiteral(resourceName: "3_17"), for: .normal)
                         self.purchaseButtons[sender.tag].setTitle("선택하기", for: .normal)
-                        
-                        
-                        
-                        
-                        
+ 
                         if let alert = self.storyboard?.instantiateViewController(withIdentifier: "AlertviewController") as? AlertviewController {
                             alert.alertString = "캐릭터를 성공적으로 구매하였습니다."
                             alert.modalPresentationStyle = .overCurrentContext
@@ -415,11 +421,21 @@ class AvatarManageMentViewController: BaseViewController {
         if let index = DataManager.shared.getUserInfo()?.userInfo?.ui_avatarNo {
             print(index)
             userCharView.image = super.charImages[index-1]
+            self.thumbImages[index-1].isHidden = false
+            self.thumbImages[index-1].image = #imageLiteral(resourceName: "myAvatar_on")
+            
+            let mine = UIImageView(frame: CGRect(x: 220.0, y: 320.0-48.0-16.0-90.0, width: 80.0, height: 80.0))
+            mine.image = #imageLiteral(resourceName: "img_isMyAvatar")
+            self.avatarViews[index-1].addSubview(mine)
+            self.purchaseButtons[index-1].setBackgroundImage(#imageLiteral(resourceName: "3_17"), for: .normal)
+            self.purchaseButtons[index-1].setTitle("선택하기", for: .normal)
+            
+            
         }
-        
         // 프로그레스 뷰 상태를 셋팅
         progressView.progress = (Float(curExp)/Float(maxExp))
     }
+    
     @IBAction func showRightMenu(sender: UIButton) {
         super.showMenu {
             super.backgroundBlackAlpha(view: self.view)
@@ -452,7 +468,6 @@ extension AvatarManageMentViewController: UIScrollViewDelegate {
             selectedStatus(index: pageNumber)
             selecedControlSync(index: pageNumber)
         }
-        
     }
     
     // 선택된 캐릭터만 하이라이트

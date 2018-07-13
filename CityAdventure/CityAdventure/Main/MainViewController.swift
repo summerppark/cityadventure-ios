@@ -79,6 +79,8 @@ class MainViewController: BaseViewController {
     
     var audioPlayer = AVAudioPlayer()
     
+    static var isRealQRCode: Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

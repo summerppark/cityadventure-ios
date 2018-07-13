@@ -303,7 +303,11 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         }
  
         layoutColor(cityNumber: cityType)
-        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        MainViewController.isRealQRCode = false
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -411,8 +415,9 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         travelInfoUrl = city.t_tourURL
         cityType = Int(city.ui_province)
         
-        Toast.init(text: "\(city.s_name) \(city.s_type)에 오신걸 환영합니다!\n 멋진 탐험과 게임을 즐기고 카드도 수집해 보세요!", delay: 0.0, duration: 0.33).show()
-        
+        if MainViewController.isRealQRCode {
+            Toast.init(text: "\(city.s_name) \(city.s_type)에 오신걸 환영합니다!\n 멋진 탐험과 게임을 즐기고 카드도 수집해 보세요!", delay: 0.0, duration: 0.33).show()
+        }
     }
     
     @objc func openMapView() {
@@ -637,9 +642,13 @@ class AdventureQRCodeFlipViewController: BaseViewController {
     @IBAction func tappedBackButton(_ sender: UIButton) {
         
         print("pre, start")
-        guard let myinfo = self.storyboard?.instantiateViewController(withIdentifier: "MyPagePopupViewController") as? MyPagePopupViewController else { return }
+        guard let myinfo = self.storyboard?.instantiateViewController(withIdentifier: "MyPagePopupViewController") as? MyPagePopupViewController else {
+             self.navigationController?.popViewController(animated: true)
+            return }
         
-        guard let qrcode = self.storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeViewController") as? AdventureQRCodeViewController else { return }
+        guard let qrcode = self.storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeViewController") as? AdventureQRCodeViewController else {
+             self.navigationController?.popViewController(animated: true)
+            return }
         
         print(qrcode.restorationIdentifier, myinfo.restorationIdentifier,"pre")
   
@@ -649,6 +658,8 @@ class AdventureQRCodeFlipViewController: BaseViewController {
                 
             } else if id == pop {
                 self.navigationController?.popViewController(animated: true)
+            } else {
+                 self.navigationController?.popViewController(animated: true)
             }
             
         } else {

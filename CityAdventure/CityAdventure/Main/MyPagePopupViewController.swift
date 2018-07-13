@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Toaster
 class MyPagePopupViewController: BaseViewController {
     
     @IBOutlet weak var progressView: UIProgressView! {
@@ -61,7 +61,7 @@ class MyPagePopupViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dataSetting()
-        
+        print("DataManager.shared.userInfo?.userInfo?.ui_avatarNo",DataManager.shared.userInfo?.userInfo?.ui_avatarNo)
     }
     
     
@@ -167,6 +167,10 @@ class MyPagePopupViewController: BaseViewController {
         }
     }
     
+    
+    @IBAction func diaryRank(_ sender: Any) {
+        Toast.init(text: "서비스 준비중 입니다.", delay: 0.0, duration: 0.15).show()
+    }
     
     @IBAction func changeChar(_ sender: UIButton) {
         if let charChange = self.storyboard?.instantiateViewController(withIdentifier: "AvatarManageMentViewController") as? AvatarManageMentViewController {

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Toaster
 
 class RightSideMenuViewController: BaseViewController {
  
@@ -139,6 +140,12 @@ class RightSideMenuViewController: BaseViewController {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
+    
+    
+    @IBAction func tempAction(_ sender: Any) {
+        Toast.init(text: "서비스 준비중 입니다.", delay: 0.0, duration: 0.15).show()
+    }
+    
     
     @IBAction func tappedCloseButton(_ sender: UIButton) {
         hideView(type: 0)

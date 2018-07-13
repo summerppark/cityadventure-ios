@@ -27,6 +27,7 @@ class AdventureQRCodeReaderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        MainViewController.isRealQRCode = true
         let formattedString = NSMutableAttributedString()
         formattedString
             .bigGodoBold("탐험하고 싶은\n도시의 카드")
