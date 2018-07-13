@@ -27,7 +27,6 @@ class AdventureQRCodeReaderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        composeArticle()
         let formattedString = NSMutableAttributedString()
         formattedString
             .bigGodoBold("탐험하고 싶은\n도시의 카드")
@@ -232,24 +231,6 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
                     break
                 }
             }
-        }
-    }
-    
-    private func composeArticle() {
-        guard PHPhotoLibrary.authorizationStatus() == .authorized else {
-            needPermissionAlert()
-            return
-        }
-        
-        let video = AVMediaType.video
-        let cameraStatus = AVCaptureDevice.authorizationStatus(for: video)
-        switch cameraStatus {
-        case .denied:
-            needPermissionAlert()
-        case .notDetermined:
-            needPermissionAlert()
-        default:
-            break
         }
     }
     
