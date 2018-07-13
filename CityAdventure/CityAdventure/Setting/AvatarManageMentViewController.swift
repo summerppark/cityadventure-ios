@@ -104,44 +104,32 @@ class AvatarManageMentViewController: BaseViewController {
         }
         
         categoryScrollView.clipsToBounds = true
-        categoryScrollView.isPagingEnabled = true
+        categoryScrollView.isPagingEnabled = false
         categoryScrollView.delegate = self
         categoryScrollView.showsHorizontalScrollIndicator = false
-        categoryScrollView.contentSize = CGSize(width: self.view.frame.width * 2, height: 80.0)
+        
         
         let firstpage = UIView()
-        let secondpage = UIView()
+        
+        var tempWidth = 8.0
         if Constants.DeviceType.IS_IPHONE_6P {
-            firstpage.frame = CGRect(x: 40, y: 0, width: self.view.frame.width - 80, height: 80)
-            //                    firstpage.backgroundColor = .red
-            categoryScrollView.addSubview(firstpage)
-            secondpage.frame = CGRect(x: self.view.frame.width + 40, y: 0, width: self.view.frame.width - 40, height: 80)
-            //                    secondpage.backgroundColor = .blue
-            categoryScrollView.addSubview(secondpage)
-        } else {
-            firstpage.frame = CGRect(x: 20, y: 0, width: self.view.frame.width - 40, height: 80)
-            //                    firstpage.backgroundColor = .red
-            categoryScrollView.addSubview(firstpage)
-            
-            secondpage.frame = CGRect(x: self.view.frame.width + 20, y: 0, width: self.view.frame.width - 40, height: 80)
-            //                    secondpage.backgroundColor = .blue
-            categoryScrollView.addSubview(secondpage)
+            tempWidth = 16.0
         }
-        
-        
+        categoryScrollView.contentSize = CGSize(width: (80.0*6.0)+(tempWidth*6.0)+32.0+16.0, height: 80.0)
+            firstpage.frame = CGRect(x: 12.0, y: 0, width: (80.0*6.0)+(tempWidth*6.0)+32.0, height: 80)
+            categoryScrollView.addSubview(firstpage)
+
         for index in 0...3 {
             let button = UIButton()
             button.tag = index
             button.addTarget(self, action: #selector(selectChar), for: .touchUpInside)
             button.setImage(thumbChar[index], for: .normal)
-            button.frame = CGRect(x: 80.0 * Double(index) + Double(index) * 8, y: 0, width: 80.0, height: 80.0)
-            
-            
-            
+            button.frame = CGRect(x: 80.0 * Double(index) + Double(index) * tempWidth, y: 0, width: 80.0, height: 80.0)
+
             let isMyAvatar = UIImageView()
             isMyAvatar.tag = index
             isMyAvatar.backgroundColor = .clear
-            isMyAvatar.frame = CGRect(x: 80.0 * Double(index) + Double(index) * 8 + 56.0, y: 0, width: 20, height: 28)
+            isMyAvatar.frame = CGRect(x: 80.0 * Double(index) + Double(index) * tempWidth + 56.0, y: 0, width: 20, height: 28)
             isMyAvatar.isHidden = true
             thumbButtons.append(button)
             thumbImages.append(isMyAvatar)
@@ -150,24 +138,22 @@ class AvatarManageMentViewController: BaseViewController {
         }
         
         for index in 4...5 {
-            let newindex = index - 4
             let button = UIButton()
             button.tag = index
             button.addTarget(self, action: #selector(selectChar), for: .touchUpInside)
             button.setImage(thumbChar[index], for: .normal)
-            button.frame = CGRect(x: 80.0 * Double(newindex) + Double(newindex) * 8, y: 0, width: 80.0, height: 80.0)
+            button.frame = CGRect(x: 80.0 * Double(index) + Double(index) * tempWidth, y: 0, width: 80.0, height: 80.0)
             
             let isMyAvatar = UIImageView()
             isMyAvatar.tag = index
             isMyAvatar.backgroundColor = .clear
             isMyAvatar.isHidden = true
-            isMyAvatar.frame = CGRect(x: 80.0 * Double(newindex) + Double(newindex) * 8 + 56.0, y: 0, width: 20, height: 28)
-            
+            isMyAvatar.frame = CGRect(x: 80.0 * Double(index) + Double(index) * tempWidth + 56.0, y: 0, width: 20, height: 28)
             
             thumbButtons.append(button)
             thumbImages.append(isMyAvatar)
-            secondpage.addSubview(button)
-            secondpage.addSubview(isMyAvatar)
+            firstpage.addSubview(button)
+            firstpage.addSubview(isMyAvatar)
         }
         
         myAvartar.forEach { (index) in
@@ -242,12 +228,12 @@ class AvatarManageMentViewController: BaseViewController {
             
             let coinView = UIView(frame: CGRect(x: 100.0, y: 320.0-48.0, width: 80.0, height: 30.0))
             
-            coinView.backgroundColor = .yellow
-            coinView.layer.cornerRadius = 8.0
-            coinView.clipsToBounds = true
-            
+            coinView.backgroundColor = .clear
             view.addSubview(coinView)
             
+            let backgroundImageView = UIImageView(frame: CGRect(x: 0.0, y: 0.0, width: 80.0, height: 30.0))
+            backgroundImageView.image = #imageLiteral(resourceName: "2_6")
+            coinView.addSubview(backgroundImageView)
             let coinImage = UIImageView(frame: CGRect(x: 8.0, y: 5.0, width: 20.0, height: 20.0))
             
             coinImage.image = #imageLiteral(resourceName: "img_coin")
@@ -367,12 +353,6 @@ class AvatarManageMentViewController: BaseViewController {
                 }
             }
         }
-//        myAvartar
-        
-        
-        // 내가 갖고있는 아바타 리스트에 포함되있다면 변경하는 로직
-        // 없다면 구매하는 로직
-
     }
     
     func dataSetting() {
@@ -473,13 +453,13 @@ extension AvatarManageMentViewController: UIScrollViewDelegate {
     // 선택된 캐릭터만 하이라이트
     func selectedStatus(index: Int) {
         charIndex = index
-        if index > 3 {
-            let page = CGPoint(x: self.view.frame.width, y: 0.0)
-            categoryScrollView.setContentOffset(page, animated: true)
-        } else {
-            let page = CGPoint(x: 0.0, y: 0.0)
-            categoryScrollView.setContentOffset(page, animated: true)
-        }
+//        if index > 3 {
+//            let page = CGPoint(x: self.view.frame.width, y: 0.0)
+//            categoryScrollView.setContentOffset(page, animated: true)
+//        } else {
+//            let page = CGPoint(x: 0.0, y: 0.0)
+//            categoryScrollView.setContentOffset(page, animated: true)
+//        }
         
     }
     

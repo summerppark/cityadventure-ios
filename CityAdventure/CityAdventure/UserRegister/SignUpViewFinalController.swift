@@ -4,7 +4,6 @@
 //
 //  Created by Jiyong on 2018. 4. 2..
 //  Copyright © 2018년 bubu. All rights reserved.
-//
 
 import UIKit
 
@@ -51,7 +50,12 @@ class SignUpViewFinalController: BaseViewController {
             
             self.name.text = name as? String ?? ""
             self.gender.text = (gender as! String) == "m" ? "남자" : "여자"
-            self.birthDay.text = (birthday as? String) ?? ""
+            
+            if let birthD = birthday as? String {
+                self.birthDay.text = super.convertDateFormatter(inputDate: birthD)
+            }
+            
+            
             self.homeProvince.text = home as? String ?? ""
             self.livingProvince.text = living as? String ?? ""
             

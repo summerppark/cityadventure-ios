@@ -19,6 +19,7 @@ class NoticeViewController: BaseViewController, WKNavigationDelegate {
             webView.navigationDelegate = self
         }
     }
+    @IBOutlet weak var leftbackbutton: UIButton!
     
     var toggle: Bool = false
     let images = [#imageLiteral(resourceName: "btn_checkOn_gender"),#imageLiteral(resourceName: "btn_check_gender")]
@@ -27,7 +28,16 @@ class NoticeViewController: BaseViewController, WKNavigationDelegate {
         super.viewDidLoad()
         layoutCheck()
         setNoticeWebView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        if webView.canGoBack {
+            leftbackbutton.isHidden = false
+        } else {
+            leftbackbutton.isHidden = true
+        }
     }
     
     func layoutCheck() {
@@ -72,12 +82,22 @@ class NoticeViewController: BaseViewController, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         URLCache.shared.removeAllCachedResponses()
         super.showLoading(view: self.view)
+        if webView.canGoBack {
+            leftbackbutton.isHidden = false
+        } else {
+            leftbackbutton.isHidden = true
+        }
         
     }
     
     // 웹뷰 로딩 끝낫을 때
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         super.hideLoading()
+        if webView.canGoBack {
+            leftbackbutton.isHidden = false
+        } else {
+            leftbackbutton.isHidden = true
+        }
     }
     
     @IBAction func noSeeNotice(_ sender: UIButton) {
@@ -86,6 +106,7 @@ class NoticeViewController: BaseViewController, WKNavigationDelegate {
     }
     
     @IBAction func backBu(_ sender: UIButton) {
+        
         self.webView.goBack()
     }
     
