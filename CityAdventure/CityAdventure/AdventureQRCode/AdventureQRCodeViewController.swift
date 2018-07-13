@@ -184,6 +184,8 @@ class AdventureQRCodeViewController: BaseViewController {
            
             if index > 3 {
                 mainCharWidth.constant = 180.0
+            } else if index == 1 {
+                mainCharWidth.constant = 140.0
             }
         }
         

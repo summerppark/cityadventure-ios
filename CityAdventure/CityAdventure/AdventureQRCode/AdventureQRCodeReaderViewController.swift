@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Photos
 
 class AdventureQRCodeReaderViewController: UIViewController {
   
@@ -26,12 +27,15 @@ class AdventureQRCodeReaderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        composeArticle()
         let formattedString = NSMutableAttributedString()
         formattedString
             .bigGodoBold("탐험하고 싶은\n도시의 카드")
             .godoNormal("를\n뚱카에 넣어주세요!")
         messageLabel.attributedText = formattedString
   
+        
+        
 //        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
 //            result.cityNumber = "142a"
 //
@@ -57,8 +61,19 @@ class AdventureQRCodeReaderViewController: UIViewController {
             print("핸들러")
         }
         
-        
         guard let captureDevice =  AVCaptureDevice.default(for: .video) else { return }
+        let cameraStatus = AVCaptureDevice.authorizationStatus(for: .video)
+        switch cameraStatus {
+        case .denied:
+            needPermissionAlert()
+            return
+        case .notDetermined:
+            needPermissionAlert()
+            return
+        default:
+            break
+        }
+        
         
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice)
@@ -67,6 +82,7 @@ class AdventureQRCodeReaderViewController: UIViewController {
             print("Error QRCode Read")
             shakeView(vw: checkRecognizeView)
         }
+        
         
         let output = AVCaptureMetadataOutput()
         session.addOutput(output)
@@ -153,7 +169,9 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
     
 //    QRCode Recognize
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-   
+        
+        
+        
         if let object = metadataObjects.first {
             if object.type == .qr {
                 print("QR성공",(object as? AVMetadataMachineReadableCodeObject)?.stringValue)
@@ -214,6 +232,38 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
                     break
                 }
             }
+        }
+    }
+    
+    private func composeArticle() {
+        guard PHPhotoLibrary.authorizationStatus() == .authorized else {
+            needPermissionAlert()
+            return
+        }
+        
+        let video = AVMediaType.video
+        let cameraStatus = AVCaptureDevice.authorizationStatus(for: video)
+        switch cameraStatus {
+        case .denied:
+            needPermissionAlert()
+        case .notDetermined:
+            needPermissionAlert()
+        default:
+            break
+        }
+    }
+    
+    func needPermissionAlert() {
+        let alertController = UIAlertController(title: "카메라 이용 권한 없음",
+                                                message: "도시를 탐험하기 위하여 카메라 이용 권한이 필요합니다.",
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "설정으로 이동", style: .destructive) { (action) in
+            guard let url = URL(string:UIApplicationOpenSettingsURLString) else { return }
+            UIApplication.shared.open(url)
+        })
+        alertController.addAction(UIAlertAction(title: "취소", style: .cancel))
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alertController, animated: true, completion: nil)
         }
     }
 }
