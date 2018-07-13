@@ -27,6 +27,7 @@ class NoticeViewController: BaseViewController, WKNavigationDelegate {
         super.viewDidLoad()
         layoutCheck()
         setNoticeWebView()
+        
     }
     
     func layoutCheck() {
@@ -40,9 +41,11 @@ class NoticeViewController: BaseViewController, WKNavigationDelegate {
     func setNoticeWebView() {
         // 공지사항 웹뷰 설정.
         //비동기로 처리 후 메인으로 돌려줌
+        
+        
         DispatchQueue.global().async { [weak self] in
             if let url = URL(string: "http://www.bubu-expedition.com/notice/notice.html") {
-                let request = URLRequest(url: url)
+                let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
                 DispatchQueue.main.async { [weak self] in
                     self?.webView.load(request)
                 }
@@ -67,7 +70,9 @@ class NoticeViewController: BaseViewController, WKNavigationDelegate {
     
     // 웹뷰 로딩 시작할 때
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        URLCache.shared.removeAllCachedResponses()
         super.showLoading(view: self.view)
+        
     }
     
     // 웹뷰 로딩 끝낫을 때

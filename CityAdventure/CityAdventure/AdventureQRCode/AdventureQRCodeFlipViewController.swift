@@ -714,7 +714,6 @@ class AdventureQRCodeFlipViewController: BaseViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
 }
 
 
