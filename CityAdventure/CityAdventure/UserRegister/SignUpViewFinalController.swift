@@ -64,7 +64,7 @@ class SignUpViewFinalController: BaseViewController {
                   SignUpViewSeccondController.signupPassword,
                   SignUpViewSeccondController.signupName,
                   SignUpViewSeccondController.signupGender,
-                  SignUpViewSeccondController.signupBirthday, SignUpViewSeccondController.signupHomeProvince,SignUpViewSeccondController.signupHomeNumber,SignUpViewSeccondController.signupLivingProvince,SignUpViewSeccondController.signupLivingNumber,SignUpViewSeccondController.signupBornCity,SignUpViewSeccondController.signupLiveCity,charIndex)
+                  SignUpViewSeccondController.signupBirthday, SignUpViewSeccondController.signupHomeProvince,SignUpViewSeccondController.signupHomeNumber,SignUpViewSeccondController.signupLivingProvince,SignUpViewSeccondController.signupLiveCity,SignUpViewSeccondController.signupBornCity,SignUpViewSeccondController.signupLiveCity,charIndex)
             
             
             parameters = [
