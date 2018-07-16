@@ -67,9 +67,6 @@ class AdventureQRCodeReaderViewController: UIViewController {
         case .denied:
             needPermissionAlert()
             return
-        case .notDetermined:
-            needPermissionAlert()
-            return
         default:
             break
         }
