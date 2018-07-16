@@ -26,6 +26,7 @@ class AdventureQRCodeReaderViewController: UIViewController {
     let session = AVCaptureSession()
     
     
+    @IBOutlet weak var aniviewBottom: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class AdventureQRCodeReaderViewController: UIViewController {
             .godoNormal("를\n뚱카에 넣어주세요!")
         messageLabel.attributedText = formattedString
   
-        
+        print("QRCodeReader Restart", self.animationView.frame.origin.y)
         
 //        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
 //            result.cityNumber = "142a"
@@ -48,16 +49,24 @@ class AdventureQRCodeReaderViewController: UIViewController {
     }
     
     @objc func restart() {
-        print("QRCodeReader Restart")
+        print("QRCodeReader Restart", self.animationView.frame.origin.y)
         
-        
+        aniviewBottom.constant = 8.0
         
         UIView.animate(withDuration: 2, delay: 0, options: [.repeat,.curveEaseOut, .repeat], animations: {
             [weak self] in
+            
+            
+            if Constants.DeviceType.IS_IPHONE_6P {
+                self?.animationView.frame.origin.y = 448.0
+            } else if Constants.DeviceType.IS_IPHONE_X {
+                self?.animationView.frame.origin.y = 524.0
+            } else {
+                self?.animationView.frame.origin.y = 429.0
+            }
             self?.animationView.frame.origin.y -= 50
-            self?.animationView.layoutIfNeeded()
         }) { (action) in
-            print("핸들러")
+            
         }
     }
     
@@ -68,6 +77,7 @@ class AdventureQRCodeReaderViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        MainViewController.isRealQRCode = false
         UserDefaults.standard.set(nil, forKey: "restart_2")
     }
     
