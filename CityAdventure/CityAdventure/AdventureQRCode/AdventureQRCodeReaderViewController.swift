@@ -25,6 +25,8 @@ class AdventureQRCodeReaderViewController: UIViewController {
     var video = AVCaptureVideoPreviewLayer()
     let session = AVCaptureSession()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         MainViewController.isRealQRCode = true
@@ -41,7 +43,22 @@ class AdventureQRCodeReaderViewController: UIViewController {
 //
 //            self.navigationController?.pushViewController(result, animated: true)
 //        }
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(restart), name: Notification.Name(rawValue: "restartAnimation_2"), object: nil)
+    }
+    
+    @objc func restart() {
+        print("QRCodeReader Restart")
+        
+        
+        
+        UIView.animate(withDuration: 2, delay: 0, options: [.repeat,.curveEaseOut, .repeat], animations: {
+            [weak self] in
+            self?.animationView.frame.origin.y -= 50
+            self?.animationView.layoutIfNeeded()
+        }) { (action) in
+            print("핸들러")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,9 +66,14 @@ class AdventureQRCodeReaderViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UserDefaults.standard.set(nil, forKey: "restart_2")
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        UserDefaults.standard.set(nil, forKey: "restart_2")
         self.animationView.layoutIfNeeded()
         UIView.animate(withDuration: 2, delay: 0, options: [.repeat,.curveEaseOut, .repeat], animations: {
             [weak self] in
@@ -148,6 +170,8 @@ class AdventureQRCodeReaderViewController: UIViewController {
     }
     
     @IBAction func openShoppingMall(_ sender: UIButton) {
+        UserDefaults.standard.set("QRCodeReader", forKey: "restart_2")
+        
         if let url = URL(string: APIUrls.shoppingMallUrl()) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
@@ -184,7 +208,11 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
                     // 인식 안되었을 때
                     shakeView(vw: checkRecognizeView)
                 }
+            } else {
+                
             }
+        } else {
+            shakeView(vw: checkRecognizeView)
         }
     }
     

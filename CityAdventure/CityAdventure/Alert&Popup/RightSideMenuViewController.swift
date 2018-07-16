@@ -35,6 +35,11 @@ class RightSideMenuViewController: BaseViewController {
         dataSetting()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UserDefaults.standard.set(nil, forKey: "restart_1")
+    }
+    
     
   
     // 사이드메뉴 데이터 셋팅.
@@ -98,6 +103,8 @@ class RightSideMenuViewController: BaseViewController {
             effectSoundPlay = false
             effectButton.setImage(#imageLiteral(resourceName: "effect_sound_on"), for: .normal)
         }
+        
+        UserDefaults.standard.set(nil, forKey: "restart_1")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -136,6 +143,7 @@ class RightSideMenuViewController: BaseViewController {
     }
     
     @IBAction func shoppingMall(_ sender: UIButton) {
+        UserDefaults.standard.set("Main", forKey: "restart_1")
         if let url = URL(string: APIUrls.shoppingMallUrl()) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
