@@ -59,25 +59,45 @@ class SignUpViewFinalController: BaseViewController {
             self.homeProvince.text = home as? String ?? ""
             self.livingProvince.text = living as? String ?? ""
             
-            print("FinalTest", SignUpViewSeccondController.signupEmail, SignUpViewSeccondController.signupPassword, SignUpViewSeccondController.signupName,SignUpViewSeccondController.signupGender,SignUpViewSeccondController.signupBirthday, SignUpViewSeccondController.signupHomeProvince,SignUpViewSeccondController.signupHomeNumber,SignUpViewSeccondController.signupLivingProvince,SignUpViewSeccondController.signupLivingNumber,SignUpViewSeccondController.signupBornCity,SignUpViewSeccondController.signupLiveCity,charIndex)
+            print("FinalTest",
+                  SignUpViewSeccondController.signupEmail,
+                  SignUpViewSeccondController.signupPassword,
+                  SignUpViewSeccondController.signupName,
+                  SignUpViewSeccondController.signupGender,
+                  SignUpViewSeccondController.signupBirthday, SignUpViewSeccondController.signupHomeProvince,SignUpViewSeccondController.signupHomeNumber,SignUpViewSeccondController.signupLivingProvince,SignUpViewSeccondController.signupLivingNumber,SignUpViewSeccondController.signupBornCity,SignUpViewSeccondController.signupLiveCity,charIndex)
             
+            
+            parameters = [
+                "userLoginType": "0",
+                "email": SignUpViewSeccondController.signupEmail,
+                "password": SignUpViewSeccondController.signupPassword,
+                "kakaoId": "0",
+                "name": SignUpViewSeccondController.signupName,
+                "gender": SignUpViewSeccondController.signupGender,
+                "homeProvince": SignUpViewSeccondController.signupHomeProvince,
+                "homeCity": SignUpViewSeccondController.signupHomeNumber,
+                "livingProvince": SignUpViewSeccondController.signupLivingProvince,
+                "livingCity": SignUpViewSeccondController.signupLivingNumber,
+                "birth": SignUpViewSeccondController.signupBirthday,
+                "avatarNo": String(charIndex)
+            ]
             
             
             // 서버로 보낼 파라미터
-            parameters = [
-                "userLoginType": "0",
-                "email": email as! String,
-                "password": password as! String,
-                "kakaoId": "0",
-                "name": name as! String,
-                "gender": gender as! String,
-                "homeProvince": String(describing: homeProvince),
-                "homeCity": String(describing:homeNumber),
-                "livingProvince": String(describing: livingProvince),
-                "livingCity": String(describing:livingNumber),
-                "birth": birthday as! String,
-                "avatarNo": String(charIndex)
-            ]
+//            parameters = [
+//                "userLoginType": "0",
+//                "email": email as! String,
+//                "password": password as! String,
+//                "kakaoId": "0",
+//                "name": name as! String,
+//                "gender": gender as! String,
+//                "homeProvince": String(describing: homeProvince),
+//                "homeCity": String(describing:homeNumber),
+//                "livingProvince": String(describing: livingProvince),
+//                "livingCity": String(describing:livingNumber),
+//                "birth": birthday as! String,
+//                "avatarNo": String(charIndex)
+//            ]
             
         }
     }

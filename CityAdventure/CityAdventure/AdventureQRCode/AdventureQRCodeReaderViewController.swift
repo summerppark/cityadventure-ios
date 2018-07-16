@@ -202,9 +202,7 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
     
 //    QRCode Recognize
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        
-        
-        
+
         if let object = metadataObjects.first {
             if object.type == .qr {
                 print("QR성공",(object as? AVMetadataMachineReadableCodeObject)?.stringValue)

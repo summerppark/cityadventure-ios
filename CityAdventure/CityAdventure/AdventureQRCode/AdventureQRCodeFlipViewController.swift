@@ -416,7 +416,7 @@ class AdventureQRCodeFlipViewController: BaseViewController {
         cityType = Int(city.ui_province)
         
         if MainViewController.isRealQRCode {
-            Toast.init(text: "\(city.s_name) \(city.s_type)에 오신걸 환영합니다!\n 멋진 탐험과 게임을 즐기고 카드도 수집해 보세요!", delay: 0.0, duration: 0.33).show()
+            Toast.init(text: "\(city.s_name) \(city.s_type)에 오신걸 환영합니다!\n 멋진 탐험과 게임을 즐기고 카드도 수집해 보세요!", delay: 0.0, duration: 0.45).show()
         }
     }
     
