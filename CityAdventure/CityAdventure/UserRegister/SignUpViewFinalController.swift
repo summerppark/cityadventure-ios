@@ -64,7 +64,7 @@ class SignUpViewFinalController: BaseViewController {
                   SignUpViewSeccondController.signupPassword,
                   SignUpViewSeccondController.signupName,
                   SignUpViewSeccondController.signupGender,
-                  SignUpViewSeccondController.signupBirthday, SignUpViewSeccondController.signupHomeProvince,SignUpViewSeccondController.signupHomeNumber,SignUpViewSeccondController.signupLivingProvince,SignUpViewSeccondController.signupLiveCity,SignUpViewSeccondController.signupBornCity,SignUpViewSeccondController.signupLiveCity,charIndex)
+                  SignUpViewSeccondController.signupBirthday, SignUpViewSeccondController.signupHomeProvince,SignUpViewSeccondController.signupHomeNumber,SignUpViewSeccondController.signupLivingProvince,SignUpViewSeccondController.signupLivingNumber,SignUpViewSeccondController.signupBornCity,SignUpViewSeccondController.signupLiveCity,charIndex)
             
             
             parameters = [
@@ -72,7 +72,7 @@ class SignUpViewFinalController: BaseViewController {
                 "email": SignUpViewSeccondController.signupEmail,
                 "password": SignUpViewSeccondController.signupPassword,
                 "kakaoId": "0",
-                "name": SignUpViewSeccondController.signupName,
+                "name": SignUpViewSeccondController.signupName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "",
                 "gender": SignUpViewSeccondController.signupGender,
                 "homeProvince": SignUpViewSeccondController.signupHomeProvince,
                 "homeCity": SignUpViewSeccondController.signupHomeNumber,
@@ -82,7 +82,7 @@ class SignUpViewFinalController: BaseViewController {
                 "avatarNo": String(charIndex)
             ]
             
-            
+            dump(parameters)
             // 서버로 보낼 파라미터
 //            parameters = [
 //                "userLoginType": "0",
