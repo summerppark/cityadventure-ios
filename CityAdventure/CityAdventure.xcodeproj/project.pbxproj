@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		661503C620FC68EA007E66D3 /* ClearCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661503C520FC68EA007E66D3 /* ClearCameraView.swift */; };
 		6615319C20CE401500CBA51E /* AdventureNewQRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615319B20CE401500CBA51E /* AdventureNewQRCodeViewController.swift */; };
 		6615E65120F6F0BB0004FF7B /* LandMarkImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6615E65020F6F0BB0004FF7B /* LandMarkImageView.swift */; };
 		6628E659208DF06E009DD4C2 /* ResultCorrectPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6628E658208DF06E009DD4C2 /* ResultCorrectPopUp.swift */; };
@@ -171,6 +172,7 @@
 
 /* Begin PBXFileReference section */
 		44F1DD48C1BCB82079BD316E /* Pods_CityAdventure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CityAdventure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		661503C520FC68EA007E66D3 /* ClearCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearCameraView.swift; sourceTree = "<group>"; };
 		6615319B20CE401500CBA51E /* AdventureNewQRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventureNewQRCodeViewController.swift; sourceTree = "<group>"; };
 		6615E65020F6F0BB0004FF7B /* LandMarkImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandMarkImageView.swift; sourceTree = "<group>"; };
 		6628E658208DF06E009DD4C2 /* ResultCorrectPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCorrectPopUp.swift; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 				66BA20C020ECDA51001B307A /* LandMarkDetailViewController.swift */,
 				66988C3220F34A7B009B1A26 /* CityMapViewController.swift */,
 				CE6D633320F453D200BAF2D4 /* LandmarkSearchCell.swift */,
+				661503C520FC68EA007E66D3 /* ClearCameraView.swift */,
 			);
 			path = AdventureQRCode;
 			sourceTree = "<group>";
@@ -938,6 +941,7 @@
 				CE1DA22B206B67AB000C36B2 /* AlertViewController.swift in Sources */,
 				6628E659208DF06E009DD4C2 /* ResultCorrectPopUp.swift in Sources */,
 				CE300635207C5A3C00E90DC3 /* AlertGreenViewController.swift in Sources */,
+				661503C620FC68EA007E66D3 /* ClearCameraView.swift in Sources */,
 				66988C2D20F0DB76009B1A26 /* NewBaseResponse.swift in Sources */,
 				CEF716342064CB1900B457E9 /* AppDelegate.swift in Sources */,
 				6615319C20CE401500CBA51E /* AdventureNewQRCodeViewController.swift in Sources */,

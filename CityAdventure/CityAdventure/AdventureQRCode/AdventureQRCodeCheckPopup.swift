@@ -15,9 +15,12 @@ class AdventureQRCodeCheckPopup: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var alertView: UIView!
     
+    var delegate: QRcodeReaderProtocl?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         closeButtonLayout()
+        
     }
     
     func closeButtonLayout() {
@@ -29,7 +32,21 @@ class AdventureQRCodeCheckPopup: UIViewController {
     }
     
     @IBAction func hidePopup(sender: UIButton) {
-        self.dismiss(animated: false, completion: nil)
+//        self.dismiss(animated: false, completion: nil)
+        
+        if let cam = self.storyboard?.instantiateViewController(withIdentifier: "ClearCameraView") as? ClearCameraView {
+            self.present(cam, animated: true, completion: nil)
+        }
     }
     
+    
+    @IBAction func close(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: {
+            self.delegate?.restartSession()
+        })
+    }
+}
+
+protocol QRcodeReaderProtocl: class {
+    func restartSession()
 }

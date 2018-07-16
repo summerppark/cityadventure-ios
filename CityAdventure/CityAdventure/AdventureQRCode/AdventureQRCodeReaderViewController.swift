@@ -168,7 +168,9 @@ class AdventureQRCodeReaderViewController: UIViewController {
     
     
     @IBAction func presentAlertView(_ sender: Any) {
+        session.stopRunning()
         if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeCheckPopup") as? AdventureQRCodeCheckPopup {
+            alert.delegate = self
             alert.modalPresentationStyle = .overFullScreen
             alert.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
             self.present(alert, animated: false)
@@ -302,7 +304,12 @@ extension NSMutableAttributedString {
         append(normal)
         return self
     }
-    
-    
+}
+
+extension AdventureQRCodeReaderViewController: QRcodeReaderProtocl {
+    func restartSession() {
+        print("Restart")
+        self.session.startRunning()
+    }
 }
 
