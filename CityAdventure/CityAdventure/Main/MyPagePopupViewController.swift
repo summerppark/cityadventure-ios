@@ -143,6 +143,11 @@ class MyPagePopupViewController: BaseViewController {
         }
     }
     
+    @IBAction func myNote(_ sender: UIButton) {
+        if let note = self.storyboard?.instantiateViewController(withIdentifier: "MyNoteViewController") as? MyNoteViewController {
+            self.present(note, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func tappedCollectCity(_ sender: Any) {
         if let collect = self.storyboard?.instantiateViewController(withIdentifier: "MyCollectCityViewController") as? MyCollectCityViewController {

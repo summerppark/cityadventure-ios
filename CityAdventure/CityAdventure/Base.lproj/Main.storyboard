@@ -5108,7 +5108,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         </constraints>
                                         <state key="normal" image="icon_exnote_dm"/>
                                         <connections>
-                                            <action selector="diaryRank:" destination="buO-Ui-32c" eventType="touchUpInside" id="Oan-ln-sty"/>
+                                            <action selector="myNote:" destination="buO-Ui-32c" eventType="touchUpInside" id="6aN-k3-qFP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaD-zY-XgH">
@@ -9879,6 +9879,135 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
             </objects>
             <point key="canvasLocation" x="8079" y="-1335"/>
         </scene>
+        <!--My Note View Controller-->
+        <scene sceneID="TGQ-gs-fpf">
+            <objects>
+                <viewController storyboardIdentifier="MyNoteViewController" id="CTb-VR-pGv" customClass="MyNoteViewController" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nSK-Nw-F7z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdt-JH-Bxu">
+                                <rect key="frame" x="10" y="86" width="355" height="561"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_note_background" translatesAutoresizingMaskIntoConstraints="NO" id="OQk-bH-GFn">
+                                        <rect key="frame" x="0.0" y="-13" width="355" height="574"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="355" id="Q3k-qP-bao"/>
+                                        </constraints>
+                                    </imageView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aM2-Pc-SlQ">
+                                        <rect key="frame" x="69" y="16" width="250" height="485"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="aWg-40-whB"/>
+                                        </constraints>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCollectionViewCell" rowHeight="231" id="6yR-zi-C94" customClass="NoteCollectionViewCell" customModule="CityAdventure" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="250" height="231"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6yR-zi-C94" id="QhH-cs-mtx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="231"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018/04/15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCb-PU-Nuy">
+                                                            <rect key="frame" x="8" y="8" width="58.5" height="12.5"/>
+                                                            <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="11"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3r-ha-r3z">
+                                                            <rect key="frame" x="8" y="26.5" width="234" height="3"/>
+                                                            <color key="backgroundColor" red="0.96078431372549022" green="0.30196078431372547" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="3" id="rM4-IN-BJz"/>
+                                                            </constraints>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01개 도시를 탐험했어요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfV-eu-9mG">
+                                                            <rect key="frame" x="8" y="35.5" width="143" height="16"/>
+                                                            <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gG-Wf-gSp">
+                                                            <rect key="frame" x="8" y="57.5" width="234" height="1"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="1" id="UvT-be-U7z"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="1gG-Wf-gSp" firstAttribute="trailing" secondItem="S3r-ha-r3z" secondAttribute="trailing" id="0SQ-O7-bjE"/>
+                                                        <constraint firstItem="1gG-Wf-gSp" firstAttribute="top" secondItem="FfV-eu-9mG" secondAttribute="bottom" constant="6" id="1LW-DA-KTL"/>
+                                                        <constraint firstItem="PCb-PU-Nuy" firstAttribute="leading" secondItem="QhH-cs-mtx" secondAttribute="leading" constant="8" id="44r-dS-bTq"/>
+                                                        <constraint firstItem="S3r-ha-r3z" firstAttribute="top" secondItem="PCb-PU-Nuy" secondAttribute="bottom" constant="6" id="4W8-U6-47w"/>
+                                                        <constraint firstItem="1gG-Wf-gSp" firstAttribute="leading" secondItem="S3r-ha-r3z" secondAttribute="leading" id="8tc-Iw-FDz"/>
+                                                        <constraint firstItem="PCb-PU-Nuy" firstAttribute="top" secondItem="QhH-cs-mtx" secondAttribute="top" constant="8" id="KNG-bR-5hR"/>
+                                                        <constraint firstAttribute="trailing" secondItem="S3r-ha-r3z" secondAttribute="trailing" constant="8" id="LK7-cp-eTm"/>
+                                                        <constraint firstItem="FfV-eu-9mG" firstAttribute="top" secondItem="S3r-ha-r3z" secondAttribute="bottom" constant="6" id="Wyv-0h-G1m"/>
+                                                        <constraint firstItem="FfV-eu-9mG" firstAttribute="leading" secondItem="S3r-ha-r3z" secondAttribute="leading" id="hbx-5W-Lw1"/>
+                                                        <constraint firstItem="S3r-ha-r3z" firstAttribute="leading" secondItem="PCb-PU-Nuy" secondAttribute="leading" id="sYV-dm-LUX"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="dateLabel" destination="PCb-PU-Nuy" id="YhU-ke-Sh7"/>
+                                                    <outlet property="slogan" destination="FfV-eu-9mG" id="pj7-zp-c7V"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="aM2-Pc-SlQ" firstAttribute="top" secondItem="Zdt-JH-Bxu" secondAttribute="top" constant="16" id="DBk-SR-ffX"/>
+                                    <constraint firstAttribute="bottom" secondItem="aM2-Pc-SlQ" secondAttribute="bottom" constant="60" id="Uec-mD-gKZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="aM2-Pc-SlQ" secondAttribute="trailing" constant="36" id="YFo-Eq-ve8"/>
+                                    <constraint firstItem="OQk-bH-GFn" firstAttribute="top" secondItem="Zdt-JH-Bxu" secondAttribute="top" constant="-13" id="ZkG-4T-tRK"/>
+                                    <constraint firstItem="OQk-bH-GFn" firstAttribute="centerX" secondItem="Zdt-JH-Bxu" secondAttribute="centerX" id="dwq-dd-iiM"/>
+                                    <constraint firstAttribute="width" constant="355" id="oUt-4D-AK2"/>
+                                    <constraint firstAttribute="bottom" secondItem="OQk-bH-GFn" secondAttribute="bottom" id="tJX-cz-Mes"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_note_top" translatesAutoresizingMaskIntoConstraints="NO" id="yWm-Oq-a8a">
+                                <rect key="frame" x="105" y="44" width="164" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="6jk-oE-7hL"/>
+                                    <constraint firstAttribute="width" constant="164" id="sbe-jZ-jbp"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLo-WW-5I1">
+                                <rect key="frame" x="285" y="50" width="40" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="y2f-fS-RoW"/>
+                                    <constraint firstAttribute="height" constant="36" id="ycu-Vq-Dk6"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="borderCloseButton"/>
+                                <connections>
+                                    <action selector="closeWithSender:" destination="CTb-VR-pGv" eventType="touchUpInside" id="bys-bw-sy7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1kF-1k-Px0" firstAttribute="bottom" secondItem="Zdt-JH-Bxu" secondAttribute="bottom" constant="20" id="W8M-kY-JOA"/>
+                            <constraint firstItem="Zdt-JH-Bxu" firstAttribute="centerX" secondItem="nSK-Nw-F7z" secondAttribute="centerX" id="bk3-ru-4VT"/>
+                            <constraint firstItem="yWm-Oq-a8a" firstAttribute="centerX" secondItem="nSK-Nw-F7z" secondAttribute="centerX" id="ggr-8j-iUU"/>
+                            <constraint firstItem="oLo-WW-5I1" firstAttribute="bottom" secondItem="yWm-Oq-a8a" secondAttribute="bottom" id="ihx-tB-Tak"/>
+                            <constraint firstItem="oLo-WW-5I1" firstAttribute="leading" secondItem="yWm-Oq-a8a" secondAttribute="trailing" constant="16" id="vDt-AZ-5cM"/>
+                            <constraint firstItem="Zdt-JH-Bxu" firstAttribute="top" secondItem="yWm-Oq-a8a" secondAttribute="bottom" id="xM2-Pq-7Wa"/>
+                            <constraint firstItem="yWm-Oq-a8a" firstAttribute="top" secondItem="1kF-1k-Px0" secondAttribute="top" constant="24" id="yxT-c3-Ag1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1kF-1k-Px0"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="aM2-Pc-SlQ" id="xS2-1W-nPC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jex-QV-Ufc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8957.6000000000004" y="-1613.3433283358322"/>
+        </scene>
         <!--Collect City Popup View Controller-->
         <scene sceneID="yS2-vN-Qwj">
             <objects>
@@ -10273,6 +10402,8 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="img_mainbg_AM" width="1080" height="1614"/>
         <image name="img_mark_map" width="97" height="122"/>
         <image name="img_myProfile" width="229" height="66"/>
+        <image name="img_note_background" width="1387" height="2223"/>
+        <image name="img_note_top" width="655" height="168"/>
         <image name="img_only_char_third" width="789" height="409"/>
         <image name="img_profileSignup_bg" width="914" height="679"/>
         <image name="img_profile_thumb" width="279" height="279"/>
