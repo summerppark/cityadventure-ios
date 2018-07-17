@@ -2736,10 +2736,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="btn_close_alert"/>
                                         <connections>
-                                            <action selector="closeSelectCity:" destination="xie-1g-ENV" eventType="touchUpInside" id="oz3-Tj-fHc"/>
-                                            <action selector="closeWithSender:" destination="vKS-OI-sWb" eventType="touchUpInside" id="NxV-Lv-Khd"/>
-                                            <action selector="dismissAlert:" destination="TDy-A3-Qqz" eventType="touchUpInside" id="c4Y-gX-EOC"/>
-                                            <action selector="hidePopupWithSender:" destination="QdV-Qe-SO9" eventType="touchUpInside" id="tXe-sw-KJC"/>
+                                            <action selector="close:" destination="QdV-Qe-SO9" eventType="touchUpInside" id="t1F-dQ-7O1"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_check_qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="JgD-Kq-N0f">
@@ -5109,7 +5106,10 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                             <constraint firstAttribute="height" constant="60" id="qO9-xU-Zvn"/>
                                             <constraint firstAttribute="width" constant="60" id="vVi-57-1rZ"/>
                                         </constraints>
-                                        <state key="normal" image="myPage_second"/>
+                                        <state key="normal" image="icon_exnote_dm"/>
+                                        <connections>
+                                            <action selector="diaryRank:" destination="buO-Ui-32c" eventType="touchUpInside" id="Oan-ln-sty"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaD-zY-XgH">
                                         <rect key="frame" x="223.5" y="187.5" width="60" height="60"/>
@@ -5117,7 +5117,10 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                             <constraint firstAttribute="height" constant="60" id="51K-GK-9Cu"/>
                                             <constraint firstAttribute="width" constant="60" id="aMg-DA-NZu"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="myPage_third"/>
+                                        <state key="normal" title="Button" image="icon_myrank_dm"/>
+                                        <connections>
+                                            <action selector="diaryRank:" destination="buO-Ui-32c" eventType="touchUpInside" id="so0-HB-5m2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOH-LV-Uao">
                                         <rect key="frame" x="55.5" y="187.5" width="60" height="60"/>
@@ -5847,6 +5850,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                     </view>
                     <connections>
                         <outlet property="headerViewHeight" destination="eKN-kA-wVX" id="edk-Qg-TXC"/>
+                        <outlet property="leftbackbutton" destination="mON-pK-3S5" id="wOK-ws-BjT"/>
                         <outlet property="toggleButton" destination="Qgr-vM-KCL" id="vpR-ba-Sxn"/>
                         <outlet property="webView" destination="7xz-f0-DIs" id="vg7-iY-RkB"/>
                     </connections>
@@ -6619,11 +6623,17 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSD-yC-XQw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="92"/>
-                                                                <state key="normal" image="drawer_btn_quiz"/>
+                                                                <state key="normal" image="icon_quiz_dm"/>
+                                                                <connections>
+                                                                    <action selector="tempAction:" destination="ZDD-XA-R1b" eventType="touchUpInside" id="4i4-Eo-mfW"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aED-Qo-OaO">
                                                                 <rect key="frame" x="96" y="0.0" width="93.5" height="92"/>
-                                                                <state key="normal" image="drawer_btn_game"/>
+                                                                <state key="normal" image="icon_play_dm"/>
+                                                                <connections>
+                                                                    <action selector="tempAction:" destination="ZDD-XA-R1b" eventType="touchUpInside" id="3es-1i-YxK"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -6632,7 +6642,10 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srV-yk-9Ue">
                                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="92"/>
-                                                                <state key="normal" image="drawer_btn_diary"/>
+                                                                <state key="normal" image="icon_toon_dm"/>
+                                                                <connections>
+                                                                    <action selector="tempAction:" destination="ZDD-XA-R1b" eventType="touchUpInside" id="i3l-yg-jb1"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bh-nm-OQB">
                                                                 <rect key="frame" x="96" y="0.0" width="93.5" height="92"/>
@@ -7379,20 +7392,20 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_story_bubble" translatesAutoresizingMaskIntoConstraints="NO" id="4E5-5o-dYb">
-                                        <rect key="frame" x="31" y="152" width="240" height="100"/>
+                                        <rect key="frame" x="31" y="146" width="240" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="C3e-jq-f5K"/>
                                             <constraint firstAttribute="width" constant="240" id="ZBE-8o-Ouj"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개의 도시를 탐험했네요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaA-NH-ujz">
-                                        <rect key="frame" x="85.5" y="221" width="163.5" height="19"/>
+                                        <rect key="frame" x="85.5" y="215" width="163.5" height="19"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSr-VL-f2N">
-                                        <rect key="frame" x="287" y="178" width="64" height="64"/>
+                                        <rect key="frame" x="287" y="172" width="64" height="64"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="Q26-Ua-6Ba"/>
                                             <constraint firstAttribute="width" constant="64" id="r5d-bF-RPt"/>
@@ -7407,19 +7420,19 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비유비유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esB-wJ-IAh">
-                                        <rect key="frame" x="47" y="184" width="84.5" height="26"/>
+                                        <rect key="frame" x="47" y="178" width="84.5" height="26"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="23"/>
                                         <color key="textColor" red="0.043137254901960784" green="0.4392156862745098" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="162" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6d7-Xp-ZDC">
-                                        <rect key="frame" x="47" y="214" width="36.5" height="26"/>
+                                        <rect key="frame" x="47" y="208" width="36.5" height="26"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="23"/>
                                         <color key="textColor" red="0.043137254901960784" green="0.4392156862745098" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대원," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3L-mL-Gja">
-                                        <rect key="frame" x="135.5" y="190" width="37" height="20"/>
+                                        <rect key="frame" x="135.5" y="184" width="37" height="20"/>
                                         <fontDescription key="fontDescription" name="GodoB" family="Godo" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -7476,7 +7489,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                     <constraint firstItem="qSr-VL-f2N" firstAttribute="bottom" secondItem="4E5-5o-dYb" secondAttribute="bottom" constant="-10" id="lkh-qK-WCy"/>
                                     <constraint firstItem="V3L-mL-Gja" firstAttribute="bottom" secondItem="esB-wJ-IAh" secondAttribute="bottom" id="llb-AB-FOz"/>
                                     <constraint firstAttribute="trailing" secondItem="qSr-VL-f2N" secondAttribute="trailing" constant="24" id="qbn-wU-7Nl"/>
-                                    <constraint firstItem="4E5-5o-dYb" firstAttribute="top" secondItem="oni-cS-80I" secondAttribute="bottom" constant="4" id="r96-vz-aAj"/>
+                                    <constraint firstItem="4E5-5o-dYb" firstAttribute="top" secondItem="oni-cS-80I" secondAttribute="bottom" constant="-2" id="r96-vz-aAj"/>
                                     <constraint firstAttribute="bottom" secondItem="5EV-Xz-03e" secondAttribute="bottom" id="x3d-Ge-I2e"/>
                                 </constraints>
                             </view>
@@ -7498,6 +7511,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                         <outlet property="expCurrentLabel" destination="Py6-iV-tYI" id="CGG-Fc-2qW"/>
                         <outlet property="expMaxLabel" destination="duM-T6-zlH" id="cEp-hw-dhb"/>
                         <outlet property="mainAvartarView" destination="oni-cS-80I" id="fER-i6-hW3"/>
+                        <outlet property="mainCharHeight" destination="tOo-bb-Fkf" id="oDv-lv-XcJ"/>
                         <outlet property="mainCharWidth" destination="lKE-qm-UzQ" id="9LI-rv-VtO"/>
                         <outlet property="mainCityCount" destination="6d7-Xp-ZDC" id="V15-4w-r5a"/>
                         <outlet property="mainNickname" destination="esB-wJ-IAh" id="8sr-ZR-hHs"/>
@@ -8136,6 +8150,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 </constraints>
                                                 <state key="normal" image="btn_close_alert"/>
                                                 <connections>
+                                                    <action selector="tappedBackButton:" destination="8mT-kh-Beq" eventType="touchUpInside" id="hOf-IT-jcC"/>
                                                     <segue destination="5El-sO-RQD" kind="unwind" identifier="" unwindAction="unWindQRCodeVC:" id="r6L-oQ-xmZ"/>
                                                 </connections>
                                             </button>
@@ -8381,7 +8396,8 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                                 </constraints>
                                                 <state key="normal" image="btn_close_alert"/>
                                                 <connections>
-                                                    <segue destination="5El-sO-RQD" kind="unwind" identifier="" unwindAction="unWindQRCodeVC:" id="cHt-97-Bup"/>
+                                                    <action selector="tappedBackButton:" destination="8mT-kh-Beq" eventType="touchUpInside" id="UFy-an-Ufy"/>
+                                                    <segue destination="5El-sO-RQD" kind="unwind" unwindAction="unWindQRCodeVC:" id="BfB-1N-8GK"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -9187,7 +9203,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                     <action selector="backButton:" destination="gei-uq-C6k" eventType="touchUpInside" id="2qd-ab-xxj"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpw-mB-Ceb">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vpw-mB-Ceb">
                                 <rect key="frame" x="307" y="44" width="52" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="HHT-aY-VNI"/>
@@ -9195,7 +9211,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                 </constraints>
                                 <state key="normal" image="btn_find_map"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_temp1" translatesAutoresizingMaskIntoConstraints="NO" id="bso-Av-aep">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_temp1" translatesAutoresizingMaskIntoConstraints="NO" id="bso-Av-aep">
                                 <rect key="frame" x="199" y="44" width="100" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="S0p-0W-ZWj"/>
@@ -9321,18 +9337,18 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhy-fd-920">
-                                        <rect key="frame" x="137.5" y="459" width="100" height="200"/>
+                                        <rect key="frame" x="117.5" y="379" width="140" height="280"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_motion_qrcode" translatesAutoresizingMaskIntoConstraints="NO" id="XU3-Ps-LVu">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="176"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="256"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="MlE-XM-kVO"/>
+                                            <constraint firstAttribute="height" constant="280" id="MlE-XM-kVO"/>
                                             <constraint firstAttribute="trailing" secondItem="XU3-Ps-LVu" secondAttribute="trailing" id="Tfy-AI-LgM"/>
                                             <constraint firstAttribute="bottom" secondItem="XU3-Ps-LVu" secondAttribute="bottom" constant="24" id="VM1-v3-p4v"/>
-                                            <constraint firstAttribute="width" constant="100" id="YAh-o1-pHG"/>
+                                            <constraint firstAttribute="width" constant="140" id="YAh-o1-pHG"/>
                                             <constraint firstItem="XU3-Ps-LVu" firstAttribute="leading" secondItem="xhy-fd-920" secondAttribute="leading" id="jJU-bb-jlD"/>
                                             <constraint firstItem="XU3-Ps-LVu" firstAttribute="top" secondItem="xhy-fd-920" secondAttribute="top" id="utf-1g-qCM"/>
                                         </constraints>
@@ -9391,6 +9407,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
                     </view>
                     <connections>
                         <outlet property="animationView" destination="xhy-fd-920" id="RTg-Ub-byu"/>
+                        <outlet property="aniviewBottom" destination="eOh-lY-C5q" id="H5T-nL-BuD"/>
                         <outlet property="checkRecognizeView" destination="Xpb-hi-kfC" id="UJi-lJ-XMS"/>
                         <outlet property="messageLabel" destination="VsB-S8-75N" id="5f1-pl-aNY"/>
                         <outlet property="topbar" destination="8nN-Lc-nx4" id="vJE-Jc-ycb"/>
@@ -10123,6 +10140,21 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
             </objects>
             <point key="canvasLocation" x="-440" y="100"/>
         </scene>
+        <!--Clear Camera View-->
+        <scene sceneID="ZD7-oC-Dpy">
+            <objects>
+                <viewController storyboardIdentifier="ClearCameraView" id="akW-gc-bS6" customClass="ClearCameraView" customModule="CityAdventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qyh-wV-pkC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="crR-4M-9w8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ttd-sx-OLU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5199" y="-1437"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="TU5-iD-0Rh">
             <objects>
@@ -10186,10 +10218,7 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="card_thumbnail_001" width="472" height="591"/>
         <image name="cityadvanture_login" width="477" height="428"/>
         <image name="drawer_btn_adventure" width="288" height="269"/>
-        <image name="drawer_btn_diary" width="288" height="269"/>
-        <image name="drawer_btn_game" width="288" height="269"/>
         <image name="drawer_btn_preadventure" width="288" height="269"/>
-        <image name="drawer_btn_quiz" width="288" height="269"/>
         <image name="drawer_btn_showping" width="288" height="269"/>
         <image name="effect_sound_on" width="283" height="128"/>
         <image name="email_isInvalid_border" width="820" height="150"/>
@@ -10202,12 +10231,17 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="icon_close_1" width="75" height="75"/>
         <image name="icon_close_2" width="75" height="75"/>
         <image name="icon_collect_citycards" width="1440" height="664"/>
+        <image name="icon_exnote_dm" width="198" height="193"/>
         <image name="icon_finger_right" width="211" height="184"/>
         <image name="icon_motion_qrcode" width="532" height="1055"/>
+        <image name="icon_myrank_dm" width="198" height="193"/>
         <image name="icon_notice_recognize" width="203" height="258"/>
+        <image name="icon_play_dm" width="288" height="269"/>
         <image name="icon_question_mark" width="173" height="186"/>
+        <image name="icon_quiz_dm" width="288" height="269"/>
         <image name="icon_shopping" width="305" height="285"/>
         <image name="icon_speaker_bakckView" width="144" height="144"/>
+        <image name="icon_toon_dm" width="288" height="269"/>
         <image name="img_adventure_bg" width="1757" height="2601"/>
         <image name="img_adventure_second" width="708" height="255"/>
         <image name="img_alert_bg" width="851" height="502"/>
@@ -10276,8 +10310,6 @@ QR코드가 제대로 보이는지 확인해 주세요.</string>
         <image name="myPageBG" width="1301" height="2139"/>
         <image name="myPage_change" width="360" height="112"/>
         <image name="myPage_first" width="264" height="257"/>
-        <image name="myPage_second" width="264" height="257"/>
-        <image name="myPage_third" width="264" height="257"/>
         <image name="noncheck" width="40" height="40"/>
         <image name="play_bk" width="482" height="386"/>
         <image name="quiz_bk" width="492" height="376"/>

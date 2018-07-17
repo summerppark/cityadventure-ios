@@ -79,6 +79,8 @@ class MainViewController: BaseViewController {
     
     var audioPlayer = AVAudioPlayer()
     
+    static var isRealQRCode: Bool = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,8 +104,26 @@ class MainViewController: BaseViewController {
             }
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(restart), name: Notification.Name(rawValue: "restartAnimation_1"), object: nil)
     }
     
+    @objc func restart() {
+        print("Main Restart")
+        UIView.animate(withDuration: 0.8, delay: 0, options: [.repeat, .autoreverse,.allowUserInteraction], animations: {
+            [weak self] in
+            
+            if Constants.DeviceType.IS_IPHONE_X {
+                self?.animationView.frame.origin.y = 262.0
+            } else if Constants.DeviceType.IS_IPHONE_6P {
+                self?.animationView.frame.origin.y = 210.0
+            } else {
+                self?.animationView.frame.origin.y = 199.0
+            }
+            self?.animationView.frame.origin.y -= 10
+        }) { (action) in
+            print("핸들러")
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dataSetting()

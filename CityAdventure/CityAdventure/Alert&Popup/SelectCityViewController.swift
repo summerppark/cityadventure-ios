@@ -195,8 +195,9 @@ extension SelectCityViewController: UITableViewDataSource, UITableViewDelegate {
             UserDefaults.standard.set(city.number, forKey: "signup_homeNumber")
         } else {
             
+            print("FinalTest22",String(Int(city.number)))
             SignUpViewSeccondController.signupLivingProvince = String(Int(city.provinceType))
-            SignUpViewSeccondController.signupLiveCity = String(Int(city.number))
+            SignUpViewSeccondController.signupLivingNumber = String(Int(city.number))
             
             UserDefaults.standard.set(city.provinceType, forKey: "signup_livingProvince")
             UserDefaults.standard.set(city.number, forKey: "signup_livingNumber")

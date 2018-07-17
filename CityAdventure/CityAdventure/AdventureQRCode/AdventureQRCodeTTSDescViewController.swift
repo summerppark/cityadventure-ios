@@ -136,13 +136,18 @@ class AdventureQRCodeTTSDescViewController: BaseViewController {
         case 30:
             player?.pause()
         case 40:
+            player?.pause()
+            player = nil
+            self.playerSlider.value = 0.0
             loadRadio(radioURL: APIUrls.getKanjiExpMp3Loading(index: cityNumber, type: "3"))
+            
         default:
             break
         }
     }
     
     func loadRadio(radioURL: String) {
+        super.showLoading(view: self.view)
         guard let url = URL.init(string: radioURL) else { return }
         let playerItem = AVPlayerItem.init(url: url)
         self.playerItem = playerItem
@@ -160,5 +165,6 @@ class AdventureQRCodeTTSDescViewController: BaseViewController {
                 self.playerSlider.value = Float(seconds / durationSec)
             }
         })
+        super.hideLoading()
     }
 }

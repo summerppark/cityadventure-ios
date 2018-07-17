@@ -17,6 +17,7 @@ class AdventureQRCodeViewController: BaseViewController {
     @IBOutlet weak var textTopConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var mainCharWidth: NSLayoutConstraint!
+    @IBOutlet weak var mainCharHeight: NSLayoutConstraint!
     
     @IBOutlet weak var userCharView: UIImageView!
     @IBOutlet weak var currentLevelLabel: UILabel!
@@ -37,9 +38,6 @@ class AdventureQRCodeViewController: BaseViewController {
     
     @IBOutlet weak var progressViewLeading: NSLayoutConstraint!
     @IBOutlet weak var userNameLabelTrailing: NSLayoutConstraint!
-    
-    
-    
     @IBOutlet weak var mainAvartarView: UIImageView!
     @IBOutlet weak var mainNickname: UILabel!
     @IBOutlet weak var mainCityCount: UILabel!
@@ -182,8 +180,18 @@ class AdventureQRCodeViewController: BaseViewController {
             userCharView.image = super.charImages[index-1]
             mainAvartarView.image = super.mainCharImages[index-1]
            
-            if index > 3 {
-                mainCharWidth.constant = 180.0
+            switch index {
+            case 1,2,5,6:
+                mainCharWidth.constant = 140.0
+                mainCharHeight.constant = 140
+            case 3:
+                mainCharWidth.constant = 240.0
+                mainCharHeight.constant = 128.0
+            case 4:
+                mainCharWidth.constant = 128.0
+                mainCharHeight.constant = 128.0
+            default:
+                break
             }
         }
         

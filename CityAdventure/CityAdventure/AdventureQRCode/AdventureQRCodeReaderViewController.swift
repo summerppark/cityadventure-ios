@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Photos
 
 class AdventureQRCodeReaderViewController: UIViewController {
   
@@ -24,20 +25,49 @@ class AdventureQRCodeReaderViewController: UIViewController {
     var video = AVCaptureVideoPreviewLayer()
     let session = AVCaptureSession()
     
+    
+    @IBOutlet weak var aniviewBottom: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        MainViewController.isRealQRCode = true
         let formattedString = NSMutableAttributedString()
         formattedString
             .bigGodoBold("탐험하고 싶은\n도시의 카드")
             .godoNormal("를\n뚱카에 넣어주세요!")
         messageLabel.attributedText = formattedString
   
+        print("QRCodeReader Restart", self.animationView.frame.origin.y)
+        
 //        if let result = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeFlipViewController") as? AdventureQRCodeFlipViewController {
 //            result.cityNumber = "142a"
 //
 //            self.navigationController?.pushViewController(result, animated: true)
 //        }
-
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(restart), name: Notification.Name(rawValue: "restartAnimation_2"), object: nil)
+    }
+    
+    @objc func restart() {
+        print("QRCodeReader Restart", self.animationView.frame.origin.y)
+        
+        aniviewBottom.constant = 8.0
+        
+        UIView.animate(withDuration: 2, delay: 0, options: [.repeat,.curveEaseOut, .repeat], animations: {
+            [weak self] in
+            
+            
+            if Constants.DeviceType.IS_IPHONE_6P {
+                self?.animationView.frame.origin.y = 448.0
+            } else if Constants.DeviceType.IS_IPHONE_X {
+                self?.animationView.frame.origin.y = 524.0
+            } else {
+                self?.animationView.frame.origin.y = 429.0
+            }
+            self?.animationView.frame.origin.y -= 50
+        }) { (action) in
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,9 +75,15 @@ class AdventureQRCodeReaderViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        MainViewController.isRealQRCode = false
+        UserDefaults.standard.set(nil, forKey: "restart_2")
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        UserDefaults.standard.set(nil, forKey: "restart_2")
         self.animationView.layoutIfNeeded()
         UIView.animate(withDuration: 2, delay: 0, options: [.repeat,.curveEaseOut, .repeat], animations: {
             [weak self] in
@@ -57,8 +93,16 @@ class AdventureQRCodeReaderViewController: UIViewController {
             print("핸들러")
         }
         
-        
         guard let captureDevice =  AVCaptureDevice.default(for: .video) else { return }
+        let cameraStatus = AVCaptureDevice.authorizationStatus(for: .video)
+        switch cameraStatus {
+        case .denied:
+            needPermissionAlert()
+            return
+        default:
+            break
+        }
+        
         
         do {
             let input = try AVCaptureDeviceInput(device: captureDevice)
@@ -67,6 +111,7 @@ class AdventureQRCodeReaderViewController: UIViewController {
             print("Error QRCode Read")
             shakeView(vw: checkRecognizeView)
         }
+        
         
         let output = AVCaptureMetadataOutput()
         session.addOutput(output)
@@ -123,7 +168,9 @@ class AdventureQRCodeReaderViewController: UIViewController {
     
     
     @IBAction func presentAlertView(_ sender: Any) {
+        session.stopRunning()
         if let alert = storyboard?.instantiateViewController(withIdentifier: "AdventureQRCodeCheckPopup") as? AdventureQRCodeCheckPopup {
+            alert.delegate = self
             alert.modalPresentationStyle = .overFullScreen
             alert.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
             self.present(alert, animated: false)
@@ -135,6 +182,8 @@ class AdventureQRCodeReaderViewController: UIViewController {
     }
     
     @IBAction func openShoppingMall(_ sender: UIButton) {
+        UserDefaults.standard.set("QRCodeReader", forKey: "restart_2")
+        
         if let url = URL(string: APIUrls.shoppingMallUrl()) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
@@ -153,7 +202,7 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
     
 //    QRCode Recognize
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-   
+
         if let object = metadataObjects.first {
             if object.type == .qr {
                 print("QR성공",(object as? AVMetadataMachineReadableCodeObject)?.stringValue)
@@ -169,7 +218,11 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
                     // 인식 안되었을 때
                     shakeView(vw: checkRecognizeView)
                 }
+            } else {
+                
             }
+        } else {
+            shakeView(vw: checkRecognizeView)
         }
     }
     
@@ -216,6 +269,20 @@ extension AdventureQRCodeReaderViewController: AVCaptureMetadataOutputObjectsDel
             }
         }
     }
+    
+    func needPermissionAlert() {
+        let alertController = UIAlertController(title: "카메라 이용 권한 없음",
+                                                message: "도시를 탐험하기 위하여 카메라 이용 권한이 필요합니다.",
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "설정으로 이동", style: .destructive) { (action) in
+            guard let url = URL(string:UIApplicationOpenSettingsURLString) else { return }
+            UIApplication.shared.open(url)
+        })
+        alertController.addAction(UIAlertAction(title: "취소", style: .cancel))
+        DispatchQueue.main.async { [weak self] in
+            self?.present(alertController, animated: true, completion: nil)
+        }
+    }
 }
 
 
@@ -235,7 +302,12 @@ extension NSMutableAttributedString {
         append(normal)
         return self
     }
-    
-    
+}
+
+extension AdventureQRCodeReaderViewController: QRcodeReaderProtocl {
+    func restartSession() {
+        print("Restart")
+        self.session.startRunning()
+    }
 }
 

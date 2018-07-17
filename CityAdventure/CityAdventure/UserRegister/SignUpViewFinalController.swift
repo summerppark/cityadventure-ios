@@ -4,7 +4,6 @@
 //
 //  Created by Jiyong on 2018. 4. 2..
 //  Copyright © 2018년 bubu. All rights reserved.
-//
 
 import UIKit
 
@@ -51,29 +50,54 @@ class SignUpViewFinalController: BaseViewController {
             
             self.name.text = name as? String ?? ""
             self.gender.text = (gender as! String) == "m" ? "남자" : "여자"
-            self.birthDay.text = (birthday as? String) ?? ""
+            
+            if let birthD = birthday as? String {
+                self.birthDay.text = super.convertDateFormatter(inputDate: birthD)
+            }
+            
+            
             self.homeProvince.text = home as? String ?? ""
             self.livingProvince.text = living as? String ?? ""
             
-            print("FinalTest", SignUpViewSeccondController.signupEmail, SignUpViewSeccondController.signupPassword, SignUpViewSeccondController.signupName,SignUpViewSeccondController.signupGender,SignUpViewSeccondController.signupBirthday, SignUpViewSeccondController.signupHomeProvince,SignUpViewSeccondController.signupHomeNumber,SignUpViewSeccondController.signupLivingProvince,SignUpViewSeccondController.signupLivingNumber,SignUpViewSeccondController.signupBornCity,SignUpViewSeccondController.signupLiveCity,charIndex)
+            print("FinalTest",
+                  SignUpViewSeccondController.signupEmail,
+                  SignUpViewSeccondController.signupPassword,
+                  SignUpViewSeccondController.signupName,
+                  SignUpViewSeccondController.signupGender,
+                  SignUpViewSeccondController.signupBirthday, SignUpViewSeccondController.signupHomeProvince,SignUpViewSeccondController.signupHomeNumber,SignUpViewSeccondController.signupLivingProvince,SignUpViewSeccondController.signupLivingNumber,SignUpViewSeccondController.signupBornCity,SignUpViewSeccondController.signupLiveCity,charIndex)
             
             
-            
-            // 서버로 보낼 파라미터
             parameters = [
                 "userLoginType": "0",
-                "email": email as! String,
-                "password": password as! String,
+                "email": SignUpViewSeccondController.signupEmail,
+                "password": SignUpViewSeccondController.signupPassword,
                 "kakaoId": "0",
-                "name": name as! String,
-                "gender": gender as! String,
-                "homeProvince": String(describing: homeProvince),
-                "homeCity": String(describing:homeNumber),
-                "livingProvince": String(describing: livingProvince),
-                "livingCity": String(describing:livingNumber),
-                "birth": birthday as! String,
+                "name": SignUpViewSeccondController.signupName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "",
+                "gender": SignUpViewSeccondController.signupGender,
+                "homeProvince": SignUpViewSeccondController.signupHomeProvince,
+                "homeCity": SignUpViewSeccondController.signupHomeNumber,
+                "livingProvince": SignUpViewSeccondController.signupLivingProvince,
+                "livingCity": SignUpViewSeccondController.signupLivingNumber,
+                "birth": SignUpViewSeccondController.signupBirthday,
                 "avatarNo": String(charIndex)
             ]
+            
+            dump(parameters)
+            // 서버로 보낼 파라미터
+//            parameters = [
+//                "userLoginType": "0",
+//                "email": email as! String,
+//                "password": password as! String,
+//                "kakaoId": "0",
+//                "name": name as! String,
+//                "gender": gender as! String,
+//                "homeProvince": String(describing: homeProvince),
+//                "homeCity": String(describing:homeNumber),
+//                "livingProvince": String(describing: livingProvince),
+//                "livingCity": String(describing:livingNumber),
+//                "birth": birthday as! String,
+//                "avatarNo": String(charIndex)
+//            ]
             
         }
     }
